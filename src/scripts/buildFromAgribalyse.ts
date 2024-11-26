@@ -1,6 +1,5 @@
 import axios from 'axios'
 import fs from 'fs'
-import alimentation from '../data/categories/alimentation.json'
 import boissons from '../data/categories/boisson.json'
 import fruitsetlegumes from '../data/categories/fruitsetlegumes.json'
 import { BoissonEquivalent, EquivalentValue, FruitsEtLegumesEquivalent } from '../../types/equivalent'
@@ -15,7 +14,6 @@ const existingEquivalentsByCategory: Record<
 > = {
   boissons: { file: 'boisson.json', values: boissons },
   fruitsetlegumes: { file: 'fruitsetlegumes.json', values: fruitsetlegumes },
-  alimentation: { file: 'alimentation.json', values: alimentation },
 }
 
 const finalitiesId: Record<string, number> = {
@@ -36,14 +34,10 @@ const agrybaliseValues = [
 
 const updateEquivalents = (
   equivalents: (BoissonEquivalent | FruitsEtLegumesEquivalent)[],
-  values: (Record<string, number> & {
-    Code_CIQUAL: number
-    Code_AGB?: string
-    "Sous-groupe_d'aliment": string
-  })[]
+  values: (Record<string, number> & { Code_CIQUAL: number; Code_AGB?: string; "Sous-groupe_d'aliment": string })[]
 ) => {
   return equivalents.map((equivalent) => {
-    if (!('Code_CIQUAL' in equivalent) && !('Code_CIQUALs' in equivalent)) {
+    if (!('Code_CIQUAL' in equivalent)) {
       return equivalent
     }
 
@@ -51,29 +45,8 @@ const updateEquivalents = (
     const agbValue = values.find((v) => v.Code_AGB === equivalent.Code_AGB)
     if (agbValue) {
       value = agbValue
-    } else if ('Code_CIQUALs' in equivalent && equivalent.Code_CIQUALs) {
-      const ciqualValues = values.filter((v) => equivalent.Code_CIQUALs?.includes(v.Code_CIQUAL))
-      console.log(ciqualValues)
-      if (ciqualValues.length !== equivalent.Code_CIQUALs.length) {
-        throw new Error(
-          'BUG! ' + equivalent.slug + ' has too much possible values, should use a Code_AGB to discriminate'
-        )
-      }
-      value = {} as Record<string, number> & {
-        Code_CIQUAL: number
-        Code_AGB?: string
-        "Sous-groupe_d'aliment": string
-      }
-      Object.entries(finalitiesId).forEach(([finality]) => {
-        value[`${AgrybalisePrefixEnum.ChangementClimatique}${finality}`] =
-          ciqualValues.reduce(
-            (acc, current) => acc + current[`${AgrybalisePrefixEnum.ChangementClimatique}${finality}`],
-            0
-          ) / ciqualValues.length
-      })
     } else {
       const ciqualValues = values.filter((v) => v.Code_CIQUAL === equivalent.Code_CIQUAL)
-      console.log(equivalent.slug, ciqualValues)
       if (ciqualValues.length === 1) {
         value = ciqualValues[0]
       } else if (ciqualValues.length === 0) {
@@ -106,18 +79,12 @@ const updateEquivalents = (
 const buildFromAgribalyse = async (key: string) => {
   const existingEquivalents = existingEquivalentsByCategory[key]
   if (!existingEquivalents) {
-    console.info('Type should be "boissons", "alimentation" or "fruitsetlegumes"')
+    console.info('Type should be "boissons" or "fruitsetlegumes"')
     process.exit(1)
   }
 
   const ciquals = existingEquivalents.values
-    .flatMap((equivalent) =>
-      'Code_CIQUAL' in equivalent
-        ? [equivalent.Code_CIQUAL]
-        : 'Code_CIQUALs' in equivalent && equivalent.Code_CIQUALs
-          ? equivalent.Code_CIQUALs
-          : []
-    )
+    .map((equivalent) => ('Code_CIQUAL' in equivalent ? equivalent.Code_CIQUAL : ''))
     .filter((code) => !!code)
     .join(',')
   const remote_url = encodeURI(
@@ -136,5 +103,4 @@ if (process.argv[2]) {
 } else {
   buildFromAgribalyse('boissons')
   buildFromAgribalyse('fruitsetlegumes')
-  buildFromAgribalyse('alimentation')
 }

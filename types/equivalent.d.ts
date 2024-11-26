@@ -55,10 +55,9 @@ export type DeplacementEquivalent = BaseEquivalent & {
 export type BoissonEquivalent = BaseEquivalent &
   (
     | {
-        Code_CIQUAL?: number
+        Code_CIQUAL: number
         Code_AGB?: string
-        Code_CIQUALs?: number[]
-        ecv?: EquivalentValue[]
+        ecv: EquivalentValue[]
       }
     | {
         total: number
