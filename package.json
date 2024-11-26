@@ -36,7 +36,7 @@
     "testIframes": "npx playwright install chromium; npx ts-node -r dotenv/config src/scripts/testIframes.ts"
   },
   "engines": {
-    "node": ">22",
+    "node": ">22.0.0",
     "yarn": "1.22"
   },
   "dependencies": {
