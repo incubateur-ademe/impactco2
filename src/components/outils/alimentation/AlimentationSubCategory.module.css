@@ -42,15 +42,14 @@
     outline-offset: 4px;
   }
 
-  &:not(:last-child) {
-    border-radius: calc(0.5rem - 2px) calc(0.5rem - 2px) 0 0;
-    border-bottom: 2px solid var(--primary-30);
-  }
-
   @media screen and (max-width: 29.875rem) {
     flex-direction: column;
     align-items: flex-start;
   }
+}
+.open {
+  border-radius: calc(0.5rem - 2px) calc(0.5rem - 2px) 0 0;
+  border-bottom: 2px solid var(--primary-30);
 }
 
 .info {

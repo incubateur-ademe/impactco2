@@ -28,6 +28,7 @@ const getValue = (equivalent: ComputedEquivalent, params: Params, type?: Transpo
 }
 
 const CategorySimulator = ({
+  id,
   tracking,
   equivalents,
   displayAll,
@@ -37,6 +38,7 @@ const CategorySimulator = ({
   type,
   reverse,
 }: {
+  id?: string
   tracking: string
   equivalents: ComputedEquivalent[]
   displayAll?: boolean
@@ -81,7 +83,7 @@ const CategorySimulator = ({
 
   return (
     <div className={styles.container}>
-      <ul ref={ref} id='category-equivalents-list'>
+      <ul ref={ref} id={`category-${id || ''}-equivalents-list`}>
         {equivalents &&
           equivalents
             .sort((a, b) => (getValue(a, initialParams, type) - getValue(b, initialParams, type)) * (reverse ? -1 : 1))
@@ -155,6 +157,7 @@ const CategorySimulator = ({
       </ul>
       {setDisplayAll && displayAll !== undefined && moreText && (
         <CategoryDisplayAll
+          id={id}
           tracking={tracking}
           displayAll={displayAll}
           setDisplayAll={setDisplayAll}

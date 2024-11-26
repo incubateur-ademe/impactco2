@@ -1,5 +1,6 @@
+import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
-import React, { useMemo } from 'react'
+import { useMemo } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { ComputedEquivalent } from 'types/equivalent'
 import { getName } from 'utils/Equivalent/equivalent'
@@ -36,7 +37,7 @@ const AlimentationSubCategory = ({
     <div className={styles.box}>
       <button
         data-testid={`alimentation-category-${name}`}
-        className={styles.button}
+        className={classNames(styles.button, { [styles.open]: display })}
         aria-expanded={display}
         aria-controls={`alimentation-category-${name}`}
         onClick={() => toggleCategories(name)}>
@@ -83,11 +84,13 @@ const AlimentationSubCategory = ({
           )
         )}
       </button>
-      {display && (
-        <div id={`alimentation-category-${name}`} className={styles.categories}>
-          <CategorySimulator tracking='Alimentation' equivalents={equivalents} withSimulator reverse />
-        </div>
-      )}
+      <div id={`alimentation-category-${name}`}>
+        {display && (
+          <div className={styles.categories}>
+            <CategorySimulator id={name} tracking='Alimentation' equivalents={equivalents} withSimulator reverse />
+          </div>
+        )}
+      </div>
     </div>
   )
 }
