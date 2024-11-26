@@ -8,7 +8,7 @@ const FRAlimentationData = () => {
       <h2 className={styles.title}>Méthodologie</h2>
       <div className={styles.content}>
         <p>
-          L’ensemble des données et des calculs sont issus de la base de données de l’ADEME{' '}
+          L’ensemble des données et des calculs est issu de la base de données de l’ADEME{' '}
           <Link href='https://agribalyse.ademe.fr/'>Agribalyse</Link>. Pour une majorité des aliments nous avons repris
           les données affichées telles quelles dans la base de données.
         </p>

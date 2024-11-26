@@ -141,7 +141,7 @@ export const categories: Category[] = [
         href: 'https://agribalyse.ademe.fr/app',
       },
     ],
-    description: 'Pour aborder l’impact carbone de l’alimentation',
+    description: 'Communiquer l’impact carbone de l’alimentation',
     unit: 'kg',
     equivalents: [...computedEquivalents('alimentation', alimentation), ...computedEquivalents('alimentation', repas)],
   },
