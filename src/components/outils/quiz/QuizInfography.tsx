@@ -1,5 +1,6 @@
 import classNames from 'classnames'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
+import useParamContext from 'src/providers/ParamProvider'
 import { useTranslations } from 'use-intl'
 import Shareable from 'components/shareable/Shareable'
 import { overScreenQuizInfographyValues } from 'components/shareable/overScreens/Values'
@@ -7,12 +8,14 @@ import shareableStyles from '../../shareable/Shareable.module.css'
 import CategoryDisplayAll from '../CategoryDisplayAll'
 import CategorySimulator from '../CategorySimulator'
 import styles from './QuizInfography.module.css'
-import { quizEquivalents } from './question.config'
+import { getQuizEquivalents } from './question.config'
 
 const QuizInfography = () => {
+  const { language } = useParamContext()
   const t = useTranslations('quiz')
   const [displayAll, setDisplayAll] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
+  const equivalents = useMemo(() => getQuizEquivalents(language), [language])
 
   useEffect(() => {
     if (ref.current) {
@@ -33,7 +36,7 @@ const QuizInfography = () => {
         <p className={styles.text}>{t('infography')}</p>
         <Shareable slug='quiz-infographie' tracking='Quiz infographie' overScreens={overScreenQuizInfographyValues}>
           <div ref={ref}>
-            <CategorySimulator tracking='Quiz infographie' equivalents={quizEquivalents} reverse />
+            <CategorySimulator tracking='Quiz infographie' equivalents={equivalents} reverse />
           </div>
         </Shareable>
       </div>

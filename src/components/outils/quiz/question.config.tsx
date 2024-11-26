@@ -1,5 +1,7 @@
 import { computedEquivalents } from 'src/providers/equivalents'
+import { ComputedEquivalent, Language } from 'types/equivalent'
 import { Question } from 'types/question'
+import { getNameWithoutSuffix } from 'utils/Equivalent/equivalent'
 import AvocatPoisson from './infos/AvocatPoisson'
 import BoeufTGV from './infos/BoeufTGV'
 import EauThe from './infos/EauThe'
@@ -24,8 +26,27 @@ export const questions: Question[] = [
   { answer: 'A', slugA: 'veloelectrique', valueA: 10, slugB: 'mangue', moreInfo: <VeloMangue />, last: true },
 ]
 
-export const quizEquivalents = computedEquivalents
-  .filter((equivalent) =>
-    questions.some((question) => question.slugA === equivalent.slug || question.slugB === equivalent.slug)
-  )
-  .filter((value, index, array) => array.findIndex((t) => t.slug === value.slug) === index)
+export const getQuizEquivalents = (language: Language) =>
+  questions
+    .flatMap((question) => [
+      {
+        ...(computedEquivalents.find((equivalent) => equivalent.slug === question.slugA) as ComputedEquivalent),
+        number: question.valueA || undefined,
+      },
+      {
+        ...(computedEquivalents.find((equivalent) => equivalent.slug === question.slugB) as ComputedEquivalent),
+        number: question.valueB || undefined,
+      },
+    ])
+    .map((equivalent) => {
+      console.log(equivalent)
+      return equivalent.number
+        ? {
+            ...equivalent,
+            name: `${equivalent.number} ${getNameWithoutSuffix(language, equivalent, true, equivalent.number, true)}`,
+            value: equivalent.value * equivalent.number,
+            number: undefined,
+          }
+        : equivalent
+    })
+    .filter((value, index, array) => array.findIndex((t) => t.slug === value.slug) === index)
