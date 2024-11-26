@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import React, { MouseEvent, useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react'
+import { MouseEvent, useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react'
 import { track } from 'utils/matomo'
 import RefreshIcon from 'components/base/icons/refresh'
 import { getRandomEquivalentForValue } from 'components/comparateur/randomEtiquette'
@@ -160,6 +160,7 @@ const Detector = ({ impact, language }: { impact: string; language: 'fr' | 'en' 
   return (
     <div className={styles.container} ref={ref}>
       <button
+        aria-expanded={!!display}
         className={classNames(styles.value, 'impactCO2-etiquette-detected-value')}
         onClick={onClick}
         dangerouslySetInnerHTML={{

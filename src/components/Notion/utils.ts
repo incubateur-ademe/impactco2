@@ -6,7 +6,7 @@ export const getNotionContentProps = async (id: string) => {
 }
 
 export const improveAccessibility = (ref: HTMLDivElement) => {
-  const elements = ref.getElementsByTagName('img')
+  const elements = ref.getElementsByTagName('svg')
   for (const element of elements) {
     element.setAttribute('alt', '')
   }

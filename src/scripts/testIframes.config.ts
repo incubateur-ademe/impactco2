@@ -2,7 +2,6 @@ import { FrameLocator, Page } from '@playwright/test'
 import { expect } from '@playwright/test'
 import { comparateurTest } from '../../teste/comparateur'
 import { detecteurCO2Test } from '../../teste/detecteur-co2'
-import { distanceComparisonTest, distanceTest } from '../../teste/distance'
 import { itineraireTest } from '../../teste/itineraire'
 import { usageNumeriqueTest } from '../../teste/usagenumerique'
 
@@ -144,13 +143,7 @@ export const checks = [
         { timeout: 10000 }
       )
       await iframe.getByLabel('Arrivée').clear({ force: true })
-
-      await distanceTest(iframe, true)
-      await iframe.getByTestId('cancel-button').click()
-      await iframe.getByText('Distance').first().click()
-      await iframe.getByText('Comparaison').click()
-      await iframe.getByTestId('input-km-value').fill('10')
-      await distanceComparisonTest(iframe, true)
+      await itineraireTest(iframe, true)
     },
   },
   {
