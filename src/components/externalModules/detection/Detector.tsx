@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import { MouseEvent, useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react'
+import React, { MouseEvent, useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react'
 import { track } from 'utils/matomo'
 import RefreshIcon from 'components/base/icons/refresh'
 import { getRandomEquivalentForValue } from 'components/comparateur/randomEtiquette'
