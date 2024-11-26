@@ -90,7 +90,8 @@ const Detector = ({ impact, language }: { impact: string; language: 'fr' | 'en' 
   const etiquetteRef = useRef<HTMLDivElement>(null)
 
   // inspired from https://usehooks-ts.com/react-hook/use-intersection-observer
-  const [entry, setEntry] = useState<IntersectionObserverEntry>()
+  // Pas ouf de mettre React ici, mais sinon il est considere comme inutilisé et ca plante...
+  const [entry, setEntry] = React.useState<IntersectionObserverEntry>()
   const [observed, setObserved] = useState(false)
 
   useEffect(() => {

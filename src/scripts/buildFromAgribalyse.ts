@@ -6,7 +6,6 @@ import { BoissonEquivalent, EquivalentValue, FruitsEtLegumesEquivalent } from '.
 
 enum AgrybalisePrefixEnum {
   ChangementClimatique = 'Changement_climatique_-_',
-  ScoreUniqueEF = 'Score_unique_EF_-_',
 }
 
 const existingEquivalentsByCategory: Record<
@@ -30,19 +29,8 @@ const agrybaliseValues = [
   'Code_CIQUAL',
   'Code_AGB',
   "Sous-groupe_d'aliment",
-  ...Object.keys(finalitiesId).flatMap((finality) => [
-    AgrybalisePrefixEnum.ChangementClimatique + finality,
-    AgrybalisePrefixEnum.ScoreUniqueEF + finality,
-  ]),
+  ...Object.keys(finalitiesId).flatMap((finality) => [AgrybalisePrefixEnum.ChangementClimatique + finality]),
 ]
-
-function sumValues(prefix: AgrybalisePrefixEnum, value: Record<string, number>) {
-  let res = 0
-  Object.keys(finalitiesId).forEach((finality) => {
-    res += value[`${prefix}${finality}`]
-  })
-  return res
-}
 
 const updateEquivalents = (
   equivalents: (BoissonEquivalent | FruitsEtLegumesEquivalent)[],
@@ -71,13 +59,9 @@ const updateEquivalents = (
     }
     console.log(`${equivalent.slug}: "${value["Sous-groupe_d'aliment"]}",`)
 
-    const finalC02 = sumValues(AgrybalisePrefixEnum.ChangementClimatique, value)
-    const finalEF = sumValues(AgrybalisePrefixEnum.ScoreUniqueEF, value)
-    const delta = finalC02 / finalEF
-
     const newEcvs: EquivalentValue[] = []
     Object.entries(finalitiesId).forEach(([finality, id]) => {
-      const ecv = value[`${AgrybalisePrefixEnum.ScoreUniqueEF}${finality}`] * delta
+      const ecv = value[`${AgrybalisePrefixEnum.ChangementClimatique}${finality}`]
       if (ecv !== 0) {
         newEcvs.push({
           id,
