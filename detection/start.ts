@@ -60,12 +60,12 @@ const transformText = (element: Element, language: 'fr' | 'en', darkMode?: boole
 }
 export const initMatomo = () => {
   //@ts-expect-error: Matomo redefinition
-  const _paq = (window._paq = window._paq || [])
+  const _paq_impact_co2 = (window._paq_impact_co2 = window._paq_impact_co2 || [])
   ;(function () {
     //@ts-expect-error: injected MATOMO_SITE_URL, MATOMO_SITE_ID constant from env var, see webpack.config.js
     const u = MATOMO_SITE_URL
     //@ts-expect-error: injected MATOMO_SITE_URL, MATOMO_SITE_ID constant from env var, see webpack.config.js
-    _paq.push(['addTracker', u + '/matomo.php', MATOMO_SITE_ID])
+    _paq_impact_co2.push(['addTracker', u + '/matomo.php', MATOMO_SITE_ID])
 
     const d = document,
       g = d.createElement('script'),
