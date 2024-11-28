@@ -49,7 +49,7 @@ const ColumnEquivalent = ({
           </div>
           <div className={baseStyles.label}>{unit} CO₂e</div>
         </div>
-        <Logo value={preciseValue * 1000} right />
+        <Logo value={preciseValue} right />
       </div>
       <div className={baseStyles.rightColumn}>
         <div className={isAnimated ? baseStyles.animatedEqualColumn : baseStyles.equalColumn}>
