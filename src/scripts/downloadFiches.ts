@@ -1,8 +1,9 @@
 import { Page, chromium } from '@playwright/test'
 import fs from 'fs'
 import pdftk from 'node-pdftk'
+import alimentation from '../data/categories/alimentation.json'
 
-const equivalents = [
+const quizEquivalents = [
   { category: 'alimentation', equivalent: 'repasavecduboeuf' },
   { category: 'caspratiques', equivalent: 'tgv-paris-marseille' },
   { category: 'numerique', equivalent: 'tabletteclassique' },
@@ -24,6 +25,18 @@ const equivalents = [
   { category: 'transport', equivalent: 'veloelectrique' },
   { category: 'fruitsetlegumes', equivalent: 'mangue' },
 ]
+
+const alimentationEquivalents = alimentation.map((equivalent) => ({
+  category:
+    equivalent.category === 2
+      ? 'alimentation'
+      : equivalent.category === 3
+        ? 'boisson'
+        : equivalent.category === 9
+          ? 'fruitsetlegumes'
+          : 'undefined',
+  equivalent: equivalent.slug,
+}))
 
 const downloadPage = async (page: Page, url: string, output: string) => {
   await page.goto(url, { timeout: 60000 })
@@ -59,9 +72,11 @@ const downloadEquivalent = async (page: Page, category: string, equivalent: stri
     })
 }
 
-const download = async () => {
+const download = async (type: string) => {
   const browser = await chromium.launch()
   const page = await browser.newPage()
+
+  const equivalents = type === 'quiz' ? quizEquivalents : alimentationEquivalents
 
   for (let i = 0; i < equivalents.length; i++) {
     const { equivalent, category } = equivalents[i]
@@ -72,4 +87,4 @@ const download = async () => {
   browser.close()
 }
 
-download()
+download(process.argv[2])

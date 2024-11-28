@@ -28,6 +28,7 @@
     "postbuild": "next-sitemap",
     "webpack": "dotenv -e .env webpack",
     "stats": "dotenv -e .env ts-node src/scripts/getStats.ts",
+    "stats:yearly": "dotenv -e .env ts-node src/scripts/getYearlyStats.ts",
     "start": "next start",
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
