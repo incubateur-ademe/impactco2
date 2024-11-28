@@ -83,10 +83,10 @@ export const initMatomo = () => {
   window.please.track = function (ary) {
     //@ts-expect-error: Matomo redefinition
     const matomo = window.Matomo
-    if (matomo) {
+    if (matomo && ary[0] === 'trackEvent') {
       //@ts-expect-error: injected MATOMO_SITE_URL, MATOMO_SITE_ID constant from env var, see webpack.config.js
       const matomoTracker = matomo.getTracker(MATOMO_SITE_URL + '/matomo.php', MATOMO_SITE_ID)
-      matomoTracker.trackEvent(ary[0], ary[1], ary[2], ary[3])
+      matomoTracker.trackEvent(ary[1], ary[2], ary[3])
     }
   }
 }
