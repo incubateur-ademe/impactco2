@@ -26,7 +26,7 @@
     "build": "yarn webpack && next build",
     "build:analyze": "ANALYZE=true next build",
     "postbuild": "next-sitemap",
-    "webpack": "dotenv -e .env.local webpack",
+    "webpack": "dotenv -e .env webpack",
     "stats": "dotenv -e .env ts-node src/scripts/getStats.ts",
     "start": "next start",
     "lint": "next lint",
@@ -36,7 +36,7 @@
     "testIframes": "npx playwright install chromium; npx ts-node -r dotenv/config src/scripts/testIframes.ts"
   },
   "engines": {
-    "node": ">22",
+    "node": ">22.0.0",
     "yarn": "1.22"
   },
   "dependencies": {
