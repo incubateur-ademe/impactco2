@@ -352,8 +352,6 @@
     "Approvisionnement": "Abastecimiento",
     "hypothesis": {
       "pre": {
-        "the": "Suponemos una taza de 250ml (simplificada aquí como 250mg).",
-        "cafe": "Suponemos una taza de 250ml (simplificada aquí como 250mg).",
         "avion-pny": "Distancia total recorrida: 11,600 km.",
         "tgv-paris-berlin": "Distancia total recorrida: 2,478 km.",
         "tgv-paris-marseille": "Distancia total recorrida: 1,504 km.",
