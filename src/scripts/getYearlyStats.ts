@@ -43,6 +43,19 @@ export const getMatomoStats = async () => {
       .filter((event) => event.label.startsWith('Quiz_'))
       .reduce((acc, event) => acc + event.nb_events, 0)
   )
+
+  console.log(
+    'Vue iframe comparateur :',
+    allEventsByCategory
+      .filter((event) => event.Events_EventAction && event.Events_EventAction.includes('iframes/comparateur?'))
+      .reduce((acc, event) => acc + event.nb_visits, 0)
+  )
+  console.log(
+    'Vue iframe transport :',
+    allEventsByCategory
+      .filter((event) => event.Events_EventAction && event.Events_EventAction.includes('iframes/transport'))
+      .reduce((acc, event) => acc + event.nb_visits, 0)
+  )
 }
 
 getMatomoStats()
