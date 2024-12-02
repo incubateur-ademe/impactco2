@@ -1,4 +1,5 @@
 import { Category } from 'types/category'
+import { alimentation } from './categories/alimentation'
 import { boissons } from './categories/boisson'
 import { casPratiques } from './categories/caspratiques'
 import { chauffage } from './categories/chauffage'
@@ -130,19 +131,19 @@ export const categories: Category[] = [
   },
   {
     id: 2,
-    name: 'Repas',
-    tool: 'Impact Repas',
-    slug: 'repas',
+    name: 'Alimentation',
+    tool: 'Impact Alimentation',
+    slug: 'alimentation',
     synonyms: ['manger', 'alimenter'],
     sources: [
       {
-        label: 'Base Empreinte ADEME',
-        href: 'https://base-empreinte.ademe.fr/donnees/jeu-donnees',
+        label: 'Agribalyse 3.1.1 - Mise à jour le 10/08/2023',
+        href: 'https://agribalyse.ademe.fr/app',
       },
     ],
-    description: 'Pour aborder l’impact carbone de l’alimentation',
-    unit: 'repas',
-    equivalents: computedEquivalents('repas', repas),
+    description: 'Communiquer sur l’impact carbone de l’alimentation',
+    unit: 'kg',
+    equivalents: [...computedEquivalents('alimentation', alimentation), ...computedEquivalents('alimentation', repas)],
   },
   {
     id: 5,

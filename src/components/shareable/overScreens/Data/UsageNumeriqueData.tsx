@@ -1,4 +1,3 @@
-import React from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import NewTabIcon from 'components/base/NewTabIcon'
 import Link from 'components/base/buttons/Link'
@@ -9,7 +8,7 @@ const FRUsageNumeriqueData = () => {
     <>
       <div className={styles.content}>
         <p>
-          L'ensemble des calculs sont issus d'une{' '}
+          L'ensemble des calculs est issu d'une{' '}
           <Link href='https://base-empreinte.ademe.fr/documentation/base-impact'>étude réalisée par NégaOctet</Link>
         </p>
       </div>

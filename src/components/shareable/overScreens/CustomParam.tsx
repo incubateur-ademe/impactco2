@@ -3,6 +3,7 @@ import { useTranslations } from 'next-intl'
 import React, { Dispatch, SetStateAction } from 'react'
 import { Equivalent } from 'types/equivalent'
 import { deplacements } from 'data/categories/deplacement'
+import { AlimentationCategories } from 'utils/alimentation'
 import formatName from 'utils/formatName'
 import { track } from 'utils/matomo'
 import { monthsOptions } from 'utils/months'
@@ -12,6 +13,8 @@ import Checkbox from 'components/form/Checkbox'
 import CheckboxInput from 'components/form/CheckboxInput'
 import HiddenLabel from 'components/form/HiddenLabel'
 import Input from 'components/form/Input'
+import Radio from 'components/form/Radio'
+import RadioInput from 'components/form/RadioInput'
 import Select from 'components/form/Select'
 import SelectEquivalent from 'components/form/SelectEquivalent'
 import AddressInput from 'components/form/addresses/AddressInput'
@@ -20,7 +23,7 @@ import styles from './CustomParam.module.css'
 const configs: Record<
   string,
   {
-    type: 'number' | 'text' | 'select' | 'select-number' | 'select-equivalent' | 'boolean' | 'checkbox'
+    type: 'number' | 'text' | 'select' | 'select-number' | 'select-equivalent' | 'boolean' | 'checkbox' | 'radio'
     equivalents?: Equivalent[]
     unit?: string
     min?: number
@@ -29,6 +32,26 @@ const configs: Record<
     values?: string[]
   }
 > = {
+  alimentationCategoryIntegrate: {
+    type: 'radio',
+    options: Object.values(AlimentationCategories).map((category) => ({
+      value: category,
+      label: category,
+    })),
+  },
+  alimentationCategory: {
+    type: 'radio',
+    options: Object.values(AlimentationCategories).map((category) => ({
+      value: category,
+      label: category,
+    })),
+  },
+  customList: {
+    type: 'boolean',
+  },
+  hideButtons: {
+    type: 'boolean',
+  },
   transport: { type: 'select-equivalent', equivalents: deplacements },
   presentiel: { type: 'number', unit: 'jour', min: 0, max: 7 },
   homeOffice: { type: 'number', unit: 'jour', min: 0, max: 7 },
@@ -90,6 +113,7 @@ const CustomParam = ({
   visible,
   setVisible,
   integration,
+  disabled,
 }: {
   tracking: string
   slug: string
@@ -97,13 +121,14 @@ const CustomParam = ({
   visible: boolean
   setVisible?: (visbile: boolean) => void
   integration?: boolean
+  disabled?: boolean
 }) => {
   const t = useTranslations('overscreen')
   if ('setter' in param) {
     const config = configs[slug]
     return (
       <div className={styles.container}>
-        {config.type !== 'boolean' && config.type !== 'checkbox' && setVisible && (
+        {config.type !== 'boolean' && config.type !== 'checkbox' && config.type !== 'radio' && setVisible && (
           <CheckboxInput
             id={`${slug}.title`}
             checked={visible}
@@ -119,25 +144,40 @@ const CustomParam = ({
             </HiddenLabel>
           )}
           {config.options ? (
-            <Select
-              required
-              padding='sm'
-              label={setVisible ? '' : t(`${slug}.label`)}
-              inline={!setVisible}
-              id={slug}
-              disabled={!visible}
-              value={param.value.toString()}
-              onChange={(event) => {
-                track(tracking, `Custom value ${slug}`, JSON.stringify(event.target.value))
-                param.setter(config.type === 'select' ? event.target.value : Number(event.target.value))
-              }}
-              data-testid={`custom-param-${slug}-select`}>
-              {config.options.map((option) => (
-                <option value={option.value} key={option.value}>
-                  {t(`${slug}.${option.label}`)}
-                </option>
-              ))}
-            </Select>
+            config.type === 'radio' ? (
+              <Radio id={slug} label={t(`${slug}.title`)} required>
+                {config.options.map((option) => (
+                  <RadioInput
+                    key={option.value}
+                    value={option.value as string}
+                    selected={param.value as string}
+                    setSelected={(value) => param.setter(value as string)}
+                    label={t(`${slug}.${option.label}`)}
+                    disabled={disabled}
+                  />
+                ))}
+              </Radio>
+            ) : (
+              <Select
+                required
+                padding='sm'
+                label={setVisible ? '' : t(`${slug}.label`)}
+                inline={!setVisible}
+                id={slug}
+                disabled={!visible}
+                value={param.value.toString()}
+                onChange={(event) => {
+                  track(tracking, `Custom value ${slug}`, JSON.stringify(event.target.value))
+                  param.setter(config.type === 'select' ? event.target.value : Number(event.target.value))
+                }}
+                data-testid={`custom-param-${slug}-select`}>
+                {config.options.map((option) => (
+                  <option value={option.value} key={option.value}>
+                    {t(`${slug}.${option.label}`)}
+                  </option>
+                ))}
+              </Select>
+            )
           ) : config.equivalents ? (
             <>
               <SelectEquivalent

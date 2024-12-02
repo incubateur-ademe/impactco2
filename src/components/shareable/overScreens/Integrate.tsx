@@ -72,6 +72,9 @@ const Integrate = ({
       if (category.slug === 'chauffage') {
         return { m2: { value: m2, setter: setM2 } } as Record<string, CustomParamValue>
       }
+      if (category.slug === 'chauffage') {
+        return { m2: { value: m2, setter: setM2 } } as Record<string, CustomParamValue>
+      }
       if (category.slug === 'fruitsetlegumes') {
         return { month: { value: month, setter: setMonth } } as Record<string, CustomParamValue>
       }
@@ -111,7 +114,7 @@ const Integrate = ({
 
   return params && visibility ? (
     <>
-      <form id={`${category}-integrate`}>
+      <form id={`${category?.slug}-integrate`}>
         <CustomParams
           integration
           tracking={tracking}
@@ -134,7 +137,7 @@ const Integrate = ({
           visible
         />
       </form>
-      <ClipboardBox form={`${category}-integrate`} tracking={tracking}>{`<script name="impact-co2" src="${
+      <ClipboardBox form={`${category?.slug}-integrate`} tracking={tracking}>{`<script name="impact-co2" src="${
         process.env.NEXT_PUBLIC_URL
       }/iframe.js" data-type="${path}" data-search="?${urlParams}"></script>`}</ClipboardBox>
       <IntegratePreview path={path} urlParams={urlParams} />

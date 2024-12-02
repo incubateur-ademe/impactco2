@@ -20,7 +20,11 @@ const RadioInput = ({
 } & InputHTMLAttributes<HTMLInputElement>) => {
   return (
     <div className={styles.container}>
-      <label className={classNames(styles.legend, { [styles.checked]: selected === value })}>
+      <label
+        className={classNames(styles.legend, {
+          [styles.checked]: selected === value,
+          [styles.disabled]: inputProps.disabled,
+        })}>
         <input
           {...inputProps}
           type='radio'

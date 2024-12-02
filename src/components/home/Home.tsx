@@ -16,7 +16,13 @@ const Home = () => {
     <>
       <Block>
         <h1 className={styles.title}>Les bons outils pour communiquer sur l’impact carbone</h1>
-        <ToolCards tools={[quiz, ...tools.slice(0, 2)]} />
+        <ToolCards
+          tools={[
+            tools.find((tool) => tool.slug === 'alimentation'),
+            quiz,
+            tools.find((tool) => tool.slug === 'comparateur'),
+          ]}
+        />
         <div className={styles.link}>
           <Link href='/outils'>Voir tous les outils</Link>
         </div>
