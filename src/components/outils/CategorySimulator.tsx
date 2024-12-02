@@ -1,7 +1,9 @@
+'use client'
+
 import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
-import React, { Dispatch, SetStateAction, useEffect, useMemo, useRef, useState } from 'react'
+import { Dispatch, SetStateAction, useEffect, useMemo, useRef, useState } from 'react'
 import useParamContext, { Params } from 'src/providers/ParamProvider'
 import { ComputedEquivalent } from 'types/equivalent'
 import { TransportSimulateur } from 'types/transport'
@@ -33,6 +35,7 @@ const CategorySimulator = ({
   moreText,
   withSimulator,
   type,
+  reverse,
 }: {
   tracking: string
   equivalents: ComputedEquivalent[]
@@ -41,6 +44,7 @@ const CategorySimulator = ({
   moreText?: string
   withSimulator?: boolean
   type?: TransportSimulateur
+  reverse?: boolean
 }) => {
   const params = useParamContext()
   const t = useTranslations('category-simulator')
@@ -80,7 +84,7 @@ const CategorySimulator = ({
       <ul ref={ref} id='category-equivalents-list'>
         {equivalents &&
           equivalents
-            .sort((a, b) => getValue(a, initialParams, type) - getValue(b, initialParams, type))
+            .sort((a, b) => (getValue(a, initialParams, type) - getValue(b, initialParams, type)) * (reverse ? -1 : 1))
             .map((equivalent, index) => {
               const usagePercent = (100 * formatUsage(equivalent)) / equivalent.value
               const barExplanation = `usage : ${usagePercent.toFixed(0)}% et construction : ${(100 - usagePercent).toFixed(0)}%`

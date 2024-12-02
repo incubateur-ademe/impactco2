@@ -1,0 +1,20 @@
+.category {
+  padding: 2rem 1.5rem;
+  max-height: 19.5rem;
+  overflow: hidden;
+}
+
+.displayAll {
+  max-height: none;
+  overflow: auto;
+}
+
+.text {
+  text-align: center;
+  color: var(--neutral-50);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
