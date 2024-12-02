@@ -9,6 +9,7 @@ import { TransportSimulateur } from 'types/transport'
 import { deplacements } from 'data/categories/deplacement'
 import { comparisons } from 'components/outils/TransportComparisonSimulator'
 import { displayAddress } from 'utils/address'
+import { AlimentationCategories } from 'utils/alimentation'
 import { slugs } from 'utils/months'
 import { searchAddress } from 'hooks/useAddress'
 import { Point } from 'hooks/useItineraries'
@@ -88,6 +89,14 @@ export type Params = {
   setTheme: Dispatch<SetStateAction<string>>
   language: SiteLanguage
   setLanguage: Dispatch<SetStateAction<SiteLanguage>>
+  alimentation: {
+    category: AlimentationCategories
+    setCategory: Dispatch<SetStateAction<AlimentationCategories>>
+    customList: boolean
+    setCustomList: Dispatch<SetStateAction<boolean>>
+    equivalents: string[]
+    setEquivalents: Dispatch<SetStateAction<string[]>>
+  }
   livraison: {
     values: LivraisonValues
     setValues: Dispatch<SetStateAction<LivraisonValues>>
@@ -225,6 +234,11 @@ export function ParamProvider({ children }: { children: ReactNode }) {
       }
     }
   }
+  // Alimentation
+  const [category, setCategory] = useState(AlimentationCategories.Group)
+  const [customList, setCustomList] = useState(false)
+  const [alimentationEquivalents, setAlimentationEquivalents] = useState<string[]>([])
+
   // Livraison
   const [livraisonValues, setLivraisonValues] = useState(livraisonDefaultValues)
   const [livraisonEquivalents, setLivraisonEquivalents] = useState<string[]>([])
@@ -335,6 +349,19 @@ export function ParamProvider({ children }: { children: ReactNode }) {
       setLanguage(language)
     } else {
       setLanguage('fr')
+    }
+
+    if (searchParams.get('alimentationCategory')) {
+      const category = searchParams.get('alimentationCategory') as AlimentationCategories
+      if (Object.values(AlimentationCategories).includes(category)) {
+        setCategory(category)
+      }
+    }
+
+    if (searchParams.get('alimentationEquivalents')) {
+      const equivalents = searchParams.get('alimentationEquivalents')?.split(',') as string[]
+      setCustomList(true)
+      setAlimentationEquivalents(equivalents)
     }
 
     if (searchParams.get('value')) {
@@ -505,6 +532,14 @@ export function ParamProvider({ children }: { children: ReactNode }) {
         setTheme,
         language,
         setLanguage,
+        alimentation: {
+          category,
+          setCategory,
+          customList,
+          setCustomList,
+          equivalents: alimentationEquivalents,
+          setEquivalents: setAlimentationEquivalents,
+        },
         livraison: {
           values: livraisonValues,
           setValues: setLivraisonValues,

@@ -43,12 +43,12 @@ const Resource = ({
         />
       </div>
       <div className={styles.content}>
-        <div className={styles.text}>{t(text)}</div>
+        <p className={styles.text}>{t(text)}</p>
         {withLink && (
-          <div className={styles.fakeLink}>
+          <p className={styles.fakeLink}>
             <span className='text-sm'>{withLink}</span>
             <NewTabIcon />
-          </div>
+          </p>
         )}
       </div>
     </IframeableLink>

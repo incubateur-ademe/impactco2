@@ -8,7 +8,7 @@ const FRFruitsEtLegumesData = () => {
     <>
       <div className={styles.content}>
         <p>
-          L'ensemble des calculs sont issus de la base de données{' '}
+          L'ensemble des calculs est issu de la base de données{' '}
           <Link href='https://agribalyse.ademe.fr/'>Agrybalise</Link>
         </p>
       </div>

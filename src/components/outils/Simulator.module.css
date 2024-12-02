@@ -23,6 +23,10 @@
   @media screen and (max-width: 29.875rem) {
     padding: 1.5rem 1rem;
   }
+
+  b {
+    color: var(--neutral-80);
+  }
 }
 
 .distanceSimulator {
