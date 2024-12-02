@@ -1,5 +1,5 @@
 import { useTranslations } from 'next-intl'
-import React, { ForwardedRef, forwardRef, useEffect, useState } from 'react'
+import { ForwardedRef, forwardRef, useEffect, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { ComputedEquivalent } from 'types/equivalent'
 import { getName } from 'utils/Equivalent/equivalent'
@@ -34,7 +34,9 @@ const Checkbox = (
   }
 
   useEffect(() => {
-    setInteracted(false)
+    if (interacted) {
+      setInteracted(false)
+    }
   }, [equivalents])
 
   return (
