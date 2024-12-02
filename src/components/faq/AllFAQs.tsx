@@ -103,6 +103,15 @@ const AllFAQs = ({ faqs }: { faqs: FAQ[] }) => {
           </>
         }
       />
+      <FAQsList
+        faqs={filteredFaqs.filter((faq) => faq.section === 'Alimentation')}
+        title='Alimentation'
+        description={
+          <>
+            Questions fréquentes à propos de l’outil <Link href='/outils/alimentation'>Alimentation</Link>
+          </>
+        }
+      />
       <Block>
         <ul>
           <ToolCard
