@@ -3,7 +3,7 @@
   justify-content: center;
   gap: 0.75rem;
 
-  > div {
+  div {
     width: calc(100% - 0.325rem);
   }
 
