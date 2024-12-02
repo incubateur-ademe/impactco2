@@ -454,10 +454,10 @@ export const overScreenCategoryValues: (category: Category) => Record<string, Ov
         children: (
           <div className={styles.ressourceContainer}>
             <Resource
-              image='/images/agir.png'
-              text='agir'
-              href='https://agirpourlatransition.ademe.fr/particuliers/conso/alimentation/mieux-manger-chassez-fausses-idees'
-              withLink='Agir pour la transition (ADEME)'
+              image='/images/agir-alimentation.png'
+              text='agir-alimentation'
+              href='https://librairie.ademe.fr/agriculture-alimentation-foret-bioeconomie/7617-tout-comprendre-une-alimentation-plus-durable.html'
+              withLink='ADEME'
               tracking='Alimentation'
             />
             <Resource
