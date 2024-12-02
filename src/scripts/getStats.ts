@@ -32,7 +32,7 @@ export const getMatomoStats = async (date: string) => {
   const [allVisits, allEventsByCategory, allEventsByAction, lastWeekEventsByCategory] = await Promise.all([
     await axios
       .post<
-        { label: string; nb_visits: number }[]
+        { label: string; nb_visits: number; url: string }[]
       >(`${process.env.NEXT_PUBLIC_MATOMO_SITE_URL}?idSite=${process.env.NEXT_PUBLIC_MATOMO_SITE_ID}&method=Actions.getPageUrls&format=JSON&module=API&period=week&date=${date}&showColumns=nb_visits&filter_limit=-1&flat=1`)
       .then((response) => response.data),
     await axios
@@ -52,11 +52,15 @@ export const getMatomoStats = async (date: string) => {
       .then((response) => response.data),
   ])
 
+  const impactco2Visits = allVisits.filter(
+    (page) =>
+      page.url && (page.url.startsWith('https://impactco2.fr/') || page.url.startsWith('https://www.impactco2.fr/'))
+  )
   const iframes = allEventsByCategory.filter((event) => event.label.startsWith('IFrame_'))
   const lastWeekIframes = lastWeekEventsByCategory.filter((event) => event.label.startsWith('IFrame_'))
 
   const internalVisits: Record<string, number> = {}
-  allVisits.forEach((page) => {
+  impactco2Visits.forEach((page) => {
     const segments = page.label.split('?')
     const key = (segments[0].startsWith('/') ? segments[0].slice(1) : segments[0]).replace('outils/', '')
     if (internalPages.includes(key)) {
@@ -82,7 +86,7 @@ export const getMatomoStats = async (date: string) => {
     })
 
   const results = {
-    visits: allVisits.reduce((acc, visit) => acc + visit.nb_visits, 0),
+    visits: impactco2Visits.reduce((acc, visit) => acc + visit.nb_visits, 0),
     iframes: iframes.reduce((acc, visit) => acc + visit.nb_visits, 0),
     api: allEventsByCategory
       .filter(

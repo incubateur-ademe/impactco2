@@ -189,6 +189,17 @@ export const overScreenOsezChangerValues: () => Record<string, OverScreenInfo> =
   }
 }
 
+export const overScreenQuizInfographyValues = {
+  partager: {
+    title: 'share',
+    children: <Share tracking='Quiz infographie' path='iframes/quiz-infographie' />,
+  },
+  integrer: {
+    title: 'integrate',
+    children: <Integrate path='quiz-infographie' tracking='Quiz infographie' />,
+  },
+}
+
 export const overScreenCategoryValues: (category: Category) => Record<string, OverScreenInfo> = (category) => {
   const values = {
     partager: {

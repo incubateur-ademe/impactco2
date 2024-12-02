@@ -1,11 +1,12 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { useSearchEquivalent } from 'src/providers/useSearchEquivalent'
 import { categories } from 'data/categories'
 import { track } from 'utils/matomo'
+import useDebounce from 'hooks/useDebounce'
 import Button from 'components/base/buttons/Button'
 import SearchIcon from 'components/base/icons/search'
 import HiddenLabel from 'components/form/HiddenLabel'
@@ -29,9 +30,13 @@ const EquivalentsOverscreen = () => {
   }, [equivalents])
 
   const [search, setSearch] = useState('')
-  const results = useSearchEquivalent(search, true)
+
+  const debouncedSearch: string = useDebounce(search)
+  const results = useSearchEquivalent(debouncedSearch, true, undefined, true)
+
   const t = useTranslations('comparateur.overscreen')
   const tModal = useTranslations('modal')
+
   return (
     <>
       <div className={styles.header}>
@@ -62,7 +67,7 @@ const EquivalentsOverscreen = () => {
           {tModal('close')}
         </Button>
       </div>
-      {search ? (
+      {debouncedSearch ? (
         results.length > 0 ? (
           <ul className={styles.content}>
             <Equivalents

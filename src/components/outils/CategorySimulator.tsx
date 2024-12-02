@@ -3,7 +3,7 @@
 import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
-import React, { Dispatch, SetStateAction, useEffect, useMemo, useRef, useState } from 'react'
+import { Dispatch, SetStateAction, useEffect, useMemo, useRef, useState } from 'react'
 import useParamContext, { Params } from 'src/providers/ParamProvider'
 import { ComputedEquivalent } from 'types/equivalent'
 import { TransportSimulateur } from 'types/transport'

@@ -1,5 +1,8 @@
 {
   "quiz": {
+    "infography": "REVOIR LES ORDRES DE GRANDEURS",
+    "hideAll": "Replier la liste des ordres de grandeur",
+    "displayAll": "Afficher tous les ordres de grandeur",
     "question": "Question",
     "previous": "Prec.",
     "title": "D’après vous, qu’est-ce qui a <important>le moins</important> d’impact sur le climat ?",
