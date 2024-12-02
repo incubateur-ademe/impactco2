@@ -24,10 +24,10 @@ const FRAlimentationData = () => {
             de boeuf, la joue de boeuf
           </li>
           <li>
-            Veau : <b>Impact carbone = 16,9 kg de CO2e / kg</b>
+            Veau : <b>Impact carbone = 17,73 kg de CO2e / kg</b>
             <br />
             Moyenne des facteurs d’émission de la côte de veau, épaule de veau, escalope de veau, noix de veau, poitrine
-            de veau et riz de veau
+            de veau et ris de veau
           </li>
           <li>
             Porc : <b>Impact carbone = 9,66 kg de CO2e / kg</b>
@@ -45,7 +45,7 @@ const FRAlimentationData = () => {
             Moyenne des facteurs d’émission du beurre doux et beurre salé
           </li>
           <li>
-            Fromage à pâte dure : <b>Impact carbone = 6,11 kg de CO2e / kg</b>
+            Fromage à pâte dure : <b>Impact carbone = 6,43 kg de CO2e / kg</b>
             <br />
             Moyenne des facteurs d’émission des différents fromages à pâte dure : Emmental, gruyère, comté, gouda etc.
           </li>
@@ -56,10 +56,15 @@ const FRAlimentationData = () => {
             etc.
           </li>
           <li>
-            Fromage bleu : <b>Impact carbone = 4,13 kg de CO2e / kg</b>
+            Fromage bleu : <b>Impact carbone = 5,5 kg de CO2e / kg</b>
             <br />
             Moyenne des facteurs d’émission des différents fromages à pâte persillées : Roquefort, bleu d’Auvergne,
             gorgonzola etc.
+          </li>
+          <li>
+            Madeleine : <b>Impact carbone = 2,67 kg de CO2e / kg</b>
+            <br />
+            Moyenne des facteurs d’émission de la madeleine ordinaire et madeleine traditionnelle
           </li>
           <li>
             Riz : <b>Impact carbone = 2,75 kg de CO2e / kg</b>
@@ -106,7 +111,7 @@ const ESAlimentationData = () => {
             res, carrillera de res
           </li>
           <li>
-            Ternera: <b>Impacto de carbono = 16,9 kg de CO2e / kg</b>
+            Ternera: <b>Impacto de carbono = 17,73 kg de CO2e / kg</b>
             <br />
             Promedio de los factores de emisión de costilla de ternera, paleta de ternera, escalope de ternera, nuez de
             ternera, pecho de ternera y molleja de ternera
@@ -127,7 +132,7 @@ const ESAlimentationData = () => {
             Promedio de los factores de emisión de mantequilla sin sal y mantequilla con sal
           </li>
           <li>
-            Queso duro: <b>Impacto de carbono = 6,11 kg de CO2e / kg</b>
+            Queso duro: <b>Impacto de carbono = 6,43 kg de CO2e / kg</b>
             <br />
             Promedio de los factores de emisión de varios quesos duros: Emmental, Gruyère, Comté, Gouda, etc.
           </li>
@@ -137,11 +142,36 @@ const ESAlimentationData = () => {
             Promedio de los factores de emisión de varios quesos blandos: Camembert, Brie, Maroilles, Mont-d'Or, etc.
           </li>
           <li>
-            Queso azul: <b>Impacto de carbono = 4,13 kg de CO2e / kg</b>
+            Queso azul: <b>Impacto de carbono = 5,5 kg de CO2e / kg</b>
             <br />
             Promedio de los factores de emisión de varios quesos azules: Roquefort, Bleu d'Auvergne, Gorgonzola, etc.
           </li>
+          <li>
+            Magdalena: <b>Impacto de carbono = 2,67 kg de CO2e / kg</b>
+            <br />
+            Promedio de los factores de emisión de la magdalena ordinaria y magdalena tradicional
+          </li>
+          <li>
+            Arroz: <b>Impacto de carbono = 2,75 kg de CO2e / kg</b>
+            <br />
+            Promedio de los factores de emisión de varios arroces: arroz blanco, integral, rojo, salvaje
+          </li>
+          <li>
+            Trigo: <b>Impacto de carbono = 1,21 kg de CO2e / kg</b>
+            <br />
+            Promedio de los factores de emisión de varios trigos: trigo duro entero, trigo precocido, sémola de trigo,
+            trigo blando
+          </li>
         </ul>
+        <p>
+          Puede encontrar cada factor de emisión individual en la base de datos{' '}
+          <Link href='https://agribalyse.ademe.fr/'>Agribalyse</Link>.
+        </p>
+        <p>
+          En cuanto a la unidad, hemos elegido mostrar el impacto de carbono <b>por 1 kg de alimento</b> para poder
+          comparar todos los alimentos entre sí, aunque esto no represente la realidad de las porciones compradas o
+          consumidas.
+        </p>
       </div>
     </>
   )
@@ -165,7 +195,7 @@ const ENAlimentationData = () => {
             Average of emission factors for rib steak, entrecôte, beef tongue, flank steak, beef shoulder, beef cheek
           </li>
           <li>
-            Veal: <b>Carbon impact = 16.9 kg CO2e / kg</b>
+            Veal: <b>Carbon impact = 17.73 kg CO2e / kg</b>
             <br />
             Average of emission factors for veal rib, veal shoulder, veal escalope, veal nut, veal breast, and veal
             sweetbread
@@ -186,7 +216,7 @@ const ENAlimentationData = () => {
             Average of emission factors for unsalted butter and salted butter
           </li>
           <li>
-            Hard cheese: <b>Carbon impact = 6.11 kg CO2e / kg</b>
+            Hard cheese: <b>Carbon impact = 6.43 kg CO2e / kg</b>
             <br />
             Average of emission factors for various hard cheeses: Emmental, Gruyère, Comté, Gouda, etc.
           </li>
@@ -196,11 +226,35 @@ const ENAlimentationData = () => {
             Average of emission factors for various soft cheeses: Camembert, Brie, Maroilles, Mont-d'Or, etc.
           </li>
           <li>
-            Blue cheese: <b>Carbon impact = 4.13 kg CO2e / kg</b>
+            Blue cheese: <b>Carbon impact = 5.5 kg CO2e / kg</b>
             <br />
             Average of emission factors for various blue cheeses: Roquefort, Bleu d'Auvergne, Gorgonzola, etc.
           </li>
+          <li>
+            Madeleine: <b>Carbon impact = 2.67 kg CO2e / kg</b>
+            <br />
+            Average of emission factors for ordinary madeleine and traditional madeleine
+          </li>
+          <li>
+            Rice: <b>Carbon impact = 2.75 kg CO2e / kg</b>
+            <br />
+            Average of emission factors for various rice types: white rice, brown rice, red rice, wild rice
+          </li>
+          <li>
+            Wheat: <b>Carbon impact = 1.21 kg CO2e / kg</b>
+            <br />
+            Average of emission factors for various wheat types: whole durum wheat, precooked wheat, wheat semolina,
+            soft wheat
+          </li>
         </ul>
+        <p>
+          You can find each individual emission factor in the{' '}
+          <Link href='https://agribalyse.ademe.fr/'>Agribalyse</Link> database.
+        </p>
+        <p>
+          Regarding the unit, we have chosen to display the carbon impact <b>per 1 kg of food</b> in order to compare
+          all foods with each other, although this does not represent the reality of purchased or consumed portions.
+        </p>
       </div>
     </>
   )
