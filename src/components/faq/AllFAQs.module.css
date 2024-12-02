@@ -1,6 +1,4 @@
 .filter {
-  width: 100%;
-
   label {
     display: inline-block;
     color: var(--neutral-80);
@@ -8,6 +6,10 @@
     font-size: 1.125rem;
     line-height: 1.5rem;
     margin-bottom: 0.5rem;
+  }
+
+  div {
+    width: 100%;
   }
 
   select {

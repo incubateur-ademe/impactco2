@@ -21,30 +21,76 @@ const KitCommunication = () => {
           { label: 'La doc', link: '/doc' },
         ]}
       />
-      <Block title='Kit de communication' as='h1' description='Tout ce qu’il faut pour communiquer sur Impact CO₂'>
+      <Block
+        title='Kit de communication'
+        as='h1'
+        description='Tout ce qu’il faut pour communiquer sur Impact CO₂'
+        id='plaquette'>
         <Card className={outilStyles.card}>
-          <div className={styles.logo}>
-            <Marianne />
-            <Ademe />
-            <Logo />
+          <div className={classNames(outilStyles.image, styles.image)}>
+            <Image src='/images/banner-kit-plaquette.png' width={748} height={180} alt='' />
           </div>
           <div className={outilStyles.content}>
-            <h2>Logos</h2>
+            <h2>Présentation externe</h2>
             <p>
-              Si vous souhaitez utiliser le logo d’Impact CO₂ pour communiquer sur vos propres supports (par exemple,
-              pour évoquer votre utilisation de nos outils), vous pouvez utiliser le bloc marque.
-            </p>
-            <p>
-              Le bloc marque comprend les logos de la République Française, de l’Ademe et d’Impact CO₂, tels que nous
-              les utilisons sur nos propres supports.
+              Nous mettons à votre disposition une courte plaquette de présentation pour pouvoir partager facilement
+              notre service public à votre entourage professionnel. N’hésitez pas à l’utiliser lors de vos prochains
+              ateliers, ou à le diffuser dans vos canaux de communication !
             </p>
           </div>
           <div className={outilStyles.link}>
-            <Download name='logos' />
+            <Download
+              name='plaquette'
+              customHref='https://docs.google.com/presentation/d/10lUOkR_I5UCa1qzG3jcCbCDZLCV9KK9M_MaY6Z-gEWw/edit'
+              customLabel='Accéder à la présentation (Google Slides)'
+            />
           </div>
         </Card>
       </Block>
-      <Block>
+      <Block id='alimentation'>
+        <Card className={outilStyles.card}>
+          <div className={classNames(outilStyles.image, styles.image)}>
+            <Image src='/images/banner-kit-alimentation.png' width={748} height={180} alt='' />
+          </div>
+          <div className={outilStyles.content}>
+            <h2>Kit de com’ pour Impact Alimentation</h2>
+            <p>
+              Nous avons préparé des visuels prêts à l’emploi pour vous permettre de communiquer facilement sur Impact
+              Alimentation.
+            </p>
+            <p>
+              Comme pour le Quiz, ce kit inclut des exemples de posts pour les réseaux sociaux, ainsi que des visuels
+              personnalisables avec votre logo, ou non, à différents formats (horizontal, carré, vertical, bannière
+              email).
+            </p>
+          </div>
+          <div className={outilStyles.link}>
+            <Download name='kit' customHref='/kit/alimentation.zip' customLabel='Télécharger le kit (.zip)' />
+          </div>
+        </Card>
+      </Block>
+      <Block id='quiz'>
+        <Card className={outilStyles.card}>
+          <div className={classNames(outilStyles.image, styles.image)}>
+            <Image src='/images/banner-kit-quiz.png' width={748} height={180} alt='' />
+          </div>
+          <div className={outilStyles.content}>
+            <h2>Kit de com’ pour le Quiz carbone</h2>
+            <p>
+              Afin de vous faciliter la tâche, nous avons concocté des visuels prêts à l’emploi pour communiquer autour
+              du Quiz carbone.
+            </p>
+            <p>
+              Le kit inclut des exemples de posts pour les réseaux sociaux, ainsi que des visuels personnalisables avec
+              votre logo, ou non, à différents formats (horizontal, carré, vertical, bannière email).
+            </p>
+          </div>
+          <div className={outilStyles.link}>
+            <Download name='kit' customHref='/kit/quiz.zip' customLabel='Télécharger le kit (.zip)' />
+          </div>
+        </Card>
+      </Block>
+      <Block id='images'>
         <Card className={outilStyles.card}>
           <div className={classNames(outilStyles.image, styles.image)}>
             <Image src='/images/banner-kit-images.jpg' width={748} height={180} alt='' />
@@ -66,7 +112,7 @@ const KitCommunication = () => {
           </div>
         </Card>
       </Block>
-      <Block>
+      <Block id='illustations'>
         <Card className={outilStyles.card}>
           <div className={classNames(outilStyles.image, styles.image)}>
             <Image src='/images/banner-kit-illustrations.png' width={748} height={180} alt='' />
@@ -94,64 +140,26 @@ const KitCommunication = () => {
           </div>
         </Card>
       </Block>
-      <Block>
+      <Block id='logos'>
         <Card className={outilStyles.card}>
-          <div className={classNames(outilStyles.image, styles.image)}>
-            <Image src='/images/banner-kit-plaquette.png' width={748} height={180} alt='' />
+          <div className={styles.logo}>
+            <Marianne />
+            <Ademe />
+            <Logo />
           </div>
           <div className={outilStyles.content}>
-            <h2>Plaquette de présentation</h2>
+            <h2>Logos</h2>
             <p>
-              Nous mettons à votre disposition une courte plaquette de présentation pour pouvoir partager facilement
-              notre service public à votre entourage professionnel. N’hésitez pas à l’utiliser lors de vos prochains
-              ateliers, ou à le diffuser dans vos canaux de communication !
+              Si vous souhaitez utiliser le logo d’Impact CO₂ pour communiquer sur vos propres supports (par exemple,
+              pour évoquer votre utilisation de nos outils), vous pouvez utiliser le bloc marque.
+            </p>
+            <p>
+              Le bloc marque comprend les logos de la République Française, de l’Ademe et d’Impact CO₂, tels que nous
+              les utilisons sur nos propres supports.
             </p>
           </div>
           <div className={outilStyles.link}>
-            <Download name='plaquette' customHref='/kit/plaquette.pdf' customLabel='Télécharger la plaquette (.pdf)' />
-          </div>
-        </Card>
-      </Block>
-      <Block>
-        <Card className={outilStyles.card}>
-          <div className={classNames(outilStyles.image, styles.image)}>
-            <Image src='/images/banner-kit-quiz.png' width={748} height={180} alt='' />
-          </div>
-          <div className={outilStyles.content}>
-            <h2>Kit de com’ pour le Quiz carbone</h2>
-            <p>
-              Afin de vous faciliter la tâche, nous avons concocté des visuels prêts à l’emploi pour communiquer autour
-              du Quiz carbone.
-            </p>
-            <p>
-              Le kit inclut des exemples de posts pour les réseaux sociaux, ainsi que des visuels personnalisables avec
-              votre logo, ou non, à différents formats (horizontal, carré, vertical, bannière email).
-            </p>
-          </div>
-          <div className={outilStyles.link}>
-            <Download name='kit' customHref='/kit/quiz.zip' customLabel='Télécharger le kit (.zip)' />
-          </div>
-        </Card>
-      </Block>
-      <Block>
-        <Card className={outilStyles.card}>
-          <div className={classNames(outilStyles.image, styles.image)}>
-            <Image src='/images/banner-kit-alimentation.png' width={748} height={180} alt='' />
-          </div>
-          <div className={outilStyles.content}>
-            <h2>Kit de com’ pour Impact Alimentation</h2>
-            <p>
-              Nous avons préparé des visuels prêts à l’emploi pour vous permettre de communiquer facilement sur Impact
-              Alimentation.
-            </p>
-            <p>
-              Comme pour le Quiz, ce kit inclut des exemples de posts pour les réseaux sociaux, ainsi que des visuels
-              personnalisables avec votre logo, ou non, à différents formats (horizontal, carré, vertical, bannière
-              email).
-            </p>
-          </div>
-          <div className={outilStyles.link}>
-            <Download name='kit' customHref='/kit/alimentation.zip' customLabel='Télécharger le kit (.zip)' />
+            <Download name='logos' />
           </div>
         </Card>
       </Block>
