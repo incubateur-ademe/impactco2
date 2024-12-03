@@ -112,7 +112,7 @@ const KitCommunication = () => {
           </div>
         </Card>
       </Block>
-      <Block id='illustations'>
+      <Block id='illustrations'>
         <Card className={outilStyles.card}>
           <div className={classNames(outilStyles.image, styles.image)}>
             <Image src='/images/banner-kit-illustrations.png' width={748} height={180} alt='' />
