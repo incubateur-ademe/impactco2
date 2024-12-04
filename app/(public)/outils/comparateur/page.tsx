@@ -1,9 +1,8 @@
 import { Metadata } from 'next'
+import React from 'react'
 import ComparateurPage from 'components/outils/comparateur/ComparateurPage'
 import { metaDescriptions, metaTitles } from 'utils/meta'
 import Suggestion from 'components/layout/Suggestion'
-
-export const dynamic = 'force-static'
 
 export async function generateMetadata(props: {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>

@@ -1,5 +1,6 @@
 import { Metadata, ResolvingMetadata } from 'next'
 import { notFound } from 'next/navigation'
+import React from 'react'
 import { categories } from 'data/categories'
 import Category from 'components/outils/CategoryPage'
 import Outil from 'components/outils/Outil'
@@ -10,7 +11,6 @@ import { devTools, smallTools } from 'components/cards/tools'
 import Suggestion from 'components/layout/Suggestion'
 
 const tools = [...devTools, ...smallTools]
-export const dynamic = 'force-static'
 
 export async function generateStaticParams() {
   return [
