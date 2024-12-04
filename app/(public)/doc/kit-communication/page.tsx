@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
-import React from 'react'
 import KitCommunication from 'components/kit/KitCommunication'
 import Suggestion from 'components/layout/Suggestion'
 
+export const dynamic = 'force-static'
 export const metadata: Metadata = {
   title: 'Kit de communication | Impact CO₂',
   description: 'Tout ce qu’il faut pour communiquer sur Impact CO₂.',
