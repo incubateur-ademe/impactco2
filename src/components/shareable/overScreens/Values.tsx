@@ -161,19 +161,25 @@ export const overScreenOsezChangerValues: () => Record<string, OverScreenInfo> =
       children: (
         <div className={styles.ressourceContainer}>
           <Resource
-            image='/images/osez-changer-tri.jpeg'
+            image='/images/osez-changer-fast-fashion.png'
+            text='fast-fashion'
+            href='https://librairie.ademe.fr/consommer-autrement/7747-tout-comprendre-les-impacts-de-la-mode-et-de-la-fast-fashion.html'
+            tracking='OsezChanger'
+          />
+          <Resource
+            image='/images/osez-changer-tri.png'
             text='tri'
             href='https://librairie.ademe.fr/consommer-autrement/5271-comment-faire-de-la-place-chez-soi-.html'
             tracking='OsezChanger'
           />
           <Resource
-            image='/images/osez-changer-questions.jpg'
+            image='/images/osez-changer-questions.png'
             text='questions'
             href='https://librairie.ademe.fr/cadic/1529/le-revers-de-mon-look.pdf'
             tracking='OsezChanger'
           />
           <Resource
-            image='/images/osez-changer-deuxieme-vie.jpg'
+            image='/images/osez-changer-deuxieme-vie.png'
             text='deuxieme-vie'
             href='https://longuevieauxobjets.ademe.fr/'
             tracking='OsezChanger'
