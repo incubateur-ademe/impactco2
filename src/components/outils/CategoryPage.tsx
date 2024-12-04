@@ -38,13 +38,7 @@ const CategoryPage = ({
         <Category category={category} simulator={simulator} />
         {category.sources && <Sources className={styles.sources} sources={category.sources} tracking={category.name} />}
       </Block>
-      {extraSimulator && (
-        <Block id={extraSimulator.slug} title={extraSimulator.title} description={extraSimulator.description}>
-          <ExtraSimulator tracking={extraSimulator.tracking} slug={extraSimulator.slug} small={extraSimulator.small}>
-            {extraSimulator.simulator}
-          </ExtraSimulator>
-        </Block>
-      )}
+      {extraSimulator && <ExtraSimulator simulator={extraSimulator}>{extraSimulator.simulator}</ExtraSimulator>}
       <Suspense>
         <Examples
           title='Exemples'
