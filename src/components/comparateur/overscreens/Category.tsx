@@ -37,6 +37,10 @@ const Category = ({
         .filter((equivalent) => equivalent.category === category.id)
         .filter((equivalent) => equivalent.slug !== comparedEquivalent?.slug)
         .filter((equivalent) => equivalent.value)
+        .filter(
+          (equivalent, index, values) =>
+            values.findIndex((computedEquivalent) => computedEquivalent.slug === equivalent.slug) === index
+        )
         .flatMap(getEquivalentWithCarpool)
         .sort((a, b) => getName('fr', a).localeCompare(getName('fr', b))),
     [category, comparedEquivalent]

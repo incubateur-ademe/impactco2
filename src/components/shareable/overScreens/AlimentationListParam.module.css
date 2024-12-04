@@ -1,0 +1,21 @@
+.categories {
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+  margin-top: -0.5rem;
+}
+
+.category {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.categoryName {
+  color: var(--neutral-50);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  text-transform: uppercase;
+}

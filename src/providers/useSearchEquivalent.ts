@@ -37,6 +37,10 @@ const equivalents = computedEquivalents
       : equivalent
   })
   .flatMap(getEquivalentWithCarpool)
+  .filter(
+    (equivalent, index, values) =>
+      values.findIndex((computedEquivalent) => computedEquivalent.slug === equivalent.slug) === index
+  )
 
 export const useSearchEquivalent = (
   search: string,
@@ -86,10 +90,10 @@ export const useSearchEquivalent = (
               ? fuses.nonEmptyFuse
                   .search(search.normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
                   .map(({ item }) => item)
-              : computedEquivalents.filter((equivalent) => equivalent.value).sort((a, b) => (a.slug > b.slug ? 1 : -1))
+              : equivalents.filter((equivalent) => equivalent.value).sort((a, b) => (a.slug > b.slug ? 1 : -1))
             : search.length > 0
               ? fuses.fuse.search(search.normalize('NFD').replace(/[\u0300-\u036f]/g, '')).map(({ item }) => item)
-              : computedEquivalents.sort((a, b) => (a.slug > b.slug ? 1 : -1))
+              : equivalents.sort((a, b) => (a.slug > b.slug ? 1 : -1))
         )
       }
     }

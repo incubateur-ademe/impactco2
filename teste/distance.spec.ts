@@ -26,7 +26,7 @@ test('Transport distance default values', async ({ page }) => {
 
   await page.goto(
     'http://localhost:3000/outils/transport?comparison=scooter,avion&km=15&itineraireStart=Lyon%20France&itineraireEnd=Paris%20France&defaultMode=comparison&modes=intercites,voiturethermique,voitureelectrique,velo,veloelectrique,busthermique,tramway,metro,scooter,moto,rer,ter,trottinette,busgnv,voitureelectrique+1',
-    { timeout: 60000 }
+    { waitUntil: 'commit', timeout: 60000 }
   )
 
   await expect(page.getByTestId('transport-tab-itineraire')).toBeVisible()
@@ -85,6 +85,7 @@ test('Transport distance default values', async ({ page }) => {
   await page.goto(
     'http://localhost:3000/outils/transport?km=10&comparison=voiturethermique+1,voitureelectrique+2&defaultMode=comparison&language=fr&modes=voiturethermique+1,voitureelectrique+1',
     {
+      waitUntil: 'commit',
       timeout: 60000,
     }
   )
@@ -98,6 +99,7 @@ test('Transport distance default values', async ({ page }) => {
   await page.goto(
     'http://localhost:3000/outils/transport?km=10&comparison=voiturethermique+1,voitureelectrique+2&defaultMode=comparison&language=fr&modes=voiturethermique+1,voitureelectrique+1,tgv',
     {
+      waitUntil: 'commit',
       timeout: 60000,
     }
   )

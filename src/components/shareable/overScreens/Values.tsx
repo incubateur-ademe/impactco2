@@ -6,6 +6,8 @@ import { getName } from 'utils/Equivalent/equivalent'
 import Resource from 'components/base/Resource'
 import ComparisonOverscreen from 'components/comparateur/overscreens/ComparisonOverscreen'
 import EquivalentsOverscreen from 'components/comparateur/overscreens/EquivalentsOverscreen'
+import AlimentationIntegrate from './AlimentationIntegrate'
+import AlimentationData from './Data/AlimentationData'
 import Integrate from './Integrate'
 import Share from './Share'
 import TransportIntegrate from './TransportIntegrate'
@@ -134,7 +136,7 @@ export const overScreenComparateurEtiquettesValues: () => Record<
   },
 })
 
-export const overScreenExtraSimulatorValues: (slug: string) => Record<string, OverScreenInfo> = () => {
+export const overScreenOsezChangerValues: () => Record<string, OverScreenInfo> = () => {
   return {
     partager: {
       title: 'share',
@@ -213,16 +215,13 @@ export const overScreenCategoryValues: (category: Category) => Record<string, Ov
     },
     integrer: {
       title: 'integrate',
-      children:
-        category.slug === 'transport' ? (
-          <TransportIntegrate />
-        ) : (
-          <Integrate
-            category={category}
-            path={category ? category.slug : 'comparateur'}
-            tracking={category ? category.name : 'Comparateur'}
-          />
-        ),
+      children: (
+        <Integrate
+          category={category}
+          path={category ? category.slug : 'comparateur'}
+          tracking={category ? category.name : 'Comparateur'}
+        />
+      ),
     },
   }
   if (category.slug === 'chauffage') {
@@ -350,6 +349,10 @@ export const overScreenCategoryValues: (category: Category) => Record<string, Ov
   if (category.slug === 'transport') {
     return {
       ...values,
+      integrer: {
+        title: 'integrate',
+        children: <TransportIntegrate />,
+      },
       hypothesis: {
         image: '/images/icn-next-actions.svg',
         title: 'next-actions',
@@ -424,14 +427,14 @@ export const overScreenCategoryValues: (category: Category) => Record<string, Ov
               text='livraison'
               href='https://librairie.ademe.fr/cadic/4466/guide-pratique-econsommateur-responsable.pdf'
               withLink='ADEME'
-              tracking='livraison'
+              tracking='Livraison'
             />
             <Resource
               image='/images/ngc.png'
               text='ngc'
               href='https://nosgestesclimat.fr/'
               withLink='Nos Gestes Climat'
-              tracking='livraison'
+              tracking='Livraison'
               imgSize='4.5rem'
             />
           </div>
@@ -441,6 +444,64 @@ export const overScreenCategoryValues: (category: Category) => Record<string, Ov
         image: '/images/icn-understand.svg',
         title: 'understand',
         children: <LivraisonData />,
+      },
+    }
+  }
+  if (category.slug === 'alimentation') {
+    return {
+      ...values,
+      integrer: {
+        title: 'integrate',
+        children: <AlimentationIntegrate />,
+      },
+      hypothesis: {
+        image: '/images/icn-next-actions.svg',
+        title: 'next-actions',
+        children: (
+          <div className={styles.ressourceContainer}>
+            <Resource
+              image='/images/agir-alimentation.png'
+              text='agir-alimentation'
+              href='https://librairie.ademe.fr/agriculture-alimentation-foret-bioeconomie/7617-tout-comprendre-une-alimentation-plus-durable.html'
+              withLink='ADEME'
+              tracking='Alimentation'
+            />
+            <Resource
+              image='/images/tools-fruitsetlegumes.svg'
+              text='ico2-fruitsetlegumes'
+              href='https://impactco2.fr/outils/fruitsetlegumes'
+              withLink='Fruits et légumes de saison'
+              tracking='Alimentation'
+            />
+            <Resource
+              image='/images/tools-repas.svg'
+              text='ico2-repas'
+              href='https://impactco2.fr/outils/alimentation#repas'
+              withLink='Repas'
+              tracking='Alimentation'
+            />
+            <Resource
+              image='/images/tools-alimentation.png'
+              text='ico2-fiches-alimentation'
+              href='https://impactco2.fr/kit/fiches-alimentation.zip'
+              withLink='Télécharger les 66 fiches'
+              tracking='Alimentation'
+            />
+            <Resource
+              image='/images/ngc.png'
+              text='ngc'
+              href='https://nosgestesclimat.fr/'
+              withLink='Nos Gestes Climat'
+              tracking='Alimentation'
+              imgSize='4.5rem'
+            />
+          </div>
+        ),
+      },
+      data: {
+        image: '/images/icn-understand.svg',
+        title: 'understand',
+        children: <AlimentationData />,
       },
     }
   }

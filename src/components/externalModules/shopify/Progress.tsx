@@ -73,11 +73,12 @@ const Progress = ({
   return (
     <>
       <div
+        aria-hidden='true'
         className={className}
         style={{
           background: `conic-gradient(var(--primary-50) ${progress}%, transparent 0), radial-gradient(closest-side, white 59%, var(--primary-30) 60% 84%, transparent 85% 100%)`,
         }}>
-        <progress value={progress} className={styles.progress} max={100} role='progressbar'>
+        <progress value={progress} className={styles.progress} max={100}>
           {progress}%
         </progress>
       </div>

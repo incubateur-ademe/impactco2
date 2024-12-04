@@ -1,5 +1,4 @@
 import classNames from 'classnames'
-import React from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { getName } from 'utils/Equivalent/equivalent'
 import EquivalentIcon from 'components/base/EquivalentIcon'
@@ -242,7 +241,7 @@ const FRChauffageData = () => {
   return (
     <div className={styles.container}>
       <p className={styles.text}>
-        L'ensemble des calculs et des hypothèses sont issus de{' '}
+        L'ensemble des calculs et des hypothèses est issu de{' '}
         <Link href='https://www.statistiques.developpement-durable.gouv.fr/consommation-denergie-par-usage-du-residentiel'>
           l’étude Consommation d'énergie par usage du résidentiel 2023
         </Link>{' '}

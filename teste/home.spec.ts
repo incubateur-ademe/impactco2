@@ -48,6 +48,6 @@ test('Barre de recherche (avec résultats)', async ({ page }) => {
     expect(nb_of_notfound).toEqual(0)
     await expect(page.getByTestId('equivalent-search-tramway')).toBeVisible()
     await expect(page.getByTestId('equivalent-search-rer')).toBeVisible()
-    await expect(page.getByTestId('equivalent-search-tgv')).toBeVisible()
+    await expect(page.getByTestId('equivalent-search-baguette')).toBeVisible()
   })
 })

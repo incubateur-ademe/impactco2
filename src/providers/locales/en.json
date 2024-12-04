@@ -82,6 +82,24 @@
     "comparison": "Change the mode of transport compared",
     "understand": "Understanding data",
     "download": "Download",
+    "alimentationCategoryIntegrate": {
+      "title": "List to display by default",
+      "group": "Food group",
+      "rayon": "Store sections",
+      "popularity": "Top 10"
+    },
+    "alimentationCategory": {
+      "title": "List to share",
+      "group": "Food group",
+      "rayon": "Store sections",
+      "popularity": "Top 10"
+    },
+    "customList": {
+      "title": "Create a custom food list"
+    },
+    "hideButtons": {
+      "title": "Show buttons at the bottom of my integration"
+    },
     "m2": {
       "title": "Display a custom surface",
       "unit": "m²"
@@ -380,7 +398,17 @@
         "clefusb": "Average capacity (16GB).",
         "box": "Personal and professional usage; xDSL, FTTx.",
         "spam": "Unread.",
-        "stockagedonnee": "For 1 year."
+        "stockagedonnee": "For 1 year.",
+        "boeuf": "Average of emission factors for rib steak, entrecôte, beef tongue, flank steak, beef shoulder, beef cheek",
+        "veau": "Average of emission factors for veal rib, veal shoulder, veal escalope, veal nut, veal breast, and veal sweetbread",
+        "porc": "Average of emission factors for pork chop, pork shoulder, pork belly, pork loin",
+        "dorade": "Average of emission factors for farmed gilthead seabream and wild gilthead seabream",
+        "beurre": "Average of emission factors for unsalted butter and salted butter",
+        "fromagedure": "Average of emission factors for various hard cheeses: Emmental, Gruyère, Comté, Gouda, etc.",
+        "fromagemolle": "Average of emission factors for various soft cheeses: Camembert, Brie, Maroilles, Mont-d'Or, etc.",
+        "fromagebleu": "Average of emission factors for various blue cheeses: Roquefort, Bleu d'Auvergne, Gorgonzola, etc.",
+        "riz": "Average of emission factors for various rice types: white rice, brown rice, red rice, wild rice",
+        "ble": "Average of emission factors for various wheat types: whole durum wheat, precooked wheat, wheat semolina, soft wheat"
       },
       "post": {
         "ski": "Includes: the carbon impact of transportation (52%), accommodation (4%), food (8%), ski area (3%), infrastructure, equipment, and services (17%), and gear (16%).",
@@ -453,7 +481,7 @@
     "name-transport": "Transport",
     "name-fruitsetlegumes": "Fruits and vegetables",
     "name-numerique": "Digital",
-    "name-repas": "Meal",
+    "name-alimentation": "Food",
     "name-habillement": "Clothing",
     "name-mobilier": "Furniture",
     "name-electromenager": "Home applicance",
@@ -486,12 +514,47 @@
     "ngc": "Estimate your consumption carbon footprint",
     "lvao": "Extend the life of your objects",
     "agir-tt": "What does telecommuting change for the planet?",
+    "agir-alimentation": "Understand everything: a more sustainable diet",
     "calendar": "Seasonal fruits and vegetables calendar",
     "livraison": "Download the guide 'E-consumer & responsible'",
     "leger": "How to work with a low impact ?",
     "ecoresponsable": "Eco-responsible at work",
     "ico2-transport": "Calculate the carbon impact of your journeys",
     "ico2-fruitsetlegumes": "Discover seasonal fruits and vegetables and their impact",
+    "ico2-repas": "Comparing the carbon impact of meals",
+    "ico2-fiches-alimentation": "Download impact alimentation sheets",
     "fiches": "Download the printable quiz sheets"
+  },
+  "alimentation": {
+    "title": "Discover <important>the carbon impact for 1 kg of food</important> presented by...",
+    "label": "Select how to group the results",
+    "group": "Food groups (meats, fish, dairy products...)",
+    "rayon": "Store sections (savory groceries, bakery, deli...)",
+    "popularity": "Popularity (the 10 most consumed foods)",
+    "click": "Click on a category to display its content",
+    "biggest": "Highest impact",
+    "smallest": "Lowest impact",
+    "more": "more",
+    "impact": "{value}% of the highest impact",
+    "hide": "Hide",
+    "viandes": "Meats",
+    "poissons": "Fish and seafood",
+    "laitier": "Eggs and dairy products",
+    "cereales": "Cereals and legumes",
+    "plats": "Prepared dishes",
+    "encas": "Snacks",
+    "fruits": "Fruits and vegetables",
+    "boucherie": "Butchery",
+    "poissonerie": "Fishmonger",
+    "traiteur": "Deli",
+    "fromagerie": "Cheese shop",
+    "boulangerie": "Bakery",
+    "epiceriesalee": "Savory groceries",
+    "epiceriesucree": "Sweet groceries",
+    "select": "select all",
+    "integrate": {
+      "customList": "Custom list",
+      "hideButtons": "Show buttons"
+    }
   }
 }

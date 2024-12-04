@@ -24,10 +24,10 @@ export const metaDescriptions: Record<string, Record<string, string>> = {
     en: 'Discover the seasonal fruits and vegetables and their carbon impact on the climate using the Impact CO2 simulator.',
     es: 'Descubra las frutas y hortalizas de temporada y su impacto en el clima gracias al simulador Impact CO2.',
   },
-  repas: {
-    fr: "Mesurer l'impact carbone de vos repas grâce à Impact CO2 et aux données de l’ADEME.",
-    en: 'Measure the carbon impact of your meals using Impact CO2 and ADEME data.',
-    es: 'Mida el impacto de carbono de sus comidas utilizando Impact CO2 y los datos de ADEME.',
+  alimentation: {
+    fr: "Mesurer l'impact carbone de plus de 60 aliments et repas grâce à Impact CO2 et aux données de l’ADEME.",
+    en: 'Measuring the carbon impact of over 60 foods and meals using Impact CO2 and ADEME data.',
+    es: 'Mida el impacto de carbono de más de 60 alimentos y comidas utilizando Impact CO2 y los datos de ADEME.',
   },
   habillement: {
     fr: 'Comparer l’impact carbone des vêtements entre eux et relever le défi chaussures grâce aux ressources d’Impact CO2 sur le textile.',
@@ -102,10 +102,10 @@ export const metaTitles: Record<string, Record<string, string>> = {
     en: 'Seasonal Fruits and Vegetables',
     es: 'Frutas y hortalizas de temporada',
   },
-  repas: {
-    fr: 'Repas',
-    en: 'Meals',
-    es: 'comida',
+  alimentation: {
+    fr: 'Alimentation',
+    en: 'Food',
+    es: 'Alimentación',
   },
   habillement: {
     fr: 'Habillement',

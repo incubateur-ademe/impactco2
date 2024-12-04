@@ -74,3 +74,18 @@
     color: var(--neutral-80);
   }
 }
+
+.disabled {
+  cursor: default;
+  color: var(--neutral-30) !important;
+
+  input[type='radio'] {
+    cursor: default;
+    border-color: var(--neutral-30) !important;
+    background-color: var(--neutral-00) !important;
+
+    &:before {
+      background-color: var(--neutral-30) !important;
+    }
+  }
+}

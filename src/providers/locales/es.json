@@ -82,6 +82,24 @@
     "comparison": "Cambiar el modo de transporte comparar",
     "understand": "Entender los datos",
     "download": "Descargar",
+    "alimentationCategoryIntegrate": {
+      "title": "Lista para mostrar por defecto",
+      "group": "Grupo de alimentos",
+      "rayon": "Secciones de la tienda",
+      "popularity": "Top 10"
+    },
+    "alimentationCategory": {
+      "title": "Lista para compartir",
+      "group": "Grupo de alimentos",
+      "rayon": "Secciones de la tienda",
+      "popularity": "Top 10"
+    },
+    "customList": {
+      "title": "Crear una lista de alimentos personalizada"
+    },
+    "hideButtons": {
+      "title": "Mostrar botones en la parte inferior de mi integración"
+    },
     "m2": {
       "title": "Mostrar una superficie personalizada",
       "unit": "m²"
@@ -380,7 +398,17 @@
         "clefusb": "Capacidad promedio (16GB).",
         "box": "Uso personal y profesional; xDSL, FTTx.",
         "spam": "No leído.",
-        "stockagedonnee": "Durante 1 año."
+        "stockagedonnee": "Durante 1 año.",
+        "boeuf": "Promedio de los factores de emisión de costilla de res, entrecot, lengua de res, bistec de falda, paleta de res, carrillera de res",
+        "veau": "Promedio de los factores de emisión de costilla de ternera, paleta de ternera, escalope de ternera, nuez de ternera, pecho de ternera y molleja de ternera",
+        "porc": "Promedio de los factores de emisión de chuleta de cerdo, paleta de cerdo, panceta de cerdo, lomo de cerdo",
+        "dorade": "Promedio de los factores de emisión de dorada de cultivo y dorada salvaje",
+        "beurre": "Promedio de los factores de emisión de mantequilla sin sal y mantequilla con sal",
+        "fromagedure": "Promedio de los factores de emisión de varios quesos duros: Emmental, Gruyère, Comté, Gouda, etc.",
+        "fromagemolle": "Promedio de los factores de emisión de varios quesos blandos: Camembert, Brie, Maroilles, Mont-d'Or, etc.",
+        "fromagebleu": "Promedio de los factores de emisión de varios quesos azules: Roquefort, Bleu d'Auvergne, Gorgonzola, etc.",
+        "riz": "Promedio de los factores de emisión de varios arroces: Arroz blanco, integral, rojo, salvaje",
+        "ble": "Promedio de los factores de emisión de varios trigos: Trigo duro entero, trigo precocido, sémola de trigo, trigo blando"
       },
       "post": {
         "ski": "Incluye: el impacto de carbono del transporte (52%), alojamiento (4%), alimentos (8%), la estación de esquí (3%), infraestructura, equipo y servicios (17%), y equipo (16%).",
@@ -453,7 +481,7 @@
     "name-transport": "Transporte",
     "name-fruitsetlegumes": "Frutas y verduras",
     "name-numerique": "Digital",
-    "name-repas": "Comida",
+    "name-alimentation": "Alimento",
     "name-habillement": "Ropa",
     "name-mobilier": "Mobiliario",
     "name-electromenager": "Electrodomésticos",
@@ -486,12 +514,47 @@
     "ngc": "Estimar tu huella de carbono de consumo",
     "lvao": "Alarga la vida de tus objetos",
     "agir-tt": "¿El teletrabajo, qué cambia para el planeta?",
+    "agir-alimentation": "Entendiéndolo todo: una dieta más sostenible",
     "calendar": "Calendario de frutas y verduras de temporada",
     "livraison": "Descargar la guía “E-consumidor & responsable”",
     "leger": "¿Cómo trabajar con bajo impacto?",
     "ecoresponsable": "Eco-responsabilidad en el trabajo",
     "ico2-transport": "Calcule el impacto de carbono de sus viajes",
     "ico2-fruitsetlegumes": "Descubre frutas y verduras de temporada y su impacto",
+    "ico2-repas": "Compare el impacto de carbono de las comidas",
+    "ico2-fiches-alimentation": "Descargue las hojas del impacto alimentación",
     "fiches": "Descargue las hojas del cuestionario para imprimir"
+  },
+  "alimentation": {
+    "title": "Descubrir <important>el impacto de carbono por 1 kg de alimentos.</important> presentados por...",
+    "label": "Seleccionar cómo agrupar los resultados",
+    "group": "Grupo de alimentos (carnes, pescados, productos lácteos...)",
+    "rayon": "Secciones de la tienda (comestibles salados, panadería, charcutería...)",
+    "popularity": "Popularidad (los 10 alimentos más consumidos)",
+    "click": "Haga clic en una categoría para mostrar su contenido",
+    "biggest": "Impacto más alto",
+    "smallest": "Impacto más bajo",
+    "more": "otros",
+    "impact": "{value}% del impacto más alto",
+    "hide": "Ocultar",
+    "viandes": "Carnes",
+    "poissons": "Pescados y mariscos",
+    "laitier": "Huevos y productos lácteos",
+    "cereales": "Cereales y legumbres",
+    "plats": "Platos preparados",
+    "encas": "Aperitivos",
+    "fruits": "Frutas y verduras",
+    "boucherie": "Carnicería",
+    "poissonerie": "Pescadería",
+    "traiteur": "Charcutería",
+    "fromagerie": "Quesería",
+    "boulangerie": "Panadería",
+    "epiceriesalee": "Comestibles salados",
+    "epiceriesucree": "Comestibles dulces",
+    "select": "seleccionar todo",
+    "integrate": {
+      "customList": "Lista personalizada",
+      "hideButtons": "Mostrar botones"
+    }
   }
 }

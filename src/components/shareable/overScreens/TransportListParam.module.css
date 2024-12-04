@@ -1,7 +1,11 @@
+.equivalents,
 .modes {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+}
+
+.modes {
   margin-top: 1.25rem;
 }
 

@@ -134,6 +134,11 @@
   flex-direction: column;
 }
 
+.container,
+.containerInline {
+  width: 100%;
+}
+
 .containerInline {
   display: flex;
   align-items: center;

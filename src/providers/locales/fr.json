@@ -82,6 +82,24 @@
     "comparison": "Changer le mode de transport comparé",
     "understand": "Comprendre les données",
     "download": "Télécharger",
+    "alimentationCategoryIntegrate": {
+      "title": "Liste à afficher par défaut",
+      "group": "Groupe d'aliments",
+      "rayon": "Rayons du magasin",
+      "popularity": "Top 10"
+    },
+    "alimentationCategory": {
+      "title": "Liste à partager",
+      "group": "Groupe d'aliments",
+      "rayon": "Rayons du magasin",
+      "popularity": "Top 10"
+    },
+    "customList": {
+      "title": "Créer une liste d’aliments personnalisée"
+    },
+    "hideButtons": {
+      "title": "Afficher les boutons en bas de mon intégration"
+    },
     "m2": {
       "title": "Afficher une surface personnalisée",
       "unit": "m²"
@@ -380,7 +398,17 @@
         "clefusb": "Capacité moyenne (16 Go).",
         "box": "Utilisation personnelle et professionnelle ; xDSL, FTTx.",
         "spam": "Non lu.",
-        "stockagedonnee": "Pendant 1 an."
+        "stockagedonnee": "Pendant 1 an.",
+        "boeuf": "Moyenne des facteurs d’émission de la côte de boeuf, l’entrecôte, la langue de boeuf, la bavette, l’épaule de boeuf, la joue de boeuf",
+        "veau": "Moyenne des facteurs d’émission de la côte de veau, épaule de veau, escalope de veau, noix de veau, poitrine de veau et ris de veau",
+        "porc": "Moyenne des facteurs d’émission de la côte de porc, échine de porc, poitrine de porc, épaule de porc",
+        "dorade": "Moyenne des facteurs d’émission de la dorade royale d’élevage et la dorade royale sauvage",
+        "beurre": "Moyenne des facteurs d’émission du beurre doux et beurre salé",
+        "fromagedure": "Moyenne des facteurs d’émission des différents fromages à pâte dure : Emmental, gruyère, comté, gouda etc.",
+        "fromagemolle": "Moyenne des facteurs d’émission de différents fromages à pâte molle : Camembert, brie, maroilles, mont-d’or etc.",
+        "fromagebleu": "Moyenne des facteurs d’émission des différents fromages à pâte persillées : Roquefort, bleu d’Auvergne, gorgonzola etc.",
+        "riz": "Moyenne des facteurs d’émission des différents riz : Riz blanc, complet, rouge; sauvage",
+        "ble": "Moyenne des facteurs d’émission des différents blés : Blé dur entier, blé précuit, semoule de blé, blé tendre"
       },
       "post": {
         "ski": "Inclus : l’impact carbone du transport (52%), du logement (4%), de l’alimentation (8%), du domaine skiable (3%), des infrastructures, équipements et services du domaine (17%), et de l’équipement (16%).",
@@ -453,7 +481,7 @@
     "name-transport": "Transport",
     "name-fruitsetlegumes": "Fruits et légumes",
     "name-numerique": "Numérique",
-    "name-repas": "Repas",
+    "name-alimentation": "Alimentation",
     "name-habillement": "Habillement",
     "name-mobilier": "Mobilier",
     "name-electromenager": "Électroménager",
@@ -486,12 +514,47 @@
     "ngc": "Estimer son empreinte carbone de consommation",
     "lvao": "Prolonger la vie de ses objets",
     "agir-tt": "Le télétravail, ça change quoi pour la planète ?",
+    "agir-alimentation": "Tout comprendre : une alimentation plus durable",
     "calendar": "Calendrier des fruits et légumes de saison",
     "livraison": "Télécharger le guide “E-consommateur & responsable”",
     "leger": "Comment télétravailler léger ?",
     "ecoresponsable": "Écoresponsable au bureau",
     "ico2-transport": "Calculer l'impact carbone de vos trajets",
     "ico2-fruitsetlegumes": "Découvrir les fruits et légumes de saison et leur impact",
+    "ico2-repas": "Comparer l'impact carbone des repas",
+    "ico2-fiches-alimentation": "Télécharger les fiches d’Impact Alimentation",
     "fiches": "Télécharger les fiches du quizz à imprimer"
+  },
+  "alimentation": {
+    "title": "Découvrir <important>l’impact carbone pour 1 kg d'aliments</important> présentés par...",
+    "label": "Selectionner comment grouper les résultats",
+    "group": "Groupe d'aliments (viandes, poissons, produits laitiers...)",
+    "rayon": "Rayons du magasin (épicerie salée, boulangerie, traiteur...)",
+    "popularity": "Popularité (les 10 aliments les plus consommés)",
+    "click": "Cliquez sur une catégorie pour afficher son contenu",
+    "biggest": "Impact le + fort",
+    "smallest": "Impact le + faible",
+    "more": "autres",
+    "impact": "{value}% de l'impact le plus fort",
+    "hide": "Replier",
+    "viandes": "Viandes",
+    "poissons": "Poissons et fruits de mer",
+    "laitier": "Oeufs et produits laitiers",
+    "cereales": "Céréales et légumineuses",
+    "plats": "Plats préparés",
+    "encas": "En-cas",
+    "fruits": "Fruits et légumes",
+    "boucherie": "Boucherie",
+    "poissonerie": "Poissonerie",
+    "traiteur": "Traiteur",
+    "fromagerie": "Fromagerie",
+    "boulangerie": "Boulangerie",
+    "epiceriesalee": "Épicerie salée",
+    "epiceriesucree": "Épicerie sucrée",
+    "select": "tout sélectionner",
+    "integrate": {
+      "customList": "Liste personnalisée",
+      "hideButtons": "Affichage des boutons"
+    }
   }
 }

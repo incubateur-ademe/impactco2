@@ -1,8 +1,8 @@
-import React from 'react'
 import CheckIcon from 'components/base/icons/check'
 import SimpleStarShapeIcon from 'components/base/icons/simple-star-shape'
 import Breadcrumbs from 'components/breadcrumbs/Breadcrumbs'
 import News from 'components/cards/News'
+import { ToolCardProps } from 'components/cards/ToolCard'
 import ToolCards from 'components/cards/ToolCards'
 import { devTools, quiz, smallTools, tools } from 'components/cards/tools'
 import FAQs from 'components/faq/FAQs'
@@ -44,6 +44,48 @@ const Outils = () => {
                     </div>
                   </div>
                   <p>Un nouveau format interactif pour apprendre et sensibiliser</p>
+                </div>
+              </>
+            ),
+          },
+          {
+            ...(tools.find((tool) => tool.slug === 'alimentation') as ToolCardProps),
+            title: 'Comparez l’impact carbone des aliments !',
+            linkLabel: 'Découvrir',
+            description: (
+              <>
+                <div className={styles.descriptionLine}>
+                  <div className={styles.icons}>
+                    <div className={styles.shape}>
+                      <SimpleStarShapeIcon />
+                    </div>
+                    <div className={styles.check}>
+                      <CheckIcon />
+                    </div>
+                  </div>
+                  <p>60 aliments à comparer entre eux</p>
+                </div>
+                <div className={styles.descriptionLine}>
+                  <div className={styles.icons}>
+                    <div className={styles.shape}>
+                      <SimpleStarShapeIcon />
+                    </div>
+                    <div className={styles.check}>
+                      <CheckIcon />
+                    </div>
+                  </div>
+                  <p>Un classement d'impact par rayon du magasin, popularité...</p>
+                </div>
+                <div className={styles.descriptionLine}>
+                  <div className={styles.icons}>
+                    <div className={styles.shape}>
+                      <SimpleStarShapeIcon />
+                    </div>
+                    <div className={styles.check}>
+                      <CheckIcon />
+                    </div>
+                  </div>
+                  <p>Un outil facile à intergrer dans un contenu de sensibilisation</p>
                 </div>
               </>
             ),

@@ -39,7 +39,6 @@ export const getQuizEquivalents = (language: Language) =>
       },
     ])
     .map((equivalent) => {
-      console.log(equivalent)
       return equivalent.number
         ? {
             ...equivalent,

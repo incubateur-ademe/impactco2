@@ -14,7 +14,7 @@ export type SelectProps = SelectHTMLAttributes<HTMLSelectElement> & {
 
 const Select = ({ id, label, hint, inline, padding, className, children, ...selectProps }: SelectProps) => {
   return (
-    <div className={inline ? styles.containerInline : ''}>
+    <div className={inline ? styles.containerInline : styles.container}>
       {label && (
         <label className={classNames(styles.label, { [styles.labelInline]: inline })} htmlFor={`text-select-${id}`}>
           {label}

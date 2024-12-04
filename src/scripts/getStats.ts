@@ -16,7 +16,7 @@ const internalPages = [
   'comparateur',
   'fruitsetlegumes',
   'usagenumerique',
-  'repas',
+  'alimentation',
   'numerique',
   'habillement',
   'boisson',
