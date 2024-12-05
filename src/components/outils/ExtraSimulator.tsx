@@ -1,33 +1,54 @@
-import React, { ReactNode, useMemo } from 'react'
+'use client'
+
+import { ReactNode, useEffect, useMemo } from 'react'
+import Block from 'components/layout/Block'
 import Shareable from 'components/shareable/Shareable'
 import { overScreenCategoryValues, overScreenOsezChangerValues } from 'components/shareable/overScreens/Values'
 import styles from './ExtraSimulator.module.css'
 
 const ExtraSimulator = ({
   children,
-  tracking,
-  slug,
-  small,
+  simulator,
 }: {
   children: ReactNode
-  tracking: string
-  slug: string
-  small?: boolean
+  simulator: {
+    slug: string
+    tracking: string
+    title: string
+    description: string
+    simulator: ReactNode
+    small?: boolean
+  }
 }) => {
   const overScreens = useMemo(
     () =>
-      slug === 'osez-changer'
+      simulator.slug === 'osez-changer'
         ? overScreenOsezChangerValues()
-        : overScreenCategoryValues({ id: 2, unit: slug, slug, name: tracking }),
-    [slug, tracking]
+        : overScreenCategoryValues({ id: 2, unit: simulator.slug, slug: simulator.slug, name: simulator.tracking }),
+    [simulator]
   )
 
-  const simulator = (
-    <Shareable slug={slug} tracking={tracking} overScreens={overScreens} small={small}>
+  useEffect(() => {
+    if (window && window.location.hash) {
+      console.log(window.location.hash)
+      const anchor = window.location.hash.replace('#', '')
+      const element = document.getElementById(anchor)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+      }
+    }
+  }, [])
+
+  const component = (
+    <Shareable slug={simulator.slug} tracking={simulator.tracking} overScreens={overScreens} small={simulator.small}>
       {children}
     </Shareable>
   )
-  return small ? <div className={styles.container}>{simulator}</div> : simulator
+  return (
+    <Block id={simulator.slug} title={simulator.title} description={simulator.description}>
+      {simulator.small ? <div className={styles.container}>{component}</div> : component}
+    </Block>
+  )
 }
 
 export default ExtraSimulator

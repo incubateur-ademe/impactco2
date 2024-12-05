@@ -60,6 +60,9 @@ export const NotionCommandValidation = z
 export type NotionCommand = z.infer<typeof NotionCommandValidation>
 
 export const getAllNotionDB = async <T>(url: string): Promise<{ id: string; properties: T }[]> => {
+  if (!process.env.NOTION_API_KEY) {
+    return []
+  }
   let results: { id: string; properties: T }[] = []
   let axiosResponse:
     | AxiosResponse<{

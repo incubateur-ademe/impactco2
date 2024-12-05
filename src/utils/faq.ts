@@ -5,7 +5,7 @@ import { getAllNotionDB } from './notion'
 import { getRevalidate } from './revalidate'
 
 export const getFAQs = unstable_cache(
-  async (): Promise<FAQ[]> => {
+  async (filter?: string): Promise<FAQ[]> => {
     try {
       const results = await getAllNotionDB<{
         Name: { title: { plain_text: string }[] }
@@ -15,17 +15,19 @@ export const getFAQs = unstable_cache(
       }>('https://api.notion.com/v1/databases/f21b76594988440c98fc153d73ad5730/query')
 
       const contents = await Promise.all(
-        results.map(async (result) => {
-          try {
-            const content = await getNotionContentProps(result.id)
-            return {
-              id: result.id,
-              content,
+        results
+          .filter((result) => result.properties['Page(s)']?.multi_select?.some((select) => select.name === filter))
+          .map(async (result) => {
+            try {
+              const content = await getNotionContentProps(result.id)
+              return {
+                id: result.id,
+                content,
+              }
+            } catch {
+              return { id: null, content: null }
             }
-          } catch {
-            return { id: null, content: null }
-          }
-        })
+          })
       )
 
       return results
