@@ -36,13 +36,13 @@ export async function GET(req: NextRequest, context: { params: Promise<{ slug: s
     fonts = (
       await Promise.all([
         getFont(
-          new URL('https://cdn.jsdelivr.net/npm/@gouvfr/dsfr@12.1.1/dist/fonts/Marianne-Regular.woff', import.meta.url)
+          new URL('https://cdn.jsdelivr.net/npm/@gouvfr/dsfr@1.12.1/dist/fonts/Marianne-Regular.woff', import.meta.url)
         ),
         getFont(
-          new URL('https://cdn.jsdelivr.net/npm/@gouvfr/dsfr@12.1.1/dist/fonts/Marianne-Medium.woff', import.meta.url)
+          new URL('https://cdn.jsdelivr.net/npm/@gouvfr/dsfr@1.12.1/dist/fonts/Marianne-Medium.woff', import.meta.url)
         ),
         getFont(
-          new URL('https://cdn.jsdelivr.net/npm/@gouvfr/dsfr@12.1.1/dist/fonts/Marianne-Bold.woff', import.meta.url)
+          new URL('https://cdn.jsdelivr.net/npm/@gouvfr/dsfr@1.12.1/dist/fonts/Marianne-Bold.woff', import.meta.url)
         ),
       ])
     ).map((font, index) => ({
