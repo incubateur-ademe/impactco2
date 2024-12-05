@@ -19,9 +19,9 @@ export const metadata: Metadata = {
 }
 
 const fonts = [
-  'https://cdn.jsdelivr.net/npm/@gouvfr/dsfr/dist/fonts/Marianne-Regular.woff2',
-  'https://cdn.jsdelivr.net/npm/@gouvfr/dsfr/dist/fonts/Marianne-Medium.woff2',
-  'https://cdn.jsdelivr.net/npm/@gouvfr/dsfr/dist/fonts/Marianne-Bold.woff2',
+  'https://cdn.jsdelivr.net/npm/@gouvfr/dsfr@12.1.1/dist/fonts/Marianne-Regular.woff2',
+  'https://cdn.jsdelivr.net/npm/@gouvfr/dsfr@12.1.1/dist/fonts/Marianne-Medium.woff2',
+  'https://cdn.jsdelivr.net/npm/@gouvfr/dsfr@12.1.1/dist/fonts/Marianne-Bold.woff2',
 ]
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
