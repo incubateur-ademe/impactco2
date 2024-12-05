@@ -10,10 +10,10 @@ const FAQs = async ({
 }: {
   filter: string
 } & Omit<FAQSListProps, 'faqs' | 'title' | 'description' | 'link' | 'linkLabel'>) => {
-  const faqs = await getFAQs()
+  const faqs = await getFAQs(filter)
   return (
     <FAQsList
-      faqs={faqs.filter((faq) => faq.pages.includes(filter))}
+      faqs={faqs}
       title='Questions fréquentes'
       description='Explorer la FAQ pour trouver les réponses à vos questions'
       {...rest}
