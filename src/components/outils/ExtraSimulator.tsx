@@ -30,7 +30,6 @@ const ExtraSimulator = ({
 
   useEffect(() => {
     if (window && window.location.hash) {
-      console.log(window.location.hash)
       const anchor = window.location.hash.replace('#', '')
       const element = document.getElementById(anchor)
       if (element) {
