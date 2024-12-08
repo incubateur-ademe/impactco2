@@ -1,7 +1,6 @@
 'use client'
 
 import classNames from 'classnames'
-import React from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { ComputedEquivalent } from 'types/equivalent'
 import { getName } from 'utils/Equivalent/equivalent'
