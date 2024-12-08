@@ -22,6 +22,7 @@ export const getExamples = unstable_cache(
             !result.properties.Nom.title[0] ||
             !result.properties.Lien.rich_text[0] ||
             !result.properties.Logo.files[0] ||
+            !result.properties.Logo.files[0].file ||
             !result.properties.Secteur.select
           ) {
             return
