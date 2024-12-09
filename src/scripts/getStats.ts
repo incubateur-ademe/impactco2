@@ -29,7 +29,14 @@ export const getMatomoStats = async (date: string) => {
   const lastWeek = new Date(date)
   lastWeek.setDate(lastWeek.getDate() - 7)
 
-  const [allVisits, allEventsByCategory, allEventsByAction, lastWeekEventsByCategory] = await Promise.all([
+  const [
+    allVisits,
+    allEventsByCategory,
+    allEventsByAction,
+    lastWeekEventsByCategory,
+    allEventsGroupedOnDev,
+    allEventsOnDev,
+  ] = await Promise.all([
     await axios
       .post<
         { label: string; nb_visits: number; url: string }[]
@@ -49,6 +56,16 @@ export const getMatomoStats = async (date: string) => {
       .post<
         { label: string; nb_visits: number; nb_events: number }[]
       >(`${process.env.NEXT_PUBLIC_MATOMO_SITE_URL}?idSite=${process.env.NEXT_PUBLIC_MATOMO_SITE_ID}&method=Events.getCategory&format=JSON&module=API&period=week&date=${lastWeek.toISOString().split('T')[0]}&showColumns=nb_visits,nb_events&filter_limit=-1`)
+      .then((response) => response.data),
+    await axios
+      .post<
+        { label: string; nb_visits: number; nb_events: number; Events_EventAction: string }[]
+      >(`${process.env.NEXT_PUBLIC_MATOMO_SITE_URL}?idSite=156&method=Events.getCategory&secondaryDimension=eventAction&flat=1&format=JSON&module=API&period=week&date=${date}&showColumns=nb_visits,nb_events&filter_limit=-1`)
+      .then((response) => response.data),
+    await axios
+      .post<
+        { label: string; nb_visits: number }[]
+      >(`${process.env.NEXT_PUBLIC_MATOMO_SITE_URL}?idSite=156&method=Events.getCategory&format=JSON&module=API&period=week&date=${date}&showColumns=nb_visits,nb_events&filter_limit=-1`)
       .then((response) => response.data),
   ])
 
@@ -85,6 +102,19 @@ export const getMatomoStats = async (date: string) => {
       }
     })
 
+  const detectorEvents = allEventsGroupedOnDev.filter((event) => event.label.startsWith('Detecteur carbone_'))
+  const detectorVisit: Record<string, number> = {}
+  allEventsOnDev
+    .filter((event) => event.label.startsWith('Detecteur carbone_'))
+    .forEach((event) => {
+      const infos = event.label.replace('Detecteur carbone_', '').split('/')
+      const key = infos[2]
+      if (detectorVisit[key]) {
+        detectorVisit[key] += event.nb_visits
+      } else {
+        detectorVisit[key] = event.nb_visits
+      }
+    })
   const results = {
     visits: impactco2Visits.reduce((acc, visit) => acc + visit.nb_visits, 0),
     iframes: iframes.reduce((acc, visit) => acc + visit.nb_visits, 0),
@@ -103,6 +133,12 @@ export const getMatomoStats = async (date: string) => {
     screenshots: allEventsByAction
       .filter((event) => event.label === 'Screenshot')
       .reduce((acc, visit) => acc + visit.nb_visits, 0),
+    detectorViews: detectorEvents
+      .filter((event) => event.Events_EventAction === 'View')
+      .reduce((acc, event) => acc + event.nb_visits, 0),
+    detectorClick: detectorEvents
+      .filter((event) => event.Events_EventAction === 'Click')
+      .reduce((acc, event) => acc + event.nb_events, 0),
     topUsers: iframes
       .sort((a, b) => b.nb_visits - a.nb_visits)
       .slice(0, 10)
@@ -115,6 +151,10 @@ export const getMatomoStats = async (date: string) => {
       .sort((a, b) => b[1] - a[1])
       .slice(0, 3)
       .map(([label, visits]) => ({ label, visits })),
+    topDetectorIFrame: Object.entries(detectorVisit)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 5)
+      .map(([label, visits]) => ({ label: `https://${label}`, visits })),
     newIframe: iframes
       .filter((iframe) => !lastWeekIframes.find((lastWeek) => lastWeek.label === iframe.label))
       .sort((a, b) => b.nb_visits - a.nb_visits)
