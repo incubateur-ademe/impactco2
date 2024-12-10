@@ -1672,5 +1672,26 @@
     "fr": "kg de ;pomme de terre nouvelle",
     "en": "kg of ;new potato",
     "es": "kg de ;papa nueva"
+  },
+  "hotel": {
+    "category": 13,
+    "value": 6900,
+    "fr": "nuit[s] dans un hôtel",
+    "en": "night[s] in a hotel",
+    "es": "noche[s] en un hotel"
+  },
+  "camping": {
+    "category": 13,
+    "value": 1900,
+    "fr": "nuit[s] au camping",
+    "en": "night[s] at the campsite",
+    "es": "noche[s] en el camping"
+  },
+  "location": {
+    "category": 13,
+    "value": 5800,
+    "fr": "nuit[s] dans une location",
+    "en": "night[s] in a rental",
+    "es": "noche[s] en un alquiler"
   }
 }
