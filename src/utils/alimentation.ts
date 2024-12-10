@@ -90,7 +90,7 @@ const slugByCategory: Record<AlimentationCategories, { name: string; equivalents
       equivalents: ['boeuf', 'veau', 'porc', 'lapin', 'canard', 'poulet'],
     },
     {
-      name: 'poissonerie',
+      name: 'poissonnerie',
       logos: ['cabillaud', 'huitres'],
 
       equivalents: ['crevettes', 'cabillaud', 'lieu', 'dorade', 'saumon', 'moules', 'huitres', 'thon', 'sardines'],
