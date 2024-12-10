@@ -408,7 +408,10 @@
         "fromagemolle": "Moyenne des facteurs d’émission de différents fromages à pâte molle : Camembert, brie, maroilles, mont-d’or etc.",
         "fromagebleu": "Moyenne des facteurs d’émission des différents fromages à pâte persillées : Roquefort, bleu d’Auvergne, gorgonzola etc.",
         "riz": "Moyenne des facteurs d’émission des différents riz : Riz blanc, complet, rouge; sauvage",
-        "ble": "Moyenne des facteurs d’émission des différents blés : Blé dur entier, blé précuit, semoule de blé, blé tendre"
+        "ble": "Moyenne des facteurs d’émission des différents blés : Blé dur entier, blé précuit, semoule de blé, blé tendre",
+        "hotel": "Sont inclus les émissions liées à la consommation d’énergie (chauffage, électricité, climatisation, eau chaude), aux services hôteliers (nettoyage, blanchisserie), aux infrastructures (construction, maintenance) et à la restauration (approvisionnement, préparation, déchets).",
+        "camping": "Sont inclus la construction et la consommation énergétique des infrastructures (les douches, sanitaires et l’éclairage). Il n’y a ni services hôteliers ni restauration.",
+        "location": "Sont inclus les émissions liées à la consommation énergétique (chauffage, électricité, eau chaude), aux infrastructures (construction et entretien). Les locations ne fournissent ni services hôteliers ni restauration."
       },
       "post": {
         "ski": "Inclus : l’impact carbone du transport (52%), du logement (4%), de l’alimentation (8%), du domaine skiable (3%), des infrastructures, équipements et services du domaine (17%), et de l’équipement (16%).",
@@ -545,7 +548,7 @@
     "encas": "En-cas",
     "fruits": "Fruits et légumes",
     "boucherie": "Boucherie",
-    "poissonerie": "Poissonerie",
+    "poissonnerie": "Poissonnerie",
     "traiteur": "Traiteur",
     "fromagerie": "Fromagerie",
     "boulangerie": "Boulangerie",

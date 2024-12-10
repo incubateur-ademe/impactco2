@@ -92,4 +92,40 @@ export const casPratiques = [
       },
     ],
   },
+  {
+    synonyms: ['voyage'],
+    slug: 'hotel',
+    category: 13,
+    total: 6.9,
+    sources: [
+      {
+        label: 'ADEME',
+        href: 'https://librairie.ademe.fr/changement-climatique/4688-bilan-des-emissions-de-gaz-a-effet-de-serre-du-secteur-du-tourisme-en-france-en-2018.html',
+      },
+    ],
+  },
+  {
+    synonyms: ['voyage', 'tente'],
+    slug: 'camping',
+    category: 13,
+    total: 1.9,
+    sources: [
+      {
+        label: 'ADEME',
+        href: 'https://librairie.ademe.fr/changement-climatique/4688-bilan-des-emissions-de-gaz-a-effet-de-serre-du-secteur-du-tourisme-en-france-en-2018.html',
+      },
+    ],
+  },
+  {
+    synonyms: ['voyage', 'airbnb'],
+    slug: 'location',
+    category: 13,
+    total: 5.8,
+    sources: [
+      {
+        label: 'ADEME',
+        href: 'https://librairie.ademe.fr/changement-climatique/4688-bilan-des-emissions-de-gaz-a-effet-de-serre-du-secteur-du-tourisme-en-france-en-2018.html',
+      },
+    ],
+  },
 ]
