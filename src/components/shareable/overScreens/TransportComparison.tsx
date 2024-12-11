@@ -1,5 +1,5 @@
 import { useTranslations } from 'next-intl'
-import React, { Dispatch, SetStateAction, useEffect, useMemo } from 'react'
+import { Dispatch, SetStateAction, useEffect, useMemo } from 'react'
 import { computedEquivalents } from 'data/categories/computedEquivalents'
 import { deplacements } from 'data/categories/deplacement'
 import { getEquivalentWithCarpool } from 'utils/carpool'
@@ -44,16 +44,14 @@ const TransportComparison = ({
   )
 
   useEffect(() => {
-    if (!equivalent1) {
+    if (!equivalent1 && !equivalent2) {
+      setComparison([filteredEquivalents[0].slug, filteredEquivalents[1].slug])
+    } else if (!equivalent1) {
       setComparison([filteredEquivalents[0].slug, comparison[1]])
-    }
-  }, [equivalent1])
-
-  useEffect(() => {
-    if (!equivalent2) {
+    } else if (!equivalent2) {
       setComparison([comparison[0], filteredEquivalents[1].slug])
     }
-  }, [equivalent2])
+  }, [equivalent1, equivalent2])
 
   return (
     <fieldset>
