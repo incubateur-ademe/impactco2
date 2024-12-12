@@ -64,6 +64,12 @@
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+
+  @media screen and (max-width: 48rem) {
+    text-overflow: unset;
+    overflow: unset;
+    white-space: unset;
+  }
 }
 
 .select {
