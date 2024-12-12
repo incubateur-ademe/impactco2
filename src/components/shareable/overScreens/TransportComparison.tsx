@@ -47,9 +47,11 @@ const TransportComparison = ({
     if (!equivalent1 && !equivalent2) {
       setComparison([filteredEquivalents[0].slug, filteredEquivalents[1].slug])
     } else if (!equivalent1) {
-      setComparison([filteredEquivalents[0].slug, comparison[1]])
+      const newComparison = filteredEquivalents[0].slug
+      setComparison([newComparison === comparison[1] ? filteredEquivalents[1].slug : newComparison, comparison[1]])
     } else if (!equivalent2) {
-      setComparison([comparison[0], filteredEquivalents[1].slug])
+      const newComparison = filteredEquivalents[0].slug
+      setComparison([comparison[0], newComparison === comparison[0] ? filteredEquivalents[1].slug : newComparison])
     }
   }, [equivalent1, equivalent2])
 
