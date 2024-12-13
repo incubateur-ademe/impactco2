@@ -14,6 +14,7 @@
   border-radius: 8px 0 0 8px !important;
 }
 
+.all,
 .left,
 .top {
   display: flex !important;
@@ -22,6 +23,10 @@
   gap: 0.75em !important;
   background-color: var(--primary-10) !important;
   color: var(--primary-70) !important;
+}
+
+.all {
+  border-radius: 6px !important;
 }
 
 .left {
@@ -144,10 +149,15 @@
   visibility: visible !important;
 }
 
+.empty,
 .label {
   font-size: 0.75em !important;
   font-weight: 500 !important;
-  line-height: 1em !important;
+  line-height: 1.33em !important;
+}
+
+.empty {
+  max-width: 10.375rem;
 }
 
 .progressBarColumn,

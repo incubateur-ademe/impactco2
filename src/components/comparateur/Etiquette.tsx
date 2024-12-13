@@ -3,6 +3,7 @@
 import React, { ForwardedRef, forwardRef, useEffect, useState } from 'react'
 import { Language } from 'types/equivalent'
 import ColumnEquivalent from 'components/externalModules/shopify/ColumnEquivalent'
+import EmptyEquivalent from 'components/externalModules/shopify/EmptyEquivalent'
 import Equivalent from 'components/externalModules/shopify/Equivalent'
 
 export default forwardRef(function Etiquette(
@@ -29,7 +30,7 @@ export default forwardRef(function Etiquette(
     const onResize = () => {
       if (typeof ref !== 'function' && ref && ref.current && ref.current.parentElement) {
         const { width } = ref.current.parentElement.getBoundingClientRect()
-        setInline(width > (animated ? 2 : comparisons.length + 1) * 175)
+        setInline(width > (animated ? 2 : comparisons?.length + 1) * 175)
       }
     }
     onResize()
@@ -42,7 +43,9 @@ export default forwardRef(function Etiquette(
 
   return (
     <div ref={ref} className={className}>
-      {inline ? (
+      {Number(baseValue) === 0 ? (
+        <EmptyEquivalent />
+      ) : inline ? (
         <Equivalent
           language={language}
           baseValue={baseValue}
