@@ -191,7 +191,64 @@ declare module "@incubateur-ademe/impactco2-react" {
                 "voiturethermique+1" |
                 "voiturethermique+2" |
                 "voiturethermique+3" |
-                "voiturethermique+4" 
+                "voiturethermique+4" |
+                "hotel" |
+                "camping" |
+                "location"|
+                "boeuf" |
+                "veau" |
+                "porc" |
+                "canard" |
+                "lapin" |
+                "poulet" |
+                "crevettes" |
+                "moules" |
+                "huitres" |
+                "cabillaud" |
+                "lieu" |
+                "dorade" |
+                "saumon" |
+                "thon" |
+                "sardines" |
+                "beurre" |
+                "fromagedure" |
+                "feta" |
+                "fromagemolle" |
+                "mozarella" |
+                "fromagebleu" |
+                "oeuf" |
+                "matieregrasse" |
+                "yaourt" |
+                "fromageblanc" |
+                "quinoa" |
+                "riz" |
+                "pates" |
+                "ble" |
+                "boulgour" |
+                "poischiches" |
+                "haricotsrouges" |
+                "lentilles" |
+                "cheeseburger" |
+                "kebab" |
+                "burgerpoulet" |
+                "pizza" |
+                "sushis" |
+                "burgervegetarien" |
+                "frites" |
+                "tofu" |
+                "boucheechocolat" |
+                "pateatartiner" |
+                "brownie" |
+                "painauchocolat" |
+                "cookie" |
+                "madeleine" |
+                "painauxraisins" |
+                "chaussonauxpommes" |
+                "croissant" |
+                "paindemie" |
+                "bonbons" |
+                "baguette" |
+                "pommedeterre" 
         )[];
         value: number;
         animated?: boolean | undefined;
