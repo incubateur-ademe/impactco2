@@ -1,5 +1,6 @@
 import { useTranslations } from 'next-intl'
 import { Dispatch, SetStateAction, useEffect, useMemo } from 'react'
+import { ComputedEquivalent } from 'types/equivalent'
 import { computedEquivalents } from 'data/categories/computedEquivalents'
 import { deplacements } from 'data/categories/deplacement'
 import { getEquivalentWithCarpool } from 'utils/carpool'
@@ -8,6 +9,24 @@ import customStyles from './CustomParam.module.css'
 import styles from './TransportListParam.module.css'
 
 const equivalents = computedEquivalents('transport', deplacements).flatMap(getEquivalentWithCarpool)
+
+const findNextEquivalent = (equivalents: ComputedEquivalent[], comparison: string) => {
+  const [slug] = comparison.split('+')
+  let equivalent = equivalents.find((equivalent) => {
+    const [equivalentSlug] = equivalent.slug.split('+')
+    return slug !== equivalentSlug
+  })
+  if (equivalent) {
+    return equivalent.slug
+  }
+
+  equivalent = equivalents.find((equivalent) => slug !== equivalent.slug)
+  if (equivalent) {
+    return equivalent.slug
+  }
+
+  return equivalents[0].slug
+}
 
 const TransportComparison = ({
   comparison,
@@ -47,11 +66,9 @@ const TransportComparison = ({
     if (!equivalent1 && !equivalent2) {
       setComparison([filteredEquivalents[0].slug, filteredEquivalents[1].slug])
     } else if (!equivalent1) {
-      const newComparison = filteredEquivalents[0].slug
-      setComparison([newComparison === comparison[1] ? filteredEquivalents[1].slug : newComparison, comparison[1]])
+      setComparison([findNextEquivalent(filteredEquivalents, comparison[1]), comparison[1]])
     } else if (!equivalent2) {
-      const newComparison = filteredEquivalents[0].slug
-      setComparison([comparison[0], newComparison === comparison[0] ? filteredEquivalents[1].slug : newComparison])
+      setComparison([comparison[0], findNextEquivalent(filteredEquivalents, comparison[0])])
     }
   }, [equivalent1, equivalent2])
 
