@@ -26,13 +26,13 @@ const Integrate = ({
 }) => {
   const allParams = useAllParams()
   const themeStore = useThemeStore()
-  const languageStore = useGlobalStore()
+  const globalStore = useGlobalStore()
 
   const [visibility, setVisibility] = useState<Record<string, boolean> | null>(null)
 
   // All
   const [theme, setTheme] = useState(themeStore.theme)
-  const [language, setLanguage] = useState(languageStore.language)
+  const [language, setLanguage] = useState(globalStore.language)
 
   // Chauffage
   const [m2, setM2] = useState(allParams.chauffage.m2)
@@ -103,7 +103,7 @@ const Integrate = ({
       return getComparateurParams(allParams, path?.includes('etiquette'))
     }
     return {}
-  }, [allParams, category, path, m2, month, transport, start, end, presentiel, homeOffice, toDisplay])
+  }, [category, path, m2, month, transport, start, end, presentiel, homeOffice, toDisplay])
 
   useEffect(() => {
     if (params) {

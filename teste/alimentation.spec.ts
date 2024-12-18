@@ -31,7 +31,7 @@ test('Alimentation simulateur', async ({ page }) => {
 
   await page.getByTestId('header-integrate-button').first().click()
   await expect(page.getByTestId('clipboard-box')).toHaveText(
-    '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="/alimentation" data-search="?alimentationCategory=rayon&theme=default&language=fr"></script>'
+    '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="/alimentation" data-search="?alimentationCategory=popularity&theme=default&language=fr"></script>'
   )
   await page.getByLabel('Rayons du magasin').check()
   await expect(page.getByTestId('clipboard-box')).toHaveText(

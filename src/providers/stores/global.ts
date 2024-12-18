@@ -14,7 +14,7 @@ export const useGlobalStore = create<States>((set) => {
   let overscreenTrigger: HTMLElement | null = null
   return {
     language: 'fr',
-    setLanguage: (language) => set(() => ({ language })),
+    setLanguage: (language) => set((state) => (state.language === language ? state : { language })),
     overscreen: {},
     setOverscreen: (slug, value) =>
       set((state) => {

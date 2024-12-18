@@ -10,7 +10,7 @@ interface DistanceState {
 }
 
 export const useDistanceStore = create<DistanceState>((set) => ({
-  km: 0,
+  km: 10,
   carpool: {},
   displayAll: false,
   setKm: (km) => set(() => ({ km })),

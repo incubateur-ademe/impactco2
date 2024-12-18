@@ -22,6 +22,7 @@ const useAllParams = () => {
   const distance = useDistanceStore()
   const itineraire = useItineraireStore()
   const comparateur = useComparateurStore()
+
   return {
     alimentation,
     chauffage,

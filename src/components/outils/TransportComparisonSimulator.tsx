@@ -65,7 +65,6 @@ const TransportComparisonSimulator = ({
       if (availableComparisons.length > 0) {
         const newComparison = availableComparisons[index % availableComparisons.length]
         track(tracking, 'Autre comparaison', newComparison.join())
-
         setComparison(newComparison)
       }
     }

@@ -13,7 +13,7 @@ export const useFruitsetlegumesStore = create<FruitsetlegumesState>((set) => ({
   month: new Date().getMonth(),
   search: '',
   sorting: 'alph_desc',
-  setMonth: (month) => set(() => ({ month })),
+  setMonth: (month) => set((state) => (state.month === month ? state : { month })),
   setSearch: (search) => set(() => ({ search })),
   setSorting: (sorting) => set(() => ({ sorting })),
 }))

@@ -27,7 +27,7 @@ export const useTransportStore = create<TransportState>((set) => ({
   selected: 'distance',
   tabs: true,
   setComparisonMode: (mode) => set(() => ({ comparisonMode: mode })),
-  setComparison: (comparison) => set(() => ({ comparison })),
+  setComparison: (comparison) => set((state) => (comparison === state.comparison ? state : { comparison })),
   setModes: (modes) => set(() => ({ modes })),
   setMode: (mode) => set(() => ({ mode })),
   setSelected: (selected) => set(() => ({ selected })),

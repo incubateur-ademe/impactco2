@@ -6,8 +6,8 @@ interface States {
 }
 
 export const useThemeStore = create<States>((set) => ({
-  theme: 'fr',
-  setTheme: (theme) => set(() => ({ theme })),
+  theme: 'default',
+  setTheme: (theme) => set((state) => (state.theme === theme ? state : { theme })),
 }))
 
 useThemeStore.subscribe((state) => {

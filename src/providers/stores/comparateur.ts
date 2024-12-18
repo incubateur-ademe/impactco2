@@ -7,14 +7,10 @@ interface ComparateurState {
   equivalents: string[]
   tiles: Equivalent[]
   comparedEquivalent: ComputedEquivalent | undefined
-  comparisonMode: 'list' | 'comparison'
-  comparison: string[]
   setBaseValue: (baseValue: number) => void
   setEquivalents: (equivalents: string[]) => void
   setTiles: (tiles: Equivalent[]) => void
-  setComparedEquivalent: (equivalent: ComputedEquivalent | undefined) => void
-  setComparisonMode: (mode: 'list' | 'comparison') => void
-  setComparison: (comparison: string[]) => void
+  setComparedEquivalent: (equivalent: ComputedEquivalent | undefined, fromURL?: boolean) => void
 }
 
 export const useComparateurStore = create<ComparateurState>((set) => ({
@@ -23,12 +19,10 @@ export const useComparateurStore = create<ComparateurState>((set) => ({
   equivalents: [],
   tiles: [],
   comparedEquivalent: undefined,
-  comparisonMode: 'list',
-  comparison: ['voiturethermique', 'tgv'],
   setBaseValue: (baseValue) => set(() => ({ baseValue })),
   setEquivalents: (equivalents) => set(() => ({ equivalents })),
   setTiles: (tiles) => set(() => ({ tiles })),
-  setComparedEquivalent: (equivalent) =>
+  setComparedEquivalent: (equivalent, fromURL) =>
     set((state) => {
       const filteredEquivalent = equivalent
         ? state.equivalents.filter((slug) => slug !== equivalent.slug)
@@ -38,12 +32,10 @@ export const useComparateurStore = create<ComparateurState>((set) => ({
         : [...filteredEquivalent]
 
       return {
-        baseValue: 100,
+        baseValue: fromURL ? state.baseValue : 100,
         weight: equivalent ? equivalent.value / (equivalent.percentage ? 100 : 1) : 1,
         comparedEquivalent: equivalent,
         equivalents,
       }
     }),
-  setComparisonMode: (mode) => set(() => ({ comparisonMode: mode })),
-  setComparison: (comparison) => set(() => ({ comparison })),
 }))

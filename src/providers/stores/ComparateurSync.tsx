@@ -2,28 +2,52 @@
 
 import { useSearchParams } from 'next/navigation'
 import { useEffect } from 'react'
+import { getRandomEquivalents } from 'components/comparateur/random'
+import { computedEquivalents } from '../equivalents'
 import { useComparateurStore } from './comparateur'
 
 const ComparateurSync = () => {
   const searchParams = useSearchParams()
-  const { setComparisonMode, setComparison } = useComparateurStore()
+  const { setBaseValue, setComparedEquivalent, setEquivalents } = useComparateurStore()
 
   useEffect(() => {
     if (!searchParams) {
       return
     }
-
-    if (searchParams.get('defaultMode')) {
-      setComparisonMode(searchParams.get('defaultMode') === 'list' ? 'list' : 'comparison')
-    } else if (searchParams.get('mode')) {
-      setComparisonMode(searchParams.get('mode') === 'list' ? 'list' : 'comparison')
+    if (searchParams.get('value')) {
+      const value = Number(searchParams.get('value') as string)
+      if (!Number.isNaN(value)) {
+        setBaseValue(value)
+      }
+    }
+    if (searchParams.get('equivalent')) {
+      const [slug, carpool] = (searchParams.get('equivalent') || '').split(' ')
+      const equivalent = computedEquivalents.find((equivalent) => equivalent.slug === slug)
+      setComparedEquivalent(
+        equivalent && equivalent.withCarpool
+          ? {
+              ...equivalent,
+              carpool: Number(carpool),
+              link: `${equivalent.link}+${carpool}`,
+              slug: `${equivalent.slug}+${carpool}`,
+              value: equivalent.value / (Number(carpool) + 1),
+            }
+          : equivalent,
+        true
+      )
     }
 
-    if (searchParams.get('comparison')) {
-      const comparison = searchParams.get('comparison')?.replace(/ /g, '+').split(',') as string[]
-      setComparison(comparison)
+    if (searchParams.get('comparisons')) {
+      setEquivalents(
+        (searchParams.get('comparisons') as string)
+          .replace(/ /g, '+')
+          .split(',')
+          .filter((slug) => slug.includes('+') || computedEquivalents.find((equivalent) => equivalent.slug === slug))
+      )
+    } else {
+      setEquivalents(getRandomEquivalents(searchParams.get('equivalent') as string, 3))
     }
-  }, [searchParams, setComparisonMode, setComparison])
+  }, [searchParams, setBaseValue, setComparedEquivalent, setEquivalents])
 
   return null
 }
