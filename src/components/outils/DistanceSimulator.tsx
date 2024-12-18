@@ -1,8 +1,8 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import React from 'react'
-import useParamContext from 'src/providers/ParamProvider'
+import { useDistanceStore } from 'src/providers/stores/distance'
+import { useTransportStore } from 'src/providers/stores/transport'
 import { track } from 'utils/matomo'
 import useTransportations from 'hooks/useTransportations'
 import NumberInput from 'components/form/NumberInput'
@@ -12,10 +12,9 @@ import TransportComparisonMode from './TransportComparisonMode'
 import TransportComparisonSimulator from './TransportComparisonSimulator'
 
 const DistanceSimulator = ({ withComparisonMode }: { withComparisonMode: boolean }) => {
-  const {
-    transport: { comparisonMode },
-    distance: { km, setKm, displayAll, setDisplayAll },
-  } = useParamContext()
+  const { km, setKm, displayAll, setDisplayAll } = useDistanceStore()
+  const { comparisonMode } = useTransportStore()
+
   const t = useTranslations('transport.distance')
   const { hasMore, equivalents } = useTransportations('Transport distance', 'distance')
 

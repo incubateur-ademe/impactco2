@@ -2,8 +2,9 @@
 
 import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
-import React, { useEffect, useRef } from 'react'
-import useParamContext from 'src/providers/ParamProvider'
+import { useEffect, useRef } from 'react'
+import { useComparateurStore } from 'src/providers/stores/comparateur'
+import { useGlobalStore } from 'src/providers/stores/global'
 import { getName } from 'utils/Equivalent/equivalent'
 import { getNumberPrecision } from 'utils/formatNumberPrecision'
 import { metaTitles } from 'utils/meta'
@@ -20,10 +21,9 @@ import styles from './ComparateurSimulator.module.css'
 const ComparateurSimulator = () => {
   const inputRef = useRef<HTMLInputElement>(null)
   const isInitialRender = useRef(true)
-  const {
-    language,
-    comparateur: { baseValue, weight, setBaseValue, comparedEquivalent, setComparedEquivalent },
-  } = useParamContext()
+  const { language } = useGlobalStore()
+
+  const { baseValue, weight, setBaseValue, comparedEquivalent, setComparedEquivalent } = useComparateurStore()
 
   const { value, unit } = getNumberPrecision(baseValue * weight)
   const t = useTranslations('comparateur')

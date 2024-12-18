@@ -1,8 +1,7 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import React from 'react'
-import useParamContext from 'src/providers/ParamProvider'
+import { useFruitsetlegumesStore } from 'src/providers/stores/fruitsetlegumes'
 import { Category } from 'types/category'
 import { FruitsEtLegumesEquivalent } from 'types/equivalent'
 import { categories } from 'data/categories'
@@ -17,9 +16,7 @@ import styles from './Simulator.module.css'
 const flds = categories.find((category) => category.slug === 'fruitsetlegumes') as Category
 
 const FruitsEtLegumesSimulator = () => {
-  const {
-    fruitsetlegumes: { month, setMonth },
-  } = useParamContext()
+  const { month, setMonth } = useFruitsetlegumesStore()
 
   const t = useTranslations('flds')
   const tMonth = useTranslations('overscreen.month')

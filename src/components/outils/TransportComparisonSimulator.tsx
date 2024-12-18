@@ -1,8 +1,8 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import React, { useEffect, useMemo, useState } from 'react'
-import useParamContext from 'src/providers/ParamProvider'
+import { useEffect, useMemo, useState } from 'react'
+import { useTransportStore } from 'src/providers/stores/transport'
 import { ComputedEquivalent } from 'types/equivalent'
 import { isEquivalentInMode } from 'utils/Equivalent/equivalent'
 import { track } from 'utils/matomo'
@@ -34,9 +34,7 @@ const TransportComparisonSimulator = ({
   equivalents: ComputedEquivalent[]
 }) => {
   const t = useTranslations('transport')
-  const {
-    transport: { setComparison, comparison, modes },
-  } = useParamContext()
+  const { setComparison, comparison, modes } = useTransportStore()
 
   const [generation, setGeneration] = useState<number | boolean>(false)
   const [index, setIndex] = useState<number | boolean>(false)

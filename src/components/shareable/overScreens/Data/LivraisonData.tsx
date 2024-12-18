@@ -1,5 +1,4 @@
-import React from 'react'
-import useParamContext from 'src/providers/ParamProvider'
+import { useGlobalStore } from 'src/providers/stores/global'
 import NewTabIcon from 'components/base/NewTabIcon'
 import Link from 'components/base/buttons/Link'
 import styles from './Data.module.css'
@@ -729,7 +728,7 @@ const ENLivraisonData = () => {
 }
 
 const LivraisonData = () => {
-  const { language } = useParamContext()
+  const { language } = useGlobalStore()
   if (language === 'en') {
     return <ENLivraisonData />
   }

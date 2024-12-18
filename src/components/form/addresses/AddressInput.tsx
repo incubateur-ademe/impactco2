@@ -1,7 +1,7 @@
 'use client'
 
 import classNames from 'classnames'
-import React, { Dispatch, InputHTMLAttributes, SetStateAction, useEffect, useRef, useState } from 'react'
+import { InputHTMLAttributes, useEffect, useRef, useState } from 'react'
 import { ZodError } from 'zod'
 import { displayAddress } from 'utils/address'
 import { useSuggestions } from 'hooks/useAddress'
@@ -29,7 +29,7 @@ const AddressInput = ({
   hint?: string
   errors?: ZodError | null
   place?: string
-  setPlace: Dispatch<SetStateAction<Point | undefined>>
+  setPlace: (place: Point | undefined) => void
   large?: boolean
 }) => {
   const [value, setValue] = useState('')

@@ -1,8 +1,8 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import React from 'react'
-import useParamContext from 'src/providers/ParamProvider'
+import { useItineraireStore } from 'src/providers/stores/itineraire'
+import { useTransportStore } from 'src/providers/stores/transport'
 import useItineraries from 'hooks/useItineraries'
 import useTransportations from 'hooks/useTransportations'
 import CheckboxInput from 'components/form/CheckboxInput'
@@ -13,10 +13,8 @@ import TransportComparisonMode from './TransportComparisonMode'
 import TransportComparisonSimulator from './TransportComparisonSimulator'
 
 const ItineraireSimulator = ({ withComparisonMode }: { withComparisonMode: boolean }) => {
-  const {
-    transport: { comparisonMode },
-    itineraire: { start, setStart, end, setEnd, displayAll, setDisplayAll, roundTrip, setRoundTrip },
-  } = useParamContext()
+  const { start, setStart, end, setEnd, displayAll, setDisplayAll, roundTrip, setRoundTrip } = useItineraireStore()
+  const { comparisonMode } = useTransportStore()
 
   const t = useTranslations('transport.itineraire')
 

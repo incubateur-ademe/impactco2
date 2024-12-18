@@ -1,8 +1,8 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import React, { useEffect, useState } from 'react'
-import useParamContext from 'src/providers/ParamProvider'
+import { useEffect, useState } from 'react'
+import { useChauffageStore } from 'src/providers/stores/chauffage'
 import { Category } from 'types/category'
 import { categories } from 'data/categories'
 import { track } from 'utils/matomo'
@@ -14,9 +14,7 @@ import styles from './Simulator.module.css'
 const chauffage = categories.find((category) => category.slug === 'chauffage') as Category
 
 const ChauffageSimulator = () => {
-  const {
-    chauffage: { m2, setM2 },
-  } = useParamContext()
+  const { m2, setM2 } = useChauffageStore()
   const [internalValue, setInternalValue] = useState(m2.toString())
   const t = useTranslations('chauffage')
 

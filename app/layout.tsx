@@ -1,9 +1,9 @@
 import { Metadata } from 'next'
 import React from 'react'
+import 'src/providers/stores/theme'
 import 'utils/fonts.css'
 import 'utils/styles.css'
 import 'utils/variables.css'
-import Theme from 'components/layout/Theme'
 import Matomo from 'components/matomo/Matomo'
 import Transtack from 'components/transtack/Transtack'
 
@@ -34,7 +34,6 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       </head>
       <body>
         <Matomo />
-        <Theme />
         <Transtack>{children}</Transtack>
       </body>
     </html>

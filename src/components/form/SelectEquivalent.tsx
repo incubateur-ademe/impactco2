@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import { useMemo } from 'react'
-import useParamContext from 'src/providers/ParamProvider'
 import { computedEquivalents } from 'src/providers/equivalents'
+import { useGlobalStore } from 'src/providers/stores/global'
 import { Equivalent } from 'types/equivalent'
 import { getName } from 'utils/Equivalent/equivalent'
 import EquivalentIcon from 'components/base/EquivalentIcon'
@@ -9,7 +9,7 @@ import Select, { SelectProps } from './Select'
 import styles from './SelectEquivalent.module.css'
 
 const SelectEquivalent = ({ equivalents, ...rest }: Omit<SelectProps, 'children'> & { equivalents: Equivalent[] }) => {
-  const { language } = useParamContext()
+  const { language } = useGlobalStore()
 
   const equivalent = useMemo(() => {
     const [slug] = (rest.value as string).split('+')

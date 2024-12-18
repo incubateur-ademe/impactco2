@@ -1,7 +1,7 @@
 import { useTranslations } from 'next-intl'
-import React, { useMemo, useState } from 'react'
-import useParamContext from 'src/providers/ParamProvider'
+import { useMemo, useState } from 'react'
 import { computedEquivalents } from 'src/providers/equivalents'
+import { useComparateurStore } from 'src/providers/stores/comparateur'
 import { Category as CategoryType } from 'types/category'
 import { getName } from 'utils/Equivalent/equivalent'
 import { getEquivalentWithCarpool } from 'utils/carpool'
@@ -25,9 +25,7 @@ const Category = ({
   setEquivalents: (value: string[]) => void
   equivalents: string[]
 }) => {
-  const {
-    comparateur: { comparedEquivalent, setEquivalents: setFinalEquivalents },
-  } = useParamContext()
+  const { comparedEquivalent, setEquivalents: setFinalEquivalents } = useComparateurStore()
 
   const [open, setOpen] = useState(false)
 

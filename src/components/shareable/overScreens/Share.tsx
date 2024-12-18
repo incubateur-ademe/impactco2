@@ -1,7 +1,8 @@
 'use client'
 
-import React, { useEffect, useMemo, useState } from 'react'
-import useParamContext from 'src/providers/ParamProvider'
+import { useEffect, useMemo, useState } from 'react'
+import { useGlobalStore } from 'src/providers/stores/global'
+import useAllParams from 'src/providers/stores/useAllParams'
 import { Category } from 'types/category'
 import { buildCurrentUrlFor } from 'utils/urls'
 import CustomParam, { CustomParamValue } from './CustomParam'
@@ -21,7 +22,10 @@ const Share = ({
   path?: string
   tracking?: string
 }) => {
-  const allParams = useParamContext()
+  const allParams = useAllParams()
+  const { language } = useGlobalStore()
+  const globalStore = useGlobalStore()
+
   const [visibility, setVisibility] = useState<Record<string, boolean> | null>(null)
 
   const params = useMemo(
@@ -45,7 +49,7 @@ const Share = ({
   }, [params, setVisibility])
 
   const url = buildCurrentUrlFor(
-    `${path || `outils/${category?.slug === 'repas' ? 'alimentation' : category?.slug}`}?${buildCustomParamsUrl(params, visibility)}&language=${allParams.language}${category?.slug === 'repas' ? '#repas' : ''}`
+    `${path || `outils/${category?.slug === 'repas' ? 'alimentation' : category?.slug}`}?${buildCustomParamsUrl(params, visibility)}&language=${globalStore.language}${category?.slug === 'repas' ? '#repas' : ''}`
   ).replace(/\?$/, '')
   const trackingValue = (category ? category.name : tracking) || 'UNKNOWN'
 
@@ -68,7 +72,7 @@ const Share = ({
           tracking={trackingValue}
           slug='language'
           integration
-          param={{ value: allParams.language, setter: allParams.setLanguage } as CustomParamValue}
+          param={{ value: globalStore.language, setter: globalStore.setLanguage } as CustomParamValue}
           visible
         />
       </form>
@@ -81,7 +85,7 @@ const Share = ({
         customImage={
           category
             ? undefined
-            : `${process.env.NEXT_PUBLIC_IMAGE_URL}/api/dynamics/comparateur?${buildCustomParamsUrl(params, visibility)}&language=${allParams.language}`
+            : `${process.env.NEXT_PUBLIC_IMAGE_URL}/api/dynamics/comparateur?${buildCustomParamsUrl(params, visibility)}&language=${language}`
         }
       />
       <ShareKit />

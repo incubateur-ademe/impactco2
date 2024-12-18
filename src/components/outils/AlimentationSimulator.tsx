@@ -2,8 +2,8 @@
 
 import { useTranslations } from 'next-intl'
 import React, { useMemo } from 'react'
-import useParamContext from 'src/providers/ParamProvider'
 import { computedEquivalents } from 'src/providers/equivalents'
+import { useAlimentationStore } from 'src/providers/stores/alimentation'
 import { AlimentationCategories, equivalentsByCategory } from 'utils/alimentation'
 import { track } from 'utils/matomo'
 import HiddenLabel from 'components/form/HiddenLabel'
@@ -14,9 +14,7 @@ import styles from './Simulator.module.css'
 import AlimentationSubCategory from './alimentation/AlimentationSubCategory'
 
 const AlimentationSimulator = () => {
-  const {
-    alimentation: { category, setCategory, customList, equivalents },
-  } = useParamContext()
+  const { category, setCategory, customList, equivalents } = useAlimentationStore()
 
   const t = useTranslations('alimentation')
   const values = useMemo(() => equivalentsByCategory[category], [category])

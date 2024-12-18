@@ -1,5 +1,8 @@
 import { useMemo } from 'react'
-import useParamContext from 'src/providers/ParamProvider'
+import { useDistanceStore } from 'src/providers/stores/distance'
+import { useGlobalStore } from 'src/providers/stores/global'
+import { useItineraireStore } from 'src/providers/stores/itineraire'
+import { useTransportStore } from 'src/providers/stores/transport'
 import { DeplacementType } from 'types/equivalent'
 import { TransportSimulateur } from 'types/transport'
 import { deplacements } from 'data/categories/deplacement'
@@ -16,19 +19,22 @@ export default function useTransportations(
   type: TransportSimulateur,
   itineraries?: Record<DeplacementType, number> | null
 ) {
-  const params = useParamContext()
+  const { language } = useGlobalStore()
+  const distance = useDistanceStore()
+  const itineraire = useItineraireStore()
+  const transport = useTransportStore()
 
   const transportations = useMemo(() => {
-    const { km } = params.distance
-    const { displayAll, carpool } = params[type]
+    const { km } = distance
+    const { displayAll, carpool } = type === 'distance' ? distance : itineraire
     const values = itineraries ? { ...itineraries } : null
-    const roundTripFactor = itineraries && values && params.itineraire.roundTrip ? 2 : 1
+    const roundTripFactor = itineraries && values && itineraire.roundTrip ? 2 : 1
 
     const allEquivalents =
       values || km
         ? deplacements
             // Carpool is managed after expansion, avion needs to be managed here
-            .filter((equivalent) => equivalent.withCarpool || params.transport.modes.includes(equivalent.slug))
+            .filter((equivalent) => equivalent.withCarpool || transport.modes.includes(equivalent.slug))
             .filter((equivalent) => (values && equivalent.type ? values[equivalent.type as DeplacementType] : km))
             .map((equivalent) => {
               if ('ecvs' in equivalent && equivalent.ecvs) {
@@ -53,7 +59,7 @@ export default function useTransportations(
                 ...equivalent,
                 link: `/outils/transport/${equivalent.slug}`,
                 name:
-                  getNameWithoutSuffix(params.language, { ...equivalent, carpool: 0 }) +
+                  getNameWithoutSuffix(language, { ...equivalent, carpool: 0 }) +
                   (values ? ` - ${formatNumber(distance).toLocaleString()} km` : ''),
                 value: computeECV(equivalent) * distance,
                 usage: formatUsage(equivalent) * distance,
@@ -65,14 +71,13 @@ export default function useTransportations(
                 (values && equivalent.type ? values[equivalent.type as DeplacementType] : km) * roundTripFactor
 
               const carpoolValue = equivalent.withCarpool && carpool[equivalent.slug] ? carpool[equivalent.slug] : 1
-              return equivalent.withCarpool &&
-                params.transport.modes.find((mode) => mode.startsWith(`${equivalent.slug}+`))
+              return equivalent.withCarpool && transport.modes.find((mode) => mode.startsWith(`${equivalent.slug}+`))
                 ? [
                     {
                       ...equivalent,
                       carpool: carpoolValue,
                       name:
-                        getNameWithoutSuffix(params.language, { ...equivalent, carpool: carpoolValue }) +
+                        getNameWithoutSuffix(language, { ...equivalent, carpool: carpoolValue }) +
                         (values ? ` - ${formatNumber(distance).toLocaleString()} km` : ''),
                       initialValue: equivalent.value,
                       value: equivalent.value / (carpoolValue + 1),
@@ -89,10 +94,10 @@ export default function useTransportations(
                 // Carpool case, check slug+1
                 if ('carpool' in equivalent && equivalent.carpool) {
                   const [slug] = equivalent.slug.split('+')
-                  return params.transport.modes.includes(`${slug}+1`)
+                  return transport.modes.includes(`${slug}+1`)
                 }
                 // Without carpool, check slug
-                return params.transport.modes.includes(equivalent.slug)
+                return transport.modes.includes(equivalent.slug)
               }
               // Manage on top
               return true
@@ -100,7 +105,7 @@ export default function useTransportations(
         : []
 
     const equivalents =
-      displayAll || params.transport.comparisonMode === 'comparison'
+      displayAll || transport.comparisonMode === 'comparison'
         ? allEquivalents
         : allEquivalents
             .filter((equivalent) => equivalent.default)
@@ -115,7 +120,7 @@ export default function useTransportations(
       hasMore: (displayAll || allEquivalents.length > equivalents.length) && equivalents.length !== 0,
       equivalents: equivalents.length === 0 ? allEquivalents : equivalents,
     }
-  }, [params, itineraries, type, tracking])
+  }, [transport, distance, itineraire, language, itineraries, type, tracking])
 
   return transportations
 }

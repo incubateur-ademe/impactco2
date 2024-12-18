@@ -81,7 +81,8 @@
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-react": "^5.18.2",
     "ts-node": "^10.9.2",
-    "zod": "^3.23.8"
+    "zod": "^3.23.8",
+    "zustand": "^5.0.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.25.9",

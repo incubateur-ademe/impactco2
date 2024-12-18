@@ -1,14 +1,22 @@
 'use client'
 
-import React, { Dispatch, ReactNode, SetStateAction, useMemo } from 'react'
-import useParamContext from 'src/providers/ParamProvider'
+import { Dispatch, ReactNode, SetStateAction, useMemo } from 'react'
+import useAllParams from 'src/providers/stores/useAllParams'
 import { Category as CategoryType } from 'types/category'
 import Shareable from 'components/shareable/Shareable'
 import { overScreenCategoryValues } from 'components/shareable/overScreens/Values'
 import CategorySimulator from './CategorySimulator'
 
-const Category = ({ category, simulator }: { category: CategoryType; simulator?: ReactNode }) => {
-  const allParams = useParamContext()
+const Category = ({
+  category,
+  simulator,
+}: {
+  category: CategoryType
+  simulator?: ReactNode
+  displayAll?: boolean
+  setDisplayAll?: (value: boolean) => void
+}) => {
+  const allParams = useAllParams()
 
   const overScreens = useMemo(() => overScreenCategoryValues(category), [category])
 
