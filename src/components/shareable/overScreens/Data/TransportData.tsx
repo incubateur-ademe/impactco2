@@ -1,4 +1,3 @@
-import React from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import Link from 'components/base/buttons/Link'
 import styles from './Data.module.css'
@@ -99,6 +98,15 @@ const FRTransportData = () => {
         <p>
           En comparant deux moyens de transports, évaluer <b>les économies de carbones</b> que réalisée sur une même
           distance donnée en fonction de toutes les hypothèses affichées ci-dessus.
+        </p>
+      </div>
+      <h2 className={styles.title}>Avion</h2>
+      <div className={styles.content}>
+        <p>
+          Les traînées de condensation sont des nuages créés par les avions lorsque l'air se condense autour de leurs
+          gaz d'échappement. Leur impact de réchauffement reste incertain, car ces nuages instables sont difficiles à
+          modéliser avec précision, mais pourrait être deux à trois fois plus important que les émissions directes des
+          avions. Les impacts de l’aviation varient selon les hypothèses retenues sur ces traînées et leur persistance.
         </p>
       </div>
       <div className={styles.content}>
@@ -210,6 +218,16 @@ const ESTransportData = () => {
           basándote en todos los supuestos anteriores.
         </p>
       </div>
+      <h2 className={styles.title}>Avión</h2>
+      <div className={styles.content}>
+        <p>
+          Las estelas de condensación son nubes creadas por los aviones cuando el aire se condensa alrededor de sus
+          gases de escape. Su impacto de calentamiento sigue siendo incierto, ya que estas nubes inestables son
+          difíciles de modelar con precisión, pero podría ser dos o tres veces mayor que las emisiones directas de los
+          aviones. Los impactos de la aviación varían según las hipótesis adoptadas sobre estas estelas y su
+          persistencia.
+        </p>
+      </div>
       <div className={styles.content}>
         <p>
           ¿Tienes alguna pregunta? ¿Quieres saber más?{' '}
@@ -317,6 +335,15 @@ const ENTransportData = () => {
         <p>
           By comparing two means of transport, evaluate <b>the carbon savings</b> achieved over the same given distance
           based on all the hypotheses displayed above.
+        </p>
+      </div>
+      <h2 className={styles.title}>Airplane</h2>
+      <div className={styles.content}>
+        <p>
+          Contrails are clouds created by airplanes when air condenses around their exhaust. Their warming impact
+          remains uncertain, as these unstable clouds are difficult to model accurately, but could be two to three times
+          greater than the direct emissions of airplanes. The impacts of aviation vary depending on the assumptions made
+          about these contrails and their persistence.
         </p>
       </div>
       <div className={styles.content}>
