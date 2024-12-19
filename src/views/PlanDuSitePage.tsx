@@ -1,5 +1,4 @@
 import classNames from 'classnames'
-import React from 'react'
 import { categories } from 'data/categories'
 import { getName } from 'utils/Equivalent/equivalent'
 import Link from 'components/base/buttons/Link'
@@ -115,6 +114,11 @@ const PlanDuSitePage = () => {
             </Link>
           </li>
         </ul>
+        <li>
+          <Link prefetch={false} href='/eco-conception'>
+            Éco-conception
+          </Link>
+        </li>
         <li>
           <Link prefetch={false} href='/mentions-legales'>
             Mentions légales
