@@ -61,6 +61,7 @@ const QuizSimulator = () => {
             {question > 0 && config && (
               <button
                 data-testid='quiz-previous-button'
+                type="button"
                 className={styles.previousButton}
                 onClick={() => {
                   setAnswer(undefined)
