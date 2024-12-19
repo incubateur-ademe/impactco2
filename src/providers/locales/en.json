@@ -409,9 +409,10 @@
         "fromagebleu": "Average of emission factors for various blue cheeses: Roquefort, Bleu d'Auvergne, Gorgonzola, etc.",
         "riz": "Average of emission factors for various rice types: white rice, brown rice, red rice, wild rice",
         "ble": "Average of emission factors for various wheat types: whole durum wheat, precooked wheat, wheat semolina, soft wheat",
-        "hotel": "Includes emissions related to energy consumption (heating, electricity, air conditioning, hot water), hotel services (cleaning, laundry), infrastructure (construction, maintenance), and catering (supply, preparation, waste).",
-        "camping": "Includes the construction and energy consumption of infrastructure (showers, sanitary facilities, and lighting). There are no hotel services or catering.",
-        "location": "Includes emissions related to energy consumption (heating, electricity, hot water), infrastructure (construction and maintenance). Rentals do not provide hotel services or catering."
+        "hotel": "Includes emissions related to energy consumption (heating, electricity, air conditioning, hot water), maintenance services (cleaning, laundry), infrastructure (construction, maintenance), and commuting of staff.",
+        "camping": "Includes the construction and energy consumption of infrastructure (showers, sanitary facilities, and lighting).",
+        "location": "Includes emissions related to energy consumption (heating, electricity, hot water), infrastructure (construction), and maintenance services.",
+        "residencesecondaire": "Includes emissions related to energy consumption (heating, electricity, hot water), infrastructure (construction), and maintenance services."
       },
       "post": {
         "ski": "Includes: the carbon impact of transportation (52%), accommodation (4%), food (8%), ski area (3%), infrastructure, equipment, and services (17%), and gear (16%).",
@@ -474,7 +475,11 @@
       "40": "Terminal construction",
       "41": "Terminal usage",
       "42": "Transmission",
-      "43": "Data-centers"
+      "43": "Data-centers",
+      "50": "Energy consumption",
+      "51": "Maintenance services",
+      "52": "Staff commuting",
+      "53": "Infrastructure construction"
     }
   },
   "category": {

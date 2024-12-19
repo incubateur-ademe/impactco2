@@ -99,4 +99,20 @@ export const ecv = [
     publicode: ' . data center',
     name: 'Data-centers',
   },
+  {
+    id: 50,
+    name: "Consommation d'énergie",
+  },
+  {
+    id: 51,
+    name: "Services d'entretien",
+  },
+  {
+    id: 52,
+    name: 'Déplacement du personnel',
+  },
+  {
+    id: 53,
+    name: 'Construction des infrastructures',
+  },
 ]

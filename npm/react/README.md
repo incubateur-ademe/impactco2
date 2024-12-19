@@ -330,3 +330,4 @@ Liste des équivalents à comparer parmis la liste suivante :
   - hotel : nuit à l'hotel
   - camping : nuit au camping
   - location : nuit dans une location
+  - residencesecondaire : nuit dans une résidence secondaire
