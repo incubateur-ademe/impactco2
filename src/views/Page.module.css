@@ -15,6 +15,7 @@
 
   ul {
     margin-left: 2rem;
+    list-style: disc;
   }
 
   table {
