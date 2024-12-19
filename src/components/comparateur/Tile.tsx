@@ -1,9 +1,10 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import React, { useMemo } from 'react'
-import useParamContext from 'src/providers/ParamProvider'
+import { useMemo } from 'react'
 import { computedEquivalents } from 'src/providers/equivalents'
+import { useComparateurStore } from 'src/providers/stores/comparateur'
+import { useGlobalStore } from 'src/providers/stores/global'
 import { getName } from 'utils/Equivalent/equivalent'
 import formatNumber from 'utils/formatNumber'
 import { track } from 'utils/matomo'
@@ -18,10 +19,9 @@ import styles from './Tile.module.css'
 
 const Tile = ({ slug, onAdd }: { slug?: string; onAdd?: () => void }) => {
   const t = useTranslations('comparateur')
-  const {
-    language,
-    comparateur: { baseValue, weight, setEquivalents, equivalents, setComparedEquivalent },
-  } = useParamContext()
+  const { language } = useGlobalStore()
+
+  const { baseValue, weight, setEquivalents, equivalents, setComparedEquivalent } = useComparateurStore()
 
   const equivalent = useMemo(() => {
     if (slug) {

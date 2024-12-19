@@ -1,8 +1,9 @@
 import { useTranslations } from 'next-intl'
 import Link from 'next/link'
-import React, { useMemo } from 'react'
-import useParamContext from 'src/providers/ParamProvider'
+import { useMemo } from 'react'
 import { computedEquivalents } from 'src/providers/equivalents'
+import { useGlobalStore } from 'src/providers/stores/global'
+import { useTransportStore } from 'src/providers/stores/transport'
 import { ComputedEquivalent } from 'types/equivalent'
 import { getName, getNameWithoutSuffix, isEquivalentInMode } from 'utils/Equivalent/equivalent'
 import { getEquivalentWithCarpool } from 'utils/carpool'
@@ -58,11 +59,9 @@ const TransportComparisonEquivalent = ({
   canChange?: boolean
   tracking: string
 }) => {
-  const {
-    language,
-    setOverscreen,
-    transport: { comparison },
-  } = useParamContext()
+  const { setOverscreen, language } = useGlobalStore()
+
+  const { comparison } = useTransportStore()
   const equivalent = useMemo(
     () => getEquivalent(language, equivalents, comparison[index]),
     [language, comparison, index, equivalents]

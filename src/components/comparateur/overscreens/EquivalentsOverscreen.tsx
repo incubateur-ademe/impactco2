@@ -2,7 +2,8 @@
 
 import { useTranslations } from 'next-intl'
 import { useEffect, useRef, useState } from 'react'
-import useParamContext from 'src/providers/ParamProvider'
+import { useComparateurStore } from 'src/providers/stores/comparateur'
+import { useGlobalStore } from 'src/providers/stores/global'
 import { useSearchEquivalent } from 'src/providers/useSearchEquivalent'
 import { categories } from 'data/categories'
 import { track } from 'utils/matomo'
@@ -18,10 +19,9 @@ import styles from './EquivalentsOverscreen.module.css'
 const EquivalentsOverscreen = () => {
   const equivalentRef = useRef<HTMLInputElement>(null)
   const noResultRef = useRef<HTMLParagraphElement>(null)
-  const {
-    setOverscreen,
-    comparateur: { equivalents, setEquivalents },
-  } = useParamContext()
+  const { setOverscreen } = useGlobalStore()
+
+  const { equivalents, setEquivalents } = useComparateurStore()
 
   const [tempEquivalents, setTempEquivalents] = useState(equivalents)
 

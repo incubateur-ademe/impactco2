@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import React from 'react'
+import { Suspense } from 'react'
 import Breadcrumbs from 'components/breadcrumbs/Breadcrumbs'
 import SuggestionForm from 'components/contact/Suggestion'
 import SuggestionBanner from 'components/layout/Suggestion'
@@ -13,7 +13,9 @@ const SuggestionPage = () => {
   return (
     <>
       <Breadcrumbs current='Faire une suggestion' links={[{ label: 'Accueil', link: '/' }]} />
-      <SuggestionForm />
+      <Suspense>
+        <SuggestionForm />
+      </Suspense>
       <SuggestionBanner from='/suggestion' fromLabel='Faire une suggestion' simulatorName='de ce formulaire' />
     </>
   )

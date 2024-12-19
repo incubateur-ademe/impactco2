@@ -1,8 +1,7 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import React from 'react'
-import useParamContext from 'src/providers/ParamProvider'
+import { useGlobalStore } from 'src/providers/stores/global'
 import { Category } from 'types/category'
 import { ComputedEquivalent } from 'types/equivalent'
 import formatName from 'utils/formatName'
@@ -21,7 +20,7 @@ const getCarpool = (language: string, carpool: number) => {
 }
 
 const EquivalentHeader = ({ category, equivalent }: { category: Category; equivalent: ComputedEquivalent }) => {
-  const { language } = useParamContext()
+  const { language } = useGlobalStore()
   const t = useTranslations('equivalent')
   const pre = t(`hypothesis.pre.${equivalent.slug}`)
   const post = t(`hypothesis.post.${equivalent.slug}`)
