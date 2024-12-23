@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
 import { useMemo } from 'react'
-import useParamContext from 'src/providers/ParamProvider'
+import { useGlobalStore } from 'src/providers/stores/global'
 import { ComputedEquivalent } from 'types/equivalent'
 import { getName } from 'utils/Equivalent/equivalent'
 import EquivalentIcon from 'components/base/EquivalentIcon'
@@ -28,7 +28,7 @@ const AlimentationSubCategory = ({
   openCategories: Record<string, boolean>
   toggleCategories: (category: string) => void
 }) => {
-  const { language } = useParamContext()
+  const { language } = useGlobalStore()
   const t = useTranslations('alimentation')
 
   const display = useMemo(() => openCategories[name], [name, openCategories])

@@ -1,13 +1,12 @@
 'use client'
 
-import React from 'react'
-import useParamContext from 'src/providers/ParamProvider'
+import { useGlobalStore } from 'src/providers/stores/global'
 import { ComputedEquivalent } from 'types/equivalent'
 import { getName, getPrefix } from 'utils/Equivalent/equivalent'
 import styles from './Name.module.css'
 
 const Name = ({ equivalent, value }: { equivalent: ComputedEquivalent; value: number }) => {
-  const { language } = useParamContext()
+  const { language } = useGlobalStore()
   return (
     <p>
       <span className={styles.equivalentValue}>

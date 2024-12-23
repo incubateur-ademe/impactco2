@@ -1,8 +1,9 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import React, { useMemo, useState } from 'react'
-import useParamContext from 'src/providers/ParamProvider'
+import { useMemo, useState } from 'react'
+import { useGlobalStore } from 'src/providers/stores/global'
+import { useTransportStore } from 'src/providers/stores/transport'
 import { useSearchEquivalent } from 'src/providers/useSearchEquivalent'
 import { deplacements } from 'data/categories/deplacement'
 import Button from 'components/base/buttons/Button'
@@ -27,10 +28,8 @@ const allEquivalents = deplacements
   )
 
 const ComparisonOverscreen = ({ index }: { index: 0 | 1 }) => {
-  const {
-    setOverscreen,
-    transport: { modes },
-  } = useParamContext()
+  const { setOverscreen } = useGlobalStore()
+  const { modes } = useTransportStore()
   const [search, setSearch] = useState('')
   const results = useSearchEquivalent(search, true, 4)
 

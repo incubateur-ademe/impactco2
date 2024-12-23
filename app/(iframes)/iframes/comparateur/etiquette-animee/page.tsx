@@ -1,8 +1,12 @@
-import React from 'react'
+import { Suspense } from 'react'
 import IFrameEtiquette from 'components/outils/etiquettes/IframeEtiquette'
 
 const page = () => {
-  return <IFrameEtiquette animated />
+  return (
+    <Suspense>
+      <IFrameEtiquette animated />
+    </Suspense>
+  )
 }
 
 export default page

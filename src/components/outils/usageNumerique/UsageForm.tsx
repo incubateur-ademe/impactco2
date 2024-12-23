@@ -1,9 +1,7 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import { SetStateAction } from 'preact/compat'
-import React, { Dispatch } from 'react'
-import useParamContext from 'src/providers/ParamProvider'
+import { useUsageNumeriqueStore } from 'src/providers/stores/usageNumerique'
 import { track } from 'utils/matomo'
 import HiddenLabel from 'components/form/HiddenLabel'
 import NumberInput from 'components/form/NumberInput'
@@ -20,11 +18,9 @@ const UsageForm = ({
   slug: 'email' | 'visio' | 'streaming'
   engineValue?: string
   value?: number
-  setValue?: Dispatch<SetStateAction<number>>
+  setValue?: (value: number) => void
 }) => {
-  const {
-    usageNumerique: { situation, setSituation },
-  } = useParamContext()
+  const { situation, setSituation } = useUsageNumeriqueStore()
 
   const t = useTranslations('usage-numerique')
   const tEquivalent = useTranslations('equivalent.usage-numerique')

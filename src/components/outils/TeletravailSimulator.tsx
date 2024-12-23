@@ -2,8 +2,9 @@
 
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
-import React, { useEffect, useMemo, useRef } from 'react'
-import useParamContext from 'src/providers/ParamProvider'
+import { useEffect, useMemo, useRef } from 'react'
+import { useGlobalStore } from 'src/providers/stores/global'
+import { useTeletravailStore } from 'src/providers/stores/teletravail'
 import { Category } from 'types/category'
 import { ComputedEquivalent, DeplacementType } from 'types/equivalent'
 import { categories } from 'data/categories'
@@ -26,23 +27,22 @@ const transports = (categories.find((category) => category.slug === 'transport')
 
 const TeletravailSimulator = () => {
   const ref = useRef<HTMLDivElement>(null)
+  const { language } = useGlobalStore()
+
   const {
-    language,
-    teletravail: {
-      start,
-      setStart,
-      end,
-      setEnd,
-      transport,
-      setTransport,
-      presentiel,
-      setPresentiel,
-      homeOffice,
-      setHomeOffice,
-      equivalents,
-      setEquivalents,
-    },
-  } = useParamContext()
+    start,
+    setStart,
+    end,
+    setEnd,
+    transport,
+    setTransport,
+    presentiel,
+    setPresentiel,
+    homeOffice,
+    setHomeOffice,
+    equivalents,
+    setEquivalents,
+  } = useTeletravailStore()
 
   const t = useTranslations('transport.teletravail')
   const deplacement = useMemo(

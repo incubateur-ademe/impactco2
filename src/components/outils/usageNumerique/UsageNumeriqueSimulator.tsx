@@ -1,10 +1,10 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import { useSearchParams } from 'next/navigation'
-import React, { useEffect, useMemo, useRef } from 'react'
-import useParamContext from 'src/providers/ParamProvider'
+import { useEffect, useMemo, useRef } from 'react'
 import useUsageNumeriqueContext from 'src/providers/UsageNumeriqueProvider'
+import { useGlobalStore } from 'src/providers/stores/global'
+import { useUsageNumeriqueStore } from 'src/providers/stores/usageNumerique'
 import { Category } from 'types/category'
 import { ComputedEquivalent } from 'types/equivalent'
 import { categories } from 'data/categories'
@@ -59,14 +59,10 @@ const streaming = usagenumerique.equivalents?.find(
 ) as ComputedEquivalent
 
 const UsageNumeriqueSimulator = () => {
-  const searchParams = useSearchParams()
-  const mode = useMemo(() => searchParams.get('display'), [searchParams])
-
   const ref = useRef<HTMLDivElement>(null)
-  const {
-    language,
-    usageNumerique: { numberEmails, setNumberEmails, situation, equivalents, setEquivalents },
-  } = useParamContext()
+  const { language } = useGlobalStore()
+
+  const { numberEmails, setNumberEmails, situation, equivalents, setEquivalents, mode } = useUsageNumeriqueStore()
 
   const { engine } = useUsageNumeriqueContext()
 

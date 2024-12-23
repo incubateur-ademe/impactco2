@@ -2,66 +2,20 @@
 
 import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
-import { usePathname, useSearchParams } from 'next/navigation'
-import { KeyboardEvent, useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import useParamContext from 'src/providers/ParamProvider'
+import { KeyboardEvent, useCallback, useRef, useState } from 'react'
+import { useTransportStore } from 'src/providers/stores/transport'
 import DistanceSimulator from './DistanceSimulator'
 import ItineraireSimulator from './ItineraireSimulator'
 import styles from './TransportSimulator.module.css'
 
-const distance = {
-  label: 'Distance',
-  value: 'distance',
-}
-const itineraire = {
-  label: 'Itinéraire',
-  value: 'itineraire',
-}
-
 const TransportSimulator = () => {
-  const {
-    transport: { selected, setSelected },
-  } = useParamContext()
+  const { selected, setSelected, mode, tabs } = useTransportStore()
 
   const distanceRef = useRef<HTMLButtonElement>(null)
   const itineraireRef = useRef<HTMLButtonElement>(null)
   const [forceFocus, setForceFocus] = useState(false)
 
   const t = useTranslations('transport.mode-selector')
-  const pathName = usePathname()
-  const searchParams = useSearchParams()
-
-  const mode = useMemo(() => searchParams.get('mode'), [searchParams])
-
-  useEffect(() => {
-    if (pathName.includes(itineraire.value)) {
-      setSelected('itineraire')
-    } else {
-      const tabsParam = searchParams.get('tabs')
-      const values = tabsParam?.split(',')
-
-      if (values && values.includes(itineraire.value)) {
-        setSelected('itineraire')
-      }
-    }
-  }, [pathName, setSelected, searchParams])
-
-  const tabs = useMemo(() => {
-    const tabsParam = searchParams.get('tabs')
-    if (!tabsParam) {
-      return true
-    }
-    const values = tabsParam.split(',')
-    if (values.length === 0) {
-      return true
-    }
-
-    if (values.includes(distance.value) && (values.includes(itineraire.value) || pathName.includes(itineraire.value))) {
-      return true
-    }
-
-    return false
-  }, [pathName, searchParams])
 
   const onKeyDown = useCallback(
     (e: KeyboardEvent<HTMLButtonElement>) => {
