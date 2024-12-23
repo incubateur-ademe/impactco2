@@ -11,7 +11,12 @@ export const track = (category: string, action: string, name: string, ignoreRefe
     }
 
     if (!ignoreReferrer && url && !url.startsWith('https://impactco2.fr')) {
-      window.please.track(['trackEvent', `${category}_${url}`, action, name])
+      window.please.track([
+        'trackEvent',
+        `${category}_${url.endsWith('/') ? url.slice(0, url.length - 1) : url}`,
+        action,
+        name,
+      ])
     } else {
       window.please.track(['trackEvent', category, action, name])
     }
