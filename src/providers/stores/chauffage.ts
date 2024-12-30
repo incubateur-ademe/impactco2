@@ -6,6 +6,6 @@ interface ChauffageState {
 }
 
 export const useChauffageStore = create<ChauffageState>((set) => ({
-  m2: 63,
+  m2: 0,
   setM2: (m2) => set(() => ({ m2 })),
 }))

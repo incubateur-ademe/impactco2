@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl'
 import { useEffect, useState } from 'react'
 import { useChauffageStore } from 'src/providers/stores/chauffage'
+import { Params } from 'src/providers/stores/useAllParams'
 import { Category } from 'types/category'
 import { categories } from 'data/categories'
 import { track } from 'utils/matomo'
@@ -13,19 +14,13 @@ import styles from './Simulator.module.css'
 
 const chauffage = categories.find((category) => category.slug === 'chauffage') as Category
 
-const ChauffageSimulator = () => {
-  const { m2, setM2 } = useChauffageStore()
-  const [internalValue, setInternalValue] = useState(m2.toString())
+const ChauffageSimulator = ({ defaultParams }: { defaultParams: Params['chauffage'] }) => {
+  const [internalValue, setInternalValue] = useState(defaultParams.m2)
   const t = useTranslations('chauffage')
 
+  const { setM2 } = useChauffageStore()
   useEffect(() => {
-    if (internalValue !== m2.toString()) {
-      setInternalValue(m2 ? m2.toString() : '')
-    }
-  }, [m2])
-
-  useEffect(() => {
-    setM2(Number(internalValue))
+    setM2(internalValue)
   }, [internalValue])
 
   return (
@@ -33,10 +28,10 @@ const ChauffageSimulator = () => {
       <div className={styles.simulator}>
         <NumberInput
           id='m2-value'
-          value={m2}
+          value={internalValue}
           setValue={(value) => {
             track('Chauffage', 'Surface', value.toString())
-            setM2(value)
+            setInternalValue(value)
           }}
           label='Surface (en m²)'
           unit='m²'
@@ -47,7 +42,10 @@ const ChauffageSimulator = () => {
       {chauffage.equivalents && (
         <CategorySimulator
           tracking='Chauffage'
-          equivalents={chauffage.equivalents.map((equivalent) => ({ ...equivalent, value: equivalent.value * m2 }))}
+          equivalents={chauffage.equivalents.map((equivalent) => ({
+            ...equivalent,
+            value: equivalent.value * internalValue,
+          }))}
           withSimulator
         />
       )}

@@ -40,4 +40,4 @@ const useAllParams = () => {
 
 export default useAllParams
 
-export type AllParams = ReturnType<typeof useAllParams>
+export type Params = ReturnType<typeof useAllParams>

@@ -1,21 +1,21 @@
-import { AllParams } from 'src/providers/stores/useAllParams'
+import { Params } from 'src/providers/stores/useAllParams'
 import { CustomParamValue } from './CustomParam'
 
 // Warning: Add values in Integrate.tsx also
-const values: Record<string, (params: AllParams) => Record<string, CustomParamValue>> = {
-  alimentation: (params: AllParams) => ({
+const values: Record<string, (params: Params) => Record<string, CustomParamValue>> = {
+  alimentation: (params: Params) => ({
     alimentationCategory: {
       value: params.alimentation.category,
       setter: params.alimentation.setCategory,
     } as CustomParamValue,
   }),
-  chauffage: (params: AllParams) => ({
+  chauffage: (params: Params) => ({
     m2: { value: params.chauffage.m2, setter: params.chauffage.setM2 } as CustomParamValue,
   }),
-  fruitsetlegumes: (params: AllParams) => ({
+  fruitsetlegumes: (params: Params) => ({
     month: { value: params.fruitsetlegumes.month, setter: params.fruitsetlegumes.setMonth } as CustomParamValue,
   }),
-  teletravail: (params: AllParams) =>
+  teletravail: (params: Params) =>
     ({
       teletravail: {
         start: { value: params.teletravail.start?.address || '', setter: params.teletravail.setStart },
@@ -25,7 +25,7 @@ const values: Record<string, (params: AllParams) => Record<string, CustomParamVa
       presentiel: { value: params.teletravail.presentiel, setter: params.teletravail.setPresentiel },
       homeOffice: { value: params.teletravail.homeOffice, setter: params.teletravail.setHomeOffice },
     }) as Record<string, CustomParamValue>,
-  usagenumerique: (params: AllParams) => {
+  usagenumerique: (params: Params) => {
     const emails = Number(params.usageNumerique.numberEmails)
     const streaming = Number(params.usageNumerique.situation['streaming . durée'])
     const visio = Number(params.usageNumerique.situation['visio . durée'])
@@ -48,14 +48,14 @@ const values: Record<string, (params: AllParams) => Record<string, CustomParamVa
   },
 }
 
-export const getCustomParams = (slug: string, params: AllParams) => {
+export const getCustomParams = (slug: string, params: Params) => {
   if (values[slug]) {
     return values[slug](params)
   }
   return {}
 }
 
-export const getComparateurParams = (params: AllParams, etiquette?: boolean) => {
+export const getComparateurParams = (params: Params, etiquette?: boolean) => {
   const factor = etiquette && params.comparateur.comparedEquivalent ? params.comparateur.comparedEquivalent.value : 1
   const comparisons =
     etiquette && params.comparateur.comparedEquivalent

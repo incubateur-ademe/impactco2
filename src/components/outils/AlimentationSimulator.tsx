@@ -1,9 +1,10 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import React, { useMemo } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import { computedEquivalents } from 'src/providers/equivalents'
 import { useAlimentationStore } from 'src/providers/stores/alimentation'
+import { Params } from 'src/providers/stores/useAllParams'
 import { AlimentationCategories, equivalentsByCategory } from 'utils/alimentation'
 import { track } from 'utils/matomo'
 import HiddenLabel from 'components/form/HiddenLabel'
@@ -13,18 +14,23 @@ import CategorySimulator from './CategorySimulator'
 import styles from './Simulator.module.css'
 import AlimentationSubCategory from './alimentation/AlimentationSubCategory'
 
-const AlimentationSimulator = () => {
-  const { category, setCategory, customList, equivalents } = useAlimentationStore()
-
+const AlimentationSimulator = ({ defaultParams }: { defaultParams: Params['alimentation'] }) => {
+  const { setCategory } = useAlimentationStore()
+  const [internalCategory, setInternalCategory] = useState(defaultParams.category)
   const t = useTranslations('alimentation')
-  const values = useMemo(() => equivalentsByCategory[category], [category])
+  const values = useMemo(() => equivalentsByCategory[internalCategory], [internalCategory])
+
+  useEffect(() => {
+    setCategory(internalCategory)
+  }, [internalCategory])
+
   const [openCategories, setOpenCategories] = React.useState<Record<string, boolean>>({})
 
-  return customList ? (
+  return defaultParams.customList ? (
     <CategorySimulator
       equivalents={computedEquivalents.filter(
         (equivalent, index) =>
-          equivalents.includes(equivalent.slug) &&
+          defaultParams.equivalents.includes(equivalent.slug) &&
           computedEquivalents.findIndex((e) => e.slug === equivalent.slug) === index
       )}
       tracking='Alimentation'
@@ -38,10 +44,10 @@ const AlimentationSimulator = () => {
         <Select
           id='category'
           className={alimentationStyles.select}
-          value={category}
+          value={internalCategory}
           onChange={(e) => {
             track('Alimentation', 'Category', e.target.value)
-            setCategory(e.target.value as AlimentationCategories)
+            setInternalCategory(e.target.value as AlimentationCategories)
           }}>
           {Object.values(AlimentationCategories).map((category) => (
             <option key={category} value={category}>
@@ -54,7 +60,7 @@ const AlimentationSimulator = () => {
         {values.length === 1 ? (
           <div className={alimentationStyles.equivalents}>
             <CategorySimulator
-              equivalents={equivalentsByCategory[category][0]?.equivalents || []}
+              equivalents={equivalentsByCategory[internalCategory][0]?.equivalents || []}
               tracking='Alimentation'
               reverse
             />

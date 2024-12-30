@@ -1,6 +1,4 @@
 import React, { Suspense } from 'react'
-import AlimentationSync from 'src/providers/stores/AlimentationSync'
-import ChauffageSync from 'src/providers/stores/ChauffageSync'
 import ComparateurSync from 'src/providers/stores/ComparateurSync'
 import DistanceSync from 'src/providers/stores/DistanceSync'
 import FruitsetlegumesSync from 'src/providers/stores/FruitsetlegumesSync'
@@ -19,9 +17,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     <>
       <IFrameChild />
       <Suspense>
-        <AlimentationSync />
         <ComparateurSync />
-        <ChauffageSync />
         <DistanceSync />
         <FruitsetlegumesSync />
         <GlobalSync />

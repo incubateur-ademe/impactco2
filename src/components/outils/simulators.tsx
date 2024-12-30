@@ -1,6 +1,7 @@
 import { ReactNode } from 'react'
 import { LivraisonProvider } from 'src/providers/LivraisonProvider'
 import { UsageNumeriqueProvider } from 'src/providers/UsageNumeriqueProvider'
+import { Params } from 'src/providers/stores/useAllParams'
 import { computedEquivalents } from 'data/categories/computedEquivalents'
 import { repas } from 'data/categories/repas'
 import ChauffageSimulator from 'components/outils/ChauffageSimulator'
@@ -13,18 +14,18 @@ import TeletravailSimulator from './TeletravailSimulator'
 import OsezChangerSimulator from './osezChanger/OsezChangerSimulator'
 import UsageNumeriqueSimulator from './usageNumerique/UsageNumeriqueSimulator'
 
-export const simulators: Record<string, ReactNode> = {
-  chauffage: <ChauffageSimulator />,
-  transport: <TransportSimulator />,
-  teletravail: <TeletravailSimulator />,
-  fruitsetlegumes: <FruitsEtLegumesSimulator />,
-  alimentation: <AlimentationSimulator />,
-  usagenumerique: (
+export const simulators: Record<string, (defaultParams: Params) => ReactNode> = {
+  chauffage: (defaultParams) => <ChauffageSimulator defaultParams={defaultParams.chauffage} />,
+  transport: () => <TransportSimulator />,
+  teletravail: () => <TeletravailSimulator />,
+  fruitsetlegumes: () => <FruitsEtLegumesSimulator />,
+  alimentation: (defaultParams) => <AlimentationSimulator defaultParams={defaultParams.alimentation} />,
+  usagenumerique: () => (
     <UsageNumeriqueProvider>
       <UsageNumeriqueSimulator />
     </UsageNumeriqueProvider>
   ),
-  livraison: (
+  livraison: () => (
     <LivraisonProvider>
       <LivraisonSimulator />
     </LivraisonProvider>
