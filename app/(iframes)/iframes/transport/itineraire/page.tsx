@@ -1,4 +1,3 @@
-import React from 'react'
 import { Category as CategoryType } from 'types/category'
 import { categories } from 'data/categories'
 import Category from 'components/outils/Category'
