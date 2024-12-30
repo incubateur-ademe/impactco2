@@ -1,8 +1,7 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import React from 'react'
-import useParamContext from 'src/providers/ParamProvider'
+import { useGlobalStore } from 'src/providers/stores/global'
 import { Category } from 'types/category'
 import { ComputedEquivalent } from 'types/equivalent'
 import { getName } from 'utils/Equivalent/equivalent'
@@ -23,7 +22,7 @@ const EquivalentCardContent = ({
   const { value, unit } = getNumberPrecision(
     equivalent.carpool ? equivalent.value / (equivalent.carpool + 1) : equivalent.value
   )
-  const { language } = useParamContext()
+  const { language } = useGlobalStore()
   const t = useTranslations('unit')
   const unitLabel = equivalent.unit || category.unit
   const Result = output ? 'output' : 'div'

@@ -6,6 +6,7 @@ import Outil from 'components/outils/Outil'
 import { extraSimulators, simulators } from 'components/outils/simulators'
 import { getCategory } from 'utils/category'
 import { metaDescriptions, metaTitles } from 'utils/meta'
+import { getDefaultParams } from 'utils/params'
 import { devTools, smallTools } from 'components/cards/tools'
 import Suggestion from 'components/layout/Suggestion'
 
@@ -68,13 +69,15 @@ const OutilPage = async (props: Props) => {
       </>
     )
   }
+
+  const defaultParams = getDefaultParams(await props.searchParams)
   const category = getCategory(params.tool)
   if (category) {
     return (
       <>
         <Category
           category={category}
-          simulator={simulators[params.tool]}
+          simulator={simulators[params.tool](defaultParams)}
           extraSimulator={extraSimulators[params.tool]}
         />
         <Suggestion
@@ -86,7 +89,7 @@ const OutilPage = async (props: Props) => {
     )
   }
 
-  return notFound()
+  notFound()
 }
 
 export default OutilPage

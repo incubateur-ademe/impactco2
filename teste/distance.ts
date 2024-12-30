@@ -1,6 +1,6 @@
 import { FrameLocator, Page, expect } from 'playwright/test'
 
-export const distanceComparisonTest = async (page: Page | FrameLocator, prod?: boolean) => {
+export const distanceComparisonTest = async (page: Page | FrameLocator) => {
   await expect(page.getByTestId('comparison-tile-0')).toHaveText('Voiture thermique2.18 kg CO₂e Modifier')
   await expect(page.getByTestId('comparison-tile-1')).toHaveText(
     'TGV0.03 kg CO₂eMoyen le plus écologique2.15Kg CO₂eévités Modifier'

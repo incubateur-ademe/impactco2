@@ -1,13 +1,13 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import { useThemeStore } from 'src/providers/stores/theme'
 import { track } from 'utils/matomo'
-import useTheme from 'components/layout/UseTheme'
 
 export default function useScreenshot(slug: string, tracking: string) {
   const ref = useRef<HTMLDivElement>(null)
 
-  const { theme } = useTheme()
+  const { theme } = useThemeStore()
 
   const [isScreenshotting, setIsScreenshotting] = useState(false)
   useEffect(() => {

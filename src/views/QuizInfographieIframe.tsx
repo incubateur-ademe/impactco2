@@ -1,14 +1,14 @@
 'use client'
 
 import { useMemo } from 'react'
-import useParamContext from 'src/providers/ParamProvider'
+import { useGlobalStore } from 'src/providers/stores/global'
 import CategorySimulator from 'components/outils/CategorySimulator'
 import { getQuizEquivalents } from 'components/outils/quiz/question.config'
 import Shareable from 'components/shareable/Shareable'
 import { overScreenQuizInfographyValues } from 'components/shareable/overScreens/Values'
 
 const QuizInfographieIframe = () => {
-  const { language } = useParamContext()
+  const { language } = useGlobalStore()
   const equivalents = useMemo(() => getQuizEquivalents(language), [language])
 
   return (
