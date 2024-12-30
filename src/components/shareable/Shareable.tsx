@@ -3,7 +3,7 @@
 import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
 import { useSearchParams } from 'next/navigation'
-import React, { ReactNode, useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { ReactNode, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import TranslationProvider from 'src/providers/TranslationProvider'
 import { SiteLanguage } from 'types/languages'
@@ -46,7 +46,7 @@ const Shareable = ({
   const overscreenRef = useRef<HTMLDialogElement>(null)
   const t = useTranslations('overscreen')
   const tModal = useTranslations('modal')
-  const { theme, overscreen, setOverscreen, language, setLanguage } = useParamContext()
+  const { theme, hideActions, overscreen, setOverscreen, language, setLanguage } = useParamContext()
   const { ref, takeScreenshot } = useScreenshot(tracking.replace(/ /g, '-').toLowerCase(), tracking)
 
   const overScreenToDisplay = useMemo(
@@ -57,6 +57,7 @@ const Shareable = ({
   const onClose = useCallback(() => setOverscreen(slug, ''), [slug])
 
   const [showButtons, setShowButtons] = useState(true)
+
   const searchParams = useSearchParams()
   useEffect(() => {
     setShowButtons(searchParams.get('hideButtons') !== 'true')
@@ -162,7 +163,7 @@ const Shareable = ({
         </div>
         {secondary === undefined && (
           <>
-            {showButtons && overScreens && ('hypothesis' in overScreens || 'data' in overScreens) ? (
+            {showButtons && !hideActions && overScreens && ('hypothesis' in overScreens || 'data' in overScreens) ? (
               <div className={classNames('no-screenshot', styles.ressources)}>
                 {'data' in overScreens && (
                   <Feature

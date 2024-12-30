@@ -6,7 +6,7 @@ import TransportSimulator from 'components/outils/TransportSimulator'
 const category = categories.find((category) => category.slug === 'transport') as CategoryType
 
 const page = () => {
-  return <Category category={category} simulator={<TransportSimulator />} />
+  return <Category category={category} simulator={<TransportSimulator bis />} noBottomBorders />
 }
 
 export default page
