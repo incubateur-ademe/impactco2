@@ -191,7 +191,8 @@
       "roundTrip": "Roundtrip",
       "header": "See how much CO₂e you emit for this itinary",
       "start": "From",
-      "end": "To"
+      "end": "To",
+      "empty": "For example, the quantity of kg CO2e emitted for a 100km journey is..."
     },
     "teletravail": {
       "start": "Home",
