@@ -57,6 +57,11 @@ export default function Footer() {
                     Nous contacter
                   </Link>
                 </li>
+                <li>
+                  <Link prefetch={false} href='/eco-conception'>
+                    Éco-conception
+                  </Link>
+                </li>
               </ul>
             </div>
             <div>

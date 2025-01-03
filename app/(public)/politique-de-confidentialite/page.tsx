@@ -1,5 +1,4 @@
 import { Metadata } from 'next'
-import React from 'react'
 import PolitiquePage from 'src/views/PolitiquePage'
 import Suggestion from 'components/layout/Suggestion'
 
