@@ -109,6 +109,17 @@ const FRTransportData = () => {
           avions. Les impacts de l’aviation varient selon les hypothèses retenues sur ces traînées et leur persistance.
         </p>
       </div>
+      <h2 className={styles.title}>Vélo mécanique</h2>
+      <div className={styles.content}>
+        <p>
+          Similaire au vélo à assistance électrique, une hypothèse de durée de vie de <b>12 ans</b> et une distance
+          parcourue de <b>30 000 km</b>. En éliminant l'impact lié au moteur, à la batterie, et aux systèmes
+          électroniques d’un vélo électrique, un vélo mécanique avec un cadre aluminium, partage la majorité de ses
+          composantes avec le vélo à assistance électrique. L'empreinte carbone d'un vélo mécanique est estimée à 
+          <b>5,19 kg CO₂</b>. L’énergie calorique utilisée par le cycliste pour pédaler le vélo n’est pas prise en
+          compte.
+        </p>
+      </div>
       <div className={styles.content}>
         <p>
           Vous avez une question ? Vous souhaitez aller plus loin dans la compréhension ?{' '}
@@ -228,6 +239,17 @@ const ESTransportData = () => {
           persistencia.
         </p>
       </div>
+      <h2 className={styles.title}>Bicicleta mecánica</h2>
+      <div className={styles.content}>
+        <p>
+          Similar a la bicicleta asistida eléctricamente, se asume una vida útil de <b>12 años</b> y una distancia
+          recorrida de <b>30 000 km</b>. Eliminando el impacto relacionado con el motor, la batería y los sistemas
+          electrónicos de una bicicleta eléctrica, una bicicleta mecánica con un cuadro de aluminio comparte la mayoría
+          de sus componentes con la bicicleta asistida eléctricamente. La huella de carbono de una bicicleta mecánica se
+          estima en <b>5,19 kg CO₂</b>. La energía calórica utilizada por el ciclista para pedalear la bicicleta no se
+          tiene en cuenta.
+        </p>
+      </div>
       <div className={styles.content}>
         <p>
           ¿Tienes alguna pregunta? ¿Quieres saber más?{' '}
@@ -344,6 +366,16 @@ const ENTransportData = () => {
           remains uncertain, as these unstable clouds are difficult to model accurately, but could be two to three times
           greater than the direct emissions of airplanes. The impacts of aviation vary depending on the assumptions made
           about these contrails and their persistence.
+        </p>
+      </div>
+      <h2 className={styles.title}>Mechanical Bicycle</h2>
+      <div className={styles.content}>
+        <p>
+          Similar to the electrically assisted bicycle, an assumed lifespan of <b>12 years</b> and a distance traveled
+          of <b>30,000 km</b>. By eliminating the impact related to the motor, battery, and electronic systems of an
+          electric bicycle, a mechanical bicycle with an aluminum frame shares most of its components with the
+          electrically assisted bicycle. The carbon footprint of a mechanical bicycle is estimated at <b>5.19 kg CO₂</b>
+          . The caloric energy used by the cyclist to pedal the bicycle is not taken into account.
         </p>
       </div>
       <div className={styles.content}>

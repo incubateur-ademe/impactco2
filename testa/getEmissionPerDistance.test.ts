@@ -64,7 +64,8 @@ describe('getEmissionPerDistance', () => {
         id: 6,
         name: 'Autocar thermique',
       },
-      { id: 7, name: 'Vélo ou marche', emissions: { gco2e: 0, kgco2e: 0, tco2e: 0 } },
+      { id: 30, name: 'Marche', emissions: { gco2e: 0, kgco2e: 0, tco2e: 0 } },
+      { id: 7, name: 'Vélo mécanique', emissions: { gco2e: 0, kgco2e: 0, tco2e: 0 } },
       {
         id: 8,
         name: 'Vélo à assistance électrique',

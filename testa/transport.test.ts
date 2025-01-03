@@ -257,8 +257,13 @@ describe('transport', () => {
           value: 2.5,
         },
         {
+          id: 30,
+          name: 'Marche',
+          value: 0,
+        },
+        {
           id: 7,
-          name: 'Vélo ou marche',
+          name: 'Vélo mécanique',
           value: 0,
         },
         {
