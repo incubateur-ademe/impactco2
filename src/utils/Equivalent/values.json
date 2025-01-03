@@ -231,12 +231,19 @@
     "en": "km by ;combustion coach",
     "es": "km en ;autocar termico"
   },
-  "velo": {
+  "marche": {
     "category": 4,
     "value": 0,
-    "fr": "vélo ou marche",
-    "en": "bicycle or walking",
-    "es": "Bicicleta o a pie"
+    "fr": "Marche",
+    "en": "Walking",
+    "es": "A pie"
+  },
+  "velo": {
+    "category": 4,
+    "value": 17,
+    "fr": "km en ;Vélo mécanique",
+    "en": "km by ;Mechanical bike",
+    "es": "km en ;Bicicleta mecanica"
   },
   "veloelectrique": {
     "category": 4,

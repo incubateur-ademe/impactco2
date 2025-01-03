@@ -190,17 +190,35 @@ export const deplacements = [
     },
   },
   {
+    id: 30,
+    synonyms: ['marcher'],
+    slug: 'marche',
+    type: 'foot',
+    category: 4,
+    default: true,
+    tile: false,
+    total: 0,
+    display: {
+      max: 30,
+    },
+  },
+  {
     id: 7,
-    synonyms: ['marcher', 'pedaler'],
+    synonyms: ['pedaler'],
     slug: 'velo',
     type: 'foot',
     category: 4,
-    total: 0,
     default: true,
     tile: false,
     display: {
       max: 30,
     },
+    ecv: [
+      {
+        id: 5,
+        value: 0.00017,
+      },
+    ],
   },
   {
     id: 8,
