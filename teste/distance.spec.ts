@@ -57,7 +57,7 @@ test('Transport distance default values', async ({ page }) => {
     timeout: 60000,
   })
   await expect(page.getByTestId('comparison-tile-0')).toHaveText(
-    'Vélo ou marche0 kg CO₂eMoyen le plus écologique2.18Kg CO₂eévités'
+    'Vélo mécanique0 kg CO₂eMoyen le plus écologique2.17Kg CO₂eévités'
   )
   await expect(page.getByTestId('comparison-tile-1')).toHaveText('Voiture thermique2.18 kg CO₂e')
 

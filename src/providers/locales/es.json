@@ -409,9 +409,10 @@
         "fromagebleu": "Promedio de los factores de emisión de varios quesos azules: Roquefort, Bleu d'Auvergne, Gorgonzola, etc.",
         "riz": "Promedio de los factores de emisión de varios arroces: Arroz blanco, integral, rojo, salvaje",
         "ble": "Promedio de los factores de emisión de varios trigos: Trigo duro entero, trigo precocido, sémola de trigo, trigo blando",
-        "hotel": "Incluye las emisiones relacionadas con el consumo de energía (calefacción, electricidad, aire acondicionado, agua caliente), los servicios hoteleros (limpieza, lavandería), la infraestructura (construcción, mantenimiento) y la restauración (suministro, preparación, residuos).",
-        "camping": "Incluye la construcción y el consumo de energía de la infraestructura (duchas, instalaciones sanitarias e iluminación). No hay servicios hoteleros ni restauración.",
-        "location": "Incluye las emisiones relacionadas con el consumo de energía (calefacción, electricidad, agua caliente), la infraestructura (construcción y mantenimiento). Los alquileres no proporcionan servicios hoteleros ni restauración."
+        "hotel": "Incluye las emisiones relacionadas con el consumo de energía (calefacción, electricidad, aire acondicionado, agua caliente), los servicios de mantenimiento (limpieza, lavandería), la infraestructura (construcción, mantenimiento) y los desplazamientos del personal.",
+        "camping": "Incluye la construcción y el consumo de energía de la infraestructura (duchas, instalaciones sanitarias e iluminación).",
+        "location": "Incluye las emisiones relacionadas con el consumo de energía (calefacción, electricidad, agua caliente), la infraestructura (construcción) y los servicios de mantenimiento.",
+        "residencesecondaire": "Incluye las emisiones relacionadas con el consumo de energía (calefacción, electricidad, agua caliente), la infraestructura (construcción) y los servicios de mantenimiento."
       },
       "post": {
         "ski": "Incluye: el impacto de carbono del transporte (52%), alojamiento (4%), alimentos (8%), la estación de esquí (3%), infraestructura, equipo y servicios (17%), y equipo (16%).",
@@ -474,7 +475,11 @@
       "40": "Construcción de terminales",
       "41": "Uso de terminales",
       "42": "Transmisión",
-      "43": "Centros de datos"
+      "43": "Centros de datos",
+      "50": "Consumo de energía",
+      "51": "Servicios de mantenimiento",
+      "52": "Desplazamiento del personal",
+      "53": "Construcción de infraestructuras"
     }
   },
   "category": {

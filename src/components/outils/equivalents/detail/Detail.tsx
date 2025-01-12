@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
-import React, { Fragment, useState } from 'react'
+import { Fragment, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { Equivalent, EquivalentValue } from 'types/equivalent'
 import PlusMinus from 'components/outils/plusMinus/PlusMinus'
@@ -77,6 +77,10 @@ const ecvs = (type: number, values: EquivalentValue[]): Values[] => {
     case 41:
     case 42:
     case 43:
+    case 50:
+    case 51:
+    case 52:
+    case 53:
       return [
         {
           label: 'total',

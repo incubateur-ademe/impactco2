@@ -146,7 +146,7 @@ export const computeTransportEmission = (
  *         - 4 : Voiture thermique
  *         - 5 : Voiture électrique
  *         - 6 : Autocar thermique
- *         - 7 : Vélo ou marche
+ *         - 7 : Vélo
  *         - 8 : Vélo à assistance électrique
  *         - 9 : Bus thermique
  *         - 10 : Tramway
@@ -166,6 +166,7 @@ export const computeTransportEmission = (
  *         - 27 : Covoiturage électrique (2 passagers)
  *         - 28 : Covoiturage électrique (3 passagers)
  *         - 29 : Covoiturage électrique (4 passagers)
+ *         - 30 : Marche
  *     - in: query
  *       name: ignoreRadiativeForcing
  *       default: 0

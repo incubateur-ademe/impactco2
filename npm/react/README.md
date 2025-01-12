@@ -86,7 +86,8 @@ Liste des équivalents à comparer parmis la liste suivante :
   - voitureelectrique+3 : km en voiture électrique avec 3 passagers
   - voitureelectrique+4 : km en voiture électrique avec 4 passagers
   - autocar : km en autocar thermique
-  - velo : vélo ou marche
+  - velo : vélo mécanique
+  - marche : marche
   - veloelectrique : km en vélo à assistance électrique
   - trottinette : km en trottinette à assistance électrique
   - busthermique : km en bus thermique
@@ -329,4 +330,5 @@ Liste des équivalents à comparer parmis la liste suivante :
   - harry-potter : marathon des films Harry Potter en streaming
   - hotel : nuit à l'hotel
   - camping : nuit au camping
-  - location : nuit dans une location
+  - location : nuit dans une location saisonnière
+  - residencesecondaire : nuit dans une résidence secondaire
