@@ -195,6 +195,7 @@ declare module "@incubateur-ademe/impactco2-react" {
                 "hotel" |
                 "camping" |
                 "location"|
+                "residencesecondaire"|
                 "boeuf" |
                 "veau" |
                 "porc" |
