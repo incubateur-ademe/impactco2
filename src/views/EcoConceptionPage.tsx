@@ -77,8 +77,8 @@ const EcoConceptionPage = () => {
       </p>
       <h2>Exemples</h2>
       <p>
-        Voici les scores portant sur les 3 axes (environnement, social, sobriété) ainsi que le poids en ko d’un
-        échantillon de nos outils principaux :
+        Voici les scores portant sur les 3 axes (environnement, social, sobriété) ainsi que le poids d’un échantillon de
+        nos outils principaux :
       </p>
       <br />
       <ul>
@@ -87,6 +87,8 @@ const EcoConceptionPage = () => {
         <li>Impact Alimentation : 85/100 - 724kB</li>
         <br />
         <li>Quiz Carbone : 87/100 - 718kB</li>
+        <br />
+        <li>Detecteur Carbone : 33.8kB</li>
       </ul>
       <h2>Leviers d’amélioration</h2>
       <p>
