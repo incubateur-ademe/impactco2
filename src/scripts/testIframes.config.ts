@@ -75,7 +75,7 @@ export const checks = [
       await itineraireTest(
         iframe,
         true,
-        '&modes=avion,tgv,intercites,voiturethermique+1,voiturethermique,voitureelectrique+1,voitureelectrique,autocar,marche,velo,veloelectrique,busthermique,tramway,scooter,moto,rer,ter,buselectrique,trottinette,busgnv'
+        '&modes=avion,tgv,intercites,voiturethermique+1,voiturethermique,voitureelectrique+1,voitureelectrique,autocar,velo,veloelectrique,busthermique,tramway,scooter,moto,rer,ter,buselectrique,trottinette,busgnv'
       )
     },
   },
