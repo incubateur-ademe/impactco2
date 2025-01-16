@@ -40,7 +40,7 @@ const slugByCategory: Record<AlimentationCategories, { name: string; equivalents
     {
       name: 'cereales',
       logos: ['riz', 'ble'],
-      equivalents: ['quinoa', 'riz', 'pates', 'ble', 'boulgour', 'poischiches', 'haricotsrouges', 'lentilles', 'mais'],
+      equivalents: ['riz', 'pates', 'ble', 'boulgour', 'poischiches', 'haricotsrouges', 'lentilles', 'mais'],
     },
     {
       name: 'plats',
@@ -128,7 +128,6 @@ const slugByCategory: Record<AlimentationCategories, { name: string; equivalents
         'oeuf',
         'mais',
         'lentilles',
-        'quinoa',
         'ble',
         'riz',
         'pates',

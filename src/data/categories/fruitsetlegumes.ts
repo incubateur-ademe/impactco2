@@ -5,19 +5,19 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.22238959,
+        value: 0.227,
       },
       {
         id: 33,
-        value: 0.23917279,
+        value: 0.261,
       },
       {
         id: 34,
-        value: 0.0055671528,
+        value: 0.0131,
       },
       {
         id: 35,
-        value: 0.0099362451,
+        value: 0.00997,
       },
     ],
     months: [4, 5, 6],
@@ -28,19 +28,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.10991945,
+        value: 0.0919,
+      },
+      {
+        id: 31,
+        value: 0.0000949,
       },
       {
         id: 33,
-        value: 0.24073503,
+        value: 0.262,
       },
       {
         id: 34,
-        value: 0.013720184,
+        value: 0.0219,
       },
       {
         id: 35,
-        value: 0.032140419,
+        value: 0.0323,
       },
     ],
     months: [0, 1, 2, 3, 7, 8, 9, 10, 11],
@@ -51,19 +55,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.19625882,
+        value: 0.198,
+      },
+      {
+        id: 31,
+        value: 0.0000838,
       },
       {
         id: 33,
-        value: 0.344695,
+        value: 0.378,
       },
       {
         id: 34,
-        value: 0.01265945,
+        value: 0.021,
       },
       {
         id: 35,
-        value: 0.080351049,
+        value: 0.0806,
       },
     ],
     months: [0, 1, 2],
@@ -74,19 +82,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.18786463,
+        value: 0.194,
+      },
+      {
+        id: 31,
+        value: 0.0000958,
       },
       {
         id: 33,
-        value: 0.37082451,
+        value: 0.406,
       },
       {
         id: 34,
-        value: 0.015004354,
+        value: 0.0255,
       },
       {
         id: 35,
-        value: 0.13756958,
+        value: 0.138,
       },
     ],
     months: [0, 1],
@@ -97,19 +109,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.084945522,
+        value: 0.0841,
+      },
+      {
+        id: 31,
+        value: 0.000193,
       },
       {
         id: 33,
-        value: 0.17315136,
+        value: 0.198,
       },
       {
         id: 34,
-        value: 0.019594963,
+        value: 0.0206,
       },
       {
         id: 35,
-        value: 0.080351049,
+        value: 0.0806,
       },
     ],
     months: [6, 7, 8, 9, 10, 11],
@@ -120,19 +136,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 1.4243398,
+        value: 0.615,
+      },
+      {
+        id: 31,
+        value: 0.000266,
       },
       {
         id: 33,
-        value: 1.0942501,
+        value: 0.596,
       },
       {
         id: 34,
-        value: 0.072722368,
+        value: 0.0549,
       },
       {
         id: 35,
-        value: 1.2856168,
+        value: 1.29,
       },
     ],
     months: [4, 5, 6, 7, 8],
@@ -143,19 +163,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.93812691,
+        value: 0.97,
+      },
+      {
+        id: 31,
+        value: 0.000178,
       },
       {
         id: 33,
-        value: 0.38261078,
+        value: 0.417,
       },
       {
         id: 34,
-        value: 0.024289271,
+        value: 0.0367,
       },
       {
         id: 35,
-        value: 0.21428212,
+        value: 0.215,
       },
     ],
     months: [3, 4, 5],
@@ -166,19 +190,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.080693939,
+        value: 0.0941,
+      },
+      {
+        id: 31,
+        value: 0.0000665,
       },
       {
         id: 33,
-        value: 0.24073503,
+        value: 0.262,
       },
       {
         id: 34,
-        value: 0.010751711,
+        value: 0.0189,
       },
       {
         id: 35,
-        value: 0.032140419,
+        value: 0.0323,
       },
     ],
     months: [0, 1, 2, 9, 10, 11],
@@ -189,19 +217,19 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.14247925,
+        value: 0.146,
       },
       {
         id: 33,
-        value: 0.27356253,
+        value: 0.298,
       },
       {
         id: 34,
-        value: 0.046360746,
+        value: 0.0565,
       },
       {
         id: 35,
-        value: 0.080351049,
+        value: 0.0806,
       },
     ],
     months: [5, 6, 7, 8, 9, 10],
@@ -212,19 +240,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.080693939,
+        value: 0.0828,
+      },
+      {
+        id: 31,
+        value: 0.0000665,
       },
       {
         id: 33,
-        value: 0.24073503,
+        value: 0.262,
       },
       {
         id: 34,
-        value: 0.010751711,
+        value: 0.0189,
       },
       {
         id: 35,
-        value: 0.032140419,
+        value: 0.0323,
       },
     ],
     months: [0, 1, 2, 8, 9, 10, 11],
@@ -235,19 +267,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.43138668,
+        value: 0.442,
+      },
+      {
+        id: 31,
+        value: 0.0000624,
       },
       {
         id: 33,
-        value: 0.22561858,
+        value: 0.246,
       },
       {
         id: 34,
-        value: 0.01007658,
+        value: 0.0177,
       },
       {
         id: 35,
-        value: 0.0099362451,
+        value: 0.00997,
       },
     ],
     months: [0, 1, 2, 9, 10, 11],
@@ -258,19 +294,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.093440074,
+        value: 5.74,
+      },
+      {
+        id: 31,
+        value: 0.000409,
       },
       {
         id: 33,
-        value: 0.27356253,
+        value: 0.298,
       },
       {
         id: 34,
-        value: 0.046360746,
+        value: 0.056,
       },
       {
         id: 35,
-        value: 0.080351049,
+        value: 0.0806,
       },
     ],
     months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
@@ -281,19 +321,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.35608494,
+        value: 0.307,
+      },
+      {
+        id: 31,
+        value: 0.000133,
       },
       {
         id: 33,
-        value: 0.27356253,
+        value: 0.298,
       },
       {
         id: 34,
-        value: 0.018180592,
+        value: 0.0275,
       },
       {
         id: 35,
-        value: 0.21426946,
+        value: 0.215,
       },
     ],
     months: [0, 1, 2, 9, 10, 11],
@@ -304,19 +348,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.31335475,
+        value: 0.27,
+      },
+      {
+        id: 31,
+        value: 0.000117,
       },
       {
         id: 33,
-        value: 0.24073503,
+        value: 0.262,
       },
       {
         id: 34,
-        value: 0.015998921,
+        value: 0.0242,
       },
       {
         id: 35,
-        value: 0.0057299719,
+        value: 0.00583,
       },
     ],
     months: [0, 1, 2, 9, 10, 11],
@@ -327,19 +375,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.35608494,
+        value: 0.307,
+      },
+      {
+        id: 31,
+        value: 0.000205,
       },
       {
         id: 33,
-        value: 0.27356253,
+        value: 0.298,
       },
       {
         id: 34,
-        value: 0.025513693,
+        value: 0.0349,
       },
       {
         id: 35,
-        value: 0.080351049,
+        value: 0.0806,
       },
     ],
     months: [0, 1, 2, 8, 9, 10, 11],
@@ -350,19 +402,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.18660557,
+        value: 0.196,
+      },
+      {
+        id: 31,
+        value: 0.0000949,
       },
       {
         id: 33,
-        value: 0.24073503,
+        value: 0.262,
       },
       {
         id: 34,
-        value: 0.013720184,
+        value: 0.0219,
       },
       {
         id: 35,
-        value: 0.032140419,
+        value: 0.0323,
       },
     ],
     months: [4, 5, 6, 7, 8, 9],
@@ -373,19 +429,19 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.2224172,
+        value: 0.205,
       },
       {
         id: 33,
-        value: 0.29790004,
+        value: 0.325,
       },
       {
         id: 34,
-        value: 0.018180592,
+        value: 0.0276,
       },
       {
         id: 35,
-        value: 0.080351049,
+        value: 0.0806,
       },
     ],
     months: [0, 8, 9, 10, 11],
@@ -396,19 +452,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.19572714,
+        value: 0.181,
+      },
+      {
+        id: 31,
+        value: 0.000107,
       },
       {
         id: 33,
-        value: 0.24073503,
+        value: 0.262,
       },
       {
         id: 34,
-        value: 0.014917201,
+        value: 0.0231,
       },
       {
         id: 35,
-        value: 0.032140419,
+        value: 0.0323,
       },
     ],
     months: [4, 5, 6, 7, 8, 9],
@@ -419,19 +479,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.30023238,
+        value: 0.181,
+      },
+      {
+        id: 31,
+        value: 0.000545,
       },
       {
         id: 33,
-        value: 0.36475005,
+        value: 0.397,
       },
       {
         id: 34,
-        value: 0.061814329,
+        value: 0.0746,
       },
       {
         id: 35,
-        value: 0.21426946,
+        value: 0.215,
       },
     ],
     months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
@@ -442,19 +506,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.082227266,
+        value: 0.0814,
+      },
+      {
+        id: 31,
+        value: 0.0000757,
       },
       {
         id: 33,
-        value: 0.24073503,
+        value: 0.262,
       },
       {
         id: 34,
-        value: 0.0097605452,
+        value: 0.0178,
       },
       {
         id: 35,
-        value: 0.032140419,
+        value: 0.0323,
       },
     ],
     months: [9, 10, 11],
@@ -465,19 +533,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.53775347,
+        value: 0.426,
+      },
+      {
+        id: 31,
+        value: 0.000409,
       },
       {
         id: 33,
-        value: 0.27356253,
+        value: 0.298,
       },
       {
         id: 34,
-        value: 0.046360746,
+        value: 0.056,
       },
       {
         id: 35,
-        value: 0.080351049,
+        value: 0.0806,
       },
     ],
     months: [0, 1, 2, 3, 4, 9],
@@ -488,19 +560,19 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.11750866,
+        value: 0.12,
       },
       {
         id: 33,
-        value: 0.22561858,
+        value: 0.246,
       },
       {
         id: 34,
-        value: 0.038235667,
+        value: 0.0466,
       },
       {
         id: 35,
-        value: 0.0099362451,
+        value: 0.00997,
       },
     ],
     months: [0, 1, 2, 3, 4, 8, 9, 10, 11],
@@ -511,19 +583,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.1635442,
+        value: 0.15,
+      },
+      {
+        id: 31,
+        value: 0.000108,
       },
       {
         id: 33,
-        value: 10.382059,
+        value: 11.4,
       },
       {
         id: 34,
-        value: 0.015591118,
+        value: 0.0248,
       },
       {
         id: 35,
-        value: 0.080351049,
+        value: 0.0806,
       },
     ],
     months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
@@ -534,43 +610,50 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.48799384,
+        value: 0.499,
+      },
+      {
+        id: 31,
+        value: 0.000133,
       },
       {
         id: 33,
-        value: 0.37600339,
+        value: 0.411,
       },
       {
         id: 34,
-        value: 0.018180592,
+        value: 0.0275,
       },
       {
         id: 35,
-        value: 0.080351049,
+        value: 0.0806,
       },
     ],
     months: [3, 5, 6, 7, 8, 9, 10],
   },
   {
-    subtitle: 'cru',
     slug: 'haricotvert',
     category: 9,
     ecv: [
       {
         id: 30,
-        value: 0.11347802,
+        value: 0.117,
+      },
+      {
+        id: 31,
+        value: 0.000157,
       },
       {
         id: 33,
-        value: 0.24073503,
+        value: 0.262,
       },
       {
         id: 34,
-        value: 0.020034805,
+        value: 0.0282,
       },
       {
         id: 35,
-        value: 0.038814117,
+        value: 0.0391,
       },
     ],
     months: [5, 6, 7, 8, 9],
@@ -581,19 +664,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.30023238,
+        value: 0.181,
+      },
+      {
+        id: 31,
+        value: 0.000545,
       },
       {
         id: 33,
-        value: 0.36475005,
+        value: 0.397,
       },
       {
         id: 34,
-        value: 0.061814329,
+        value: 0.0746,
       },
       {
         id: 35,
-        value: 0.21426946,
+        value: 0.215,
       },
     ],
     months: [4, 5, 6, 7, 8],
@@ -604,19 +691,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.30023238,
+        value: 0.181,
+      },
+      {
+        id: 31,
+        value: 0.000545,
       },
       {
         id: 33,
-        value: 0.36475005,
+        value: 0.397,
       },
       {
         id: 34,
-        value: 0.061814329,
+        value: 0.0746,
       },
       {
         id: 35,
-        value: 0.21426946,
+        value: 0.215,
       },
     ],
     months: [0, 1, 9, 10, 11],
@@ -627,19 +718,19 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.080693939,
+        value: 0.0828,
       },
       {
         id: 33,
-        value: 0.24073503,
+        value: 0.262,
       },
       {
         id: 34,
-        value: 0.010751711,
+        value: 0.019,
       },
       {
         id: 35,
-        value: 0.032140419,
+        value: 0.0323,
       },
     ],
     months: [0, 1, 2, 3, 4, 9, 10, 11],
@@ -650,19 +741,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.39438298,
+        value: 0.363,
+      },
+      {
+        id: 31,
+        value: 0.000193,
       },
       {
         id: 32,
-        value: 0.26506589,
+        value: 0.0381,
       },
       {
         id: 33,
-        value: 0.13112869,
+        value: 0.146,
       },
       {
         id: 34,
-        value: 0.019908241,
+        value: 0.0215,
       },
     ],
     months: [6, 7, 8],
@@ -673,19 +768,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.10002787,
+        value: 0.101,
+      },
+      {
+        id: 31,
+        value: 0.0000685,
       },
       {
         id: 33,
-        value: 0.24635495,
+        value: 0.268,
       },
       {
         id: 34,
-        value: 0.011012889,
+        value: 0.0191,
       },
       {
         id: 35,
-        value: 0.032140419,
+        value: 0.0323,
       },
     ],
     months: [0, 1, 2, 3, 8, 9, 10, 11],
@@ -696,19 +795,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.091697658,
+        value: 0.0941,
+      },
+      {
+        id: 31,
+        value: 0.0000756,
       },
       {
         id: 33,
-        value: 0.27356253,
+        value: 0.298,
       },
       {
         id: 34,
-        value: 0.012217853,
+        value: 0.0215,
       },
       {
         id: 35,
-        value: 0.080351049,
+        value: 0.0806,
       },
     ],
     months: [0, 1, 2, 9, 10, 11],
@@ -719,15 +822,19 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.42618276,
+        value: 0.436,
+      },
+      {
+        id: 31,
+        value: 0.000161,
       },
       {
         id: 33,
-        value: 0.21885003,
+        value: 0.238,
       },
       {
         id: 34,
-        value: 0.020096387,
+        value: 0.0276,
       },
     ],
     months: [4, 5, 6],
@@ -738,19 +845,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.40243746,
+        value: 0.211,
+      },
+      {
+        id: 31,
+        value: 0.0000778,
       },
       {
         id: 33,
-        value: 0.27356253,
+        value: 0.298,
       },
       {
         id: 34,
-        value: 0.012514646,
+        value: 0.0217,
       },
       {
         id: 35,
-        value: 0.080351049,
+        value: 0.0806,
       },
     ],
     months: [0, 1, 2, 3, 8, 9, 10, 11],
@@ -761,19 +872,19 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.75605782,
+        value: 0.247,
       },
       {
         id: 33,
-        value: 0.32592714,
+        value: 0.357,
       },
       {
         id: 34,
-        value: 0.021283765,
+        value: 0.0308,
       },
       {
         id: 35,
-        value: 0.080351049,
+        value: 0.0806,
       },
     ],
     months: [5, 6, 7, 8],
@@ -784,19 +895,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.2224172,
+        value: 0.205,
+      },
+      {
+        id: 31,
+        value: 0.000133,
       },
       {
         id: 33,
-        value: 0.29790004,
+        value: 0.325,
       },
       {
         id: 34,
-        value: 0.018180592,
+        value: 0.0275,
       },
       {
         id: 35,
-        value: 0.080351049,
+        value: 0.0806,
       },
     ],
     months: [0, 8, 9, 10, 11],
@@ -807,19 +922,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.35621594,
+        value: 0.111,
+      },
+      {
+        id: 31,
+        value: 0.0000624,
       },
       {
         id: 33,
-        value: 0.22561858,
+        value: 0.246,
       },
       {
         id: 34,
-        value: 0.01007658,
+        value: 0.0177,
       },
       {
         id: 35,
-        value: 0.0099362451,
+        value: 0.00997,
       },
     ],
     months: [2, 3, 4, 5],
@@ -830,19 +949,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.091697658,
+        value: 0.0941,
+      },
+      {
+        id: 31,
+        value: 0.0000756,
       },
       {
         id: 33,
-        value: 0.27356253,
+        value: 0.298,
       },
       {
         id: 34,
-        value: 0.012217853,
+        value: 0.0215,
       },
       {
         id: 35,
-        value: 0.080351049,
+        value: 0.0806,
       },
     ],
     months: [0, 1, 2, 10, 11],
@@ -853,19 +976,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.31335475,
+        value: 0.27,
+      },
+      {
+        id: 31,
+        value: 0.0000665,
       },
       {
         id: 33,
-        value: 0.14862509,
+        value: 0.17,
       },
       {
         id: 34,
-        value: 0.010751711,
+        value: 0.0189,
       },
       {
         id: 35,
-        value: 0.032140419,
+        value: 0.0323,
       },
     ],
     months: [0, 1, 10, 11],
@@ -876,19 +1003,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 1.4268828,
+        value: 1.5,
+      },
+      {
+        id: 31,
+        value: 0.000108,
       },
       {
         id: 33,
-        value: 0.27356253,
+        value: 0.298,
       },
       {
         id: 34,
-        value: 0.015591118,
+        value: 0.0248,
       },
       {
         id: 35,
-        value: 0.080351049,
+        value: 0.0806,
       },
     ],
     months: [5, 6, 7],
@@ -899,19 +1030,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 1.6698515,
+        value: 1.71,
+      },
+      {
+        id: 31,
+        value: 0.000245,
       },
       {
         id: 33,
-        value: 0.14946824,
+        value: 0.171,
       },
       {
         id: 34,
-        value: 0.025173812,
+        value: 0.0269,
       },
       {
         id: 35,
-        value: 0.035711573,
+        value: 0.0358,
       },
     ],
     months: [9, 10],
@@ -921,44 +1056,51 @@ export const fruitsEtLegumes = [
     category: 9,
     ecv: [
       {
+        id: 30,
+        value: 0.583,
+      },
+      {
         id: 31,
-        value: 0.55684123,
+        value: 0.000112,
       },
       {
         id: 33,
-        value: 0.43280172,
+        value: 0.474,
       },
       {
         id: 34,
-        value: 0.017512084,
+        value: 0.0298,
       },
       {
         id: 35,
-        value: 0.21426946,
+        value: 0.215,
       },
     ],
     months: [0, 1, 10, 11],
   },
   {
     slug: 'pamplemousse',
-    synonyms: ['pomelo'],
     category: 9,
     ecv: [
       {
         id: 30,
-        value: 0.2576576,
+        value: 0.257,
+      },
+      {
+        id: 31,
+        value: 0.0000958,
       },
       {
         id: 33,
-        value: 0.46262808,
+        value: 0.505,
       },
       {
         id: 34,
-        value: 0.015004354,
+        value: 0.0255,
       },
       {
         id: 35,
-        value: 0.13756958,
+        value: 0.138,
       },
     ],
     months: [1, 2, 3, 4, 5],
@@ -969,19 +1111,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.12490846999999998,
+        value: 0.104,
+      },
+      {
+        id: 31,
+        value: 0.0000215,
       },
       {
         id: 33,
-        value: 0.32908042,
+        value: 0.361,
       },
       {
         id: 34,
-        value: 0.0067501727,
+        value: 0.0159,
       },
       {
         id: 35,
-        value: 0.080351049,
+        value: 0.0806,
       },
     ],
     months: [9],
@@ -992,19 +1138,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.21796035,
+        value: 0.179,
+      },
+      {
+        id: 31,
+        value: 0.000108,
       },
       {
         id: 33,
-        value: 0.29964738,
+        value: 0.327,
       },
       {
         id: 34,
-        value: 0.015591118,
+        value: 0.0248,
       },
       {
         id: 35,
-        value: 0.080351049,
+        value: 0.0806,
       },
     ],
     months: [6, 7, 8, 9],
@@ -1015,19 +1165,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 1.4268828,
+        value: 1.5,
+      },
+      {
+        id: 31,
+        value: 0.0000215,
       },
       {
         id: 33,
-        value: 0.27356253,
+        value: 0.298,
       },
       {
         id: 34,
-        value: 0.0067501727,
+        value: 0.0159,
       },
       {
         id: 35,
-        value: 0.080351049,
+        value: 0.0806,
       },
     ],
     months: [5, 6, 7],
@@ -1038,23 +1192,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.4974984,
+        value: 0.479,
       },
       {
         id: 31,
-        value: 0.01432555,
+        value: 0.0142,
       },
       {
         id: 33,
-        value: 0.38009761,
+        value: 0.414,
       },
       {
         id: 34,
-        value: 0.0045425747,
+        value: 0.0137,
       },
       {
         id: 35,
-        value: 0.080351049,
+        value: 0.0806,
       },
     ],
     months: [0, 1, 2, 10, 11],
@@ -1065,19 +1219,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.0046518993,
+        value: 0.00942,
+      },
+      {
+        id: 31,
+        value: 0.0000838,
       },
       {
         id: 33,
-        value: 0.32460129,
+        value: 0.356,
       },
       {
         id: 34,
-        value: 0.013134063,
+        value: 0.0223,
       },
       {
         id: 35,
-        value: 0.080351049,
+        value: 0.0806,
       },
     ],
     months: [0, 1, 10, 11],
@@ -1088,19 +1246,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.31889524,
+        value: 0.318,
+      },
+      {
+        id: 31,
+        value: 0.000143,
       },
       {
         id: 33,
-        value: 0.38120935,
+        value: 0.416,
       },
       {
         id: 34,
-        value: 0.017020934,
+        value: 0.0292,
       },
       {
         id: 35,
-        value: 0.21426946,
+        value: 0.215,
       },
     ],
     months: [5, 6, 7, 8],
@@ -1111,19 +1273,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.83658095,
+        value: 0.844,
+      },
+      {
+        id: 31,
+        value: 0.000108,
       },
       {
         id: 33,
-        value: 0.27356253,
+        value: 0.298,
       },
       {
         id: 34,
-        value: 0.015591118,
+        value: 0.0248,
       },
       {
         id: 35,
-        value: 0.080351049,
+        value: 0.0806,
       },
     ],
     months: [7, 8],
@@ -1134,19 +1300,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.27069047,
+        value: 0.213,
+      },
+      {
+        id: 31,
+        value: 0.000108,
       },
       {
         id: 33,
-        value: 0.27356253,
+        value: 0.298,
       },
       {
         id: 34,
-        value: 0.012765701,
+        value: 0.0219,
       },
       {
         id: 35,
-        value: 0.080351049,
+        value: 0.0806,
       },
     ],
     months: [7, 8],
@@ -1157,19 +1327,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.63308777,
+        value: 0.645,
+      },
+      {
+        id: 31,
+        value: 0.0000889,
       },
       {
         id: 33,
-        value: 0.22561858,
+        value: 0.246,
       },
       {
         id: 34,
-        value: 0.012858654,
+        value: 0.0205,
       },
       {
         id: 35,
-        value: 0.0099362451,
+        value: 0.00997,
       },
     ],
     months: [6, 7, 8],
@@ -1180,19 +1354,19 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 4.1880839,
+        value: 4.31,
       },
       {
         id: 31,
-        value: 0.193667,
+        value: 0.196,
       },
       {
         id: 33,
-        value: 0.24855809,
+        value: 0.281,
       },
       {
         id: 34,
-        value: 0.022656431,
+        value: 0.0242,
       },
     ],
     months: [8, 9, 10],
@@ -1203,23 +1377,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 3.0057327,
+        value: 3.07,
       },
       {
         id: 32,
-        value: 0.53013177,
+        value: 0.376,
       },
       {
         id: 33,
-        value: 0.26225739,
+        value: 0.296,
       },
       {
         id: 34,
-        value: 0.045312862,
+        value: 0.049,
       },
       {
         id: 35,
-        value: 0.32140419,
+        value: 0.323,
       },
     ],
     months: [8, 9],
@@ -1230,19 +1404,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.60236424,
+        value: 0.64,
+      },
+      {
+        id: 31,
+        value: 0.0000215,
       },
       {
         id: 33,
-        value: 0.27356253,
+        value: 0.298,
       },
       {
         id: 34,
-        value: 0.0067501727,
+        value: 0.0159,
       },
       {
         id: 35,
-        value: 0.080351049,
+        value: 0.0806,
       },
     ],
     months: [6, 7, 8],
@@ -1253,19 +1431,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.60236424,
+        value: 0.64,
+      },
+      {
+        id: 31,
+        value: 0.000108,
       },
       {
         id: 33,
-        value: 0.27356253,
+        value: 0.298,
       },
       {
         id: 34,
-        value: 0.015591118,
+        value: 0.0248,
       },
       {
         id: 35,
-        value: 0.080351049,
+        value: 0.0806,
       },
     ],
     months: [8],
@@ -1276,19 +1458,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.35608494,
+        value: 0.307,
+      },
+      {
+        id: 31,
+        value: 0.0000215,
       },
       {
         id: 33,
-        value: 0.27356253,
+        value: 0.298,
       },
       {
         id: 34,
-        value: 0.0067501727,
+        value: 0.0159,
       },
       {
         id: 35,
-        value: 0.080351049,
+        value: 0.0806,
       },
     ],
     months: [3, 4, 5],
@@ -1299,19 +1485,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.22061455,
+        value: 0.18,
+      },
+      {
+        id: 31,
+        value: 0.0000215,
       },
       {
         id: 33,
-        value: 0.28802092,
+        value: 0.314,
       },
       {
         id: 34,
-        value: 0.0067501727,
+        value: 0.0159,
       },
       {
         id: 35,
-        value: 0.080351049,
+        value: 0.0806,
       },
     ],
     months: [5, 6, 7, 8],
@@ -1322,23 +1512,27 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.60236424,
+        value: 0.64,
+      },
+      {
+        id: 31,
+        value: 0.000108,
       },
       {
         id: 32,
-        value: 0.35147703,
+        value: 0.657,
       },
       {
         id: 33,
-        value: 0.28554207,
+        value: 0.342,
       },
       {
         id: 34,
-        value: 0.015591118,
+        value: 0.0248,
       },
       {
         id: 35,
-        value: 0.080351049,
+        value: 0.0806,
       },
     ],
     months: [5, 6],
@@ -1349,23 +1543,27 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.14767705,
+        value: 0.347,
+      },
+      {
+        id: 31,
+        value: 0.000108,
       },
       {
         id: 32,
-        value: 0.35147703,
+        value: 0.657,
       },
       {
         id: 33,
-        value: 0.28554207,
+        value: 0.342,
       },
       {
         id: 34,
-        value: 0.015591118,
+        value: 0.0248,
       },
       {
         id: 35,
-        value: 0.080351049,
+        value: 0.0806,
       },
     ],
     months: [5, 6, 7],
@@ -1376,19 +1574,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 1.0250766,
+        value: 1.04,
+      },
+      {
+        id: 31,
+        value: 0.0000178,
       },
       {
         id: 33,
-        value: 0.43445757,
+        value: 0.48,
       },
       {
         id: 34,
-        value: 0.0055671528,
+        value: 0.0131,
       },
       {
         id: 35,
-        value: 0.0099362451,
+        value: 0.00997,
       },
     ],
     months: [5, 6, 7],
@@ -1399,19 +1601,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.076599513,
+        value: 0.069,
+      },
+      {
+        id: 31,
+        value: 0.000019,
       },
       {
         id: 33,
-        value: 0.24960251,
+        value: 0.272,
       },
       {
         id: 34,
-        value: 0.005940152,
+        value: 0.014,
       },
       {
         id: 35,
-        value: 0.032140419,
+        value: 0.0323,
       },
     ],
     months: [0, 1, 2, 7, 8, 9, 10, 11],
@@ -1422,19 +1628,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.1487964,
+        value: 0.17,
+      },
+      {
+        id: 31,
+        value: 0.0000949,
       },
       {
         id: 33,
-        value: 0.26207109,
+        value: 0.285,
       },
       {
         id: 34,
-        value: 0.013720184,
+        value: 0.0219,
       },
       {
         id: 35,
-        value: 0.032140419,
+        value: 0.0323,
       },
     ],
     months: [8, 9],
@@ -1445,19 +1655,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.19572714,
+        value: 0.181,
+      },
+      {
+        id: 31,
+        value: 0.000107,
       },
       {
         id: 33,
-        value: 0.24073503,
+        value: 0.262,
       },
       {
         id: 34,
-        value: 0.014917201,
+        value: 0.0231,
       },
       {
         id: 35,
-        value: 0.0057299719,
+        value: 0.00583,
       },
     ],
     months: [5, 6, 7, 8],
@@ -1468,19 +1682,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.5231282,
+        value: 0.537,
+      },
+      {
+        id: 31,
+        value: 0.000205,
       },
       {
         id: 33,
-        value: 0.27356253,
+        value: 0.298,
       },
       {
         id: 34,
-        value: 0.025513693,
+        value: 0.0349,
       },
       {
         id: 35,
-        value: 0.080351049,
+        value: 0.0806,
       },
     ],
     months: [8, 9, 10],
@@ -1491,19 +1709,19 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.21205178,
+        value: 0.222,
       },
       {
         id: 33,
-        value: 0.27356253,
+        value: 0.298,
       },
       {
         id: 34,
-        value: 0.015591118,
+        value: 0.025,
       },
       {
         id: 35,
-        value: 0.080351049,
+        value: 0.0806,
       },
     ],
     months: [5, 6, 7, 8],
@@ -1514,19 +1732,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.36854012,
+        value: 0.368,
+      },
+      {
+        id: 31,
+        value: 0.0000345,
       },
       {
         id: 33,
-        value: 0.59153752,
+        value: 0.645,
       },
       {
         id: 34,
-        value: 0.010800276,
+        value: 0.0254,
       },
       {
         id: 35,
-        value: 0.32140419,
+        value: 0.323,
       },
     ],
     months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
@@ -1537,19 +1759,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.31629881,
+        value: 0.295,
+      },
+      {
+        id: 31,
+        value: 0.000123,
       },
       {
         id: 33,
-        value: 0.40893121,
+        value: 0.447,
       },
       {
         id: 34,
-        value: 0.017811293,
+        value: 0.0284,
       },
       {
         id: 35,
-        value: 0.13756958,
+        value: 0.138,
       },
     ],
     months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
@@ -1560,19 +1786,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.86139181,
+        value: 0.878,
+      },
+      {
+        id: 31,
+        value: 0.000123,
       },
       {
         id: 33,
-        value: 0.46369755,
+        value: 0.508,
       },
       {
         id: 34,
-        value: 0.017811293,
+        value: 0.0284,
       },
       {
         id: 35,
-        value: 0.13756958,
+        value: 0.138,
       },
     ],
     months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
@@ -1583,19 +1813,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.1635442,
+        value: 0.15,
+      },
+      {
+        id: 31,
+        value: 0.000108,
       },
       {
         id: 33,
-        value: 0.27356253,
+        value: 0.298,
       },
       {
         id: 34,
-        value: 0.015591118,
+        value: 0.0248,
       },
       {
         id: 35,
-        value: 0.080351049,
+        value: 0.0806,
       },
     ],
     months: [0, 10, 11],
@@ -1606,19 +1840,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 2.2964659,
+        value: 2.32,
+      },
+      {
+        id: 31,
+        value: 0.000161,
       },
       {
         id: 32,
-        value: 0.28118162,
+        value: 0.346,
       },
       {
         id: 33,
-        value: 0.16236686,
+        value: 0.199,
       },
       {
         id: 34,
-        value: 0.020096608,
+        value: 0.0276,
       },
     ],
     months: [0, 9, 10, 11],
@@ -1629,19 +1867,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.52613809,
+        value: 0.537,
+      },
+      {
+        id: 31,
+        value: 0.000108,
       },
       {
         id: 33,
-        value: 0.27356253,
+        value: 0.298,
       },
       {
         id: 34,
-        value: 0.012765701,
+        value: 0.0219,
       },
       {
         id: 35,
-        value: 0.080351049,
+        value: 0.0806,
       },
     ],
     months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
@@ -1652,19 +1894,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.12490847,
+        value: 0.104,
+      },
+      {
+        id: 31,
+        value: 0.0000215,
       },
       {
         id: 33,
-        value: 0.27356253,
+        value: 0.298,
       },
       {
         id: 34,
-        value: 0.0067501727,
+        value: 0.0159,
       },
       {
         id: 35,
-        value: 0.080351049,
+        value: 0.0806,
       },
     ],
     months: [0, 1, 10, 11],
@@ -1675,19 +1921,23 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.48760375,
+        value: 0.498,
+      },
+      {
+        id: 31,
+        value: 0.0000215,
       },
       {
         id: 33,
-        value: 0.32572638,
+        value: 0.355,
       },
       {
         id: 34,
-        value: 0.0067501727,
+        value: 0.0159,
       },
       {
         id: 35,
-        value: 0.080351049,
+        value: 0.0806,
       },
     ],
     months: [0, 9, 10, 11],
@@ -1698,23 +1948,27 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 1.1287117,
+        value: 1.14,
+      },
+      {
+        id: 31,
+        value: 0.000441,
       },
       {
         id: 32,
-        value: 0.53013177,
+        value: 0.376,
       },
       {
         id: 33,
-        value: 0.4682019,
+        value: 0.523,
       },
       {
         id: 34,
-        value: 0.045312862,
+        value: 0.0485,
       },
       {
         id: 35,
-        value: 0.32140419,
+        value: 0.323,
       },
     ],
     months: [0, 1, 10, 11],
@@ -1725,19 +1979,19 @@ export const fruitsEtLegumes = [
     ecv: [
       {
         id: 30,
-        value: 0.23917143,
+        value: 0.239,
       },
       {
         id: 33,
-        value: 0.31519117,
+        value: 0.345,
       },
       {
         id: 34,
-        value: 0.0067501727,
+        value: 0.0159,
       },
       {
         id: 35,
-        value: 0.080351049,
+        value: 0.0806,
       },
     ],
     months: [5, 6, 7, 8],

@@ -12,23 +12,23 @@ export const boissons = [
     ecv: [
       {
         id: 30,
-        value: 0.0044520645,
+        value: 0.00106,
       },
       {
         id: 32,
-        value: 0.14366176,
+        value: 0.187,
       },
       {
         id: 33,
-        value: 0.10265719,
+        value: 0.116,
       },
       {
         id: 34,
-        value: 0.01535022,
+        value: 0.0157,
       },
       {
         id: 35,
-        value: 0.00095338542,
+        value: 0.000975,
       },
     ],
   },
@@ -39,27 +39,27 @@ export const boissons = [
     ecv: [
       {
         id: 30,
-        value: 0.064760169,
+        value: 0.0902,
       },
       {
         id: 31,
-        value: 0.027819751,
+        value: 0.013,
       },
       {
         id: 32,
-        value: 0.17741769,
+        value: 0.138,
       },
       {
         id: 33,
-        value: 0.19871756,
+        value: 0.209,
       },
       {
         id: 34,
-        value: 0.035836187,
+        value: 0.0363,
       },
       {
         id: 35,
-        value: 0.0066736979,
+        value: 0.00683,
       },
     ],
   },
@@ -70,27 +70,27 @@ export const boissons = [
     ecv: [
       {
         id: 30,
-        value: 0.064228912,
+        value: 0.0799,
       },
       {
         id: 31,
-        value: 0.26196323,
+        value: 0.273,
       },
       {
         id: 32,
-        value: 0.47782284,
+        value: 0.621,
       },
       {
         id: 33,
-        value: 0.27284366,
+        value: 0.33,
       },
       {
         id: 34,
-        value: 0.035836187,
+        value: 0.0363,
       },
       {
         id: 35,
-        value: 0.0066736979,
+        value: 0.00683,
       },
     ],
   },
@@ -101,27 +101,27 @@ export const boissons = [
     ecv: [
       {
         id: 30,
-        value: 0.28869136,
+        value: 0.301,
       },
       {
         id: 31,
-        value: 0.12484796,
+        value: 0.0331,
       },
       {
         id: 32,
-        value: 0.56487392,
+        value: 0.679,
       },
       {
         id: 33,
-        value: 0.18988631,
+        value: 0.233,
       },
       {
         id: 34,
-        value: 0.015380971000000002,
+        value: 0.0157,
       },
       {
         id: 35,
-        value: 0.0066736979,
+        value: 0.00683,
       },
     ],
   },
@@ -132,23 +132,23 @@ export const boissons = [
     ecv: [
       {
         id: 30,
-        value: 0.80811036,
+        value: 0.812,
       },
       {
         id: 31,
-        value: 0.01123937,
+        value: 0.0124,
       },
       {
         id: 32,
-        value: 0.14806368,
+        value: 0.0959,
       },
       {
         id: 33,
-        value: 0.19902596,
+        value: 0.214,
       },
       {
         id: 34,
-        value: 0.015701413,
+        value: 0.0162,
       },
     ],
   },
@@ -159,23 +159,23 @@ export const boissons = [
     ecv: [
       {
         id: 30,
-        value: 0.11838402,
+        value: 0.0874,
       },
       {
         id: 31,
-        value: 0.088129258,
+        value: 0.0934,
       },
       {
         id: 32,
-        value: 0.09985047,
+        value: 0.0964,
       },
       {
         id: 33,
-        value: 0.12466629000000001,
+        value: 0.135,
       },
       {
         id: 34,
-        value: 0.014619521,
+        value: 0.015,
       },
     ],
     total: 0.42,
@@ -186,23 +186,23 @@ export const boissons = [
     ecv: [
       {
         id: 30,
-        value: 0.022870449,
+        value: 0.0224,
       },
       {
         id: 32,
-        value: 0.0026323455,
+        value: 0.00639,
       },
       {
         id: 33,
-        value: 0.0022694993,
+        value: 0.00313,
       },
       {
         id: 34,
-        value: 0.0001567597,
+        value: 0.000167,
       },
       {
         id: 35,
-        value: 0.0112323,
+        value: 0.0115,
       },
     ],
   },
@@ -212,27 +212,27 @@ export const boissons = [
     ecv: [
       {
         id: 30,
-        value: 0.53277699,
+        value: 0.436,
       },
       {
         id: 31,
-        value: 0.027576344,
+        value: 0.0181,
       },
       {
         id: 32,
-        value: 0.0058242779,
+        value: 0.129,
       },
       {
         id: 33,
-        value: 0.015867933,
+        value: 0.0402,
       },
       {
         id: 34,
-        value: 0.00091437936,
+        value: 0.000963,
       },
       {
         id: 35,
-        value: 0.011264719,
+        value: 0.0112,
       },
     ],
   },
