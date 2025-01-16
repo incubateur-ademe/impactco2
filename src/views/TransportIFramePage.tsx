@@ -14,7 +14,7 @@ const TransportIFramePage = ({ category }: { category: CategoryType }) => {
       document.location.ancestorOrigins && document.location.ancestorOrigins.length > 0
         ? document.location.ancestorOrigins[0]
         : document.referrer
-    if (bisUrls.includes(url)) {
+    if (bisUrls.includes(url.endsWith('/') ? url.slice(0, url.length - 1) : url)) {
       setBis(true)
     }
   }, [])
