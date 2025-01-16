@@ -13,6 +13,7 @@ const CategoryPage = ({
   category,
   simulator,
   extraSimulator,
+  noBottomBorders,
 }: {
   category: CategoryType
   simulator?: ReactNode
@@ -24,6 +25,7 @@ const CategoryPage = ({
     simulator: ReactNode
     small?: boolean
   }
+  noBottomBorders?: boolean
 }) => {
   return (
     <>
@@ -35,7 +37,7 @@ const CategoryPage = ({
         ]}
       />
       <Block title={category.name} as='h1' description={category.description}>
-        <Category category={category} simulator={simulator} />
+        <Category category={category} simulator={simulator} noBottomBorders={noBottomBorders} />
         {category.sources && <Sources className={styles.sources} sources={category.sources} tracking={category.name} />}
       </Block>
       {extraSimulator && <ExtraSimulator simulator={extraSimulator}>{extraSimulator.simulator}</ExtraSimulator>}

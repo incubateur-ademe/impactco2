@@ -191,7 +191,8 @@
       "roundTrip": "Ida y vuelta",
       "header": "Descubre la cantidad de CO₂e que emites para este trayecto",
       "start": "Salida",
-      "end": "Llegada"
+      "end": "Llegada",
+      "empty": "Por ejemplo, la cantidad de kg CO2e emitidos en un viaje de 100 km es..."
     },
     "teletravail": {
       "start": "Lugar de residencia",

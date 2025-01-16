@@ -18,10 +18,25 @@ const itineraire = {
   value: 'itineraire',
 }
 
+const bisUrls = ['https://impactco2.webflow.io']
+
 const TransportSimulator = () => {
   const {
+    setHideActions,
     transport: { selected, setSelected },
+    itineraire: { start, end },
   } = useParamContext()
+
+  const [bis, setBis] = useState(false)
+  useEffect(() => {
+    const url =
+      document.location.ancestorOrigins && document.location.ancestorOrigins.length > 0
+        ? document.location.ancestorOrigins[0]
+        : document.referrer
+    if (bisUrls.includes(url)) {
+      setBis(true)
+    }
+  }, [])
 
   const distanceRef = useRef<HTMLButtonElement>(null)
   const itineraireRef = useRef<HTMLButtonElement>(null)
@@ -32,6 +47,16 @@ const TransportSimulator = () => {
   const searchParams = useSearchParams()
 
   const mode = useMemo(() => searchParams.get('mode'), [searchParams])
+
+  useEffect(() => {
+    if (bis) {
+      if (selected === 'distance') {
+        setHideActions(false)
+      } else {
+        setHideActions(!start || !end)
+      }
+    }
+  }, [bis, selected, start, end])
 
   useEffect(() => {
     if (pathName.includes(itineraire.value)) {
@@ -141,7 +166,7 @@ const TransportSimulator = () => {
         role='tabpanel'
         aria-labelledby='tab-itineraire'
         className={selected === 'distance' ? styles.hidden : undefined}>
-        <ItineraireSimulator withComparisonMode={!mode} />
+        <ItineraireSimulator withComparisonMode={!mode} bis={bis} />
       </div>
     </>
   )

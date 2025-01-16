@@ -1,22 +1,25 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import React from 'react'
+import { useMemo } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import useItineraries from 'hooks/useItineraries'
 import useTransportations from 'hooks/useTransportations'
 import CheckboxInput from 'components/form/CheckboxInput'
 import AddressInput from 'components/form/addresses/AddressInput'
 import CategorySimulator from './CategorySimulator'
+import EmptyItineraire from './EmptyItineraire'
 import styles from './ItineraireSimulator.module.css'
 import TransportComparisonMode from './TransportComparisonMode'
 import TransportComparisonSimulator from './TransportComparisonSimulator'
 
-const ItineraireSimulator = ({ withComparisonMode }: { withComparisonMode: boolean }) => {
+const ItineraireSimulator = ({ withComparisonMode, bis }: { withComparisonMode: boolean; bis?: boolean }) => {
   const {
     transport: { comparisonMode },
     itineraire: { start, setStart, end, setEnd, displayAll, setDisplayAll, roundTrip, setRoundTrip },
   } = useParamContext()
+
+  const tracking = useMemo(() => `Transport itinéraire${bis ? ' bis' : ''}`, [bis])
 
   const t = useTranslations('transport.itineraire')
 
@@ -26,6 +29,7 @@ const ItineraireSimulator = ({ withComparisonMode }: { withComparisonMode: boole
   return (
     <>
       <div className={styles.simulator}>
+        {bis && <p>{t('header')}</p>}
         <div className={styles.addresses}>
           <AddressInput
             large
@@ -40,14 +44,14 @@ const ItineraireSimulator = ({ withComparisonMode }: { withComparisonMode: boole
         <div className={styles.roundTrip}>
           <CheckboxInput id='roundTrip' label={t('roundTrip')} checked={roundTrip} setChecked={setRoundTrip} />
         </div>
-        <p>{t('header')}</p>
+        {!bis && <p>{t('header')}</p>}
       </div>
-      {start && end && itineraries && (
+      {start && end && itineraries ? (
         <>
-          {withComparisonMode && <TransportComparisonMode tracking='Transport itinéraire' />}
+          {withComparisonMode && <TransportComparisonMode tracking={tracking} />}
           {comparisonMode === 'list' ? (
             <CategorySimulator
-              tracking='Transport itinéraire'
+              tracking={tracking}
               equivalents={equivalents}
               displayAll={displayAll}
               setDisplayAll={hasMore ? setDisplayAll : undefined}
@@ -56,9 +60,11 @@ const ItineraireSimulator = ({ withComparisonMode }: { withComparisonMode: boole
               type='itineraire'
             />
           ) : (
-            <TransportComparisonSimulator tracking='Transport itinéraire' equivalents={equivalents} />
+            <TransportComparisonSimulator tracking={tracking} equivalents={equivalents} />
           )}
         </>
+      ) : (
+        bis && !itineraries && <EmptyItineraire />
       )}
     </>
   )

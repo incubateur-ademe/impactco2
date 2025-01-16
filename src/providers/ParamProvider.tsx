@@ -83,6 +83,8 @@ type LivraisonValues = {
 }
 
 export type Params = {
+  hideActions: boolean
+  setHideActions: Dispatch<SetStateAction<boolean>>
   overscreen: Record<string, string>
   setOverscreen: (slug: string, value: string) => void
   theme: string
@@ -220,6 +222,9 @@ export function ParamProvider({ children }: { children: ReactNode }) {
   const initialTheme = useTheme()
   const [theme, setTheme] = useState(initialTheme.theme)
   const [language, setLanguage] = useState<SiteLanguage>('fr')
+
+  const [hideActions, setHideActions] = useState(false)
+
   const [overscreen, setOverscreen] = useState<Record<string, string>>({})
   const overscreenTrigger = useRef<HTMLElement | null>(null)
 
@@ -526,6 +531,8 @@ export function ParamProvider({ children }: { children: ReactNode }) {
   return (
     <ParamContext.Provider
       value={{
+        hideActions,
+        setHideActions,
         overscreen,
         setOverscreen: setOverscreeInternal,
         theme,
