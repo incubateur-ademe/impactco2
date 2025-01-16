@@ -5,7 +5,7 @@ import { Category as CategoryType } from 'types/category'
 import Category from 'components/outils/Category'
 import TransportSimulator from 'components/outils/TransportSimulator'
 
-const bisUrls = ['https://impactco2.webflow.io']
+const bisUrls = ['https://impactco2.webflow.io', 'https://immobilier.lefigaro.fr', 'https://www.terrabotanica.fr']
 
 const TransportIFramePage = ({ category }: { category: CategoryType }) => {
   const [bis, setBis] = useState(false)
