@@ -412,7 +412,8 @@
         "hotel": "Incluye las emisiones relacionadas con el consumo de energía (calefacción, electricidad, aire acondicionado, agua caliente), los servicios de mantenimiento (limpieza, lavandería), la infraestructura (construcción, mantenimiento) y los desplazamientos del personal.",
         "camping": "Incluye la construcción y el consumo de energía de la infraestructura (duchas, instalaciones sanitarias e iluminación).",
         "location": "Incluye las emisiones relacionadas con el consumo de energía (calefacción, electricidad, agua caliente), la infraestructura (construcción) y los servicios de mantenimiento.",
-        "residencesecondaire": "Incluye las emisiones relacionadas con el consumo de energía (calefacción, electricidad, agua caliente), la infraestructura (construcción) y los servicios de mantenimiento."
+        "residencesecondaire": "Incluye las emisiones relacionadas con el consumo de energía (calefacción, electricidad, agua caliente), la infraestructura (construcción) y los servicios de mantenimiento.",
+        "2050": "Un francés emite de media casi 9,3 toneladas de CO2 al año. Para limitar el cambio climático, es esencial reducir estas emisiones y alcanzar un objetivo máximo de 2 toneladas de CO2e por persona y año para 2050."
       },
       "post": {
         "ski": "Incluye: el impacto de carbono del transporte (52%), alojamiento (4%), alimentos (8%), la estación de esquí (3%), infraestructura, equipo y servicios (17%), y equipo (16%).",

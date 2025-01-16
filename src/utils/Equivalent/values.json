@@ -35,6 +35,14 @@
     "es": "% de la huella de ;carbono de un ciudadano francés",
     "percentage": true
   },
+  "2050": {
+    "category": 13,
+    "value": 2000000,
+    "fr": "% de l';objectif citoyen pour 2050",
+    "en": "% of the ;citizen objective for 2050",
+    "es": "% del ;objetivo ciudadano para 2050",
+    "percentage": true
+  },
   "game-of-thrones": {
     "category": 13,
     "value": 31.7,

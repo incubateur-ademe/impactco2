@@ -176,4 +176,17 @@ export const casPratiques = [
       },
     ],
   },
+  {
+    unit: 'an',
+    slug: '2050',
+    category: 13,
+    percentage: true,
+    total: 2000,
+    sources: [
+      {
+        label: 'ADEME',
+        href: 'https://agirpourlatransition.ademe.fr/particuliers/conso/conso-responsable/connaissez-vous-votre-empreinte-climat',
+      },
+    ],
+  },
 ]

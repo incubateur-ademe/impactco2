@@ -332,3 +332,4 @@ Liste des équivalents à comparer parmis la liste suivante :
   - camping : nuit au camping
   - location : nuit dans une location saisonnière
   - residencesecondaire : nuit dans une résidence secondaire
+  - 2050 : % de l'objectif citoyen pour 2050
