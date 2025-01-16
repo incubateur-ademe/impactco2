@@ -104,7 +104,7 @@ export const categories: Category[] = [
     equivalents: computedEquivalents('fruitsetlegumes', fruitsEtLegumes),
     sources: [
       {
-        label: 'Agribalyse 3.1.1 - Mise à jour le 10/08/2023',
+        label: 'Agribalyse 3.2 - Mise à jour le 15/01/2025',
         href: 'https://agribalyse.ademe.fr/app',
       },
     ],
@@ -137,7 +137,7 @@ export const categories: Category[] = [
     synonyms: ['manger', 'alimenter'],
     sources: [
       {
-        label: 'Agribalyse 3.1.1 - Mise à jour le 10/08/2023',
+        label: 'Agribalyse 3.2 - Mise à jour le 15/01/2025',
         href: 'https://agribalyse.ademe.fr/app',
       },
     ],
@@ -214,7 +214,7 @@ export const categories: Category[] = [
     unit: 'litre',
     sources: [
       {
-        label: 'Agribalyse 3.1.1 - Mise à jour le 10/08/2023',
+        label: 'Agribalyse 3.2 - Mise à jour le 15/01/2025',
         href: 'https://agribalyse.ademe.fr/app',
       },
     ],
