@@ -191,7 +191,8 @@
       "roundTrip": "Aller / retour",
       "header": "Découvrez la quantité de CO₂e que vous émettez pour ce trajet",
       "start": "Départ",
-      "end": "Arrivée"
+      "end": "Arrivée",
+      "empty": "À titre d’exemple, la quantité de kg CO2e émise pour un trajet de 100km est de..."
     },
     "teletravail": {
       "start": "Lieu de domicile",
