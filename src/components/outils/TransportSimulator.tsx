@@ -18,25 +18,12 @@ const itineraire = {
   value: 'itineraire',
 }
 
-const bisUrls = ['https://impactco2.webflow.io']
-
-const TransportSimulator = () => {
+const TransportSimulator = ({ bis }: { bis?: boolean }) => {
   const {
     setHideActions,
     transport: { selected, setSelected },
     itineraire: { start, end },
   } = useParamContext()
-
-  const [bis, setBis] = useState(false)
-  useEffect(() => {
-    const url =
-      document.location.ancestorOrigins && document.location.ancestorOrigins.length > 0
-        ? document.location.ancestorOrigins[0]
-        : document.referrer
-    if (bisUrls.includes(url)) {
-      setBis(true)
-    }
-  }, [])
 
   const distanceRef = useRef<HTMLButtonElement>(null)
   const itineraireRef = useRef<HTMLButtonElement>(null)
