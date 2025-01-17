@@ -1,8 +1,10 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
+import { useEffect, useState } from 'react'
 import { useDistanceStore } from 'src/providers/stores/distance'
 import { useTransportStore } from 'src/providers/stores/transport'
+import { Params } from 'src/providers/stores/useAllParams'
 import { track } from 'utils/matomo'
 import useTransportations from 'hooks/useTransportations'
 import NumberInput from 'components/form/NumberInput'
@@ -11,9 +13,21 @@ import styles from './Simulator.module.css'
 import TransportComparisonMode from './TransportComparisonMode'
 import TransportComparisonSimulator from './TransportComparisonSimulator'
 
-const DistanceSimulator = ({ withComparisonMode }: { withComparisonMode: boolean }) => {
-  const { km, setKm, displayAll, setDisplayAll } = useDistanceStore()
+const DistanceSimulator = ({
+  withComparisonMode,
+  defaultParams,
+}: {
+  withComparisonMode: boolean
+  defaultParams: Params['distance']
+}) => {
+  console.log(defaultParams)
+  const [internalDistance, setInternalDistance] = useState(defaultParams.km)
+  const { setKm, displayAll, setDisplayAll } = useDistanceStore()
   const { comparisonMode } = useTransportStore()
+
+  useEffect(() => {
+    setKm(internalDistance)
+  }, [internalDistance])
 
   const t = useTranslations('transport.distance')
   const { hasMore, equivalents } = useTransportations('Transport distance', 'distance')
@@ -23,10 +37,10 @@ const DistanceSimulator = ({ withComparisonMode }: { withComparisonMode: boolean
       <div className={styles.distanceSimulator}>
         <NumberInput
           id='km-value'
-          value={km}
+          value={internalDistance}
           setValue={(value) => {
             track('Transport distance', 'Distance', value.toString())
-            setKm(value)
+            setInternalDistance(value)
           }}
           label='Distance parcourue (en km)'
           unit='km'

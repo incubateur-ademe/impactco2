@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl'
 import { useEffect, useRef } from 'react'
 import { useComparateurStore } from 'src/providers/stores/comparateur'
 import { useGlobalStore } from 'src/providers/stores/global'
+import { Params } from 'src/providers/stores/useAllParams'
 import { getName } from 'utils/Equivalent/equivalent'
 import { getNumberPrecision } from 'utils/formatNumberPrecision'
 import { metaTitles } from 'utils/meta'
@@ -18,12 +19,13 @@ import NumberInput from 'components/form/NumberInput'
 import simulatorStyles from '../Simulator.module.css'
 import styles from './ComparateurSimulator.module.css'
 
-const ComparateurSimulator = () => {
+const ComparateurSimulator = ({ defaultParams }: { defaultParams: Params['comparateur'] }) => {
   const inputRef = useRef<HTMLInputElement>(null)
   const isInitialRender = useRef(true)
   const { language } = useGlobalStore()
 
-  const { baseValue, weight, setBaseValue, comparedEquivalent, setComparedEquivalent } = useComparateurStore()
+  const { baseValue, weight, setBaseValue, comparedEquivalent, setComparedEquivalent, setEquivalents } =
+    useComparateurStore()
 
   const { value, unit } = getNumberPrecision(baseValue * weight)
   const t = useTranslations('comparateur')
@@ -38,6 +40,12 @@ const ComparateurSimulator = () => {
     }
     document.title = `${metaTitles.comparateur[language]} - ${comparedEquivalent ? getName(language, comparedEquivalent) : t('co2-unit')} | Impact CO₂`
   }, [comparedEquivalent, inputRef])
+
+  useEffect(() => {
+    setBaseValue(defaultParams.baseValue)
+    setComparedEquivalent(defaultParams.comparedEquivalent, true)
+    setEquivalents(defaultParams.equivalents)
+  }, [defaultParams])
 
   return (
     <div>

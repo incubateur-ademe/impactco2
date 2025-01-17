@@ -1,6 +1,4 @@
 import React, { Suspense } from 'react'
-import ComparateurSync from 'src/providers/stores/ComparateurSync'
-import DistanceSync from 'src/providers/stores/DistanceSync'
 import FruitsetlegumesSync from 'src/providers/stores/FruitsetlegumesSync'
 import GlobalSync from 'src/providers/stores/GlobalSync'
 import ItineraireSync from 'src/providers/stores/ItineraireSync'
@@ -13,8 +11,6 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <Suspense>
-        <ComparateurSync />
-        <DistanceSync />
         <FruitsetlegumesSync />
         <GlobalSync />
         <ItineraireSync />
@@ -23,7 +19,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         <TransportSync />
         <UsageNumeriqueSync />
       </Suspense>
-      {children}s
+      {children}
     </>
   )
 }

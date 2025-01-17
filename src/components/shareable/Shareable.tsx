@@ -48,7 +48,7 @@ const Shareable = ({
   const tModal = useTranslations('modal')
 
   const { theme } = useThemeStore()
-  const { overscreen, setOverscreen, language, setLanguage, showButtons } = useGlobalStore()
+  const { overscreen, setOverscreen, language, setLanguage, showButtons, hideActions } = useGlobalStore()
   const { ref, takeScreenshot } = useScreenshot(tracking.replace(/ /g, '-').toLowerCase(), tracking)
 
   const overScreenToDisplay = useMemo(

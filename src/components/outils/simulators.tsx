@@ -16,7 +16,7 @@ import UsageNumeriqueSimulator from './usageNumerique/UsageNumeriqueSimulator'
 
 export const simulators: Record<string, (defaultParams: Params) => ReactNode> = {
   chauffage: (defaultParams) => <ChauffageSimulator defaultParams={defaultParams.chauffage} />,
-  transport: () => <TransportSimulator />,
+  transport: (defaultParams) => <TransportSimulator defaultParams={defaultParams} />,
   teletravail: () => <TeletravailSimulator />,
   fruitsetlegumes: () => <FruitsEtLegumesSimulator />,
   alimentation: (defaultParams) => <AlimentationSimulator defaultParams={defaultParams.alimentation} />,

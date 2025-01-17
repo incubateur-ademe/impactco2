@@ -1,4 +1,6 @@
+import { computedEquivalents } from 'src/providers/equivalents'
 import { Params } from 'src/providers/stores/useAllParams'
+import { getRandomEquivalents } from 'components/comparateur/random'
 import { AlimentationCategories } from './alimentation'
 
 export const getDefaultParams = (searchParams: { [key: string]: string | string[] | undefined }) => {
@@ -10,6 +12,18 @@ export const getDefaultParams = (searchParams: { [key: string]: string | string[
       category: AlimentationCategories.Group,
       customList: false,
       equivalents: [] as string[],
+    },
+    comparateur: {
+      weight: 1,
+      baseValue: 100,
+      equivalents: [] as string[],
+      tiles: [] as string[],
+      comparedEquivalent: undefined,
+    },
+    distance: {
+      km: 10,
+      carpool: {},
+      displayAll: false,
     },
   } as Params
 
@@ -33,6 +47,50 @@ export const getDefaultParams = (searchParams: { [key: string]: string | string[
       const m2 = Number.parseInt(searchParams['m2'] as string)
       if (!Number.isNaN(m2)) {
         defaultParams.chauffage.m2 = m2
+      }
+    }
+
+    // Comparateur
+    if (searchParams['value']) {
+      const value = Number(searchParams['value'] as string)
+      if (!Number.isNaN(value)) {
+        defaultParams.comparateur.baseValue = value
+      }
+    }
+
+    if (searchParams['equivalent']) {
+      const [slug, carpool] = ((searchParams['equivalent'] as string) || '').split(' ')
+      const equivalent = computedEquivalents.find((equivalent) => equivalent.slug === slug)
+      const comparedEquivalent =
+        equivalent && equivalent.withCarpool
+          ? {
+              ...equivalent,
+              carpool: Number(carpool),
+              link: `${equivalent.link}+${carpool}`,
+              slug: `${equivalent.slug}+${carpool}`,
+              value: equivalent.value / (Number(carpool) + 1),
+            }
+          : equivalent
+      defaultParams.comparateur.comparedEquivalent = comparedEquivalent
+      defaultParams.comparateur.weight = comparedEquivalent
+        ? comparedEquivalent.value / (comparedEquivalent.percentage ? 100 : 1)
+        : 1
+    }
+
+    if (searchParams['comparisons']) {
+      defaultParams.comparateur.equivalents = (searchParams['comparisons'] as string)
+        .replace(/ /g, '+')
+        .split(',')
+        .filter((slug) => slug.includes('+') || computedEquivalents.find((equivalent) => equivalent.slug === slug))
+    } else {
+      defaultParams.comparateur.equivalents = getRandomEquivalents(searchParams['equivalent'] as string, 3)
+    }
+
+    // Distance
+    if (searchParams['km']) {
+      const km = Number.parseInt(searchParams['km'] as string)
+      if (!Number.isNaN(km)) {
+        defaultParams.distance.km = km
       }
     }
   }

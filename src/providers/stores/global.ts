@@ -8,6 +8,8 @@ interface States {
   setOverscreen: (slug: string, value: string) => void
   showButtons: boolean
   setShowButtons: (showButtons: boolean) => void
+  hideActions: boolean
+  setHideActions: (hideActions: boolean) => void
 }
 
 export const useGlobalStore = create<States>((set) => {
@@ -30,5 +32,7 @@ export const useGlobalStore = create<States>((set) => {
       }),
     showButtons: true,
     setShowButtons: (showButtons) => set(() => ({ showButtons })),
+    hideActions: true,
+    setHideActions: (hideActions) => set(() => ({ hideActions })),
   }
 })
