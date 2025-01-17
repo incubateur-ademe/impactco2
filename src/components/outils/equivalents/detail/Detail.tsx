@@ -77,6 +77,10 @@ const ecvs = (type: number, values: EquivalentValue[]): Values[] => {
     case 41:
     case 42:
     case 43:
+    case 50:
+    case 51:
+    case 52:
+    case 53:
       return [
         {
           label: 'total',

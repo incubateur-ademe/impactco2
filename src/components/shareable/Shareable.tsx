@@ -158,7 +158,7 @@ const Shareable = ({
         </div>
         {secondary === undefined && (
           <>
-            {showButtons && overScreens && ('hypothesis' in overScreens || 'data' in overScreens) ? (
+            {showButtons && !hideActions && overScreens && ('hypothesis' in overScreens || 'data' in overScreens) ? (
               <div className={classNames('no-screenshot', styles.ressources)}>
                 {'data' in overScreens && (
                   <Feature

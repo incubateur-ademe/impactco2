@@ -8,7 +8,7 @@ import DistanceSimulator from './DistanceSimulator'
 import ItineraireSimulator from './ItineraireSimulator'
 import styles from './TransportSimulator.module.css'
 
-const TransportSimulator = () => {
+const TransportSimulator = ({ bis }: { bis?: boolean }) => {
   const { selected, setSelected, mode, tabs } = useTransportStore()
 
   const distanceRef = useRef<HTMLButtonElement>(null)
@@ -16,6 +16,48 @@ const TransportSimulator = () => {
   const [forceFocus, setForceFocus] = useState(false)
 
   const t = useTranslations('transport.mode-selector')
+
+  const mode = useMemo(() => searchParams.get('mode'), [searchParams])
+
+  useEffect(() => {
+    if (bis) {
+      if (selected === 'distance') {
+        setHideActions(false)
+      } else {
+        setHideActions(!start || !end)
+      }
+    }
+  }, [bis, selected, start, end])
+
+  useEffect(() => {
+    if (pathName.includes(itineraire.value)) {
+      setSelected('itineraire')
+    } else {
+      const tabsParam = searchParams.get('tabs')
+      const values = tabsParam?.split(',')
+
+      if (values && values.includes(itineraire.value)) {
+        setSelected('itineraire')
+      }
+    }
+  }, [pathName, setSelected, searchParams])
+
+  const tabs = useMemo(() => {
+    const tabsParam = searchParams.get('tabs')
+    if (!tabsParam) {
+      return true
+    }
+    const values = tabsParam.split(',')
+    if (values.length === 0) {
+      return true
+    }
+
+    if (values.includes(distance.value) && (values.includes(itineraire.value) || pathName.includes(itineraire.value))) {
+      return true
+    }
+
+    return false
+  }, [pathName, searchParams])
 
   const onKeyDown = useCallback(
     (e: KeyboardEvent<HTMLButtonElement>) => {
@@ -95,7 +137,7 @@ const TransportSimulator = () => {
         role='tabpanel'
         aria-labelledby='tab-itineraire'
         className={selected === 'distance' ? styles.hidden : undefined}>
-        <ItineraireSimulator withComparisonMode={!mode} />
+        <ItineraireSimulator withComparisonMode={!mode} bis={bis} />
       </div>
     </>
   )

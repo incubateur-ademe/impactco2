@@ -16,7 +16,9 @@ export const getFAQs = unstable_cache(
 
       const contents = await Promise.all(
         results
-          .filter((result) => result.properties['Page(s)']?.multi_select?.some((select) => select.name === filter))
+          .filter((result) =>
+            filter ? result.properties['Page(s)']?.multi_select?.some((select) => select.name === filter) : true
+          )
           .map(async (result) => {
             try {
               const content = await getNotionContentProps(result.id)

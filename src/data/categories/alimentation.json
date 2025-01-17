@@ -1,724 +1,669 @@
 [
   {
-    "synonyms": [
-      "viande"
-    ],
+    "synonyms": ["viande"],
     "slug": "boeuf",
     "category": 2,
-    "Code_CIQUALs": [
-      6001,
-      6103,
-      40202,
-      6212,
-      6002,
-      6140
-    ],
+    "Code_CIQUALs": [6001, 6103, 40202, 6212, 6002, 6140],
     "ecv": [
       {
         "id": 30,
-        "value": 25.551250166666666
+        "value": 27.316666666666666
       },
       {
         "id": 31,
-        "value": 0.08836694316666666
+        "value": 0.08891666666666666
       },
       {
         "id": 32,
-        "value": 0.2982511666666667
+        "value": 0.21699999999999997
       },
       {
         "id": 33,
-        "value": 0.21822818000000002
+        "value": 0.3083333333333333
       },
       {
         "id": 34,
-        "value": 0.040466696
+        "value": 0.04396666666666666
       },
       {
         "id": 35,
-        "value": 0.034013522266666665
+        "value": 0.03428666666666667
       }
     ]
   },
   {
-    "synonyms": [
-      "viande"
-    ],
+    "synonyms": ["viande"],
     "slug": "veau",
     "category": 2,
-    "Code_CIQUALs": [
-      40304,
-      6560,
-      6521,
-      6510,
-      6540,
-      6522
-    ],
+    "Code_CIQUALs": [40304, 6560, 6521, 6510, 6540, 6522],
     "ecv": [
       {
         "id": 30,
-        "value": 17.075109833333332
+        "value": 21.833333333333332
       },
       {
         "id": 31,
-        "value": 0.0733224115
+        "value": 0.07403333333333333
       },
       {
         "id": 32,
-        "value": 0.2982511666666667
+        "value": 0.21699999999999997
       },
       {
         "id": 33,
-        "value": 0.21701859833333334
+        "value": 0.302
       },
       {
         "id": 34,
-        "value": 0.040466696
+        "value": 0.044000000000000004
       },
       {
         "id": 35,
-        "value": 0.034013522266666665
+        "value": 0.03428666666666667
       }
     ]
   },
   {
-    "synonyms": [
-      "viande"
-    ],
+    "synonyms": ["viande"],
     "slug": "porc",
     "category": 2,
-    "Code_CIQUALs": [
-      28100,
-      28001,
-      28302,
-      28002
-    ],
+    "Code_CIQUALs": [28100, 28001, 28302, 28002],
     "ecv": [
       {
         "id": 30,
-        "value": 8.07689705
+        "value": 6.0649999999999995
       },
       {
         "id": 31,
-        "value": 0.8486905225000001
+        "value": 0.00006495
       },
       {
         "id": 32,
-        "value": 0.44456805
+        "value": 0.22549999999999998
       },
       {
         "id": 33,
-        "value": 0.2235472575
+        "value": 0.2875
       },
       {
         "id": 34,
-        "value": 0.03968849025000001
+        "value": 0.045649999999999996
       },
       {
         "id": 35,
-        "value": 0.027178566175
+        "value": 0.04759
       }
     ]
   },
   {
-    "synonyms": [
-      "viande"
-    ],
+    "synonyms": ["viande"],
     "slug": "canard",
     "category": 2,
     "Code_CIQUAL": 36201,
     "ecv": [
       {
         "id": 30,
-        "value": 5.1759893
+        "value": 6.05
       },
       {
         "id": 31,
-        "value": 1.028726
+        "value": 1.04
       },
       {
         "id": 32,
-        "value": 0.34413596
+        "value": 0.472
       },
       {
         "id": 33,
-        "value": 0.29060694
+        "value": 0.359
       },
       {
         "id": 34,
-        "value": 0.046692342
+        "value": 0.0507
       },
       {
         "id": 35,
-        "value": 0.088693171
+        "value": 0.0892
       }
     ]
   },
   {
-    "synonyms": [
-      "viande"
-    ],
+    "synonyms": ["viande"],
     "slug": "lapin",
     "category": 2,
     "Code_CIQUAL": 34001,
     "ecv": [
       {
         "id": 30,
-        "value": 5.1759893
+        "value": 3.75
       },
       {
         "id": 31,
-        "value": 1.028726
+        "value": 1.04
       },
       {
         "id": 32,
-        "value": 0.34413596
+        "value": 0.472
       },
       {
         "id": 33,
-        "value": 0.29060694
+        "value": 0.381
       },
       {
         "id": 34,
-        "value": 0.046692342
+        "value": 0.0507
       },
       {
         "id": 35,
-        "value": 0.088693171
+        "value": 0.0892
       }
     ]
   },
   {
-    "synonyms": [
-      "viande"
-    ],
+    "synonyms": ["viande"],
     "slug": "poulet",
     "category": 2,
     "Code_CIQUAL": 36003,
     "ecv": [
       {
         "id": 30,
-        "value": 4.1407915
+        "value": 3
       },
       {
         "id": 31,
-        "value": 0.82298078
+        "value": 0.83
       },
       {
         "id": 32,
-        "value": 0.27530877
+        "value": 0.378
       },
       {
         "id": 33,
-        "value": 0.23248555
+        "value": 0.305
       },
       {
         "id": 34,
-        "value": 0.037353873
+        "value": 0.0406
       },
       {
         "id": 35,
-        "value": 0.0066736979
+        "value": 0.00683
       }
     ]
   },
   {
-    "synonyms": [
-      "fruit de mer"
-    ],
+    "synonyms": ["fruit de mer"],
     "slug": "crevettes",
     "category": 2,
     "Code_CIQUAL": 10021,
     "ecv": [
       {
         "id": 30,
-        "value": 19.566057
+        "value": 17.9
+      },
+      {
+        "id": 31,
+        "value": 0.000128
       },
       {
         "id": 32,
-        "value": 0.61179727
+        "value": 0.685
       },
       {
         "id": 33,
-        "value": 1.1199623
+        "value": 1.26
       },
       {
         "id": 34,
-        "value": 0.083008607
+        "value": 0.0901
       },
       {
         "id": 35,
-        "value": 0.40765779
+        "value": 0.41
       }
     ]
   },
   {
-    "synonyms": [
-      "fruit de mer"
-    ],
+    "synonyms": ["fruit de mer"],
     "slug": "moules",
     "category": 2,
     "Code_CIQUAL": 10026,
     "ecv": [
       {
         "id": 30,
-        "value": 1.8266391
+        "value": 1.98
+      },
+      {
+        "id": 31,
+        "value": 0.000231
       },
       {
         "id": 32,
-        "value": 1.1012351
+        "value": 1.23
       },
       {
         "id": 33,
-        "value": 0.86809444
+        "value": 0.961
       },
       {
         "id": 34,
-        "value": 0.14941549
+        "value": 0.162
       },
       {
         "id": 35,
-        "value": 0.99090738
+        "value": 0.995
       }
     ]
   },
   {
-    "synonyms": [
-      "fruit de mer"
-    ],
+    "synonyms": ["fruit de mer"],
     "slug": "huitres",
     "category": 2,
     "Code_CIQUAL": 10035,
     "ecv": [
       {
         "id": 30,
-        "value": 1.8266391
+        "value": 1.98
+      },
+      {
+        "id": 31,
+        "value": 0.000231
       },
       {
         "id": 32,
-        "value": 1.075372
+        "value": 1.23
       },
       {
         "id": 33,
-        "value": 0.86809444
+        "value": 0.961
       },
       {
         "id": 34,
-        "value": 0.14941549
+        "value": 0.162
       },
       {
         "id": 35,
-        "value": 0.99090738
+        "value": 0.995
       }
     ]
   },
   {
-    "synonyms": [
-      "poisson"
-    ],
+    "synonyms": ["poisson"],
     "slug": "cabillaud",
     "category": 2,
     "Code_CIQUAL": 26043,
     "ecv": [
       {
         "id": 30,
-        "value": 9.3213296
+        "value": 10.3
+      },
+      {
+        "id": 31,
+        "value": 0.0000577
       },
       {
         "id": 32,
-        "value": 0.27530877
+        "value": 0.469
       },
       {
         "id": 33,
-        "value": 1.1705297
+        "value": 1.27
       },
       {
         "id": 34,
-        "value": 0.037353873
+        "value": 0.0406
       },
       {
         "id": 35,
-        "value": 0.0066736979
+        "value": 0.00683
       }
     ]
   },
   {
-    "synonyms": [
-      "poisson"
-    ],
+    "synonyms": ["poisson"],
     "slug": "lieu",
     "category": 2,
     "Code_CIQUAL": 26129,
     "ecv": [
       {
         "id": 30,
-        "value": 9.3213296
+        "value": 10.3
+      },
+      {
+        "id": 31,
+        "value": 0.0000577
       },
       {
         "id": 32,
-        "value": 0.27530877
+        "value": 0.469
       },
       {
         "id": 33,
-        "value": 1.1705297
+        "value": 1.27
       },
       {
         "id": 34,
-        "value": 0.037353873
+        "value": 0.0406
       },
       {
         "id": 35,
-        "value": 0.0066736979
+        "value": 0.00683
       }
     ]
   },
   {
-    "synonyms": [
-      "poisson"
-    ],
+    "synonyms": ["poisson"],
     "slug": "dorade",
     "category": 2,
-    "Code_CIQUALs": [
-      26080,
-      26088
-    ],
+    "Code_CIQUALs": [26080, 26088],
     "ecv": [
       {
         "id": 30,
-        "value": 9.48175095
+        "value": 9.585
+      },
+      {
+        "id": 31,
+        "value": 0.0000577
       },
       {
         "id": 32,
-        "value": 0.27530877
+        "value": 0.469
       },
       {
         "id": 33,
-        "value": 0.9991666
+        "value": 1.09
       },
       {
         "id": 34,
-        "value": 0.037353873
+        "value": 0.0406
       },
       {
         "id": 35,
-        "value": 0.0066736979
+        "value": 0.00683
       }
     ]
   },
   {
-    "synonyms": [
-      "poisson"
-    ],
+    "synonyms": ["poisson"],
     "slug": "saumon",
     "category": 2,
     "Code_CIQUAL": 26036,
     "ecv": [
       {
         "id": 30,
-        "value": 4.6361406
+        "value": 4.16
       },
       {
         "id": 31,
-        "value": 0.028729551
+        "value": 0.0275
       },
       {
         "id": 32,
-        "value": 0.27530877
+        "value": 0.469
       },
       {
         "id": 33,
-        "value": 0.7821989
+        "value": 0.853
       },
       {
         "id": 34,
-        "value": 0.037353873
+        "value": 0.0406
       },
       {
         "id": 35,
-        "value": 0.0066736979
+        "value": 0.00683
       }
     ]
   },
   {
-    "synonyms": [
-      "poisson"
-    ],
+    "synonyms": ["poisson"],
     "slug": "thon",
     "category": 2,
     "Code_CIQUAL": 26053,
     "ecv": [
       {
         "id": 30,
-        "value": 3.2822136
+        "value": 3.61
       },
       {
         "id": 32,
-        "value": 0.27530877
+        "value": 0.469
       },
       {
         "id": 33,
-        "value": 0.78496269
+        "value": 0.857
       },
       {
         "id": 34,
-        "value": 0.037353873
+        "value": 0.0406
       },
       {
         "id": 35,
-        "value": 0.0066736979
+        "value": 0.00683
       }
     ]
   },
   {
-    "synonyms": [
-      "poisson"
-    ],
+    "synonyms": ["poisson"],
     "slug": "sardines",
     "category": 2,
     "Code_CIQUAL": 26065,
     "ecv": [
       {
         "id": 30,
-        "value": 0.70785437
+        "value": 0.776
+      },
+      {
+        "id": 31,
+        "value": 0.0000577
       },
       {
         "id": 32,
-        "value": 0.27530877
+        "value": 0.469
       },
       {
         "id": 33,
-        "value": 0.90277484
+        "value": 0.984
       },
       {
         "id": 34,
-        "value": 0.037353873
+        "value": 0.0406
       },
       {
         "id": 35,
-        "value": 0.0066736979
+        "value": 0.00683
       }
     ]
   },
   {
-    "synonyms": [
-      "produit laitier"
-    ],
+    "synonyms": ["produit laitier"],
     "slug": "beurre",
     "category": 2,
-    "Code_CIQUALs": [
-      16400,
-      16402
-    ],
+    "Code_CIQUALs": [16400, 16402],
     "ecv": [
       {
         "id": 30,
-        "value": 7.24791975
+        "value": 7.285
       },
       {
         "id": 31,
-        "value": 0.053023155
+        "value": 0.050199999999999995
       },
       {
         "id": 32,
-        "value": 0.18031662
+        "value": 0.124
       },
       {
         "id": 33,
-        "value": 0.232355835
+        "value": 0.407
       },
       {
         "id": 34,
-        "value": 0.03946786
+        "value": 0.0403
       },
       {
         "id": 35,
-        "value": 0.0066736979
+        "value": 0.00683
       }
     ]
   },
   {
-    "synonyms": [
-      "produit laitier"
-    ],
+    "synonyms": ["produit laitier"],
     "slug": "fromagedure",
     "category": 2,
-    "Code_CIQUALs": [
-      12115,
-      12114,
-      12110,
-      12736
-    ],
+    "Code_CIQUALs": [12115, 12114, 12110, 12736],
     "ecv": [
       {
         "id": 30,
-        "value": 5.19982765
+        "value": 5.2225
       },
       {
         "id": 31,
-        "value": 0.3916252725
+        "value": 0.35625
       },
       {
         "id": 32,
-        "value": 0.26233269
+        "value": 0.40975000000000006
       },
       {
         "id": 33,
-        "value": 0.21100323
+        "value": 0.24625
       },
       {
         "id": 34,
-        "value": 0.035969873
+        "value": 0.0368
       },
       {
         "id": 35,
-        "value": 0.0066736979
+        "value": 0.00683
       }
     ]
   },
   {
-    "synonyms": [
-      "produit laitier",
-      "fromage"
-    ],
+    "synonyms": ["produit laitier", "fromage"],
     "slug": "feta",
     "category": 2,
     "Code_CIQUAL": 12061,
     "ecv": [
       {
         "id": 30,
-        "value": 4.6819877
+        "value": 5.11
       },
       {
         "id": 31,
-        "value": 0.29382052
+        "value": 0.246
       },
       {
         "id": 32,
-        "value": 0.26233269
+        "value": 0.648
       },
       {
         "id": 33,
-        "value": 0.21100323
+        "value": 0.258
       },
       {
         "id": 34,
-        "value": 0.035969873
+        "value": 0.0368
       },
       {
         "id": 35,
-        "value": 0.0066736979
+        "value": 0.00683
       }
     ]
   },
   {
-    "synonyms": [
-      "produit laitier"
-    ],
+    "synonyms": ["produit laitier"],
     "slug": "fromagemolle",
     "category": 2,
-    "Code_CIQUALs": [
-      12001,
-      12021,
-      12030,
-      12051
-    ],
+    "Code_CIQUALs": [12001, 12021, 12030, 12051],
     "ecv": [
       {
         "id": 30,
-        "value": 4.4136359
+        "value": 4.4375
       },
       {
         "id": 31,
-        "value": 0.2616773475
+        "value": 0.2335
       },
       {
         "id": 32,
-        "value": 0.26233269
+        "value": 0.17325000000000002
       },
       {
         "id": 33,
-        "value": 0.21100323
+        "value": 0.2565
       },
       {
         "id": 34,
-        "value": 0.035969873
+        "value": 0.036825
       },
       {
         "id": 35,
-        "value": 0.0066736979
+        "value": 0.00683
       }
     ]
   },
   {
-    "synonyms": [
-      "produit laitier",
-      "fromage"
-    ],
+    "synonyms": ["produit laitier", "fromage"],
     "slug": "mozarella",
     "category": 2,
     "Code_CIQUAL": 19590,
     "ecv": [
       {
         "id": 30,
-        "value": 3.8001999
+        "value": 3.82
       },
       {
         "id": 31,
-        "value": 0.29688809
+        "value": 0.249
       },
       {
         "id": 32,
-        "value": 0.26233269
+        "value": 0.35
       },
       {
         "id": 33,
-        "value": 0.21100323
+        "value": 0.252
       },
       {
         "id": 34,
-        "value": 0.035969873
+        "value": 0.0368
       },
       {
         "id": 35,
-        "value": 0.0066736979
+        "value": 0.00683
       }
     ]
   },
   {
-    "synonyms": [
-      "produit laitier"
-    ],
+    "synonyms": ["produit laitier"],
     "slug": "fromagebleu",
     "category": 2,
-    "Code_CIQUALs": [
-      12500,
-      12521,
-      12524
-    ],
+    "Code_CIQUALs": [12500, 12521, 12524],
     "ecv": [
       {
         "id": 30,
-        "value": 4.7702497
+        "value": 4.943333333333334
       },
       {
         "id": 31,
-        "value": 0.26769697333333337
+        "value": 0.22399999999999998
       },
       {
         "id": 32,
-        "value": 0.20765531
+        "value": 0.69
       },
       {
         "id": 33,
-        "value": 0.21100323
+        "value": 0.264
       },
       {
         "id": 34,
-        "value": 0.035969873
+        "value": 0.0368
       },
       {
         "id": 35,
-        "value": 0.0066736979
+        "value": 0.00683
       }
     ]
   },
@@ -729,125 +674,123 @@
     "ecv": [
       {
         "id": 30,
-        "value": 2.7858188
+        "value": 1.49
+      },
+      {
+        "id": 31,
+        "value": 0.0000803
       },
       {
         "id": 32,
-        "value": 0.12481309
+        "value": 0.109
       },
       {
         "id": 33,
-        "value": 0.16886546
+        "value": 0.189
       },
       {
         "id": 34,
-        "value": 0.0084079787
+        "value": 0.00933
       },
       {
         "id": 35,
-        "value": 0.080351049
+        "value": 0.0806
       }
     ]
   },
   {
-    "synonyms": [
-      "margarine"
-    ],
+    "synonyms": ["margarine"],
     "slug": "matieregrasse",
     "category": 2,
     "Code_CIQUAL": 16080,
     "ecv": [
       {
         "id": 30,
-        "value": 0.36123184
+        "value": 1.7
       },
       {
         "id": 31,
-        "value": 1.2656456
+        "value": 0.251
       },
       {
         "id": 32,
-        "value": 0.18086906
+        "value": 0.281
       },
       {
         "id": 33,
-        "value": 0.37992306
+        "value": 0.307
       },
       {
         "id": 34,
-        "value": 0.03765454
+        "value": 0.0388
       },
       {
         "id": 35,
-        "value": 0.0066736979
+        "value": 0.00683
       }
     ]
   },
   {
-    "synonyms": [
-      "produit laitier"
-    ],
+    "synonyms": ["produit laitier"],
     "slug": "yaourt",
     "category": 2,
     "Code_CIQUAL": 19860,
     "ecv": [
       {
         "id": 30,
-        "value": 1.5332605
+        "value": 1.03
       },
       {
         "id": 31,
-        "value": 0.14982272
+        "value": 0.152
       },
       {
         "id": 32,
-        "value": 0.18031662
+        "value": 0.422
       },
       {
         "id": 33,
-        "value": 0.20131239
+        "value": 0.247
       },
       {
         "id": 34,
-        "value": 0.035969873
+        "value": 0.0369
       },
       {
         "id": 35,
-        "value": 0.0066736979
+        "value": 0.00683
       }
     ]
   },
   {
-    "synonyms": [
-      "produit laitier"
-    ],
+    "synonyms": ["produit laitier"],
     "slug": "fromageblanc",
     "category": 2,
     "Code_CIQUAL": 19644,
     "ecv": [
       {
         "id": 30,
-        "value": 1.0627205
+        "value": 1.07
       },
       {
         "id": 31,
-        "value": 0.12902031
+        "value": 0.221
       },
       {
         "id": 32,
-        "value": 0.18031662
+        "value": 0.241
       },
       {
         "id": 33,
-        "value": 0.18373556
+        "value": 0.234
       },
       {
         "id": 34,
-        "value": 0.035969873
+        "value": 0.0368
       },
       {
         "id": 35,
-        "value": 0.0066736979
+        "value": 0.00683
       }
     ]
   },
@@ -857,155 +800,110 @@
     "total": 1.33
   },
   {
-    "synonyms": [
-      "céréales"
-    ],
-    "slug": "quinoa",
+    "synonyms": ["céréales"],
+    "slug": "riz",
     "category": 2,
-    "Code_CIQUAL": 9340,
-    "Code_AGB": "9340_2",
+    "Code_CIQUALs": [9100, 9102, 9109, 9108],
     "ecv": [
       {
         "id": 30,
-        "value": 7.2248763
+        "value": 1.61
       },
       {
         "id": 31,
-        "value": 0.054581486
+        "value": 0.00013575000000000002
       },
       {
         "id": 32,
-        "value": 0.26506589
+        "value": 0.0381
       },
       {
         "id": 33,
-        "value": 0.11784259
+        "value": 0.346
       },
       {
         "id": 34,
-        "value": 0.01606076
+        "value": 0.02035
       }
     ]
   },
   {
-    "synonyms": [
-      "céréales"
-    ],
-    "slug": "riz",
-    "category": 2,
-    "Code_CIQUALs": [
-      9100,
-      9102,
-      9109,
-      9108
-    ],
-    "ecv": [
-      {
-        "id": 30,
-        "value": 2.1560981
-      },
-      {
-        "id": 32,
-        "value": 0.26506589
-      },
-      {
-        "id": 33,
-        "value": 0.31435761
-      },
-      {
-        "id": 34,
-        "value": 0.018776521
-      }
-    ]
-  },
-  {
-    "synonyms": [
-      "céréales"
-    ],
+    "synonyms": ["céréales"],
     "slug": "pates",
     "category": 2,
     "Code_CIQUAL": 9810,
     "ecv": [
       {
         "id": 30,
-        "value": 0.74798688
+        "value": 0.752
       },
       {
         "id": 31,
-        "value": 0.95677951
+        "value": 0.989
       },
       {
         "id": 32,
-        "value": 0.28118162
+        "value": 0.0556
       },
       {
         "id": 33,
-        "value": 0.1395071
+        "value": 0.156
       },
       {
         "id": 34,
-        "value": 0.019438334
+        "value": 0.0269
       }
     ]
   },
   {
-    "synonyms": [
-      "céréales"
-    ],
+    "synonyms": ["céréales"],
     "slug": "ble",
     "category": 2,
-    "Code_CIQUALs": [
-      9060,
-      9080,
-      9010,
-      9610
-    ],
+    "Code_CIQUALs": [9060, 9080, 9010, 9610],
     "ecv": [
       {
         "id": 30,
-        "value": 0.6581188875
+        "value": 0.6655
       },
       {
         "id": 31,
-        "value": 0.1475257525
+        "value": 0.1510385
       },
       {
         "id": 32,
-        "value": 0.26506589
+        "value": 0.240525
       },
       {
         "id": 33,
-        "value": 0.1266559725
+        "value": 0.1515
       },
       {
         "id": 34,
-        "value": 0.01606076
+        "value": 0.0177
       }
     ]
   },
   {
-    "synonyms": [
-      "céréales"
-    ],
+    "synonyms": ["céréales"],
     "slug": "boulgour",
     "category": 2,
     "Code_CIQUAL": 9690,
     "ecv": [
       {
         "id": 30,
-        "value": 0.73765151
+        "value": 0.748
       },
       {
         "id": 32,
-        "value": 0.26506589
+        "value": 0.0381
       },
       {
         "id": 33,
-        "value": 0.13112869
+        "value": 0.146
       },
       {
         "id": 34,
-        "value": 0.01606076
+        "value": 0.0178
       }
     ]
   },
@@ -1016,19 +914,23 @@
     "ecv": [
       {
         "id": 30,
-        "value": 0.3913532
+        "value": 0.4
+      },
+      {
+        "id": 31,
+        "value": 0.000643
       },
       {
         "id": 32,
-        "value": 0.26506589
+        "value": 0.129
       },
       {
         "id": 33,
-        "value": 0.26649669
+        "value": 0.302
       },
       {
         "id": 34,
-        "value": 0.064800225
+        "value": 0.0669
       }
     ]
   },
@@ -1039,19 +941,23 @@
     "ecv": [
       {
         "id": 30,
-        "value": 0.4883118699999999
+        "value": 0.508
+      },
+      {
+        "id": 31,
+        "value": 0.000643
       },
       {
         "id": 32,
-        "value": 0.26506589
+        "value": 0.129
       },
       {
         "id": 33,
-        "value": 0.13112869
+        "value": 0.154
       },
       {
         "id": 34,
-        "value": 0.064800225
+        "value": 0.0669
       }
     ]
   },
@@ -1062,19 +968,23 @@
     "ecv": [
       {
         "id": 30,
-        "value": 0.39139233
+        "value": 0.141
+      },
+      {
+        "id": 31,
+        "value": 0.000643
       },
       {
         "id": 32,
-        "value": 0.26506589
+        "value": 0.129
       },
       {
         "id": 33,
-        "value": 0.18671623
+        "value": 0.244
       },
       {
         "id": 34,
-        "value": 0.064800225
+        "value": 0.0669
       }
     ]
   },
@@ -1085,19 +995,23 @@
     "ecv": [
       {
         "id": 30,
-        "value": 0.39438298
+        "value": 0.363
+      },
+      {
+        "id": 31,
+        "value": 0.000193
       },
       {
         "id": 32,
-        "value": 0.26506589
+        "value": 0.0381
       },
       {
         "id": 33,
-        "value": 0.13112869
+        "value": 0.146
       },
       {
         "id": 34,
-        "value": 0.019908241
+        "value": 0.0215
       }
     ]
   },
@@ -1108,27 +1022,27 @@
     "ecv": [
       {
         "id": 30,
-        "value": 16.341624
+        "value": 17.4
       },
       {
         "id": 31,
-        "value": 0.32312121
+        "value": 0.318
       },
       {
         "id": 32,
-        "value": 0.27732452
+        "value": 0.676
       },
       {
         "id": 33,
-        "value": 0.21174859
+        "value": 0.303
       },
       {
         "id": 34,
-        "value": 0.037768033
+        "value": 0.0417
       },
       {
         "id": 35,
-        "value": 0.092564276
+        "value": 0.0947
       }
     ]
   },
@@ -1139,27 +1053,27 @@
     "ecv": [
       {
         "id": 30,
-        "value": 10.917579
+        "value": 11.2
       },
       {
         "id": 31,
-        "value": 0.22521755
+        "value": 0.217
       },
       {
         "id": 32,
-        "value": 0.27085217
+        "value": 0.964
       },
       {
         "id": 33,
-        "value": 0.2106749
+        "value": 0.377
       },
       {
         "id": 34,
-        "value": 0.037768033
+        "value": 0.0417
       },
       {
         "id": 35,
-        "value": 0.0066736979
+        "value": 0.00683
       }
     ]
   },
@@ -1170,27 +1084,27 @@
     "ecv": [
       {
         "id": 30,
-        "value": 3.2502141
+        "value": 2.53
       },
       {
         "id": 31,
-        "value": 0.7019261
+        "value": 0.705
       },
       {
         "id": 32,
-        "value": 0.27733664
+        "value": 0.676
       },
       {
         "id": 33,
-        "value": 0.25546373
+        "value": 0.314
       },
       {
         "id": 34,
-        "value": 0.037768033
+        "value": 0.0417
       },
       {
         "id": 35,
-        "value": 0.092564276
+        "value": 0.0947
       }
     ]
   },
@@ -1201,27 +1115,27 @@
     "ecv": [
       {
         "id": 30,
-        "value": 2.514726
+        "value": 2.67
       },
       {
         "id": 31,
-        "value": 0.30314054
+        "value": 0.28
       },
       {
         "id": 32,
-        "value": 0.10407185
+        "value": 0.254
       },
       {
         "id": 33,
-        "value": 0.22488013
+        "value": 0.259
       },
       {
         "id": 34,
-        "value": 0.037768033
+        "value": 0.0417
       },
       {
         "id": 35,
-        "value": 0.092564276
+        "value": 0.0947
       }
     ]
   },
@@ -1232,27 +1146,27 @@
     "ecv": [
       {
         "id": 30,
-        "value": 1.8128867
+        "value": 1.65
       },
       {
         "id": 31,
-        "value": 0.031970205
+        "value": 0.0281
       },
       {
         "id": 32,
-        "value": 0.21032583
+        "value": 0.543
       },
       {
         "id": 33,
-        "value": 0.34340928
+        "value": 0.388
       },
       {
         "id": 34,
-        "value": 0.037768033
+        "value": 0.0418
       },
       {
         "id": 35,
-        "value": 0.017696322
+        "value": 0.0181
       }
     ]
   },
@@ -1264,27 +1178,27 @@
     "ecv": [
       {
         "id": 30,
-        "value": 1.1099088
+        "value": 1.23
       },
       {
         "id": 31,
-        "value": 0.55318135
+        "value": 0.394
       },
       {
         "id": 32,
-        "value": 0.27841232
+        "value": 0.676
       },
       {
         "id": 33,
-        "value": 0.18611522
+        "value": 0.271
       },
       {
         "id": 34,
-        "value": 0.037768832
+        "value": 0.0418
       },
       {
         "id": 35,
-        "value": 0.092564276
+        "value": 0.0947
       }
     ]
   },
@@ -1295,27 +1209,27 @@
     "ecv": [
       {
         "id": 30,
-        "value": 0.23301609
+        "value": 0.398
       },
       {
         "id": 31,
-        "value": 0.25794215
+        "value": 0.137
       },
       {
         "id": 32,
-        "value": 0.40034907
+        "value": 0.247
       },
       {
         "id": 33,
-        "value": 0.36114825
+        "value": 0.389
       },
       {
         "id": 34,
-        "value": 0.15356021
+        "value": 0.166
       },
       {
         "id": 35,
-        "value": 0.12184437
+        "value": 0.12
       }
     ]
   },
@@ -1326,27 +1240,27 @@
     "ecv": [
       {
         "id": 30,
-        "value": 0.083115821
+        "value": 0.0864
       },
       {
         "id": 31,
-        "value": 0.1454799
+        "value": 0.146
       },
       {
         "id": 32,
-        "value": 0.18549789
+        "value": 0.482
       },
       {
         "id": 33,
-        "value": 0.19497818
+        "value": 0.23
       },
       {
         "id": 34,
-        "value": 0.037768033
+        "value": 0.0418
       },
       {
         "id": 35,
-        "value": 0.017696322
+        "value": 0.0181
       }
     ]
   },
@@ -1357,23 +1271,23 @@
     "ecv": [
       {
         "id": 30,
-        "value": 8.5822707
+        "value": 9.01
       },
       {
         "id": 31,
-        "value": 0.57571437
+        "value": 0.283
       },
       {
         "id": 32,
-        "value": 0.10402936
+        "value": 0.957
       },
       {
         "id": 33,
-        "value": 0.31376547
+        "value": 0.251
       },
       {
         "id": 34,
-        "value": 0.017263204
+        "value": 0.0209
       }
     ]
   },
@@ -1384,23 +1298,23 @@
     "ecv": [
       {
         "id": 30,
-        "value": 6.8500101
+        "value": 8.05
       },
       {
         "id": 31,
-        "value": 0.3052603
+        "value": 0.261
       },
       {
         "id": 32,
-        "value": 0.17071537
+        "value": 0.49
       },
       {
         "id": 33,
-        "value": 0.22169116
+        "value": 0.295
       },
       {
         "id": 34,
-        "value": 0.017263204
+        "value": 0.0209
       }
     ]
   },
@@ -1411,54 +1325,51 @@
     "ecv": [
       {
         "id": 30,
-        "value": 6.3294106
+        "value": 6.67
       },
       {
         "id": 31,
-        "value": 0.34862379
+        "value": 0.247
       },
       {
         "id": 32,
-        "value": 0.287793
+        "value": 1.16
       },
       {
         "id": 33,
-        "value": 0.20994214
+        "value": 0.253
       },
       {
         "id": 34,
-        "value": 0.019437894
+        "value": 0.0269
       }
     ]
   },
   {
-    "synonyms": [
-      "patisserie",
-      "chocolatine"
-    ],
+    "synonyms": ["patisserie", "chocolatine"],
     "slug": "painauchocolat",
     "category": 2,
     "Code_CIQUAL": 7730,
     "ecv": [
       {
         "id": 30,
-        "value": 4.4157734
+        "value": 4.75
       },
       {
         "id": 31,
-        "value": 0.25971159
+        "value": 0.212
       },
       {
         "id": 32,
-        "value": 0.28784633
+        "value": 0.536
       },
       {
         "id": 33,
-        "value": 0.17206993
+        "value": 0.219
       },
       {
         "id": 34,
-        "value": 0.004786188
+        "value": 0.0121
       }
     ]
   },
@@ -1469,143 +1380,134 @@
     "ecv": [
       {
         "id": 30,
-        "value": 3.1816353
+        "value": 4.84
       },
       {
         "id": 31,
-        "value": 0.54086276
+        "value": 0.296
       },
       {
         "id": 32,
-        "value": 0.10984827
+        "value": 0.88
       },
       {
         "id": 33,
-        "value": 0.21088666
+        "value": 0.23
       },
       {
         "id": 34,
-        "value": 0.019437894
+        "value": 0.0269
       }
     ]
   },
   {
     "slug": "madeleine",
     "category": 2,
-    "Code_CIQUALs": [
-      24632,
-      24630
-    ],
+    "Code_CIQUALs": [24632, 24630],
     "ecv": [
       {
         "id": 30,
-        "value": 1.866466805
+        "value": 1.72
       },
       {
         "id": 31,
-        "value": 0.341697155
+        "value": 0.2025
       },
       {
         "id": 32,
-        "value": 0.287831445
+        "value": 0.113
       },
       {
         "id": 33,
-        "value": 0.14802763000000002
+        "value": 0.181
       },
       {
         "id": 34,
-        "value": 0.019437894
+        "value": 0.0269
       }
     ]
   },
   {
-    "synonyms": [
-      "patisserie"
-    ],
+    "synonyms": ["patisserie"],
     "slug": "painauxraisins",
     "category": 2,
     "Code_CIQUAL": 7720,
     "ecv": [
       {
         "id": 30,
-        "value": 2.0148568
+        "value": 2.05
       },
       {
         "id": 31,
-        "value": 0.19315803
+        "value": 0.181
       },
       {
         "id": 32,
-        "value": 0.28784046
+        "value": 0.135
       },
       {
         "id": 33,
-        "value": 0.13034297
+        "value": 0.186
       },
       {
         "id": 34,
-        "value": 0.004786188
+        "value": 0.0121
       }
     ]
   },
   {
-    "synonyms": [
-      "patisserie"
-    ],
+    "synonyms": ["patisserie"],
     "slug": "chaussonauxpommes",
     "category": 2,
     "Code_CIQUAL": 23480,
     "ecv": [
       {
         "id": 30,
-        "value": 1.5090815
+        "value": 1.53
       },
       {
         "id": 31,
-        "value": 0.19422198
+        "value": 0.181
       },
       {
         "id": 32,
-        "value": 0.28780692
+        "value": 0.135
       },
       {
         "id": 33,
-        "value": 0.13772821
+        "value": 0.186
       },
       {
         "id": 34,
-        "value": 0.004786188
+        "value": 0.0121
       }
     ]
   },
   {
-    "synonyms": [
-      "patisserie"
-    ],
+    "synonyms": ["patisserie"],
     "slug": "croissant",
     "category": 2,
     "Code_CIQUAL": 7620,
     "ecv": [
       {
         "id": 30,
-        "value": 1.9944296
+        "value": 2.02
       },
       {
         "id": 31,
-        "value": 0.18765296
+        "value": 0.182
       },
       {
         "id": 32,
-        "value": 0.28784654
+        "value": 0.536
       },
       {
         "id": 33,
-        "value": 0.12601649
+        "value": 0.193
       },
       {
         "id": 34,
-        "value": 0.004786188
+        "value": 0.0121
       }
     ]
   },
@@ -1616,23 +1518,23 @@
     "ecv": [
       {
         "id": 30,
-        "value": 1.0360508
+        "value": 1.09
       },
       {
         "id": 31,
-        "value": 0.31350489
+        "value": 0.184
       },
       {
         "id": 32,
-        "value": 0.28130214
+        "value": 0.11
       },
       {
         "id": 33,
-        "value": 0.1177356
+        "value": 0.163
       },
       {
         "id": 34,
-        "value": 0.004786188
+        "value": 0.0121
       }
     ]
   },
@@ -1643,23 +1545,23 @@
     "ecv": [
       {
         "id": 30,
-        "value": 0.57192017
+        "value": 0.721
       },
       {
         "id": 31,
-        "value": 0.59527116
+        "value": 0.303
       },
       {
         "id": 32,
-        "value": 0.18551167
+        "value": 0.231
       },
       {
         "id": 33,
-        "value": 0.18709575
+        "value": 0.211
       },
       {
         "id": 34,
-        "value": 0.017263204
+        "value": 0.0209
       }
     ]
   },
@@ -1670,23 +1572,23 @@
     "ecv": [
       {
         "id": 30,
-        "value": 0.38312009
+        "value": 0.387
       },
       {
         "id": 31,
-        "value": 0.17820109
+        "value": 0.181
       },
       {
         "id": 32,
-        "value": 0.013430369
+        "value": 0.0486
       },
       {
         "id": 33,
-        "value": 0.10712652
+        "value": 0.148
       },
       {
         "id": 34,
-        "value": 0.004786188
+        "value": 0.0121
       }
     ]
   },
@@ -1747,19 +1649,23 @@
     "ecv": [
       {
         "id": 30,
-        "value": 0.10218809
+        "value": 0.102
+      },
+      {
+        "id": 31,
+        "value": 0.0000605
       },
       {
         "id": 32,
-        "value": 0.10977533
+        "value": 0.412
       },
       {
         "id": 33,
-        "value": 0.14590735
+        "value": 0.175
       },
       {
         "id": 34,
-        "value": 0.0097742827
+        "value": 0.0172
       }
     ]
   }

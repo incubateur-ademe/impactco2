@@ -10,11 +10,11 @@ import CategorySimulator from './CategorySimulator'
 const Category = ({
   category,
   simulator,
+  noBottomBorders,
 }: {
   category: CategoryType
   simulator?: ReactNode
-  displayAll?: boolean
-  setDisplayAll?: (value: boolean) => void
+  noBottomBorders?: boolean
 }) => {
   const allParams = useAllParams()
 
@@ -26,7 +26,11 @@ const Category = ({
   }, [allParams, category])
 
   return (
-    <Shareable slug={category.slug} tracking={category.name} overScreens={overScreens}>
+    <Shareable
+      slug={category.slug}
+      tracking={category.name}
+      overScreens={overScreens}
+      noBottomBorders={noBottomBorders}>
       {simulator ||
         (category.equivalents && (
           <CategorySimulator

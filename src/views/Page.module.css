@@ -15,6 +15,7 @@
 
   ul {
     margin-left: 2rem;
+    list-style: disc;
   }
 
   table {
@@ -27,4 +28,10 @@
     border: 1px solid var(--neutral-80);
     padding: 0.5rem;
   }
+}
+
+.image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 0.5rem;
 }
