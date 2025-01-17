@@ -1,4 +1,3 @@
-import { Params } from 'src/providers/stores/useAllParams'
 import { DefaultParams } from 'utils/params'
 import Shareable from 'components/shareable/Shareable'
 import { overScreenComparateurValues } from 'components/shareable/overScreens/Values'
