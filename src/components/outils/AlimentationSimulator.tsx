@@ -4,9 +4,9 @@ import { useTranslations } from 'next-intl'
 import React, { useEffect, useMemo, useState } from 'react'
 import { computedEquivalents } from 'src/providers/equivalents'
 import { useAlimentationStore } from 'src/providers/stores/alimentation'
-import { Params } from 'src/providers/stores/useAllParams'
 import { AlimentationCategories, equivalentsByCategory } from 'utils/alimentation'
 import { track } from 'utils/matomo'
+import { DefaultParams } from 'utils/params'
 import HiddenLabel from 'components/form/HiddenLabel'
 import Select from 'components/form/Select'
 import alimentationStyles from './AlimentationSimulator.module.css'
@@ -14,7 +14,7 @@ import CategorySimulator from './CategorySimulator'
 import styles from './Simulator.module.css'
 import AlimentationSubCategory from './alimentation/AlimentationSubCategory'
 
-const AlimentationSimulator = ({ defaultParams }: { defaultParams: Params['alimentation'] }) => {
+const AlimentationSimulator = ({ defaultParams }: { defaultParams: DefaultParams['alimentation'] }) => {
   const { setCategory } = useAlimentationStore()
   const [internalCategory, setInternalCategory] = useState(defaultParams.category)
   const t = useTranslations('alimentation')

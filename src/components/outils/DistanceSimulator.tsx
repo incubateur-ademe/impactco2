@@ -4,8 +4,8 @@ import { useTranslations } from 'next-intl'
 import { useEffect, useState } from 'react'
 import { useDistanceStore } from 'src/providers/stores/distance'
 import { useTransportStore } from 'src/providers/stores/transport'
-import { Params } from 'src/providers/stores/useAllParams'
 import { track } from 'utils/matomo'
+import { DefaultParams } from 'utils/params'
 import useTransportations from 'hooks/useTransportations'
 import NumberInput from 'components/form/NumberInput'
 import CategorySimulator from './CategorySimulator'
@@ -18,9 +18,8 @@ const DistanceSimulator = ({
   defaultParams,
 }: {
   withComparisonMode: boolean
-  defaultParams: Params['distance']
+  defaultParams: DefaultParams['distance']
 }) => {
-  console.log(defaultParams)
   const [internalDistance, setInternalDistance] = useState(defaultParams.km)
   const { setKm, displayAll, setDisplayAll } = useDistanceStore()
   const { comparisonMode } = useTransportStore()

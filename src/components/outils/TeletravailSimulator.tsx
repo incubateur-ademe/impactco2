@@ -2,15 +2,17 @@
 
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
-import { useEffect, useMemo, useRef } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { useGlobalStore } from 'src/providers/stores/global'
 import { useTeletravailStore } from 'src/providers/stores/teletravail'
 import { Category } from 'types/category'
 import { ComputedEquivalent, DeplacementType } from 'types/equivalent'
 import { categories } from 'data/categories'
 import { deplacements } from 'data/categories/deplacement'
+import { completeAddress } from 'utils/address'
 import formatNumber from 'utils/formatNumber'
 import { track } from 'utils/matomo'
+import { DefaultParams } from 'utils/params'
 import useItineraries from 'hooks/useItineraries'
 import LocalNumber from 'components/base/LocalNumber'
 import Etiquette from 'components/comparateur/Etiquette'
@@ -25,29 +27,39 @@ import styles from './TeletravailSimulator.module.css'
 const transports = (categories.find((category) => category.slug === 'transport') as Category)
   .equivalents as (ComputedEquivalent & { type: DeplacementType })[]
 
-const TeletravailSimulator = () => {
+const TeletravailSimulator = ({ defaultParams }: { defaultParams: DefaultParams['teletravail'] }) => {
   const ref = useRef<HTMLDivElement>(null)
   const { language } = useGlobalStore()
 
-  const {
-    start,
-    setStart,
-    end,
-    setEnd,
-    transport,
-    setTransport,
-    presentiel,
-    setPresentiel,
-    homeOffice,
-    setHomeOffice,
-    equivalents,
-    setEquivalents,
-  } = useTeletravailStore()
+  const { start, setStart, end, setEnd, setTransport, setPresentiel, setHomeOffice, equivalents, setEquivalents } =
+    useTeletravailStore()
+
+  const [internalTransport, setInternalTransport] = useState(defaultParams.transport)
+  useEffect(() => {
+    setTransport(internalTransport)
+  }, [internalTransport])
+  const [internalHomeOffice, setInternalHomeOffice] = useState(defaultParams.homeOffice)
+  useEffect(() => {
+    setHomeOffice(internalHomeOffice)
+  }, [internalHomeOffice])
+  const [internalPresentiel, setinternalPresentiel] = useState(defaultParams.presentiel)
+  useEffect(() => {
+    setPresentiel(internalPresentiel)
+  }, [internalPresentiel])
+
+  useEffect(() => {
+    if (defaultParams.start) {
+      completeAddress(setStart, defaultParams.start)
+    }
+    if (defaultParams.end) {
+      completeAddress(setEnd, defaultParams.end)
+    }
+  }, [defaultParams])
 
   const t = useTranslations('transport.teletravail')
   const deplacement = useMemo(
-    () => transports.find((x) => x.slug === transport) as ComputedEquivalent & { type: DeplacementType },
-    [transport]
+    () => transports.find((x) => x.slug === internalTransport) as ComputedEquivalent & { type: DeplacementType },
+    [internalTransport]
   )
   const { data: itineraries } = useItineraries(start, end, 'télétravail')
   const total = useMemo(() => {
@@ -57,11 +69,11 @@ const TeletravailSimulator = () => {
       return deplacement.value * distance * 92
     }
     return 0
-  }, [itineraries, deplacement, presentiel])
+  }, [itineraries, deplacement, internalPresentiel])
 
   useEffect(() => {
-    setEquivalents(getRandomEquivalentForValue(0.75 * homeOffice * total * 1000))
-  }, [total, homeOffice])
+    setEquivalents(getRandomEquivalentForValue(0.75 * internalHomeOffice * total * 1000))
+  }, [total, internalHomeOffice])
 
   return (
     <>
@@ -82,10 +94,10 @@ const TeletravailSimulator = () => {
             required
             label={t('mode')}
             id='mode'
-            value={transport}
+            value={internalTransport}
             onChange={(event) => {
               track('Télétravail', 'Mode de transport', event.target.value)
-              setTransport(event.target.value)
+              setInternalTransport(event.target.value)
             }}
             equivalents={deplacements}
           />
@@ -97,11 +109,11 @@ const TeletravailSimulator = () => {
             </label>
             <NumberInput
               id='presentiel-value'
-              unit={`${t('day')}${presentiel === 1 ? '' : 's'}`}
-              value={presentiel}
+              unit={`${t('day')}${internalPresentiel === 1 ? '' : 's'}`}
+              value={internalPresentiel}
               setValue={(value) => {
                 track('Télétravail', 'Présentiel', value.toString())
-                setPresentiel(value)
+                setinternalPresentiel(value)
               }}
               min={0}
               max={7}
@@ -113,11 +125,11 @@ const TeletravailSimulator = () => {
             </label>
             <NumberInput
               id='teletravail-value'
-              unit={`${t('day')}${homeOffice === 1 ? '' : 's'}`}
-              value={homeOffice}
+              unit={`${t('day')}${internalHomeOffice === 1 ? '' : 's'}`}
+              value={internalHomeOffice}
               setValue={(value) => {
                 track('Télétravail', 'Télétravail', value.toString())
-                setHomeOffice(value)
+                setInternalHomeOffice(value)
               }}
               min={0}
               max={7}
@@ -132,25 +144,25 @@ const TeletravailSimulator = () => {
               <span className={styles.header}>{t('generate')}</span>
               <span className={styles.value}>
                 <span className={styles.number} data-testid='teletravail-generated-value'>
-                  <LocalNumber number={formatNumber(total * presentiel)} />
+                  <LocalNumber number={formatNumber(total * internalPresentiel)} />
                 </span>{' '}
                 kg co₂e
               </span>
               <span>{t('per-year')}</span>
               <span>
-                {t('work')} {presentiel} {`${t('day')}${presentiel === 1 ? '' : 's'}`} / {t('week')}
+                {t('work')} {internalPresentiel} {`${t('day')}${internalPresentiel === 1 ? '' : 's'}`} / {t('week')}
               </span>
             </p>
             <p className={styles.values}>
               <span className={styles.header}>{t('saved')}</span>
               <span className={styles.greenValue}>
                 <span className={styles.number} data-testid='teletravail-saved-value'>
-                  <LocalNumber number={formatNumber(0.75 * homeOffice * total)} />
+                  <LocalNumber number={formatNumber(0.75 * internalHomeOffice * total)} />
                 </span>{' '}
                 kg co₂e
               </span>
               <span>{t('per-year')}</span>
-              {t('home')} {homeOffice} {`${t('day')}${homeOffice === 1 ? '' : 's'}`} / {t('week')}
+              {t('home')} {internalHomeOffice} {`${t('day')}${internalHomeOffice === 1 ? '' : 's'}`} / {t('week')}
             </p>
           </output>
           <div>
@@ -158,7 +170,7 @@ const TeletravailSimulator = () => {
               <span className={styles.header}>{t('or')}</span>
               <span className={styles.greenValue}>
                 <span className={styles.number} data-testid='teletravail-saved-percent'>
-                  <LocalNumber number={formatNumber((0.75 * homeOffice * total) / 99)} />
+                  <LocalNumber number={formatNumber((0.75 * internalHomeOffice * total) / 99)} />
                 </span>{' '}
                 %
               </span>
@@ -168,7 +180,7 @@ const TeletravailSimulator = () => {
           <div className={styles.etiquette}>
             <p className={styles.header}>{t('total')}</p>
             <Etiquette
-              baseValue={0.75 * homeOffice * total * 1000}
+              baseValue={0.75 * internalHomeOffice * total * 1000}
               comparisons={equivalents}
               ref={ref}
               randomize={() => {

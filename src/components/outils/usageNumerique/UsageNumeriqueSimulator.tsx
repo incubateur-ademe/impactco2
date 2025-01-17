@@ -11,6 +11,7 @@ import { categories } from 'data/categories'
 import { computeFootprint } from 'utils/computeECV'
 import formatNumber from 'utils/formatNumber'
 import { track } from 'utils/matomo'
+import { DefaultParams } from 'utils/params'
 import { evaluateNumber } from 'utils/useSituation'
 import LocalNumber from 'components/base/LocalNumber'
 import Etiquette from 'components/comparateur/Etiquette'
@@ -58,11 +59,12 @@ const streaming = usagenumerique.equivalents?.find(
   (equivalent) => equivalent.slug === 'streamingvideo'
 ) as ComputedEquivalent
 
-const UsageNumeriqueSimulator = () => {
+const UsageNumeriqueSimulator = ({ defaultParams }: { defaultParams: DefaultParams['usageNumerique'] }) => {
   const ref = useRef<HTMLDivElement>(null)
   const { language } = useGlobalStore()
 
-  const { numberEmails, setNumberEmails, situation, equivalents, setEquivalents, mode } = useUsageNumeriqueStore()
+  const { numberEmails, setNumberEmails, setSituation, situation, equivalents, setEquivalents, mode, setMode } =
+    useUsageNumeriqueStore()
 
   const { engine } = useUsageNumeriqueContext()
 
@@ -116,6 +118,12 @@ const UsageNumeriqueSimulator = () => {
   useEffect(() => {
     setEquivalents(getRandomEquivalentForValue(total * 52))
   }, [total])
+
+  useEffect(() => {
+    setNumberEmails(defaultParams.numberEmails)
+    setMode(defaultParams.mode)
+    setSituation(defaultParams.situation)
+  }, [defaultParams])
 
   return (
     <>

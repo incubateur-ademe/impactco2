@@ -1,14 +1,14 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Params } from 'src/providers/stores/useAllParams'
 import { Category as CategoryType } from 'types/category'
 import Category from 'components/outils/Category'
 import TransportSimulator from 'components/outils/TransportSimulator'
+import { DefaultParams } from 'utils/params'
 
 const bisUrls = ['https://impactco2.webflow.io', 'https://immobilier.lefigaro.fr', 'https://www.terrabotanica.fr']
 
-const TransportIFramePage = ({ category, defaultParams }: { category: CategoryType; defaultParams: Params }) => {
+const TransportIFramePage = ({ category, defaultParams }: { category: CategoryType; defaultParams: DefaultParams }) => {
   const [bis, setBis] = useState(false)
   useEffect(() => {
     const url =

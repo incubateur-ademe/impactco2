@@ -2,16 +2,23 @@
 
 import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
-import { KeyboardEvent, useCallback, useEffect, useRef, useState } from 'react'
+import { KeyboardEvent, Suspense, useCallback, useEffect, useRef, useState } from 'react'
+import TransportSync from 'src/providers/stores/TransportSync'
 import { useGlobalStore } from 'src/providers/stores/global'
 import { useItineraireStore } from 'src/providers/stores/itineraire'
 import { useTransportStore } from 'src/providers/stores/transport'
-import { Params } from 'src/providers/stores/useAllParams'
+import { DefaultParams } from 'utils/params'
 import DistanceSimulator from './DistanceSimulator'
 import ItineraireSimulator from './ItineraireSimulator'
 import styles from './TransportSimulator.module.css'
 
-const TransportSimulator = ({ bis, defaultParams }: { bis?: boolean; defaultParams: Params }) => {
+const TransportSimulator = ({
+  bis,
+  defaultParams,
+}: {
+  bis?: boolean
+  defaultParams: Pick<DefaultParams, 'itineraire' | 'distance'>
+}) => {
   const { setHideActions } = useGlobalStore()
   const { selected, setSelected, mode, tabs } = useTransportStore()
   const { start, end } = useItineraireStore()
@@ -52,6 +59,9 @@ const TransportSimulator = ({ bis, defaultParams }: { bis?: boolean; defaultPara
 
   return (
     <>
+      <Suspense>
+        <TransportSync />
+      </Suspense>
       {tabs && (
         <div className={styles.tabs} data-testid='transport-tabs' role='tablist'>
           <button
@@ -110,7 +120,7 @@ const TransportSimulator = ({ bis, defaultParams }: { bis?: boolean; defaultPara
         role='tabpanel'
         aria-labelledby='tab-itineraire'
         className={selected === 'distance' ? styles.hidden : undefined}>
-        <ItineraireSimulator withComparisonMode={!mode} bis={bis} />
+        <ItineraireSimulator withComparisonMode={!mode} bis={bis} defaultParams={defaultParams.itineraire} />
       </div>
     </>
   )

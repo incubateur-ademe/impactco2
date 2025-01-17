@@ -2,8 +2,10 @@
 
 import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
-import { ReactNode, useCallback, useEffect, useMemo, useRef } from 'react'
+import { ReactNode, Suspense, useCallback, useEffect, useMemo, useRef } from 'react'
 import TranslationProvider from 'src/providers/TranslationProvider'
+import GlobalSync from 'src/providers/stores/GlobalSync'
+import ThemeSync from 'src/providers/stores/ThemeSync'
 import { useGlobalStore } from 'src/providers/stores/global'
 import { useThemeStore } from 'src/providers/stores/theme'
 import { SiteLanguage } from 'types/languages'
@@ -232,6 +234,10 @@ const Shareable = ({
 
 const ShareableWithTranslation = (props: ShareableProps) => (
   <TranslationProvider>
+    <Suspense>
+      <GlobalSync />
+      <ThemeSync />
+    </Suspense>
     <Shareable {...props} />
   </TranslationProvider>
 )

@@ -1,5 +1,5 @@
 import { Suspense } from 'react'
-import { Params } from 'src/providers/stores/useAllParams'
+import { DefaultParams } from 'utils/params'
 import Sources from 'components/base/Sources'
 import Breadcrumbs from 'components/breadcrumbs/Breadcrumbs'
 import Examples from 'components/examples/Examples'
@@ -9,7 +9,7 @@ import styles from '../CategoryPage.module.css'
 import Comparateur from './Comparateur'
 import Etiquettes from './Etiquettes'
 
-const ComparateurPage = ({ defaultParams }: { defaultParams: Params['comparateur'] }) => {
+const ComparateurPage = ({ defaultParams }: { defaultParams: DefaultParams['comparateur'] }) => {
   return (
     <>
       <Breadcrumbs

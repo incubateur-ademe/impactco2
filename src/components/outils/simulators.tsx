@@ -1,12 +1,12 @@
 import { ReactNode } from 'react'
 import { LivraisonProvider } from 'src/providers/LivraisonProvider'
 import { UsageNumeriqueProvider } from 'src/providers/UsageNumeriqueProvider'
-import { Params } from 'src/providers/stores/useAllParams'
 import { computedEquivalents } from 'data/categories/computedEquivalents'
 import { repas } from 'data/categories/repas'
 import ChauffageSimulator from 'components/outils/ChauffageSimulator'
 import FruitsEtLegumesSimulator from 'components/outils/FruitsEtLegumesSimulator'
 import TransportSimulator from 'components/outils/TransportSimulator'
+import { DefaultParams } from 'utils/params'
 import AlimentationSimulator from './AlimentationSimulator'
 import CategorySimulator from './CategorySimulator'
 import LivraisonSimulator from './LivraisonSimulator'
@@ -14,15 +14,15 @@ import TeletravailSimulator from './TeletravailSimulator'
 import OsezChangerSimulator from './osezChanger/OsezChangerSimulator'
 import UsageNumeriqueSimulator from './usageNumerique/UsageNumeriqueSimulator'
 
-export const simulators: Record<string, (defaultParams: Params) => ReactNode> = {
+export const simulators: Record<string, (defaultParams: DefaultParams) => ReactNode> = {
   chauffage: (defaultParams) => <ChauffageSimulator defaultParams={defaultParams.chauffage} />,
   transport: (defaultParams) => <TransportSimulator defaultParams={defaultParams} />,
-  teletravail: () => <TeletravailSimulator />,
+  teletravail: (defaultParams) => <TeletravailSimulator defaultParams={defaultParams.teletravail} />,
   fruitsetlegumes: (defaultParams) => <FruitsEtLegumesSimulator defaultParams={defaultParams.fruitsetlegumes} />,
   alimentation: (defaultParams) => <AlimentationSimulator defaultParams={defaultParams.alimentation} />,
-  usagenumerique: () => (
+  usagenumerique: (defaultParams) => (
     <UsageNumeriqueProvider>
-      <UsageNumeriqueSimulator />
+      <UsageNumeriqueSimulator defaultParams={defaultParams.usageNumerique} />
     </UsageNumeriqueProvider>
   ),
   livraison: () => (

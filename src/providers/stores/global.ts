@@ -32,7 +32,7 @@ export const useGlobalStore = create<States>((set) => {
       }),
     showButtons: true,
     setShowButtons: (showButtons) => set(() => ({ showButtons })),
-    hideActions: true,
+    hideActions: false,
     setHideActions: (hideActions) => set(() => ({ hideActions })),
   }
 })
