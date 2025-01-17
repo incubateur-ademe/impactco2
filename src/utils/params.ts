@@ -2,6 +2,7 @@ import { computedEquivalents } from 'src/providers/equivalents'
 import { Params } from 'src/providers/stores/useAllParams'
 import { getRandomEquivalents } from 'components/comparateur/random'
 import { AlimentationCategories } from './alimentation'
+import { slugs } from './months'
 
 export const getDefaultParams = (searchParams: { [key: string]: string | string[] | undefined }) => {
   const defaultParams = {
@@ -25,6 +26,7 @@ export const getDefaultParams = (searchParams: { [key: string]: string | string[
       carpool: {},
       displayAll: false,
     },
+    fruitsetlegumes: { month: new Date().getMonth() },
   } as Params
 
   if (searchParams) {
@@ -91,6 +93,16 @@ export const getDefaultParams = (searchParams: { [key: string]: string | string[
       const km = Number.parseInt(searchParams['km'] as string)
       if (!Number.isNaN(km)) {
         defaultParams.distance.km = km
+      }
+    }
+
+    // Fruits et légumes
+    if (searchParams['month']) {
+      const monthIndex = Number.parseInt(searchParams['month'] as string)
+      if (!Number.isNaN(monthIndex)) {
+        defaultParams.fruitsetlegumes.month = monthIndex
+      } else {
+        defaultParams.fruitsetlegumes.month = slugs.indexOf(searchParams['month'] as string)
       }
     }
   }

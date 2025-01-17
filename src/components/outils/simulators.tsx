@@ -18,7 +18,7 @@ export const simulators: Record<string, (defaultParams: Params) => ReactNode> = 
   chauffage: (defaultParams) => <ChauffageSimulator defaultParams={defaultParams.chauffage} />,
   transport: (defaultParams) => <TransportSimulator defaultParams={defaultParams} />,
   teletravail: () => <TeletravailSimulator />,
-  fruitsetlegumes: () => <FruitsEtLegumesSimulator />,
+  fruitsetlegumes: (defaultParams) => <FruitsEtLegumesSimulator defaultParams={defaultParams.fruitsetlegumes} />,
   alimentation: (defaultParams) => <AlimentationSimulator defaultParams={defaultParams.alimentation} />,
   usagenumerique: () => (
     <UsageNumeriqueProvider>
