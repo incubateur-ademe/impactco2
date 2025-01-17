@@ -141,7 +141,6 @@ Liste des équivalents à comparer parmis la liste suivante :
   - matieregrasse : kg de matière grasse végétale
   - yaourt : kg de yaourt nature ou yaourt à la grecque
   - fromageblanc : kg de fromage blanc 0%
-  - quinoa : kg de quinoa (français)
   - riz : kg de riz
   - pates : kg de pâtes (sèches)
   - ble : kg de blé

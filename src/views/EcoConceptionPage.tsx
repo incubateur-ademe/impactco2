@@ -1,4 +1,5 @@
 import classNames from 'classnames'
+import Image from 'next/image'
 import styles from './Page.module.css'
 
 const EcoConceptionPage = () => {
@@ -43,7 +44,14 @@ const EcoConceptionPage = () => {
           site facile à entretenir.
         </li>
       </ul>
-      <h2>Score fruggr</h2>
+      <h2>Critères et notes</h2>
+      <Image
+        className={styles.image}
+        src='/images/certificat-fruggr.png'
+        alt="Certificat d'empreinte 2024 Fruggr, Digital score 1, score global au 19/12/2024 : 87. Avec le detail suivant ; Carbone 87, Eau 85, Énergie 65, Accessibilité 97, Protection des données 85, Inclusion 94, Technique 80, Design 99 et Fonctionnel 96"
+        width={1000}
+        height={500}
+      />
       <p>
         Pour objectiver notre démarche, nous suivons la consommation de notre site Impact CO2 sur l’outil{' '}
         <a href='https://www.fruggr.io/fr/' target='_blank' rel='noreferrer noopener'>
@@ -53,7 +61,7 @@ const EcoConceptionPage = () => {
       </p>
       <br />
       <p>
-        L’outil fruggr nous donne la note de <b>87/100</b> au 12/12/2024.
+        L’outil fruggr nous donne la note de <b>87/100</b> au 19/12/2024.
       </p>
       <br />
       <p>Ce score représente l'impact du service sur les 3 domaines adressés par fruggr :</p>

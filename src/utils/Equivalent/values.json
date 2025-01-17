@@ -248,7 +248,7 @@
   },
   "velo": {
     "category": 4,
-    "value": 17,
+    "value": 0.17,
     "fr": "km en ;Vélo mécanique",
     "en": "km by ;Mechanical bike",
     "es": "km en ;Bicicleta mecanica"
@@ -332,525 +332,525 @@
   },
   "fraise": {
     "category": 9,
-    "value": 477.06577790000006,
+    "value": 511.07000000000005,
     "fr": "kg de ;fraise",
     "en": "kg of ;strawberry",
     "es": "kg de ;fresas"
   },
   "pomme": {
     "category": 9,
-    "value": 396.515083,
+    "value": 408.19489999999996,
     "fr": "kg de ;pomme",
     "en": "kg of ;apple",
     "es": "kg de ;manzanas"
   },
   "orange": {
     "category": 9,
-    "value": 633.964319,
+    "value": 677.6838,
     "fr": "kg d';orange",
     "en": "kg of ;orange",
     "es": "kg de ;naranjas"
   },
   "citron": {
     "category": 9,
-    "value": 711.263074,
+    "value": 763.5958,
     "fr": "kg de ;citron",
     "en": "kg of ;lemon",
     "es": "kg de ;limones"
   },
   "ail": {
     "category": 9,
-    "value": 358.042894,
+    "value": 383.49300000000005,
     "fr": "kg d';ail",
     "en": "kg of ;garlic",
     "es": "kg de ;ajos"
   },
   "artichaut": {
     "category": 9,
-    "value": 3876.929068,
+    "value": 2556.166,
     "fr": "kg d';artichaut",
     "en": "kg of ;artichoke",
     "es": "kg de ;alcachofas"
   },
   "asperge": {
     "category": 9,
-    "value": 1559.309081,
+    "value": 1638.8780000000002,
     "fr": "kg d';asperge",
     "en": "kg of ;asparagus",
     "es": "kg de ;espárragos"
   },
   "betterave": {
     "category": 9,
-    "value": 364.32109899999995,
+    "value": 407.3665,
     "fr": "kg de ;betterave",
     "en": "kg of ;beetroot",
     "es": "kg de ;remolachas"
   },
   "blette": {
     "category": 9,
-    "value": 542.753575,
+    "value": 581.0999999999999,
     "fr": "kg de ;blette",
     "en": "kg of ;chard",
     "es": "kg de ;acelgas"
   },
   "carotte": {
     "category": 9,
-    "value": 364.32109899999995,
+    "value": 396.06649999999996,
     "fr": "kg de ;carotte",
     "en": "kg of ;carrot",
     "es": "kg de ;zanahorias"
   },
   "celeri": {
     "category": 9,
-    "value": 677.0180851000001,
+    "value": 715.7324000000001,
     "fr": "kg de ;céleri",
     "en": "kg of ;celery",
     "es": "kg de ;apio"
   },
   "champignonmorille": {
     "category": 9,
-    "value": 493.7143989999999,
+    "value": 6175.009000000001,
     "fr": "kg de ;champignon (morille crue)",
     "en": "kg of ;mushroom (raw morel)",
     "es": "kg de ;champiñones (morillas crudas)"
   },
   "chou": {
     "category": 9,
-    "value": 862.097522,
+    "value": 847.6329999999998,
     "fr": "kg de ;chou",
     "en": "kg of ;cabbage",
     "es": "kg de ;col"
   },
   "choudebruxelles": {
     "category": 9,
-    "value": 575.8186729,
+    "value": 562.1469999999999,
     "fr": "kg de ;chou de Bruxelles",
     "en": "kg of ;Brussels sprout",
     "es": "kg de ;coles de Bruselas"
   },
   "choufleur": {
     "category": 9,
-    "value": 735.5122120000001,
+    "value": 720.705,
     "fr": "kg de ;chou-fleur",
     "en": "kg of ;cauliflower",
     "es": "kg de ;coliflor"
   },
   "concombre": {
     "category": 9,
-    "value": 473.201203,
+    "value": 512.2949,
     "fr": "kg de ;concombre",
     "en": "kg of ;cucumber",
     "es": "kg de ;pepinos"
   },
   "courge": {
     "category": 9,
-    "value": 618.848881,
+    "value": 638.2,
     "fr": "kg de ;courge",
     "en": "kg of ;squash",
     "es": "kg de ;calabazas"
   },
   "courgette": {
     "category": 9,
-    "value": 483.51979,
+    "value": 498.50700000000006,
     "fr": "kg de ;courgette",
     "en": "kg of ;zucchini",
     "es": "kg de ;calabacines"
   },
   "cresson": {
     "category": 9,
-    "value": 941.0662189999998,
+    "value": 868.145,
     "fr": "kg de ;cresson",
     "en": "kg of ;watercress",
     "es": "kg de ;berros"
   },
   "echalote": {
     "category": 9,
-    "value": 364.86326020000007,
+    "value": 393.5757,
     "fr": "kg d';échalote",
     "en": "kg of ;shallot",
     "es": "kg de ;chalotes"
   },
   "endive": {
     "category": 9,
-    "value": 938.0277949999997,
+    "value": 861.009,
     "fr": "kg d';endive",
     "en": "kg of ;endive",
     "es": "kg de ;endivias"
   },
   "epinard": {
     "category": 9,
-    "value": 391.2991521,
+    "value": 422.56999999999994,
     "fr": "kg d';épinard",
     "en": "kg of ;spinach",
     "es": "kg de ;espinacas"
   },
   "mangue": {
     "category": 9,
-    "value": 10641.545366999999,
+    "value": 11655.508000000002,
     "fr": "kg de ;mangue",
     "en": "kg of ;mango",
     "es": "kg de ;mangos"
   },
   "fenouil": {
     "category": 9,
-    "value": 962.528871,
+    "value": 1018.233,
     "fr": "kg de ;fenouil",
     "en": "kg of ;fennel",
     "es": "kg de ;hinojos"
   },
   "haricotvert": {
     "category": 9,
-    "value": 413.06197199999997,
+    "value": 446.45700000000005,
     "fr": "kg d';haricot vert (cru)",
     "en": "kg of ;green bean (raw)",
     "es": "kg de ;judías verdes (crudas)"
   },
   "laitue": {
     "category": 9,
-    "value": 941.0662189999998,
+    "value": 868.145,
     "fr": "kg de ;laitue",
     "en": "kg of ;lettuce",
     "es": "kg de ;lechuga"
   },
   "mache": {
     "category": 9,
-    "value": 941.0662189999998,
+    "value": 868.145,
     "fr": "kg de ;mâche",
     "en": "kg of ;lamb's lettuce",
     "es": "kg de ;mache"
   },
   "navet": {
     "category": 9,
-    "value": 364.321099,
+    "value": 396.1,
     "fr": "kg de ;navet",
     "en": "kg of ;turnip",
     "es": "kg de ;nabos"
   },
   "mais": {
     "category": 9,
-    "value": 810.485801,
+    "value": 568.793,
     "fr": "kg de ;maïs",
     "en": "kg of ;corn",
     "es": "kg de ;maíz"
   },
   "oignon": {
     "category": 9,
-    "value": 389.53612800000013,
+    "value": 420.4685,
     "fr": "kg d';oignon",
     "en": "kg of ;onion",
     "es": "kg de ;cebollas"
   },
   "panais": {
     "category": 9,
-    "value": 457.82909000000006,
+    "value": 494.2756,
     "fr": "kg de ;panais",
     "en": "kg of ;parsnip",
     "es": "kg de ;chirivías"
   },
   "petitpois": {
     "category": 9,
-    "value": 665.129177,
+    "value": 701.761,
     "fr": "kg de ;petit pois",
     "en": "kg of ;green pea",
     "es": "kg de ;guisantes"
   },
   "poireau": {
     "category": 9,
-    "value": 768.865685,
+    "value": 611.3778000000001,
     "fr": "kg de ;poireau",
     "en": "kg of ;leek",
     "es": "kg de ;puerros"
   },
   "poivron": {
     "category": 9,
-    "value": 1183.6197739999998,
+    "value": 715.4000000000001,
     "fr": "kg de ;poivron",
     "en": "kg of ;bell pepper",
     "es": "kg de ;pimientos"
   },
   "potiron": {
     "category": 9,
-    "value": 618.848881,
+    "value": 638.233,
     "fr": "kg de ;potiron",
     "en": "kg of ;pumpkin",
     "es": "kg de ;calabazas"
   },
   "radis": {
     "category": 9,
-    "value": 601.8473451000001,
+    "value": 384.7324,
     "fr": "kg de ;radis",
     "en": "kg of ;radish",
     "es": "kg de ;rábanos"
   },
   "salsifis": {
     "category": 9,
-    "value": 457.82908999999995,
+    "value": 494.2756,
     "fr": "kg de ;salsifis",
     "en": "kg of ;salsify",
     "es": "kg de ;chirivías negras"
   },
   "topinambour": {
     "category": 9,
-    "value": 504.87197000000003,
+    "value": 491.26650000000006,
     "fr": "kg de ;topinambour",
     "en": "kg of ;Jerusalem artichoke",
     "es": "kg de ;tupinambos"
   },
   "cassis": {
     "category": 9,
-    "value": 1796.3874969999997,
+    "value": 1903.508,
     "fr": "kg de ;cassis",
     "en": "kg of ;blackcurrant",
     "es": "kg de ;grosellas negras"
   },
   "chataigne": {
     "category": 9,
-    "value": 1880.205125,
+    "value": 1943.945,
     "fr": "kg de ;châtaigne",
     "en": "kg of ;chestnut",
     "es": "kg de ;castañas"
   },
   "clementine": {
     "category": 9,
-    "value": 1221.4244939999999,
+    "value": 1301.9120000000003,
     "fr": "kg de ;clémentine",
     "en": "kg of ;clementine",
     "es": "kg de ;clementinas"
   },
   "pamplemousse": {
     "category": 9,
-    "value": 872.8596140000001,
+    "value": 925.5957999999999,
     "fr": "kg de ;pamplemousse",
     "en": "kg of ;grapefruit",
     "es": "kg de ;pomelos"
   },
   "coing": {
     "category": 9,
-    "value": 541.0901117000001,
+    "value": 561.5215000000001,
     "fr": "kg de ;coing",
     "en": "kg of ;quince",
     "es": "kg de ;membrillos"
   },
   "figue": {
     "category": 9,
-    "value": 613.5498970000001,
+    "value": 611.508,
     "fr": "kg de ;figue",
     "en": "kg of ;fig",
     "es": "kg de ;higos"
   },
   "groseille": {
     "category": 9,
-    "value": 1787.5465516999998,
+    "value": 1894.5215,
     "fr": "kg de ;groseille",
     "en": "kg of ;red currant",
     "es": "kg de ;grosellas"
   },
   "kiwi": {
     "category": 9,
-    "value": 976.8151836999999,
+    "value": 1001.5,
     "fr": "kg de ;kiwi",
     "en": "kg of ;kiwi",
     "es": "kg de ;kiwis"
   },
   "mandarine": {
     "category": 9,
-    "value": 422.73830129999993,
+    "value": 468.4038,
     "fr": "kg de ;mandarine",
     "en": "kg of ;mandarin",
     "es": "kg de ;mandarinas"
   },
   "melon": {
     "category": 9,
-    "value": 931.394984,
+    "value": 978.343,
     "fr": "kg de ;melon",
     "en": "kg of ;melon",
     "es": "kg de ;melones"
   },
   "mure": {
     "category": 9,
-    "value": 1206.0856469999999,
+    "value": 1247.5079999999998,
     "fr": "kg de ;mûre",
     "en": "kg of ;blackberry",
     "es": "kg de ;moras"
   },
   "nectarine": {
     "category": 9,
-    "value": 637.3697500000002,
+    "value": 613.6080000000001,
     "fr": "kg de ;nectarine",
     "en": "kg of ;nectarine",
     "es": "kg de ;nectarinas"
   },
   "myrtille": {
     "category": 9,
-    "value": 881.5012491,
+    "value": 921.5589,
     "fr": "kg de ;myrtille",
     "en": "kg of ;blueberry",
     "es": "kg de ;arándanos"
   },
   "noisette": {
     "category": 9,
-    "value": 4652.965420999999,
+    "value": 4811.2,
     "fr": "kg de ;noisette",
     "en": "kg of ;hazelnut",
     "es": "kg de ;avellanas"
   },
   "noix": {
     "category": 9,
-    "value": 4164.838911999999,
+    "value": 4114,
     "fr": "kg de ;noix",
     "en": "kg of ;walnut",
     "es": "kg de ;nueces"
   },
   "prune": {
     "category": 9,
-    "value": 963.0279916999999,
+    "value": 1034.5215,
     "fr": "kg de ;prune",
     "en": "kg of ;plum",
     "es": "kg de ;ciruelas"
   },
   "reineclaude": {
     "category": 9,
-    "value": 971.868937,
+    "value": 1043.508,
     "fr": "kg de ;reine claude",
     "en": "kg of ;greengage",
     "es": "kg de ;ciruelas Claudia"
   },
   "rhubarbe": {
     "category": 9,
-    "value": 716.7486917,
+    "value": 701.5215000000001,
     "fr": "kg de ;rhubarbe",
     "en": "kg of ;rhubarb",
     "es": "kg de ;ruibarbo"
   },
   "peche": {
     "category": 9,
-    "value": 595.7366916999999,
+    "value": 590.5215000000001,
     "fr": "kg de ;pêche",
     "en": "kg of ;peach",
     "es": "kg de ;melocotones"
   },
   "cerise": {
     "category": 9,
-    "value": 1335.3255069999996,
+    "value": 1744.5080000000003,
     "fr": "kg de ;cerise",
     "en": "kg of ;cherry",
     "es": "kg de ;cerezas"
   },
   "abricot": {
     "category": 9,
-    "value": 880.638317,
+    "value": 1451.508,
     "fr": "kg d';abricot",
     "en": "kg of ;apricot",
     "es": "kg de ;albaricoques"
   },
   "framboise": {
     "category": 9,
-    "value": 1475.0375679,
+    "value": 1543.0877999999998,
     "fr": "kg de ;framboise",
     "en": "kg of ;raspberry",
     "es": "kg de ;frambuesas"
   },
   "poire": {
     "category": 9,
-    "value": 364.28259399999996,
+    "value": 387.319,
     "fr": "kg de ;poire",
     "en": "kg of ;pear",
     "es": "kg de ;peras"
   },
   "raisin": {
     "category": 9,
-    "value": 456.72809300000006,
+    "value": 509.2949,
     "fr": "kg de ;raisin",
     "en": "kg of ;grape",
     "es": "kg de ;uvas"
   },
   "aubergine": {
     "category": 9,
-    "value": 457.1093429,
+    "value": 472.03700000000003,
     "fr": "kg d';aubergine",
     "en": "kg of ;eggplant",
     "es": "kg de ;berenjenas"
   },
   "brocoli": {
     "category": 9,
-    "value": 902.5554719999999,
+    "value": 950.705,
     "fr": "kg de ;brocoli",
     "en": "kg of ;broccoli",
     "es": "kg de ;brócolis"
   },
   "tomate": {
     "category": 9,
-    "value": 581.556477,
+    "value": 625.6,
     "fr": "kg de ;tomate",
     "en": "kg of ;tomato",
     "es": "kg de ;tomates"
   },
   "ananas": {
     "category": 9,
-    "value": 1292.282106,
+    "value": 1361.4345,
     "fr": "kg d';ananas",
     "en": "kg of ;pineapple",
     "es": "kg de ;piñas"
   },
   "banane": {
     "category": 9,
-    "value": 880.6108929999997,
+    "value": 908.523,
     "fr": "kg de ;banane",
     "en": "kg of ;banana",
     "es": "kg de ;plátanos"
   },
   "avocat": {
     "category": 9,
-    "value": 1480.4702330000002,
+    "value": 1552.523,
     "fr": "kg d';avocat",
     "en": "kg of ;avocado",
     "es": "kg de ;aguacates"
   },
   "carambole": {
     "category": 9,
-    "value": 533.048897,
+    "value": 553.5079999999999,
     "fr": "kg de ;carambole",
     "en": "kg of ;starfruit",
     "es": "kg de ;carambolas"
   },
   "datte": {
     "category": 9,
-    "value": 2760.1109879999995,
+    "value": 2892.7609999999995,
     "fr": "kg de ;datte",
     "en": "kg of ;date",
     "es": "kg de ;dátiles"
   },
   "fruitdelapassion": {
     "category": 9,
-    "value": 892.8173700000001,
+    "value": 937.608,
     "fr": "kg de ;fruit de la passion",
     "en": "kg of ;passion fruit",
     "es": "kg de ;maracuyá"
   },
   "grenade": {
     "category": 9,
-    "value": 485.5722217,
+    "value": 498.5215,
     "fr": "kg de ;grenade",
     "en": "kg of ;pomegranate",
     "es": "kg de ;granadas"
   },
   "kaki": {
     "category": 9,
-    "value": 900.4313517,
+    "value": 949.5215000000001,
     "fr": "kg de ;kaki",
     "en": "kg of ;persimmon",
     "es": "kg de ;caquis"
   },
   "noixdecoco": {
     "category": 9,
-    "value": 2493.7624220000002,
+    "value": 2410.9410000000003,
     "fr": "kg de ;noix de coco",
     "en": "kg of ;coconut",
     "es": "kg de ;cocos"
   },
   "pasteque": {
     "category": 9,
-    "value": 641.4638217000002,
+    "value": 680.5,
     "fr": "kg de ;pastèque",
     "en": "kg of ;watermelon",
     "es": "kg de ;sandías"
@@ -1256,434 +1256,427 @@
   },
   "eauenbouteille": {
     "category": 3,
-    "value": 267.07461992000003,
+    "value": 320.735,
     "fr": "Litre[s] d';eau en bouteille",
     "en": "Liter[s] of ;bottled water",
     "es": "Litro[s] de ;agua embotellada"
   },
   "soda": {
     "category": 3,
-    "value": 511.22505490000003,
+    "value": 493.33000000000004,
     "fr": "Litre[s] de ;soda",
     "en": "Liter[s] of ;soda",
     "es": "Litro[s] de ;refresco"
   },
   "biere": {
     "category": 3,
-    "value": 1119.3685269,
+    "value": 1347.03,
     "fr": "Litre[s] de ;bière",
     "en": "Liter[s] of ;beer",
     "es": "Litro[s] de ;cerveza"
   },
   "vin": {
     "category": 3,
-    "value": 1190.3542188999998,
+    "value": 1268.63,
     "fr": "Litre[s] de ;vin",
     "en": "Liter[s] of ;wine",
     "es": "Litro[s] de ;vino"
   },
   "laitdevache": {
     "category": 3,
-    "value": 1182.1407829999996,
+    "value": 1150.5,
     "fr": "Litre[s] de ;lait de vache",
     "en": "Liter[s] of ;cow milk",
     "es": "Litro[s] de ;leche de vaca"
   },
   "soja": {
     "category": 3,
-    "value": 445.649559,
+    "value": 427.20000000000005,
     "fr": "Litre[s] de ;boisson au soja",
     "en": "Liter[s] of ;soy milk",
     "es": "Litro[s] de ;leche de soja"
   },
   "the": {
     "category": 3,
-    "value": 39.161353500000004,
+    "value": 43.587,
     "fr": "Litre[s] de ;thé",
     "en": "Liter[s] of ;tea",
     "es": "Litro[s] de ;té"
   },
   "cafe": {
     "category": 3,
-    "value": 594.22464326,
+    "value": 635.463,
     "fr": "Litre[s] de ;café",
     "en": "Liter[s] of ;coffee",
     "es": "Litro[s] de ;café"
   },
   "boeuf": {
     "category": 2,
-    "value": 26200,
+    "value": 28009.17,
     "fr": "kg de ;boeuf",
     "en": "kg of ;beef",
     "es": "kg de ;carne de res"
   },
   "veau": {
     "category": 2,
-    "value": 16900,
+    "value": 22504.653333333332,
     "fr": "kg de ;veau",
     "en": "kg of ;veal",
     "es": "kg de ;becerro"
   },
   "porc": {
     "category": 2,
-    "value": 9660,
+    "value": 6671.304949999999,
     "fr": "kg de ;porc",
     "en": "kg of ;pork",
     "es": "kg de ;cerdo"
   },
   "canard": {
     "category": 2,
-    "value": 6970,
+    "value": 8060.900000000001,
     "fr": "kg de ;canard",
     "en": "kg of ;duck",
     "es": "kg de ;pato"
   },
   "lapin": {
     "category": 2,
-    "value": 6970,
+    "value": 5782.900000000001,
     "fr": "kg de ;lapin",
     "en": "kg of ;rabbit",
     "es": "kg de ;conejo"
   },
   "poulet": {
     "category": 2,
-    "value": 5550,
+    "value": 4560.43,
     "fr": "kg de ;poulet",
     "en": "kg of ;chicken",
     "es": "kg de ;pollo"
   },
   "crevettes": {
     "category": 2,
-    "value": 21790,
+    "value": 20345.228,
     "fr": "kg de ;crevettes",
     "en": "kg of ;shrimp",
     "es": "kg de ;camarón"
   },
   "moules": {
     "category": 2,
-    "value": 4940,
+    "value": 5328.231000000001,
     "fr": "kg de ;moules",
     "en": "kg of ;mussels",
     "es": "kg de ;mejillones"
   },
   "huitres": {
     "category": 2,
-    "value": 4910,
+    "value": 5328.231000000001,
     "fr": "kg de ;huitres",
     "en": "kg of ;oysters",
     "es": "kg de ;ostras"
   },
   "cabillaud": {
     "category": 2,
-    "value": 10810,
+    "value": 12086.4877,
     "fr": "kg de ;cabillaud (cru)",
     "en": "kg of ;cod (raw)",
     "es": "kg de ;bacalao (crudo)"
   },
   "lieu": {
     "category": 2,
-    "value": 10810,
+    "value": 12086.4877,
     "fr": "kg de ;lieu jaune ou colin (cru)",
     "en": "kg of ;pollack or hake (raw)",
     "es": "kg de ;colín o merluza (crudo)"
   },
   "dorade": {
     "category": 2,
-    "value": 10800,
+    "value": 11191.4877,
     "fr": "kg de ;dorade royale",
     "en": "kg of ;sea bream",
     "es": "kg de ;dorada"
   },
   "saumon": {
     "category": 2,
-    "value": 5770,
+    "value": 5556.93,
     "fr": "kg de ;saumon ou truite d'élevage (cru)",
     "en": "kg of ;salmon or farmed trout (raw)",
     "es": "kg de ;salmón o trucha de cultivo (crudo)"
   },
   "thon": {
     "category": 2,
-    "value": 4390,
+    "value": 4983.43,
     "fr": "kg de ;thon (cru)",
     "en": "kg of ;tuna (raw)",
     "es": "kg de ;atún (crudo)"
   },
   "sardines": {
     "category": 2,
-    "value": 1930,
+    "value": 2276.4877,
     "fr": "kg de ;sardines",
     "en": "kg of ;sardines",
     "es": "kg de ;sardinas"
   },
   "beurre": {
     "category": 2,
-    "value": 7760,
+    "value": 7913.33,
     "fr": "kg de ;beurre",
     "en": "kg of ;butter",
     "es": "kg de ;mantequilla"
   },
   "fromagedure": {
     "category": 2,
-    "value": 6110,
+    "value": 6278.38,
     "fr": "kg de ;fromage à pâte dure",
     "en": "kg of ;hard cheese",
     "es": "kg de ;queso duro"
   },
   "feta": {
     "category": 2,
-    "value": 5490,
+    "value": 6305.63,
     "fr": "kg de ;fêta (brebis)",
     "en": "kg of ;feta (sheep)",
     "es": "kg de ;feta (oveja)"
   },
   "fromagemolle": {
     "category": 2,
-    "value": 5190,
+    "value": 5144.405000000001,
     "fr": "kg de ;fromage à pâte molle",
     "en": "kg of ;soft cheese",
     "es": "kg de ;queso blando"
   },
   "mozarella": {
     "category": 2,
-    "value": 4610,
+    "value": 4714.629999999999,
     "fr": "kg de ;mozarella",
     "en": "kg of ;mozzarella",
     "es": "kg de ;mozzarella"
   },
   "fromagebleu": {
     "category": 2,
-    "value": 4130,
+    "value": 6164.963333333335,
     "fr": "kg de ;fromage bleu",
     "en": "kg of ;blue cheese",
     "es": "kg de ;queso azul"
   },
   "oeuf": {
     "category": 2,
-    "value": 3170,
+    "value": 1878.0103000000001,
     "fr": "kg de ;oeufs",
     "en": "kg of ;eggs",
     "es": "kg de ;huevos"
   },
   "matieregrasse": {
     "category": 2,
-    "value": 2230,
+    "value": 2584.63,
     "fr": "kg de ;matière grasse végétale",
     "en": "kg of ;vegetable fat",
     "es": "kg de ;grasa vegetal"
   },
   "yaourt": {
     "category": 2,
-    "value": 2110,
+    "value": 1894.7299999999998,
     "fr": "kg de ;yaourt nature ou yaourt à la grecque",
     "en": "kg of ;natural yogurt or greek yogurt",
     "es": "kg de ;yogur natural o yogur griego"
   },
   "fromageblanc": {
     "category": 2,
-    "value": 1600,
+    "value": 1809.6299999999999,
     "fr": "kg de ;fromage blanc 0%",
     "en": "kg of ;0% white cheese",
     "es": "kg de ;queso blanco 0%"
   },
-  "quinoa": {
-    "category": 2,
-    "value": 7680,
-    "fr": "kg de ;quinoa (français)",
-    "en": "kg of ;quinoa (french)",
-    "es": "kg de ;quinoa (francés)"
-  },
   "riz": {
     "category": 2,
-    "value": 2750,
+    "value": 2014.5857500000002,
     "fr": "kg de ;riz",
     "en": "kg of ;rice",
     "es": "kg de ;arroz"
   },
   "pates": {
     "category": 2,
-    "value": 2140,
+    "value": 1979.5,
     "fr": "kg de ;pâtes (sèches)",
     "en": "kg of ;pasta (dry)",
     "es": "kg de ;pasta (seca)"
   },
   "ble": {
     "category": 2,
-    "value": 1210,
+    "value": 1226.2635,
     "fr": "kg de ;blé",
     "en": "kg of ;wheat",
     "es": "kg de ;trigo"
   },
   "boulgour": {
     "category": 2,
-    "value": 1150,
+    "value": 949.9000000000001,
     "fr": "kg de ;boulgour",
     "en": "kg of ;bulgur",
     "es": "kg de ;bulgur"
   },
   "poischiches": {
     "category": 2,
-    "value": 990,
+    "value": 898.5430000000001,
     "fr": "kg de ;pois chiches",
     "en": "kg of ;chickpeas",
     "es": "kg de ;garbanzos"
   },
   "haricotsrouges": {
     "category": 2,
-    "value": 950,
+    "value": 858.5429999999999,
     "fr": "kg de ;haricots rouges",
     "en": "kg of ;red beans",
     "es": "kg de ;frijoles rojos"
   },
   "lentilles": {
     "category": 2,
-    "value": 910,
+    "value": 581.5429999999999,
     "fr": "kg de ;lentilles (blondes, vertes, corail)",
     "en": "kg of ;lentils (blond, green, coral)",
     "es": "kg de ;lentejas (rubias, verdes, coral)"
   },
   "cheeseburger": {
     "category": 2,
-    "value": 17270,
+    "value": 18833.399999999998,
     "fr": "kg de ;cheeseburger",
     "en": "kg of ;cheeseburger",
     "es": "kg de ;cheeseburger"
   },
   "kebab": {
     "category": 2,
-    "value": 11650,
+    "value": 12806.530000000002,
     "fr": "kg de ;kebab",
     "en": "kg of ;kebab",
     "es": "kg de ;kebab"
   },
   "burgerpoulet": {
     "category": 2,
-    "value": 4620,
+    "value": 4361.4,
     "fr": "kg de ;burger au poulet",
     "en": "kg of ;chicken burger",
     "es": "kg de ;hamburguesa de pollo"
   },
   "pizza": {
     "category": 2,
-    "value": 3280,
+    "value": 3599.4,
     "fr": "kg de ;pizza quatre fromages",
     "en": "kg of ;four cheese pizza",
     "es": "kg de ;pizza de cuatro quesos"
   },
   "sushis": {
     "category": 2,
-    "value": 2450,
+    "value": 2668.9999999999995,
     "fr": "kg de ;sushis ou makis",
     "en": "kg of ;sushi or maki",
     "es": "kg de ;sushi o maki"
   },
   "burgervegetarien": {
     "category": 2,
-    "value": 2260,
+    "value": 2707.5,
     "fr": "kg de ;burger végétarien",
     "en": "kg of ;vegetarian burger",
     "es": "kg de ;hamburguesa vegetariana"
   },
   "frites": {
     "category": 2,
-    "value": 1530,
+    "value": 1456.9999999999998,
     "fr": "kg de ;frites (friteuse)",
     "en": "kg of ;fries (fryer)",
     "es": "kg de ;papas fritas (freidora)"
   },
   "tofu": {
     "category": 2,
-    "value": 660,
+    "value": 1004.2999999999997,
     "fr": "kg de ;tofu nature",
     "en": "kg of ;natural tofu",
     "es": "kg de ;tofu natural"
   },
   "boucheechocolat": {
     "category": 2,
-    "value": 9590,
+    "value": 10521.899999999998,
     "fr": "kg de ;rocher au chocolat",
     "en": "kg of ;chocolate rock",
     "es": "kg de ;roca de chocolate"
   },
   "pateatartiner": {
     "category": 2,
-    "value": 7570,
+    "value": 9116.9,
     "fr": "kg de ;pâte à tartiner à la noisette",
     "en": "kg of ;hazelnut spread",
     "es": "kg de ;crema de avellanas"
   },
   "brownie": {
     "category": 2,
-    "value": 7200,
+    "value": 8356.9,
     "fr": "kg de ;brownie au chocolat",
     "en": "kg of ;chocolate brownie",
     "es": "kg de ;brownie de chocolate"
   },
   "painauchocolat": {
     "category": 2,
-    "value": 5140,
+    "value": 5729.099999999999,
     "fr": "kg de ;pain au chocolat ou chocolatine",
     "en": "kg of ;chocolate bread",
     "es": "kg de ;pan de chocolate"
   },
   "cookie": {
     "category": 2,
-    "value": 4060,
+    "value": 6272.900000000001,
     "fr": "kg de ;cookie au pépites de chocolat",
     "en": "kg of ;chocolate chip cookie",
     "es": "kg de ;galleta con chispas de chocolate"
   },
   "madeleine": {
     "category": 2,
-    "value": 2670,
+    "value": 2243.3999999999996,
     "fr": "kg de ;madeleine",
     "en": "kg of ;madeleine",
     "es": "kg de ;magdalena"
   },
   "painauxraisins": {
     "category": 2,
-    "value": 2630,
+    "value": 2564.1,
     "fr": "kg de ;pain aux raisins",
     "en": "kg of ;raisin bread",
     "es": "kg de ;pan de pasas"
   },
   "chaussonauxpommes": {
     "category": 2,
-    "value": 2130,
+    "value": 2044.1000000000004,
     "fr": "kg de ;chausson aux pommes",
     "en": "kg of ;apple turnover",
     "es": "kg de ;rotación de manzana"
   },
   "croissant": {
     "category": 2,
-    "value": 2600,
+    "value": 2943.1000000000004,
     "fr": "kg de ;croissant au beurre",
     "en": "kg of ;butter croissant",
     "es": "kg de ;croissant de mantequilla"
   },
   "paindemie": {
     "category": 2,
-    "value": 1750,
+    "value": 1559.1000000000001,
     "fr": "kg de ;pain de mie",
     "en": "kg of ;sandwich bread",
     "es": "kg de ;pan de molde"
   },
   "bonbons": {
     "category": 2,
-    "value": 1560,
+    "value": 1486.9,
     "fr": "kg de ;bonbons gélifiés",
     "en": "kg of ;gummy candies",
     "es": "kg de ;caramelos de goma"
   },
   "baguette": {
     "category": 2,
-    "value": 690,
+    "value": 776.7,
     "fr": "kg de ;baguette tradition",
     "en": "kg of ;traditional baguette",
     "es": "kg de ;baguette tradicional"
   },
   "pommedeterre": {
     "category": 2,
-    "value": 370,
+    "value": 706.2605000000001,
     "fr": "kg de ;pomme de terre nouvelle",
     "en": "kg of ;new potato",
     "es": "kg de ;papa nueva"
@@ -1704,7 +1697,7 @@
   },
   "location": {
     "category": 13,
-    "value": 5300,
+    "value": 5200,
     "fr": "nuit[s] dans une location saisonnière",
     "en": "night[s] in a seasonal rental",
     "es": "noche[s] en un alquiler por temporada"

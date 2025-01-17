@@ -5,29 +5,35 @@
     "Code_AGB": "13014_2",
     "prefix": "kg de ",
     "slug": "fraise",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.22238959
+        "value": 0.227
       },
       {
         "id": 33,
-        "value": 0.23917279
+        "value": 0.261
       },
       {
         "id": 34,
-        "value": 0.0055671528
+        "value": 0.0131
       },
       {
         "id": 35,
-        "value": 0.0099362451
+        "value": 0.00997
       }
     ],
     "default": true,
     "tile": false,
-    "months": [4, 5, 6],
+    "months": [
+      4,
+      5,
+      6
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13014_2#Fraise_de_saison,_crue",
     "meta": {
       "title": "Fraise",
@@ -39,29 +45,45 @@
     "Code_CIQUAL": 13039,
     "prefix": "kg de ",
     "slug": "pomme",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.10991945
+        "value": 0.0919
+      },
+      {
+        "id": 31,
+        "value": 0.0000949
       },
       {
         "id": 33,
-        "value": 0.24073503
+        "value": 0.262
       },
       {
         "id": 34,
-        "value": 0.013720184
+        "value": 0.0219
       },
       {
         "id": 35,
-        "value": 0.032140419
+        "value": 0.0323
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 3, 7, 8, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      3,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13039#Pomme,_pulpe_et_peau,_crue",
     "meta": {
       "title": "Pomme",
@@ -73,29 +95,39 @@
     "Code_CIQUAL": 13034,
     "prefix": "kg d'",
     "slug": "orange",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.19625882
+        "value": 0.198
+      },
+      {
+        "id": 31,
+        "value": 0.0000838
       },
       {
         "id": 33,
-        "value": 0.344695
+        "value": 0.378
       },
       {
         "id": 34,
-        "value": 0.01265945
+        "value": 0.021
       },
       {
         "id": 35,
-        "value": 0.080351049
+        "value": 0.0806
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2],
+    "months": [
+      0,
+      1,
+      2
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13034#Orange,_pulpe,_crue",
     "meta": {
       "title": "Orange",
@@ -107,29 +139,38 @@
     "Code_CIQUAL": 13009,
     "prefix": "kg de ",
     "slug": "citron",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.18786463
+        "value": 0.194
+      },
+      {
+        "id": 31,
+        "value": 0.0000958
       },
       {
         "id": 33,
-        "value": 0.37082451
+        "value": 0.406
       },
       {
         "id": 34,
-        "value": 0.015004354
+        "value": 0.0255
       },
       {
         "id": 35,
-        "value": 0.13756958
+        "value": 0.138
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1],
+    "months": [
+      0,
+      1
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13009",
     "meta": {
       "title": "Citron",
@@ -141,29 +182,42 @@
     "Code_CIQUAL": 11000,
     "prefix": "kg d'",
     "slug": "ail",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.084945522
+        "value": 0.0841
+      },
+      {
+        "id": 31,
+        "value": 0.000193
       },
       {
         "id": 33,
-        "value": 0.17315136
+        "value": 0.198
       },
       {
         "id": 34,
-        "value": 0.019594963
+        "value": 0.0206
       },
       {
         "id": 35,
-        "value": 0.080351049
+        "value": 0.0806
       }
     ],
     "default": true,
     "tile": false,
-    "months": [6, 7, 8, 9, 10, 11],
+    "months": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/11000",
     "meta": {
       "title": "Ail",
@@ -175,29 +229,41 @@
     "Code_CIQUAL": 20052,
     "prefix": "kg d'",
     "slug": "artichaut",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 1.4243398
+        "value": 0.615
+      },
+      {
+        "id": 31,
+        "value": 0.000266
       },
       {
         "id": 33,
-        "value": 1.0942501
+        "value": 0.596
       },
       {
         "id": 34,
-        "value": 0.072722368
+        "value": 0.0549
       },
       {
         "id": 35,
-        "value": 1.2856168
+        "value": 1.29
       }
     ],
     "default": true,
     "tile": false,
-    "months": [4, 5, 6, 7, 8],
+    "months": [
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20052",
     "meta": {
       "title": "Artichaut",
@@ -209,29 +275,39 @@
     "Code_CIQUAL": 20279,
     "prefix": "kg d'",
     "slug": "asperge",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.93812691
+        "value": 0.97
+      },
+      {
+        "id": 31,
+        "value": 0.000178
       },
       {
         "id": 33,
-        "value": 0.38261078
+        "value": 0.417
       },
       {
         "id": 34,
-        "value": 0.024289271
+        "value": 0.0367
       },
       {
         "id": 35,
-        "value": 0.21428212
+        "value": 0.215
       }
     ],
     "default": true,
     "tile": false,
-    "months": [3, 4, 5],
+    "months": [
+      3,
+      4,
+      5
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20279",
     "meta": {
       "title": "Asperge",
@@ -243,29 +319,42 @@
     "Code_CIQUAL": 20091,
     "prefix": "kg de ",
     "slug": "betterave",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.080693939
+        "value": 0.0941
+      },
+      {
+        "id": 31,
+        "value": 0.0000665
       },
       {
         "id": 33,
-        "value": 0.24073503
+        "value": 0.262
       },
       {
         "id": 34,
-        "value": 0.010751711
+        "value": 0.0189
       },
       {
         "id": 35,
-        "value": 0.032140419
+        "value": 0.0323
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20091",
     "meta": {
       "title": "Betterave",
@@ -277,29 +366,38 @@
     "Code_CIQUAL": 20004,
     "prefix": "kg de ",
     "slug": "blette",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.14247925
+        "value": 0.146
       },
       {
         "id": 33,
-        "value": 0.27356253
+        "value": 0.298
       },
       {
         "id": 34,
-        "value": 0.046360746
+        "value": 0.0565
       },
       {
         "id": 35,
-        "value": 0.080351049
+        "value": 0.0806
       }
     ],
     "default": true,
     "tile": false,
-    "months": [5, 6, 7, 8, 9, 10],
+    "months": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20004",
     "meta": {
       "title": "Blette",
@@ -311,29 +409,43 @@
     "Code_CIQUAL": 20009,
     "prefix": "kg de ",
     "slug": "carotte",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.080693939
+        "value": 0.0828
+      },
+      {
+        "id": 31,
+        "value": 0.0000665
       },
       {
         "id": 33,
-        "value": 0.24073503
+        "value": 0.262
       },
       {
         "id": 34,
-        "value": 0.010751711
+        "value": 0.0189
       },
       {
         "id": 35,
-        "value": 0.032140419
+        "value": 0.0323
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 8, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      8,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20009",
     "meta": {
       "title": "Carotte",
@@ -345,29 +457,42 @@
     "Code_CIQUAL": 20023,
     "prefix": "kg de ",
     "slug": "celeri",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.43138668
+        "value": 0.442
+      },
+      {
+        "id": 31,
+        "value": 0.0000624
       },
       {
         "id": 33,
-        "value": 0.22561858
+        "value": 0.246
       },
       {
         "id": 34,
-        "value": 0.01007658
+        "value": 0.0177
       },
       {
         "id": 35,
-        "value": 0.0099362451
+        "value": 0.00997
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20023#C%C3%A9leri_branche,_cru",
     "meta": {
       "title": "Celeri",
@@ -379,29 +504,48 @@
     "Code_CIQUAL": 20105,
     "prefix": "kg de ",
     "slug": "champignonmorille",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.093440074
+        "value": 5.74
+      },
+      {
+        "id": 31,
+        "value": 0.000409
       },
       {
         "id": 33,
-        "value": 0.27356253
+        "value": 0.298
       },
       {
         "id": 34,
-        "value": 0.046360746
+        "value": 0.056
       },
       {
         "id": 35,
-        "value": 0.080351049
+        "value": 0.0806
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20105#Champignon,_morille,_crue",
     "meta": {
       "title": "Kg de champignons de paris",
@@ -413,29 +557,42 @@
     "Code_CIQUAL": 20069,
     "prefix": "kg de ",
     "slug": "chou",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.35608494
+        "value": 0.307
+      },
+      {
+        "id": 31,
+        "value": 0.000133
       },
       {
         "id": 33,
-        "value": 0.27356253
+        "value": 0.298
       },
       {
         "id": 34,
-        "value": 0.018180592
+        "value": 0.0275
       },
       {
         "id": 35,
-        "value": 0.21426946
+        "value": 0.215
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20069#Chou_vert,_cru",
     "meta": {
       "title": "Chou",
@@ -447,29 +604,42 @@
     "Code_CIQUAL": 20058,
     "prefix": "kg de ",
     "slug": "choudebruxelles",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.31335475
+        "value": 0.27
+      },
+      {
+        "id": 31,
+        "value": 0.000117
       },
       {
         "id": 33,
-        "value": 0.24073503
+        "value": 0.262
       },
       {
         "id": 34,
-        "value": 0.015998921
+        "value": 0.0242
       },
       {
         "id": 35,
-        "value": 0.0057299719
+        "value": 0.00583
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20058#Chou_de_Bruxelles,_cru",
     "meta": {
       "title": "Chou",
@@ -481,29 +651,43 @@
     "Code_CIQUAL": 20016,
     "prefix": "kg de ",
     "slug": "choufleur",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.35608494
+        "value": 0.307
+      },
+      {
+        "id": 31,
+        "value": 0.000205
       },
       {
         "id": 33,
-        "value": 0.27356253
+        "value": 0.298
       },
       {
         "id": 34,
-        "value": 0.025513693
+        "value": 0.0349
       },
       {
         "id": 35,
-        "value": 0.080351049
+        "value": 0.0806
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 8, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      8,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20016#Chou-fleur,_cru",
     "meta": {
       "title": "Chou",
@@ -515,29 +699,42 @@
     "Code_CIQUAL": 20019,
     "prefix": "kg de ",
     "slug": "concombre",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.18660557
+        "value": 0.196
+      },
+      {
+        "id": 31,
+        "value": 0.0000949
       },
       {
         "id": 33,
-        "value": 0.24073503
+        "value": 0.262
       },
       {
         "id": 34,
-        "value": 0.013720184
+        "value": 0.0219
       },
       {
         "id": 35,
-        "value": 0.032140419
+        "value": 0.0323
       }
     ],
     "default": true,
     "tile": false,
-    "months": [4, 5, 6, 7, 8, 9],
+    "months": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20019#Concombre,_pulpe_et_peau,_cru",
     "meta": {
       "title": "Concombre",
@@ -549,29 +746,37 @@
     "Code_CIQUAL": 20139,
     "prefix": "kg de ",
     "slug": "courge",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.2224172
+        "value": 0.205
       },
       {
         "id": 33,
-        "value": 0.29790004
+        "value": 0.325
       },
       {
         "id": 34,
-        "value": 0.018180592
+        "value": 0.0276
       },
       {
         "id": 35,
-        "value": 0.080351049
+        "value": 0.0806
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 8, 9, 10, 11],
+    "months": [
+      0,
+      8,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20139#Courge,_crue",
     "meta": {
       "title": "Courge",
@@ -583,29 +788,42 @@
     "Code_CIQUAL": 20020,
     "prefix": "kg de ",
     "slug": "courgette",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.19572714
+        "value": 0.181
+      },
+      {
+        "id": 31,
+        "value": 0.000107
       },
       {
         "id": 33,
-        "value": 0.24073503
+        "value": 0.262
       },
       {
         "id": 34,
-        "value": 0.014917201
+        "value": 0.0231
       },
       {
         "id": 35,
-        "value": 0.032140419
+        "value": 0.0323
       }
     ],
     "default": true,
     "tile": false,
-    "months": [4, 5, 6, 7, 8, 9],
+    "months": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20020#Courgette,_pulpe_et_peau,_crue",
     "meta": {
       "title": "Courgette",
@@ -617,29 +835,48 @@
     "Code_CIQUAL": 20199,
     "prefix": "kg de ",
     "slug": "cresson",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.30023238
+        "value": 0.181
+      },
+      {
+        "id": 31,
+        "value": 0.000545
       },
       {
         "id": 33,
-        "value": 0.36475005
+        "value": 0.397
       },
       {
         "id": 34,
-        "value": 0.061814329
+        "value": 0.0746
       },
       {
         "id": 35,
-        "value": 0.21426946
+        "value": 0.215
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20199",
     "meta": {
       "title": "Cresson",
@@ -651,29 +888,39 @@
     "Code_CIQUAL": 20097,
     "prefix": "kg d'",
     "slug": "echalote",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.082227266
+        "value": 0.0814
+      },
+      {
+        "id": 31,
+        "value": 0.0000757
       },
       {
         "id": 33,
-        "value": 0.24073503
+        "value": 0.262
       },
       {
         "id": 34,
-        "value": 0.0097605452
+        "value": 0.0178
       },
       {
         "id": 35,
-        "value": 0.032140419
+        "value": 0.0323
       }
     ],
     "default": true,
     "tile": false,
-    "months": [9, 10, 11],
+    "months": [
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20097#%C3%89chalote,_crue",
     "meta": {
       "title": "Echalote",
@@ -685,29 +932,42 @@
     "Code_CIQUAL": 20026,
     "prefix": "kg d'",
     "slug": "endive",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.53775347
+        "value": 0.426
+      },
+      {
+        "id": 31,
+        "value": 0.000409
       },
       {
         "id": 33,
-        "value": 0.27356253
+        "value": 0.298
       },
       {
         "id": 34,
-        "value": 0.046360746
+        "value": 0.056
       },
       {
         "id": 35,
-        "value": 0.080351049
+        "value": 0.0806
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 3, 4, 9],
+    "months": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      9
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20026#Endive,_crue",
     "meta": {
       "title": "Endive",
@@ -719,29 +979,41 @@
     "Code_CIQUAL": 20059,
     "prefix": "kg d'",
     "slug": "epinard",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.11750866
+        "value": 0.12
       },
       {
         "id": 33,
-        "value": 0.22561858
+        "value": 0.246
       },
       {
         "id": 34,
-        "value": 0.038235667
+        "value": 0.0466
       },
       {
         "id": 35,
-        "value": 0.0099362451
+        "value": 0.00997
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 3, 4, 8, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      8,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20059",
     "meta": {
       "title": "Epinard",
@@ -755,29 +1027,48 @@
     "Code_AGB": "13025_2",
     "prefix": "kg de ",
     "slug": "mangue",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.1635442
+        "value": 0.15
+      },
+      {
+        "id": 31,
+        "value": 0.000108
       },
       {
         "id": 33,
-        "value": 10.382059
+        "value": 11.4
       },
       {
         "id": 34,
-        "value": 0.015591118
+        "value": 0.0248
       },
       {
         "id": 35,
-        "value": 0.080351049
+        "value": 0.0806
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13025_2#Mangue_import%C3%A9e_par_avion,_pulpe,_crue",
     "meta": {
       "title": "Mangue",
@@ -789,29 +1080,43 @@
     "Code_CIQUAL": 20028,
     "prefix": "kg de ",
     "slug": "fenouil",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.48799384
+        "value": 0.499
+      },
+      {
+        "id": 31,
+        "value": 0.000133
       },
       {
         "id": 33,
-        "value": 0.37600339
+        "value": 0.411
       },
       {
         "id": 34,
-        "value": 0.018180592
+        "value": 0.0275
       },
       {
         "id": 35,
-        "value": 0.080351049
+        "value": 0.0806
       }
     ],
     "default": true,
     "tile": false,
-    "months": [3, 5, 6, 7, 8, 9, 10],
+    "months": [
+      3,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20028#Fenouil,_cru",
     "meta": {
       "title": "Fenouil",
@@ -825,29 +1130,41 @@
     "Code_AGB": "20061_1",
     "prefix": "kg d'",
     "slug": "haricotvert",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.11347802
+        "value": 0.117
+      },
+      {
+        "id": 31,
+        "value": 0.000157
       },
       {
         "id": 33,
-        "value": 0.24073503
+        "value": 0.262
       },
       {
         "id": 34,
-        "value": 0.020034805
+        "value": 0.0282
       },
       {
         "id": 35,
-        "value": 0.038814117
+        "value": 0.0391
       }
     ],
     "default": true,
     "tile": false,
-    "months": [5, 6, 7, 8, 9],
+    "months": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20061_1#Haricot_vert,_cru",
     "meta": {
       "title": "Kg d'haricot vert importé par avion, cru",
@@ -859,29 +1176,41 @@
     "Code_CIQUAL": 20031,
     "prefix": "kg de ",
     "slug": "laitue",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.30023238
+        "value": 0.181
+      },
+      {
+        "id": 31,
+        "value": 0.000545
       },
       {
         "id": 33,
-        "value": 0.36475005
+        "value": 0.397
       },
       {
         "id": 34,
-        "value": 0.061814329
+        "value": 0.0746
       },
       {
         "id": 35,
-        "value": 0.21426946
+        "value": 0.215
       }
     ],
     "default": true,
     "tile": false,
-    "months": [4, 5, 6, 7, 8],
+    "months": [
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20031#Laitue,_crue",
     "meta": {
       "title": "Laitue",
@@ -893,29 +1222,41 @@
     "Code_CIQUAL": 20099,
     "prefix": "kg de ",
     "slug": "mache",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.30023238
+        "value": 0.181
+      },
+      {
+        "id": 31,
+        "value": 0.000545
       },
       {
         "id": 33,
-        "value": 0.36475005
+        "value": 0.397
       },
       {
         "id": 34,
-        "value": 0.061814329
+        "value": 0.0746
       },
       {
         "id": 35,
-        "value": 0.21426946
+        "value": 0.215
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20099#M%C3%A2che,_crue",
     "meta": {
       "title": "Kg de mache",
@@ -927,29 +1268,40 @@
     "Code_CIQUAL": 20064,
     "prefix": "kg de ",
     "slug": "navet",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.080693939
+        "value": 0.0828
       },
       {
         "id": 33,
-        "value": 0.24073503
+        "value": 0.262
       },
       {
         "id": 34,
-        "value": 0.010751711
+        "value": 0.019
       },
       {
         "id": 35,
-        "value": 0.032140419
+        "value": 0.0323
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 3, 4, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20064#Navet,_pel%C3%A9,_cru",
     "meta": {
       "title": "Navet",
@@ -961,29 +1313,39 @@
     "Code_CIQUAL": 9200,
     "prefix": "kg de ",
     "slug": "mais",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.39438298
+        "value": 0.363
+      },
+      {
+        "id": 31,
+        "value": 0.000193
       },
       {
         "id": 32,
-        "value": 0.26506589
+        "value": 0.0381
       },
       {
         "id": 33,
-        "value": 0.13112869
+        "value": 0.146
       },
       {
         "id": 34,
-        "value": 0.019908241
+        "value": 0.0215
       }
     ],
     "default": true,
     "tile": false,
-    "months": [6, 7, 8],
+    "months": [
+      6,
+      7,
+      8
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/9200#Ma%C3%AFs_entier,_cru",
     "meta": {
       "title": "Kg de mais",
@@ -995,29 +1357,44 @@
     "Code_CIQUAL": 20034,
     "prefix": "kg d'",
     "slug": "oignon",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.10002787
+        "value": 0.101
+      },
+      {
+        "id": 31,
+        "value": 0.0000685
       },
       {
         "id": 33,
-        "value": 0.24635495
+        "value": 0.268
       },
       {
         "id": 34,
-        "value": 0.011012889
+        "value": 0.0191
       },
       {
         "id": 35,
-        "value": 0.032140419
+        "value": 0.0323
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 3, 8, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      3,
+      8,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20034#Oignon,_cru",
     "meta": {
       "title": "Oignon",
@@ -1029,29 +1406,42 @@
     "Code_CIQUAL": 20181,
     "prefix": "kg de ",
     "slug": "panais",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.091697658
+        "value": 0.0941
+      },
+      {
+        "id": 31,
+        "value": 0.0000756
       },
       {
         "id": 33,
-        "value": 0.27356253
+        "value": 0.298
       },
       {
         "id": 34,
-        "value": 0.012217853
+        "value": 0.0215
       },
       {
         "id": 35,
-        "value": 0.080351049
+        "value": 0.0806
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20181#Panais,_cru",
     "meta": {
       "title": "Panais",
@@ -1063,25 +1453,35 @@
     "Code_CIQUAL": 20072,
     "prefix": "kg de ",
     "slug": "petitpois",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.42618276
+        "value": 0.436
+      },
+      {
+        "id": 31,
+        "value": 0.000161
       },
       {
         "id": 33,
-        "value": 0.21885003
+        "value": 0.238
       },
       {
         "id": 34,
-        "value": 0.020096387
+        "value": 0.0276
       }
     ],
     "default": true,
     "tile": false,
-    "months": [4, 5, 6],
+    "months": [
+      4,
+      5,
+      6
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20072#Petits_pois,_crus",
     "meta": {
       "title": "Kg de petit pois",
@@ -1093,29 +1493,44 @@
     "Code_CIQUAL": 20039,
     "prefix": "kg de ",
     "slug": "poireau",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.40243746
+        "value": 0.211
+      },
+      {
+        "id": 31,
+        "value": 0.0000778
       },
       {
         "id": 33,
-        "value": 0.27356253
+        "value": 0.298
       },
       {
         "id": 34,
-        "value": 0.012514646
+        "value": 0.0217
       },
       {
         "id": 35,
-        "value": 0.080351049
+        "value": 0.0806
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 3, 8, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      3,
+      8,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20039#Poireau,_cru",
     "meta": {
       "title": "Poireau",
@@ -1127,29 +1542,36 @@
     "Code_CIQUAL": 20168,
     "prefix": "kg de ",
     "slug": "poivron",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.75605782
+        "value": 0.247
       },
       {
         "id": 33,
-        "value": 0.32592714
+        "value": 0.357
       },
       {
         "id": 34,
-        "value": 0.021283765
+        "value": 0.0308
       },
       {
         "id": 35,
-        "value": 0.080351049
+        "value": 0.0806
       }
     ],
     "default": true,
     "tile": false,
-    "months": [5, 6, 7, 8],
+    "months": [
+      5,
+      6,
+      7,
+      8
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20168#Poivron_jaune,_cru",
     "meta": {
       "title": "Poivron",
@@ -1161,29 +1583,41 @@
     "Code_CIQUAL": 20044,
     "prefix": "kg de ",
     "slug": "potiron",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.2224172
+        "value": 0.205
+      },
+      {
+        "id": 31,
+        "value": 0.000133
       },
       {
         "id": 33,
-        "value": 0.29790004
+        "value": 0.325
       },
       {
         "id": 34,
-        "value": 0.018180592
+        "value": 0.0275
       },
       {
         "id": 35,
-        "value": 0.080351049
+        "value": 0.0806
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 8, 9, 10, 11],
+    "months": [
+      0,
+      8,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20044#Potiron,_cru",
     "meta": {
       "title": "Potiron",
@@ -1195,29 +1629,40 @@
     "Code_CIQUAL": 20045,
     "prefix": "kg de ",
     "slug": "radis",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.35621594
+        "value": 0.111
+      },
+      {
+        "id": 31,
+        "value": 0.0000624
       },
       {
         "id": 33,
-        "value": 0.22561858
+        "value": 0.246
       },
       {
         "id": 34,
-        "value": 0.01007658
+        "value": 0.0177
       },
       {
         "id": 35,
-        "value": 0.0099362451
+        "value": 0.00997
       }
     ],
     "default": true,
     "tile": false,
-    "months": [2, 3, 4, 5],
+    "months": [
+      2,
+      3,
+      4,
+      5
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20045#Radis_rouge,_cru",
     "meta": {
       "title": "Radis",
@@ -1229,29 +1674,41 @@
     "Code_CIQUAL": 20197,
     "prefix": "kg de ",
     "slug": "salsifis",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.091697658
+        "value": 0.0941
+      },
+      {
+        "id": 31,
+        "value": 0.0000756
       },
       {
         "id": 33,
-        "value": 0.27356253
+        "value": 0.298
       },
       {
         "id": 34,
-        "value": 0.012217853
+        "value": 0.0215
       },
       {
         "id": 35,
-        "value": 0.080351049
+        "value": 0.0806
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20197#Salsifis_noir,_cru",
     "meta": {
       "title": "Salsifis",
@@ -1263,29 +1720,40 @@
     "Code_CIQUAL": 20196,
     "prefix": "kg de ",
     "slug": "topinambour",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.31335475
+        "value": 0.27
+      },
+      {
+        "id": 31,
+        "value": 0.0000665
       },
       {
         "id": 33,
-        "value": 0.14862509
+        "value": 0.17
       },
       {
         "id": 34,
-        "value": 0.010751711
+        "value": 0.0189
       },
       {
         "id": 35,
-        "value": 0.032140419
+        "value": 0.0323
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 10, 11],
+    "months": [
+      0,
+      1,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20196#Topinambour,_cru",
     "meta": {
       "title": "Topinambour",
@@ -1297,29 +1765,39 @@
     "Code_CIQUAL": 13007,
     "prefix": "kg de ",
     "slug": "cassis",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 1.4268828
+        "value": 1.5
+      },
+      {
+        "id": 31,
+        "value": 0.000108
       },
       {
         "id": 33,
-        "value": 0.27356253
+        "value": 0.298
       },
       {
         "id": 34,
-        "value": 0.015591118
+        "value": 0.0248
       },
       {
         "id": 35,
-        "value": 0.080351049
+        "value": 0.0806
       }
     ],
     "default": true,
     "tile": false,
-    "months": [5, 6, 7],
+    "months": [
+      5,
+      6,
+      7
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13007#Cassis,_cru",
     "meta": {
       "title": "Kg de cassis",
@@ -1331,29 +1809,38 @@
     "Code_CIQUAL": 15024,
     "prefix": "kg de ",
     "slug": "chataigne",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 1.6698515
+        "value": 1.71
+      },
+      {
+        "id": 31,
+        "value": 0.000245
       },
       {
         "id": 33,
-        "value": 0.14946824
+        "value": 0.171
       },
       {
         "id": 34,
-        "value": 0.025173812
+        "value": 0.0269
       },
       {
         "id": 35,
-        "value": 0.035711573
+        "value": 0.0358
       }
     ],
     "default": true,
     "tile": false,
-    "months": [9, 10],
+    "months": [
+      9,
+      10
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/15024#Ch%C3%A2taigne,_crue",
     "meta": {
       "title": "Chataigne",
@@ -1362,32 +1849,44 @@
   },
   {
     "name": "Clémentine",
-    "Code_CIQUAL": 13082,
+    "Code_CIQUAL": 13024,
+    "Code_AGB": "13024_2",
     "prefix": "kg de ",
     "slug": "clementine",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
+        "id": 30,
+        "value": 0.583
+      },
+      {
         "id": 31,
-        "value": 0.55684123
+        "value": 0.000112
       },
       {
         "id": 33,
-        "value": 0.43280172
+        "value": 0.474
       },
       {
         "id": 34,
-        "value": 0.017512084
+        "value": 0.0298
       },
       {
         "id": 35,
-        "value": 0.21426946
+        "value": 0.215
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 10, 11],
+    "months": [
+      0,
+      1,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13082#Cl%C3%A9mentine,_pulpe,_crue",
     "meta": {
       "title": "Clementine",
@@ -1399,29 +1898,42 @@
     "Code_CIQUAL": 13040,
     "prefix": "kg de ",
     "slug": "pamplemousse",
-    "synonyms": ["manger, fruit", "pomelo"],
+    "synonyms": [
+      "manger, fruit",
+      "pomelo"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.2576576
+        "value": 0.257
+      },
+      {
+        "id": 31,
+        "value": 0.0000958
       },
       {
         "id": 33,
-        "value": 0.46262808
+        "value": 0.505
       },
       {
         "id": 34,
-        "value": 0.015004354
+        "value": 0.0255
       },
       {
         "id": 35,
-        "value": 0.13756958
+        "value": 0.138
       }
     ],
     "default": true,
     "tile": false,
-    "months": [1, 2, 3, 4, 5],
+    "months": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13040#Pomelo_(dit_Pamplemousse),_pulpe,_cru",
     "meta": {
       "title": "Pamplemousse",
@@ -1433,29 +1945,37 @@
     "Code_CIQUAL": 13010,
     "prefix": "kg de ",
     "slug": "coing",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.12490846999999998
+        "value": 0.104
+      },
+      {
+        "id": 31,
+        "value": 0.0000215
       },
       {
         "id": 33,
-        "value": 0.32908042
+        "value": 0.361
       },
       {
         "id": 34,
-        "value": 0.0067501727
+        "value": 0.0159
       },
       {
         "id": 35,
-        "value": 0.080351049
+        "value": 0.0806
       }
     ],
     "default": true,
     "tile": false,
-    "months": [9],
+    "months": [
+      9
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13010#Coing,_cru",
     "meta": {
       "title": "Coing",
@@ -1467,29 +1987,40 @@
     "Code_CIQUAL": 13012,
     "prefix": "kg de ",
     "slug": "figue",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.21796035
+        "value": 0.179
+      },
+      {
+        "id": 31,
+        "value": 0.000108
       },
       {
         "id": 33,
-        "value": 0.29964738
+        "value": 0.327
       },
       {
         "id": 34,
-        "value": 0.015591118
+        "value": 0.0248
       },
       {
         "id": 35,
-        "value": 0.080351049
+        "value": 0.0806
       }
     ],
     "default": true,
     "tile": false,
-    "months": [6, 7, 8, 9],
+    "months": [
+      6,
+      7,
+      8,
+      9
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13012#Figue,_crue",
     "meta": {
       "title": "Figue",
@@ -1501,29 +2032,39 @@
     "Code_CIQUAL": 13019,
     "prefix": "kg de ",
     "slug": "groseille",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 1.4268828
+        "value": 1.5
+      },
+      {
+        "id": 31,
+        "value": 0.0000215
       },
       {
         "id": 33,
-        "value": 0.27356253
+        "value": 0.298
       },
       {
         "id": 34,
-        "value": 0.0067501727
+        "value": 0.0159
       },
       {
         "id": 35,
-        "value": 0.080351049
+        "value": 0.0806
       }
     ],
     "default": true,
     "tile": false,
-    "months": [5, 6, 7],
+    "months": [
+      5,
+      6,
+      7
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13019#Groseille,_crue",
     "meta": {
       "title": "Kg de groseille",
@@ -1535,33 +2076,41 @@
     "Code_CIQUAL": 13021,
     "prefix": "kg de ",
     "slug": "kiwi",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.4974984
+        "value": 0.479
       },
       {
         "id": 31,
-        "value": 0.01432555
+        "value": 0.0142
       },
       {
         "id": 33,
-        "value": 0.38009761
+        "value": 0.414
       },
       {
         "id": 34,
-        "value": 0.0045425747
+        "value": 0.0137
       },
       {
         "id": 35,
-        "value": 0.080351049
+        "value": 0.0806
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13021#Kiwi,_pulpe_et_graines,_cru",
     "meta": {
       "title": "Kiwi",
@@ -1571,31 +2120,43 @@
   {
     "name": "Mandarine",
     "Code_CIQUAL": 13024,
+    "Code_AGB": "13024_1",
     "prefix": "kg de ",
     "slug": "mandarine",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.0046518993
+        "value": 0.00942
+      },
+      {
+        "id": 31,
+        "value": 0.0000838
       },
       {
         "id": 33,
-        "value": 0.32460129
+        "value": 0.356
       },
       {
         "id": 34,
-        "value": 0.013134063
+        "value": 0.0223
       },
       {
         "id": 35,
-        "value": 0.080351049
+        "value": 0.0806
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 10, 11],
+    "months": [
+      0,
+      1,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13090#Mandarine,_pulpe,_crue",
     "meta": {
       "title": "Mandarine",
@@ -1607,29 +2168,40 @@
     "Code_CIQUAL": 13026,
     "prefix": "kg de ",
     "slug": "melon",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.31889524
+        "value": 0.318
+      },
+      {
+        "id": 31,
+        "value": 0.000143
       },
       {
         "id": 33,
-        "value": 0.38120935
+        "value": 0.416
       },
       {
         "id": 34,
-        "value": 0.017020934
+        "value": 0.0292
       },
       {
         "id": 35,
-        "value": 0.21426946
+        "value": 0.215
       }
     ],
     "default": true,
     "tile": false,
-    "months": [5, 6, 7, 8],
+    "months": [
+      5,
+      6,
+      7,
+      8
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13026#Melon_cantaloup_(par_ex.:_Charentais,_de_Cavaillon)_pulpe,_cru",
     "meta": {
       "title": "Melon",
@@ -1641,29 +2213,38 @@
     "Code_CIQUAL": 13071,
     "prefix": "kg de ",
     "slug": "mure",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.83658095
+        "value": 0.844
+      },
+      {
+        "id": 31,
+        "value": 0.000108
       },
       {
         "id": 33,
-        "value": 0.27356253
+        "value": 0.298
       },
       {
         "id": 34,
-        "value": 0.015591118
+        "value": 0.0248
       },
       {
         "id": 35,
-        "value": 0.080351049
+        "value": 0.0806
       }
     ],
     "default": true,
     "tile": false,
-    "months": [7, 8],
+    "months": [
+      7,
+      8
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13071#M%C3%BBre_noire_(du_m%C3%BBrier),_crue",
     "meta": {
       "title": "Kg de mure",
@@ -1675,29 +2256,38 @@
     "Code_CIQUAL": 13030,
     "prefix": "kg de ",
     "slug": "nectarine",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.27069047
+        "value": 0.213
+      },
+      {
+        "id": 31,
+        "value": 0.000108
       },
       {
         "id": 33,
-        "value": 0.27356253
+        "value": 0.298
       },
       {
         "id": 34,
-        "value": 0.012765701
+        "value": 0.0219
       },
       {
         "id": 35,
-        "value": 0.080351049
+        "value": 0.0806
       }
     ],
     "default": true,
     "tile": false,
-    "months": [7, 8],
+    "months": [
+      7,
+      8
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13030#Nectarine_ou_brugnon,_pulpe_et_peau,_crue",
     "meta": {
       "title": "Nectarine",
@@ -1709,29 +2299,39 @@
     "Code_CIQUAL": 13028,
     "prefix": "kg de ",
     "slug": "myrtille",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.63308777
+        "value": 0.645
+      },
+      {
+        "id": 31,
+        "value": 0.0000889
       },
       {
         "id": 33,
-        "value": 0.22561858
+        "value": 0.246
       },
       {
         "id": 34,
-        "value": 0.012858654
+        "value": 0.0205
       },
       {
         "id": 35,
-        "value": 0.0099362451
+        "value": 0.00997
       }
     ],
     "default": true,
     "tile": false,
-    "months": [6, 7, 8],
+    "months": [
+      6,
+      7,
+      8
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13028#Myrtille,_crue",
     "meta": {
       "title": "Kg de myrtille",
@@ -1743,29 +2343,35 @@
     "Code_CIQUAL": 15004,
     "prefix": "kg de ",
     "slug": "noisette",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 4.1880839
+        "value": 4.31
       },
       {
         "id": 31,
-        "value": 0.193667
+        "value": 0.196
       },
       {
         "id": 33,
-        "value": 0.24855809
+        "value": 0.281
       },
       {
         "id": 34,
-        "value": 0.022656431
+        "value": 0.0242
       }
     ],
     "default": true,
     "tile": false,
-    "months": [8, 9, 10],
+    "months": [
+      8,
+      9,
+      10
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/15004#Noisette",
     "meta": {
       "title": "Kg de noisette",
@@ -1777,33 +2383,38 @@
     "Code_CIQUAL": 15023,
     "prefix": "kg de ",
     "slug": "noix",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 3.0057327
+        "value": 3.07
       },
       {
         "id": 32,
-        "value": 0.53013177
+        "value": 0.376
       },
       {
         "id": 33,
-        "value": 0.26225739
+        "value": 0.296
       },
       {
         "id": 34,
-        "value": 0.045312862
+        "value": 0.049
       },
       {
         "id": 35,
-        "value": 0.32140419
+        "value": 0.323
       }
     ],
     "default": true,
     "tile": false,
-    "months": [8, 9],
+    "months": [
+      8,
+      9
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/15023#Noix,_fra%C3%AEche",
     "meta": {
       "title": "Kg de noix",
@@ -1815,29 +2426,39 @@
     "Code_CIQUAL": 13100,
     "prefix": "kg de ",
     "slug": "prune",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.60236424
+        "value": 0.64
+      },
+      {
+        "id": 31,
+        "value": 0.0000215
       },
       {
         "id": 33,
-        "value": 0.27356253
+        "value": 0.298
       },
       {
         "id": 34,
-        "value": 0.0067501727
+        "value": 0.0159
       },
       {
         "id": 35,
-        "value": 0.080351049
+        "value": 0.0806
       }
     ],
     "default": true,
     "tile": false,
-    "months": [6, 7, 8],
+    "months": [
+      6,
+      7,
+      8
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13100#Prune,_crue",
     "meta": {
       "title": "Prune",
@@ -1849,29 +2470,37 @@
     "Code_CIQUAL": 13041,
     "prefix": "kg de ",
     "slug": "reineclaude",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.60236424
+        "value": 0.64
+      },
+      {
+        "id": 31,
+        "value": 0.000108
       },
       {
         "id": 33,
-        "value": 0.27356253
+        "value": 0.298
       },
       {
         "id": 34,
-        "value": 0.015591118
+        "value": 0.0248
       },
       {
         "id": 35,
-        "value": 0.080351049
+        "value": 0.0806
       }
     ],
     "default": true,
     "tile": false,
-    "months": [8],
+    "months": [
+      8
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13041#Prune_Reine-Claude,_crue",
     "meta": {
       "title": "Reine-claude",
@@ -1883,29 +2512,39 @@
     "Code_CIQUAL": 13047,
     "prefix": "kg de ",
     "slug": "rhubarbe",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.35608494
+        "value": 0.307
+      },
+      {
+        "id": 31,
+        "value": 0.0000215
       },
       {
         "id": 33,
-        "value": 0.27356253
+        "value": 0.298
       },
       {
         "id": 34,
-        "value": 0.0067501727
+        "value": 0.0159
       },
       {
         "id": 35,
-        "value": 0.080351049
+        "value": 0.0806
       }
     ],
     "default": true,
     "tile": false,
-    "months": [3, 4, 5],
+    "months": [
+      3,
+      4,
+      5
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13047#Rhubarbe,_tige,_crue",
     "meta": {
       "title": "Rhubarbe",
@@ -1917,29 +2556,40 @@
     "Code_CIQUAL": 13043,
     "prefix": "kg de ",
     "slug": "peche",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.22061455
+        "value": 0.18
+      },
+      {
+        "id": 31,
+        "value": 0.0000215
       },
       {
         "id": 33,
-        "value": 0.28802092
+        "value": 0.314
       },
       {
         "id": 34,
-        "value": 0.0067501727
+        "value": 0.0159
       },
       {
         "id": 35,
-        "value": 0.080351049
+        "value": 0.0806
       }
     ],
     "default": true,
     "tile": false,
-    "months": [5, 6, 7, 8],
+    "months": [
+      5,
+      6,
+      7,
+      8
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13043#P%C3%AAche,_pulpe_et_peau,_crue",
     "meta": {
       "title": "Peche",
@@ -1951,33 +2601,42 @@
     "Code_CIQUAL": 13008,
     "prefix": "kg de ",
     "slug": "cerise",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.60236424
+        "value": 0.64
+      },
+      {
+        "id": 31,
+        "value": 0.000108
       },
       {
         "id": 32,
-        "value": 0.35147703
+        "value": 0.657
       },
       {
         "id": 33,
-        "value": 0.28554207
+        "value": 0.342
       },
       {
         "id": 34,
-        "value": 0.015591118
+        "value": 0.0248
       },
       {
         "id": 35,
-        "value": 0.080351049
+        "value": 0.0806
       }
     ],
     "default": true,
     "tile": false,
-    "months": [5, 6],
+    "months": [
+      5,
+      6
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13008#Cerise,_d%C3%A9noyaut%C3%A9e,_crue",
     "meta": {
       "title": "Cerise",
@@ -1989,33 +2648,43 @@
     "Code_CIQUAL": 13000,
     "prefix": "kg d'",
     "slug": "abricot",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.14767705
+        "value": 0.347
+      },
+      {
+        "id": 31,
+        "value": 0.000108
       },
       {
         "id": 32,
-        "value": 0.35147703
+        "value": 0.657
       },
       {
         "id": 33,
-        "value": 0.28554207
+        "value": 0.342
       },
       {
         "id": 34,
-        "value": 0.015591118
+        "value": 0.0248
       },
       {
         "id": 35,
-        "value": 0.080351049
+        "value": 0.0806
       }
     ],
     "default": true,
     "tile": false,
-    "months": [5, 6, 7],
+    "months": [
+      5,
+      6,
+      7
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13000#Abricot,_d%C3%A9noyaut%C3%A9,_cru",
     "meta": {
       "title": "Abricot",
@@ -2027,29 +2696,39 @@
     "Code_CIQUAL": 13015,
     "prefix": "kg de ",
     "slug": "framboise",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 1.0250766
+        "value": 1.04
+      },
+      {
+        "id": 31,
+        "value": 0.0000178
       },
       {
         "id": 33,
-        "value": 0.43445757
+        "value": 0.48
       },
       {
         "id": 34,
-        "value": 0.0055671528
+        "value": 0.0131
       },
       {
         "id": 35,
-        "value": 0.0099362451
+        "value": 0.00997
       }
     ],
     "default": true,
     "tile": false,
-    "months": [5, 6, 7],
+    "months": [
+      5,
+      6,
+      7
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13015#Framboise,_crue",
     "meta": {
       "title": "Framboise",
@@ -2061,29 +2740,44 @@
     "Code_CIQUAL": 13107,
     "prefix": "kg de ",
     "slug": "poire",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.076599513
+        "value": 0.069
+      },
+      {
+        "id": 31,
+        "value": 0.000019
       },
       {
         "id": 33,
-        "value": 0.24960251
+        "value": 0.272
       },
       {
         "id": 34,
-        "value": 0.005940152
+        "value": 0.014
       },
       {
         "id": 35,
-        "value": 0.032140419
+        "value": 0.0323
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 7, 8, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13107#Poire,_pulpe,_crue",
     "meta": {
       "title": "Poire",
@@ -2095,29 +2789,38 @@
     "Code_CIQUAL": 13112,
     "prefix": "kg de ",
     "slug": "raisin",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.1487964
+        "value": 0.17
+      },
+      {
+        "id": 31,
+        "value": 0.0000949
       },
       {
         "id": 33,
-        "value": 0.26207109
+        "value": 0.285
       },
       {
         "id": 34,
-        "value": 0.013720184
+        "value": 0.0219
       },
       {
         "id": 35,
-        "value": 0.032140419
+        "value": 0.0323
       }
     ],
     "default": true,
     "tile": false,
-    "months": [8, 9],
+    "months": [
+      8,
+      9
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13112#Raisin,_cru",
     "meta": {
       "title": "Kg de raisin",
@@ -2129,29 +2832,40 @@
     "Code_CIQUAL": 20053,
     "prefix": "kg d'",
     "slug": "aubergine",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.19572714
+        "value": 0.181
+      },
+      {
+        "id": 31,
+        "value": 0.000107
       },
       {
         "id": 33,
-        "value": 0.24073503
+        "value": 0.262
       },
       {
         "id": 34,
-        "value": 0.014917201
+        "value": 0.0231
       },
       {
         "id": 35,
-        "value": 0.0057299719
+        "value": 0.00583
       }
     ],
     "default": true,
     "tile": false,
-    "months": [5, 6, 7, 8],
+    "months": [
+      5,
+      6,
+      7,
+      8
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20053#Aubergine,_crue",
     "meta": {
       "title": "Aubergine",
@@ -2163,29 +2877,39 @@
     "Code_CIQUAL": 20057,
     "prefix": "kg de ",
     "slug": "brocoli",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.5231282
+        "value": 0.537
+      },
+      {
+        "id": 31,
+        "value": 0.000205
       },
       {
         "id": 33,
-        "value": 0.27356253
+        "value": 0.298
       },
       {
         "id": 34,
-        "value": 0.025513693
+        "value": 0.0349
       },
       {
         "id": 35,
-        "value": 0.080351049
+        "value": 0.0806
       }
     ],
     "default": true,
     "tile": false,
-    "months": [8, 9, 10],
+    "months": [
+      8,
+      9,
+      10
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20057#Brocoli,_cru",
     "meta": {
       "title": "Brocoli",
@@ -2198,29 +2922,36 @@
     "Code_AGB": "20047_2",
     "prefix": "kg de ",
     "slug": "tomate",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.21205178
+        "value": 0.222
       },
       {
         "id": 33,
-        "value": 0.27356253
+        "value": 0.298
       },
       {
         "id": 34,
-        "value": 0.015591118
+        "value": 0.025
       },
       {
         "id": 35,
-        "value": 0.080351049
+        "value": 0.0806
       }
     ],
     "default": true,
     "tile": false,
-    "months": [5, 6, 7, 8],
+    "months": [
+      5,
+      6,
+      7,
+      8
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/20047_2#Tomate_de_saison,_crue",
     "meta": {
       "title": "Tomate",
@@ -2232,29 +2963,48 @@
     "Code_CIQUAL": 13002,
     "prefix": "kg d'",
     "slug": "ananas",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.36854012
+        "value": 0.368
+      },
+      {
+        "id": 31,
+        "value": 0.0000345
       },
       {
         "id": 33,
-        "value": 0.59153752
+        "value": 0.645
       },
       {
         "id": 34,
-        "value": 0.010800276
+        "value": 0.0254
       },
       {
         "id": 35,
-        "value": 0.32140419
+        "value": 0.323
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13002#Ananas,_pulpe,_cruhine ",
     "meta": {
       "title": "Ananas",
@@ -2266,29 +3016,48 @@
     "Code_CIQUAL": 13005,
     "prefix": "kg de ",
     "slug": "banane",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.31629881
+        "value": 0.295
+      },
+      {
+        "id": 31,
+        "value": 0.000123
       },
       {
         "id": 33,
-        "value": 0.40893121
+        "value": 0.447
       },
       {
         "id": 34,
-        "value": 0.017811293
+        "value": 0.0284
       },
       {
         "id": 35,
-        "value": 0.13756958
+        "value": 0.138
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13005#Banane,_pulpe,_crue",
     "meta": {
       "title": "Banane",
@@ -2300,29 +3069,48 @@
     "Code_CIQUAL": 13004,
     "prefix": "kg d'",
     "slug": "avocat",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.86139181
+        "value": 0.878
+      },
+      {
+        "id": 31,
+        "value": 0.000123
       },
       {
         "id": 33,
-        "value": 0.46369755
+        "value": 0.508
       },
       {
         "id": 34,
-        "value": 0.017811293
+        "value": 0.0284
       },
       {
         "id": 35,
-        "value": 0.13756958
+        "value": 0.138
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13004#Avocat,_pulpe,_cru",
     "meta": {
       "title": "Avocat",
@@ -2334,29 +3122,39 @@
     "Code_CIQUAL": 13054,
     "prefix": "kg de ",
     "slug": "carambole",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.1635442
+        "value": 0.15
+      },
+      {
+        "id": 31,
+        "value": 0.000108
       },
       {
         "id": 33,
-        "value": 0.27356253
+        "value": 0.298
       },
       {
         "id": 34,
-        "value": 0.015591118
+        "value": 0.0248
       },
       {
         "id": 35,
-        "value": 0.080351049
+        "value": 0.0806
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 10, 11],
+    "months": [
+      0,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13054#Carambole,_pulpe,_crue",
     "meta": {
       "title": "Carambole",
@@ -2368,29 +3166,40 @@
     "Code_CIQUAL": 13011,
     "prefix": "kg de ",
     "slug": "datte",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 2.2964659
+        "value": 2.32
+      },
+      {
+        "id": 31,
+        "value": 0.000161
       },
       {
         "id": 32,
-        "value": 0.28118162
+        "value": 0.346
       },
       {
         "id": 33,
-        "value": 0.16236686
+        "value": 0.199
       },
       {
         "id": 34,
-        "value": 0.020096608
+        "value": 0.0276
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 9, 10, 11],
+    "months": [
+      0,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13011#Datte,_pulpe_et_peau,_s%C3%A8che",
     "meta": {
       "title": "Datte",
@@ -2402,29 +3211,48 @@
     "Code_CIQUAL": 13016,
     "prefix": "kg de ",
     "slug": "fruitdelapassion",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.52613809
+        "value": 0.537
+      },
+      {
+        "id": 31,
+        "value": 0.000108
       },
       {
         "id": 33,
-        "value": 0.27356253
+        "value": 0.298
       },
       {
         "id": 34,
-        "value": 0.012765701
+        "value": 0.0219
       },
       {
         "id": 35,
-        "value": 0.080351049
+        "value": 0.0806
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+    "months": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13016#Fruit_de_la_passion_ou_maracudja,_pulpe_et_p%C3%A9pins,_cru",
     "meta": {
       "title": "Fruit de la passion",
@@ -2436,29 +3264,40 @@
     "Code_CIQUAL": 13018,
     "prefix": "kg de ",
     "slug": "grenade",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.12490847
+        "value": 0.104
+      },
+      {
+        "id": 31,
+        "value": 0.0000215
       },
       {
         "id": 33,
-        "value": 0.27356253
+        "value": 0.298
       },
       {
         "id": 34,
-        "value": 0.0067501727
+        "value": 0.0159
       },
       {
         "id": 35,
-        "value": 0.080351049
+        "value": 0.0806
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 10, 11],
+    "months": [
+      0,
+      1,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13018#Grenade,_pulpe_et_p%C3%A9pins,_crue",
     "meta": {
       "title": "Grenade",
@@ -2470,29 +3309,40 @@
     "Code_CIQUAL": 13066,
     "prefix": "kg de ",
     "slug": "kaki",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.48760375
+        "value": 0.498
+      },
+      {
+        "id": 31,
+        "value": 0.0000215
       },
       {
         "id": 33,
-        "value": 0.32572638
+        "value": 0.355
       },
       {
         "id": 34,
-        "value": 0.0067501727
+        "value": 0.0159
       },
       {
         "id": 35,
-        "value": 0.080351049
+        "value": 0.0806
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 9, 10, 11],
+    "months": [
+      0,
+      9,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13066#Kaki,_pulpe,_cru",
     "meta": {
       "title": "Kaki",
@@ -2504,33 +3354,44 @@
     "Code_CIQUAL": 15006,
     "prefix": "kg de ",
     "slug": "noixdecoco",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 1.1287117
+        "value": 1.14
+      },
+      {
+        "id": 31,
+        "value": 0.000441
       },
       {
         "id": 32,
-        "value": 0.53013177
+        "value": 0.376
       },
       {
         "id": 33,
-        "value": 0.4682019
+        "value": 0.523
       },
       {
         "id": 34,
-        "value": 0.045312862
+        "value": 0.0485
       },
       {
         "id": 35,
-        "value": 0.32140419
+        "value": 0.323
       }
     ],
     "default": true,
     "tile": false,
-    "months": [0, 1, 10, 11],
+    "months": [
+      0,
+      1,
+      10,
+      11
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/15006#Noix_de_coco,_amande_m%C3%BBre,_fra%C3%AEche",
     "meta": {
       "title": "Noix de coco",
@@ -2542,29 +3403,36 @@
     "Code_CIQUAL": 13036,
     "prefix": "kg de ",
     "slug": "pasteque",
-    "synonyms": ["manger, fruit"],
+    "synonyms": [
+      "manger, fruit"
+    ],
     "category": 9,
     "ecv": [
       {
         "id": 30,
-        "value": 0.23917143
+        "value": 0.239
       },
       {
         "id": 33,
-        "value": 0.31519117
+        "value": 0.345
       },
       {
         "id": 34,
-        "value": 0.0067501727
+        "value": 0.0159
       },
       {
         "id": 35,
-        "value": 0.080351049
+        "value": 0.0806
       }
     ],
     "default": true,
     "tile": false,
-    "months": [5, 6, 7, 8],
+    "months": [
+      5,
+      6,
+      7,
+      8
+    ],
     "source": "https://agribalyse.ademe.fr/app/aliments/13036#Past%C3%A8que,_pulpe,_crue",
     "meta": {
       "title": "Pasteque",
