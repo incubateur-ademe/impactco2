@@ -58,6 +58,7 @@ const ItineraireSimulator = ({ withComparisonMode, bis }: { withComparisonMode: 
               moreText='transport'
               withSimulator
               type='itineraire'
+              bis={bis}
             />
           ) : (
             <TransportComparisonSimulator tracking={tracking} equivalents={equivalents} />
