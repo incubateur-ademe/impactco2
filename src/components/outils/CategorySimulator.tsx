@@ -37,6 +37,7 @@ const CategorySimulator = ({
   withSimulator,
   type,
   reverse,
+  bis,
 }: {
   id?: string
   tracking: string
@@ -47,6 +48,7 @@ const CategorySimulator = ({
   withSimulator?: boolean
   type?: TransportSimulateur
   reverse?: boolean
+  bis?: boolean
 }) => {
   const params = useParamContext()
   const t = useTranslations('category-simulator')
@@ -138,7 +140,7 @@ const CategorySimulator = ({
                         value={params[type].carpool[equivalent.slug] || 1}
                         setValue={(value) => {
                           track(
-                            `Transport ${type === 'distance' ? 'distance' : 'itinéraire'}`,
+                            `Transport ${type === 'distance' ? 'distance' : 'itinéraire'}${bis ? ' bis' : ''}`,
                             `Covoiturage ${equivalent.slug}`,
                             value.toString()
                           )
