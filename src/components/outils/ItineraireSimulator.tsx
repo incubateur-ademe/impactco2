@@ -23,7 +23,7 @@ const ItineraireSimulator = ({ withComparisonMode, bis }: { withComparisonMode: 
 
   const t = useTranslations('transport.itineraire')
 
-  const { data: itineraries } = useItineraries(start, end, 'itinéraire')
+  const { data: itineraries } = useItineraries(start, end, `itinéraire${bis ? ' bis' : ''}`)
   const { hasMore, equivalents } = useTransportations('Transport itinéraire', 'itineraire', itineraries)
 
   return (
