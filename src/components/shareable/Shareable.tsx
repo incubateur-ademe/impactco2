@@ -127,7 +127,7 @@ const Shareable = ({
                   <div className={styles.separatorBothBorders} />
                 </div>
               ) : (
-                <h1 className='hidden'>{t(overScreenToDisplay.title)}</h1>
+                <h1 className='ico2-hidden'>{t(overScreenToDisplay.title)}</h1>
               )}
               <div
                 className={classNames(styles.overScreenChildren, {

@@ -165,7 +165,7 @@ const Detector = ({ impact, language }: { impact: string; language: 'fr' | 'en' 
         className={classNames(styles.value, 'impactCO2-etiquette-detected-value')}
         onClick={onClick}
         dangerouslySetInnerHTML={{
-          __html: impact + '<span class="hidden">Comprendre cette valeur</span>',
+          __html: impact + '<span class="ico2-hidden">Comprendre cette valeur</span>',
         }}
       />
       <div
