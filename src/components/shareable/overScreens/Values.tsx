@@ -77,16 +77,17 @@ export const overScreenEquivalentInfographyValues: (
     ),
   },
 })
-export const overScreenEquivalentAlimentationInfographyValues: (
-  equivalent: ComputedEquivalent
-) => Record<string, OverScreenInfo> = (equivalent) => ({
+export const overScreenEquivalentImageInfographyValues: (
+  equivalent: ComputedEquivalent,
+  index: number
+) => Record<string, OverScreenInfo> = (equivalent, index) => ({
   partager: {
     title: 'share',
     children: (
       <Share
-        anchor='alimentation-infographie'
+        anchor={`image-infographie-${index}`}
         path={equivalent.link}
-        tracking={`${getName('fr', equivalent)} alimentation infographie`}
+        tracking={`${getName('fr', equivalent)} image infographie ${index}`}
       />
     ),
   },

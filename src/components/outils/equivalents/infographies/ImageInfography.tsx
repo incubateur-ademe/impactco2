@@ -2,24 +2,26 @@ import { useMemo } from 'react'
 import { ComputedEquivalent } from 'types/equivalent'
 import { getName } from 'utils/Equivalent/equivalent'
 import Shareable from 'components/shareable/Shareable'
-import { overScreenEquivalentAlimentationInfographyValues } from 'components/shareable/overScreens/Values'
-import styles from './AlimentationInfography.module.css'
+import { overScreenEquivalentImageInfographyValues } from 'components/shareable/overScreens/Values'
+import styles from './ImageInfography.module.css'
 
-const AlimentationInfography = ({
+const ImageInfography = ({
   image,
   alt,
   equivalent,
+  index,
 }: {
   image: string
   alt: string
   equivalent: ComputedEquivalent
+  index: number
 }) => {
-  const overScreens = useMemo(() => overScreenEquivalentAlimentationInfographyValues(equivalent), [equivalent])
+  const overScreens = useMemo(() => overScreenEquivalentImageInfographyValues(equivalent, index), [equivalent, index])
 
   return (
     <Shareable
-      slug='alimentation-infographie'
-      tracking={`${getName('fr', equivalent)} alimentation infographie`}
+      slug='image-infographie'
+      tracking={`${getName('fr', equivalent)} image infographie ${index}`}
       overScreens={overScreens}
       secondary=''
       withoutIntegration>
@@ -28,4 +30,4 @@ const AlimentationInfography = ({
   )
 }
 
-export default AlimentationInfography
+export default ImageInfography

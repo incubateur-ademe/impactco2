@@ -10,9 +10,9 @@ import Block from 'components/layout/Block'
 import styles from '../CategoryPage.module.css'
 import Etiquette from '../etiquettes/Etiquette'
 import Equivalent from './Equivalent'
-import AlimentationInfography from './infographies/AlimentationInfography'
+import ImageInfography from './infographies/ImageInfography'
 import Infography from './infographies/Infography'
-import { alimentationInfographies, infographies } from './infographies/list'
+import { imageInfographies, infographies } from './infographies/list'
 
 const EquivalentPage = ({
   category,
@@ -32,7 +32,7 @@ const EquivalentPage = ({
     return slugs
   }, [equivalent])
 
-  const alimentationInfography = useMemo(() => alimentationInfographies[equivalent.slug], [equivalent])
+  const images = useMemo(() => imageInfographies[equivalent.slug], [equivalent])
 
   const sources = equivalent.sources || category.sources
   return (
@@ -56,15 +56,12 @@ const EquivalentPage = ({
           <Infography equivalent={equivalent} equivalents={equivalentsInfography} />
         </Block>
       )}
-      {alimentationInfography && (
-        <Block id='alimentation-infographie'>
-          <AlimentationInfography
-            equivalent={equivalent}
-            image={alimentationInfography.image}
-            alt={alimentationInfography.alt}
-          />
-        </Block>
-      )}
+      {images &&
+        images.map(({ image, alt }, index) => (
+          <Block key={image} id={`image-infographie-${index}`}>
+            <ImageInfography equivalent={equivalent} image={image} alt={alt} index={index} />
+          </Block>
+        ))}
       <Block title='Étiquette' description='Le petit format à intégrer dans vos contenus et applications.'>
         <Etiquette equivalent={equivalent} />
       </Block>
