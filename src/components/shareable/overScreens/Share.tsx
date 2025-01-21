@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { Category } from 'types/category'
 import { buildCurrentUrlFor } from 'utils/urls'
@@ -16,10 +16,12 @@ const Share = ({
   category,
   path,
   tracking,
+  anchor,
 }: {
   category?: Pick<Category, 'slug' | 'name'>
   path?: string
   tracking?: string
+  anchor?: string
 }) => {
   const allParams = useParamContext()
   const [visibility, setVisibility] = useState<Record<string, boolean> | null>(null)
@@ -45,7 +47,7 @@ const Share = ({
   }, [params, setVisibility])
 
   const url = buildCurrentUrlFor(
-    `${path || `outils/${category?.slug === 'repas' ? 'alimentation' : category?.slug}`}?${buildCustomParamsUrl(params, visibility)}&language=${allParams.language}${category?.slug === 'repas' ? '#repas' : ''}`
+    `${path || `outils/${category?.slug === 'repas' ? 'alimentation' : category?.slug}`}?${buildCustomParamsUrl(params, visibility)}&language=${allParams.language}${category?.slug === 'repas' ? '#repas' : ''}${anchor ? `#${anchor}` : ''}`
   ).replace(/\?$/, '')
   const trackingValue = (category ? category.name : tracking) || 'UNKNOWN'
 

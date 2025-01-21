@@ -1,4 +1,4 @@
-import React, { ReactNode, useMemo } from 'react'
+import { ReactNode, useMemo } from 'react'
 import { Category } from 'types/category'
 import { ComputedEquivalent } from 'types/equivalent'
 import { getName } from 'utils/Equivalent/equivalent'
@@ -10,8 +10,9 @@ import Block from 'components/layout/Block'
 import styles from '../CategoryPage.module.css'
 import Etiquette from '../etiquettes/Etiquette'
 import Equivalent from './Equivalent'
+import AlimentationInfography from './infographies/AlimentationInfography'
 import Infography from './infographies/Infography'
-import { infographies } from './infographies/list'
+import { alimentationInfographies, infographies } from './infographies/list'
 
 const EquivalentPage = ({
   category,
@@ -31,6 +32,8 @@ const EquivalentPage = ({
     return slugs
   }, [equivalent])
 
+  const alimentationInfography = useMemo(() => alimentationInfographies[equivalent.slug], [equivalent])
+
   const sources = equivalent.sources || category.sources
   return (
     <>
@@ -49,8 +52,17 @@ const EquivalentPage = ({
         {sources && <Sources className={styles.sources} sources={sources} tracking={category.name} />}
       </Block>
       {equivalentsInfography && (
-        <Block title='Infographie' description='Une image vaut mieux que mille mots'>
+        <Block title='Infographie' description='Une image vaut mieux que mille mots' id='infographie'>
           <Infography equivalent={equivalent} equivalents={equivalentsInfography} />
+        </Block>
+      )}
+      {alimentationInfography && (
+        <Block id='alimentation-infographie'>
+          <AlimentationInfography
+            equivalent={equivalent}
+            image={alimentationInfography.image}
+            alt={alimentationInfography.alt}
+          />
         </Block>
       )}
       <Block title='Étiquette' description='Le petit format à intégrer dans vos contenus et applications.'>
