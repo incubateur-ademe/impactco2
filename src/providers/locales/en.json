@@ -362,6 +362,7 @@
     "waiting": "An answer to the above question displays the carbon impact of buying new shoes."
   },
   "equivalent": {
+    "detail": "Detail of the carbon impact for:",
     "year": "year[s]",
     "hypotheses": "Hypotheses: ",
     "fabrication": "Manufacturing",
