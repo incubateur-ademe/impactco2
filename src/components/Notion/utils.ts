@@ -34,6 +34,8 @@ export const improveAccessibility = (ref: HTMLDivElement) => {
       icon.removeAttribute('role')
       icon.removeAttribute('aria-label')
       icon.setAttribute('aria-hidden', 'true')
+    } else if (icon.tagName.toLowerCase() === 'img') {
+      icon.setAttribute('alt', '')
     }
   }
   const fastLinks = ref.getElementsByClassName('notion-hash-link')

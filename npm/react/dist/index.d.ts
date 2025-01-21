@@ -1,8 +1,8 @@
 declare module "@incubateur-ademe/impactco2-react" {
     import React from 'react';
-    const Etiquette: ({ comparisons, value, animated }: {
+    const Etiquette: ({ comparisons, value, animated, language }: {
         comparisons: (
-                "random" |
+                "2050" |
                 "abricot" |
                 "ail" |
                 "alimentationordinateur" |
@@ -19,22 +19,35 @@ declare module "@incubateur-ademe/impactco2-react" {
                 "avion-moyencourrier" |
                 "avion-pny" |
                 "avocat" |
+                "baguette" |
                 "banane" |
+                "beurre" |
                 "betterave" |
                 "biere" |
+                "ble" |
                 "blette" |
+                "boeuf" |
+                "bonbons" |
+                "boucheechocolat" |
                 "bouilloire" |
+                "boulgour" |
                 "box" |
                 "brocoli" |
+                "brownie" |
+                "burgerpoulet" |
+                "burgervegetarien" |
                 "buselectrique" |
                 "busgnv" |
                 "busthermique" |
+                "cabillaud" |
                 "cafe" |
                 "cafetieredosette" |
                 "cafetiereexpresso" |
                 "cafetierefiltre" |
+                "camping" |
                 "canapeconvertible" |
                 "canapetextile" |
+                "canard" |
                 "carambole" |
                 "carotte" |
                 "casquevr" |
@@ -43,13 +56,15 @@ declare module "@incubateur-ademe/impactco2-react" {
                 "cerise" |
                 "chaiseenbois" |
                 "champignonmorille" |
+                "chaussonauxpommes" |
+                "chaussuresdesport" |
+                "chaussuresencuir" |
+                "chaussuresentissu" |
                 "chataigne" |
                 "chauffageelectrique" |
                 "chauffagefioul" |
                 "chauffagegaz" |
-                "chaussuresdesport" |
-                "chaussuresencuir" |
-                "chaussuresentissu" |
+                "cheeseburger" |
                 "chemiseencoton" |
                 "chemiseenviscose" |
                 "chou" |
@@ -61,11 +76,15 @@ declare module "@incubateur-ademe/impactco2-react" {
                 "climatiseur" |
                 "coing" |
                 "concombre" |
+                "cookie" |
                 "courge" |
                 "courgette" |
+                "crevettes" |
                 "cresson" |
+                "croissant" |
                 "datte" |
                 "disquedur" |
+                "dorade" |
                 "eaudurobinet" |
                 "eauenbouteille" |
                 "echalote" |
@@ -74,6 +93,7 @@ declare module "@incubateur-ademe/impactco2-react" {
                 "enceintebluetooth" |
                 "endive" |
                 "epinard" |
+                "feta" |
                 "fenouil" |
                 "figue" |
                 "fourelectrique" |
@@ -81,28 +101,45 @@ declare module "@incubateur-ademe/impactco2-react" {
                 "framboise" |
                 "francais" |
                 "friends" |
+                "frites" |
                 "fruitdelapassion" |
+                "fromageblanc" |
+                "fromagebleu" |
+                "fromagedure" |
+                "fromagemolle" |
                 "game-of-thrones" |
                 "grenade" |
                 "groseille" |
+                "haricotsrouges" |
                 "haricotvert" |
+                "hotel" |
+                "huitres" |
                 "intercites" |
                 "jeans" |
+                "kebab" |
                 "kaki" |
                 "kiwi" |
                 "laitdevache" |
                 "laitue" |
+                "lapin" |
                 "lavelinge" |
                 "lavevaisselle" |
+                "lentilles" |
+                "lieu" |
                 "lit" |
+                "location" |
+                "madeleine" |
                 "mache" |
                 "mais" |
                 "mandarine" |
                 "mangue" |
                 "manteau" |
+                "matieregrasse" |
                 "melon" |
                 "metro" |
                 "moto" |
+                "moules" |
+                "mozarella" |
                 "mure" |
                 "myrtille" |
                 "navet" |
@@ -110,31 +147,43 @@ declare module "@incubateur-ademe/impactco2-react" {
                 "noisette" |
                 "noix" |
                 "noixdecoco" |
+                "oeuf" |
                 "oignon" |
                 "orange" |
                 "ordinateurfixeparticulier" |
                 "ordinateurfixeprofessionnel" |
                 "ordinateurportable" |
+                "painauxraisins" |
+                "painauchocolat" |
+                "paindemie" |
                 "pamplemousse" |
                 "panais" |
                 "pasteque" |
+                "pateatartiner" |
+                "pates" |
                 "peche" |
                 "petitpois" |
                 "poeleabois" |
                 "poeleagranule" |
                 "poire" |
                 "poireau" |
+                "poischiches" |
                 "poivron" |
                 "polo" |
                 "pomme" |
+                "pommedeterre" |
                 "pompeachaleur" |
+                "porc" |
                 "potiron" |
+                "poulet" |
                 "prune" |
                 "pullenacrylique" |
                 "pullencotonrecycle" |
                 "pullenlaine" |
+                "quinoa" |
                 "radis" |
                 "raisin" |
+                "random" |
                 "rechercheweb" |
                 "refrigirateur" |
                 "reineclaude" |
@@ -145,12 +194,16 @@ declare module "@incubateur-ademe/impactco2-react" {
                 "repasvegetalien" |
                 "repasvegetarien" |
                 "rer" |
+                "residencesecondaire" |
                 "reseaudechaleur" |
                 "rhubarbe" |
                 "robeencoton" |
                 "robeenpolyester" |
                 "robeenviscose" |
+                "riz" |
                 "salsifis" |
+                "sardines" |
+                "saumon" |
                 "scooter" |
                 "smartphone" |
                 "soda" |
@@ -158,6 +211,7 @@ declare module "@incubateur-ademe/impactco2-react" {
                 "spam" |
                 "stockagedonnee" |
                 "streamingvideo" |
+                "sushis" |
                 "sweatencoton" |
                 "tableenbois" |
                 "tabletteclassique" |
@@ -169,6 +223,8 @@ declare module "@incubateur-ademe/impactco2-react" {
                 "tgv-paris-berlin" |
                 "tgv-paris-marseille" |
                 "the" |
+                "thon" |
+                "tofu" |
                 "tomate" |
                 "topinambour" |
                 "tramway" |
@@ -177,8 +233,9 @@ declare module "@incubateur-ademe/impactco2-react" {
                 "tshirtenpolyester" |
                 "velo" |
                 "veloelectrique" |
-                "vesteimpermeable" |
+                "veau" |
                 "vestesimilicuir" |
+                "vesteimpermeable" |
                 "vin" |
                 "visioconference" |
                 "voiture-lille-nimes" |
@@ -187,69 +244,12 @@ declare module "@incubateur-ademe/impactco2-react" {
                 "voitureelectrique+2" |
                 "voitureelectrique+3" |
                 "voitureelectrique+4" |
-                "voiturethermique"|
+                "voiturethermique" |
                 "voiturethermique+1" |
                 "voiturethermique+2" |
                 "voiturethermique+3" |
                 "voiturethermique+4" |
-                "hotel" |
-                "camping" |
-                "location"|
-                "residencesecondaire"|
-                "boeuf" |
-                "veau" |
-                "porc" |
-                "canard" |
-                "lapin" |
-                "poulet" |
-                "crevettes" |
-                "moules" |
-                "huitres" |
-                "cabillaud" |
-                "lieu" |
-                "dorade" |
-                "saumon" |
-                "thon" |
-                "sardines" |
-                "beurre" |
-                "fromagedure" |
-                "feta" |
-                "fromagemolle" |
-                "mozarella" |
-                "fromagebleu" |
-                "oeuf" |
-                "matieregrasse" |
-                "yaourt" |
-                "fromageblanc" |
-                "quinoa" |
-                "riz" |
-                "pates" |
-                "ble" |
-                "boulgour" |
-                "poischiches" |
-                "haricotsrouges" |
-                "lentilles" |
-                "cheeseburger" |
-                "kebab" |
-                "burgerpoulet" |
-                "pizza" |
-                "sushis" |
-                "burgervegetarien" |
-                "frites" |
-                "tofu" |
-                "boucheechocolat" |
-                "pateatartiner" |
-                "brownie" |
-                "painauchocolat" |
-                "cookie" |
-                "madeleine" |
-                "painauxraisins" |
-                "chaussonauxpommes" |
-                "croissant" |
-                "paindemie" |
-                "bonbons" |
-                "baguette" |
-                "pommedeterre" 
+                "yaourt"
         )[];
         value: number;
         animated?: boolean | undefined;

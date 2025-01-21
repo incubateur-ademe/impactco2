@@ -45,7 +45,7 @@ const ItineraireSimulator = ({
   const tracking = useMemo(() => `Transport itinéraire${bis ? ' bis' : ''}`, [bis])
   const t = useTranslations('transport.itineraire')
 
-  const { data: itineraries } = useItineraries(start, end, 'itinéraire')
+  const { data: itineraries } = useItineraries(start, end, `itinéraire${bis ? ' bis' : ''}`)
   const { hasMore, equivalents } = useTransportations('Transport itinéraire', 'itineraire', itineraries)
 
   return (
@@ -85,6 +85,7 @@ const ItineraireSimulator = ({
               moreText='transport'
               withSimulator
               type='itineraire'
+              bis={bis}
             />
           ) : (
             <TransportComparisonSimulator tracking={tracking} equivalents={equivalents} />
