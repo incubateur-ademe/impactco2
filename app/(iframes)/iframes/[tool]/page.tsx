@@ -20,7 +20,8 @@ const page = async (props: Props) => {
 
   const category = getCategory(params.tool)
   if (category) {
-    return <Category category={category} simulator={simulators[params.tool](defaultParams)} />
+    const simulator = simulators[params.tool]
+    return <Category category={category} simulator={simulator ? simulator(defaultParams) : undefined} />
   }
 
   return notFound()

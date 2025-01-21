@@ -73,11 +73,12 @@ const OutilPage = async (props: Props) => {
   const defaultParams = getDefaultParams(await props.searchParams)
   const category = getCategory(params.tool)
   if (category) {
+    const simulator = simulators[params.tool]
     return (
       <>
         <Category
           category={category}
-          simulator={simulators[params.tool](defaultParams)}
+          simulator={simulator ? simulator(defaultParams) : undefined}
           extraSimulator={extraSimulators[params.tool]}
         />
         <Suggestion
