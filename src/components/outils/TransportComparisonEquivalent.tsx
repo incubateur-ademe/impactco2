@@ -120,7 +120,7 @@ const TransportComparisonEquivalent = ({
           )}
           {equivalent.found && otherEquivalent.found && equivalent.value < otherEquivalent.value && (
             <div className={styles.winner}>
-              <p className='hidden'>Moyen le plus écologique</p>
+              <p className='ico2-hidden'>Moyen le plus écologique</p>
               <div className={styles.star}>
                 <StarShapeIcon />
               </div>

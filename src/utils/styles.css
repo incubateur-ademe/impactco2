@@ -298,7 +298,7 @@ ul {
   list-style: none;
 }
 
-.hidden {
+.ico2-hidden {
   left: -99999px;
   position: absolute;
 }

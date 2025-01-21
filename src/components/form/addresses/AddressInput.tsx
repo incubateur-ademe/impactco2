@@ -88,7 +88,7 @@ const AddressInput = ({
       />
       {isFetching && (
         <div className={classNames(styles.loading, { [styles.largeLoading]: large })}>
-          <p className='hidden' role='status'>
+          <p className='ico2-hidden' role='status'>
             Chargement en cours
           </p>
           <LoadingIcon />

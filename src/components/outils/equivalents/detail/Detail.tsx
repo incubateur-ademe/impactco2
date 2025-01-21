@@ -164,7 +164,7 @@ export default function Detail({
     <>
       {withSeparator && <div className={shareableStyles.separator} />}
       <table className={styles.table} role='presentation'>
-        <caption className='hidden'>
+        <caption className='ico2-hidden'>
           {t('detail')} {getName(language, equivalent)}
         </caption>
         <tbody>
