@@ -1,14 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1"
-    xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink="http://www.w3.org/1999/xlink">
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fillRule="evenodd">
-        <g id="image">
-            <circle id="Oval" fill="#FFFFFF" cx="8" cy="8" r="8"></circle>
-            <g id="Group" transform="translate(5.000000, 6.000000)" stroke="#26827C" stroke-linecap="square">
-                <path d="M2.05208333,4.94791667 L6.92486818,0.0751318245" id="Line"></path>
-                <path d="M0.0526315789,3.05 L1.94736842,4.95" id="Line"></path>
-            </g>
-        </g>
-    </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><g fill="none"><circle cx="8" cy="8" r="8" fill="#FFF"/><path stroke="#26827C" stroke-linecap="square" d="m7.052 10.948 4.873-4.873M5.053 9.05l1.894 1.9"/></g></svg>
