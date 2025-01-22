@@ -24,6 +24,7 @@ const ImageInfography = ({
       tracking={`${getName('fr', equivalent)} image infographie ${index}`}
       overScreens={overScreens}
       secondary=''
+      smallPadding
       withoutIntegration>
       <img src={`/images/${image}`} alt={alt} className={styles.image} />
     </Shareable>

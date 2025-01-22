@@ -17,11 +17,13 @@ const Share = ({
   path,
   tracking,
   anchor,
+  noLanguage,
 }: {
   category?: Pick<Category, 'slug' | 'name'>
   path?: string
   tracking?: string
   anchor?: string
+  noLanguage?: boolean
 }) => {
   const allParams = useParamContext()
   const [visibility, setVisibility] = useState<Record<string, boolean> | null>(null)
@@ -47,7 +49,7 @@ const Share = ({
   }, [params, setVisibility])
 
   const url = buildCurrentUrlFor(
-    `${path || `outils/${category?.slug === 'repas' ? 'alimentation' : category?.slug}`}?${buildCustomParamsUrl(params, visibility)}&language=${allParams.language}${category?.slug === 'repas' ? '#repas' : ''}${anchor ? `#${anchor}` : ''}`
+    `${path || `outils/${category?.slug === 'repas' ? 'alimentation' : category?.slug}`}?${buildCustomParamsUrl(params, visibility)}${noLanguage ? '' : `&language=${allParams.language}`}${category?.slug === 'repas' ? '#repas' : ''}${anchor ? `#${anchor}` : ''}`
   ).replace(/\?$/, '')
   const trackingValue = (category ? category.name : tracking) || 'UNKNOWN'
 
@@ -66,13 +68,15 @@ const Share = ({
             {Object.keys(params).length > 0 && <div className={styles.separator} />}
           </>
         )}
-        <CustomParam
-          tracking={trackingValue}
-          slug='language'
-          integration
-          param={{ value: allParams.language, setter: allParams.setLanguage } as CustomParamValue}
-          visible
-        />
+        {!noLanguage && (
+          <CustomParam
+            tracking={trackingValue}
+            slug='language'
+            integration
+            param={{ value: allParams.language, setter: allParams.setLanguage } as CustomParamValue}
+            visible
+          />
+        )}
       </form>
       <ShareUrl
         form={`${category}-share`}

@@ -85,6 +85,7 @@ export const overScreenEquivalentImageInfographyValues: (
     title: 'share',
     children: (
       <Share
+        noLanguage
         anchor={`image-infographie-${index}`}
         path={equivalent.link}
         tracking={`${getName('fr', equivalent)} image infographie ${index}`}

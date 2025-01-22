@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import { useMemo } from 'react'
 import { ComputedEquivalent } from 'types/equivalent'
 import { getName } from 'utils/Equivalent/equivalent'
 import Shareable from 'components/shareable/Shareable'
@@ -15,7 +15,8 @@ const Infography = ({ equivalent, equivalents }: { equivalent: ComputedEquivalen
       slug='infographie'
       tracking={`${getName('fr', equivalent)} infographie`}
       overScreens={overScreens}
-      secondary=''>
+      secondary=''
+      smallPadding>
       <InfographySimulator equivalents={equivalents} />
     </Shareable>
   )
