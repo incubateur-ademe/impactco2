@@ -1,9 +1,10 @@
 import { Metadata } from 'next'
 import ComparateurPage from 'components/outils/comparateur/ComparateurPage'
 import { metaDescriptions, metaTitles } from 'utils/meta'
+import { getDefaultParams } from 'utils/params'
 import Suggestion from 'components/layout/Suggestion'
 
-export const dynamic = 'force-static'
+export const dynamic = 'force-dynamic'
 
 export async function generateMetadata(props: {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>
@@ -25,10 +26,11 @@ export async function generateMetadata(props: {
   }
 }
 
-const page = () => {
+const page = async (props: { searchParams: Promise<{ [key: string]: string | string[] | undefined }> }) => {
+  const defaultParams = getDefaultParams(await props.searchParams)
   return (
     <>
-      <ComparateurPage />
+      <ComparateurPage defaultParams={defaultParams.comparateur} />
       <Suggestion from='/outils/comparateur' fromLabel='Comparateur' simulatorName='du comparateur carbone' />
     </>
   )

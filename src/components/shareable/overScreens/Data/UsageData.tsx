@@ -1,5 +1,4 @@
-import React from 'react'
-import useParamContext from 'src/providers/ParamProvider'
+import { useGlobalStore } from 'src/providers/stores/global'
 import styles from './Data.module.css'
 
 const FRUsageData = () => {
@@ -57,7 +56,7 @@ const ENUsageData = () => {
 }
 
 const UsageData = () => {
-  const { language } = useParamContext()
+  const { language } = useGlobalStore()
   if (language === 'en') {
     return <ENUsageData />
   }

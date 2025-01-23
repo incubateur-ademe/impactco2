@@ -1,8 +1,8 @@
 import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
 import { SetStateAction } from 'preact/compat'
-import React, { Dispatch } from 'react'
-import useParamContext from 'src/providers/ParamProvider'
+import { Dispatch } from 'react'
+import { useGlobalStore } from 'src/providers/stores/global'
 import { deplacements } from 'data/categories/deplacement'
 import { getNameWithoutSuffix } from 'utils/Equivalent/equivalent'
 import EquivalentIcon from 'components/base/EquivalentIcon'
@@ -19,7 +19,7 @@ const transports = deplacements
 
 const TransportListParam = ({ modes, setModes }: { modes: string[]; setModes: Dispatch<SetStateAction<string[]>> }) => {
   const t = useTranslations('overscreen.transport')
-  const { language } = useParamContext()
+  const { language } = useGlobalStore()
   return (
     <fieldset>
       <legend className={customStyles.title}>

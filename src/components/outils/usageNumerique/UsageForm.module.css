@@ -16,6 +16,10 @@
   > div {
     max-width: 50%;
     width: 100%;
+
+    div {
+      width: 100%;
+    }
   }
 
   input {

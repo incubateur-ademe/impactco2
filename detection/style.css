@@ -2,7 +2,7 @@
   display: inline;
 }
 
-.hidden {
+.ico2-hidden {
   left: -99999px;
   position: absolute;
 }

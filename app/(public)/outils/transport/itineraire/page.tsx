@@ -1,10 +1,10 @@
 import { Metadata } from 'next'
-import React from 'react'
 import { Category as CategoryType } from 'types/category'
 import { categories } from 'data/categories'
 import Category from 'components/outils/CategoryPage'
 import TransportSimulator from 'components/outils/TransportSimulator'
 import { metaDescriptions, metaTitles } from 'utils/meta'
+import { getDefaultParams } from 'utils/params'
 import Suggestion from 'components/layout/Suggestion'
 
 const category = categories.find((category) => category.slug === 'transport') as CategoryType
@@ -24,10 +24,11 @@ export async function generateMetadata(props: {
   }
 }
 
-const page = () => {
+const page = async (props: { searchParams: Promise<{ [key: string]: string | string[] | undefined }> }) => {
+  const defaultParams = getDefaultParams(await props.searchParams)
   return (
     <>
-      <Category category={category} simulator={<TransportSimulator />} />
+      <Category category={category} simulator={<TransportSimulator defaultParams={defaultParams} />} />
       <Suggestion
         from={`/outils/${category.slug}`}
         fromLabel={category.name}
