@@ -1,4 +1,4 @@
-import { Params } from 'src/providers/ParamProvider'
+import { Params } from 'src/providers/stores/useAllParams'
 import { CustomParamValue } from './CustomParam'
 
 // Warning: Add values in Integrate.tsx also

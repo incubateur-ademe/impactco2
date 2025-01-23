@@ -1,4 +1,4 @@
-import React, { ReactNode, useMemo } from 'react'
+import { ReactNode, useMemo } from 'react'
 import { Category } from 'types/category'
 import { ComputedEquivalent } from 'types/equivalent'
 import { getName } from 'utils/Equivalent/equivalent'
@@ -10,8 +10,9 @@ import Block from 'components/layout/Block'
 import styles from '../CategoryPage.module.css'
 import Etiquette from '../etiquettes/Etiquette'
 import Equivalent from './Equivalent'
+import ImageInfography from './infographies/ImageInfography'
 import Infography from './infographies/Infography'
-import { infographies } from './infographies/list'
+import { imageInfographies, infographies } from './infographies/list'
 
 const EquivalentPage = ({
   category,
@@ -31,6 +32,8 @@ const EquivalentPage = ({
     return slugs
   }, [equivalent])
 
+  const images = useMemo(() => imageInfographies[equivalent.slug], [equivalent])
+
   const sources = equivalent.sources || category.sources
   return (
     <>
@@ -49,10 +52,16 @@ const EquivalentPage = ({
         {sources && <Sources className={styles.sources} sources={sources} tracking={category.name} />}
       </Block>
       {equivalentsInfography && (
-        <Block title='Infographie' description='Une image vaut mieux que mille mots'>
+        <Block title='Infographie' description='Une image vaut mieux que mille mots' id='infographie'>
           <Infography equivalent={equivalent} equivalents={equivalentsInfography} />
         </Block>
       )}
+      {images &&
+        images.map(({ image, alt }, index) => (
+          <Block key={image} id={`image-infographie-${index}`}>
+            <ImageInfography equivalent={equivalent} image={image} alt={alt} index={index} />
+          </Block>
+        ))}
       <Block title='Étiquette' description='Le petit format à intégrer dans vos contenus et applications.'>
         <Etiquette equivalent={equivalent} />
       </Block>

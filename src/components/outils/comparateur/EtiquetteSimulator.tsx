@@ -1,14 +1,13 @@
 'use client'
 
-import React, { useMemo, useRef } from 'react'
-import useParamContext from 'src/providers/ParamProvider'
+import { useMemo, useRef } from 'react'
+import { useComparateurStore } from 'src/providers/stores/comparateur'
+import { useGlobalStore } from 'src/providers/stores/global'
 import Etiquette from 'components/comparateur/Etiquette'
 
 const EtiquetteSimulator = ({ animated }: { animated?: boolean }) => {
-  const {
-    language,
-    comparateur: { baseValue, weight, equivalents, comparedEquivalent },
-  } = useParamContext()
+  const { language } = useGlobalStore()
+  const { baseValue, weight, equivalents, comparedEquivalent } = useComparateurStore()
   const etiquettes = useMemo(
     () => (comparedEquivalent ? [comparedEquivalent.slug, ...equivalents] : equivalents),
     [comparedEquivalent, equivalents]

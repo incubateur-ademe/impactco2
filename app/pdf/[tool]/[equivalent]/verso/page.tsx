@@ -1,6 +1,4 @@
 import { notFound } from 'next/navigation'
-import React from 'react'
-import { ParamProvider } from 'src/providers/ParamProvider'
 import TranslationProvider from 'src/providers/TranslationProvider'
 import { categories } from 'data/categories'
 import Verso from 'components/outils/equivalents/pdf/Verso'
@@ -18,11 +16,9 @@ const EquivalentPage = async (props: { params: Promise<{ tool: string; equivalen
     return notFound()
   }
   return (
-    <ParamProvider>
-      <TranslationProvider>
-        <Verso equivalent={equivalent} category={category} />
-      </TranslationProvider>
-    </ParamProvider>
+    <TranslationProvider>
+      <Verso equivalent={equivalent} category={category} />
+    </TranslationProvider>
   )
 }
 

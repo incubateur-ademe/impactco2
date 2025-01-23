@@ -2,8 +2,7 @@
 
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
-import React from 'react'
-import useParamContext from 'src/providers/ParamProvider'
+import { useGlobalStore } from 'src/providers/stores/global'
 import { track } from 'utils/matomo'
 import FullArrowRightIcon from 'components/base/icons/full-arrow-right'
 import styles from './Feature.module.css'
@@ -22,7 +21,7 @@ const Feature = ({
   slug: string
   type: string
 }) => {
-  const { setOverscreen } = useParamContext()
+  const { setOverscreen } = useGlobalStore()
   const t = useTranslations('overscreen')
   return (
     <button

@@ -1,7 +1,6 @@
 'use client'
 
-import React from 'react'
-import useParamContext from 'src/providers/ParamProvider'
+import { useGlobalStore } from 'src/providers/stores/global'
 import { Category } from 'types/category'
 import { ComputedEquivalent } from 'types/equivalent'
 import { categories } from 'data/categories'
@@ -119,7 +118,7 @@ const ENOsezChangerData = () => {
 }
 
 const OsezChangerData = () => {
-  const { language } = useParamContext()
+  const { language } = useGlobalStore()
   if (language === 'en') {
     return <ENOsezChangerData />
   }

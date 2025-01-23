@@ -62,7 +62,9 @@ export const overScreenEquivalentInfographyValues: (
 ) => Record<string, OverScreenInfo> = (equivalent, equivalents) => ({
   partager: {
     title: 'share',
-    children: <Share path={`${equivalent.link}#infographie`} tracking={getName('fr', equivalent)} />,
+    children: (
+      <Share path={equivalent.link} tracking={`${getName('fr', equivalent)} infographie`} anchor='infographie' />
+    ),
   },
   integrer: {
     title: 'integrate',
@@ -70,7 +72,23 @@ export const overScreenEquivalentInfographyValues: (
       <Integrate
         path='/infographie'
         extraParams={`equivalents=${equivalents.join(',')}`}
-        tracking={getName('fr', equivalent)}
+        tracking={`${getName('fr', equivalent)} infographie`}
+      />
+    ),
+  },
+})
+export const overScreenEquivalentImageInfographyValues: (
+  equivalent: ComputedEquivalent,
+  index: number
+) => Record<string, OverScreenInfo> = (equivalent, index) => ({
+  partager: {
+    title: 'share',
+    children: (
+      <Share
+        noLanguage
+        anchor={`image-infographie-${index}`}
+        path={equivalent.link}
+        tracking={`${getName('fr', equivalent)} image infographie ${index}`}
       />
     ),
   },

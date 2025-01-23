@@ -1,5 +1,4 @@
 import { Metadata } from 'next'
-import React from 'react'
 import ExamplesPage from 'src/views/ExamplesPage'
 import { getCommunications, getExamples } from 'utils/examples'
 import Suggestion from 'components/layout/Suggestion'
@@ -16,13 +15,15 @@ export const metadata: Metadata = {
   },
 }
 
-const page = async () => {
+const page = async (props: { searchParams: Promise<{ [key: string]: string | string[] | undefined }> }) => {
   const examples = await getExamples()
   const communications = await getCommunications()
+  const searchParams = await props.searchParams
+  const tool = decodeURI((searchParams['tool'] as string) || 'all')
 
   return (
     <>
-      <ExamplesPage examples={examples} communications={communications} />
+      <ExamplesPage examples={examples} communications={communications} defaultTool={tool} />
       <Suggestion
         fromLabel="Exemples d'utilisation"
         from='/doc/exemples'

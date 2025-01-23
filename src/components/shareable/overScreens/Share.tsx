@@ -1,7 +1,8 @@
 'use client'
 
-import React, { useEffect, useMemo, useState } from 'react'
-import useParamContext from 'src/providers/ParamProvider'
+import { useEffect, useMemo, useState } from 'react'
+import { useGlobalStore } from 'src/providers/stores/global'
+import useAllParams from 'src/providers/stores/useAllParams'
 import { Category } from 'types/category'
 import { buildCurrentUrlFor } from 'utils/urls'
 import CustomParam, { CustomParamValue } from './CustomParam'
@@ -16,23 +17,99 @@ const Share = ({
   category,
   path,
   tracking,
+  anchor,
+  noLanguage,
 }: {
   category?: Pick<Category, 'slug' | 'name'>
   path?: string
   tracking?: string
+  anchor?: string
+  noLanguage?: boolean
 }) => {
-  const allParams = useParamContext()
+  const allParams = useAllParams()
+  const globalStore = useGlobalStore()
+
   const [visibility, setVisibility] = useState<Record<string, boolean> | null>(null)
 
-  const params = useMemo(
-    () =>
-      category
-        ? getCustomParams(category.slug, allParams)
-        : path?.startsWith('outils/comparateur')
-          ? getComparateurParams(allParams, path?.includes('etiquette'))
-          : {},
-    [allParams, category, path]
-  )
+  // Alimentation
+  const [alimentationCategory, setAlimentationCategory] = useState(allParams.alimentation.category)
+
+  // Chauffage
+  const [m2, setM2] = useState(allParams.chauffage.m2)
+  useEffect(() => {
+    setM2(allParams.chauffage.m2)
+  }, [allParams.chauffage.m2])
+
+  // Fruits et légumes
+  const [month, setMonth] = useState(allParams.fruitsetlegumes.month)
+  useEffect(() => {
+    setMonth(allParams.fruitsetlegumes.month)
+  }, [allParams.fruitsetlegumes.month])
+
+  // Usage numérique
+  const [toDisplay, setToDisplay] = useState('')
+
+  // Télétravail
+  const [start, setStart] = useState(allParams.teletravail.start)
+  useEffect(() => {
+    setStart(allParams.teletravail.start)
+  }, [allParams.teletravail.start])
+  const [end, setEnd] = useState(allParams.teletravail.end)
+  useEffect(() => {
+    setEnd(allParams.teletravail.end)
+  }, [allParams.teletravail.end])
+  const [transport, setTransport] = useState(allParams.teletravail.transport)
+  useEffect(() => {
+    setTransport(allParams.teletravail.transport)
+  }, [allParams.teletravail.transport])
+  const [presentiel, setPresentiel] = useState(allParams.teletravail.presentiel)
+  useEffect(() => {
+    setPresentiel(allParams.teletravail.presentiel)
+  }, [allParams.teletravail.presentiel])
+  const [homeOffice, setHomeOffice] = useState(allParams.teletravail.homeOffice)
+  useEffect(() => {
+    setHomeOffice(allParams.teletravail.homeOffice)
+  }, [allParams.teletravail.homeOffice])
+
+  const params = useMemo(() => {
+    if (category) {
+      // Warning: Add values in CustomParamsValues.ts also
+      if (category.slug === 'chauffage') {
+        return { m2: { value: m2, setter: setM2 } } as Record<string, CustomParamValue>
+      }
+      if (category.slug === 'alimentation') {
+        return { alimentationCategory: { value: alimentationCategory, setter: setAlimentationCategory } } as Record<
+          string,
+          CustomParamValue
+        >
+      }
+      if (category.slug === 'chauffage') {
+        return { m2: { value: m2, setter: setM2 } } as Record<string, CustomParamValue>
+      }
+      if (category.slug === 'fruitsetlegumes') {
+        return { month: { value: month, setter: setMonth } } as Record<string, CustomParamValue>
+      }
+      if (category.slug === 'teletravail') {
+        return {
+          teletravail: {
+            start: { value: start?.address || '', setter: setStart },
+            end: { value: end?.address || '', setter: setEnd },
+          },
+          transport: { value: transport, setter: setTransport },
+          presentiel: { value: presentiel, setter: setPresentiel },
+          homeOffice: { value: homeOffice, setter: setHomeOffice },
+        } as Record<string, CustomParamValue>
+      }
+      const params = getCustomParams(category.slug, allParams)
+      if (category.slug === 'usagenumerique') {
+        return { ...params, display: { value: toDisplay, setter: setToDisplay } } as Record<string, CustomParamValue>
+      }
+      return params
+    } else if (path?.startsWith('comparateur')) {
+      return getComparateurParams(allParams, path?.includes('etiquette'))
+    }
+    return {}
+  }, [category, path, m2, month, transport, start, end, presentiel, homeOffice, toDisplay, alimentationCategory])
 
   useEffect(() => {
     if (params) {
@@ -45,7 +122,7 @@ const Share = ({
   }, [params, setVisibility])
 
   const url = buildCurrentUrlFor(
-    `${path || `outils/${category?.slug === 'repas' ? 'alimentation' : category?.slug}`}?${buildCustomParamsUrl(params, visibility)}&language=${allParams.language}${category?.slug === 'repas' ? '#repas' : ''}`
+    `${path || `outils/${category?.slug === 'repas' ? 'alimentation' : category?.slug}`}?${buildCustomParamsUrl(params, visibility)}${noLanguage ? '' : `&language=${globalStore.language}`}${category?.slug === 'repas' ? '#repas' : ''}${anchor ? `#${anchor}` : ''}`
   ).replace(/\?$/, '')
   const trackingValue = (category ? category.name : tracking) || 'UNKNOWN'
 
@@ -64,13 +141,15 @@ const Share = ({
             {Object.keys(params).length > 0 && <div className={styles.separator} />}
           </>
         )}
-        <CustomParam
-          tracking={trackingValue}
-          slug='language'
-          integration
-          param={{ value: allParams.language, setter: allParams.setLanguage } as CustomParamValue}
-          visible
-        />
+        {!noLanguage && (
+          <CustomParam
+            tracking={trackingValue}
+            slug='language'
+            integration
+            param={{ value: globalStore.language, setter: globalStore.setLanguage } as CustomParamValue}
+            visible
+          />
+        )}
       </form>
       <ShareUrl
         form={`${category}-share`}
@@ -81,7 +160,7 @@ const Share = ({
         customImage={
           category
             ? undefined
-            : `${process.env.NEXT_PUBLIC_IMAGE_URL}/api/dynamics/comparateur?${buildCustomParamsUrl(params, visibility)}&language=${allParams.language}`
+            : `${process.env.NEXT_PUBLIC_IMAGE_URL}/api/dynamics/comparateur?${buildCustomParamsUrl(params, visibility)}&language=${globalStore.language}`
         }
       />
       <ShareKit />
