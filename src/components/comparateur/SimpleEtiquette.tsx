@@ -1,6 +1,6 @@
 'use client'
 
-import useParamContext from 'src/providers/ParamProvider'
+import { useGlobalStore } from 'src/providers/stores/global'
 import { ComputedEquivalent } from 'types/equivalent'
 import { getName } from 'utils/Equivalent/equivalent'
 import formatNumber from 'utils/formatNumber'
@@ -9,7 +9,7 @@ import LocalNumber from 'components/base/LocalNumber'
 import styles from './SimpleEtiquette.module.css'
 
 const SimpleEtiquette = ({ base, equivalent, max }: { base: number; max: number; equivalent: ComputedEquivalent }) => {
-  const { language } = useParamContext()
+  const { language } = useGlobalStore()
 
   return (
     <div className={styles.container}>

@@ -1,9 +1,11 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import React from 'react'
-import useParamContext from 'src/providers/ParamProvider'
+import { useEffect, useState } from 'react'
+import { useDistanceStore } from 'src/providers/stores/distance'
+import { useTransportStore } from 'src/providers/stores/transport'
 import { track } from 'utils/matomo'
+import { DefaultParams } from 'utils/params'
 import useTransportations from 'hooks/useTransportations'
 import NumberInput from 'components/form/NumberInput'
 import CategorySimulator from './CategorySimulator'
@@ -11,11 +13,21 @@ import styles from './Simulator.module.css'
 import TransportComparisonMode from './TransportComparisonMode'
 import TransportComparisonSimulator from './TransportComparisonSimulator'
 
-const DistanceSimulator = ({ withComparisonMode }: { withComparisonMode: boolean }) => {
-  const {
-    transport: { comparisonMode },
-    distance: { km, setKm, displayAll, setDisplayAll },
-  } = useParamContext()
+const DistanceSimulator = ({
+  withComparisonMode,
+  defaultParams,
+}: {
+  withComparisonMode: boolean
+  defaultParams: DefaultParams['distance']
+}) => {
+  const [internalDistance, setInternalDistance] = useState(defaultParams.km)
+  const { setKm, displayAll, setDisplayAll } = useDistanceStore()
+  const { comparisonMode } = useTransportStore()
+
+  useEffect(() => {
+    setKm(internalDistance)
+  }, [internalDistance])
+
   const t = useTranslations('transport.distance')
   const { hasMore, equivalents } = useTransportations('Transport distance', 'distance')
 
@@ -24,10 +36,10 @@ const DistanceSimulator = ({ withComparisonMode }: { withComparisonMode: boolean
       <div className={styles.distanceSimulator}>
         <NumberInput
           id='km-value'
-          value={km}
+          value={internalDistance}
           setValue={(value) => {
             track('Transport distance', 'Distance', value.toString())
-            setKm(value)
+            setInternalDistance(value)
           }}
           label='Distance parcourue (en km)'
           unit='km'

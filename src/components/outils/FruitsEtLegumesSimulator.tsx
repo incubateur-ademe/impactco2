@@ -1,13 +1,14 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import React from 'react'
-import useParamContext from 'src/providers/ParamProvider'
+import { useEffect, useState } from 'react'
+import { useFruitsetlegumesStore } from 'src/providers/stores/fruitsetlegumes'
 import { Category } from 'types/category'
 import { FruitsEtLegumesEquivalent } from 'types/equivalent'
 import { categories } from 'data/categories'
 import { track } from 'utils/matomo'
 import { monthsOptions } from 'utils/months'
+import { DefaultParams } from 'utils/params'
 import HiddenLabel from 'components/form/HiddenLabel'
 import Select from 'components/form/Select'
 import shareableStyles from '../shareable/Shareable.module.css'
@@ -16,11 +17,13 @@ import styles from './Simulator.module.css'
 
 const flds = categories.find((category) => category.slug === 'fruitsetlegumes') as Category
 
-const FruitsEtLegumesSimulator = () => {
-  const {
-    fruitsetlegumes: { month, setMonth },
-  } = useParamContext()
+const FruitsEtLegumesSimulator = ({ defaultParams }: { defaultParams: DefaultParams['fruitsetlegumes'] }) => {
+  const { month, setMonth } = useFruitsetlegumesStore()
+  const [internalMonth, setInternalMonth] = useState(defaultParams.month)
 
+  useEffect(() => {
+    setMonth(internalMonth)
+  }, [internalMonth])
   const t = useTranslations('flds')
   const tMonth = useTranslations('overscreen.month')
   return (
@@ -29,10 +32,10 @@ const FruitsEtLegumesSimulator = () => {
         <HiddenLabel htmlFor='text-select-month'>{t('label')}</HiddenLabel>
         <Select
           id='month'
-          value={month}
+          value={internalMonth}
           onChange={(e) => {
             track('Fruits et légumes', 'Mois', e.target.value)
-            setMonth(Number(e.target.value))
+            setInternalMonth(Number(e.target.value))
           }}>
           {monthsOptions.map((month) => (
             <option key={month.value} value={month.value}>

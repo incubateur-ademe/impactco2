@@ -1,7 +1,6 @@
 import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
-import React from 'react'
-import useParamContext from 'src/providers/ParamProvider'
+import { useTransportStore } from 'src/providers/stores/transport'
 import { track } from 'utils/matomo'
 import CheckIcon from 'components/base/icons/check'
 import ComparisonIcon from 'components/base/icons/comparison'
@@ -9,9 +8,7 @@ import ListIcon from 'components/base/icons/list'
 import styles from './TransportComparisonMode.module.css'
 
 const TransportComparisonMode = ({ tracking }: { tracking: string }) => {
-  const {
-    transport: { comparisonMode, setComparisonMode },
-  } = useParamContext()
+  const { comparisonMode, setComparisonMode } = useTransportStore()
   const t = useTranslations('transport.mode-selector')
   return (
     <div className={classNames(styles.container, { [styles.withBorder]: comparisonMode === 'list' })}>

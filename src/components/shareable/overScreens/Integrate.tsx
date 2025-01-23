@@ -1,7 +1,9 @@
 'use client'
 
-import React, { useEffect, useMemo, useState } from 'react'
-import useParamContext from 'src/providers/ParamProvider'
+import { useEffect, useMemo, useState } from 'react'
+import { useGlobalStore } from 'src/providers/stores/global'
+import { useThemeStore } from 'src/providers/stores/theme'
+import useAllParams from 'src/providers/stores/useAllParams'
 import { Category } from 'types/category'
 import ClipboardBox from 'components/base/ClipboardBox'
 import CustomParam, { CustomParamValue } from './CustomParam'
@@ -22,12 +24,15 @@ const Integrate = ({
   extraParams?: string
   tracking: string
 }) => {
-  const allParams = useParamContext()
+  const allParams = useAllParams()
+  const themeStore = useThemeStore()
+  const globalStore = useGlobalStore()
+
   const [visibility, setVisibility] = useState<Record<string, boolean> | null>(null)
 
   // All
-  const [theme, setTheme] = useState(allParams.theme)
-  const [language, setLanguage] = useState(allParams.language)
+  const [theme, setTheme] = useState(themeStore.theme)
+  const [language, setLanguage] = useState(globalStore.language)
 
   // Chauffage
   const [m2, setM2] = useState(allParams.chauffage.m2)
@@ -98,7 +103,7 @@ const Integrate = ({
       return getComparateurParams(allParams, path?.includes('etiquette'))
     }
     return {}
-  }, [allParams, category, path, m2, month, transport, start, end, presentiel, homeOffice, toDisplay])
+  }, [category, path, m2, month, transport, start, end, presentiel, homeOffice, toDisplay])
 
   useEffect(() => {
     if (params) {

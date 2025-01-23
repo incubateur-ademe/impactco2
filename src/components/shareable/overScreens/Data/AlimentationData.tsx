@@ -1,4 +1,4 @@
-import useParamContext from 'src/providers/ParamProvider'
+import { useGlobalStore } from 'src/providers/stores/global'
 import Link from 'components/base/buttons/Link'
 import styles from './Data.module.css'
 
@@ -261,7 +261,7 @@ const ENAlimentationData = () => {
 }
 
 const AlimentationData = () => {
-  const { language } = useParamContext()
+  const { language } = useGlobalStore()
   if (language === 'en') {
     return <ENAlimentationData />
   }

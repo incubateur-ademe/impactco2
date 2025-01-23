@@ -2,10 +2,12 @@
 
 import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
-import { useSearchParams } from 'next/navigation'
-import { ReactNode, useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import useParamContext from 'src/providers/ParamProvider'
+import { ReactNode, Suspense, useCallback, useEffect, useMemo, useRef } from 'react'
 import TranslationProvider from 'src/providers/TranslationProvider'
+import GlobalSync from 'src/providers/stores/GlobalSync'
+import ThemeSync from 'src/providers/stores/ThemeSync'
+import { useGlobalStore } from 'src/providers/stores/global'
+import { useThemeStore } from 'src/providers/stores/theme'
 import { SiteLanguage } from 'types/languages'
 import { track } from 'utils/matomo'
 import useScreenshot from 'hooks/useScreenshot'
@@ -46,7 +48,9 @@ const Shareable = ({
   const overscreenRef = useRef<HTMLDialogElement>(null)
   const t = useTranslations('overscreen')
   const tModal = useTranslations('modal')
-  const { theme, hideActions, overscreen, setOverscreen, language, setLanguage } = useParamContext()
+
+  const { theme } = useThemeStore()
+  const { overscreen, setOverscreen, language, setLanguage, showButtons, hideActions } = useGlobalStore()
   const { ref, takeScreenshot } = useScreenshot(tracking.replace(/ /g, '-').toLowerCase(), tracking)
 
   const overScreenToDisplay = useMemo(
@@ -55,13 +59,6 @@ const Shareable = ({
   )
 
   const onClose = useCallback(() => setOverscreen(slug, ''), [slug])
-
-  const [showButtons, setShowButtons] = useState(true)
-
-  const searchParams = useSearchParams()
-  useEffect(() => {
-    setShowButtons(searchParams.get('hideButtons') !== 'true')
-  }, [searchParams])
 
   useEffect(() => {
     if (overScreenToDisplay && overscreenRef.current) {
@@ -237,6 +234,10 @@ const Shareable = ({
 
 const ShareableWithTranslation = (props: ShareableProps) => (
   <TranslationProvider>
+    <Suspense>
+      <GlobalSync />
+      <ThemeSync />
+    </Suspense>
     <Shareable {...props} />
   </TranslationProvider>
 )
