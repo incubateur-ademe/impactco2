@@ -17,10 +17,14 @@ const Share = ({
   category,
   path,
   tracking,
+  anchor,
+  noLanguage,
 }: {
   category?: Pick<Category, 'slug' | 'name'>
   path?: string
   tracking?: string
+  anchor?: string
+  noLanguage?: boolean
 }) => {
   const allParams = useAllParams()
   const globalStore = useGlobalStore()
@@ -118,7 +122,7 @@ const Share = ({
   }, [params, setVisibility])
 
   const url = buildCurrentUrlFor(
-    `${path || `outils/${category?.slug === 'repas' ? 'alimentation' : category?.slug}`}?${buildCustomParamsUrl(params, visibility)}&language=${globalStore.language}${category?.slug === 'repas' ? '#repas' : ''}`
+    `${path || `outils/${category?.slug === 'repas' ? 'alimentation' : category?.slug}`}?${buildCustomParamsUrl(params, visibility)}${noLanguage ? '' : `&language=${globalStore.language}`}${category?.slug === 'repas' ? '#repas' : ''}${anchor ? `#${anchor}` : ''}`
   ).replace(/\?$/, '')
   const trackingValue = (category ? category.name : tracking) || 'UNKNOWN'
 
@@ -137,13 +141,15 @@ const Share = ({
             {Object.keys(params).length > 0 && <div className={styles.separator} />}
           </>
         )}
-        <CustomParam
-          tracking={trackingValue}
-          slug='language'
-          integration
-          param={{ value: globalStore.language, setter: globalStore.setLanguage } as CustomParamValue}
-          visible
-        />
+        {!noLanguage && (
+          <CustomParam
+            tracking={trackingValue}
+            slug='language'
+            integration
+            param={{ value: globalStore.language, setter: globalStore.setLanguage } as CustomParamValue}
+            visible
+          />
+        )}
       </form>
       <ShareUrl
         form={`${category}-share`}

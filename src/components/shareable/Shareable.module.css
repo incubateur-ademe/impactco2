@@ -28,6 +28,10 @@
   background-color: var(--neutral-10);
 }
 
+.smallPadding {
+  padding: 2rem;
+}
+
 .secondaryText {
   color: var(--neutral-60);
   font-size: 0.875rem;

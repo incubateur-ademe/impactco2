@@ -33,6 +33,7 @@ type ShareableProps = {
   secondary?: string
   noBottomBorders?: boolean
   small?: boolean
+  smallPadding?: boolean
 }
 const Shareable = ({
   children,
@@ -44,6 +45,7 @@ const Shareable = ({
   secondary,
   noBottomBorders,
   small,
+  smallPadding,
 }: ShareableProps) => {
   const overscreenRef = useRef<HTMLDialogElement>(null)
   const t = useTranslations('overscreen')
@@ -150,7 +152,10 @@ const Shareable = ({
             </dialog>
           </>
         )}
-        <div className={secondary !== undefined ? styles.secondaryContainer : ''}>
+        <div
+          className={classNames(secondary !== undefined ? styles.secondaryContainer : '', {
+            [styles.smallPadding]: smallPadding,
+          })}>
           {secondary && <h3 className={styles.secondaryText}>{secondary}</h3>}
           <div
             ref={secondary !== undefined ? ref : undefined}
