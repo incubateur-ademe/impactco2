@@ -1,12 +1,8 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import { useEffect, useMemo, useState } from 'react'
-import { useDistanceStore } from 'src/providers/stores/distance'
-import { useGlobalStore } from 'src/providers/stores/global'
-import { useItineraireStore } from 'src/providers/stores/itineraire'
-import { useThemeStore } from 'src/providers/stores/theme'
-import { useTransportStore } from 'src/providers/stores/transport'
+import React, { useEffect, useMemo, useState } from 'react'
+import useParamContext from 'src/providers/ParamProvider'
 import { deplacements } from 'data/categories/deplacement'
 import ClipboardBox from 'components/base/ClipboardBox'
 import DefaultButton from 'components/base/buttons/DefaultButton'
@@ -26,49 +22,45 @@ const ITINERAIRE = 'itineraire'
 const TransportIntegrate = () => {
   const t = useTranslations('overscreen.transport')
   const tTransport = useTranslations('transport.mode-selector')
-  const themeStore = useThemeStore()
-  const globalStore = useGlobalStore()
-  const transport = useTransportStore()
-  const itineraire = useItineraireStore()
-  const distance = useDistanceStore()
+  const allParams = useParamContext()
 
   const [visibility, setVisibility] = useState<Record<string, boolean>>({
     km: true,
     itineraire: true,
   })
 
-  const [theme, setTheme] = useState(themeStore.theme)
-  const [language, setLanguage] = useState(globalStore.language)
+  const [theme, setTheme] = useState(allParams.theme)
+  const [language, setLanguage] = useState(allParams.language)
 
-  const [defaultTab, setDefaultTab] = useState(transport.selected)
+  const [defaultTab, setDefaultTab] = useState(allParams.transport.selected)
   const [tabs, setTabs] = useState([DISTANCE, ITINERAIRE])
 
   const [comparisonModes, setComparisonModes] = useState(['list', 'comparison'])
-  const [defaultMode, setDefaultMode] = useState(transport.comparisonMode)
+  const [defaultMode, setDefaultMode] = useState(allParams.transport.comparisonMode)
 
-  const [modes, setModes] = useState(transport.modes)
-  const [comparison, setComparison] = useState(transport.comparison)
+  const [modes, setModes] = useState(allParams.transport.modes)
+  const [comparison, setComparison] = useState(allParams.transport.comparison)
 
-  const [km, setKm] = useState(distance.km)
+  const [km, setKm] = useState(allParams.distance.km)
   useEffect(() => {
-    setKm(distance.km)
-  }, [distance.km])
+    setKm(allParams.distance.km)
+  }, [allParams.distance.km])
 
-  const [roundTrip, setRoundTrip] = useState(itineraire.roundTrip)
+  const [roundTrip, setRoundTrip] = useState(allParams.itineraire.roundTrip)
   useEffect(() => {
-    setRoundTrip(itineraire.roundTrip)
-  }, [itineraire.roundTrip])
+    setRoundTrip(allParams.itineraire.roundTrip)
+  }, [allParams.itineraire.roundTrip])
 
-  const [start, setStart] = useState(itineraire.start)
+  const [start, setStart] = useState(allParams.itineraire.start)
   useEffect(() => {
-    setStart(itineraire.start)
-  }, [itineraire.start])
-  const [end, setEnd] = useState(itineraire.end)
+    setStart(allParams.itineraire.start)
+  }, [allParams.itineraire.start])
+  const [end, setEnd] = useState(allParams.itineraire.end)
   useEffect(() => {
-    setEnd(itineraire.end)
-  }, [itineraire.end])
+    setEnd(allParams.itineraire.end)
+  }, [allParams.itineraire.end])
 
-  const tracking = useMemo(() => getTracking(transport.selected), [transport.selected])
+  const tracking = useMemo(() => getTracking(allParams.transport.selected), [allParams.transport.selected])
   const type = useMemo(() => {
     if (defaultTab === 'itineraire') {
       return 'transport/itineraire'

@@ -3,9 +3,8 @@
 import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
-import { useEffect, useMemo, useRef, useState } from 'react'
-import { useGlobalStore } from 'src/providers/stores/global'
-import useAllParams from 'src/providers/stores/useAllParams'
+import { Dispatch, SetStateAction, useEffect, useMemo, useRef, useState } from 'react'
+import useParamContext, { Params } from 'src/providers/ParamProvider'
 import { ComputedEquivalent } from 'types/equivalent'
 import { TransportSimulateur } from 'types/transport'
 import { getNameWithoutSuffix } from 'utils/Equivalent/equivalent'
@@ -20,11 +19,7 @@ import CategoryDisplayAll from './CategoryDisplayAll'
 import styles from './CategorySimulator.module.css'
 import PlusMinus from './plusMinus/PlusMinus'
 
-const getValue = (
-  equivalent: ComputedEquivalent,
-  params: Record<TransportSimulateur, { carpool: Record<string, number> }>,
-  type?: TransportSimulateur
-) => {
+const getValue = (equivalent: ComputedEquivalent, params: Params, type?: TransportSimulateur) => {
   if (type && equivalent.initialValue) {
     const carpool = params[type].carpool[equivalent.slug] || 1
     return equivalent.initialValue / (carpool + 1)
@@ -48,15 +43,14 @@ const CategorySimulator = ({
   tracking: string
   equivalents: ComputedEquivalent[]
   displayAll?: boolean
-  setDisplayAll?: (value: boolean) => void
+  setDisplayAll?: Dispatch<SetStateAction<boolean>>
   moreText?: string
   withSimulator?: boolean
   type?: TransportSimulateur
   reverse?: boolean
   bis?: boolean
 }) => {
-  const { language } = useGlobalStore()
-  const params = useAllParams()
+  const params = useParamContext()
   const t = useTranslations('category-simulator')
 
   const ref = useRef<HTMLUListElement>(null)
@@ -109,10 +103,12 @@ const CategorySimulator = ({
                     href={equivalent.link}
                     className={styles.link}
                     aria-live='polite'
-                    aria-label={`${equivalent.name || getNameWithoutSuffix(language, equivalent)}${equivalent.carpool ? ` un conducteur plus ${equivalent.carpool} ${formatName('passager[s]', equivalent.carpool)}` : ''} ${formatNumber(equivalent.value)} kg CO₂e (${barExplanation})`}>
+                    aria-label={`${equivalent.name || getNameWithoutSuffix(params.language, equivalent)}${equivalent.carpool ? ` un conducteur plus ${equivalent.carpool} ${formatName('passager[s]', equivalent.carpool)}` : ''} ${formatNumber(equivalent.value)} kg CO₂e (${barExplanation})`}>
                     <EquivalentIcon equivalent={equivalent} height={3} />
                     <div className={styles.content} data-testid={`category-${equivalent.slug}`}>
-                      <div className={styles.name}>{equivalent.name || getNameWithoutSuffix(language, equivalent)}</div>
+                      <div className={styles.name}>
+                        {equivalent.name || getNameWithoutSuffix(params.language, equivalent)}
+                      </div>
                       <div className={styles.data}>
                         {equivalent.value !== 0 && (
                           <div
@@ -152,7 +148,7 @@ const CategorySimulator = ({
                         }}
                         max={4}
                         label={formatName(t('passenger'), 1)}
-                        hiddenLabel={`${t('in')} ${getNameWithoutSuffix(language, equivalent)}`}
+                        hiddenLabel={`${t('in')} ${getNameWithoutSuffix(params.language, equivalent)}`}
                         icon='/icons/passager.svg'
                       />
                     </div>

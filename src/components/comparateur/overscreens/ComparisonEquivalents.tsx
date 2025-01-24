@@ -1,5 +1,5 @@
-import { useGlobalStore } from 'src/providers/stores/global'
-import { useTransportStore } from 'src/providers/stores/transport'
+import React from 'react'
+import useParamContext from 'src/providers/ParamProvider'
 import { Equivalent } from 'types/equivalent'
 import { getName } from 'utils/Equivalent/equivalent'
 import { track } from 'utils/matomo'
@@ -15,9 +15,10 @@ const ComparisonEquivalents = ({
   equivalents: Equivalent[]
   index: 0 | 1
 }) => {
-  const { language } = useGlobalStore()
-
-  const { comparison, setComparison, selected } = useTransportStore()
+  const {
+    language,
+    transport: { comparison, setComparison, selected },
+  } = useParamContext()
 
   return equivalents.map((equivalent) => (
     <li key={equivalent.slug}>

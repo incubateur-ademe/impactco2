@@ -1,4 +1,5 @@
-import { useGlobalStore } from 'src/providers/stores/global'
+import React from 'react'
+import useParamContext from 'src/providers/ParamProvider'
 import Link from 'components/base/buttons/Link'
 import styles from './Data.module.css'
 
@@ -89,7 +90,7 @@ const ENFruitsEtLegumesData = () => {
 }
 
 const FruitsEtLegumesData = () => {
-  const { language } = useGlobalStore()
+  const { language } = useParamContext()
   if (language === 'en') {
     return <ENFruitsEtLegumesData />
   }

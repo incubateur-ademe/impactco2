@@ -2,8 +2,8 @@
 
 import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
-import { useEffect, useRef, useState } from 'react'
-import { useGlobalStore } from 'src/providers/stores/global'
+import React, { useEffect, useRef, useState } from 'react'
+import useParamContext from 'src/providers/ParamProvider'
 import formatName from 'utils/formatName'
 import formatNumber from 'utils/formatNumber'
 import { track } from 'utils/matomo'
@@ -19,7 +19,7 @@ import Question from './Question'
 const shoesImpact = 17.9
 
 const OsezChangerSimulator = () => {
-  const { language } = useGlobalStore()
+  const { language } = useParamContext()
   const t = useTranslations('osez-changer')
   const ref = useRef<HTMLDivElement>(null)
 

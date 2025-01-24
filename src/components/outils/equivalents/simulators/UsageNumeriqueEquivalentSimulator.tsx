@@ -2,9 +2,9 @@
 
 import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
-import { useMemo } from 'react'
+import React, { useMemo } from 'react'
+import useParamContext from 'src/providers/ParamProvider'
 import useUsageNumeriqueContext from 'src/providers/UsageNumeriqueProvider'
-import useUsageNumeriqueEquivalentParams from 'src/providers/stores/useUsageNumeriqueEquivalentParams'
 import { Category } from 'types/category'
 import { ComputedEquivalent, EquivalentValue } from 'types/equivalent'
 import { categories } from 'data/categories'
@@ -52,7 +52,7 @@ const UsageNumeriqueEquivalentSimulator = ({ slug }: { slug: 'visio' | 'email' |
   const { engine } = useUsageNumeriqueContext()
   const {
     [slug]: { situation, setSituation, withConstruction, setWithConstruction },
-  } = useUsageNumeriqueEquivalentParams()
+  } = useParamContext()
   const t = useTranslations('usage-numerique')
   const tEquivalent = useTranslations('equivalent.usage-numerique')
 

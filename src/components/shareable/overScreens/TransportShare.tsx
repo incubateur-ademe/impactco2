@@ -1,11 +1,8 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import { useMemo, useState } from 'react'
-import { useDistanceStore } from 'src/providers/stores/distance'
-import { useGlobalStore } from 'src/providers/stores/global'
-import { useItineraireStore } from 'src/providers/stores/itineraire'
-import { useTransportStore } from 'src/providers/stores/transport'
+import React, { useMemo, useState } from 'react'
+import useParamContext from 'src/providers/ParamProvider'
 import { Category } from 'types/category'
 import { TransportSimulateur } from 'types/transport'
 import { categories } from 'data/categories'
@@ -26,10 +23,13 @@ export const getTracking = (selected: TransportSimulateur) =>
 const TransportShare = () => {
   const t = useTranslations('overscreen.transport')
   const tTransport = useTranslations('transport.mode-selector')
-  const distance = useDistanceStore()
-  const itineraire = useItineraireStore()
-  const { selected, setSelected, comparisonMode, comparison, setComparisonMode } = useTransportStore()
-  const { language, setLanguage } = useGlobalStore()
+  const {
+    distance,
+    itineraire,
+    transport: { selected, setSelected, comparisonMode, comparison, setComparisonMode },
+    language,
+    setLanguage,
+  } = useParamContext()
 
   const [visibility, setVisibility] = useState<Record<string, boolean>>({
     km: true,

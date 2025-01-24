@@ -1,5 +1,6 @@
 import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
+import React, { Dispatch, SetStateAction } from 'react'
 import { Equivalent } from 'types/equivalent'
 import { deplacements } from 'data/categories/deplacement'
 import { AlimentationCategories } from 'utils/alimentation'
@@ -100,8 +101,8 @@ export type CustomParamValue =
       setter: (value: string | number | boolean) => void
     }
   | {
-      start: { value: string; setter: (point: Point | undefined) => void }
-      end: { value: string; setter: (point: Point | undefined) => void }
+      start: { value: string; setter: Dispatch<SetStateAction<Point | undefined>> }
+      end: { value: string; setter: Dispatch<SetStateAction<Point | undefined>> }
     }
   | { value: { emoji: string; label: string }[]; params: string }
 

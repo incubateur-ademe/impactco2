@@ -1,17 +1,16 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import { useEffect, useMemo, useRef } from 'react'
+import { useSearchParams } from 'next/navigation'
+import React, { useEffect, useMemo, useRef } from 'react'
+import useParamContext from 'src/providers/ParamProvider'
 import useUsageNumeriqueContext from 'src/providers/UsageNumeriqueProvider'
-import { useGlobalStore } from 'src/providers/stores/global'
-import { useUsageNumeriqueStore } from 'src/providers/stores/usageNumerique'
 import { Category } from 'types/category'
 import { ComputedEquivalent } from 'types/equivalent'
 import { categories } from 'data/categories'
 import { computeFootprint } from 'utils/computeECV'
 import formatNumber from 'utils/formatNumber'
 import { track } from 'utils/matomo'
-import { DefaultParams } from 'utils/params'
 import { evaluateNumber } from 'utils/useSituation'
 import LocalNumber from 'components/base/LocalNumber'
 import Etiquette from 'components/comparateur/Etiquette'
@@ -59,12 +58,15 @@ const streaming = usagenumerique.equivalents?.find(
   (equivalent) => equivalent.slug === 'streamingvideo'
 ) as ComputedEquivalent
 
-const UsageNumeriqueSimulator = ({ defaultParams }: { defaultParams: DefaultParams['usageNumerique'] }) => {
-  const ref = useRef<HTMLDivElement>(null)
-  const { language } = useGlobalStore()
+const UsageNumeriqueSimulator = () => {
+  const searchParams = useSearchParams()
+  const mode = useMemo(() => searchParams.get('display'), [searchParams])
 
-  const { numberEmails, setNumberEmails, setSituation, situation, equivalents, setEquivalents, mode, setMode } =
-    useUsageNumeriqueStore()
+  const ref = useRef<HTMLDivElement>(null)
+  const {
+    language,
+    usageNumerique: { numberEmails, setNumberEmails, situation, equivalents, setEquivalents },
+  } = useParamContext()
 
   const { engine } = useUsageNumeriqueContext()
 
@@ -118,12 +120,6 @@ const UsageNumeriqueSimulator = ({ defaultParams }: { defaultParams: DefaultPara
   useEffect(() => {
     setEquivalents(getRandomEquivalentForValue(total * 52))
   }, [total])
-
-  useEffect(() => {
-    setNumberEmails(defaultParams.numberEmails)
-    setMode(defaultParams.mode)
-    setSituation(defaultParams.situation)
-  }, [defaultParams])
 
   return (
     <>

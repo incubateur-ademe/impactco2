@@ -1,10 +1,9 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import { useEffect, useMemo, useRef } from 'react'
+import React, { useEffect, useMemo, useRef } from 'react'
 import useLivraisonContext from 'src/providers/LivraisonProvider'
-import { useGlobalStore } from 'src/providers/stores/global'
-import { useLivraisonStore } from 'src/providers/stores/livraison'
+import useParamContext from 'src/providers/ParamProvider'
 import formatName from 'utils/formatName'
 import formatNumber from 'utils/formatNumber'
 import { track } from 'utils/matomo'
@@ -25,21 +24,24 @@ const LivraisonSimulator = () => {
   const ref = useRef<HTMLDivElement>(null)
 
   const { engine } = useLivraisonContext()
-  const { language } = useGlobalStore()
+
   const {
-    values,
-    setValues,
-    isHabit,
-    setIsHabit,
-    isPlane,
-    setIsPlane,
-    number,
-    setNumber,
-    frequence,
-    setFrequence,
-    equivalents,
-    setEquivalents,
-  } = useLivraisonStore()
+    language,
+    livraison: {
+      values,
+      setValues,
+      isHabit,
+      setIsHabit,
+      isPlane,
+      setIsPlane,
+      number,
+      setNumber,
+      frequence,
+      setFrequence,
+      equivalents,
+      setEquivalents,
+    },
+  } = useParamContext()
 
   const total = useMemo(() => {
     engine.setSituation({

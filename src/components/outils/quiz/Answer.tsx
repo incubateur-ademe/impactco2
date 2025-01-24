@@ -1,7 +1,7 @@
 'use client'
 
 import classNames from 'classnames'
-import { useGlobalStore } from 'src/providers/stores/global'
+import useParamContext from 'src/providers/ParamProvider'
 import { ComputedEquivalent } from 'types/equivalent'
 import { getName } from 'utils/Equivalent/equivalent'
 import formatNumber from 'utils/formatNumber'
@@ -28,7 +28,7 @@ const Answer = ({
   correctAnswer: 'A' | 'B'
   proportion: number
 }) => {
-  const { language } = useGlobalStore()
+  const { language } = useParamContext()
 
   const content = (
     <div className={styles.content} data-testid={`quiz-answer-${tag}`}>

@@ -3,7 +3,7 @@
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import { Fragment, useState } from 'react'
-import { useGlobalStore } from 'src/providers/stores/global'
+import useParamContext from 'src/providers/ParamProvider'
 import { Equivalent, EquivalentValue } from 'types/equivalent'
 import PlusMinus from 'components/outils/plusMinus/PlusMinus'
 import { getName } from 'utils/Equivalent/equivalent'
@@ -104,7 +104,7 @@ export default function Detail({
   noInfo?: boolean
   withSeparator?: boolean
 }) {
-  const { setOverscreen, language } = useGlobalStore()
+  const { setOverscreen, language } = useParamContext()
   const t = useTranslations('equivalent')
   const [years, setYears] = useState('usage' in equivalent && equivalent.usage ? equivalent.usage.defaultyears : 0)
 

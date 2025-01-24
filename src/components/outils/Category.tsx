@@ -1,7 +1,7 @@
 'use client'
 
 import { Dispatch, ReactNode, SetStateAction, useMemo } from 'react'
-import useAllParams from 'src/providers/stores/useAllParams'
+import useParamContext from 'src/providers/ParamProvider'
 import { Category as CategoryType } from 'types/category'
 import Shareable from 'components/shareable/Shareable'
 import { overScreenCategoryValues } from 'components/shareable/overScreens/Values'
@@ -16,7 +16,7 @@ const Category = ({
   simulator?: ReactNode
   noBottomBorders?: boolean
 }) => {
-  const allParams = useAllParams()
+  const allParams = useParamContext()
 
   const overScreens = useMemo(() => overScreenCategoryValues(category), [category])
 

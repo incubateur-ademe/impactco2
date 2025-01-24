@@ -1,4 +1,4 @@
-import { useGlobalStore } from 'src/providers/stores/global'
+import useParamContext from 'src/providers/ParamProvider'
 import NewTabIcon from 'components/base/NewTabIcon'
 import Link from 'components/base/buttons/Link'
 import styles from './Data.module.css'
@@ -133,7 +133,7 @@ const ENUsageNumeriqueData = () => {
 }
 
 const UsageNumeriqueData = () => {
-  const { language } = useGlobalStore()
+  const { language } = useParamContext()
   if (language === 'en') {
     return <ENUsageNumeriqueData />
   }

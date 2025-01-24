@@ -2,9 +2,7 @@
 
 import { useTranslations } from 'next-intl'
 import { useEffect, useMemo, useState } from 'react'
-import { useAlimentationStore } from 'src/providers/stores/alimentation'
-import { useGlobalStore } from 'src/providers/stores/global'
-import { useThemeStore } from 'src/providers/stores/theme'
+import useParamContext from 'src/providers/ParamProvider'
 import ClipboardBox from 'components/base/ClipboardBox'
 import AlimentationListParam from './AlimentationListParam'
 import CustomParam, { CustomParamValue } from './CustomParam'
@@ -14,10 +12,9 @@ import shareStyles from './Share.module.css'
 
 const AlimentationIntegrate = () => {
   const t = useTranslations('alimentation.integrate')
-  const { theme } = useThemeStore()
-  const { language, showButtons, setShowButtons } = useGlobalStore()
-  const alimentationParams = useAlimentationStore()
+  const { theme, language, alimentation: alimentationParams } = useParamContext()
 
+  const [showButtons, setShowButtons] = useState(true)
   const [category, setCategory] = useState(alimentationParams.category)
   const [customList, setCustomList] = useState(alimentationParams.customList)
   const [equivalents, setEquivalents] = useState(alimentationParams.equivalents)

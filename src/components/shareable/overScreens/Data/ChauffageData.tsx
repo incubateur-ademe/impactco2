@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import { useGlobalStore } from 'src/providers/stores/global'
+import useParamContext from 'src/providers/ParamProvider'
 import { getName } from 'utils/Equivalent/equivalent'
 import EquivalentIcon from 'components/base/EquivalentIcon'
 import Link from 'components/base/buttons/Link'
@@ -236,7 +236,7 @@ const data = {
 }
 
 const FRChauffageData = () => {
-  const { language } = useGlobalStore()
+  const { language } = useParamContext()
 
   return (
     <div className={styles.container}>
@@ -298,7 +298,7 @@ const FRChauffageData = () => {
 }
 
 const ESChauffageData = () => {
-  const { language } = useGlobalStore()
+  const { language } = useParamContext()
 
   return (
     <div className={styles.container}>
@@ -360,7 +360,7 @@ const ESChauffageData = () => {
 }
 
 const ENChauffageData = () => {
-  const { language } = useGlobalStore()
+  const { language } = useParamContext()
   return (
     <div className={styles.container}>
       <p className={styles.text}>
@@ -420,7 +420,7 @@ const ENChauffageData = () => {
 }
 
 const ChauffageData = () => {
-  const { language } = useGlobalStore()
+  const { language } = useParamContext()
   if (language === 'en') {
     return <ENChauffageData />
   }

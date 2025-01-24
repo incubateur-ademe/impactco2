@@ -4,11 +4,10 @@ import { useEffect, useState } from 'react'
 import { Category as CategoryType } from 'types/category'
 import Category from 'components/outils/Category'
 import TransportSimulator from 'components/outils/TransportSimulator'
-import { DefaultParams } from 'utils/params'
 
 const bisUrls = ['https://impactco2.webflow.io', 'https://immobilier.lefigaro.fr', 'https://www.terrabotanica.fr']
 
-const TransportIFramePage = ({ category, defaultParams }: { category: CategoryType; defaultParams: DefaultParams }) => {
+const TransportIFramePage = ({ category }: { category: CategoryType }) => {
   const [bis, setBis] = useState(false)
   useEffect(() => {
     const url =
@@ -20,13 +19,7 @@ const TransportIFramePage = ({ category, defaultParams }: { category: CategoryTy
     }
   }, [])
 
-  return (
-    <Category
-      category={category}
-      simulator={<TransportSimulator bis={bis} defaultParams={defaultParams} />}
-      noBottomBorders={bis}
-    />
-  )
+  return <Category category={category} simulator={<TransportSimulator bis={bis} />} noBottomBorders={bis} />
 }
 
 export default TransportIFramePage

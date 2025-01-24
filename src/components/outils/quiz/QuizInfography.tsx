@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { useGlobalStore } from 'src/providers/stores/global'
+import useParamContext from 'src/providers/ParamProvider'
 import { useTranslations } from 'use-intl'
 import Shareable from 'components/shareable/Shareable'
 import { overScreenQuizInfographyValues } from 'components/shareable/overScreens/Values'
@@ -11,7 +11,7 @@ import styles from './QuizInfography.module.css'
 import { getQuizEquivalents } from './question.config'
 
 const QuizInfography = () => {
-  const { language } = useGlobalStore()
+  const { language } = useParamContext()
   const t = useTranslations('quiz')
   const [displayAll, setDisplayAll] = useState(false)
   const ref = useRef<HTMLDivElement>(null)

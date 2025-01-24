@@ -2,7 +2,7 @@ import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
 import { SetStateAction } from 'preact/compat'
 import { Dispatch } from 'react'
-import { useGlobalStore } from 'src/providers/stores/global'
+import useParamContext from 'src/providers/ParamProvider'
 import { getNameWithoutSuffix } from 'utils/Equivalent/equivalent'
 import { AlimentationCategories, equivalentsByCategory } from 'utils/alimentation'
 import EquivalentIcon from 'components/base/EquivalentIcon'
@@ -19,7 +19,7 @@ const AlimentationListParam = ({
   setEquivalents: Dispatch<SetStateAction<string[]>>
 }) => {
   const t = useTranslations('alimentation')
-  const { language } = useGlobalStore()
+  const { language } = useParamContext()
   return (
     <ul className={styles.categories}>
       {equivalentsByCategory[AlimentationCategories.Group].map((category) => (
