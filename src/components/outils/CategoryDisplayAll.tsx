@@ -1,5 +1,6 @@
 'use client'
 
+import { Dispatch, SetStateAction } from 'react'
 import { track } from 'utils/matomo'
 import DropdownArrowDownIcon from 'components/base/icons/dropdown-arrow-down'
 import DropdownArrowUpIcon from 'components/base/icons/dropdown-arrow-up'
@@ -16,7 +17,7 @@ const CategoryDisplayAll = ({
   id?: string
   tracking: string
   displayAll: boolean
-  setDisplayAll: (value: boolean) => void
+  setDisplayAll: Dispatch<SetStateAction<boolean>>
   displayAllText: string
   hideAllText: string
 }) => {

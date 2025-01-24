@@ -1,4 +1,4 @@
-import { RefObject } from 'react'
+import React, { RefObject } from 'react'
 import { ComputedEquivalent } from 'types/equivalent'
 import Checkbox from './Checkbox'
 
@@ -12,7 +12,7 @@ const Equivalents = ({
   equivalentsToDisplay: ComputedEquivalent[]
   equivalents: string[]
   setEquivalents: (value: string[]) => void
-  firstRef?: RefObject<HTMLInputElement | null>
+  firstRef?: RefObject<HTMLInputElement>
   list?: boolean
 }) => {
   const Container = list ? 'li' : 'div'

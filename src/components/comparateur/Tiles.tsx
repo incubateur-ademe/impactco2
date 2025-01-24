@@ -1,9 +1,8 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import { useEffect, useRef, useState } from 'react'
-import { useComparateurStore } from 'src/providers/stores/comparateur'
-import { useGlobalStore } from 'src/providers/stores/global'
+import React, { useEffect, useRef, useState } from 'react'
+import useParamContext from 'src/providers/ParamProvider'
 import { track } from 'utils/matomo'
 import Button from 'components/base/buttons/Button'
 import MagicWandIcon from 'components/base/icons/magic-wand'
@@ -14,8 +13,10 @@ import { getRandomEquivalents } from './random'
 const Tiles = () => {
   const firstRef = useRef<HTMLLIElement>(null)
   const t = useTranslations('comparateur')
-  const { setOverscreen } = useGlobalStore()
-  const { comparedEquivalent, equivalents, setEquivalents } = useComparateurStore()
+  const {
+    setOverscreen,
+    comparateur: { comparedEquivalent, equivalents, setEquivalents },
+  } = useParamContext()
 
   const [generation, setGeneration] = useState<number | boolean>(false)
 

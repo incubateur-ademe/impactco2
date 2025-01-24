@@ -2,13 +2,11 @@
 
 import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
-import { useEffect, useRef } from 'react'
-import { useComparateurStore } from 'src/providers/stores/comparateur'
-import { useGlobalStore } from 'src/providers/stores/global'
+import React, { useEffect, useRef } from 'react'
+import useParamContext from 'src/providers/ParamProvider'
 import { getName } from 'utils/Equivalent/equivalent'
 import { getNumberPrecision } from 'utils/formatNumberPrecision'
 import { metaTitles } from 'utils/meta'
-import { DefaultParams } from 'utils/params'
 import EquivalentIcon from 'components/base/EquivalentIcon'
 import IframeableLink from 'components/base/IframeableLink'
 import LocalNumber from 'components/base/LocalNumber'
@@ -19,13 +17,13 @@ import NumberInput from 'components/form/NumberInput'
 import simulatorStyles from '../Simulator.module.css'
 import styles from './ComparateurSimulator.module.css'
 
-const ComparateurSimulator = ({ defaultParams }: { defaultParams: DefaultParams['comparateur'] }) => {
+const ComparateurSimulator = () => {
   const inputRef = useRef<HTMLInputElement>(null)
   const isInitialRender = useRef(true)
-  const { language } = useGlobalStore()
-
-  const { baseValue, weight, setBaseValue, comparedEquivalent, setComparedEquivalent, setEquivalents } =
-    useComparateurStore()
+  const {
+    language,
+    comparateur: { baseValue, weight, setBaseValue, comparedEquivalent, setComparedEquivalent },
+  } = useParamContext()
 
   const { value, unit } = getNumberPrecision(baseValue * weight)
   const t = useTranslations('comparateur')
@@ -40,12 +38,6 @@ const ComparateurSimulator = ({ defaultParams }: { defaultParams: DefaultParams[
     }
     document.title = `${metaTitles.comparateur[language]} - ${comparedEquivalent ? getName(language, comparedEquivalent) : t('co2-unit')} | Impact CO₂`
   }, [comparedEquivalent, inputRef])
-
-  useEffect(() => {
-    setBaseValue(defaultParams.baseValue)
-    setComparedEquivalent(defaultParams.comparedEquivalent, true)
-    setEquivalents(defaultParams.equivalents)
-  }, [defaultParams])
 
   return (
     <div>

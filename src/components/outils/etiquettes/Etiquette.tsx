@@ -1,7 +1,7 @@
 'use client'
 
-import { useMemo, useRef } from 'react'
-import { useGlobalStore } from 'src/providers/stores/global'
+import React, { useMemo, useRef } from 'react'
+import useParamContext from 'src/providers/ParamProvider'
 import { ComputedEquivalent } from 'types/equivalent'
 import { getName } from 'utils/Equivalent/equivalent'
 import EtiquetteContent from 'components/comparateur/Etiquette'
@@ -9,7 +9,7 @@ import Shareable from 'components/shareable/Shareable'
 import { overScreenEquivalentEtiquetteValues } from 'components/shareable/overScreens/Values'
 
 const Etiquette = ({ equivalent }: { equivalent: ComputedEquivalent }) => {
-  const { language } = useGlobalStore()
+  const { language } = useParamContext()
   const overScreens = useMemo(() => overScreenEquivalentEtiquetteValues(equivalent), [equivalent])
   const ref = useRef(null)
   return (

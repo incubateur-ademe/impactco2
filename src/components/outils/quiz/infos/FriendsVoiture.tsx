@@ -1,15 +1,15 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import { useRef } from 'react'
-import { useGlobalStore } from 'src/providers/stores/global'
+import React, { useRef } from 'react'
+import useParamContext from 'src/providers/ParamProvider'
 import Etiquette from 'components/comparateur/Etiquette'
 import Icon from './Icon'
 import styles from './Infos.module.css'
 
 const FriendsVoiture = () => {
   const t = useTranslations('quiz.friends-voiture')
-  const { language } = useGlobalStore()
+  const { language } = useParamContext()
   const ref = useRef(null)
   return (
     <>

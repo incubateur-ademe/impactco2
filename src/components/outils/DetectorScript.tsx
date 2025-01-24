@@ -1,15 +1,13 @@
 'use client'
 
-import { useMemo } from 'react'
-import { useGlobalStore } from 'src/providers/stores/global'
-import { useThemeStore } from 'src/providers/stores/theme'
+import React, { useMemo } from 'react'
+import useParamContext from 'src/providers/ParamProvider'
 import ClipboardBox from 'components/base/ClipboardBox'
 import CustomParam, { CustomParamValue } from 'components/shareable/overScreens/CustomParam'
 import styles from './DetectorScript.module.css'
 
 const DetectorScript = () => {
-  const { theme, setTheme } = useThemeStore()
-  const { language, setLanguage } = useGlobalStore()
+  const { language, setLanguage, theme, setTheme } = useParamContext()
   const search = useMemo(() => `?theme=${theme}&language=${language}`, [language, theme])
   return (
     <>

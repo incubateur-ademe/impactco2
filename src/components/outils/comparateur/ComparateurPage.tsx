@@ -1,5 +1,4 @@
-import { Suspense } from 'react'
-import { DefaultParams } from 'utils/params'
+import React, { Suspense } from 'react'
 import Sources from 'components/base/Sources'
 import Breadcrumbs from 'components/breadcrumbs/Breadcrumbs'
 import Examples from 'components/examples/Examples'
@@ -9,7 +8,7 @@ import styles from '../CategoryPage.module.css'
 import Comparateur from './Comparateur'
 import Etiquettes from './Etiquettes'
 
-const ComparateurPage = ({ defaultParams }: { defaultParams: DefaultParams['comparateur'] }) => {
+const ComparateurPage = () => {
   return (
     <>
       <Breadcrumbs
@@ -20,7 +19,7 @@ const ComparateurPage = ({ defaultParams }: { defaultParams: DefaultParams['comp
         ]}
       />
       <Block title='Comparateur carbone' as='h1' description='Le bon outil pour obtenir les bons ordres de grandeur'>
-        <Comparateur defaultParams={defaultParams} />
+        <Comparateur />
         <Sources
           className={styles.sources}
           sources={[

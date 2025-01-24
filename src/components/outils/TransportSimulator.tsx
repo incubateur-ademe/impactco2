@@ -2,32 +2,38 @@
 
 import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
-import { KeyboardEvent, Suspense, useCallback, useEffect, useRef, useState } from 'react'
-import TransportSync from 'src/providers/stores/TransportSync'
-import { useGlobalStore } from 'src/providers/stores/global'
-import { useItineraireStore } from 'src/providers/stores/itineraire'
-import { useTransportStore } from 'src/providers/stores/transport'
-import { DefaultParams } from 'utils/params'
+import { usePathname, useSearchParams } from 'next/navigation'
+import { KeyboardEvent, useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import useParamContext from 'src/providers/ParamProvider'
 import DistanceSimulator from './DistanceSimulator'
 import ItineraireSimulator from './ItineraireSimulator'
 import styles from './TransportSimulator.module.css'
 
-const TransportSimulator = ({
-  bis,
-  defaultParams,
-}: {
-  bis?: boolean
-  defaultParams: Pick<DefaultParams, 'itineraire' | 'distance'>
-}) => {
-  const { setHideActions } = useGlobalStore()
-  const { selected, setSelected, mode, tabs } = useTransportStore()
-  const { start, end } = useItineraireStore()
+const distance = {
+  label: 'Distance',
+  value: 'distance',
+}
+const itineraire = {
+  label: 'Itinéraire',
+  value: 'itineraire',
+}
+
+const TransportSimulator = ({ bis }: { bis?: boolean }) => {
+  const {
+    setHideActions,
+    transport: { selected, setSelected },
+    itineraire: { start, end },
+  } = useParamContext()
 
   const distanceRef = useRef<HTMLButtonElement>(null)
   const itineraireRef = useRef<HTMLButtonElement>(null)
   const [forceFocus, setForceFocus] = useState(false)
 
   const t = useTranslations('transport.mode-selector')
+  const pathName = usePathname()
+  const searchParams = useSearchParams()
+
+  const mode = useMemo(() => searchParams.get('mode'), [searchParams])
 
   useEffect(() => {
     if (bis) {
@@ -38,6 +44,36 @@ const TransportSimulator = ({
       }
     }
   }, [bis, selected, start, end])
+
+  useEffect(() => {
+    if (pathName.includes(itineraire.value)) {
+      setSelected('itineraire')
+    } else {
+      const tabsParam = searchParams.get('tabs')
+      const values = tabsParam?.split(',')
+
+      if (values && values.includes(itineraire.value)) {
+        setSelected('itineraire')
+      }
+    }
+  }, [pathName, setSelected, searchParams])
+
+  const tabs = useMemo(() => {
+    const tabsParam = searchParams.get('tabs')
+    if (!tabsParam) {
+      return true
+    }
+    const values = tabsParam.split(',')
+    if (values.length === 0) {
+      return true
+    }
+
+    if (values.includes(distance.value) && (values.includes(itineraire.value) || pathName.includes(itineraire.value))) {
+      return true
+    }
+
+    return false
+  }, [pathName, searchParams])
 
   const onKeyDown = useCallback(
     (e: KeyboardEvent<HTMLButtonElement>) => {
@@ -59,9 +95,6 @@ const TransportSimulator = ({
 
   return (
     <>
-      <Suspense>
-        <TransportSync />
-      </Suspense>
       {tabs && (
         <div className={styles.tabs} data-testid='transport-tabs' role='tablist'>
           <button
@@ -113,14 +146,14 @@ const TransportSimulator = ({
         role='tabpanel'
         aria-labelledby='tab-distance'
         className={selected === 'itineraire' ? styles.hidden : undefined}>
-        <DistanceSimulator withComparisonMode={!mode} defaultParams={defaultParams.distance} />
+        <DistanceSimulator withComparisonMode={!mode} />
       </div>
       <div
         id='tabpanel-itineraire'
         role='tabpanel'
         aria-labelledby='tab-itineraire'
         className={selected === 'distance' ? styles.hidden : undefined}>
-        <ItineraireSimulator withComparisonMode={!mode} bis={bis} defaultParams={defaultParams.itineraire} />
+        <ItineraireSimulator withComparisonMode={!mode} bis={bis} />
       </div>
     </>
   )

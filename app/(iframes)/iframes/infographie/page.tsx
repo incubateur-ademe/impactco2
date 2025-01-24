@@ -1,12 +1,8 @@
-import { Suspense } from 'react'
+import React from 'react'
 import IframeInfography from 'components/outils/equivalents/infographies/IframeInfography'
 
 const page = () => {
-  return (
-    <Suspense>
-      <IframeInfography />
-    </Suspense>
-  )
+  return <IframeInfography />
 }
 
 export default page

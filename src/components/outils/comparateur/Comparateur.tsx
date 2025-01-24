@@ -1,12 +1,12 @@
-import { DefaultParams } from 'utils/params'
+import React from 'react'
 import Shareable from 'components/shareable/Shareable'
 import { overScreenComparateurValues } from 'components/shareable/overScreens/Values'
 import ComparateurSimulator from './ComparateurSimulator'
 
-const Comparateur = ({ defaultParams }: { defaultParams: DefaultParams['comparateur'] }) => {
+const Comparateur = () => {
   return (
     <Shareable slug='comparateur' tracking='Comparateur' overScreens={overScreenComparateurValues}>
-      <ComparateurSimulator defaultParams={defaultParams} />
+      <ComparateurSimulator />
     </Shareable>
   )
 }

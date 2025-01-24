@@ -1,16 +1,9 @@
+import React from 'react'
 import { Example } from 'types/example'
 import Breadcrumbs from 'components/breadcrumbs/Breadcrumbs'
 import AllExamples from 'components/examples/AllExamples'
 
-const ExamplesPage = ({
-  examples,
-  communications,
-  defaultTool,
-}: {
-  examples: Example[]
-  communications: Example[]
-  defaultTool: string
-}) => {
+const ExamplesPage = ({ examples, communications }: { examples: Example[]; communications: Example[] }) => {
   return (
     <>
       <Breadcrumbs
@@ -20,7 +13,7 @@ const ExamplesPage = ({
         ]}
         current="Exemples d'utilisation"
       />
-      <AllExamples examples={examples} communications={communications} defaultTool={defaultTool} />
+      <AllExamples examples={examples} communications={communications} />
     </>
   )
 }

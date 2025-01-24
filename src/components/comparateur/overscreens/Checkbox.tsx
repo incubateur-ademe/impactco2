@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl'
 import { ForwardedRef, forwardRef, useEffect, useState } from 'react'
-import { useGlobalStore } from 'src/providers/stores/global'
+import useParamContext from 'src/providers/ParamProvider'
 import { ComputedEquivalent } from 'types/equivalent'
 import { getName } from 'utils/Equivalent/equivalent'
 import EquivalentIcon from 'components/base/EquivalentIcon'
@@ -20,7 +20,7 @@ const Checkbox = (
   },
   ref: ForwardedRef<HTMLInputElement>
 ) => {
-  const { language } = useGlobalStore()
+  const { language } = useParamContext()
   const t = useTranslations('comparateur.overscreen')
   const [interacted, setInteracted] = useState(false)
   const selectEquivalent = (checked: boolean, equivalent: ComputedEquivalent) => {

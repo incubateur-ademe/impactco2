@@ -4,9 +4,8 @@ import { ComputedEquivalent } from 'types/equivalent'
 import { categories } from 'data/categories'
 import { getComparisonSlug, getName } from 'utils/Equivalent/equivalent'
 import { getEquivalentWithCarpool } from 'utils/carpool'
+import useParamContext from './ParamProvider'
 import { computedEquivalents } from './equivalents'
-import { useGlobalStore } from './stores/global'
-import { useTransportStore } from './stores/transport'
 
 const config = {
   keys: [
@@ -51,8 +50,11 @@ export const useSearchEquivalent = (
 ) => {
   const [results, setResults] = useState<ComputedEquivalent[]>([])
   const [fuses, setFuses] = useState<{ fuse: Fuse<ComputedEquivalent>; nonEmptyFuse: Fuse<ComputedEquivalent> }>()
-  const { language } = useGlobalStore()
-  const { modes } = useTransportStore()
+
+  const {
+    language,
+    transport: { modes },
+  } = useParamContext()
 
   useEffect(() => {
     const translatedEquivalents = equivalents

@@ -6,7 +6,6 @@ import { repas } from 'data/categories/repas'
 import ChauffageSimulator from 'components/outils/ChauffageSimulator'
 import FruitsEtLegumesSimulator from 'components/outils/FruitsEtLegumesSimulator'
 import TransportSimulator from 'components/outils/TransportSimulator'
-import { DefaultParams } from 'utils/params'
 import AlimentationSimulator from './AlimentationSimulator'
 import CategorySimulator from './CategorySimulator'
 import LivraisonSimulator from './LivraisonSimulator'
@@ -14,18 +13,18 @@ import TeletravailSimulator from './TeletravailSimulator'
 import OsezChangerSimulator from './osezChanger/OsezChangerSimulator'
 import UsageNumeriqueSimulator from './usageNumerique/UsageNumeriqueSimulator'
 
-export const simulators: Record<string, (defaultParams: DefaultParams) => ReactNode> = {
-  chauffage: (defaultParams) => <ChauffageSimulator defaultParams={defaultParams.chauffage} />,
-  transport: (defaultParams) => <TransportSimulator defaultParams={defaultParams} />,
-  teletravail: (defaultParams) => <TeletravailSimulator defaultParams={defaultParams.teletravail} />,
-  fruitsetlegumes: (defaultParams) => <FruitsEtLegumesSimulator defaultParams={defaultParams.fruitsetlegumes} />,
-  alimentation: (defaultParams) => <AlimentationSimulator defaultParams={defaultParams.alimentation} />,
-  usagenumerique: (defaultParams) => (
+export const simulators: Record<string, ReactNode> = {
+  chauffage: <ChauffageSimulator />,
+  transport: <TransportSimulator />,
+  teletravail: <TeletravailSimulator />,
+  fruitsetlegumes: <FruitsEtLegumesSimulator />,
+  alimentation: <AlimentationSimulator />,
+  usagenumerique: (
     <UsageNumeriqueProvider>
-      <UsageNumeriqueSimulator defaultParams={defaultParams.usageNumerique} />
+      <UsageNumeriqueSimulator />
     </UsageNumeriqueProvider>
   ),
-  livraison: () => (
+  livraison: (
     <LivraisonProvider>
       <LivraisonSimulator />
     </LivraisonProvider>

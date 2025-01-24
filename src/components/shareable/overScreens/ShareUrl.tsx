@@ -1,7 +1,8 @@
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
+import React from 'react'
 import { FacebookShareButton, LinkedinShareButton, TwitterShareButton, WhatsappShareButton } from 'react-share'
-import { useGlobalStore } from 'src/providers/stores/global'
+import useParamContext from 'src/providers/ParamProvider'
 import { Category } from 'types/category'
 import { track } from 'utils/matomo'
 import { metaDescriptions, metaTitles } from 'utils/meta'
@@ -31,7 +32,7 @@ const ShareUrl = ({
   const t = useTranslations('overscreen')
   const trackingValue = (category ? category.name : tracking) || 'UNKNOWN'
   const trackingSlug = trackingValue.replace(/ /g, '_').toLowerCase()
-  const { language } = useGlobalStore()
+  const { language } = useParamContext()
   const slug = category?.slug === 'repas' ? 'alimentation' : category?.slug || ''
   return (
     <>
