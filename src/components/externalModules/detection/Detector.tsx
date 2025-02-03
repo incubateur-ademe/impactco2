@@ -8,8 +8,8 @@ import SimpleValue from '../SimpleValue'
 import styles from './Detector.module.css'
 
 export const regexs = {
-  fr: /([0-9]+(,|\.|\s|&nbsp;)*[0-9]*)(\s|&nbsp;)*(millier(s)?|mille(s)?|million(s)?|milliard(s)?|giga(s)?)?(\s|&nbsp;)*(de\s|&nbsp;)?(kg(s)?|kilo(s)?|kilo(&shy;|­)?gramme(s)?|g|t|tonne(s)?)(\s|&nbsp;)*(d'émissions\s|&nbsp;)?(de\s|&nbsp;)*(d(’|')équivalent\s|&nbsp;)?(eq)?(éq)?(\s|&nbsp;)*(c(o|0)(2|₂|<sub>2(\s|&nbsp;)*<\/sub>)|dioxyde de carbone)(eq|((\s|&nbsp;)*équivalent)|e)?/i,
-  en: /([0-9]+(,|\.|\s|&nbsp;)*[0-9]*)(\s|&nbsp;)*(thousand(s)?|million(s)?|billion(s)?|giga(s)?)?(\s|&nbsp;)*(kg(s)?|kilo(s)?|kilo(&shy;|­)?gram(s)?|g|t|ton(s)|tonne(s)?)(\s|&nbsp;)*(of\s|&nbsp;)*(equivalent)?(eq)?(\s|&nbsp;)*(c(o|0)(2|₂|<sub>2(\s|&nbsp;)*<\/sub>)|carbon dyoxide)(eq|((\s|&nbsp;)*equivalent)|e)?/i,
+  fr: /([0-9]+(,*|\.*|\s*|&nbsp;*)[0-9]*)(\s|&nbsp;)*(millier(s)?|mille(s)?|million(s)?|milliard(s)?|giga(s)?)?(\s|&nbsp;)*(de\s|&nbsp;)?(kg(s)?|kilo(s)?|kilo(&shy;|­)?gramme(s)?|g|t|tonne(s)?)(\s|&nbsp;)*(d'émissions\s|&nbsp;)?(de\s|&nbsp;)*(d(’|')équivalent\s|&nbsp;)?(eq)?(éq)?(\s|&nbsp;)*(c(o|0)(2|₂|<sub>2(\s|&nbsp;)*<\/sub>)|dioxyde de carbone)(eq|((\s|&nbsp;)*équivalent)|e)?/i,
+  en: /([0-9]+(,*|\.*|\s*|&nbsp;*)[0-9]*)(\s|&nbsp;)*(thousand(s)?|million(s)?|billion(s)?|giga(s)?)?(\s|&nbsp;)*(kg(s)?|kilo(s)?|kilo(&shy;|­)?gram(s)?|g|t|ton(s)|tonne(s)?)(\s|&nbsp;)*(of\s|&nbsp;)*(equivalent)?(eq)?(\s|&nbsp;)*(c(o|0)(2|₂|<sub>2(\s|&nbsp;)*<\/sub>)|carbon dyoxide)(eq|((\s|&nbsp;)*equivalent)|e)?/i,
 }
 
 const getComputedStyle = (el: Element, property: string) => {
