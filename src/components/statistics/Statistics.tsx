@@ -1,14 +1,38 @@
+'use client'
+
 import classNames from 'classnames'
-import React from 'react'
-import { Stats } from 'utils/stats'
+import { useEffect, useRef, useState } from 'react'
+import { Stats, getMatomoStats } from 'utils/stats'
 import LocalNumber from 'components/base/LocalNumber'
 import Link from 'components/base/buttons/Link'
+import HiddenLabel from 'components/form/HiddenLabel'
+import Select from 'components/form/Select'
 import styles from './Statistics.module.css'
 
-const Statistics = ({ stats }: { stats: Stats }) => {
+const Statistics = ({ defaultStats, defaultYear }: { defaultStats: Stats; defaultYear: string }) => {
+  const [year, setYear] = useState(defaultYear)
+  const [stats, setStats] = useState(defaultStats)
+
+  const mountRef = useRef(false)
+
+  useEffect(() => {
+    if (mountRef.current) {
+      getMatomoStats(year).then(setStats)
+    } else {
+      mountRef.current = true
+    }
+  }, [year])
+
   return (
     <>
-      <h2>En 2024 :</h2>
+      <div className={styles.title}>
+        En <HiddenLabel htmlFor='select-year'>Année des statistiques</HiddenLabel>
+        <Select value={year} id='select-year' onChange={(e) => setYear(e.target.value)} className={styles.select}>
+          <option value='2024'>2024</option>
+          <option value='2025'>2025</option>
+        </Select>
+         :
+      </div>
       <div className={styles.boxes}>
         <div className={styles.box}>
           <div>
