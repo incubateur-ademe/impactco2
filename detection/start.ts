@@ -119,8 +119,15 @@ export const start = (darkMode?: boolean, language?: 'fr' | 'en') => {
     .forEach((elem) => {
       try {
         const childs = [...elem.childNodes.values()]
+        console.log(childs.map((childs) => childs.nodeName))
         if (
-          childs.every((child) => child.nodeName === '#text' || child.nodeName === 'SUB' || child.nodeName === 'SUP')
+          childs.every(
+            (child) =>
+              child.nodeName === '#text' ||
+              child.nodeName === 'SUB' ||
+              child.nodeName === 'SUP' ||
+              child.nodeName === 'STRONG'
+          )
         ) {
           transform(elem, language || 'fr', darkMode)
         } else {
