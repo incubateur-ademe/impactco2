@@ -33,6 +33,9 @@ export async function trackAPIRequest(request: NextRequest, api: string, params?
   } catch (error) {
     await Sentry.captureException(error)
     console.error(`tracking failed - ${referer}- ${authorization}`)
+    if (referer === 'https://www.darty.com/') {
+      console.error('Darty', request)
+    }
   }
 }
 
