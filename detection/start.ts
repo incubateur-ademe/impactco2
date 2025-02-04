@@ -119,7 +119,6 @@ export const start = (darkMode?: boolean, language?: 'fr' | 'en') => {
     .forEach((elem) => {
       try {
         const childs = [...elem.childNodes.values()]
-        console.log(childs.map((childs) => childs.nodeName))
         if (
           childs.every(
             (child) =>
