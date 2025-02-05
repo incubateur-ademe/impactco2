@@ -22,6 +22,10 @@ export async function trackAPIRequest(request: NextRequest, api: string, params?
 
     const param = `e_c=API_${name}&e_a=${api}&e_n=${params || ''}`
 
+    if (name === 'https://www.darty.com/') {
+      console.error('Darty', request)
+    }
+
     await fetch(
       `${process.env.NEXT_PUBLIC_MATOMO_SITE_URL}/matomo.php?idsite=${process.env.NEXT_PUBLIC_MATOMO_SITE_ID}&rec=1&${param}`,
       {
@@ -33,9 +37,6 @@ export async function trackAPIRequest(request: NextRequest, api: string, params?
   } catch (error) {
     await Sentry.captureException(error)
     console.error(`tracking failed - ${referer}- ${authorization}`)
-    if (referer === 'https://www.darty.com/') {
-      console.error('Darty', request)
-    }
   }
 }
 
