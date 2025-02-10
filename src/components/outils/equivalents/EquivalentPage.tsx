@@ -49,7 +49,9 @@ const EquivalentPage = ({
       />
       <Block title={getName('fr', equivalent)} as='h1' description="Détail de l'impact carbone">
         <Equivalent category={category} equivalent={equivalent} simulator={simulator} />
-        {sources && <Sources className={styles.sources} sources={sources} tracking={category.name} />}
+        {sources && sources.length > 0 && (
+          <Sources className={styles.sources} sources={sources} tracking={category.name} />
+        )}
       </Block>
       {equivalentsInfography && (
         <Block title='Infographie' description='Une image vaut mieux que mille mots' id='infographie'>

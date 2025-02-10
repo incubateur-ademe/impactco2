@@ -66,26 +66,38 @@ export const usageNumeriques = [
     category: 10,
     ecv: [
       {
-        value: 0.0007446526,
+        value: 0.000369,
         id: 13,
       },
       {
-        value: 0.0502806333,
+        value: 0.000246,
         id: 14,
       },
       {
-        value: 0.00000141881,
+        value: 0.0000197,
         id: 15,
       },
       {
-        value: 0.000000020842307,
+        value: 0.0003395,
         id: 16,
       },
       {
-        value: 0.0000155441,
+        value: 0.0002263,
         id: 17,
       },
+      {
+        value: 0.0000295,
+        id: 18,
+      },
     ],
+  },
+  {
+    slug: 'chatgpt',
+    synonyms: ['ia', 'recherche'],
+    unit: 'requete',
+    category: 10,
+    total: 0.00522,
+    sources: [],
   },
   {
     slug: 'streamingvideo',
