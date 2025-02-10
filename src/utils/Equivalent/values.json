@@ -116,9 +116,9 @@
   "chatgpt": {
     "category": 10,
     "value": 5.22,
-    "fr": "requête[s] Chat GPT",
-    "en": "Chat GPT request[s]",
-    "es": "Solicitud[es] de Chat GPT"
+    "fr": "requête[s] ChatGPT",
+    "en": "ChatGPT request[s]",
+    "es": "Solicitud[es] de ChatGPT"
   },
   "streamingvideo": {
     "category": 10,
