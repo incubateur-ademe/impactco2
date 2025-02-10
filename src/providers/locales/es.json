@@ -415,7 +415,8 @@
         "camping": "Incluye la construcción y el consumo de energía de la infraestructura (duchas, instalaciones sanitarias e iluminación).",
         "location": "Incluye las emisiones relacionadas con el consumo de energía (calefacción, electricidad, agua caliente), la infraestructura (construcción) y los servicios de mantenimiento.",
         "residencesecondaire": "Incluye las emisiones relacionadas con el consumo de energía (calefacción, electricidad, agua caliente), la infraestructura (construcción) y los servicios de mantenimiento.",
-        "2050": "Un francés emite de media casi 9,3 toneladas de CO2 al año. Para limitar el cambio climático, es esencial reducir estas emisiones y alcanzar un objetivo máximo de 2 toneladas de CO2e por persona y año para 2050."
+        "2050": "Un francés emite de media casi 9,3 toneladas de CO2 al año. Para limitar el cambio climático, es esencial reducir estas emisiones y alcanzar un objetivo máximo de 2 toneladas de CO2e por persona y año para 2050.",
+        "chatgpt": "El consumo de energía de una consulta simple en el modelo clásico ChatGPT se estima en alrededor de 10 Wh (alta tasa de incertidumbre), según el mix eléctrico promedio en los Estados Unidos. Estos datos son una estimación basada en señales de uso macro. No es una medida precisa ni un valor definitivo, debido a la falta de transparencia de los diseñadores del modelo."
       },
       "post": {
         "ski": "Incluye: el impacto de carbono del transporte (52%), alojamiento (4%), alimentos (8%), la estación de esquí (3%), infraestructura, equipo y servicios (17%), y equipo (16%).",
@@ -475,6 +476,7 @@
       "15": "Transmisión",
       "16": "Construcción de centros de datos",
       "17": "Uso de centros de datos",
+      "18": "Construcción de redes",
       "40": "Construcción de terminales",
       "41": "Uso de terminales",
       "42": "Transmisión",
@@ -512,7 +514,8 @@
     "intégrale": "completo",
     "param": "con los parámetros indicados a continuación",
     "email": "correo",
-    "recherche": "búsqueda"
+    "recherche": "búsqueda",
+    "requete": "consulta"
   },
   "ressources": {
     "fast-fashion": "Entendiéndolo todo: los impactos de la moda y la moda rápida",
