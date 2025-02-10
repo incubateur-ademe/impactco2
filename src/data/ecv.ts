@@ -80,6 +80,10 @@ export const ecv = [
     name: 'Usage des data-centers',
   },
   {
+    id: 18,
+    name: 'Construction des réseaux',
+  },
+  {
     id: 40,
     publicode: ' . terminaux . construction',
     name: 'Construction des terminaux',

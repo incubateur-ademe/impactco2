@@ -415,7 +415,8 @@
         "camping": "Sont inclus la construction et la consommation énergétique des infrastructures (les douches, sanitaires et l’éclairage).",
         "location": "Sont inclus les émissions liées à la consommation énergétique (chauffage, électricité, eau chaude), aux infrastructures (construction) et au services d’entretien.",
         "residencesecondaire": "Sont inclus les émissions liées à la consommation énergétique (chauffage, électricité, eau chaude), aux infrastructures (construction) et services d’entretien.",
-        "2050": "Un Français émet en moyenne près de 9,3 tonnes de CO2 par an. Pour limiter le dérèglement climatique, il est essentiel de réduire ces émissions et d'atteindre un objectif maximum de 2 tonnes de CO2e par personne par an d'ici 2050."
+        "2050": "Un Français émet en moyenne près de 9,3 tonnes de CO2 par an. Pour limiter le dérèglement climatique, il est essentiel de réduire ces émissions et d'atteindre un objectif maximum de 2 tonnes de CO2e par personne par an d'ici 2050.",
+        "chatgpt": "La consommation électrique d’une requête simple sur le modèle classique de ChatGPT est estimée à environ 10Wh (taux d’incertitude élevé), reportée sur le mix électrique moyen aux États-Unis. Cette donnée est une estimation basée sur des signaux macro d’usage. Elle ne constitue ni une mesure précise ni une valeur définitive, en raison du manque de transparence des concepteurs de modèles."
       },
       "post": {
         "ski": "Inclus : l’impact carbone du transport (52%), du logement (4%), de l’alimentation (8%), du domaine skiable (3%), des infrastructures, équipements et services du domaine (17%), et de l’équipement (16%).",
@@ -475,6 +476,7 @@
       "15": "Transmission",
       "16": "Construction des data-centers",
       "17": "Usage des data-centers",
+      "18": "Construction des réseaux",
       "40": "Construction des terminaux",
       "41": "Usage des terminaux",
       "42": "Transmission",
@@ -512,7 +514,8 @@
     "intégrale": "intégrale",
     "param": "avec les paramètres renseignés ci-dessous",
     "email": "email",
-    "recherche": "recherche"
+    "recherche": "recherche",
+    "requete": "requête"
   },
   "ressources": {
     "fast-fashion": "Tout comprendre : les impacts de la mode et de la fast-fashion",
