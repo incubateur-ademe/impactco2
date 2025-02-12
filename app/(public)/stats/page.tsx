@@ -1,5 +1,4 @@
 import { Metadata } from 'next'
-import React from 'react'
 import StatisticsPage from 'src/views/StatisticsPage'
 import { getMatomoStats } from 'utils/stats'
 import Suggestion from 'components/layout/Suggestion'
@@ -11,11 +10,12 @@ export const metadata: Metadata = {
 export const revalidate = 900
 
 export default async function StatistiquesPage() {
-  const stats = await getMatomoStats()
+  const year = new Date().getFullYear().toString()
+  const stats = await getMatomoStats(year)
 
   return (
     <>
-      <StatisticsPage stats={stats} />
+      <StatisticsPage stats={stats} year={year} />
       <Suggestion fromLabel='Statistiques' from='/stats' simulatorName='de nos statistiques' />
     </>
   )
