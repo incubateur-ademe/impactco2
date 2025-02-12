@@ -8,6 +8,7 @@ import { usageNumeriqueTest } from '../../teste/usagenumerique'
 export const checks = [
   {
     slug: 'operadeparis',
+    skipAutoCheck: true,
     url: 'https://www.operadeparis.fr/infos-pratiques/preparer-votre-venue/palais-garnier',
     scroll: true,
     before: async (page: Page) => {
