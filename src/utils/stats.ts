@@ -81,6 +81,7 @@ export const getMatomoStats = async (year: string): Promise<Stats> => {
       .filter((event) => event.label === 'Screenshot')
       .reduce((acc, visit) => acc + visit.nb_visits, 0),
     topUsers: iframes
+      .filter((event) => event.label !== 'IFrame_null')
       .sort((a, b) => b.nb_visits - a.nb_visits)
       .slice(0, 10)
       .map((event) => ({ label: event.label.replace('IFrame_', ''), visits: event.nb_visits })),
