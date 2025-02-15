@@ -184,8 +184,15 @@ describe('fruitsetlegumes', () => {
         {
           ecv: 11.655508000000001,
           months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
-          name: 'Mangue',
+          name: 'Mangue (importée par avion)',
           slug: 'mangue',
+          category: 'fruits',
+        },
+        {
+          ecv: 0.727508,
+          months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+          name: 'Mangue (importée par bateau)',
+          slug: 'manguebateau',
           category: 'fruits',
         },
         {
@@ -372,8 +379,15 @@ describe('fruitsetlegumes', () => {
         {
           ecv: 11.655508000000001,
           months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
-          name: 'Mangue',
+          name: 'Mangue (importée par avion)',
           slug: 'mangue',
+          category: 'fruits',
+        },
+        {
+          ecv: 0.727508,
+          months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+          name: 'Mangue (importée par bateau)',
+          slug: 'manguebateau',
           category: 'fruits',
         },
         {

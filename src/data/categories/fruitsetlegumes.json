@@ -1076,6 +1076,61 @@
     }
   },
   {
+    "name": "Mangue",
+    "subtitle": "Importée par bateau",
+    "Code_CIQUAL": 13025,
+    "Code_AGB": "13025_1",
+    "prefix": "kg de ",
+    "slug": "mangue",
+    "synonyms": [
+      "manger, fruit"
+    ],
+    "category": 9,
+    "ecv": [
+      {
+        "id": 30,
+        "value": 0.15
+      },
+      {
+        "id": 31,
+        "value": 0.000108
+      },
+      {
+        "id": 33,
+        "value": 0.472
+      },
+      {
+        "id": 34,
+        "value": 0.0248
+      },
+      {
+        "id": 35,
+        "value": 0.0806
+      }
+    ],
+    "default": true,
+    "tile": false,
+    "months": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "source": "https://agribalyse.ademe.fr/app/aliments/13025_2#Mangue_import%C3%A9e_par_avion,_pulpe,_crue",
+    "meta": {
+      "title": "Mangue",
+      "description": "Découvrez le détail de l'empreinte carbone d'un kg de mangues : de l'agriculture à la distribution et la consommation"
+    }
+  },
+  {
     "name": "Fenouil",
     "Code_CIQUAL": 20028,
     "prefix": "kg de ",

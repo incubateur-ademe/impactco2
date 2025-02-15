@@ -31,6 +31,7 @@ export const fldsCategories: Record<string, string> = {
   endive: 'légumes',
   epinard: 'légumes',
   mangue: 'fruits',
+  manguebateau: 'fruits',
   fenouil: 'légumes',
   haricotvert: 'légumes',
   laitue: 'légumes',
