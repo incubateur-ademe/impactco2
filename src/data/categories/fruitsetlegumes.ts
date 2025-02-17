@@ -605,6 +605,33 @@ export const fruitsEtLegumes = [
     months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
   },
   {
+    slug: 'manguebateau',
+    category: 9,
+    ecv: [
+      {
+        id: 30,
+        value: 0.15,
+      },
+      {
+        id: 31,
+        value: 0.000108,
+      },
+      {
+        id: 33,
+        value: 0.472,
+      },
+      {
+        id: 34,
+        value: 0.0248,
+      },
+      {
+        id: 35,
+        value: 0.0806,
+      },
+    ],
+    months: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+  },
+  {
     slug: 'fenouil',
     category: 9,
     ecv: [

@@ -67,6 +67,16 @@ export const imageInfographies: Record<string, { image: string; alt: string }[]>
       image: 'agriculture-vs-transport.png',
       alt: 'Quel est l’impact de l’agriculture et du transport dans l’alimentation ? Pour 1 kg de boeuf, l’agriculture représente 27,3 kg CO2e, le transport représente 0,31 kg CO2e et les autres étapes représentent 0,39 kg CO2e. Le total pour 1 kg de boeuf est 28 Kg CO2e. Pour 1 kg de pomme, l’agriculture représente 0,09 kg CO2e, le transport représente 0,26 kg CO2e et les autres étapes représentent 0,05 kg CO2e. Le total pour 1 kg de pomme est 0,4 kg CO2e. Pour 1 kg de mangue, l’agriculture représente 0,15 kg CO2e, le transport 11,4 kg CO2e et les autres étapes représentent 0,15 kg CO2e. Le total pour 1 kg de mangue est de 11,7 Kg CO2e. Source : Agribalyse.',
     },
+    {
+      image: 'infographie-mangues.webp',
+      alt: "Quelle est la différence entre ces deux mangues ? La mangue importée par bateau représente 0,73 kg CO2e pour 1 kg de mangue (0,15 kg CO2e pour l'agriculture, 0,47 kg CO2e pour le transport et 0,11 kg CO2e pour le reste). La mangue importée par avion représente 11,7 kg CO2e pour 1 kg de mangue (0,15 kg CO2e pour l'agriculture, 11,4 kg CO2e pour le transport et 0,15 kg CO2e pour le reste). Source : Agribalyse.",
+    },
+  ],
+  manguebateau: [
+    {
+      image: 'infographie-mangues.webp',
+      alt: "Quelle est la différence entre ces deux mangues ? La mangue importée par bateau représente 0,73 kg CO2e pour 1 kg de mangue (0,15 kg CO2e pour l'agriculture, 0,47 kg CO2e pour le transport et 0,11 kg CO2e pour le reste). La mangue importée par avion représente 11,7 kg CO2e pour 1 kg de mangue (0,15 kg CO2e pour l'agriculture, 11,4 kg CO2e pour le transport et 0,15 kg CO2e pour le reste). Source : Agribalyse.",
+    },
   ],
   frites: [
     {
