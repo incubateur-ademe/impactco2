@@ -414,8 +414,7 @@
         "camping": "Includes the construction and energy consumption of infrastructure (showers, sanitary facilities, and lighting).",
         "location": "Includes emissions related to energy consumption (heating, electricity, hot water), infrastructure (construction), and maintenance services.",
         "residencesecondaire": "Includes emissions related to energy consumption (heating, electricity, hot water), infrastructure (construction), and maintenance services.",
-        "2050": "The average French person emits nearly 9.3 tonnes of CO2 per year. To limit climate change, it is essential to reduce these emissions and achieve a maximum target of 2 tonnes of CO2e per person per year by 2050.",
-        "chatgpt": "The power consumption of a simple query on the classic ChatGPT model is estimated at around 10Wh (high uncertainty rate), reported on the average electricity mix in the United States. This data is an estimate based on macro usage signals. It is neither a precise measurement nor a definitive value, due to the lack of transparency of the model designers."
+        "2050": "The average French person emits nearly 9.3 tonnes of CO2 per year. To limit climate change, it is essential to reduce these emissions and achieve a maximum target of 2 tonnes of CO2e per person per year by 2050."
       },
       "post": {
         "ski": "Includes: the carbon impact of transportation (52%), accommodation (4%), food (8%), ski area (3%), infrastructure, equipment, and services (17%), and gear (16%).",
