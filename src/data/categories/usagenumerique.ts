@@ -92,14 +92,6 @@ export const usageNumeriques = [
     ],
   },
   {
-    slug: 'chatgpt',
-    synonyms: ['ia', 'recherche'],
-    unit: 'requete',
-    category: 10,
-    total: 0.00522,
-    sources: [],
-  },
-  {
     slug: 'streamingvideo',
     category: 10,
     ecv: [

@@ -113,13 +113,6 @@
     "en": "web search[es]",
     "es": "Búsqueda en la web"
   },
-  "chatgpt": {
-    "category": 10,
-    "value": 5.22,
-    "fr": "requête[s] ChatGPT",
-    "en": "ChatGPT request[s]",
-    "es": "Solicitud[es] de ChatGPT"
-  },
   "streamingvideo": {
     "category": 10,
     "value": 64.01675291000002,
