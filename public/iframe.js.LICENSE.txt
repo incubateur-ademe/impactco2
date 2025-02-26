@@ -1,7 +1,7 @@
 /*!
  *  @preserve
  *  
- *  @module      iframe-resizer/parent 5.3.2 (umd) - 2024-10-22
+ *  @module      iframe-resizer/parent 5.3.3 (umd) - 2025-02-12
  *
  *  @license     GPL-3.0 for non-commercial use only.
  *               For commercial use, you must purchase a license from
@@ -13,5 +13,5 @@
  * 
  *  @see         {@link https://iframe-resizer.com}
  * 
- *  @copyright  (c) 2013 - 2024, David J. Bradshaw. All rights reserved.
+ *  @copyright  (c) 2013 - 2025, David J. Bradshaw. All rights reserved.
  */

@@ -2,6 +2,7 @@ import { Page, chromium } from '@playwright/test'
 import fs from 'fs'
 import pdftk from 'node-pdftk'
 import alimentation from '../data/categories/alimentation.json'
+import { livraison } from '../data/categories/livraison'
 
 const quizEquivalents = [
   { category: 'alimentation', equivalent: 'repasavecduboeuf' },
@@ -38,6 +39,13 @@ const alimentationEquivalents = alimentation.map((equivalent) => ({
   equivalent: equivalent.slug,
 }))
 
+const livraisonEquivalents = livraison
+  .filter((equivalent) => equivalent.category === 12)
+  .map((equivalent) => ({
+    category: 'livraison',
+    equivalent: equivalent.slug,
+  }))
+
 const downloadPage = async (page: Page, url: string, output: string) => {
   await page.goto(url, { timeout: 60000 })
   await page.waitForLoadState('networkidle', { timeout: 60000 })
@@ -72,11 +80,24 @@ const downloadEquivalent = async (page: Page, category: string, equivalent: stri
     })
 }
 
+const getEquivalents = (type: string) => {
+  switch (type) {
+    case 'quiz':
+      return quizEquivalents
+    case 'alimentation':
+      return alimentationEquivalents
+    case 'livraison':
+      return livraisonEquivalents
+    default:
+      return []
+  }
+}
+
 const download = async (type: string) => {
   const browser = await chromium.launch()
   const page = await browser.newPage()
 
-  const equivalents = type === 'quiz' ? quizEquivalents : alimentationEquivalents
+  const equivalents = getEquivalents(type)
 
   for (let i = 0; i < equivalents.length; i++) {
     const { equivalent, category } = equivalents[i]
@@ -84,6 +105,10 @@ const download = async (type: string) => {
     await downloadEquivalent(page, category, equivalent)
   }
 
+  if (equivalents.length > 0) {
+    fs.rmSync('./public/pdf/recto.pdf')
+    fs.rmSync('./public/pdf/verso.pdf')
+  }
   browser.close()
 }
 
