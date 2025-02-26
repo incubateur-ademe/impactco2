@@ -97,17 +97,15 @@ const EquivalentsOverscreen = () => {
         )
       ) : (
         <div className={styles.content}>
-          {categories
-            .filter((category) => category.id !== 12 && category.id !== 11)
-            .map((category) => (
-              <Category
-                category={category}
-                key={category.slug}
-                equivalents={tempEquivalents}
-                setEquivalents={setTempEquivalents}
-                onClose={() => setOverscreen('comparateur', '')}
-              />
-            ))}
+          {categories.map((category) => (
+            <Category
+              category={category}
+              key={category.slug}
+              equivalents={tempEquivalents}
+              setEquivalents={setTempEquivalents}
+              onClose={() => setOverscreen('comparateur', '')}
+            />
+          ))}
         </div>
       )}
       <div className={styles.footer}>

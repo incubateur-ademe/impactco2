@@ -56,7 +56,7 @@ const Checkbox = (
       label={
         <>
           <div className={styles.equivalentName}>
-            <div>{getName(language, equivalent)}</div>
+            <div>{getName(language, equivalent, false, 0, false, true)}</div>
             {interacted && equivalents.length > 7 && (
               <div className={styles.warning}>
                 <InformationFillIcon />

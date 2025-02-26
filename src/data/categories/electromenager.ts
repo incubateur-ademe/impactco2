@@ -25,8 +25,7 @@ export const electromenager = [
       peryear: 5.27273319,
       defaultyears: 6,
     },
-    end: -0.659363081745786,
-    total: 9.91,
+    end: -3.74,
   },
   {
     id: 28304,
@@ -56,8 +55,7 @@ export const electromenager = [
       peryear: 35.160078,
       defaultyears: 5,
     },
-    end: 52.7491626905852,
-    total: 22.5,
+    end: 39.7,
   },
   {
     id: 28303,
@@ -86,8 +84,7 @@ export const electromenager = [
       peryear: 27.1831351,
       defaultyears: 5,
     },
-    end: 29.8824988339172,
-    total: 31.9,
+    end: 23.51,
   },
   {
     id: 28305,
@@ -117,8 +114,7 @@ export const electromenager = [
       peryear: 28.0487772,
       defaultyears: 5,
     },
-    end: 23.9101982705374,
-    total: 47.6,
+    end: 24.39,
   },
   {
     id: 26986,
@@ -147,8 +143,7 @@ export const electromenager = [
       peryear: 6.29728333,
       defaultyears: 12,
     },
-    end: -30.0927,
-    total: 217,
+    end: -20.55,
   },
   {
     id: 26984,
@@ -173,11 +168,10 @@ export const electromenager = [
       },
     ],
     usage: {
-      peryear: 21.943837,
-      defaultyears: 10,
+      peryear: 18.25,
+      defaultyears: 12,
     },
-    end: -22.6301522707884,
-    total: 271,
+    end: -29.4,
   },
   {
     id: 26983,
@@ -202,11 +196,10 @@ export const electromenager = [
       },
     ],
     usage: {
-      peryear: 21.6932702,
-      defaultyears: 10,
+      peryear: 18.08,
+      defaultyears: 12,
     },
-    end: -47.7754436590173,
-    total: 342,
+    end: -44.64,
   },
   {
     id: 26976,
@@ -234,8 +227,7 @@ export const electromenager = [
       peryear: 8.83240334,
       defaultyears: 10,
     },
-    end: -20.163316975983,
-    total: 257,
+    end: -6.91,
   },
   {
     id: 26990,
@@ -259,7 +251,11 @@ export const electromenager = [
         value: 17.45,
       },
     ],
-    total: 47.3,
+    usage: {
+      peryear: 3.7325,
+      defaultyears: 8,
+    },
+    end: -3.74,
   },
   {
     id: 28325,
@@ -288,7 +284,34 @@ export const electromenager = [
       peryear: 18.2596505,
       defaultyears: 6,
     },
-    end: 65.4233854443126,
-    total: 239,
+    end: 73.29,
+  },
+  {
+    id: 26989,
+    slug: 'microondes',
+    category: 6,
+    ecv: [
+      {
+        id: 1,
+        value: 58.6,
+      },
+      {
+        id: 2,
+        value: 3.43,
+      },
+      {
+        id: 3,
+        value: 6.91,
+      },
+      {
+        id: 4,
+        value: 29.4,
+      },
+    ],
+    usage: {
+      peryear: 2.45,
+      defaultyears: 12,
+    },
+    end: -6.39,
   },
 ]
