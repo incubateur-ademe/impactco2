@@ -26,7 +26,6 @@ type ShareableProps = {
   slug: string
   tracking: string
   withoutIntegration?: boolean
-  withoutShare?: boolean
   overScreens?: Record<string, OverScreenInfo>
   secondary?: ReactNode
   noBottomBorders?: boolean
@@ -38,7 +37,6 @@ const Shareable = ({
   slug,
   tracking,
   withoutIntegration,
-  withoutShare,
   overScreens,
   secondary,
   noBottomBorders,
@@ -233,7 +231,6 @@ const Shareable = ({
             }}
             tracking={tracking}
             withoutIntegration={withoutIntegration}
-            withoutShare={withoutShare}
           />
         </div>
       )}

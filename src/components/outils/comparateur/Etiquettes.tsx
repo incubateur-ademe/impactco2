@@ -9,22 +9,24 @@ const Etiquettes = () => {
 
   return (
     <div className={styles.etiquettes}>
-      <Shareable
-        slug='etiquette-animee'
-        tracking='Étiquette animée'
-        overScreens={overScreens.animated}
-        secondary='Étiquette animée'
-        withoutShare>
-        <EtiquetteSimulator animated />
-      </Shareable>
-      <Shareable
-        slug='etiquette-statique'
-        tracking='Étiquette statique'
-        overScreens={overScreens.static}
-        secondary='Étiquette statique'
-        withoutShare>
-        <EtiquetteSimulator />
-      </Shareable>
+      <div id='etiquette-animee'>
+        <Shareable
+          slug='etiquette-animee'
+          tracking='Étiquette animée'
+          overScreens={overScreens.animated}
+          secondary='Étiquette animée'>
+          <EtiquetteSimulator animated />
+        </Shareable>
+      </div>
+      <div id='etiquette-statique'>
+        <Shareable
+          slug='etiquette-statique'
+          tracking='Étiquette statique'
+          overScreens={overScreens.static}
+          secondary='Étiquette statique'>
+          <EtiquetteSimulator />
+        </Shareable>
+      </div>
     </div>
   )
 }
