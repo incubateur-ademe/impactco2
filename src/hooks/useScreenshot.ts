@@ -32,6 +32,7 @@ export default function useScreenshot(slug: string, tracking: string) {
             })
             .catch((err) => {
               console.log(err)
+              setIsScreenshotting(false)
             })
         }
       })

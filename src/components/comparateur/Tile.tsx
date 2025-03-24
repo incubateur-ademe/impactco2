@@ -1,7 +1,7 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import React, { useMemo } from 'react'
+import { useMemo } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { computedEquivalents } from 'src/providers/equivalents'
 import { getName } from 'utils/Equivalent/equivalent'
@@ -61,7 +61,7 @@ const Tile = ({ slug, onAdd }: { slug?: string; onAdd?: () => void }) => {
             {Number.isFinite(value) ? <LocalNumber number={formatNumber(value)} /> : <InfinityIcon />}
           </span>
           <span className='text-sm' data-testid={`comparateur-${slug}-name`}>
-            {getName(language, equivalent, true, value, true)}
+            {getName(language, equivalent, true, value, true, true)}
           </span>
         </p>
       </div>

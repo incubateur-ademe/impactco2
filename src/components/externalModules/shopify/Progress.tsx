@@ -1,5 +1,4 @@
-import { useTranslations } from 'next-intl'
-import React, { Dispatch, SetStateAction, useCallback, useEffect, useRef, useState } from 'react'
+import { Dispatch, SetStateAction, useCallback, useEffect, useRef, useState } from 'react'
 import PauseIcon from 'components/base/icons/pause'
 import PlayIcon from 'components/base/icons/play'
 import styles from './Progress.module.css'
@@ -18,8 +17,8 @@ const Progress = ({
   const [paused, setPaused] = useState(false)
   const [progress, setProgress] = useState(0)
 
-  const displayedTimeoutRef = useRef<NodeJS.Timeout>()
-  const fadeInTimeoutRef = useRef<NodeJS.Timeout>()
+  const displayedTimeoutRef = useRef<NodeJS.Timeout>(undefined)
+  const fadeInTimeoutRef = useRef<NodeJS.Timeout>(undefined)
 
   const updateWithTimeout = useCallback(() => {
     setProgress((value) => value + 1)

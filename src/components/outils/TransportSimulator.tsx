@@ -18,7 +18,7 @@ const itineraire = {
   value: 'itineraire',
 }
 
-const TransportSimulator = ({ bis }: { bis?: boolean }) => {
+const TransportSimulator = () => {
   const {
     setHideActions,
     transport: { selected, setSelected },
@@ -36,14 +36,12 @@ const TransportSimulator = ({ bis }: { bis?: boolean }) => {
   const mode = useMemo(() => searchParams.get('mode'), [searchParams])
 
   useEffect(() => {
-    if (bis) {
-      if (selected === 'distance') {
-        setHideActions(false)
-      } else {
-        setHideActions(!start || !end)
-      }
+    if (selected === 'distance') {
+      setHideActions(false)
+    } else {
+      setHideActions(!start || !end)
     }
-  }, [bis, selected, start, end])
+  }, [selected, start, end])
 
   useEffect(() => {
     if (pathName.includes(itineraire.value)) {
@@ -153,7 +151,7 @@ const TransportSimulator = ({ bis }: { bis?: boolean }) => {
         role='tabpanel'
         aria-labelledby='tab-itineraire'
         className={selected === 'distance' ? styles.hidden : undefined}>
-        <ItineraireSimulator withComparisonMode={!mode} bis={bis} />
+        <ItineraireSimulator withComparisonMode={!mode} />
       </div>
     </>
   )

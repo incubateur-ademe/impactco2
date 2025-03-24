@@ -1,7 +1,7 @@
 'use client'
 
 import classNames from 'classnames'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Language, SimpleEquivalent } from 'types/equivalent'
 import { getName } from 'utils/Equivalent/equivalent'
 import values from 'utils/Equivalent/values.json'
@@ -79,7 +79,7 @@ const SimpleValue = ({
         <span
           className={classNames(styles.label, 'impactCO2-etiquette-text')}
           data-testid={`etiquette-${comparison}-name`}>
-          {getName(language, equivalent, true, comparisonValue, true)}
+          {getName(language, equivalent, true, comparisonValue, true, true)}
         </span>
       </p>
     </div>

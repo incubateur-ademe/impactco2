@@ -1,7 +1,6 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import { useMemo } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import useItineraries from 'hooks/useItineraries'
 import useTransportations from 'hooks/useTransportations'
@@ -13,23 +12,22 @@ import styles from './ItineraireSimulator.module.css'
 import TransportComparisonMode from './TransportComparisonMode'
 import TransportComparisonSimulator from './TransportComparisonSimulator'
 
-const ItineraireSimulator = ({ withComparisonMode, bis }: { withComparisonMode: boolean; bis?: boolean }) => {
+const tracking = 'Transport itinéraire'
+const ItineraireSimulator = ({ withComparisonMode }: { withComparisonMode: boolean }) => {
   const {
     transport: { comparisonMode },
     itineraire: { start, setStart, end, setEnd, displayAll, setDisplayAll, roundTrip, setRoundTrip },
   } = useParamContext()
 
-  const tracking = useMemo(() => `Transport itinéraire${bis ? ' bis' : ''}`, [bis])
-
   const t = useTranslations('transport.itineraire')
 
-  const { data: itineraries } = useItineraries(start, end, `itinéraire${bis ? ' bis' : ''}`)
+  const { data: itineraries } = useItineraries(start, end, 'itinéraire')
   const { hasMore, equivalents } = useTransportations('Transport itinéraire', 'itineraire', itineraries)
 
   return (
     <>
       <div className={styles.simulator}>
-        {bis && <p>{t('header')}</p>}
+        <p>{t('header')}</p>
         <div className={styles.addresses}>
           <AddressInput
             large
@@ -44,7 +42,6 @@ const ItineraireSimulator = ({ withComparisonMode, bis }: { withComparisonMode: 
         <div className={styles.roundTrip}>
           <CheckboxInput id='roundTrip' label={t('roundTrip')} checked={roundTrip} setChecked={setRoundTrip} />
         </div>
-        {!bis && <p>{t('header')}</p>}
       </div>
       {start && end && itineraries ? (
         <>
@@ -58,14 +55,13 @@ const ItineraireSimulator = ({ withComparisonMode, bis }: { withComparisonMode: 
               moreText='transport'
               withSimulator
               type='itineraire'
-              bis={bis}
             />
           ) : (
             <TransportComparisonSimulator tracking={tracking} equivalents={equivalents} />
           )}
         </>
       ) : (
-        bis && !itineraries && <EmptyItineraire />
+        !itineraries && <EmptyItineraire />
       )}
     </>
   )

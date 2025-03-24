@@ -20,10 +20,6 @@
   }
 }
 
-.black {
-  fill: var(--neutral-70);
-}
-
 .small {
   height: 3rem;
 }
