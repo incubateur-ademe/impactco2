@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useMemo, useRef } from 'react'
+import { useMemo, useRef } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { ComputedEquivalent } from 'types/equivalent'
 import { getName } from 'utils/Equivalent/equivalent'
@@ -17,8 +17,7 @@ const Etiquette = ({ equivalent }: { equivalent: ComputedEquivalent }) => {
       slug='etiquette'
       overScreens={overScreens}
       tracking={`${getName('fr', equivalent)}-Etiquette`}
-      secondary=''
-      withoutShare>
+      secondary=''>
       <EtiquetteContent
         baseValue={((equivalent.value / ((equivalent.carpool || 0) + 1)) * 1000).toString()}
         comparisons={[`${equivalent.slug}${equivalent.carpool ? `+${equivalent.carpool}` : ''}`]}

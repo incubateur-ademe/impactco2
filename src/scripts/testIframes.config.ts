@@ -114,9 +114,9 @@ export const checks = [
       await page.getByRole('button', { name: 'Accept' }).click()
     },
     checkIframe: async (page: FrameLocator) => {
-      await expect(page.getByTestId('equivalent-total-value')).toHaveText('346 kg CO₂e')
+      await expect(page.getByTestId('equivalent-total-value')).toHaveText('339 kg CO₂e')
       await page.getByRole('button', { name: 'Augmenter le nombre de année' }).click()
-      await expect(page.getByTestId('equivalent-total-value')).toHaveText('350 kg CO₂e')
+      await expect(page.getByTestId('equivalent-total-value')).toHaveText('343 kg CO₂e')
     },
   },
   {

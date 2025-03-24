@@ -144,12 +144,20 @@ export const overScreenLivraisonEtiquettesValues: () => Record<
   Record<string, OverScreenInfo>
 > = () => ({
   animated: {
+    partager: {
+      title: 'share',
+      children: <Share path='outils/livraison' tracking='Livraison' anchor='etiquette-animee' extraKit='livraison' />,
+    },
     integrer: {
       title: 'integrate',
       children: <Integrate path='livraison/etiquette-animee' tracking='Livraison' />,
     },
   },
   static: {
+    partager: {
+      title: 'share',
+      children: <Share path='outils/livraison' tracking='Livraison' anchor='etiquette' extraKit='livraison' />,
+    },
     integrer: {
       title: 'integrate',
       children: <Integrate path='livraison/etiquette' tracking='Livraison' />,
@@ -162,12 +170,20 @@ export const overScreenComparateurEtiquettesValues: () => Record<
   Record<string, OverScreenInfo>
 > = () => ({
   animated: {
+    partager: {
+      title: 'share',
+      children: <Share path='outils/comparateur' tracking='Comparateur' anchor='etiquette-animee' />,
+    },
     integrer: {
       title: 'integrate',
       children: <Integrate path='comparateur/etiquette-animee' tracking='Comparateur' />,
     },
   },
   static: {
+    partager: {
+      title: 'share',
+      children: <Share path='outils/comparateur' tracking='Comparateur' anchor='etiquette-statique' />,
+    },
     integrer: {
       title: 'integrate',
       children: <Integrate path='comparateur/etiquette' tracking='Comparateur' />,
