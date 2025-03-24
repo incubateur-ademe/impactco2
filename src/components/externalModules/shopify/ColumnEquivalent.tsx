@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import { Language } from 'types/equivalent'
 import { getNumberPrecision } from 'utils/formatNumberPrecision'
 import LocalNumber from 'components/base/LocalNumber'

@@ -82,6 +82,11 @@ const ecvs = (type: number, values: EquivalentValue[]): Values[] => {
     case 51:
     case 52:
     case 53:
+    case 54:
+    case 55:
+    case 56:
+    case 57:
+    case 58:
       return [
         {
           label: 'total',
@@ -113,15 +118,15 @@ export default function Detail({
   }
 
   const fabricationTotal = equivalent.ecv.reduce((acc, current) => acc + current.value, 0)
-  const usage = 'usage' in equivalent && equivalent.usage ? years * equivalent.usage.peryear : 0
-  const end = 'end' in equivalent && equivalent.end ? equivalent.end : 0
+  const usage = 'usage' in equivalent && equivalent.usage ? years * equivalent.usage.peryear : null
+  const end = 'end' in equivalent && equivalent.end ? equivalent.end : null
 
-  const total = fabricationTotal + usage + end
+  const total = fabricationTotal + (usage || 0) + (end || 0)
   const unit = total > 1 ? 'kg' : 'g'
 
   const type = equivalent.ecv[0].id
   let usageAndEnd = null
-  if (usage > 0 && end > 0) {
+  if (usage !== null && end !== null) {
     usageAndEnd = {
       label: 'usage-fdv',
       icon: 'usage',
@@ -131,14 +136,14 @@ export default function Detail({
         { id: 9, value: end },
       ],
     }
-  } else if (usage > 0) {
+  } else if (usage !== null) {
     usageAndEnd = {
       label: 'usage',
       icon: 'usage',
       value: usage,
       values: [{ id: 8, value: usage }],
     }
-  } else if (end > 0) {
+  } else if (end !== null) {
     usageAndEnd = {
       label: 'fdv',
       icon: 'usage',

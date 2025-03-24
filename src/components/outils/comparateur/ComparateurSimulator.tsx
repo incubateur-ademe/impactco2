@@ -2,7 +2,7 @@
 
 import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
-import React, { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { getName } from 'utils/Equivalent/equivalent'
 import { getNumberPrecision } from 'utils/formatNumberPrecision'
@@ -48,11 +48,11 @@ const ComparateurSimulator = () => {
             id='base-value'
             value={baseValue}
             setValue={setBaseValue}
-            label={`${t('number-of')} ${comparedEquivalent ? getName(language, comparedEquivalent, true, baseValue) : t('co2-unit')}`}
+            label={`${t('number-of')} ${comparedEquivalent ? getName(language, comparedEquivalent, true, baseValue, false, true) : t('co2-unit')}`}
             unit={
               comparedEquivalent ? (
                 <>
-                  {getName(language, comparedEquivalent, true, baseValue, true)}
+                  {getName(language, comparedEquivalent, true, baseValue, true, true)}
                   <div className={styles.unitIcon}>
                     <CloseThickIcon />
                   </div>

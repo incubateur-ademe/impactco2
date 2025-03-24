@@ -25,25 +25,25 @@ const KitCommunication = () => {
         title='Kit de communication'
         as='h1'
         description='Tout ce qu’il faut pour communiquer sur Impact CO₂'
-        id='plaquette'>
+        id='livraison'>
         <Card className={outilStyles.card}>
           <div className={classNames(outilStyles.image, styles.image)}>
-            <Image src='/images/banner-kit-plaquette.png' width={748} height={180} alt='' />
+            <Image src='/images/banner-kit-livraison.png' width={748} height={180} alt='' />
           </div>
           <div className={outilStyles.content}>
-            <h2>Présentation externe</h2>
+            <h2>Kit de com’ pour Impact Livraison</h2>
             <p>
-              Nous mettons à votre disposition une courte plaquette de présentation pour pouvoir partager facilement
-              notre service public à votre entourage professionnel. N’hésitez pas à l’utiliser lors de vos prochains
-              ateliers, ou à le diffuser dans vos canaux de communication !
+              Afin de vous faciliter la tâche, nous avons concocté des visuels prêts à l’emploi pour communiquer autour
+              d’Impact Livraison.
+            </p>
+            <p>
+              Le kit inclut notamment des exemples de posts pour les réseaux sociaux, ainsi que des visuels
+              personnalisables avec votre logo, ou non, à différents formats, ainsi qu’un flyer A5 et un sticker 8x6cm
+              avec un QR Code qui dirige vers la page d’Impact Livraison.
             </p>
           </div>
           <div className={outilStyles.link}>
-            <Download
-              name='plaquette'
-              customHref='https://docs.google.com/presentation/d/10lUOkR_I5UCa1qzG3jcCbCDZLCV9KK9M_MaY6Z-gEWw/edit'
-              customLabel='Accéder à la présentation (Google Slides)'
-            />
+            <Download name='livraison' customLabel='Télécharger le kit' />
           </div>
         </Card>
       </Block>

@@ -8,6 +8,39 @@ const m2: Record<string, string> = {
   es: 'por m²',
 }
 
+const livraison: Record<string, Record<string, string>> = {
+  magasin: {
+    fr: '15km en voiture',
+    en: '15km by car',
+    es: '15km en coche',
+  },
+  magasindouce: {
+    fr: 'à pied',
+    en: 'by foot',
+    es: 'a pie',
+  },
+  clickcollect: {
+    fr: '15km en voiture',
+    en: '15km by car',
+    es: '15km en coche',
+  },
+  clickcollectdouce: {
+    fr: 'à pied',
+    en: 'by foot',
+    es: 'a pie',
+  },
+  pointrelais: {
+    fr: '3,5km en voiture',
+    en: '3.5km by car',
+    es: '3,5km en coche',
+  },
+  pointrelaisdouce: {
+    fr: 'à pied',
+    en: 'by foot',
+    es: 'a pie',
+  },
+}
+
 const carpooling: Record<string, Record<string, string>> = {
   voiturethermique: {
     fr: 'Covoiturage thermique',
@@ -93,9 +126,19 @@ export const getNameWithoutSuffix = (
       .replace(/\bter\b/i, 'TER')
       .replace(/\bgame of\b/i, 'Game of')
       .replace(/a\/r/i, 'A/R')
+      .replace(/\bclick\b/i, 'Click')
   } else {
     return `${nameWithoutSuffix[0].toUpperCase()}${nameWithoutSuffix.slice(1)}`
   }
+}
+
+const getLivraisonInfo = (language: string, slug: string) => {
+  const infos = livraison[slug]
+  if (!infos) {
+    return ''
+  }
+
+  return ` (${infos[language]})`
 }
 
 export const getName = (
@@ -103,10 +146,11 @@ export const getName = (
   equivalent: Pick<Equivalent, 'category' | 'slug' | 'carpool'>,
   withPrefix?: boolean,
   value?: number,
-  lowerCase?: boolean
+  lowerCase?: boolean,
+  livraisonInfo?: boolean
 ) => {
   const name = getNameWithoutSuffix(language, equivalent, withPrefix, value, lowerCase)
-  return `${name}${equivalent.category === 8 ? ` ${m2[language]}` : ''}${equivalent.carpool ? `(${equivalent.carpool} ${formatName(passengers[language], equivalent.carpool)})` : ''}`
+  return `${name}${equivalent.category === 8 ? ` ${m2[language]}` : ''}${equivalent.carpool ? `(${equivalent.carpool} ${formatName(passengers[language], equivalent.carpool)})` : ''}${livraisonInfo ? getLivraisonInfo(language, equivalent.slug) : ''}`
 }
 
 export const isEquivalentInMode = (equivalent: ComputedEquivalent, mode: string) =>

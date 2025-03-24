@@ -90,6 +90,37 @@ const Outils = () => {
               </>
             ),
           },
+          {
+            ...(tools.find((tool) => tool.slug === 'livraison') as ToolCardProps),
+            title: 'Découvrez Impact Livraison !',
+            linkLabel: 'Découvrir',
+            description: (
+              <>
+                <div className={styles.descriptionLine}>
+                  <div className={styles.icons}>
+                    <div className={styles.shape}>
+                      <SimpleStarShapeIcon />
+                    </div>
+                    <div className={styles.check}>
+                      <CheckIcon />
+                    </div>
+                  </div>
+                  <p>7 scénarios de livraison à comparer pour 10 objets</p>
+                </div>
+                <div className={styles.descriptionLine}>
+                  <div className={styles.icons}>
+                    <div className={styles.shape}>
+                      <SimpleStarShapeIcon />
+                    </div>
+                    <div className={styles.check}>
+                      <CheckIcon />
+                    </div>
+                  </div>
+                  <p>Un outil ludique pour sensibiliser sans culpabiliser</p>
+                </div>
+              </>
+            ),
+          },
         ]}
       />
       <Block

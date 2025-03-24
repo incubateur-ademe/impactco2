@@ -119,4 +119,9 @@ export const ecv = [
     id: 53,
     name: 'Construction des infrastructures',
   },
+  { id: 54, name: 'Commande & Préparation' },
+  { id: 55, name: 'Stockage & Transit' },
+  { id: 56, name: 'Mon déplacement à 7km A/R' },
+  { id: 57, name: 'Mon déplacement à 30km A/R' },
+  { id: 58, name: 'Fabrication' },
 ]
