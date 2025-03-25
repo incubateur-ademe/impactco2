@@ -1,7 +1,6 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import React from 'react'
 import { computedEquivalents } from 'src/providers/equivalents'
 import { Category } from 'types/category'
 import { ComputedEquivalent } from 'types/equivalent'
@@ -20,7 +19,7 @@ const EauThe = () => {
       <div className={styles.container}>
         <div className={styles.withIcon}>
           <Icon />
-          <p>{t.rich('line-1')}</p>
+          <p>{t.rich('line-1', { important: (chunks) => <b>{chunks}</b> })}</p>
         </div>
       </div>
       <EquivalentSimulator category={boisson} equivalent={eau} className={styles.borders} />
