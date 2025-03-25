@@ -49,7 +49,7 @@ test('Livraison simulator', async ({ page }) => {
   await page.getByLabel('Intégrer').getByText('Paire de chaussures').click()
   await page.getByLabel('Intégrer').getByText('Micro-ondes').click()
   await page.getByLabel('Intégrer').getByText('Livres').click()
-  await page.getByLabel('Intégrer').getByText('Commande de vêtements').click()
+  await page.getByLabel('Intégrer').getByText('Vêtements').click()
   await page.getByLabel('Intégrer').getByText('Lit complet').click()
   await page.getByLabel('Intégrer').getByText('Caisse de vin').click()
   await page.getByLabel('Intégrer').getByText('Smartphone', { exact: true }).click()

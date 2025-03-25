@@ -42,7 +42,7 @@ const FRLivraisonData = () => {
           <Dropdown title='Micro-ondes' className={styles.dropdown}>
             <LivraisonEquivalents slug={LivraisonType.MicroOndes} />
           </Dropdown>
-          <Dropdown title='Commande de vêtements' className={styles.dropdown}>
+          <Dropdown title='Vêtements' className={styles.dropdown}>
             <p>La commande de vêtements comprend quatre t-shirts, un jean et un manteau.</p>
             <LivraisonEquivalents slug={LivraisonType.Vetements} />
           </Dropdown>
@@ -216,7 +216,7 @@ const ESLivraisonData = () => {
           <Dropdown title='Microondas' className={styles.dropdown}>
             <LivraisonEquivalents slug={LivraisonType.MicroOndes} />
           </Dropdown>
-          <Dropdown title='Pedido de ropa' className={styles.dropdown}>
+          <Dropdown title='Ropa' className={styles.dropdown}>
             <p>El pedido de ropa incluye cuatro camisetas, un jean y un abrigo.</p>
             <LivraisonEquivalents slug={LivraisonType.Vetements} />
           </Dropdown>
@@ -393,7 +393,7 @@ const ENLivraisonData = () => {
           <Dropdown title='Microwave' className={styles.dropdown}>
             <LivraisonEquivalents slug={LivraisonType.MicroOndes} />
           </Dropdown>
-          <Dropdown title='Clothing order' className={styles.dropdown}>
+          <Dropdown title='Clothing' className={styles.dropdown}>
             <p>The clothing order includes four t-shirts, a pair of jeans, and a coat.</p>
             <LivraisonEquivalents slug={LivraisonType.Vetements} />
           </Dropdown>
