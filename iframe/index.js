@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 // below : injected WEBPACK_SITE_URL constant from env var, see webpack.config.js
 import iframeResize from '@iframe-resizer/parent'
+import 'core-js/proposals/string-replace-all-stage-4'
 
 const setupIframe = (element) => {
   element['loaded'] = 'true'
