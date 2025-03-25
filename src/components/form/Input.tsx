@@ -95,7 +95,7 @@ const Input = (
       {label && (
         <label className={classNames(styles.label, { [styles.labelError]: !!error })} htmlFor={`input-${id}`}>
           {label}
-          {!inputProps.required && <span className={styles.notRequired}> - Facultatif</span>}
+          {inputProps.required && <span className={styles.required}> *</span>}
           {hint && <span className={classNames(styles.hint, 'text-sm')}>{hint}</span>}
         </label>
       )}

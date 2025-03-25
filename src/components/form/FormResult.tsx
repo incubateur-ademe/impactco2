@@ -1,8 +1,7 @@
-import classNames from 'classnames'
-import React from 'react'
+import { useEffect, useRef } from 'react'
 import Link from 'components/base/buttons/Link'
-import CheckIcon from 'components/base/icons/check'
-import CloseIcon from 'components/base/icons/close'
+import CheckIcon from 'components/base/icons/check-round'
+import DeleteIcon from 'components/base/icons/delete'
 import styles from './FormResult.module.css'
 
 const FormResult = ({
@@ -16,19 +15,26 @@ const FormResult = ({
   description: string
   back: () => void
 }) => {
+  const ref = useRef<HTMLDivElement>(null)
+  useEffect(() => {
+    if (ref.current) {
+      ref.current.scrollIntoView({ behavior: 'smooth', block: 'end' })
+    }
+  }, [ref])
+
   return (
-    <div data-testid={`form-result-${success ? 'success' : 'error'}`}>
-      <div>
-        <div className={classNames(styles.icon, { [styles.error]: !success })}>
-          {success ? <CheckIcon /> : <CloseIcon />}
-        </div>
+    <div ref={ref}>
+      <p className={success ? styles.successTitle : styles.errorTitle}>
+        <span className={success ? styles.successIcon : styles.errorIcon}>
+          {success ? <CheckIcon /> : <DeleteIcon />}
+        </span>
         <span className='text-lg'>
           <b>{title}</b>
         </span>
-      </div>
-      <div className={styles.description}>{description}</div>
+      </p>
+      <p className={styles.description}>{description}</p>
       <Link internal href={success ? '/' : '#'} onClick={success ? undefined : back}>
-        {success ? "Retourner à l'accueil" : 'Retourner au formulaire'}
+        {success ? "Revenir à l'accueil" : 'Revenir au formulaire'}
       </Link>
     </div>
   )

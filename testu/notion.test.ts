@@ -2,41 +2,21 @@ import { NotionCommand, NotionCommandValidation } from '../src/utils/notion'
 import { expectZodValidationToFail } from '../test-utils/zodValidationTest'
 
 describe('Notion api command', () => {
-  describe('Contact', () => {
+  describe('Suggestion', () => {
     const validCommand: NotionCommand = {
-      type: 'contact',
-      email: 'test@cool.fr',
-      structure: 'association',
+      type: 'suggestion',
+      email: 'test@test.fr',
       from: 'test',
+      structure: 'etat',
+      suggestionType: 'bug',
+      text: 'Ca marche pas !',
       accepted: true,
-      newsletter: true,
+      newsletter: false,
     }
 
     it('allows valid command', () => {
       const result = NotionCommandValidation.safeParse(validCommand)
       expect(result.success).toEqual(true)
-    })
-
-    it('allows valid command with other structure and specification', () => {
-      const result = NotionCommandValidation.safeParse({ ...validCommand, structure: 'autre', other: 'autres' })
-      expect(result.success).toEqual(true)
-    })
-
-    it('does not allow valid command with empty newsletter', () => {
-      expectZodValidationToFail(
-        // @ts-expect-error: Zod too complex
-        NotionCommandValidation,
-        validCommand,
-        {
-          newsletter: undefined,
-        },
-        [
-          {
-            path: ['newsletter'],
-            message: 'Required',
-          },
-        ]
-      )
     })
 
     it('does not allow valid command with not accepted', () => {
@@ -50,7 +30,7 @@ describe('Notion api command', () => {
         [
           {
             path: ['accepted'],
-            message: 'Veuillez lire et accepter',
+            message: 'Veuillez lire et accepter la politique de protection des données personnelles',
           },
         ]
       )
@@ -67,46 +47,7 @@ describe('Notion api command', () => {
         [
           {
             path: ['accepted'],
-            message: 'Veuillez lire et accepter',
-          },
-        ]
-      )
-    })
-
-    it('does not allow valid command with other structure and no specification', () => {
-      expectZodValidationToFail(
-        // @ts-expect-error: Zod too complex
-        NotionCommandValidation,
-        validCommand,
-        {
-          structure: 'autre',
-        },
-        [
-          {
-            path: ['other'],
-            message: 'Veuillez preciser votre structure.',
-          },
-        ]
-      )
-    })
-
-    it('allows valid command with needs', () => {
-      const result = NotionCommandValidation.safeParse({ ...validCommand, needs: 'mes besoin' })
-      expect(result.success).toEqual(true)
-    })
-
-    it('does not allow empty email', () => {
-      expectZodValidationToFail(
-        // @ts-expect-error: Zod too complex
-        NotionCommandValidation,
-        validCommand,
-        {
-          email: undefined,
-        },
-        [
-          {
-            path: ['email'],
-            message: 'Veuillez renseigner un email valide.',
+            message: 'Veuillez lire et accepter la politique de protection des données personnelles',
           },
         ]
       )
@@ -124,6 +65,23 @@ describe('Notion api command', () => {
           {
             path: ['email'],
             message: 'Veuillez renseigner un email valide.',
+          },
+        ]
+      )
+    })
+
+    it('does not allow empty suggestion', () => {
+      expectZodValidationToFail(
+        // @ts-expect-error: Zod too complex
+        NotionCommandValidation,
+        validCommand,
+        {
+          suggestionType: undefined,
+        },
+        [
+          {
+            path: ['suggestionType'],
+            message: 'Veuillez spécifier votre type de retour.',
           },
         ]
       )
@@ -162,29 +120,38 @@ describe('Notion api command', () => {
         ]
       )
     })
-  })
 
-  describe('Suggestion', () => {
+    it('does not allow empty text ', () => {
+      expectZodValidationToFail(
+        // @ts-expect-error: Zod too complex
+        NotionCommandValidation,
+        validCommand,
+        {
+          text: undefined,
+        },
+        [
+          {
+            path: ['text'],
+            message: 'Veuillez renseigner votre message.',
+          },
+        ]
+      )
+    })
+  })
+  describe('Rendez-vous', () => {
     const validCommand: NotionCommand = {
-      type: 'suggestion',
+      type: 'rendezvous',
+      email: 'test@test.fr',
       from: 'test',
+      structure: 'etat',
       suggestionType: 'bug',
       text: 'Ca marche pas !',
       accepted: true,
+      newsletter: false,
     }
 
     it('allows valid command', () => {
       const result = NotionCommandValidation.safeParse(validCommand)
-      expect(result.success).toEqual(true)
-    })
-
-    it('allows valid command with avis and note', () => {
-      const result = NotionCommandValidation.safeParse({
-        ...validCommand,
-        suggestionType: 'avis',
-        avis: 4,
-        test: undefined,
-      })
       expect(result.success).toEqual(true)
     })
 
@@ -199,7 +166,7 @@ describe('Notion api command', () => {
         [
           {
             path: ['accepted'],
-            message: 'Veuillez lire et accepter',
+            message: 'Veuillez lire et accepter la politique de protection des données personnelles',
           },
         ]
       )
@@ -216,32 +183,10 @@ describe('Notion api command', () => {
         [
           {
             path: ['accepted'],
-            message: 'Veuillez lire et accepter',
+            message: 'Veuillez lire et accepter la politique de protection des données personnelles',
           },
         ]
       )
-    })
-
-    it('does not allow valid command with avis and no note', () => {
-      expectZodValidationToFail(
-        // @ts-expect-error: Zod too complex
-        NotionCommandValidation,
-        validCommand,
-        {
-          suggestionType: 'avis',
-        },
-        [
-          {
-            path: ['avis'],
-            message: 'Veuillez indiquer une note.',
-          },
-        ]
-      )
-    })
-
-    it('allows valid command with email', () => {
-      const result = NotionCommandValidation.safeParse({ ...validCommand, email: 'test@ok.fr' })
-      expect(result.success).toEqual(true)
     })
 
     it('does not allow unvalid email', () => {
@@ -272,7 +217,24 @@ describe('Notion api command', () => {
         [
           {
             path: ['suggestionType'],
-            message: 'Veuillez renseigner le type de suggestion.',
+            message: 'Veuillez renseigner votre demande.',
+          },
+        ]
+      )
+    })
+
+    it('does not allow empty structure', () => {
+      expectZodValidationToFail(
+        // @ts-expect-error: Zod too complex
+        NotionCommandValidation,
+        validCommand,
+        {
+          structure: undefined,
+        },
+        [
+          {
+            path: ['structure'],
+            message: 'Veuillez renseigner votre structure.',
           },
         ]
       )
@@ -295,37 +257,18 @@ describe('Notion api command', () => {
       )
     })
 
-    it('does not allow empty text for bug', () => {
+    it('does not allow empty text ', () => {
       expectZodValidationToFail(
         // @ts-expect-error: Zod too complex
         NotionCommandValidation,
         validCommand,
         {
-          suggestionType: 'bug',
           text: undefined,
         },
         [
           {
             path: ['text'],
-            message: 'Veuillez décrire le bug rencontré.',
-          },
-        ]
-      )
-    })
-
-    it('does not allow empty text for idea', () => {
-      expectZodValidationToFail(
-        // @ts-expect-error: Zod too complex
-        NotionCommandValidation,
-        validCommand,
-        {
-          suggestionType: 'idee',
-          text: undefined,
-        },
-        [
-          {
-            path: ['text'],
-            message: 'Veuillez décrire votre idée.',
+            message: 'Veuillez renseigner votre message.',
           },
         ]
       )
