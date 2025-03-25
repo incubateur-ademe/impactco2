@@ -35,7 +35,7 @@ const AlimentationSimulator = () => {
   ) : (
     <>
       <div className={styles.simulator}>
-        <p>{t.rich('title')}</p>
+        <p>{t.rich('title', { important: (chunks) => <b>{chunks}</b> })}</p>
         <HiddenLabel htmlFor='text-select-category'>{t('label')}</HiddenLabel>
         <Select
           id='category'

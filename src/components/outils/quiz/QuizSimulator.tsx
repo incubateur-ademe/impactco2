@@ -84,8 +84,11 @@ const QuizSimulator = () => {
             </p>
             <legend className={styles.title} data-testid='quiz-title'>
               {config
-                ? t.rich('title')
-                : t.rich('score', { score: score.current.reduce((acc, current) => acc + current, 0) })}
+                ? t.rich('title', { important: (chunks) => <b>{chunks}</b> })
+                : t.rich('score', {
+                    score: score.current.reduce((acc, current) => acc + current, 0),
+                    important: (chunks) => <b>{chunks}</b>,
+                  })}
             </legend>
             {config && (
               <p
@@ -97,10 +100,10 @@ const QuizSimulator = () => {
                 role='status'>
                 {answer ? (
                   answer === config.answer ? (
-                    t.rich('correct')
+                    t.rich('correct', { important: (chunks) => <b>{chunks}</b> })
                   ) : (
                     <>
-                      {t.rich('missed')} {config.answer} !
+                      {t.rich('missed', { important: (chunks) => <b>{chunks}</b> })} {config.answer} !
                     </>
                   )
                 ) : (

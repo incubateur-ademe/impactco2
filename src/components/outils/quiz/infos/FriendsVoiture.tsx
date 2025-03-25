@@ -1,7 +1,7 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import Etiquette from 'components/comparateur/Etiquette'
 import Icon from './Icon'
@@ -17,8 +17,8 @@ const FriendsVoiture = () => {
         <div className={styles.withIcon}>
           <Icon />
           <div>
-            <p>{t.rich('line-1')}</p>
-            <p>{t.rich('line-2')}</p>
+            <p>{t.rich('line-1', { important: (chunks) => <b>{chunks}</b> })}</p>
+            <p>{t.rich('line-2', { important: (chunks) => <b>{chunks}</b> })}</p>
           </div>
         </div>
       </div>

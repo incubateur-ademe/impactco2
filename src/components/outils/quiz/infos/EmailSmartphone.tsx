@@ -1,7 +1,6 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import React from 'react'
 import { computedEquivalents } from 'src/providers/equivalents'
 import { Category } from 'types/category'
 import { ComputedEquivalent } from 'types/equivalent'
@@ -21,8 +20,8 @@ const EmailSmartphone = () => {
         <div className={styles.withIcon}>
           <Icon />
           <div>
-            <p>{t.rich('line-1')}</p>
-            <p>{t.rich('line-2')}</p>
+            <p>{t.rich('line-1', { important: (chunks) => <b>{chunks}</b> })}</p>
+            <p>{t.rich('line-2', { important: (chunks) => <b>{chunks}</b> })}</p>
           </div>
         </div>
       </div>

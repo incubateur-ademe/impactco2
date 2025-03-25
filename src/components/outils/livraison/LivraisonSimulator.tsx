@@ -83,7 +83,7 @@ const LivraisonSimulator = () => {
   return (
     <>
       <div className={classNames(styles.simulator, livraisonStyles.withBorder)}>
-        <label htmlFor='text-select-type'>{t.rich('title')}</label>
+        <label htmlFor='text-select-type'>{t('title')}</label>
         <Select
           className={livraisonStyles.select}
           id='type'

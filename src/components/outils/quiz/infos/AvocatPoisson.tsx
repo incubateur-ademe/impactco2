@@ -1,7 +1,6 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import React from 'react'
 import InfographySimulator from 'components/outils/equivalents/infographies/InfographySimulator'
 import Icon from './Icon'
 import styles from './Infos.module.css'
@@ -14,8 +13,8 @@ const AvocatPoisson = () => {
         <div className={styles.withIcon}>
           <Icon />
           <div>
-            <p>{t.rich('line-1')}</p>
-            <p>{t.rich('line-2')}</p>
+            <p>{t.rich('line-1', { important: (chunks) => <b>{chunks}</b> })}</p>
+            <p>{t.rich('line-2', { important: (chunks) => <b>{chunks}</b> })}</p>
           </div>
         </div>
       </div>
