@@ -55,6 +55,7 @@
     "axios": "^1.8.4",
     "classnames": "^2.5.1",
     "core-js": "^3.41.0",
+    "crisp-api": "^9.9.0",
     "dotenv-cli": "^8.0.0",
     "fuse.js": "^7.1.0",
     "helmet": "^8.1.0",
