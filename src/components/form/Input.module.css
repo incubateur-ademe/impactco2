@@ -13,7 +13,6 @@
   padding: 0.75rem 1rem;
   font-size: 1rem;
   line-height: 1.5rem;
-  height: 3.25rem;
   position: relative;
   width: 100%;
 
@@ -32,6 +31,11 @@
     border: 2px solid var(--neutral-20);
     color: var(--neutral-30);
   }
+}
+
+.select,
+.input {
+  height: 3.25rem;
 }
 
 .select {
@@ -151,8 +155,8 @@
 .label {
   color: var(--neutral-80);
   display: inline-block;
-  font-weight: 500;
-  margin-bottom: 0.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
 }
 
 .labelError {
@@ -169,7 +173,7 @@
   display: block;
 }
 
-.notRequired {
+.required {
   color: var(--neutral-50);
   font-weight: 400;
   display: inline;

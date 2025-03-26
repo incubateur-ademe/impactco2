@@ -1,4 +1,4 @@
-import CheckIcon from 'components/base/icons/check'
+import CheckRoundIcon from 'components/base/icons/check-round'
 import SimpleStarShapeIcon from 'components/base/icons/simple-star-shape'
 import Breadcrumbs from 'components/breadcrumbs/Breadcrumbs'
 import News from 'components/cards/News'
@@ -29,7 +29,7 @@ const Outils = () => {
                       <SimpleStarShapeIcon />
                     </div>
                     <div className={styles.check}>
-                      <CheckIcon />
+                      <CheckRoundIcon />
                     </div>
                   </div>
                   <p>10 questions pour tester ses connaissances</p>
@@ -40,7 +40,7 @@ const Outils = () => {
                       <SimpleStarShapeIcon />
                     </div>
                     <div className={styles.check}>
-                      <CheckIcon />
+                      <CheckRoundIcon />
                     </div>
                   </div>
                   <p>Un nouveau format interactif pour apprendre et sensibiliser</p>
@@ -60,7 +60,7 @@ const Outils = () => {
                       <SimpleStarShapeIcon />
                     </div>
                     <div className={styles.check}>
-                      <CheckIcon />
+                      <CheckRoundIcon />
                     </div>
                   </div>
                   <p>60 aliments à comparer entre eux</p>
@@ -71,7 +71,7 @@ const Outils = () => {
                       <SimpleStarShapeIcon />
                     </div>
                     <div className={styles.check}>
-                      <CheckIcon />
+                      <CheckRoundIcon />
                     </div>
                   </div>
                   <p>Un classement d'impact par rayon du magasin, popularité...</p>
@@ -82,7 +82,7 @@ const Outils = () => {
                       <SimpleStarShapeIcon />
                     </div>
                     <div className={styles.check}>
-                      <CheckIcon />
+                      <CheckRoundIcon />
                     </div>
                   </div>
                   <p>Un outil facile à intergrer dans un contenu de sensibilisation</p>
@@ -102,7 +102,7 @@ const Outils = () => {
                       <SimpleStarShapeIcon />
                     </div>
                     <div className={styles.check}>
-                      <CheckIcon />
+                      <CheckRoundIcon />
                     </div>
                   </div>
                   <p>7 scénarios de livraison à comparer pour 10 objets</p>
@@ -113,7 +113,7 @@ const Outils = () => {
                       <SimpleStarShapeIcon />
                     </div>
                     <div className={styles.check}>
-                      <CheckIcon />
+                      <CheckRoundIcon />
                     </div>
                   </div>
                   <p>Un outil ludique pour sensibiliser sans culpabiliser</p>

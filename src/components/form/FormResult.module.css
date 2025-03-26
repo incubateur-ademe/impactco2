@@ -1,13 +1,36 @@
-.icon {
+.successTitle,
+.errorTitle {
+  display: flex;
   align-items: center;
-  background-color: var(--success-10);
+  gap: 0.5rem;
+}
+
+.successTitle {
+  color: var(--primary-60);
+}
+
+.errorTitle {
+  color: var(--critical-60);
+}
+
+.successIcon,
+.errorIcon {
   border-radius: 50%;
-  color: var(--success-50);
-  display: inline-flex;
-  height: 28px;
+  height: 2.5rem;
+  width: 2.5rem;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  margin-right: 0.5rem;
-  width: 28px;
+}
+
+.successIcon {
+  color: var(--primary-40);
+  border: 2px solid var(--primary-30);
+}
+
+.errorIcon {
+  color: var(--critical-50);
+  border: 2px solid var(--critical-30);
 }
 
 .error {
@@ -16,5 +39,7 @@
 }
 
 .description {
-  margin: 0.75rem 0 1.5rem 0;
+  margin: 1.5rem 0;
+  color: var(--neutral-60);
+  font-weight: 400;
 }

@@ -1,8 +1,8 @@
 .legend {
   color: var(--neutral-80);
   display: inline-block;
-  font-weight: 500;
-  margin-bottom: 0.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
 }
 
 .legendError {
@@ -15,7 +15,7 @@
   display: block;
 }
 
-.notRequired {
+.required {
   color: var(--neutral-50);
   font-weight: 400;
 }

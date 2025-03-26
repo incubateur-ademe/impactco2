@@ -1,7 +1,7 @@
 'use client'
 
 import classNames from 'classnames'
-import React, { ReactNode } from 'react'
+import { ReactNode } from 'react'
 import { ZodError } from 'zod'
 import ErrorIcon from 'components/base/icons/error'
 import inputStyles from './Input.module.css'
@@ -24,7 +24,7 @@ const Radio = ({ id, label, hint, children, required, errors, className }: Radio
     <fieldset className={className}>
       <legend className={classNames(styles.legend, { [styles.legendError]: !!error })} id={`input-${id}`}>
         {label}
-        {!required && <span className={styles.notRequired}> - Facultatif</span>}
+        {required && <span className={styles.required}> *</span>}
         {hint && <span className={classNames(styles.hint, 'text-sm')}>{hint}</span>}
       </legend>
       <div className={styles.inputs}>{children}</div>

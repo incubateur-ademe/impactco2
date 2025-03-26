@@ -148,7 +148,7 @@ const CustomParam = ({
           )}
           {config.options ? (
             config.type === 'radio' ? (
-              <Radio id={slug} label={t(`${slug}.title`)} required>
+              <Radio id={slug} label={t(`${slug}.title`)}>
                 {config.options.map((option) => (
                   <RadioInput
                     key={option.value}
@@ -162,7 +162,6 @@ const CustomParam = ({
               </Radio>
             ) : (
               <Select
-                required
                 padding='sm'
                 label={setVisible ? '' : t(`${slug}.label`)}
                 inline={!setVisible}
@@ -202,7 +201,7 @@ const CustomParam = ({
               label={t(`${slug}.title`)}
             />
           ) : config.type === 'checkbox' && config.values ? (
-            <Checkbox label={t(`${slug}.title`)} id={slug} required>
+            <Checkbox label={t(`${slug}.title`)} id={slug}>
               {config.values.map((value) => (
                 <CheckboxInput
                   id={`${slug}.${value}`}
@@ -270,7 +269,6 @@ const CustomParam = ({
           <AddressInput
             id={`custom-${slug}-start`}
             label={t(`${slug}.start`)}
-            required
             disabled={!visible}
             place={param.start.value}
             setPlace={(place) => {
@@ -281,7 +279,6 @@ const CustomParam = ({
           <AddressInput
             id={`custom-${slug}-end`}
             label={t(`${slug}.end`)}
-            required
             disabled={!visible}
             place={param.end.value}
             setPlace={(place) => {

@@ -1,3 +1,10 @@
+.mandatory {
+  color: var(--neutral-50);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
 .container {
   padding: 1.5rem 2rem 2.5rem 2rem;
   border-radius: 0.75rem;
@@ -47,4 +54,10 @@
   input {
     flex-grow: 1;
   }
+}
+
+.checkboxes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }

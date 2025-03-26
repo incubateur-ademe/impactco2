@@ -21,7 +21,7 @@ const Checkbox = ({
     <fieldset>
       <legend className={styles.legend} id={`input-${id}`}>
         {label}
-        {!required && <span className={styles.notRequired}> - Facultatif</span>}
+        {required && <span className={styles.required}> *</span>}
         {hint && <span className={classNames(styles.hint, 'text-sm')}>{hint}</span>}
       </legend>
       <div className={styles.inputs}>{children}</div>
