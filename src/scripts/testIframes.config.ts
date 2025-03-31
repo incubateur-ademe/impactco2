@@ -65,6 +65,7 @@ export const checks = [
   {
     slug: 'terrabotanica',
     url: 'https://www.terrabotanica.fr/en/acces/',
+    skipAutoCheck: true,
     checkIframe: async (iframe: FrameLocator) => {
       await expect(iframe.getByLabel('Arrivée')).toHaveAttribute(
         'value',

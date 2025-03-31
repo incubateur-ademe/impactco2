@@ -1,5 +1,4 @@
 import { Metadata } from 'next'
-import React from 'react'
 import { Category as CategoryType } from 'types/category'
 import { categories } from 'data/categories'
 import Category from 'components/outils/CategoryPage'
@@ -27,7 +26,7 @@ export async function generateMetadata(props: {
 const page = () => {
   return (
     <>
-      <Category category={category} simulator={<TransportSimulator />} />
+      <Category category={category} simulator={<TransportSimulator />} noBottomBorders />
       <Suggestion
         from={`/outils/${category.slug}`}
         fromLabel={category.name}
