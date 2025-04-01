@@ -44,7 +44,7 @@ export const getMatomoStats = async (begin: string, end: string) => {
     >(`${process.env.NEXT_PUBLIC_MATOMO_SITE_URL}?idSite=${process.env.NEXT_PUBLIC_MATOMO_SITE_ID}&method=Events.getCategory&format=JSON&module=API&period=range&date=${begin},${end}&showColumns=nb_visits,nb_events&filter_limit=-1`)
     .then((response) => response.data)
 
-  const iframes = console.log(
+  console.log(
     allEventsByCategory
       .filter((event) => event.label.startsWith('IFrame_'))
       .sort((a, b) => b.nb_visits - a.nb_visits)
