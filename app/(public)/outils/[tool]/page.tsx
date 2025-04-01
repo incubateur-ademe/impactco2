@@ -76,6 +76,7 @@ const OutilPage = async (props: Props) => {
           category={category}
           simulator={simulators[params.tool]}
           extraSimulator={extraSimulators[params.tool]}
+          noBottomBorders={params.tool === 'transport'}
         />
         <Suggestion
           from={`/outils/${category.slug}`}

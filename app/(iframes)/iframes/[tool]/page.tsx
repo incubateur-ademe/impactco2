@@ -14,9 +14,7 @@ const page = async (props: Props) => {
   const params = await props.params
   const category = getCategory(params.tool)
   if (category) {
-    return (
-      <Category category={category} simulator={simulators[params.tool]} noBottomBorders={params.tool === 'transport'} />
-    )
+    return <Category category={category} simulator={simulators[params.tool]} />
   }
 
   return notFound()
