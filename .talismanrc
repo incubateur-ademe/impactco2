@@ -1,2 +1,6 @@
 scopeconfig:
   - scope: node
+fileignoreconfig:
+- filename: src/components/home/Quotes.tsx
+  checksum: a4f99f29b637761e667a625dafa0234cc9d482f617b6e6ead84be16ef9553b63
+version: ""

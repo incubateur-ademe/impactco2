@@ -47,7 +47,7 @@ const EcoConceptionPage = () => {
       <h2>Critères et notes</h2>
       <Image
         className={styles.image}
-        src='/images/certificat-fruggr.png'
+        src='/images/certificat-fruggr.jpg'
         alt="Certificat d'empreinte 2024 Fruggr, Digital score 1, score global au 19/12/2024 : 87. Avec le detail suivant ; Carbone 87, Eau 85, Énergie 65, Accessibilité 97, Protection des données 85, Inclusion 94, Technique 80, Design 99 et Fonctionnel 96"
         width={1000}
         height={500}

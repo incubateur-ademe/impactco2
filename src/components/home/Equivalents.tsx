@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { computedEquivalents } from 'src/providers/equivalents'
 import { useSearchEquivalent } from 'src/providers/useSearchEquivalent'
 import { ComputedEquivalent } from 'types/equivalent'
@@ -74,7 +74,7 @@ const Equivalents = () => {
             firstRef.current.focus()
           }
         }}>
-        Afficher d'autres fiches
+        Afficher d'autres objets et gestes
       </Button>
     </>
   )

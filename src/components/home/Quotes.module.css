@@ -1,0 +1,140 @@
+.tablist {
+  display: flex;
+  gap: 2rem;
+  border-bottom: 1px solid var(--neutral-20);
+}
+
+.tabs {
+  @media screen and (max-width: 48rem) {
+    display: none;
+  }
+}
+
+.list {
+  display: none;
+  @media screen and (max-width: 48rem) {
+    display: block;
+  }
+}
+
+.listItem {
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--neutral-20);
+  }
+}
+
+.title {
+  width: max-content;
+  color: var(--neutral-70);
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  b {
+    color: var(--neutral-50);
+    font-weight: 700;
+  }
+}
+
+.icon {
+  text-align: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  background-color: var(--success-10);
+  color: var(--primary-50);
+  margin-right: 0.5rem;
+}
+
+.description {
+  color: var(--neutral-50);
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.25rem;
+  text-align: left;
+}
+
+.tab,
+.listItem {
+  padding: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.tab {
+  cursor: pointer;
+  background-color: transparent;
+  border-bottom: 4px solid transparent;
+
+  &:hover {
+    border-bottom: 4px solid var(--primary-30);
+  }
+
+  &[aria-selected='true'] {
+    border-bottom: 4px solid var(--primary-40);
+  }
+}
+
+.tab:hover,
+.tab[aria-selected='true'],
+.listItem {
+  .title {
+    color: var(--neutral-80);
+
+    b {
+      color: var(--primary-50);
+    }
+  }
+
+  .icon {
+    background-color: var(--success-20);
+    color: var(--primary-60);
+  }
+
+  .description {
+    color: var(--neutral-80);
+  }
+}
+
+.tabpanel {
+  margin: 3rem 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  color: var(--neutral-80);
+
+  p:first-child {
+    margin-bottom: 1.25rem;
+  }
+
+  a {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}
+
+.name,
+.job {
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+}
+
+.job {
+  color: var(--neutral-60);
+  font-weight: 400;
+}
+
+.hidden {
+  display: none;
+}
+
+.logo {
+  width: auto;
+  border-radius: 0.75rem;
+  border: 2px solid var(--neutral-20);
+}

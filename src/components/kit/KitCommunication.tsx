@@ -28,7 +28,7 @@ const KitCommunication = () => {
         id='livraison'>
         <Card className={outilStyles.card}>
           <div className={classNames(outilStyles.image, styles.image)}>
-            <Image src='/images/banner-kit-livraison.png' width={748} height={180} alt='' />
+            <Image src='/images/banner-kit-livraison.jpg' width={748} height={180} alt='' />
           </div>
           <div className={outilStyles.content}>
             <h2>Kit de com’ pour Impact Livraison</h2>
@@ -50,7 +50,7 @@ const KitCommunication = () => {
       <Block id='alimentation'>
         <Card className={outilStyles.card}>
           <div className={classNames(outilStyles.image, styles.image)}>
-            <Image src='/images/banner-kit-alimentation.png' width={748} height={180} alt='' />
+            <Image src='/images/banner-kit-alimentation.jpg' width={748} height={180} alt='' />
           </div>
           <div className={outilStyles.content}>
             <h2>Kit de com’ pour Impact Alimentation</h2>
@@ -115,7 +115,7 @@ const KitCommunication = () => {
       <Block id='illustrations'>
         <Card className={outilStyles.card}>
           <div className={classNames(outilStyles.image, styles.image)}>
-            <Image src='/images/banner-kit-illustrations.png' width={748} height={180} alt='' />
+            <Image src='/images/banner-kit-illustrations.jpg' width={748} height={180} alt='' />
           </div>
           <div className={outilStyles.content}>
             <h2>Illustrations</h2>

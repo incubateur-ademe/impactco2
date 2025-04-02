@@ -1,28 +1,193 @@
 .title {
-  margin-bottom: 4rem;
+  font-size: 2rem;
+  line-height: 2.75rem;
   font-weight: 800;
+  text-align: center;
+  margin: 0 auto 0.5rem auto;
+  max-width: 35rem;
+}
+
+.subTitle {
+  color: var(--neutral-60);
+  text-align: center;
+  max-width: 40rem;
+  margin: 0 auto 1.25rem auto;
+}
+
+.footerDescription,
+.subTitle,
+.blockHeader {
+  color: var(--neutral-60);
+
+  b {
+    color: var(--neutral-80);
+    font-weight: 500;
+  }
+}
+
+.button {
+  margin: auto;
+}
+
+.bannerMobile,
+.banner {
+  margin-left: -1rem;
+  max-width: calc(100% + 2rem);
+  height: auto;
+
+  @media screen and (max-width: 48rem) {
+    margin: 2rem auto 0 auto;
+    max-width: 100%;
+  }
+}
+
+.banner {
+  display: block;
 
   @media screen and (max-width: 29.875rem) {
-    font-size: 2rem;
-    line-height: 2.75rem;
+    display: none;
+  }
+}
+
+.bannerMobile {
+  display: none;
+
+  @media screen and (max-width: 29.875rem) {
+    display: block;
+  }
+}
+
+.blockHeader {
+  display: flex;
+  align-items: flex-end;
+  gap: 1.5rem 1.25rem;
+  margin-bottom: 2rem;
+
+  @media screen and (max-width: 48rem) {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 
 .link {
-  width: 100%;
-  font-weight: 500;
-  margin-top: 1.25rem;
+  min-width: max-content;
+  display: block;
+}
 
-  a {
-    justify-content: flex-end;
+.fullBanner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  max-width: 100vw;
+  background-image: url(/images/banner-home-middle.png);
+  background-size: cover;
+  background-color: var(--primary-10);
+  height: 15rem;
+  padding: 1.5rem;
+}
+
+.bannerLink {
+  margin-top: 0.75rem;
+  color: var(--primary-50);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  padding: 2.5rem;
+  gap: 0.5rem;
+  border: 2px solid var(--primary-30);
+  border-radius: 1rem;
+  background-color: var(--neutral-00);
+  color: var(--neutral-80);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.75rem;
+  overflow: hidden;
+  max-height: 100%;
+  max-width: 50rem;
+  text-decoration: none;
+
+  img {
+    margin-top: 5rem;
+  }
+
+  &:hover {
+    color: var(--neutral-80);
+    border-color: var(--primary-40);
+
+    .bannerLink {
+      color: var(--primary-60);
+
+      svg {
+        padding-left: 0.5rem;
+        transition: padding 0.3s ease-in-out;
+        width: auto;
+      }
+    }
   }
 }
 
-.miniCards {
-  display: flex;
-  gap: 1.25rem 0.75rem;
+.footerBanner {
+  margin: 8rem auto -7.5rem auto;
+  max-width: 53rem;
+  padding: 0 1.5rem;
+  height: 354px;
+  background-image: url('/images/banner-home-footer.jpg');
+  background-position: right;
+  background-size: 422px 354px;
+  background-repeat: no-repeat;
 
-  @media screen and (max-width: 29.875rem) {
-    flex-wrap: wrap;
+  @media screen and (max-width: 48rem) {
+    background-position: calc(100% + 50px) 0;
   }
+
+  @media screen and (max-width: 44rem) {
+    background-position: calc(100% + 150px) 0;
+  }
+
+  @media screen and (max-width: 38rem) {
+    background-position: calc(100% + 200px) 0;
+  }
+
+  @media screen and (max-width: 34rem) {
+    background-position: calc(100% + 250px) 0;
+  }
+
+  @media screen and (max-width: 31.25rem) {
+    background-image: none;
+    height: unset;
+  }
+}
+
+.footerImage {
+  display: none;
+
+  @media screen and (max-width: 31.25rem) {
+    margin: 1.75rem auto 0 auto;
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.footerContent {
+  max-width: 31rem;
+  @media screen and (max-width: 53rem) {
+    max-width: 25rem;
+  }
+
+  @media screen and (max-width: 31.25rem) {
+    max-width: 100%;
+  }
+}
+.footerDescription {
+  margin: 0.75rem 0 1.75rem 0;
 }
