@@ -23,9 +23,20 @@
       border-bottom: 2px solid var(--neutral-20);
     }
   }
+
+  li {
+    &:not(:last-child) {
+      border-bottom: 2px solid var(--neutral-20);
+    }
+  }
 }
 
 .open {
   visibility: visible;
   display: block;
+}
+
+.button {
+  width: 100%;
+  margin: 1rem 0;
 }
