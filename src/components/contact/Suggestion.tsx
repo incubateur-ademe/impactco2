@@ -114,7 +114,7 @@ const Suggestion = () => {
                   name='structure'
                   required
                   label='Entreprise'
-                  value='entreprise'
+                  value='entreprise-suggestion'
                   selected={structure}
                   setSelected={setStructure}
                 />
@@ -122,7 +122,7 @@ const Suggestion = () => {
                   name='structure'
                   required
                   label='Média'
-                  value='media'
+                  value='media-suggestion'
                   selected={structure}
                   setSelected={setStructure}
                 />
@@ -130,7 +130,7 @@ const Suggestion = () => {
                   name='structure'
                   required
                   label='Collectivité'
-                  value='collectivite'
+                  value='collectivite-suggestion'
                   selected={structure}
                   setSelected={setStructure}
                 />
@@ -138,7 +138,7 @@ const Suggestion = () => {
                   name='structure'
                   required
                   label='État / Établissement public'
-                  value='etat'
+                  value='etat-suggestion'
                   selected={structure}
                   setSelected={setStructure}
                 />
@@ -146,7 +146,7 @@ const Suggestion = () => {
                   name='structure'
                   required
                   label='Association'
-                  value='association'
+                  value='association-suggestion'
                   selected={structure}
                   setSelected={setStructure}
                 />
@@ -154,7 +154,7 @@ const Suggestion = () => {
                   name='structure'
                   required
                   label='Autre'
-                  value='autre'
+                  value='autre-suggestion'
                   selected={structure}
                   setSelected={setStructure}
                 />

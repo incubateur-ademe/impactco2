@@ -1,7 +1,7 @@
 'use client'
 
 import { useSearchParams } from 'next/navigation'
-import { FormEvent, useMemo, useState } from 'react'
+import { FormEvent, useEffect, useMemo, useState } from 'react'
 import { saveFeedback } from 'src/serverFunctions/forms'
 import { ZodError } from 'zod'
 import { NotionCommandValidation } from 'utils/notion'
@@ -30,6 +30,12 @@ const RendezVous = () => {
   const [sending, setSending] = useState(false)
   const [sent, setSent] = useState(false)
   const [error, setError] = useState(false)
+
+  useEffect(() => {
+    if (params && params.get('demande')) {
+      setSuggestionType(params.get('demande') || '')
+    }
+  }, [params])
 
   const data = useMemo(() => {
     const data = {
@@ -112,7 +118,7 @@ const RendezVous = () => {
                   name='structure'
                   required
                   label='Entreprise'
-                  value='entreprise'
+                  value='entreprise-rendezvous'
                   selected={structure}
                   setSelected={setStructure}
                 />
@@ -120,7 +126,7 @@ const RendezVous = () => {
                   name='structure'
                   required
                   label='Média'
-                  value='media'
+                  value='media-rendezvous'
                   selected={structure}
                   setSelected={setStructure}
                 />
@@ -128,7 +134,7 @@ const RendezVous = () => {
                   name='structure'
                   required
                   label='Collectivité'
-                  value='collectivite'
+                  value='collectivite-rendezvous'
                   selected={structure}
                   setSelected={setStructure}
                 />
@@ -136,7 +142,7 @@ const RendezVous = () => {
                   name='structure'
                   required
                   label='État / Établissement public'
-                  value='etat'
+                  value='etat-rendezvous'
                   selected={structure}
                   setSelected={setStructure}
                 />
@@ -144,7 +150,7 @@ const RendezVous = () => {
                   name='structure'
                   required
                   label='Association'
-                  value='association'
+                  value='association-rendezvous'
                   selected={structure}
                   setSelected={setStructure}
                 />
