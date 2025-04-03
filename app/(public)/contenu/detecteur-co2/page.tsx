@@ -1,5 +1,4 @@
 import { Metadata } from 'next'
-import React from 'react'
 import DetecteurPage from 'src/views/DetecteurPage'
 import Notion from 'components/Notion/Notion'
 import { getNotionContentProps } from 'components/Notion/utils'
@@ -23,7 +22,7 @@ const Detecteur = async () => {
   return (
     <>
       <Notion title={title} recordMap={recordMap} />
-      <Suggestion from={title} fromLabel={title} simulatorName='du Détecteur CO₂' />
+      <Suggestion fromLabel={title} simulatorName='du Détecteur CO₂' />
       <DetecteurPage />
     </>
   )

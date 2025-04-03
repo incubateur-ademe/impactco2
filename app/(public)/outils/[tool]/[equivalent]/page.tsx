@@ -90,11 +90,7 @@ const EquivalentPage = async (props: Props) => {
         }
         simulator={equivalentsSimulators[equivalent.slug]}
       />
-      <Suggestion
-        from={equivalent.link}
-        fromLabel={getName('fr', equivalent)}
-        simulatorName={`de l'objet ${category.name}`}
-      />
+      <Suggestion fromLabel={getName('fr', equivalent)} simulatorName={`de l'objet ${category.name}`} />
     </>
   )
 }

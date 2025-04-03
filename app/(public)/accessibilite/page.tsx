@@ -11,7 +11,7 @@ export default function Accessibilite() {
   return (
     <>
       <AccessibilitePage />
-      <Suggestion fromLabel='Accessibilité' from='/accesibilite' simulatorName="de l'accessibilité du site" />
+      <Suggestion fromLabel='Accessibilité' simulatorName="de l'accessibilité du site" />
     </>
   )
 }

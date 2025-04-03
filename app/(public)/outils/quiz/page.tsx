@@ -1,5 +1,4 @@
 import { Metadata } from 'next'
-import React from 'react'
 import QuizPage from 'components/outils/quiz/QuizPage'
 import { metaDescriptions, metaTitles } from 'utils/meta'
 import Suggestion from 'components/layout/Suggestion'
@@ -23,7 +22,7 @@ const page = () => {
   return (
     <>
       <QuizPage />
-      <Suggestion from='/outils/quiz' fromLabel='Quiz carbone' simulatorName='du quiz carbone' />
+      <Suggestion fromLabel='Quiz carbone' simulatorName='du quiz carbone' />
     </>
   )
 }

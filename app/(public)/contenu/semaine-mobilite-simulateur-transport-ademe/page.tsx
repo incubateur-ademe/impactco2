@@ -23,7 +23,7 @@ const NewSite = async () => {
   return (
     <>
       <Notion title={title} recordMap={recordMap} />
-      <Suggestion from={title} fromLabel={title} simulatorName='de la semaine de la mobilité' />
+      <Suggestion fromLabel={title} simulatorName='de la semaine de la mobilité' />
     </>
   )
 }

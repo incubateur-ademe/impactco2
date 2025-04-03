@@ -14,7 +14,6 @@ const SuggestionPage = () => {
     <>
       <Breadcrumbs current='Faire une suggestion' links={[{ label: 'Accueil', link: '/' }]} />
       <SuggestionForm />
-      <SuggestionBanner from='/suggestion' fromLabel='Faire une suggestion' simulatorName='de ce formulaire' />
     </>
   )
 }

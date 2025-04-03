@@ -65,19 +65,6 @@ const Home = () => {
       <Suspense>
         <FAQs filter='Accueil' page='Accueil' />
       </Suspense>
-      <div className={styles.footerBanner}>
-        <div className={styles.footerContent}>
-          <h2>Sensibilisez votre communauté à l'impact carbone</h2>
-          <p className={styles.footerDescription}>
-            Tirez le meilleur parti des outils d’Impact CO2 dès maintenant grâce aux conseils de notre équipe !
-          </p>
-          <Link asButton href='/rendez-vous?fromLabel=home-footer'>
-            Prendre rendez-vous
-            <FullArrowRightIcon />
-          </Link>
-        </div>
-        <Image src='/images/banner-home-footer.jpg' width={422} height={354} alt='' className={styles.footerImage} />
-      </div>
     </>
   )
 }

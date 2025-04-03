@@ -23,7 +23,7 @@ const SkiPage = async () => {
   return (
     <>
       <Notion title={title} recordMap={recordMap} />
-      <Suggestion from={title} fromLabel={title} simulatorName='de ce contenu' />
+      <Suggestion fromLabel={title} simulatorName='de ce contenu' />
     </>
   )
 }

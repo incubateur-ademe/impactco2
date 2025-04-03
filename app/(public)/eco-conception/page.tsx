@@ -10,7 +10,7 @@ export default function Politique() {
   return (
     <>
       <EcoConceptionPage />
-      <Suggestion fromLabel='Eco-conception' from='/eco-conception' simulatorName="de l'éco-conception du site" />
+      <Suggestion fromLabel='Eco-conception' simulatorName="de l'éco-conception du site" />
     </>
   )
 }
