@@ -25,29 +25,29 @@
 }
 
 .link {
-  cursor: pointer;
-  padding: 0.75rem;
-  border: none;
-  background-color: transparent;
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-  text-decoration: none;
-  border-radius: 0.5rem;
-  font-weight: 500;
-  color: var(--neutral-70);
+  cursor: pointer !important;
+  padding: 0.75rem !important;
+  border: none !important;
+  background-color: transparent !important;
+  display: flex !important;
+  gap: 0.5rem !important;
+  align-items: center !important;
+  text-decoration: none !important;
+  border-radius: 0.5rem !important;
+  font-weight: 500 !important;
+  color: var(--neutral-70) !important;
 
   svg {
     color: var(--primary-50);
   }
 
   &:hover {
-    background: var(--primary-10);
-    color: var(--primary-60);
+    background: var(--primary-10) !important;
+    color: var(--primary-60) !important;
   }
 
   &:focus {
-    color: var(--primary-70);
+    color: var(--primary-70) !important;
   }
 }
 
