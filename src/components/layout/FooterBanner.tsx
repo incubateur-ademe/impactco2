@@ -1,7 +1,7 @@
 import styles from './FooterBanner.module.css'
 
-const Footerbanner = () => {
+const FooterBanner = () => {
   return <div className={styles.banner} />
 }
 
-export default Footerbanner
+export default FooterBanner

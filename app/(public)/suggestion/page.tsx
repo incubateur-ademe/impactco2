@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Breadcrumbs from 'components/breadcrumbs/Breadcrumbs'
 import SuggestionForm from 'components/contact/Suggestion'
-import Footerbanner from 'components/layout/FooterBanner'
+import FooterBanner from 'components/layout/FooterBanner'
 
 export const metadata: Metadata = {
   title: 'Faire une suggestion | Impact CO₂',
@@ -13,7 +13,7 @@ const SuggestionPage = () => {
     <>
       <Breadcrumbs current='Faire une suggestion' links={[{ label: 'Accueil', link: '/' }]} />
       <SuggestionForm />
-      <Footerbanner />
+      <FooterBanner />
     </>
   )
 }
