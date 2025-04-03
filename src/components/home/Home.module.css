@@ -1,3 +1,12 @@
+.firstBlock {
+  margin-top: 4rem;
+}
+
+.separator {
+  height: 1px;
+  background-color: var(--neutral-20);
+}
+
 .title {
   font-size: 2rem;
   line-height: 2.75rem;
@@ -31,8 +40,8 @@
 
 .bannerMobile,
 .banner {
-  margin-left: -1rem;
-  max-width: calc(100% + 2rem);
+  margin-left: -1.5rem;
+  width: calc(100% + 3rem);
   height: auto;
 
   @media screen and (max-width: 48rem) {
@@ -85,6 +94,9 @@
   background-color: var(--primary-10);
   height: 15rem;
   padding: 1.5rem;
+  margin: 5rem 0 3rem 0;
+  border-top: 2px solid var(--primary-30);
+  border-bottom: 2px solid var(--primary-30);
 }
 
 .bannerLink {

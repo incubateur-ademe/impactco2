@@ -122,9 +122,11 @@ const Quotes = () => {
               <p>
                 <span className={styles.name}>{quote.name}</span> <span className={styles.job}>- {quote.job}</span>
               </p>
-              <Link href={quote.linkUrl} target='_blank' rel='noreferrer noopener'>
-                {quote.link}
-              </Link>
+              <div className={styles.link}>
+                <Link href={quote.linkUrl} target='_blank' rel='noreferrer noopener'>
+                  {quote.link}
+                </Link>
+              </div>
             </div>
           </div>
         ))}

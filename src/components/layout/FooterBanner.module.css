@@ -1,0 +1,6 @@
+.banner {
+  height: 8rem;
+  background: var(--primary-20);
+  border-top: 2px solid var(--primary-30);
+  border-bottom: 2px solid var(--primary-30);
+}

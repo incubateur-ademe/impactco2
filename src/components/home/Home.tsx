@@ -1,3 +1,4 @@
+import classNames from 'classnames'
 import Image from 'next/image'
 import { Suspense } from 'react'
 import Link from 'components/base/buttons/Link'
@@ -13,7 +14,7 @@ import Quotes from './Quotes'
 const Home = () => {
   return (
     <>
-      <Block>
+      <div className={classNames(styles.firstBlock, 'main-container')}>
         <h1 className={styles.title}>Les bons outils pour communiquer sur l’impact carbone</h1>
         <p className={styles.subTitle}>
           Développés pour <b>les entreprises</b>, <b>les associations</b>, <b>les médias</b> et <b>les collectivités</b>
@@ -24,7 +25,8 @@ const Home = () => {
         </Link>
         <Image className={styles.banner} src='/images/banner-home.jpg' width={832} height={348} alt='' />
         <Image className={styles.bannerMobile} src='/images/banner-home-mobile.jpg' width={333} height={348} alt='' />
-      </Block>
+        <div className={styles.separator} />
+      </div>
       <Block>
         <Quotes />
       </Block>

@@ -61,7 +61,7 @@ const saveNotion = async (feedback: NotionCommand) => {
             type: 'select',
             select: { name: feedback.suggestionType },
           },
-          Description: {
+          Message: {
             type: 'rich_text',
             rich_text: [{ text: { content: feedback.text } }],
           },
@@ -69,11 +69,11 @@ const saveNotion = async (feedback: NotionCommand) => {
             type: 'rich_text',
             rich_text: [{ text: { content: feedback.from } }],
           },
-          'Origine du retour': {
+          Formulaire: {
             type: 'select',
             select: { name: feedback.type },
           },
-          Accepté: {
+          'Accepté les conditions': {
             type: 'checkbox',
             checkbox: feedback.accepted,
           },

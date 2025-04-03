@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import Breadcrumbs from 'components/breadcrumbs/Breadcrumbs'
 import RendezVous from 'components/contact/RendezVous'
+import Footerbanner from 'components/layout/FooterBanner'
 
 export const metadata: Metadata = {
   title: 'Prendre rendez-vous | Impact CO₂',
@@ -13,6 +14,7 @@ const RDVPage = () => {
     <>
       <Breadcrumbs current='Prendre rendez-vous' links={[{ label: 'Accueil', link: '/' }]} />
       <RendezVous />
+      <Footerbanner />
     </>
   )
 }

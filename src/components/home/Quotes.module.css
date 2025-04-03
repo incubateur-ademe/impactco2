@@ -104,17 +104,18 @@
   margin: 3rem 0;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 2rem;
   color: var(--neutral-80);
 
   p:first-child {
     margin-bottom: 1.25rem;
   }
+}
 
-  a {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-  }
+.link {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 .name,
