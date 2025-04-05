@@ -27,6 +27,7 @@
     "build:analyze": "ANALYZE=true next build",
     "postbuild": "next-sitemap",
     "webpack": "dotenv -e .env webpack",
+    "stats:biz": "dotenv -e .env ts-node src/scripts/getBizStats.ts",
     "stats": "dotenv -e .env ts-node src/scripts/getStats.ts",
     "stats:yearly": "dotenv -e .env ts-node src/scripts/getYearlyStats.ts",
     "start": "next start",
