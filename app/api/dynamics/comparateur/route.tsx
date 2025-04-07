@@ -20,15 +20,9 @@ export async function GET(req: NextRequest) {
   if (fonts.length === 0) {
     fonts = (
       await Promise.all([
-        getFont(
-          new URL('https://cdn.jsdelivr.net/npm/@gouvfr/dsfr@1.12.1/dist/fonts/Marianne-Regular.woff', import.meta.url)
-        ),
-        getFont(
-          new URL('https://cdn.jsdelivr.net/npm/@gouvfr/dsfr@1.12.1/dist/fonts/Marianne-Medium.woff', import.meta.url)
-        ),
-        getFont(
-          new URL('https://cdn.jsdelivr.net/npm/@gouvfr/dsfr@1.12.1/dist/fonts/Marianne-Bold.woff', import.meta.url)
-        ),
+        getFont(new URL('https://cdn.jsdelivr.net/npm/@gouvfr/dsfr/dist/fonts/Marianne-Regular.woff', import.meta.url)),
+        getFont(new URL('https://cdn.jsdelivr.net/npm/@gouvfr/dsfr/dist/fonts/Marianne-Medium.woff', import.meta.url)),
+        getFont(new URL('https://cdn.jsdelivr.net/npm/@gouvfr/dsfr/dist/fonts/Marianne-Bold.woff', import.meta.url)),
       ])
     ).map((font, index) => ({
       name: 'Marianne',
