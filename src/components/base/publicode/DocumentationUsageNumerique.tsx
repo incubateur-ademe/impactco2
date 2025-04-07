@@ -26,7 +26,11 @@ export default function DocumentationUsageNumerique({ slug }: { slug: string }) 
             })
             return null
           },
-          Link: ({ to, children }) => <IframeableLink href={to || '/'}>{children}</IframeableLink>,
+          Link: ({ to, children }) => (
+            <IframeableLink href={to || '/'} prefetch={false}>
+              {children}
+            </IframeableLink>
+          ),
           Text: ({ children }) => <Markdown>{children}</Markdown>,
         }}
       />
