@@ -54,7 +54,7 @@ test('Livraison simulator', async ({ page }) => {
   await page.getByLabel('Intégrer').getByText('Caisse de vin').click()
   await page.getByLabel('Intégrer').getByText('Smartphone', { exact: true }).click()
   await page.getByLabel('Intégrer').getByText('Lave-linge').click()
-  await expect(page.getByLabel('Intégrer').getByText('Cafetière espresso')).toBeDisabled()
+  await expect(page.getByLabel('Intégrer').getByText('Cafetière expresso')).toBeDisabled()
 })
 
 test('Livraison iframes', async ({ page }) => {
