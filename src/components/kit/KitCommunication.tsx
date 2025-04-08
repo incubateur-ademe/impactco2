@@ -154,7 +154,7 @@ const KitCommunication = () => {
               pour évoquer votre utilisation de nos outils), vous pouvez utiliser le bloc marque.
             </p>
             <p>
-              Le bloc marque comprend les logos de la République Française, de l’Ademe et d’Impact CO₂, tels que nous
+              Le bloc marque comprend les logos de la République Française, de l’ADEME et d’Impact CO₂, tels que nous
               les utilisons sur nos propres supports.
             </p>
           </div>

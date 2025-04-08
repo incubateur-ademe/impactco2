@@ -28,7 +28,7 @@ export default function Header() {
                   La doc
                 </Link>
               </li>
-              <RDV>Prendre rdv</RDV>
+              <RDV>Prendre RDV</RDV>
             </ul>
             <div className={styles.menu}>
               <Menu />
