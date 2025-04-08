@@ -24,7 +24,7 @@ const GuideUtilisationPage = async () => {
   return (
     <>
       <GuideUtilisation rows={rows} />
-      <Suggestion from={title} fromLabel={title} simulatorName="du guide d'utilisation" />
+      <Suggestion fromLabel={title} simulatorName="du guide d'utilisation" />
     </>
   )
 }

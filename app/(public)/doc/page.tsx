@@ -11,7 +11,7 @@ const DocPage = () => {
   return (
     <>
       <Doc />
-      <Suggestion from='/doc' fromLabel='Doc' simulatorName='de la documentation' />
+      <Suggestion fromLabel='Doc' simulatorName='de la documentation' />
     </>
   )
 }

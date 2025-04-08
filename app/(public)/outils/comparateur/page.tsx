@@ -29,7 +29,7 @@ const page = () => {
   return (
     <>
       <ComparateurPage />
-      <Suggestion from='/outils/comparateur' fromLabel='Comparateur' simulatorName='du comparateur carbone' />
+      <Suggestion fromLabel='Comparateur' simulatorName='du comparateur carbone' />
     </>
   )
 }

@@ -2,9 +2,9 @@
 
 import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { track } from 'utils/matomo'
-import CheckIcon from 'components/base/icons/check'
+import CheckRoundIcon from 'components/base/icons/check-round'
 import CopyIcon from 'components/base/icons/copy'
 import InformationIcon from 'components/base/icons/information'
 import styles from './ClipboardBox.module.css'
@@ -29,7 +29,7 @@ const ClipboardBox = ({ children, tracking, form }: { children: string; tracking
         </Result>
         <span className={classNames(styles.copy, { [styles.copied]: copied })}>
           {copied ? t('copie') : t('copier')}
-          {copied ? <CheckIcon /> : <CopyIcon />}
+          {copied ? <CheckRoundIcon /> : <CopyIcon />}
         </span>
       </button>
       <p className='ico2-hidden' role='status'>

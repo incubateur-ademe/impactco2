@@ -1,12 +1,14 @@
 'use client'
 
 import classNames from 'classnames'
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import IframeableLink from 'components/base/IframeableLink'
 import DocIcon from 'components/base/icons/doc'
 import MenuIcon from 'components/base/icons/menu'
 import ToolsIcon from 'components/base/icons/tools'
+import headerStyles from './Header.module.css'
 import styles from './Menu.module.css'
+import RDV from './RDV'
 
 const Menu = () => {
   const [open, setOpen] = useState(false)
@@ -26,23 +28,30 @@ const Menu = () => {
 
   return (
     <>
-      <button ref={ref} onClick={() => setOpen(!open)} title='Menu' aria-expanded={open} aria-controls='mobile-menu'>
+      <button
+        ref={ref}
+        onClick={() => setOpen(!open)}
+        title='Menu'
+        aria-expanded={open}
+        aria-controls='mobile-menu'
+        className={headerStyles.link}>
         <MenuIcon />
         <span>Menu</span>
       </button>
       <ul className={classNames(styles.menu, { [styles.open]: open })} id='mobile-menu'>
         <li>
-          <IframeableLink href='/outils'>
+          <IframeableLink href='/outils' className={headerStyles.link}>
             <ToolsIcon />
             Les outils
           </IframeableLink>
         </li>
         <li>
-          <IframeableLink href='/doc'>
+          <IframeableLink href='/doc' className={headerStyles.link}>
             <DocIcon />
             La doc
           </IframeableLink>
         </li>
+        <RDV className={styles.button}>Prendre rendez-vous</RDV>
       </ul>
     </>
   )

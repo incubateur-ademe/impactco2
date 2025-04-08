@@ -1,9 +1,8 @@
 import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
-import React from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { track } from 'utils/matomo'
-import CheckIcon from 'components/base/icons/check'
+import CheckRoundIcon from 'components/base/icons/check-round'
 import ComparisonIcon from 'components/base/icons/comparison'
 import ListIcon from 'components/base/icons/list'
 import styles from './TransportComparisonMode.module.css'
@@ -29,7 +28,7 @@ const TransportComparisonMode = ({ tracking }: { tracking: string }) => {
           <span className={classNames(styles.leftLabel, { [styles.clickeable]: comparisonMode !== 'list' })}>
             <ListIcon />
             {t('list')}
-            {comparisonMode === 'list' && <CheckIcon />}
+            {comparisonMode === 'list' && <CheckRoundIcon />}
           </span>
         </label>
         <label className={styles.rightButton}>
@@ -44,7 +43,7 @@ const TransportComparisonMode = ({ tracking }: { tracking: string }) => {
           <span className={classNames(styles.rightLabel, { [styles.clickeable]: comparisonMode !== 'comparison' })}>
             <ComparisonIcon />
             {t('comparison')}
-            {comparisonMode === 'comparison' && <CheckIcon />}
+            {comparisonMode === 'comparison' && <CheckRoundIcon />}
           </span>
         </label>
       </div>

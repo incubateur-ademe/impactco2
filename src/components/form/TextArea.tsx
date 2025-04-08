@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import React, { TextareaHTMLAttributes } from 'react'
+import { TextareaHTMLAttributes } from 'react'
 import { ZodError } from 'zod'
 import ErrorIcon from 'components/base/icons/error'
 import styles from './Input.module.css'
@@ -25,7 +25,7 @@ const TextArea = ({
       {label && (
         <label className={classNames(styles.label, { [styles.labelError]: !!error })} htmlFor={`input-${id}`}>
           {label}
-          {!inputProps.required && <span className={styles.notRequired}> - Facultatif</span>}
+          {inputProps.required && <span className={styles.required}> *</span>}
           {hint && <span className={classNames(styles.hint, 'text-sm')}>{hint}</span>}
         </label>
       )}

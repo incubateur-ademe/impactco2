@@ -27,11 +27,7 @@ const page = () => {
   return (
     <>
       <Category category={category} simulator={<TransportSimulator />} noBottomBorders />
-      <Suggestion
-        from={`/outils/${category.slug}`}
-        fromLabel={category.name}
-        simulatorName={`de la thématique ${category.name}`}
-      />
+      <Suggestion fromLabel={category.name} simulatorName={`de la thématique ${category.name}`} />
     </>
   )
 }

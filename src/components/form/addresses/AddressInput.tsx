@@ -1,7 +1,7 @@
 'use client'
 
 import classNames from 'classnames'
-import React, { Dispatch, InputHTMLAttributes, SetStateAction, useEffect, useRef, useState } from 'react'
+import { Dispatch, InputHTMLAttributes, SetStateAction, useEffect, useRef, useState } from 'react'
 import { ZodError } from 'zod'
 import { displayAddress } from 'utils/address'
 import { useSuggestions } from 'hooks/useAddress'
@@ -58,7 +58,7 @@ const AddressInput = ({
       {label && (
         <label className={classNames(inputStyles.label, { [inputStyles.labelError]: !!error })} htmlFor={`input-${id}`}>
           {label}
-          {!inputProps.required && <span className={inputStyles.notRequired}> - Facultatif</span>}
+          {inputProps.required && <span className={inputStyles.required}> *</span>}
           {hint && <span className={classNames(inputStyles.hint, 'text-sm')}>{hint}</span>}
         </label>
       )}

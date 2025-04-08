@@ -1,7 +1,7 @@
 import classNames from 'classnames'
-import React, { ForwardedRef, InputHTMLAttributes, ReactNode, forwardRef } from 'react'
+import { ForwardedRef, InputHTMLAttributes, ReactNode, forwardRef } from 'react'
 import { ZodError } from 'zod'
-import CheckIcon from 'components/base/icons/check'
+import CheckRoundIcon from 'components/base/icons/check-round'
 import ErrorIcon from 'components/base/icons/error'
 import styles from './CheckboxInput.module.css'
 import inputStyles from './Input.module.css'
@@ -58,7 +58,7 @@ const CheckboxInput = (
               className={classNames(reversed ? styles.checkReversed : styles.check, {
                 [styles.checkDisabled]: inputProps.disabled,
               })}>
-              <CheckIcon />
+              <CheckRoundIcon />
             </span>
           )}
         </label>

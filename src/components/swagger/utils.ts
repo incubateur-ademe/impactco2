@@ -9,7 +9,7 @@ const config = {
 
 Cette documentation interactive à destination des développeurs permet de consommer les données de nos ressources Impact CO₂.
 
-Nous utilisons des clés API pour suivre son utilisation. Bien que celles ci ne soient pas obligatoire, nous nous réservons le droit de restreindre l'accès aux utilisateurs qui ne l'utilisant pas. N'hésitez pas à nous contacter via [${process.env.NEXT_PUBLIC_CONTACT_EMAIL}](mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}) pour en obtenir une gratuitement.
+Nous utilisons des clés API pour suivre son utilisation. Bien que celles ci ne soient pas obligatoire, nous nous réservons le droit de restreindre l'accès aux utilisateurs qui ne l'utilisant pas. N'hésitez pas à [nous contacter](/rendez-vous?fromLabel=%22Documentation%20API%22&demande=api) pour en obtenir une gratuitement.
 
 **Comment utiliser la documentation ?**
 * Choisir le point d’API à tester
@@ -32,7 +32,8 @@ Nous utilisons des clés API pour suivre son utilisation. Bien que celles ci ne 
       securitySchemes: {
         APIKey: {
           type: 'http',
-          description: `Nous utilisons des clés API pour monitorer son utilisation. Bien que celles ci ne soient pas obligatoire, nous nous réservons le droit de restreindre l'acces aux utilisateurs ne l'utilisant pas. N'hésitez pas à nous contacter via [${process.env.NEXT_PUBLIC_CONTACT_EMAIL}](mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}) pour en obtenir une gratuitement.`,
+          description:
+            "Nous utilisons des clés API pour monitorer son utilisation. Bien que celles ci ne soient pas obligatoire, nous nous réservons le droit de restreindre l'acces aux utilisateurs ne l'utilisant pas. N'hésitez pas à [nous contacter](/rendez-vous?fromLabel=%22Documentation%20API%22&demande=api) pour en obtenir une gratuitement.",
           scheme: 'bearer',
           bearerFormat: 'UUID',
         },

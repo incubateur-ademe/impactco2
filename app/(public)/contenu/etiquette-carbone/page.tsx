@@ -1,5 +1,4 @@
 import { Metadata } from 'next'
-import React from 'react'
 import Notion from 'components/Notion/Notion'
 import { getNotionContentProps } from 'components/Notion/utils'
 import Suggestion from 'components/layout/Suggestion'
@@ -22,7 +21,7 @@ const NewSite = async () => {
   return (
     <>
       <Notion title={title} recordMap={recordMap} />
-      <Suggestion from={title} fromLabel={title} simulatorName="de l'étiquette carbone" />
+      <Suggestion fromLabel={title} simulatorName="de l'étiquette carbone" />
     </>
   )
 }

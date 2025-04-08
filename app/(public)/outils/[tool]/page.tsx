@@ -64,7 +64,7 @@ const OutilPage = async (props: Props) => {
     return (
       <>
         <Outil tool={tool} />
-        <Suggestion from={`/outils/${tool.slug}`} fromLabel={tool.title} simulatorName={`de l'outil ${tool.title}`} />
+        <Suggestion fromLabel={tool.title} simulatorName={`de l'outil ${tool.title}`} />
       </>
     )
   }
@@ -78,11 +78,7 @@ const OutilPage = async (props: Props) => {
           extraSimulator={extraSimulators[params.tool]}
           noBottomBorders={params.tool === 'transport'}
         />
-        <Suggestion
-          from={`/outils/${category.slug}`}
-          fromLabel={category.name}
-          simulatorName={`de la thématique ${category.name}`}
-        />
+        <Suggestion fromLabel={category.name} simulatorName={`de la thématique ${category.name}`} />
       </>
     )
   }

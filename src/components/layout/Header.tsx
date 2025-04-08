@@ -1,9 +1,10 @@
-import IframeableLink from 'components/base/IframeableLink'
 import Logos from 'components/base/Logo/Logos'
+import Link from 'components/base/buttons/Link'
 import DocIcon from 'components/base/icons/doc'
 import ToolsIcon from 'components/base/icons/tools'
 import styles from './Header.module.css'
 import Menu from './Menu'
+import RDV from './RDV'
 import SkipLinks from './SkipLinks'
 
 export default function Header() {
@@ -16,17 +17,18 @@ export default function Header() {
           <nav role='navigation'>
             <ul className={styles.mainLinks}>
               <li>
-                <IframeableLink href='/outils'>
+                <Link href='/outils' className={styles.link}>
                   <ToolsIcon />
                   Les outils
-                </IframeableLink>
+                </Link>
               </li>
               <li>
-                <IframeableLink href='/doc'>
+                <Link href='/doc' className={styles.link}>
                   <DocIcon />
                   La doc
-                </IframeableLink>
+                </Link>
               </li>
+              <RDV>Prendre rdv</RDV>
             </ul>
             <div className={styles.menu}>
               <Menu />

@@ -9,6 +9,12 @@ export const tools = [
     linkLabel: 'Découvrir',
   },
   {
+    slug: 'transport',
+    title: 'Transport',
+    description: 'Calculer l’impact carbone des moyens de transport',
+    linkLabel: 'Essayer',
+  },
+  {
     slug: 'alimentation',
     title: 'Alimentation',
     description: 'Comparer l’empreinte carbone des aliments',
@@ -19,12 +25,6 @@ export const tools = [
     title: 'Comparateur',
     description: 'Le bon outil pour obtenir les bons ordres de grandeur',
     linkLabel: 'Visualiser',
-  },
-  {
-    slug: 'transport',
-    title: 'Transport',
-    description: 'Calculer l’impact carbone des moyens de transport',
-    linkLabel: 'Essayer',
   },
   {
     slug: 'fruitsetlegumes',

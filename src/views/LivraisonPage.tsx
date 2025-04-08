@@ -11,7 +11,6 @@ import Breadcrumbs from 'components/breadcrumbs/Breadcrumbs'
 import Examples from 'components/examples/Examples'
 import FAQs from 'components/faq/FAQs'
 import Block from 'components/layout/Block'
-import Suggestion from 'components/layout/Suggestion'
 
 const livraison = categories.find((category) => category.slug === 'livraison') as CategoryType
 
@@ -53,7 +52,6 @@ const LivraisonPage = () => {
         <Suspense />
         <FAQs filter={livraison.name} page={livraison.name} />
       </Suspense>
-      <Suggestion from='/outils/livraison' fromLabel='Livraison' simulatorName='de la thématique Livraison' />
     </>
   )
 }

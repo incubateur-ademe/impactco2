@@ -18,6 +18,8 @@ export type ToolCardProps = {
   image?: string
 }
 
+const populaire = 'transport'
+
 const ToolCard = ({ slug, title, description, linkLabel, horizontal, link, image }: ToolCardProps) => {
   const isNew = useMemo(() => {
     const news = process.env.NEXT_PUBLIC_NEWS
@@ -37,11 +39,15 @@ const ToolCard = ({ slug, title, description, linkLabel, horizontal, link, image
     <li
       className={classNames(styles.list, {
         [styles.horizontalList]: horizontal,
+        [styles.withTag]: isNew || slug === populaire,
       })}>
       {isNew && (
         <div className={classNames(styles.tag, { [styles.horizontalTag]: horizontal })}>
           {horizontal ? 'Nouveau !' : 'Nouvel outil !'}
         </div>
+      )}
+      {slug === populaire && (
+        <div className={classNames(styles.paleTag, { [styles.horizontalTag]: horizontal })}>Le + Populaire</div>
       )}
       <IframeableLink
         href={link || `/outils/${slug}`}

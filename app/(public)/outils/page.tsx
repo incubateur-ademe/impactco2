@@ -1,5 +1,4 @@
 import { Metadata } from 'next'
-import React from 'react'
 import Outils from 'components/outils/Outils'
 import Suggestion from 'components/layout/Suggestion'
 
@@ -13,7 +12,7 @@ const OutilsPage = () => {
   return (
     <>
       <Outils />
-      <Suggestion from='/outils' fromLabel='Outils' simulatorName='du site' />
+      <Suggestion fromLabel='Outils' simulatorName='du site' />
     </>
   )
 }

@@ -1,71 +1,72 @@
+import classNames from 'classnames'
+import Image from 'next/image'
 import { Suspense } from 'react'
 import Link from 'components/base/buttons/Link'
-import ToolCard from 'components/cards/ToolCard'
+import FullArrowRightIcon from 'components/base/icons/full-arrow-right'
 import ToolCards from 'components/cards/ToolCards'
-import { quiz, tools } from 'components/cards/tools'
-import Examples from 'components/examples/Examples'
+import { tools } from 'components/cards/tools'
 import FAQs from 'components/faq/FAQs'
 import Block from 'components/layout/Block'
-import Email from './Email'
 import Equivalents from './Equivalents'
 import styles from './Home.module.css'
-import MiniCard from './MiniCard'
+import Quotes from './Quotes'
 
 const Home = () => {
   return (
     <>
-      <Block>
+      <div className={classNames(styles.firstBlock, 'main-container')}>
         <h1 className={styles.title}>Les bons outils pour communiquer sur l’impact carbone</h1>
+        <p className={styles.subTitle}>
+          Développés pour <b>les entreprises</b>, <b>les associations</b>, <b>les médias</b> et <b>les collectivités</b>
+          , nos outils s’ajoutent à vos sites et applications en quelques clics. 100% gratuit.{' '}
+        </p>
+        <Link asButton href='/rendez-vous?fromLabel=home' className={styles.button}>
+          Prendre rendez-vous
+        </Link>
+        <Image className={styles.banner} src='/images/banner-home.jpg' width={832} height={348} alt='' />
+        <Image className={styles.bannerMobile} src='/images/banner-home-mobile.jpg' width={333} height={348} alt='' />
+        <div className={styles.separator} />
+      </div>
+      <Block>
+        <Quotes />
+      </Block>
+      <Block title='Un enjeu, un outil'>
+        <div className={styles.blockHeader}>
+          <p>
+            Nous avons développé <b>un ensemble d’outils de sensibilisation fiables</b> et <b>faciles à utiliser</b>,
+            pour vous éviter d’avoir à le faire vous-même.
+          </p>
+          <Link href='/outils' className={styles.link}>
+            Tous les outils
+          </Link>
+        </div>
         <ToolCards
           tools={[
             tools.find((tool) => tool.slug === 'livraison'),
-            tools.find((tool) => tool.slug === 'alimentation'),
-            quiz,
+            tools.find((tool) => tool.slug === 'transport'),
+            tools.find((tool) => tool.slug === 'comparateur'),
           ]}
         />
-        <div className={styles.link}>
-          <Link href='/outils'>Voir tous les outils</Link>
-        </div>
       </Block>
-      <Block title='Le bon format' description='Pour votre prochain article ou post, votre site ou appli.'>
-        <ul className={styles.miniCards}>
-          <MiniCard image='/images/home-iframe.svg' title='Un widget' description='dans votre article' />
-          <MiniCard image='/images/home-image.svg' title='Une image' description='dans votre post' />
-          <MiniCard image='/images/home-link.svg' title='Un lien' description='sur votre site web' />
-          <MiniCard image='/images/home-api.svg' title='Une API' description='pour votre appli' />
-        </ul>
-      </Block>
+      <div className={styles.fullBanner}>
+        <Link className={styles.card} href='/rendez-vous?fromLabel=home-banner'>
+          <div>
+            <p>3 millions de citoyens sensibilisés grâce à plus de 200 organisations !</p>
+            <p className={styles.bannerLink}>
+              PRENDRE RENDEZ-VOUS <FullArrowRightIcon />
+            </p>
+          </div>
+          <Image src='/images/home-icons.png' width={316} height={220} alt='' />
+        </Link>
+      </div>
       <Block
-        title='L’accompagnement sur mesure'
-        description='L’équipe vous aide à intégrer les outils adaptés à vos besoins, gratuitement.'>
-        <Email />
-      </Block>
-      <Block
-        title='Les fiches'
-        description='Parcourir les fiches dédiées à l’impact carbone de plus de 150 objets et gestes courants.'>
+        title='Les données en accès libre'
+        description='Explorer notre bibliothèque de 150+ objets et gestes du quotidien pour enrichir et illustrer vos contenus. 100% données Ademe.'>
         <Equivalents />
       </Block>
       <Suspense>
-        <Examples title='Exemples' description='Ils utilisent nos outils à la perfection.' filter="Page d'accueil" />
-      </Suspense>
-      <Suspense>
         <FAQs filter='Accueil' page='Accueil' />
       </Suspense>
-      <Block
-        title='À découvrir'
-        description="Vous souhaitez mobiliser votre communauté autour de l'empreinte carbone ?">
-        <ul>
-          <ToolCard
-            horizontal
-            slug='ngc'
-            image='/images/ngc.png'
-            title='Nos Gestes Climat'
-            description='Calculez votre empreinte carbone citoyenne et faites le bilan en équipe'
-            linkLabel='Visitez le site'
-            link='https://nosgestesclimat.fr/'
-          />
-        </ul>
-      </Block>
     </>
   )
 }

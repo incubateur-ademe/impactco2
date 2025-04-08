@@ -11,7 +11,7 @@ export default function Budget() {
   return (
     <>
       <BudgetPage />
-      <Suggestion fromLabel='Budget' from='/budget' simulatorName="du budget de l'équipe" />
+      <Suggestion fromLabel='Budget' simulatorName="du budget de l'équipe" />
     </>
   )
 }

@@ -1,5 +1,4 @@
 import { Metadata } from 'next'
-import React from 'react'
 import Home from 'components/home/Home'
 import Suggestion from 'components/layout/Suggestion'
 
