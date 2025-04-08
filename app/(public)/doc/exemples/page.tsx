@@ -23,11 +23,7 @@ const page = async () => {
   return (
     <>
       <ExamplesPage examples={examples} communications={communications} />
-      <Suggestion
-        fromLabel="Exemples d'utilisation"
-        from='/doc/exemples'
-        simulatorName="de nos exemples d'utilisations"
-      />
+      <Suggestion fromLabel="Exemples d'utilisation" simulatorName="de nos exemples d'utilisations" />
     </>
   )
 }

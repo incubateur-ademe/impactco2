@@ -37,7 +37,7 @@ const Stars = ({ value, setValue, id, label, required, hint, errors }: StarsProp
       {label && (
         <div className={classNames(styles.label, { [styles.labelError]: !!error })}>
           {label}
-          {!required && <span className={styles.notRequired}> - Facultatif</span>}
+          {required && <span className={styles.required}> *</span>}
           {hint && <span className={classNames(styles.hint, 'text-sm')}>{hint}</span>}
         </div>
       )}

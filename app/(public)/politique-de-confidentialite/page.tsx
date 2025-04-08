@@ -10,11 +10,7 @@ export default function Politique() {
   return (
     <>
       <PolitiquePage />
-      <Suggestion
-        fromLabel='Politique de confidentialité'
-        from='/politique-de-confidentialite'
-        simulatorName='de la politique de confidentialité'
-      />
+      <Suggestion fromLabel='Politique de confidentialité' simulatorName='de la politique de confidentialité' />
     </>
   )
 }

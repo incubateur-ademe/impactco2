@@ -1,5 +1,4 @@
 import { Metadata } from 'next'
-import React from 'react'
 import FAQPage from 'src/views/FAQPage'
 import { getFAQs } from 'utils/faq'
 import Suggestion from 'components/layout/Suggestion'
@@ -21,7 +20,7 @@ const page = async () => {
   return (
     <>
       <FAQPage faqs={faqs} />
-      <Suggestion from='/doc/questions-frequentes' fromLabel='Questions fréquentes' simulatorName='de la FAQ' />
+      <Suggestion fromLabel='Questions fréquentes' simulatorName='de la FAQ' />
     </>
   )
 }

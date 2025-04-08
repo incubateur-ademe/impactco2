@@ -23,7 +23,7 @@ const QuizCarbone = async () => {
   return (
     <>
       <Notion title={title} recordMap={recordMap} />
-      <Suggestion from={title} fromLabel={title} simulatorName='du quiz carbone' />
+      <Suggestion fromLabel={title} simulatorName='du quiz carbone' />
     </>
   )
 }

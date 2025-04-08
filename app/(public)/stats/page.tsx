@@ -16,7 +16,7 @@ export default async function StatistiquesPage() {
   return (
     <>
       <StatisticsPage stats={stats} year={year} />
-      <Suggestion fromLabel='Statistiques' from='/stats' simulatorName='de nos statistiques' />
+      <Suggestion fromLabel='Statistiques' simulatorName='de nos statistiques' />
     </>
   )
 }

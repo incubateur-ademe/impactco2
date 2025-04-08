@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import React, { ReactNode } from 'react'
+import { ReactNode } from 'react'
 import Link from 'components/base/buttons/Link'
 import styles from './Block.module.css'
 

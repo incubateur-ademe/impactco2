@@ -1,5 +1,4 @@
 import { Metadata } from 'next'
-import React from 'react'
 import APIDocPage from 'src/views/APIDocPage'
 import 'swagger-ui-react/swagger-ui.css'
 import Suggestion from 'components/layout/Suggestion'
@@ -23,7 +22,7 @@ function ApiDoc() {
   return (
     <>
       <APIDocPage spec={spec} />
-      <Suggestion fromLabel='Documentation API' from='/doc/api' simulatorName="de l'API du site" />
+      <Suggestion fromLabel='Documentation API' simulatorName="de l'API du site" />
     </>
   )
 }

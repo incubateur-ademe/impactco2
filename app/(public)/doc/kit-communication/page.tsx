@@ -16,11 +16,7 @@ const KitCommunicationPage = () => {
   return (
     <>
       <KitCommunication />
-      <Suggestion
-        from='/doc/kit-communication'
-        fromLabel='Kit de communication'
-        simulatorName='du kit de communication'
-      />
+      <Suggestion fromLabel='Kit de communication' simulatorName='du kit de communication' />
     </>
   )
 }
