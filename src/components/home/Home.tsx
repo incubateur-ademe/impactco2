@@ -51,7 +51,7 @@ const Home = () => {
       <div className={styles.fullBanner}>
         <Link className={styles.card} href='/rendez-vous?fromLabel=home-banner'>
           <div>
-            <p>3 millions de citoyens sensibilisés grâce à plus de 200 organisations !</p>
+            <p>3 millions de citoyens sensibilisés grâce à plus de 400 organisations !</p>
             <p className={styles.bannerLink}>
               PRENDRE RENDEZ-VOUS <FullArrowRightIcon />
             </p>
@@ -61,7 +61,7 @@ const Home = () => {
       </div>
       <Block
         title='Les données en accès libre'
-        description='Explorer notre bibliothèque de 150+ objets et gestes du quotidien pour enrichir et illustrer vos contenus. 100% données Ademe.'>
+        description='Explorer notre bibliothèque de 150+ objets et gestes du quotidien pour enrichir et illustrer vos contenus. 100% données ADEME.'>
         <Equivalents />
       </Block>
       <Suspense>
