@@ -62,6 +62,11 @@ export default function Footer() {
                     Éco-conception
                   </Link>
                 </li>
+                <li>
+                  <Link prefetch={false} href='https://beta.gouv.fr'>
+                    beta.gouv.fr
+                  </Link>
+                </li>
               </ul>
             </div>
             <div>
@@ -109,7 +114,7 @@ export default function Footer() {
           </li>
           <li className={styles.bottomLink}>
             <Link prefetch={false} href='/accessibilite'>
-              Accessibilité : non conforme
+              Accessibilité : partiellement conforme
             </Link>
           </li>
           <li className={styles.bottomLink}>
@@ -119,11 +124,6 @@ export default function Footer() {
               target='_blank'
               rel='noreferrer noopener'>
               Agir pour la transition
-            </Link>
-          </li>
-          <li className={styles.bottomLink}>
-            <Link prefetch={false} href='https://beta.gouv.fr/' target='_blank' rel='noreferrer noopener'>
-              beta.gouv.fr
             </Link>
           </li>
         </ul>
