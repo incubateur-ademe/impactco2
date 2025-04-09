@@ -3,7 +3,7 @@ import { Category as CategoryType } from 'types/category'
 import { categories } from 'data/categories'
 import Category from 'components/outils/Category'
 import styles from 'components/outils/CategoryPage.module.css'
-import LivraisonCards from 'components/outils/livraison/LivraisonCards'
+import SimulatorsCards from 'components/outils/SimulatorsCards'
 import LivraisonEtiquettes from 'components/outils/livraison/LivraisonEtiquettes'
 import { simulators } from 'components/outils/simulators'
 import Sources from 'components/base/Sources'
@@ -25,7 +25,7 @@ const LivraisonPage = () => {
         ]}
       />
       <Block title={livraison.name} as='h1' description={livraison.description}>
-        <LivraisonCards />
+        <SimulatorsCards tracking='Livraison' />
       </Block>
       <Block
         id='simulateur'

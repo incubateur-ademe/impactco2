@@ -1,17 +1,19 @@
-import LivraisonCard from './LivraisonCard'
-import styles from './LivraisonCards.module.css'
+import SimulatorsCard from './SimulatorsCard'
+import styles from './SimulatorsCards.module.css'
 
-const LivraisonCards = () => {
+const SimulatorsCards = ({ tracking }: { tracking: string }) => {
   return (
     <ul className={styles.tools}>
-      <LivraisonCard
+      <SimulatorsCard
+        tracking={tracking}
         image={`/images/simulateur.svg`}
         title='Le simulateur'
         description='Comparer les scénarios d’achat d’une sélection de 10 objets et ajuster la distance parcourue.'
         linkLabel='Découvrir'
         link='#simulateur'
       />
-      <LivraisonCard
+      <SimulatorsCard
+        tracking={tracking}
         image={`/images/etiquettes.svg`}
         title='Les étiquettes'
         description='Proposer une lecture rapide des ordres de grandeur des différents scénarios d’achat.'
@@ -22,4 +24,4 @@ const LivraisonCards = () => {
   )
 }
 
-export default LivraisonCards
+export default SimulatorsCards
