@@ -129,6 +129,15 @@
 
   img {
     margin-top: 5rem;
+    @media screen and (max-width: 48rem) {
+      margin-top: 3rem;
+      width: 50%;
+      height: auto;
+    }
+
+    @media screen and (max-width: 35rem) {
+      display: none;
+    }
   }
 
   &:hover {
