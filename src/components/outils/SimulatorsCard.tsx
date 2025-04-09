@@ -7,7 +7,7 @@ import { ReactNode } from 'react'
 import { track } from 'utils/matomo'
 import FullArrowDownIcon from 'components/base/icons/full-arrow-down'
 import toolStyles from '../cards/ToolCard.module.css'
-import styles from '../livraison/SimulatorsCard.module.css'
+import styles from './SimulatorsCard.module.css'
 
 const SimulatorsCard = ({
   tracking,

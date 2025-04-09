@@ -1,4 +1,4 @@
-import React, { ReactNode, Suspense } from 'react'
+import { ReactNode, Suspense } from 'react'
 import { Category as CategoryType } from 'types/category'
 import Sources from 'components/base/Sources'
 import Breadcrumbs from 'components/breadcrumbs/Breadcrumbs'
@@ -7,24 +7,14 @@ import FAQs from 'components/faq/FAQs'
 import Block from 'components/layout/Block'
 import Category from './Category'
 import styles from './CategoryPage.module.css'
-import ExtraSimulator from './ExtraSimulator'
 
 const CategoryPage = ({
   category,
   simulator,
-  extraSimulator,
   noBottomBorders,
 }: {
   category: CategoryType
   simulator?: ReactNode
-  extraSimulator?: {
-    slug: string
-    tracking: string
-    title: string
-    description: string
-    simulator: ReactNode
-    small?: boolean
-  }
   noBottomBorders?: boolean
 }) => {
   return (
@@ -40,7 +30,6 @@ const CategoryPage = ({
         <Category category={category} simulator={simulator} noBottomBorders={noBottomBorders} />
         {category.sources && <Sources className={styles.sources} sources={category.sources} tracking={category.name} />}
       </Block>
-      {extraSimulator && <ExtraSimulator simulator={extraSimulator}>{extraSimulator.simulator}</ExtraSimulator>}
       <Suspense>
         <Examples
           title='Exemples'
