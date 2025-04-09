@@ -111,6 +111,7 @@
 }
 
 .card {
+  overflow: hidden;
   display: flex !important;
   align-items: center !important;
   padding: 2.5rem !important;
@@ -129,13 +130,8 @@
 
   img {
     margin-top: 5rem;
-    @media screen and (max-width: 48rem) {
-      margin-top: 3rem;
-      width: 50%;
-      height: auto;
-    }
 
-    @media screen and (max-width: 35rem) {
+    @media screen and (max-width: 29.875rem) {
       display: none;
     }
   }
@@ -153,5 +149,13 @@
         width: auto;
       }
     }
+  }
+}
+
+.cardContent {
+  min-width: 15rem;
+
+  @media screen and (max-width: 29.875rem) {
+    min-width: unset;
   }
 }

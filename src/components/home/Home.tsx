@@ -50,7 +50,7 @@ const Home = () => {
       </Block>
       <div className={styles.fullBanner}>
         <Link className={styles.card} href='/rendez-vous?fromLabel=home-banner'>
-          <div>
+          <div className={styles.cardContent}>
             <p>3 millions de citoyens sensibilisés grâce à plus de 400 organisations !</p>
             <p className={styles.bannerLink}>
               PRENDRE RENDEZ-VOUS <FullArrowRightIcon />
