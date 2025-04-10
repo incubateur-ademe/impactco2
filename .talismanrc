@@ -3,4 +3,14 @@ scopeconfig:
 fileignoreconfig:
 - filename: src/components/home/Quotes.tsx
   checksum: a4f99f29b637761e667a625dafa0234cc9d482f617b6e6ead84be16ef9553b63
+- filename: app/(public)/outils/alimentation/page.tsx
+  checksum: 94e002faad7c6a6ca658572a475d0aa5282833d7282a9e36ea37d787d12f385f
+- filename: app/(public)/outils/habillement/page.tsx
+  checksum: be3ebc0448e53b48338c7cc4e5072aed04d6dc37c064ba87e2238f0da1c9f755
+- filename: app/(public)/outils/livraison/etiquettes/page.tsx
+  checksum: 2957a52069a96c91c0d872c03ecb4ada164211f0e844d735dde48f4c345e8426
+- filename: app/(public)/outils/comparateur/etiquettes/page.tsx
+  checksum: 4964a9d18ceceda3ff05dab049e08513d2f360e6e09a06ec1773855e070fcbca
+- filename: app/(public)/outils/habillement/osez-changer/page.tsx
+  checksum: 75eb40716bd0ef027e095059733b9df69dc43e3e8d64d0df366bf69f358c7b19
 version: ""

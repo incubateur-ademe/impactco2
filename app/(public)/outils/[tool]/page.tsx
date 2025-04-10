@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation'
 import { categories } from 'data/categories'
 import Category from 'components/outils/CategoryPage'
 import Outil from 'components/outils/Outil'
-import { extraSimulators, simulators } from 'components/outils/simulators'
+import { simulators } from 'components/outils/simulators'
 import { getCategory } from 'utils/category'
 import { metaDescriptions, metaTitles } from 'utils/meta'
 import { devTools, smallTools } from 'components/cards/tools'
@@ -75,7 +75,6 @@ const OutilPage = async (props: Props) => {
         <Category
           category={category}
           simulator={simulators[params.tool]}
-          extraSimulator={extraSimulators[params.tool]}
           noBottomBorders={params.tool === 'transport'}
         />
         <Suggestion fromLabel={category.name} simulatorName={`de la thématique ${category.name}`} />

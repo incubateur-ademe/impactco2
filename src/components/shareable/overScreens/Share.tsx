@@ -6,7 +6,7 @@ import { Category } from 'types/category'
 import { buildCurrentUrlFor } from 'utils/urls'
 import CustomParam, { CustomParamValue } from './CustomParam'
 import CustomParams from './CustomParams'
-import { getComparateurParams, getCustomParams } from './CustomParamsValues'
+import { getComparateurParams, getComparateurURLParams, getCustomParams } from './CustomParamsValues'
 import styles from './Share.module.css'
 import ShareKit from './ShareKit'
 import ShareUrl from './ShareUrl'
@@ -51,7 +51,7 @@ const Share = ({
   }, [params, setVisibility])
 
   const url = buildCurrentUrlFor(
-    `${path || `outils/${category?.slug === 'repas' ? 'alimentation' : category?.slug}`}?${buildCustomParamsUrl(params, visibility)}${noLanguage ? '' : `&language=${allParams.language}`}${category?.slug === 'repas' ? '#repas' : ''}${anchor ? `#${anchor}` : ''}`
+    `${path || `outils/${category?.slug === 'repas' ? 'alimentation' : category?.slug}`}?${buildCustomParamsUrl(params, visibility)}${noLanguage ? '' : `&language=${allParams.language}`}${category?.slug === 'repas' ? '#repas' : ''}${!category ? getComparateurURLParams(anchor?.includes('etiquette')) : ''}${category?.slug === 'osez-changer' ? '&osezchanger=true' : ''}${anchor ? `#${anchor}` : ''}`
   ).replace(/\?$/, '')
   const trackingValue = (category ? category.name : tracking) || 'UNKNOWN'
 

@@ -1,10 +1,11 @@
-import React, { Suspense } from 'react'
+import { Suspense } from 'react'
 import Sources from 'components/base/Sources'
 import Breadcrumbs from 'components/breadcrumbs/Breadcrumbs'
 import Examples from 'components/examples/Examples'
 import FAQs from 'components/faq/FAQs'
 import Block from 'components/layout/Block'
 import styles from '../CategoryPage.module.css'
+import SimulatorsCards from '../SimulatorsCards'
 import Comparateur from './Comparateur'
 import Etiquettes from './Etiquettes'
 
@@ -18,7 +19,21 @@ const ComparateurPage = () => {
           { label: 'Les outils', link: '/outils' },
         ]}
       />
+
       <Block title='Comparateur carbone' as='h1' description='Le bon outil pour obtenir les bons ordres de grandeur'>
+        <SimulatorsCards
+          tracking='Livraison'
+          title='Le comparateur'
+          subTitle="L'outil de référence pour comparer une quantité de kg CO₂e avec des équivalents issus du quotidien."
+          extraTitle='Les étiquettes'
+          extraSubTitle="Ce format mini permet d'illustrer les quantités carbone avec des exemples parlants."
+          extraLink='#etiquette'
+        />
+      </Block>
+      <Block
+        title='Comparateur'
+        description='Comparer une quantité de kg CO₂e avec plus de 200 équivalents'
+        id='simulateur'>
         <Comparateur />
         <Sources
           className={styles.sources}

@@ -9,6 +9,16 @@ const extraKits: Record<string, { slug: string; link: string; image: string }> =
     link: '/kit/livraison.zip',
     image: '/images/tools-livraison.svg',
   },
+  alimentation: {
+    slug: 'alimentationKit',
+    link: '/kit/alimentation.zip',
+    image: '/images/tools-alimentation.svg',
+  },
+  quiz: {
+    slug: 'quizKit',
+    link: '/kit/quiz.zip',
+    image: '/images/tools-quiz.svg',
+  },
 }
 const ShareKit = ({ extraKit }: { extraKit?: string }) => {
   const t = useTranslations('overscreen')
@@ -27,7 +37,7 @@ const ShareKit = ({ extraKit }: { extraKit?: string }) => {
             link={extraKitInformations.link}
             title={t(`${extraKitInformations.slug}Title`)}
             description={t(`${extraKitInformations.slug}Description`)}
-            linkLabel={t(`${extraKitInformations.slug}Link`)}
+            linkLabel={t('extraKitLink')}
           />
         ) : (
           <ToolCard

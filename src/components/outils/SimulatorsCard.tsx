@@ -6,10 +6,11 @@ import Link from 'next/link'
 import { ReactNode } from 'react'
 import { track } from 'utils/matomo'
 import FullArrowDownIcon from 'components/base/icons/full-arrow-down'
-import toolStyles from '../../cards/ToolCard.module.css'
-import styles from './LivraisonCard.module.css'
+import toolStyles from '../cards/ToolCard.module.css'
+import styles from './SimulatorsCard.module.css'
 
-const LivraisonCard = ({
+const SimulatorsCard = ({
+  tracking,
   title,
   description,
   linkLabel,
@@ -21,6 +22,7 @@ const LivraisonCard = ({
   description: ReactNode
   linkLabel: string
   link: string
+  tracking: string
 }) => {
   return (
     <li className={styles.container}>
@@ -28,9 +30,9 @@ const LivraisonCard = ({
         href={link}
         className={classNames(toolStyles.card, styles.card)}
         onClick={() => {
-          track('Livraison', 'Ancre', link)
+          track(tracking, 'Ancre', link)
         }}>
-        <div className={toolStyles.content}>
+        <div className={classNames(toolStyles.content, styles.content)}>
           <div>
             <div className={styles.title}>
               <Image src={image} width={40} height={40} alt='' />
@@ -48,4 +50,4 @@ const LivraisonCard = ({
   )
 }
 
-export default LivraisonCard
+export default SimulatorsCard
