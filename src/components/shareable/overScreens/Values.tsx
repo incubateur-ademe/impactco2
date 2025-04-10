@@ -48,7 +48,7 @@ export const overScreenQuizValues: () => Record<string, OverScreenInfo> = () => 
   return {
     partager: {
       title: 'share',
-      children: <Share path='/outils/quiz' tracking='Quiz' />,
+      children: <Share path='/outils/quiz' tracking='Quiz' extraKit='quiz' />,
     },
     integrer: {
       title: 'integrate',
@@ -518,7 +518,10 @@ export const overScreenCategoryValues: (category: Category) => Record<string, Ov
   }
   if (category.slug === 'alimentation') {
     return {
-      ...values,
+      partager: {
+        title: 'share',
+        children: <Share category={category} tracking={category.name} extraKit='alimentation' />,
+      },
       integrer: {
         title: 'integrate',
         children: <AlimentationIntegrate />,
