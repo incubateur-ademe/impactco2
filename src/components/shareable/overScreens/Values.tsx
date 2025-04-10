@@ -201,8 +201,9 @@ export const overScreenOsezChangerValues: () => Record<string, OverScreenInfo> =
             slug: 'osez-changer',
             name: 'Défi chaussures',
           }}
-          path='outils/habillement/osez-changer'
+          path='outils/habillement'
           tracking='OsezChanger'
+          anchor='osez-changer'
         />
       ),
     },

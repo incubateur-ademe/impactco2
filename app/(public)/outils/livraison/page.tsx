@@ -8,12 +8,23 @@ export async function generateMetadata(props: {
 }): Promise<Metadata> {
   const searchParams = await props.searchParams
   const language = (searchParams.language as string) || 'fr'
+  const etiquette = searchParams.etiquette === 'true'
+  if (etiquette) {
+    return {
+      title: `${metaTitles['livraison-etiquettes'][language]} | Impact CO₂`,
+      description: metaDescriptions['livraison-etiquettes'][language],
+      openGraph: {
+        creators: 'ADEME',
+        images: `meta/livraison-etiquettes-${language}.png`,
+      },
+    }
+  }
   return {
     title: `${metaTitles.livraison[language]} | Impact CO₂`,
     description: metaDescriptions.livraison[language],
     openGraph: {
       creators: 'ADEME',
-      images: 'meta/livraison.png',
+      images: `meta/livraison-${language}.png`,
     },
   }
 }

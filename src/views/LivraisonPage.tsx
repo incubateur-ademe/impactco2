@@ -3,9 +3,9 @@ import { Category as CategoryType } from 'types/category'
 import { categories } from 'data/categories'
 import Category from 'components/outils/Category'
 import styles from 'components/outils/CategoryPage.module.css'
-import LivraisonCards from 'components/outils/livraison/LivraisonCards'
+import SimulatorsCards from 'components/outils/SimulatorsCards'
 import LivraisonEtiquettes from 'components/outils/livraison/LivraisonEtiquettes'
-import { simulators } from 'components/outils/simulators'
+import LivraisonSimulator from 'components/outils/livraison/LivraisonSimulator'
 import Sources from 'components/base/Sources'
 import Breadcrumbs from 'components/breadcrumbs/Breadcrumbs'
 import Examples from 'components/examples/Examples'
@@ -25,13 +25,20 @@ const LivraisonPage = () => {
         ]}
       />
       <Block title={livraison.name} as='h1' description={livraison.description}>
-        <LivraisonCards />
+        <SimulatorsCards
+          tracking='Livraison'
+          title='Le simulateur'
+          subTitle='Comparer les scénarios d’achat d’une sélection de 10 objets et ajuster la distance parcourue.'
+          extraTitle='Les étiquettes'
+          extraSubTitle='Proposer une lecture rapide des ordres de grandeur des différents scénarios d’achat.'
+          extraLink='#etiquettes'
+        />
       </Block>
       <Block
         id='simulateur'
         title='Simulateur'
         description='Un format complet à intégrer dans vos contenus sur le thème de la livraison'>
-        <Category category={livraison} simulator={simulators['livraison']} />
+        <Category category={livraison} simulator={<LivraisonSimulator />} />
         {livraison.sources && (
           <Sources className={styles.sources} sources={livraison.sources} tracking={livraison.name} />
         )}

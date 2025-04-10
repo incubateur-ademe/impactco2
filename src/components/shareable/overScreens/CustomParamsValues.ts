@@ -74,3 +74,7 @@ export const getComparateurParams = (params: Params, etiquette?: boolean) => {
     },
   }
 }
+
+export const getComparateurURLParams = (etiquette?: boolean) => {
+  return etiquette ? '&etiquette=true' : ''
+}
