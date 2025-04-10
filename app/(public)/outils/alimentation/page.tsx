@@ -13,7 +13,7 @@ export async function generateMetadata(props: {
     description: metaDescriptions.alimentation[language],
     openGraph: {
       creators: 'ADEME',
-      images: 'meta/alimentation.png',
+      images: `meta/alimentation-${language}.png`,
     },
   }
 }

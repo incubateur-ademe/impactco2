@@ -8,12 +8,24 @@ export async function generateMetadata(props: {
 }): Promise<Metadata> {
   const searchParams = await props.searchParams
   const language = (searchParams.language as string) || 'fr'
+  const osezChanger = searchParams.osezchanger === 'true'
+  if (osezChanger) {
+    return {
+      title: `${metaTitles['osez-changer'][language]} | Impact CO₂`,
+      description: metaDescriptions['osez-changer'][language],
+      openGraph: {
+        creators: 'ADEME',
+        images: `meta/osez-changer-${language}.png`,
+      },
+    }
+  }
+
   return {
     title: `${metaTitles.habillement[language]} | Impact CO₂`,
     description: metaDescriptions.habillement[language],
     openGraph: {
       creators: 'ADEME',
-      images: 'meta/habillement.png',
+      images: `meta/habillement-${language}.png`,
     },
   }
 }

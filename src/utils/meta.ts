@@ -4,6 +4,11 @@ export const metaDescriptions: Record<string, Record<string, string>> = {
     en: 'Compare and visualize a carbon quantity using the Impact CO2 simulator and equivalents to get a sense of the correct orders of magnitude.',
     es: 'Compare y visualice las cantidades de carbono utilizando el simulador Impact CO2 y sus equivalentes, para obtener los órdenes de magnitud correctos.',
   },
+  'comparateur-etiquettes': {
+    fr: "Découvrir l'étiquette CO2, le petit format pour communiquer les bons ordres de grandeur",
+    en: 'Discover the CO2 label, the small format to communicate the correct orders of magnitude',
+    es: 'Descubra la etiqueta de CO2, el pequeño formato para comunicar los órdenes de magnitud correctos',
+  },
   quiz: {
     fr: 'Sensibiliser et jouer avec les équivalences pour mieux se représenter les ordres de grandeur.',
     en: 'Raise awareness and play with equivalences to better represent orders of magnitude.',
@@ -74,6 +79,11 @@ export const metaDescriptions: Record<string, Record<string, string>> = {
     en: 'Measure the carbon impact of parcel delivery based on the frequency and modes of orders using the Impact CO2 simulator.',
     es: 'Mida el impacto de carbono de la entrega de paquetes según la frecuencia y el tipo de pedido, utilizando el simulador Impact CO2.',
   },
+  'livraison-etiquettes': {
+    fr: "Découvrir l'étiquette Livraison, le petit format pour communiquer les ordres de grandeur des différents scénarios d’achat.",
+    en: 'Discover the Delivery label, the small format to communicate the orders of magnitude of different purchasing scenarios.',
+    es: 'Descubra la etiqueta de entrega, el pequeño formato para comunicar los órdenes de magnitud de los diferentes escenarios de compra.',
+  },
 }
 
 export const metaTitles: Record<string, Record<string, string>> = {
@@ -81,6 +91,11 @@ export const metaTitles: Record<string, Record<string, string>> = {
     fr: 'Comparateur carbone',
     en: 'Carbon comparator',
     es: 'Comparador de carbono',
+  },
+  'comparateur-etiquettes': {
+    fr: 'Étiquettes CO2',
+    en: 'CO2 labels',
+    es: 'Etiquetas de CO2',
   },
   quiz: {
     fr: 'Quiz carbone',
@@ -151,5 +166,10 @@ export const metaTitles: Record<string, Record<string, string>> = {
     fr: 'Livraison',
     en: 'Delivery',
     es: 'Entrega',
+  },
+  'livraison-etiquettes': {
+    fr: 'Étiquettes Livraison',
+    en: 'Delivery labels',
+    es: 'Etiquetas de entrega',
   },
 }

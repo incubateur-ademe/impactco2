@@ -32,7 +32,7 @@ const SimulatorsCard = ({
         onClick={() => {
           track(tracking, 'Ancre', link)
         }}>
-        <div className={toolStyles.content}>
+        <div className={classNames(toolStyles.content, styles.content)}>
           <div>
             <div className={styles.title}>
               <Image src={image} width={40} height={40} alt='' />
