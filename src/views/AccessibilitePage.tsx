@@ -134,32 +134,24 @@ const AccessibilitePage = () => {
         </li>
       </ul>
       <h2>Retour d’information et contact</h2>
-      <p>Il est important de rappeler qu’en vertu de l’article 11 de la loi de février 2005 :</p>
       <p>
-        « la personne handicapée a droit à la compensation des conséquences de son handicap, quels que soient l’origine
-        et la nature de sa déficience, son âge ou son mode de vie. »
+        Si vous n’arrivez pas à accéder à un contenu ou à un service, vous pouvez contacter le responsable du site
+        internet pour être orienté vers une alternative accessible ou obtenir le contenu sous une autre forme.
       </p>
-      <br />
-      <p>
-        L’ADEME s’engage à prendre les moyens nécessaires afin de donner accès, dans un délai raisonnable, aux
-        informations et fonctionnalités recherchées par la personne handicapée, que le contenu fasse l’objet d’une
-        dérogation ou non.
-      </p>
-      <br />
-      <p>
-        L’ADEME invite les personnes qui rencontreraient des difficultés à la contacter par courriel à{' '}
-        <Link href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}>{process.env.NEXT_PUBLIC_CONTACT_EMAIL}</Link>{' '}
-        afin qu’une assistance puisse être apportée (alternative accessible, information et contenu donnés sous une
-        autre forme).
-      </p>
+      <ul>
+        <li>
+          <Link href='mailto&to=rgaa@ademe.fr'>Envoyer un message au référent accessibilité de l'ADEME</Link>
+        </li>
+        <li>Contacter Estelle Ribot, ADEME, DEMTE — 20 avenue du Grésillé BP 90 406 – 49 004 Angers Cedex 01</li>
+      </ul>
       <h2>Voies de recours</h2>
       <p>
         Si vous constatez un défaut d’accessibilité vous empêchant d’accéder à un contenu ou une fonctionnalité du site,
         que vous nous le signalez et que vous ne parvenez pas à obtenir une réponse rapide de notre part, vous êtes en
         droit de faire parvenir vos doléances ou une demande de saisine au Défenseur des droits.
       </p>
-      <p>Plusieurs moyens sont à votre disposition :</p>
       <br />
+      <p>Plusieurs moyens sont à votre disposition :</p>
       <ul>
         <li>
           <Link href='https://formulaire.defenseurdesdroits.fr/code/afficher.php?ETAPE=informations'>
