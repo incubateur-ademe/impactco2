@@ -1,5 +1,5 @@
 import { useTranslations } from 'next-intl'
-import React, { useMemo, useState } from 'react'
+import { useMemo, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { computedEquivalents } from 'src/providers/equivalents'
 import { Category as CategoryType } from 'types/category'
@@ -49,7 +49,7 @@ const Category = ({
   const t = useTranslations('comparateur.overscreen')
   const tCategory = useTranslations('category')
   return (
-    <fieldset className={styles.container}>
+    <div className={styles.container}>
       <button
         className={styles.header}
         onClick={() => setOpen(!open)}
@@ -90,14 +90,16 @@ const Category = ({
               {t('compare-button')}
             </Button>
           </div>
-          <Equivalents
-            equivalents={equivalents}
-            equivalentsToDisplay={categoryEquivalents}
-            setEquivalents={setEquivalents}
-          />
+          <fieldset aria-label={`${t('equivalents-group')} ${tCategory(`name-${category.slug}`)}`}>
+            <Equivalents
+              equivalents={equivalents}
+              equivalentsToDisplay={categoryEquivalents}
+              setEquivalents={setEquivalents}
+            />
+          </fieldset>
         </>
       )}
-    </fieldset>
+    </div>
   )
 }
 

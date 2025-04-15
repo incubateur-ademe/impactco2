@@ -297,7 +297,8 @@
       "show": "See elements of",
       "compare": "Compare with only this category",
       "compare-button": "See comparaison",
-      "max": "equivalents already selected"
+      "max": "equivalents already selected",
+      "equivalents-group": "Equivalents of category"
     }
   },
   "livraison": {
@@ -378,7 +379,6 @@
     "waiting": "An answer to the above question displays the carbon impact of buying new shoes."
   },
   "equivalent": {
-    "detail": "Detail of the carbon impact for:",
     "year": "year[s]",
     "hypotheses": "Hypotheses: ",
     "fabrication": "Manufacturing",

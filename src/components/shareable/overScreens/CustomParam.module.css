@@ -9,7 +9,6 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1rem 2rem;
-  justify-content: space-between;
 
   &:not(:last-child) {
     margin-bottom: 2rem;

@@ -9,12 +9,12 @@ import SkipLinks from './SkipLinks'
 
 export default function Header() {
   return (
-    <header role='banner' aria-label='En-tête' className={styles.header} id='header-navigation' tabIndex={-1}>
+    <header role='banner' aria-label='En-tête' className={styles.header} id='header-navigation'>
       <SkipLinks />
       <div className='main-container'>
         <div className={styles.container}>
           <Logos />
-          <nav role='navigation'>
+          <nav role='navigation' tabIndex={-1} aria-label='Menu principal'>
             <ul className={styles.mainLinks}>
               <li>
                 <Link href='/outils' className={styles.link}>

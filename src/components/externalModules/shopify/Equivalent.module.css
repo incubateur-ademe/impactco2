@@ -41,6 +41,8 @@
 .leftContent {
   padding: 0.75em 1.25em 0.75em 0.25em !important;
   margin: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
 }
 
 .rightColumn,

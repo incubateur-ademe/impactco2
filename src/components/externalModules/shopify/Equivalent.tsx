@@ -1,4 +1,4 @@
-import React, { ReactNode, useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { ReactNode, useEffect, useMemo, useRef, useState } from 'react'
 import { Language } from 'types/equivalent'
 import { getNumberPrecision } from 'utils/formatNumberPrecision'
 import LocalNumber from 'components/base/LocalNumber'
@@ -60,12 +60,12 @@ const Equivalent = ({
       <div className={styles.container}>
         <div className={styles.left}>
           <Logo value={preciseValue} url={url} />
-          <div className={styles.leftContent}>
-            <div className={styles.value} data-testid='etiquette-value'>
+          <p className={styles.leftContent}>
+            <span className={styles.value} data-testid='etiquette-value'>
               <LocalNumber number={value} />
-            </div>
-            <div className={styles.label}>{unit} CO₂e</div>
-          </div>
+            </span>
+            <span className={styles.label}>{unit} CO₂e</span>
+          </p>
         </div>
         <div className={styles.right}>
           <div className={isAnimated ? styles.animatedEqual : styles.equal}>

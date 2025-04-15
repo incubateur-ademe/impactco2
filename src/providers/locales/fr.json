@@ -297,7 +297,8 @@
       "show": "Voir les éléments de la catégorie",
       "compare": "Comparer avec cette catégorie seulement",
       "compare-button": "Voir la comparaison",
-      "max": "équivalents déjà sélectionnés"
+      "max": "équivalents déjà sélectionnés",
+      "equivalents-group": "Équivalents de la categorie"
     }
   },
   "livraison": {
@@ -378,7 +379,6 @@
     "waiting": "Une réponse à la question ci-dessus permet d’afficher l’impact carbone de l’achat de chaussures neuves"
   },
   "equivalent": {
-    "detail": "Détail de l'impact carbone pour :",
     "year": "année[s]",
     "hypotheses": "Hypothèses : ",
     "fabrication": "Fabrication",

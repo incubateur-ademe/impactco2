@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import { useState } from 'react'
 import Select from 'components/form/Select'
 import styles from './ByYear.module.css'
 
@@ -36,13 +36,13 @@ const ByYear = ({ labelId }: { labelId: string }) => {
         className={styles.select}
         id='annee'
         label='Année'
-        required
-        onChange={(e) => setBudget(budgets[e.target.value])}>
+        onChange={(e) => setBudget(budgets[e.target.value])}
+        inline>
         <option value='2024'>2024</option>
         <option value='2023'>2023</option>
       </Select>
       <br />
-      {budget.description}
+      <p>{budget.description}</p>
       <table className={styles.table} aria-labelledby={labelId}>
         <thead>
           <tr>

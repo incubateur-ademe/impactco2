@@ -7,11 +7,11 @@ export const detecteurCO2Test = async (
   label: string,
   locator?: number
 ) => {
-  await expect(page.getByRole('alertdialog')).not.toBeVisible()
+  await expect(page.getByTestId('etiquette')).not.toBeVisible()
 
   await page.getByRole('button', { name: label }).click()
 
-  await expect(page.getByRole('alertdialog')).toBeVisible()
+  await expect(page.getByTestId('etiquette')).toBeVisible()
   await expect(page.getByTestId('impact-co2-link').nth(locator || 0)).toHaveAttribute(
     'href',
     `https://impactco2.fr/comparateur?value=${expectedValue}`

@@ -1,10 +1,9 @@
-import React from 'react'
 import styles from './SkipLinks.module.css'
 
 // Do not use Next/Link for this => tab order is not correct
 const SkipLinks = () => {
   return (
-    <div className={styles.wrapper}>
+    <nav role='navigation' aria-label='Accès rapide' className={styles.wrapper}>
       <ul>
         <li>
           <a className={styles.hidden} href='#contenu'>
@@ -22,7 +21,7 @@ const SkipLinks = () => {
           </a>
         </li>
       </ul>
-    </div>
+    </nav>
   )
 }
 
