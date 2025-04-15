@@ -284,7 +284,7 @@ const CategorySimulator = ({
           {legends.map((legend) => (
             <div key={legend.label}>
               <div className={classNames(legend.style, styles.legendBar)} />
-              {t(`legend.${legend.label}`)}
+              <p>{t(`legend.${legend.label}`)}</p>
             </div>
           ))}
         </div>

@@ -14,10 +14,11 @@ const TransportComparisonMode = ({ tracking }: { tracking: string }) => {
   const t = useTranslations('transport.mode-selector')
   return (
     <div className={classNames(styles.container, { [styles.withBorder]: comparisonMode === 'list' })}>
-      <div className={styles.text}>{t('comparisonMode')}</div>
+      <p className={styles.text}>{t('comparisonMode')}</p>
       <div className={styles.modes}>
-        <label className={styles.leftButton}>
+        <label className={styles.leftButton} htmlFor='comparison-mode-list'>
           <input
+            id='comparison-mode-list'
             type='radio'
             name='comparison-mode'
             onClick={() => {
@@ -31,8 +32,9 @@ const TransportComparisonMode = ({ tracking }: { tracking: string }) => {
             {comparisonMode === 'list' && <CheckRoundIcon />}
           </span>
         </label>
-        <label className={styles.rightButton}>
+        <label className={styles.rightButton} htmlFor='comparison-mode-comparison'>
           <input
+            id='comparison-mode-comparison'
             type='radio'
             name='comparison-mode'
             onClick={() => {

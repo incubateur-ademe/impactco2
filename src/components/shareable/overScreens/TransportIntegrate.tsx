@@ -1,7 +1,7 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import React, { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { deplacements } from 'data/categories/deplacement'
 import ClipboardBox from 'components/base/ClipboardBox'
@@ -126,7 +126,7 @@ const TransportIntegrate = () => {
   return (
     <>
       <form id='transport-integrate'>
-        <Checkbox required id='tabs' label={t('onglets')} hint={t('onglets-hint')}>
+        <Checkbox id='tabs' label={t('onglets')} hint={t('onglets-hint')}>
           <CheckboxInput
             checked={tabs.includes(DISTANCE)}
             setChecked={(checked) => {
@@ -196,7 +196,7 @@ const TransportIntegrate = () => {
               <div className={styles.separator} />
             </>
           ))}
-        <Checkbox required id='comparisonModes' label={t('mode-integrate')}>
+        <Checkbox id='comparisonModes' label={t('mode-integrate')}>
           <CheckboxInput
             checked={comparisonModes.includes('list')}
             setChecked={(checked) => {
