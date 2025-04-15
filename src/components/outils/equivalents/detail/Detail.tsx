@@ -6,7 +6,6 @@ import { Fragment, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { Equivalent, EquivalentValue } from 'types/equivalent'
 import PlusMinus from 'components/outils/plusMinus/PlusMinus'
-import { getName } from 'utils/Equivalent/equivalent'
 import InformationIcon from 'components/base/icons/information'
 import shareableStyles from 'components/shareable/Shareable.module.css'
 import styles from './Detail.module.css'
@@ -109,7 +108,7 @@ export default function Detail({
   noInfo?: boolean
   withSeparator?: boolean
 }) {
-  const { setOverscreen, language } = useParamContext()
+  const { setOverscreen } = useParamContext()
   const t = useTranslations('equivalent')
   const [years, setYears] = useState('usage' in equivalent && equivalent.usage ? equivalent.usage.defaultyears : 0)
 
@@ -169,9 +168,6 @@ export default function Detail({
     <>
       {withSeparator && <div className={shareableStyles.separator} />}
       <table className={styles.table} role='presentation'>
-        <caption className='ico2-hidden'>
-          {t('detail')} {getName(language, equivalent)}
-        </caption>
         <tbody>
           {values.map((value) => (
             <Fragment key={value.label}>

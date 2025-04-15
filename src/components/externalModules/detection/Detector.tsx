@@ -152,9 +152,18 @@ const Detector = ({ impact, language }: { impact: string; language: 'fr' | 'en' 
         setDisplay('')
       }
     }
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setDisplay('')
+      }
+    }
+
     document.addEventListener('click', handleClickOutside, true)
+    document.addEventListener('keydown', handleKeyDown, true)
     return () => {
       document.removeEventListener('click', handleClickOutside, true)
+      document.removeEventListener('keydown', handleKeyDown, true)
     }
   }, [])
 
@@ -169,7 +178,7 @@ const Detector = ({ impact, language }: { impact: string; language: 'fr' | 'en' 
         }}
       />
       <div
-        role='alertdialog'
+        data-testId='etiquette'
         aria-labelledby='etiquette-value'
         className={classNames(styles.etiquette, {
           [styles.hide]: !display,

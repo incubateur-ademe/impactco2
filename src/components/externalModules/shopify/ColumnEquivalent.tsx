@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import React, { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { Language } from 'types/equivalent'
 import { getNumberPrecision } from 'utils/formatNumberPrecision'
 import LocalNumber from 'components/base/LocalNumber'
@@ -43,12 +43,12 @@ const ColumnEquivalent = ({
   return (
     <div className={classNames(styles.container, { [styles.withRandomize]: !!randomize })}>
       <div className={baseStyles.top}>
-        <div className={styles.leftContent}>
-          <div className={baseStyles.value} data-testid='etiquette-value'>
+        <p className={styles.leftContent}>
+          <span className={baseStyles.value} data-testid='etiquette-value'>
             <LocalNumber number={value} />
-          </div>
-          <div className={baseStyles.label}>{unit} CO₂e</div>
-        </div>
+          </span>
+          <span className={baseStyles.label}>{unit} CO₂e</span>
+        </p>
         <Logo value={preciseValue} right />
       </div>
       <div className={baseStyles.rightColumn}>

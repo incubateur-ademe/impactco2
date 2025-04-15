@@ -5,7 +5,7 @@ import styles from './Breadcrumbs.module.css'
 
 const Breadcrumbs = ({ links, current }: { links: { label: string; link: string }[]; current: string }) => {
   return (
-    <nav role='navigation' aria-label='Breadcrumb' className='main-container'>
+    <nav role='navigation' aria-label="Fil d'Ariane" className='main-container'>
       <ol className={styles.container}>
         {links.map(({ label, link }) => (
           <li key={label} className={styles.li}>

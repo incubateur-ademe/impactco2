@@ -48,7 +48,8 @@
     height: 100%;
 
     &:focus {
-      outline: none;
+      outline-offset: 4px;
+      outline: 3px solid var(--primary-50);
 
       &:before {
         content: '';
@@ -64,6 +65,7 @@
     }
 
     &:focus:not(:focus-visible) {
+      outline: none;
       &:before {
         outline: none;
       }

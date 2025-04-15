@@ -13,4 +13,6 @@ fileignoreconfig:
   checksum: 4964a9d18ceceda3ff05dab049e08513d2f360e6e09a06ec1773855e070fcbca
 - filename: app/(public)/outils/habillement/osez-changer/page.tsx
   checksum: 75eb40716bd0ef027e095059733b9df69dc43e3e8d64d0df366bf69f358c7b19
+- filename: src/components/externalModules/detection/Detector.tsx
+  checksum: 1851481f3ddc89e399df61df8d010661643eb94d33822593f173cd68db58369f
 version: ""
