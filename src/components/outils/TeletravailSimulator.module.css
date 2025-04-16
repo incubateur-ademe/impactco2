@@ -21,6 +21,9 @@
 .transportMode {
   width: 100%;
 
+  label {
+    width: 100%;
+  }
   select {
     max-width: 100%;
   }
