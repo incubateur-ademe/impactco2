@@ -2,7 +2,7 @@
 
 import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
-import React, { useMemo } from 'react'
+import { useMemo } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import useUsageNumeriqueContext from 'src/providers/UsageNumeriqueProvider'
 import { Category } from 'types/category'
@@ -179,7 +179,6 @@ const UsageNumeriqueEquivalentSimulator = ({ slug }: { slug: 'visio' | 'email' |
           </div>
           <div>
             <Radio
-              required
               className={baseStyles.radio}
               id='radio-construction'
               label={

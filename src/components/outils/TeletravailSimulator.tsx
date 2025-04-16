@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
-import React, { useEffect, useMemo, useRef } from 'react'
+import { useEffect, useMemo, useRef } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { Category } from 'types/category'
 import { ComputedEquivalent, DeplacementType } from 'types/equivalent'
@@ -67,19 +67,11 @@ const TeletravailSimulator = () => {
     <>
       <form id='teletravail-simulator' className={styles.simulator}>
         <div className={itineraireStyles.addresses}>
-          <AddressInput
-            large
-            id='teletravail-start'
-            label={t('start')}
-            required
-            place={start?.address}
-            setPlace={setStart}
-          />
-          <AddressInput large id='teletravail-end' label={t('end')} required place={end?.address} setPlace={setEnd} />
+          <AddressInput large id='teletravail-start' label={t('start')} place={start?.address} setPlace={setStart} />
+          <AddressInput large id='teletravail-end' label={t('end')} place={end?.address} setPlace={setEnd} />
         </div>
         <div className={styles.transportMode}>
           <SelectEquivalent
-            required
             label={t('mode')}
             id='mode'
             value={transport}
@@ -88,6 +80,7 @@ const TeletravailSimulator = () => {
               setTransport(event.target.value)
             }}
             equivalents={deplacements}
+            withoutColon
           />
         </div>
         <div className={itineraireStyles.days}>

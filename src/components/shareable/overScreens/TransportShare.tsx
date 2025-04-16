@@ -1,7 +1,7 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import React, { useMemo, useState } from 'react'
+import { useMemo, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { Category } from 'types/category'
 import { TransportSimulateur } from 'types/transport'
@@ -94,7 +94,7 @@ const TransportShare = () => {
   return selected ? (
     <>
       <form id='transport-share'>
-        <Radio required id='tabs' label={t('onglet')} hint={t('onglet-hint')}>
+        <Radio id='tabs' label={t('onglet')} hint={t('onglet-hint')}>
           <RadioInput
             value='distance'
             selected={selected}
@@ -132,7 +132,7 @@ const TransportShare = () => {
           />
         )}
         <div className={styles.separator} />
-        <Radio required id='comparisonModes' label={t('mode-share')}>
+        <Radio id='comparisonModes' label={t('mode-share')}>
           <RadioInput
             value='list'
             selected={comparisonMode}

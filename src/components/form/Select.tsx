@@ -1,7 +1,7 @@
 'use client'
 
 import classNames from 'classnames'
-import React, { SelectHTMLAttributes } from 'react'
+import { SelectHTMLAttributes } from 'react'
 import styles from './Input.module.css'
 
 export type SelectProps = SelectHTMLAttributes<HTMLSelectElement> & {
@@ -9,16 +9,28 @@ export type SelectProps = SelectHTMLAttributes<HTMLSelectElement> & {
   label?: string
   inline?: boolean
   hint?: string
+  withoutColon?: boolean
   padding?: 'sm' | 'lg'
 }
 
-const Select = ({ id, label, hint, inline, padding, className, children, ...selectProps }: SelectProps) => {
+const Select = ({
+  id,
+  label,
+  hint,
+  inline,
+  padding,
+  className,
+  children,
+  withoutColon,
+  ...selectProps
+}: SelectProps) => {
   return (
     <div className={inline ? styles.containerInline : styles.container}>
       {label && (
         <label className={classNames(styles.label, { [styles.labelInline]: inline })} htmlFor={`text-select-${id}`}>
           {label}
-          {selectProps.required && <span className={styles.required}> *</span>} :
+          {selectProps.required && <span className={styles.required}> *</span>}
+          {withoutColon ? '' : ' :'}
           {hint && <span className={classNames(styles.hint, 'text-sm')}>{hint}</span>}
         </label>
       )}
