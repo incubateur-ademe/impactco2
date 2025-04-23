@@ -1,4 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
+import { savePhotonTime } from 'src/serverFunctions/photon'
 import { Address } from 'types/address'
 
 const layers = ['city', 'street', 'house']
@@ -6,6 +7,7 @@ const layers = ['city', 'street', 'house']
 export const searchAddress = async (search: string, limit?: number) => {
   const axios = (await import('axios')).default
 
+  const start = new Date().getTime()
   return axios
     .get<{
       features?: Address[]
@@ -15,6 +17,9 @@ export const searchAddress = async (search: string, limit?: number) => {
         .join('&')}&lang=fr&lat=46.227638&lon=2.213749&zoom=7&location_bias_scale=0.9`
     )
     .then((res) => {
+      const end = new Date().getTime()
+      savePhotonTime({ search, time: end - start })
+
       return res.data && res.data.features
         ? res.data.features.sort((a, b) => {
             if (a.properties.country === 'France' && b.properties.country !== 'France') {
