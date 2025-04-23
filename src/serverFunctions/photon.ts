@@ -36,7 +36,7 @@ export const savePhotonTime = async ({ search, time }: { search: string; time: n
     )
     return true
   } catch (error) {
-    console.error(error.response)
+    console.error(error)
     return false
   }
 }
