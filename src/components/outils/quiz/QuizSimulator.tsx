@@ -53,66 +53,69 @@ const QuizSimulator = () => {
     }
   }, [config])
 
+  const Header = (
+    <div className={styles.header} ref={ref} tabIndex={-1}>
+      {question > 0 && config && (
+        <button
+          data-testid='quiz-previous-button'
+          type='button'
+          className={styles.previousButton}
+          onClick={() => {
+            setAnswer(undefined)
+            setQuestion(question - 1)
+            setDisplayMore(false)
+            track('Quiz', 'Previous', question.toString())
+          }}>
+          <FullArrowLeftIcon />
+          {t('previous')}
+        </button>
+      )}
+      <p className={styles.question} data-testid='quiz-header'>
+        {config ? (
+          <>
+            {t('question')} {question + 1} / 10
+          </>
+        ) : (
+          t('finished')
+        )}
+      </p>
+      <legend className={styles.title} data-testid='quiz-title'>
+        {config
+          ? t.rich('title', { important: (chunks) => <b>{chunks}</b> })
+          : t.rich('score', {
+              score: score.current.reduce((acc, current) => acc + current, 0),
+              important: (chunks) => <b>{chunks}</b>,
+            })}
+      </legend>
+      {config && (
+        <p
+          className={classNames(styles.tag, {
+            [styles.correct]: answer === config.answer,
+            [styles.missed]: answer && answer !== config.answer,
+          })}
+          data-testid='quiz-question-result'
+          role='status'>
+          {answer ? (
+            answer === config.answer ? (
+              t.rich('correct', { important: (chunks) => <b>{chunks}</b> })
+            ) : (
+              <>
+                {t.rich('missed', { important: (chunks) => <b>{chunks}</b> })} {config.answer} !
+              </>
+            )
+          ) : (
+            t('tag')
+          )}
+        </p>
+      )}
+    </div>
+  )
   return (
     <>
-      <form>
-        <fieldset>
-          <div className={styles.header} ref={ref} tabIndex={-1}>
-            {question > 0 && config && (
-              <button
-                data-testid='quiz-previous-button'
-                type='button'
-                className={styles.previousButton}
-                onClick={() => {
-                  setAnswer(undefined)
-                  setQuestion(question - 1)
-                  setDisplayMore(false)
-                  track('Quiz', 'Previous', question.toString())
-                }}>
-                <FullArrowLeftIcon />
-                {t('previous')}
-              </button>
-            )}
-            <p className={styles.question} data-testid='quiz-header'>
-              {config ? (
-                <>
-                  {t('question')} {question + 1} / 10
-                </>
-              ) : (
-                t('finished')
-              )}
-            </p>
-            <legend className={styles.title} data-testid='quiz-title'>
-              {config
-                ? t.rich('title', { important: (chunks) => <b>{chunks}</b> })
-                : t.rich('score', {
-                    score: score.current.reduce((acc, current) => acc + current, 0),
-                    important: (chunks) => <b>{chunks}</b>,
-                  })}
-            </legend>
-            {config && (
-              <p
-                className={classNames(styles.tag, {
-                  [styles.correct]: answer === config.answer,
-                  [styles.missed]: answer && answer !== config.answer,
-                })}
-                data-testid='quiz-question-result'
-                role='status'>
-                {answer ? (
-                  answer === config.answer ? (
-                    t.rich('correct', { important: (chunks) => <b>{chunks}</b> })
-                  ) : (
-                    <>
-                      {t.rich('missed', { important: (chunks) => <b>{chunks}</b> })} {config.answer} !
-                    </>
-                  )
-                ) : (
-                  t('tag')
-                )}
-              </p>
-            )}
-          </div>
-          {config ? (
+      {config ? (
+        <form>
+          <fieldset>
+            {Header}
             <div className={answer && !displayMore ? styles.reduced : undefined}>
               <Question
                 question={config}
@@ -129,65 +132,66 @@ const QuizSimulator = () => {
                 displayMore={displayMore}
               />
             </div>
-          ) : (
-            <>
-              <div className={styles.result}>
-                <Image src='/images/tools-quiz-end.svg' alt='' width={220} height={180} data-testid='quiz-success' />
-                <Button
-                  data-testid='quiz-restart-button'
-                  priority='outline'
-                  onClick={() => {
-                    setAnswer(undefined)
-                    setQuestion(0)
-                    track('Quiz', 'Restart', 'quiz_restart_button')
-                  }}>
-                  {t('restart')}
-                </Button>
-              </div>
-              <QuizInfography />
-              <div className={styles.ressources}>
-                <p>{t('read-more')}</p>
-                <Resource
-                  image='/images/fiches.png'
-                  text='fiches'
-                  href='/kit/fiches.zip'
-                  withLink='Télécharger les 20 fiches'
-                  tracking='Quiz'
-                />
-                <Resource
-                  image='/images/tools-transport.svg'
-                  text='ico2-transport'
-                  href='https://impactco2.fr/outils/transport'
-                  withLink='Simulateur Transports'
-                  tracking='Quiz'
-                />
-                <Resource
-                  image='/images/tools-fruitsetlegumes.svg'
-                  text='ico2-fruitsetlegumes'
-                  href='https://impactco2.fr/outils/fruitsetlegumes'
-                  withLink='Fruits et légumes de saison'
-                  tracking='Quiz'
-                />
-                <Resource
-                  image='/images/lvao.png'
-                  text='lvao'
-                  href='https://quefairedemesobjets.ademe.fr/?mtm_campaign=impactCO2'
-                  withLink='Longue Vie Aux Objets'
-                  tracking='Quiz'
-                />
-                <Resource
-                  image='/images/ngc.png'
-                  text='ngc'
-                  href='https://nosgestesclimat.fr/'
-                  withLink='Nos Gestes Climat'
-                  tracking='Quiz'
-                />
-              </div>
-              <div className={shareableStyles.separator} />
-            </>
-          )}{' '}
-        </fieldset>
-      </form>
+          </fieldset>
+        </form>
+      ) : (
+        <>
+          {Header}
+          <div className={styles.result}>
+            <Image src='/images/tools-quiz-end.svg' alt='' width={220} height={180} data-testid='quiz-success' />
+            <Button
+              data-testid='quiz-restart-button'
+              priority='outline'
+              onClick={() => {
+                setAnswer(undefined)
+                setQuestion(0)
+                track('Quiz', 'Restart', 'quiz_restart_button')
+              }}>
+              {t('restart')}
+            </Button>
+          </div>
+          <QuizInfography />
+          <div className={styles.ressources}>
+            <p>{t('read-more')}</p>
+            <Resource
+              image='/images/fiches.png'
+              text='fiches'
+              href='/kit/fiches.zip'
+              withLink='Télécharger les 20 fiches'
+              tracking='Quiz'
+            />
+            <Resource
+              image='/images/tools-transport.svg'
+              text='ico2-transport'
+              href='https://impactco2.fr/outils/transport'
+              withLink='Simulateur Transports'
+              tracking='Quiz'
+            />
+            <Resource
+              image='/images/tools-fruitsetlegumes.svg'
+              text='ico2-fruitsetlegumes'
+              href='https://impactco2.fr/outils/fruitsetlegumes'
+              withLink='Fruits et légumes de saison'
+              tracking='Quiz'
+            />
+            <Resource
+              image='/images/lvao.png'
+              text='lvao'
+              href='https://quefairedemesobjets.ademe.fr/?mtm_campaign=impactCO2'
+              withLink='Longue Vie Aux Objets'
+              tracking='Quiz'
+            />
+            <Resource
+              image='/images/ngc.png'
+              text='ngc'
+              href='https://nosgestesclimat.fr/'
+              withLink='Nos Gestes Climat'
+              tracking='Quiz'
+            />
+          </div>
+          <div className={shareableStyles.separator} />
+        </>
+      )}
       {answer && (
         <div role='alert' aria-live='polite'>
           <button
