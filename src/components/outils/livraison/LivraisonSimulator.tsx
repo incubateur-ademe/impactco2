@@ -38,47 +38,51 @@ const LivraisonSimulator = () => {
 
   const equivalents = useMemo(() => {
     const data = livraisonData[type]
-    return livraisonEquivalents.map((equivalent) => {
-      if (!data.ecv[equivalent.slug]) {
-        return equivalent
-      }
+    return livraisonEquivalents
+      .filter((equivalent) => {
+        return livraison.modes.some((mode) => equivalent.slug.startsWith(mode))
+      })
+      .map((equivalent) => {
+        if (!data.ecv[equivalent.slug]) {
+          return equivalent
+        }
 
-      const ecvs = [...data.ecv[equivalent.slug]]
-      const distance = livraison.distance[equivalent.slug]
-      const transport = livraison.transport[equivalent.slug]
-      let initialValue = ecvs.reduce((acc, ecv) => acc + ecv.value, 0)
-      let detail: ReactNode = ''
-      if (distance && transport) {
-        initialValue += (equivalent.slug === 'pointrelais' ? 7 : 30) * voiturethermique.value
-        ecvs.push({
-          id: 56,
-          value: distance * 2 * (transport === 'voiturethermique' ? voiturethermique.value : voitureelectrique.value),
-        })
-        detail = <span className={livraisonStyles.gray}> - {t('car')}</span>
-      } else if (equivalent.slug.includes('douce')) {
-        detail = <span className={livraisonStyles.green}> - {t('foot')}</span>
-      }
+        const ecvs = [...data.ecv[equivalent.slug]]
+        const distance = livraison.distance[equivalent.slug]
+        const transport = livraison.transport[equivalent.slug]
+        let initialValue = ecvs.reduce((acc, ecv) => acc + ecv.value, 0)
+        let detail: ReactNode = ''
+        if (distance && transport) {
+          initialValue += (equivalent.slug === 'pointrelais' ? 7 : 30) * voiturethermique.value
+          ecvs.push({
+            id: 56,
+            value: distance * 2 * (transport === 'voiturethermique' ? voiturethermique.value : voitureelectrique.value),
+          })
+          detail = <span className={livraisonStyles.gray}> - {t('car')}</span>
+        } else if (equivalent.slug.includes('douce')) {
+          detail = <span className={livraisonStyles.green}> - {t('foot')}</span>
+        }
 
-      if (livraison.withFabrication && data.fabrication) {
-        ecvs.push({ id: 58, value: data.fabrication })
-        initialValue += data.fabrication
-      }
+        if (livraison.withFabrication && data.fabrication) {
+          ecvs.push({ id: 58, value: data.fabrication })
+          initialValue += data.fabrication
+        }
 
-      return {
-        ...equivalent,
-        ecv: ecvs,
-        initialValue,
-        value: ecvs.reduce((acc, ecv) => acc + ecv.value, 0),
-        livraison: !!(distance && transport),
-        name: (
-          <>
-            <span>{getNameWithoutSuffix(language, equivalent)}</span>
-            {detail}
-          </>
-        ),
-      }
-    })
-  }, [type, livraison.withFabrication, livraison.transport, livraison.distance, language])
+        return {
+          ...equivalent,
+          ecv: ecvs,
+          initialValue,
+          value: ecvs.reduce((acc, ecv) => acc + ecv.value, 0),
+          livraison: !!(distance && transport),
+          name: (
+            <>
+              <span>{getNameWithoutSuffix(language, equivalent)}</span>
+              {detail}
+            </>
+          ),
+        }
+      })
+  }, [type, livraison.modes, livraison.withFabrication, livraison.transport, livraison.distance, language])
 
   return (
     <>
@@ -111,7 +115,12 @@ const LivraisonSimulator = () => {
         </div>
       </div>
       <div className={livraisonStyles.separator} />
-      <CategorySimulator equivalents={equivalents} tracking='Livraison' withSimulator />
+      <CategorySimulator
+        equivalents={equivalents}
+        tracking='Livraison'
+        withSimulator
+        forceLegendDown={livraison.modes.length < 4}
+      />
     </>
   )
 }

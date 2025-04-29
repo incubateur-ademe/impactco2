@@ -39,9 +39,11 @@ const Progress = ({
 
   useEffect(() => {
     if (progress > 99) {
+      console.log('progress > 99', length)
       clearTimeout(displayedTimeoutRef.current)
       setFadeIn(true)
       fadeInTimeoutRef.current = setTimeout(() => {
+        console.log('timeout', length)
         setFadeIn(false)
         setToDisplay((value) => (value + 1) % length)
         setProgress(0)
@@ -54,7 +56,7 @@ const Progress = ({
         }
       }
     }
-  }, [progress])
+  }, [progress, length])
 
   return (
     <>

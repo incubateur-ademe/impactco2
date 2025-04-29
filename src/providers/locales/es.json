@@ -105,7 +105,10 @@
       "title": "Incluir el impacto de la fabricación por defecto",
       "description": "Impacto de la fabricación"
     },
-    "customFabricationList": {
+    "modeList": {
+      "description": "Personaliza la lista de métodos de compra propuestos"
+    },
+    "typeList": {
       "description": "Personaliza la lista de objetos propuestos"
     },
     "customList": {
@@ -317,6 +320,10 @@
     "car": "voy allí en coche",
     "foot": "voy a pie",
     "etiquette": "¿Cuál es el <important>impacto de carbono</important> de los diferentes métodos de compra?",
+    "magasin": "Compra en tienda",
+    "livraisondomicile": "Entrega a domicilio",
+    "pointrelais": "Entrega al punto de relevo",
+    "clickcollect": "Haz clic y recoge",
     "extranames": {
       "clickcollect": " a 15km",
       "pointrelais": " a 3,5km",

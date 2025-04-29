@@ -8,7 +8,7 @@ import { SiteLanguage } from 'types/languages'
 import { TransportSimulateur } from 'types/transport'
 import { deplacements } from 'data/categories/deplacement'
 import { comparisons } from 'components/outils/TransportComparisonSimulator'
-import { LivraisonType } from 'components/outils/livraison/Type'
+import { LivraisonMode, LivraisonType } from 'components/outils/livraison/Type'
 import { displayAddress } from 'utils/address'
 import { AlimentationCategories } from 'utils/alimentation'
 import { slugs } from 'utils/months'
@@ -92,6 +92,7 @@ export type Params = {
     transport: Record<string, string>
     setTransport: Dispatch<SetStateAction<Record<string, string>>>
     types: LivraisonType[]
+    modes: LivraisonMode[]
   }
   comparateur: {
     weight: number
@@ -226,6 +227,7 @@ export function ParamProvider({ children }: { children: ReactNode }) {
 
   // Livraison
   const [types, setTypes] = useState(Object.values(LivraisonType))
+  const [livraisonModes, setLivraisonModes] = useState(Object.values(LivraisonMode))
   const [withFabrication, setWithFabrication] = useState(false)
   const [distance, setDistance] = useState<Record<string, number>>({
     pointrelais: 3.5,
@@ -519,6 +521,9 @@ export function ParamProvider({ children }: { children: ReactNode }) {
     if (searchParams.get('types')) {
       setTypes((searchParams.get('types') as string).split(',') as LivraisonType[])
     }
+    if (searchParams.get('modes')) {
+      setLivraisonModes((searchParams.get('modes') as string).split(',') as LivraisonMode[])
+    }
   }, [searchParams])
 
   return (
@@ -548,6 +553,7 @@ export function ParamProvider({ children }: { children: ReactNode }) {
           transport,
           setTransport,
           types,
+          modes: livraisonModes,
         },
         comparateur: {
           weight: comparedEquivalent ? comparedEquivalent.value / (comparedEquivalent.percentage ? 100 : 1) : 1,

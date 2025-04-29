@@ -2,7 +2,8 @@
 
 import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
+import useParamContext from 'src/providers/ParamProvider'
 import { computedEquivalents } from 'src/providers/equivalents'
 import { track } from 'utils/matomo'
 import { buildCurrentUrlFor } from 'utils/urls'
@@ -21,10 +22,23 @@ const livraisonEquivalents = computedEquivalents
 const LivraisonEtiquette = ({ animated, id }: { animated?: boolean; id: string }) => {
   const t = useTranslations('livraison')
 
+  const {
+    livraison: { modes },
+  } = useParamContext()
+
   const [toDisplay, setToDisplay] = useState(0)
   const [fadeIn, setFadeIn] = useState(false)
   const [displayDisclaimer, setDisplayDisclaimer] = useState(false)
 
+  const equivalents = useMemo(
+    () =>
+      livraisonEquivalents.filter((equivalent) => {
+        return modes.some((mode) => equivalent.slug.startsWith(mode))
+      }),
+    [modes]
+  )
+
+  const shouldAnimate = animated && equivalents.length > 1
   return (
     <div className={styles.container}>
       <div className={styles.header}>
@@ -34,7 +48,7 @@ const LivraisonEtiquette = ({ animated, id }: { animated?: boolean; id: string }
             aria-controls={`etiquette-${id}-disclaimer`}
             aria-expanded={displayDisclaimer}
             title='Afficher les informations de contenus'
-            className={classNames(styles.disclaimerButton, { [styles.disclaimerAnimated]: animated })}
+            className={classNames(styles.disclaimerButton, { [styles.disclaimerAnimated]: shouldAnimate })}
             onClick={() => {
               track('Livraison', 'informations', displayDisclaimer ? 'close' : 'open')
               setDisplayDisclaimer(!displayDisclaimer)
@@ -47,18 +61,16 @@ const LivraisonEtiquette = ({ animated, id }: { animated?: boolean; id: string }
           right
           title='Lien externe : accéder au simulateur livraison sur le site Impact CO2'
         />
-        {animated && (
-          <Progress length={livraisonEquivalents.length} setFadeIn={setFadeIn} setToDisplay={setToDisplay} />
-        )}
+        {shouldAnimate && <Progress length={equivalents.length} setFadeIn={setFadeIn} setToDisplay={setToDisplay} />}
       </div>
       <div className={styles.content}>
-        {displayDisclaimer && <Disclaimer animated={animated} id={id} />}
-        <ul className={animated ? styles.animatedList : ''}>
-          {livraisonEquivalents.map((livraisonEquivalent, index) => (
+        {displayDisclaimer && <Disclaimer animated={shouldAnimate} id={id} />}
+        <ul className={shouldAnimate ? styles.animatedList : ''}>
+          {equivalents.map((livraisonEquivalent, index) => (
             <li
               key={livraisonEquivalent.slug}
               className={
-                animated
+                shouldAnimate
                   ? index === toDisplay && !fadeIn
                     ? styles.visibleAnimatedComparison
                     : styles.animatedComparison
@@ -66,9 +78,9 @@ const LivraisonEtiquette = ({ animated, id }: { animated?: boolean; id: string }
               }>
               <LivraisonEquivalent
                 index={index}
-                animated={animated}
+                animated={shouldAnimate}
                 equivalent={livraisonEquivalent}
-                max={livraisonEquivalents[livraisonEquivalents.length - 1].value}
+                max={equivalents[equivalents.length - 1].value}
               />
             </li>
           ))}
