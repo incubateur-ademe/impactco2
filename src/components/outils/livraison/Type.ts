@@ -10,3 +10,10 @@ export enum LivraisonType {
   Vin = 'vin',
   Cafetiere = 'cafetiere',
 }
+
+export enum LivraisonMode {
+  Magasin = 'magasin',
+  Domicile = 'livraisondomicile',
+  PointRelais = 'pointrelais',
+  ClickAndCollect = 'clickcollect',
+}

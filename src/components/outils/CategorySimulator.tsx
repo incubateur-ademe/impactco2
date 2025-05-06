@@ -44,17 +44,23 @@ const computeLegends = (equivalents: ComputedEquivalent[]) => {
     return null
   }
 
-  if (equivalents.some((equivalent) => equivalent.livraison)) {
-    const livraisonECVs = [
-      { label: 'logistique', style: styles.stripped },
-      { label: 'deplacement', style: styles.plain },
-    ]
+  if (
+    equivalents.some(
+      (equivalent) =>
+        'ecv' in equivalent && equivalent.ecv && equivalent.ecv?.some((ecv) => livraisonECVs.includes(ecv.id))
+    )
+  ) {
+    const livraisonECVs = [{ label: 'logistique', style: styles.stripped }]
+
+    if (equivalents.some((equivalent) => equivalent.livraison)) {
+      livraisonECVs.push({ label: 'deplacement', style: styles.plain })
+    }
     if (
       equivalents.some(
         (equivalent) => 'ecv' in equivalent && equivalent.ecv && equivalent.ecv?.some((ecv) => ecv.id === 58)
       )
     ) {
-      return [{ label: 'fabrication', style: styles.gray }].concat(livraisonECVs)
+      livraisonECVs.push({ label: 'fabrication', style: styles.gray })
     }
     return livraisonECVs
   }
@@ -106,6 +112,7 @@ const CategorySimulator = ({
   withSimulator,
   type,
   reverse,
+  forceLegendDown,
 }: {
   id?: string
   tracking: string
@@ -116,6 +123,7 @@ const CategorySimulator = ({
   withSimulator?: boolean
   type?: TransportSimulateur
   reverse?: boolean
+  forceLegendDown?: boolean
 }) => {
   const params = useParamContext()
   const t = useTranslations('category-simulator')
@@ -159,7 +167,6 @@ const CategorySimulator = ({
             .map((equivalent, index) => {
               const detail = getDetail(equivalent)
               const barExplanation = detail.map(({ label, value }) => `${label} : ${value.toFixed(0)}%`).join(', ')
-
               return (
                 <li
                   key={equivalent.carpool ? `${equivalent.slug}-carpool` : equivalent.slug}
@@ -279,7 +286,8 @@ const CategorySimulator = ({
       {legends && (
         <div
           className={classNames(styles.legend, {
-            [styles.legendRelative]: equivalents[0]?.carpool || equivalents[1]?.carpool || legendRelative,
+            [styles.legendRelative]:
+              equivalents[0]?.carpool || equivalents[1]?.carpool || legendRelative || forceLegendDown,
           })}>
           {legends.map((legend) => (
             <div key={legend.label}>
