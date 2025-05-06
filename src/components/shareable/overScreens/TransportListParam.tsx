@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
 import { SetStateAction } from 'preact/compat'
-import React, { Dispatch } from 'react'
+import { Dispatch } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { deplacements } from 'data/categories/deplacement'
 import { getNameWithoutSuffix } from 'utils/Equivalent/equivalent'

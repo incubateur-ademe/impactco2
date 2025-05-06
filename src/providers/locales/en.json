@@ -105,7 +105,10 @@
       "title": "Include manufacturing impact by default",
       "description": "Impact of manufacturing"
     },
-    "customFabricationList": {
+    "modeList": {
+      "description": "Customize the list of proposed purchasing methods"
+    },
+    "typeList": {
       "description": "Customize the list of suggested items"
     },
     "customList": {
@@ -317,6 +320,10 @@
     "car": "I'm going by car",
     "foot": "I'm going on foot",
     "etiquette": "What is the <important>carbon impact</important> of different purchasing methods?",
+    "magasin": "Purchase in store",
+    "livraisondomicile": "Home delivery",
+    "pointrelais": "Delivery to a relay point",
+    "clickcollect": "Click & Collect",
     "extranames": {
       "clickcollect": " at 15km",
       "pointrelais": " at 3.5km",

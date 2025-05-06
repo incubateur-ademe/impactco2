@@ -105,7 +105,10 @@
       "title": "Inclure l’impact de la fabrication par défaut",
       "description": "Impact de la fabrication"
     },
-    "customFabricationList": {
+    "modeList": {
+      "description": "Personnaliser la liste des modes d’achat proposés"
+    },
+    "typeList": {
       "description": "Personnaliser la liste d'objets proposés"
     },
     "customList": {
@@ -317,6 +320,10 @@
     "car": "J'y vais en voiture",
     "foot": "J'y vais à pied",
     "etiquette": "Quel est <important>l'impact carbone</important> des différents modes d'achat ?",
+    "magasin": "Achat en magasin",
+    "livraisondomicile": "Livraison à domicile",
+    "pointrelais": "Livraison en point relais",
+    "clickcollect": "Click & Collect",
     "extranames": {
       "clickcollect": " à 15km",
       "pointrelais": " à 3,5km",

@@ -8,7 +8,7 @@ import styles from './TransportListParam.module.css'
 
 const allTypes = Object.values(LivraisonType)
 
-const LivraisonListParam = ({
+const LivraisonTypeParam = ({
   types,
   setTypes,
 }: {
@@ -23,11 +23,10 @@ const LivraisonListParam = ({
           <CheckboxInput
             id={`livraison-list-${type}-checkbox`}
             reversed
-            className={classNames(styles.mode, styles.active)}
+            className={classNames(styles.mode, { [styles.active]: types.includes(type) })}
             labelClassName={styles.modeLabel}
             checked={types.includes(type)}
             setChecked={(checked) => setTypes(checked ? [...types, type] : types.filter((value) => value !== type))}
-            disabled={types.length === 1 && types[0] === type}
             label={
               <span className={styles.left}>
                 <span className={styles.name}>{t(type)}</span>
@@ -40,4 +39,4 @@ const LivraisonListParam = ({
   )
 }
 
-export default LivraisonListParam
+export default LivraisonTypeParam

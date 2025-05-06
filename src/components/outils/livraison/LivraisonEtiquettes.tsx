@@ -25,7 +25,8 @@ const LivraisonEtiquettes = () => {
                 </div>
                 <p>
                   L’étiquette livraison offre une comparaison rapide des ordres de grandeur des scénarios d’achat, basée
-                  sur un colis moyen et des distances moyennes.
+                  sur un colis moyen et des distances moyennes. Il est possible de choisir les modes d'achat proposés
+                  dans les paramètres d'intégration.
                 </p>
               </div>
             </div>
@@ -49,7 +50,8 @@ const LivraisonEtiquettes = () => {
                 </div>
                 <p>
                   L’étiquette animée présente les mêmes contenus que l’étiquette standard, dans un format plus compact
-                  où chaque scénario défile toutes les 4 secondes.
+                  où chaque scénario défile toutes les 4 secondes. Il est possible de choisir les modes d'achat proposés
+                  dans les paramètres d'intégration.
                 </p>
               </div>
             </div>

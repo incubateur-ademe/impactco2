@@ -9,6 +9,7 @@ import EquivalentsOverscreen from 'components/comparateur/overscreens/Equivalent
 import AlimentationIntegrate from './AlimentationIntegrate'
 import AlimentationData from './Data/AlimentationData'
 import Integrate from './Integrate'
+import LivraisonEtiquetteIntegrate from './LivraisonEtiquetteIntegrate'
 import LivraisonIntegrate from './LivraisonIntegrate'
 import Share from './Share'
 import TransportIntegrate from './TransportIntegrate'
@@ -150,7 +151,7 @@ export const overScreenLivraisonEtiquettesValues: () => Record<
     },
     integrer: {
       title: 'integrate',
-      children: <Integrate path='livraison/etiquette-animee' tracking='Livraison' />,
+      children: <LivraisonEtiquetteIntegrate animated />,
     },
   },
   static: {
@@ -160,7 +161,7 @@ export const overScreenLivraisonEtiquettesValues: () => Record<
     },
     integrer: {
       title: 'integrate',
-      children: <Integrate path='livraison/etiquette' tracking='Livraison' />,
+      children: <LivraisonEtiquetteIntegrate />,
     },
   },
 })

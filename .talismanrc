@@ -15,4 +15,6 @@ fileignoreconfig:
   checksum: 75eb40716bd0ef027e095059733b9df69dc43e3e8d64d0df366bf69f358c7b19
 - filename: src/components/externalModules/detection/Detector.tsx
   checksum: 1851481f3ddc89e399df61df8d010661643eb94d33822593f173cd68db58369f
+- filename: src/components/shareable/overScreens/LivraisonModeParam.tsx
+  checksum: d0a6979380aa23af9cf2d4b01316fd293cd0144ca4fc1f2d9d526c80f83c0cbc
 version: ""

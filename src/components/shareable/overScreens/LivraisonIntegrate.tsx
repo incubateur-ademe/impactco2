@@ -3,15 +3,17 @@
 import { useTranslations } from 'next-intl'
 import { useEffect, useMemo, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
-import { LivraisonType } from 'components/outils/livraison/Type'
+import { LivraisonMode, LivraisonType } from 'components/outils/livraison/Type'
 import ClipboardBox from 'components/base/ClipboardBox'
 import CustomParam, { CustomParamValue } from './CustomParam'
 import styles from './CustomParam.module.css'
 import IntegratePreview from './IntegratePreview'
-import LivraisonListParam from './LivraisonListParam'
+import LivraisonModeParam from './LivraisonModeParam'
+import LivraisonTypeParam from './LivraisonTypeParam'
 import shareStyles from './Share.module.css'
 
 const allTypes = Object.values(LivraisonType)
+const allModes = Object.values(LivraisonMode)
 
 const LivraisonIntegrate = () => {
   const t = useTranslations('overscreen')
@@ -21,6 +23,7 @@ const LivraisonIntegrate = () => {
   const [withFabrication, setWithFabrication] = useState(livraison.withFabrication)
 
   const [types, setTypes] = useState(allTypes)
+  const [modes, setModes] = useState(allModes)
 
   useEffect(() => {
     setWithFabrication(livraison.withFabrication)
@@ -30,9 +33,10 @@ const LivraisonIntegrate = () => {
     const result = `&theme=${theme}&language=${language}`
     const hideButtonsParam = showButtons ? '' : '&hideButtons=true'
     const withFabricationParam = withFabrication ? '&withFabrication=true' : ''
-    const typesParam = types.length === allTypes.length ? '' : `&types=${types.join(',')}`
-    return `${withFabricationParam}${hideButtonsParam}${result}${typesParam}`
-  }, [withFabrication, showButtons, theme, language, types])
+    const typesParam = types.length === allTypes.length || types.length === 0 ? '' : `&types=${types.join(',')}`
+    const modeParams = modes.length === allModes.length || modes.length === 0 ? '' : `&modes=${modes.join(',')}`
+    return `${withFabricationParam}${hideButtonsParam}${result}${typesParam}${modeParams}`
+  }, [withFabrication, showButtons, theme, language, types, modes])
 
   return (
     <>
@@ -49,8 +53,13 @@ const LivraisonIntegrate = () => {
         </fieldset>
         <div className={shareStyles.separator} />
         <fieldset>
-          <legend className={styles.title}>{t('customFabricationList.description')}</legend>
-          <LivraisonListParam types={types} setTypes={setTypes} />
+          <legend className={styles.title}>{t('modeList.description')}</legend>
+          <LivraisonModeParam modes={modes} setModes={setModes} />
+        </fieldset>
+        <div className={shareStyles.separator} />
+        <fieldset>
+          <legend className={styles.title}>{t('typeList.description')}</legend>
+          <LivraisonTypeParam types={types} setTypes={setTypes} />
         </fieldset>
         <div className={shareStyles.separator} />
         <fieldset>
