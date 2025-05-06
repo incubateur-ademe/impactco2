@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import Link from 'components/base/buttons/Link'
+import Link from 'next/link'
 import styles from './Page.module.css'
 
 const AccessibilitePage = () => {
@@ -14,12 +14,18 @@ const AccessibilitePage = () => {
       </p>
       <ul>
         <li>
-          <Link href='https://librairie.ademe.fr/institutionnel/4817-schema-pluriannuel-de-mise-en-accessibilite-des-sites-webBlue-de-l-ademe-2021-2023.html'>
+          <Link
+            href='https://librairie.ademe.fr/institutionnel/6794-schema-pluriannuel-de-mise-en-accessibilite-des-sites-web-de-l-ademe.html'
+            target='_blank'
+            rel='noreferrer noopener'>
             Schéma pluriannuel en cours
           </Link>
         </li>
         <li>
-          <Link href='https://librairie.ademe.fr/institutionnel/6257-plan-annuel-de-mise-en-accessibilite-des-sites-webBlue-de-l-ademe.html'>
+          <Link
+            href='https://librairie.ademe.fr/societe-et-politiques-publiques/6823-plan-annuel-de-mise-en-accessibilite-des-sites-web-de-l-ademe.html'
+            target='_blank'
+            rel='noreferrer noopener'>
             Plan d’action de l’année en cours
           </Link>
         </li>
@@ -140,7 +146,9 @@ const AccessibilitePage = () => {
       </p>
       <ul>
         <li>
-          <Link href='mailto&to=rgaa@ademe.fr'>Envoyer un message au référent accessibilité de l'ADEME</Link>
+          <Link href='mailto:rgaa@ademe.fr' target='_blank' rel='noreferrer noopener'>
+            Envoyer un message au référent accessibilité de l'ADEME
+          </Link>
         </li>
         <li>Contacter Estelle Ribot, ADEME, DEMTE — 20 avenue du Grésillé BP 90 406 – 49 004 Angers Cedex 01</li>
       </ul>
@@ -154,12 +162,17 @@ const AccessibilitePage = () => {
       <p>Plusieurs moyens sont à votre disposition :</p>
       <ul>
         <li>
-          <Link href='https://formulaire.defenseurdesdroits.fr/code/afficher.php?ETAPE=informations'>
+          <Link
+            href='https://formulaire.defenseurdesdroits.fr/code/afficher.php?ETAPE=informations'
+            target='_blank'
+            rel='noreferrer noopener'>
             un formulaire de contact
           </Link>
         </li>
         <li>
-          <Link href='https://www.defenseurdesdroits.fr/office/'>la liste des délégués de votre région</Link>
+          <Link href='https://www.defenseurdesdroits.fr/office/' target='_blank' rel='noreferrer noopener'>
+            la liste des délégués de votre région
+          </Link>
         </li>
         <li>un numéro de téléphone : 09 69 39 00 00 (coût d’un appel local)</li>
         <li>
