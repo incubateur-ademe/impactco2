@@ -1,4 +1,12 @@
 {
+  "2050": {
+    "category": 13,
+    "value": 2000000,
+    "fr": "% de l';objectif citoyen pour 2050",
+    "en": "% of the ;citizen objective for 2050",
+    "es": "% del ;objetivo ciudadano para 2050",
+    "percentage": true
+  },
   "avion-pny": {
     "category": 13,
     "value": 1770000,
@@ -33,14 +41,6 @@
     "fr": "% de l';empreinte carbone d'un citoyen français",
     "en": "% of a ;French citizen's carbon footprint",
     "es": "% de la huella de ;carbono de un ciudadano francés",
-    "percentage": true
-  },
-  "2050": {
-    "category": 13,
-    "value": 2000000,
-    "fr": "% de l';objectif citoyen pour 2050",
-    "en": "% of the ;citizen objective for 2050",
-    "es": "% del ;objetivo ciudadano para 2050",
     "percentage": true
   },
   "game-of-thrones": {
@@ -493,7 +493,7 @@
   },
   "manguebateau": {
     "category": 9,
-    "value": 728,
+    "value": 727.508,
     "fr": "kg de ;mangue (importée par bateau)",
     "en": "kg of ;mango (imported by boat)",
     "es": "kg de ;mangos (importados por barco)"
@@ -1186,70 +1186,70 @@
   },
   "bouilloire": {
     "category": 6,
-    "value": 40884.03605825422,
+    "value": 37803.39914,
     "fr": "bouilloire[s]",
     "en": "kettle[s]",
     "es": "Hervidor de agua"
   },
   "cafetieredosette": {
     "category": 6,
-    "value": 251003.5526905852,
+    "value": 237954.38999999998,
     "fr": "cafetière[s] à dosettes",
     "en": "coffee maker[s] pods",
     "es": "Cafetera[s] de cápsulas"
   },
   "cafetierefiltre": {
     "category": 6,
-    "value": 197698.1743339172,
+    "value": 191325.6755,
     "fr": "cafetière[s] filtre",
     "en": "coffee maker[s] filter",
     "es": "Cafetera[s] de filtro"
   },
   "cafetiereexpresso": {
     "category": 6,
-    "value": 211771.0842705374,
+    "value": 212250.88599999997,
     "fr": "cafetière[s] expresso",
     "en": "coffee maker[s] espresso",
     "es": "Cafetera[s] express"
   },
   "fourelectrique": {
     "category": 6,
-    "value": 263064.69996,
+    "value": 272607.39995999995,
     "fr": "four électrique",
     "en": "electric oven",
     "es": "Horno eléctrico"
   },
   "lavevaisselle": {
     "category": 6,
-    "value": 467998.2177292116,
+    "value": 460790,
     "fr": "lave-vaisselle",
     "en": "dishwasher",
     "es": "Lavavajillas"
   },
   "lavelinge": {
     "category": 6,
-    "value": 510257.25834098266,
+    "value": 513419.99999999994,
     "fr": "lave-linge",
     "en": "washing machine",
     "es": "Lavadora"
   },
   "refrigirateur": {
     "category": 6,
-    "value": 325460.71642401704,
+    "value": 338714.0334,
     "fr": "réfrigérateur",
     "en": "refrigerator",
     "es": "Refrigerador"
   },
   "aspirateur": {
     "category": 6,
-    "value": 47310,
+    "value": 73430,
     "fr": "aspirateur[s]",
     "en": "vacuum cleaner[s]",
     "es": "Aspiradora[s]"
   },
   "climatiseur": {
     "category": 6,
-    "value": 413881.2884443126,
+    "value": 421747.903,
     "fr": "climatiseur[s]",
     "en": "air conditioner[s]",
     "es": "Aires acondicionados"
@@ -1767,7 +1767,7 @@
   },
   "microondes": {
     "category": 6,
-    "value": 98300,
+    "value": 121350.00000000001,
     "fr": "Micro-ondes",
     "en": "Microwave[s]",
     "es": "Microondas"
