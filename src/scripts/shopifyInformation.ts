@@ -1,4 +1,5 @@
 import fs from 'fs'
+import { categories } from 'data/categories'
 import values from '../utils/Equivalent/values.json'
 import { computeECV } from '../utils/computeECV'
 import { ComputedEquivalent, SimpleEquivalent } from '../../types/equivalent'
@@ -7,7 +8,9 @@ const existingValues: Record<string, SimpleEquivalent> = values
 
 const list: { value: string; label: string }[] = []
 
-const equivalents: ComputedEquivalent[] = []
+const equivalents: ComputedEquivalent[] = categories
+  .flatMap((category) => category.equivalents)
+  .filter((equivalent) => equivalent !== undefined)
 
 equivalents.forEach((equivalent) => {
   const value = existingValues[equivalent.slug]
