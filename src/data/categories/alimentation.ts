@@ -795,11 +795,6 @@ export const alimentation = [
     ],
   },
   {
-    slug: 'laitdevache',
-    category: 3,
-    total: 1.33,
-  },
-  {
     synonyms: ['céréales'],
     slug: 'riz',
     category: 2,
