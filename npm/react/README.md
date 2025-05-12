@@ -1,7 +1,10 @@
 # Impact CO₂
 
-Découvrir Impact CO2 la boîte à outil de l’ADEME, et ses ressources ludiques, fiables et faciles à utiliser sur l’impact carbone des gestes et objets du quotidien.
-Intégrer gratuitement les outils dans vos contenus site ou application, afin de communiquer les bons ordres de grandeur et sensibiliser vos communautés aux enjeux environnementaux.
+Découvrir Impact CO2 la boîte à outil de l’ADEME, et ses ressources ludiques,
+fiables et faciles à utiliser sur l’impact carbone des gestes et objets du
+quotidien. Intégrer gratuitement les outils dans vos contenus site ou
+application, afin de communiquer les bons ordres de grandeur et sensibiliser vos
+communautés aux enjeux environnementaux.
 
 ## Installation
 
@@ -15,15 +18,17 @@ Ou
 
 ## Utilisation
 
-Pour l'instant seulement l'étiquette d'équivalent carbone est disponible. D'autres modules seront rajoutés au fur et à mesure.
+Pour l'instant seulement l'étiquette d'équivalent carbone est disponible.
+D'autres modules seront rajoutés au fur et à mesure.
 
 ### L'étiquette équivalent carbone
 
 #### Utilisation
 
-L'étiquette permet à votre communauté de mesurer l’impact carbone des gestes et objets du quotidien et de se représenter les bons ordres de grandeur.
+L'étiquette permet à votre communauté de mesurer l’impact carbone des gestes et
+objets du quotidien et de se représenter les bons ordres de grandeur.
 
-    import { Etiquette } from '@incubateur-ademe/impactco2-react
+    import { Etiquette } from '@incubateur-ademe/impactco2-react'
 
     export const MyComponent = () => {
       return (
@@ -37,7 +42,7 @@ L'étiquette permet à votre communauté de mesurer l’impact carbone des geste
 
 Un dark mode est disponible en entourant le widget de la class `night`
 
-    import { Etiquette } from '@incubateur-ademe/impactco2-react
+    import { Etiquette } from '@incubateur-ademe/impactco2-react'
 
     export const MyComponent = () => {
       return (
@@ -55,7 +60,8 @@ Impact carbone (en grammes) à comparer
 
 #### animated : boolean
 
-Affiche les comparaisons une à une, avec animation de transition, plutot que toutes d'un coup.
+Affiche les comparaisons une à une, avec animation de transition, plutot que
+toutes d'un coup.
 
 Default: `false`
 

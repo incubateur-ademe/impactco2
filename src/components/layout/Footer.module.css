@@ -119,9 +119,9 @@
 
 .bottomLink {
   a {
-    color: var(--neutral-50) !important;
+    color: var(--neutral-50);
     font-size: 0.875rem;
-    font-weight: 400 !important;
+    font-weight: 400;
   }
 
   &:not(:last-child) {

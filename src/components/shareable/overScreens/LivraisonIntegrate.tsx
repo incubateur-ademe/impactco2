@@ -6,10 +6,10 @@ import useParamContext from 'src/providers/ParamProvider'
 import { LivraisonMode, LivraisonType } from 'components/outils/livraison/Type'
 import ClipboardBox from 'components/base/ClipboardBox'
 import CustomParam, { CustomParamValue } from './CustomParam'
-import styles from './CustomParam.module.css'
 import IntegratePreview from './IntegratePreview'
 import LivraisonModeParam from './LivraisonModeParam'
 import LivraisonTypeParam from './LivraisonTypeParam'
+import styles from './CustomParam.module.css'
 import shareStyles from './Share.module.css'
 
 const allTypes = Object.values(LivraisonType)

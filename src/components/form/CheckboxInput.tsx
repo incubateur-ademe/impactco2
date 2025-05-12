@@ -3,9 +3,9 @@ import { ForwardedRef, InputHTMLAttributes, ReactNode, forwardRef } from 'react'
 import { ZodError } from 'zod'
 import CheckRoundIcon from 'components/base/icons/check-round'
 import ErrorIcon from 'components/base/icons/error'
+import useError from './errors'
 import styles from './CheckboxInput.module.css'
 import inputStyles from './Input.module.css'
-import useError from './errors'
 
 const CheckboxInput = (
   {

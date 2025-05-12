@@ -7,8 +7,8 @@ import { track } from 'utils/matomo'
 import Button from 'components/base/buttons/Button'
 import MagicWandIcon from 'components/base/icons/magic-wand'
 import Tile from './Tile'
-import styles from './Tiles.module.css'
 import { getRandomEquivalents } from './random'
+import styles from './Tiles.module.css'
 
 const Tiles = () => {
   const firstRef = useRef<HTMLLIElement>(null)

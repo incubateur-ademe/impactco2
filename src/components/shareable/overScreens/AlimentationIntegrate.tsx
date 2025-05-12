@@ -6,8 +6,8 @@ import useParamContext from 'src/providers/ParamProvider'
 import ClipboardBox from 'components/base/ClipboardBox'
 import AlimentationListParam from './AlimentationListParam'
 import CustomParam, { CustomParamValue } from './CustomParam'
-import styles from './CustomParam.module.css'
 import IntegratePreview from './IntegratePreview'
+import styles from './CustomParam.module.css'
 import shareStyles from './Share.module.css'
 
 const AlimentationIntegrate = () => {

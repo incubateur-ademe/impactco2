@@ -10,11 +10,11 @@ import Button from 'components/base/buttons/Button'
 import DropdownArrowDownIcon from 'components/base/icons/dropdown-arrow-down'
 import DropdownArrowUpIcon from 'components/base/icons/dropdown-arrow-up'
 import FullArrowLeftIcon from 'components/base/icons/full-arrow-left'
-import shareableStyles from '../../shareable/Shareable.module.css'
 import Question from './Question'
 import QuizInfography from './QuizInfography'
-import styles from './QuizSimulator.module.css'
 import { questions } from './question.config'
+import shareableStyles from '../../shareable/Shareable.module.css'
+import styles from './QuizSimulator.module.css'
 
 const QuizSimulator = () => {
   const ref = useRef<HTMLDivElement>(null)

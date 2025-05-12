@@ -7,12 +7,12 @@ import Breadcrumbs from 'components/breadcrumbs/Breadcrumbs'
 import ToolCard from 'components/cards/ToolCard'
 import { tools } from 'components/cards/tools'
 import Block from 'components/layout/Block'
-import styles from '../CategoryPage.module.css'
 import Etiquette from '../etiquettes/Etiquette'
 import Equivalent from './Equivalent'
 import ImageInfography from './infographies/ImageInfography'
 import Infography from './infographies/Infography'
 import { imageInfographies, infographies } from './infographies/list'
+import styles from '../CategoryPage.module.css'
 
 const EquivalentPage = ({
   category,

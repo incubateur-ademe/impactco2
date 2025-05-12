@@ -1,11 +1,11 @@
 'use client'
 
-import React, { ReactNode, useMemo } from 'react'
+import { ReactNode, useMemo } from 'react'
 import { Category } from 'types/category'
 import { ComputedEquivalent } from 'types/equivalent'
 import { getName } from 'utils/Equivalent/equivalent'
 import Shareable from 'components/shareable/Shareable'
-import { overScreenEquivalentValues } from 'components/shareable/overScreens/Values'
+import { overScreenEquivalentValues } from 'components/shareable/overScreens/Values/Equivalent'
 import EquivalentSimulator from './simulators/EquivalentSimulator'
 
 const Equivalent = ({

@@ -5,8 +5,8 @@ import { ComputedEquivalent } from 'types/equivalent'
 import EquivalentIcon from 'components/base/EquivalentIcon'
 import Logos from 'components/base/Logo/Logos'
 import EqualIcon from 'components/base/icons/equal'
-import styles from './InfographySimulator.module.css'
 import Name from './Name'
+import styles from './InfographySimulator.module.css'
 
 const InfographySimulator = ({ equivalents, className }: { equivalents: string[]; className?: string }) => {
   const values = useMemo(

@@ -3,12 +3,12 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { useTranslations } from 'use-intl'
 import Shareable from 'components/shareable/Shareable'
-import { overScreenQuizInfographyValues } from 'components/shareable/overScreens/Values'
-import shareableStyles from '../../shareable/Shareable.module.css'
+import { overScreenQuizInfographyValues } from 'components/shareable/overScreens/Values/QuizInfography'
 import CategoryDisplayAll from '../CategoryDisplayAll'
 import CategorySimulator from '../CategorySimulator'
-import styles from './QuizInfography.module.css'
 import { getQuizEquivalents } from './question.config'
+import shareableStyles from '../../shareable/Shareable.module.css'
+import styles from './QuizInfography.module.css'
 
 const QuizInfography = () => {
   const { language } = useParamContext()

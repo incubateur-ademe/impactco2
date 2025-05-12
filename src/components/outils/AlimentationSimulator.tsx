@@ -8,10 +8,10 @@ import { AlimentationCategories, equivalentsByCategory } from 'utils/alimentatio
 import { track } from 'utils/matomo'
 import HiddenLabel from 'components/form/HiddenLabel'
 import Select from 'components/form/Select'
-import alimentationStyles from './AlimentationSimulator.module.css'
 import CategorySimulator from './CategorySimulator'
-import styles from './Simulator.module.css'
 import AlimentationSubCategory from './alimentation/AlimentationSubCategory'
+import alimentationStyles from './AlimentationSimulator.module.css'
+import styles from './Simulator.module.css'
 
 const AlimentationSimulator = () => {
   const {

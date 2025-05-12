@@ -4,8 +4,8 @@ import React from 'react'
 import { Example as ExampleType } from 'types/example'
 import { track } from 'utils/matomo'
 import IframeableLink from 'components/base/IframeableLink'
-import styles from './Example.module.css'
 import Tag from './Tag'
+import styles from './Example.module.css'
 
 const Example = ({ example, withTags }: { example: ExampleType; withTags?: boolean }) => {
   const image = <img src={example.logo} alt={example.name} className={styles.image} />

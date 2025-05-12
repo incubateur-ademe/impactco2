@@ -2,8 +2,8 @@ import classNames from 'classnames'
 import { TextareaHTMLAttributes } from 'react'
 import { ZodError } from 'zod'
 import ErrorIcon from 'components/base/icons/error'
-import styles from './Input.module.css'
 import useError from './errors'
+import styles from './Input.module.css'
 
 const TextArea = ({
   id,

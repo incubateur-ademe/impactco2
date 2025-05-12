@@ -4,9 +4,9 @@ import classNames from 'classnames'
 import { ReactNode } from 'react'
 import { ZodError } from 'zod'
 import ErrorIcon from 'components/base/icons/error'
+import useError from './errors'
 import inputStyles from './Input.module.css'
 import styles from './Radio.module.css'
-import useError from './errors'
 
 export type RadioProps = {
   id: string

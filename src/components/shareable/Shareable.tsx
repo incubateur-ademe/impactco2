@@ -7,6 +7,7 @@ import { ReactNode, useCallback, useEffect, useMemo, useRef, useState } from 're
 import useParamContext from 'src/providers/ParamProvider'
 import TranslationProvider from 'src/providers/TranslationProvider'
 import { SiteLanguage } from 'types/languages'
+import { OverScreenInfo } from 'types/overscreen'
 import { track } from 'utils/matomo'
 import useScreenshot from 'hooks/useScreenshot'
 import GhostButton from 'components/base/GhostButton'
@@ -19,7 +20,6 @@ import Select from 'components/form/Select'
 import Actions from './Actions'
 import Feature from './Feature'
 import styles from './Shareable.module.css'
-import { OverScreenInfo } from './overScreens/Values'
 
 type ShareableProps = {
   children: ReactNode

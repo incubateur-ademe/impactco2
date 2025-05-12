@@ -3,9 +3,9 @@ import { ExtendedRecordMap } from 'notion-types'
 import { ReactNode, useEffect, useRef } from 'react'
 import { NotionRenderer } from 'react-notion-x'
 import { Collection } from 'react-notion-x/build/third-party/collection'
-import 'react-notion-x/src/styles.css'
 import Link from 'components/base/buttons/Link'
 import { improveAccessibility } from './utils'
+import 'react-notion-x/src/styles.css'
 
 const DynamicNotion = ({ recordMap }: { recordMap: ExtendedRecordMap }) => {
   const ref = useRef<HTMLDivElement>(null)

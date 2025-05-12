@@ -1,6 +1,5 @@
-import React from 'react'
 import Shareable from 'components/shareable/Shareable'
-import { overScreenComparateurValues } from 'components/shareable/overScreens/Values'
+import { overScreenComparateurValues } from 'components/shareable/overScreens/Values/Comparateur'
 import ComparateurSimulator from './ComparateurSimulator'
 
 const Comparateur = () => {

@@ -6,9 +6,9 @@ import IframeableLink from 'components/base/IframeableLink'
 import DocIcon from 'components/base/icons/doc'
 import MenuIcon from 'components/base/icons/menu'
 import ToolsIcon from 'components/base/icons/tools'
+import RDV from './RDV'
 import headerStyles from './Header.module.css'
 import styles from './Menu.module.css'
-import RDV from './RDV'
 
 const Menu = () => {
   const [open, setOpen] = useState(false)

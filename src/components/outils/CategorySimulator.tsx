@@ -18,8 +18,8 @@ import LocalNumber from 'components/base/LocalNumber'
 import HiddenLabel from 'components/form/HiddenLabel'
 import Select from 'components/form/Select'
 import CategoryDisplayAll from './CategoryDisplayAll'
-import styles from './CategorySimulator.module.css'
 import PlusMinus from './plusMinus/PlusMinus'
+import styles from './CategorySimulator.module.css'
 
 const getValue = (equivalent: ComputedEquivalent, params: Params, type?: TransportSimulateur) => {
   if (type && equivalent.initialValue) {
