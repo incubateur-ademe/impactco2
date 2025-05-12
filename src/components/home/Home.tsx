@@ -8,8 +8,8 @@ import { tools } from 'components/cards/tools'
 import FAQs from 'components/faq/FAQs'
 import Block from 'components/layout/Block'
 import Equivalents from './Equivalents'
-import styles from './Home.module.css'
 import Quotes from './Quotes'
+import styles from './Home.module.css'
 
 const Home = () => {
   return (

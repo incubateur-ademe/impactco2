@@ -7,8 +7,8 @@ import RefreshIcon from 'components/base/icons/refresh'
 import Logo from '../Logo'
 import SimpleValue from '../SimpleValue'
 import Disclaimer from './Disclaimer'
-import styles from './Equivalent.module.css'
 import Progress from './Progress'
+import styles from './Equivalent.module.css'
 
 const Equivalent = ({
   className,

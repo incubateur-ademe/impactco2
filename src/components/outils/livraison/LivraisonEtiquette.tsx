@@ -12,8 +12,8 @@ import InformationIcon from 'components/base/icons/information'
 import Logo from 'components/externalModules/Logo'
 import Disclaimer from './Disclaimer'
 import LivraisonEquivalent from './LivraisonEquivalent'
-import styles from './LivraisonEtiquette.module.css'
 import Progress from './Progress'
+import styles from './LivraisonEtiquette.module.css'
 
 const livraisonEquivalents = computedEquivalents
   .filter((equivalent) => equivalent.category === 12)

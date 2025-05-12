@@ -6,7 +6,7 @@ import { ComputedEquivalent } from 'types/equivalent'
 import { getName } from 'utils/Equivalent/equivalent'
 import EtiquetteContent from 'components/comparateur/Etiquette'
 import Shareable from 'components/shareable/Shareable'
-import { overScreenEquivalentEtiquetteValues } from 'components/shareable/overScreens/Values'
+import { overScreenEquivalentEtiquetteValues } from 'components/shareable/overScreens/Values/Etiquette'
 
 const Etiquette = ({ equivalent }: { equivalent: ComputedEquivalent }) => {
   const { language } = useParamContext()

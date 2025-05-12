@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 import APIDocPage from 'src/views/APIDocPage'
-import 'swagger-ui-react/swagger-ui.css'
 import Suggestion from 'components/layout/Suggestion'
 import { doc } from 'components/swagger/utils'
+import 'swagger-ui-react/swagger-ui.css'
 
 const pathPriority = ['/thematiques']
 

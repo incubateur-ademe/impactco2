@@ -10,8 +10,8 @@ import { track } from 'utils/matomo'
 import { monthsOptions } from 'utils/months'
 import HiddenLabel from 'components/form/HiddenLabel'
 import Select from 'components/form/Select'
-import shareableStyles from '../shareable/Shareable.module.css'
 import CategorySimulator from './CategorySimulator'
+import shareableStyles from '../shareable/Shareable.module.css'
 import styles from './Simulator.module.css'
 
 const flds = categories.find((category) => category.slug === 'fruitsetlegumes') as Category

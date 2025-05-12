@@ -4,9 +4,9 @@ import Breadcrumbs from 'components/breadcrumbs/Breadcrumbs'
 import Examples from 'components/examples/Examples'
 import FAQs from 'components/faq/FAQs'
 import Block from 'components/layout/Block'
-import styles from '../CategoryPage.module.css'
 import Quiz from './Quiz'
 import QuizCards from './QuizCards'
+import styles from '../CategoryPage.module.css'
 
 const QuizPage = () => {
   return (

@@ -7,10 +7,10 @@ import EqualIcon from 'components/base/icons/equal'
 import RefreshIcon from 'components/base/icons/refresh'
 import Logo from '../Logo'
 import SimpleValue from '../SimpleValue'
-import styles from './ColumnEquivalent.module.css'
 import Disclaimer from './Disclaimer'
-import baseStyles from './Equivalent.module.css'
 import Progress from './Progress'
+import styles from './ColumnEquivalent.module.css'
+import baseStyles from './Equivalent.module.css'
 
 const ColumnEquivalent = ({
   baseValue,

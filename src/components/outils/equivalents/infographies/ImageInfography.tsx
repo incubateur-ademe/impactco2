@@ -2,7 +2,7 @@ import { useMemo } from 'react'
 import { ComputedEquivalent } from 'types/equivalent'
 import { getName } from 'utils/Equivalent/equivalent'
 import Shareable from 'components/shareable/Shareable'
-import { overScreenEquivalentImageInfographyValues } from 'components/shareable/overScreens/Values'
+import { overScreenEquivalentImageInfographyValues } from 'components/shareable/overScreens/Values/ImageInfography'
 import styles from './ImageInfography.module.css'
 
 const ImageInfography = ({

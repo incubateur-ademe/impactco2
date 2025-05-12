@@ -11,9 +11,9 @@ import Radio from 'components/form/Radio'
 import RadioInput from 'components/form/RadioInput'
 import CustomParam, { CustomParamValue } from './CustomParam'
 import CustomParams from './CustomParams'
-import styles from './Share.module.css'
 import ShareKit from './ShareKit'
 import ShareUrl from './ShareUrl'
+import styles from './Share.module.css'
 
 const category = categories.find((category) => category.slug === 'transport') as Category
 

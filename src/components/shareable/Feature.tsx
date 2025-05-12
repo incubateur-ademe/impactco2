@@ -2,12 +2,11 @@
 
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
-import React from 'react'
 import useParamContext from 'src/providers/ParamProvider'
+import { OverScreenInfo } from 'types/overscreen'
 import { track } from 'utils/matomo'
 import FullArrowRightIcon from 'components/base/icons/full-arrow-right'
 import styles from './Feature.module.css'
-import { OverScreenInfo } from './overScreens/Values'
 
 const Feature = ({
   info,

@@ -4,10 +4,10 @@ import Breadcrumbs from 'components/breadcrumbs/Breadcrumbs'
 import Examples from 'components/examples/Examples'
 import FAQs from 'components/faq/FAQs'
 import Block from 'components/layout/Block'
-import styles from '../CategoryPage.module.css'
 import SimulatorsCards from '../SimulatorsCards'
 import Comparateur from './Comparateur'
 import Etiquettes from './Etiquettes'
+import styles from '../CategoryPage.module.css'
 
 const ComparateurPage = () => {
   return (

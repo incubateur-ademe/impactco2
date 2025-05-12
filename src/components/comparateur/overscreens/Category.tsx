@@ -11,8 +11,8 @@ import Button from 'components/base/buttons/Button'
 import DropdownArrowDownIcon from 'components/base/icons/dropdown-arrow-down'
 import DropdownArrowUpIcon from 'components/base/icons/dropdown-arrow-up'
 import { getRandomEquivalentsInCategory } from '../random'
-import styles from './Category.module.css'
 import Equivalents from './Equivalents'
+import styles from './Category.module.css'
 
 const Category = ({
   category,

@@ -8,8 +8,8 @@ import { track } from 'utils/matomo'
 import HiddenLabel from 'components/form/HiddenLabel'
 import NumberInput from 'components/form/NumberInput'
 import Select from 'components/form/Select'
-import styles from './UsageForm.module.css'
 import { usageNumeriqueConfig } from './config'
+import styles from './UsageForm.module.css'
 
 const UsageForm = ({
   slug,

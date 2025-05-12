@@ -7,9 +7,9 @@ import { track } from 'utils/matomo'
 import useTransportations from 'hooks/useTransportations'
 import NumberInput from 'components/form/NumberInput'
 import CategorySimulator from './CategorySimulator'
-import styles from './Simulator.module.css'
 import TransportComparisonMode from './TransportComparisonMode'
 import TransportComparisonSimulator from './TransportComparisonSimulator'
+import styles from './Simulator.module.css'
 
 const DistanceSimulator = ({ withComparisonMode }: { withComparisonMode: boolean }) => {
   const {

@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { useMemo } from 'react'
 import Shareable from 'components/shareable/Shareable'
-import { overScreenLivraisonEtiquettesValues } from 'components/shareable/overScreens/Values'
+import { overScreenLivraisonEtiquettesValues } from 'components/shareable/overScreens/Values/LivraisonEtiquette'
 import LivraisonEtiquette from './LivraisonEtiquette'
 import styles from './LivraisonEtiquettes.module.css'
 
