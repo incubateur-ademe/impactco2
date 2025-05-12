@@ -8,10 +8,10 @@ import { Equivalent, EquivalentValue } from 'types/equivalent'
 import PlusMinus from 'components/outils/plusMinus/PlusMinus'
 import InformationIcon from 'components/base/icons/information'
 import shareableStyles from 'components/shareable/Shareable.module.css'
-import styles from './Detail.module.css'
 import DetailValue from './DetailValue'
 import Label from './Label'
 import Percentage from './Percentage'
+import styles from './Detail.module.css'
 
 type Values = {
   label: string

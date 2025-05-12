@@ -12,9 +12,9 @@ import SprinklesIcon from 'components/base/icons/sprinkles'
 import Etiquette from 'components/comparateur/Etiquette'
 import { getFullRandomEquivalents } from 'components/comparateur/random'
 import { getRandomEquivalentForValue } from 'components/comparateur/randomEtiquette'
+import Question from './Question'
 import simulatorStyles from '../Simulator.module.css'
 import styles from './OsezChangerSimulator.module.css'
-import Question from './Question'
 
 const shoesImpact = 17.9
 

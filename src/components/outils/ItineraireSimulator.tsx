@@ -8,9 +8,9 @@ import CheckboxInput from 'components/form/CheckboxInput'
 import AddressInput from 'components/form/addresses/AddressInput'
 import CategorySimulator from './CategorySimulator'
 import EmptyItineraire from './EmptyItineraire'
-import styles from './ItineraireSimulator.module.css'
 import TransportComparisonMode from './TransportComparisonMode'
 import TransportComparisonSimulator from './TransportComparisonSimulator'
+import styles from './ItineraireSimulator.module.css'
 
 const tracking = 'Transport itinéraire'
 const ItineraireSimulator = ({ withComparisonMode }: { withComparisonMode: boolean }) => {

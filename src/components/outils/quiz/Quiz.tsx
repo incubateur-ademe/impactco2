@@ -1,6 +1,6 @@
-import React, { useMemo } from 'react'
+import { useMemo } from 'react'
 import Shareable from 'components/shareable/Shareable'
-import { overScreenQuizValues } from 'components/shareable/overScreens/Values'
+import { overScreenQuizValues } from 'components/shareable/overScreens/Values/Quiz'
 import QuizSimulator from './QuizSimulator'
 
 const Quiz = () => {

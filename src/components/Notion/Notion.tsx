@@ -5,12 +5,12 @@ import { ExtendedRecordMap } from 'notion-types'
 import React, { ReactNode, useEffect, useRef } from 'react'
 import { NotionRenderer } from 'react-notion-x'
 import { Collection } from 'react-notion-x/build/third-party/collection'
-import 'react-notion-x/src/styles.css'
 import Link from 'components/base/buttons/Link'
 import Breadcrumbs from 'components/breadcrumbs/Breadcrumbs'
 import Block from 'components/layout/Block'
-import styles from './Notion.module.css'
 import { improveAccessibility } from './utils'
+import styles from './Notion.module.css'
+import 'react-notion-x/src/styles.css'
 
 const Notion = ({
   title,

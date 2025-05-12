@@ -7,10 +7,10 @@ import { buildCurrentUrlFor } from 'utils/urls'
 import CustomParam, { CustomParamValue } from './CustomParam'
 import CustomParams from './CustomParams'
 import { getComparateurParams, getComparateurURLParams, getCustomParams } from './CustomParamsValues'
-import styles from './Share.module.css'
 import ShareKit from './ShareKit'
 import ShareUrl from './ShareUrl'
 import { buildCustomParamsUrl } from './customParamsUrl'
+import styles from './Share.module.css'
 
 const Share = ({
   category,

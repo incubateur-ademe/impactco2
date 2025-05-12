@@ -7,8 +7,8 @@ import { Category } from 'types/category'
 import { categories } from 'data/categories'
 import { track } from 'utils/matomo'
 import NumberInput from 'components/form/NumberInput'
-import shareableStyles from '../shareable/Shareable.module.css'
 import CategorySimulator from './CategorySimulator'
+import shareableStyles from '../shareable/Shareable.module.css'
 import styles from './Simulator.module.css'
 
 const chauffage = categories.find((category) => category.slug === 'chauffage') as Category

@@ -8,8 +8,8 @@ import CustomParam, { CustomParamValue } from './CustomParam'
 import CustomParams from './CustomParams'
 import { getComparateurParams, getCustomParams } from './CustomParamsValues'
 import IntegratePreview from './IntegratePreview'
-import styles from './Share.module.css'
 import { buildCustomParamsUrl } from './customParamsUrl'
+import styles from './Share.module.css'
 
 const Integrate = ({
   category,

@@ -8,8 +8,8 @@ import Card from 'components/cards/Card'
 import ToolCard from 'components/cards/ToolCard'
 import Select from 'components/form/Select'
 import Block from 'components/layout/Block'
-import styles from './AllFAQs.module.css'
 import FAQsList from './FAQsList'
+import styles from './AllFAQs.module.css'
 
 const AllFAQs = ({ faqs }: { faqs: FAQ[] }) => {
   const [search, setSearch] = useState('all')

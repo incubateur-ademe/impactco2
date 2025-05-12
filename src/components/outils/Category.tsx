@@ -4,7 +4,7 @@ import { Dispatch, ReactNode, SetStateAction, useMemo } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { Category as CategoryType } from 'types/category'
 import Shareable from 'components/shareable/Shareable'
-import { overScreenCategoryValues } from 'components/shareable/overScreens/Values'
+import { overScreenCategoryValues } from 'components/shareable/overScreens/Values/Category'
 import CategorySimulator from './CategorySimulator'
 
 const Category = ({

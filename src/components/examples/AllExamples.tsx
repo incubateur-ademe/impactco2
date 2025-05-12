@@ -7,8 +7,8 @@ import { track } from 'utils/matomo'
 import Card from 'components/cards/Card'
 import Select from 'components/form/Select'
 import Block from 'components/layout/Block'
-import styles from './AllExamples.module.css'
 import ExamplesList from './ExamplesList'
+import styles from './AllExamples.module.css'
 
 const AllExamples = ({ examples, communications }: { examples: Example[]; communications: Example[] }) => {
   const [activity, setActivity] = useState('all')

@@ -11,10 +11,10 @@ import { track } from 'utils/matomo'
 import CheckboxInput from 'components/form/CheckboxInput'
 import Select from 'components/form/Select'
 import CategorySimulator from '../CategorySimulator'
-import styles from '../Simulator.module.css'
 import { livraisonData } from './LivraisonData'
-import livraisonStyles from './LivraisonSimulator.module.css'
 import { LivraisonType } from './Type'
+import styles from '../Simulator.module.css'
+import livraisonStyles from './LivraisonSimulator.module.css'
 
 const livraisonEquivalents = computedEquivalents.filter((equivalent) => equivalent.category === 12)
 const voiturethermique = computedEquivalents.find(

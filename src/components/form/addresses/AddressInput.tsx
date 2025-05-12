@@ -10,8 +10,8 @@ import { Point } from 'hooks/useItineraries'
 import ErrorIcon from 'components/base/icons/error'
 import LoadingIcon from 'components/base/icons/loading'
 import Suggestions from 'components/form/addresses/Suggestions'
-import inputStyles from '../Input.module.css'
 import useError from '../errors'
+import inputStyles from '../Input.module.css'
 import styles from './AddressInput.module.css'
 
 const AddressInput = ({

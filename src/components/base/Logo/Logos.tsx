@@ -4,8 +4,8 @@ import { buildCurrentUrlFor } from 'utils/urls'
 import IframeableLink from '../IframeableLink'
 import Ademe from './Ademe'
 import Logo from './ImpactCO2'
-import styles from './Logos.module.css'
 import Marianne from './Marianne'
+import styles from './Logos.module.css'
 
 const Logos = ({ small }: { small?: boolean }) => {
   return (

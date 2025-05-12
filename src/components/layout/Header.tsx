@@ -2,10 +2,10 @@ import Logos from 'components/base/Logo/Logos'
 import Link from 'components/base/buttons/Link'
 import DocIcon from 'components/base/icons/doc'
 import ToolsIcon from 'components/base/icons/tools'
-import styles from './Header.module.css'
 import Menu from './Menu'
 import RDV from './RDV'
 import SkipLinks from './SkipLinks'
+import styles from './Header.module.css'
 
 export default function Header() {
   return (

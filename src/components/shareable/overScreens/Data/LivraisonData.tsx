@@ -2,8 +2,8 @@ import useParamContext from 'src/providers/ParamProvider'
 import { LivraisonType } from 'components/outils/livraison/Type'
 import Dropdown from 'components/base/Dropdown'
 import Link from 'components/base/buttons/Link'
-import styles from './Data.module.css'
 import LivraisonEquivalents from './LivraisonEquivalents'
+import styles from './Data.module.css'
 
 const FRLivraisonData = () => {
   return (

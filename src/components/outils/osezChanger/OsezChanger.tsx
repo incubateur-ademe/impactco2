@@ -1,5 +1,5 @@
 import Shareable from 'components/shareable/Shareable'
-import { overScreenOsezChangerValues } from 'components/shareable/overScreens/Values'
+import { overScreenOsezChangerValues } from 'components/shareable/overScreens/Values/OsezChanger'
 import OsezChangerSimulator from './OsezChangerSimulator'
 
 const OsezChanger = () => {

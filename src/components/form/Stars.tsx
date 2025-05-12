@@ -6,8 +6,8 @@ import { ZodError } from 'zod'
 import ErrorIcon from 'components/base/icons/error'
 import FullStarIcon from 'components/base/icons/full-star'
 import StarIcon from 'components/base/icons/star'
-import styles from './Input.module.css'
 import useError from './errors'
+import styles from './Input.module.css'
 
 export type StarsProps = {
   label: string
