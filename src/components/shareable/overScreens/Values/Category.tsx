@@ -45,32 +45,39 @@ export const overScreenCategoryValues: (category: Category) => Record<string, Ov
         children: (
           <div className={styles.ressourceContainer}>
             <Resource
-              image='/images/category-pompe-chaleur.jpg'
-              text='pompe-chaleur'
-              href='https://librairie.ademe.fr/changement-climatique-et-energie/6714-s-equiper-d-une-pompe-a-chaleur.html'
-              withLink='ADEME'
-              tracking={category ? category.name : 'Comparateur'}
-            />
-            <Resource
               image='/images/category-chauffage-bois.jpg'
               text='chauffage-bois'
               href='https://librairie.ademe.fr/urbanisme-et-batiment/5667-adopter-le-chauffage-au-bois-9791029719769.html'
               withLink='ADEME'
-              tracking={category ? category.name : 'Comparateur'}
+              tracking='Chauffage'
             />
             <Resource
               image='/images/category-wattris.png'
               text='wattris'
               href='https://wattris.ademe.fr/'
               withLink='Wattris'
-              tracking={category ? category.name : 'Comparateur'}
+              tracking='Chauffage'
+            />
+            <Resource
+              image='/images/agir.png'
+              text='chauffage'
+              href='https://agirpourlatransition.ademe.fr/particuliers/maison/chauffage'
+              withLink='Agir pour la transition'
+              tracking='Chauffage'
+            />
+            <Resource
+              image='/images/hiver.png'
+              text='hiver'
+              href='https://librairie.ademe.fr/batiment/8106-9873-comment-passer-un-hiver-au-chaud--9791029725210.html#/43-type_de_produit-format_imprime'
+              withLink='La librairie ADEME'
+              tracking='Chauffage'
             />
             <Resource
               image='/images/ngc.png'
               text='ngc'
               href='https://nosgestesclimat.fr/'
               withLink='Nos Gestes Climat'
-              tracking={category ? category.name : 'Comparateur'}
+              tracking='Chauffage'
               imgSize='4.5rem'
             />
           </div>
@@ -141,6 +148,13 @@ export const overScreenCategoryValues: (category: Category) => Record<string, Ov
               tracking='fruitsetlegumes'
             />
             <Resource
+              image='/images/agir.png'
+              text='alimentation-responsable'
+              href='https://agirpourlatransition.ademe.fr/particuliers/conso/alimentation'
+              withLink='Agir pour la transition'
+              tracking='fruitsetlegumes'
+            />
+            <Resource
               image='/images/ngc.png'
               text='ngc'
               href='https://nosgestesclimat.fr/'
@@ -178,6 +192,20 @@ export const overScreenCategoryValues: (category: Category) => Record<string, Ov
               tracking='Transport'
               imgSize='4.5rem'
             />
+            <Resource
+              image='/images/agir.png'
+              text='deplacements'
+              href='https://agirpourlatransition.ademe.fr/particuliers/bureau/deplacements'
+              withLink='Agir pour la transition'
+              tracking='Transport'
+            />
+            <Resource
+              image='/images/agir.png'
+              text='vacances'
+              href='https://agirpourlatransition.ademe.fr/particuliers/conso/vacances'
+              withLink='Agir pour la transition'
+              tracking='Transport'
+            />
           </div>
         ),
       },
@@ -208,6 +236,20 @@ export const overScreenCategoryValues: (category: Category) => Record<string, Ov
         title: 'next-actions',
         children: (
           <div className={styles.ressourceContainer}>
+            <Resource
+              image='/images/agir.png'
+              text='numerique-responsable'
+              href='https://agirpourlatransition.ademe.fr/particuliers/maison/numerique'
+              withLink='Agir pour la transition'
+              tracking='Usage numérique'
+            />
+            <Resource
+              image='/images/sobriete.png'
+              text='sobriete'
+              href='https://librairie.ademe.fr/consommer-autrement/7575-9196-comment-adopter-la-sobriete-numerique--9791029724237.html#/43-type_de_produit-format_imprime'
+              withLink='ADEME'
+              tracking='Usage numérique'
+            />
             <Resource
               image='/images/ngc.png'
               text='ngc'
@@ -261,6 +303,27 @@ export const overScreenCategoryValues: (category: Category) => Record<string, Ov
               text='commerce'
               href='https://infos.ademe.fr/article-magazine/limpact-environnemental-du-commerce-en-ligne/'
               withLink='Infographie ADEME'
+              tracking='Livraison'
+            />
+            <Resource
+              image='/images/agir.png'
+              text='agir-livraison'
+              href='https://agirpourlatransition.ademe.fr/particuliers/conso'
+              withLink='Agir pour la transition'
+              tracking='Livraison'
+            />
+            <Resource
+              image='/images/epargnonsnosressources.png'
+              text='epargnonsnosressources'
+              href='https://epargnonsnosressources.gouv.fr/evaluer-besoin-avant-achat/'
+              withLink='Épargnons nos ressources'
+              tracking='Livraison'
+            />
+            <Resource
+              image='/images/gagner-place.png'
+              text='gagner-place'
+              href='https://librairie.ademe.fr/consommer-autrement/8192-9957-comment-gagner-de-la-place-chez-soi--9791029725135.html#/43-type_de_produit-format_imprime'
+              withLink='La librairie ADEME'
               tracking='Livraison'
             />
           </div>
@@ -317,6 +380,13 @@ export const overScreenCategoryValues: (category: Category) => Record<string, Ov
               tracking='Alimentation'
             />
             <Resource
+              image='/images/agir.png'
+              text='alimentation-responsable'
+              href='https://agirpourlatransition.ademe.fr/particuliers/conso/alimentation'
+              withLink='Agir pour la transition'
+              tracking='Alimentation'
+            />
+            <Resource
               image='/images/ngc.png'
               text='ngc'
               href='https://nosgestesclimat.fr/'
@@ -331,6 +401,195 @@ export const overScreenCategoryValues: (category: Category) => Record<string, Ov
         image: '/images/icn-understand.svg',
         title: 'understand',
         children: <AlimentationData />,
+      },
+    }
+  }
+  if (category.slug === 'repas') {
+    return {
+      ...values,
+      hypothesis: {
+        image: '/images/icn-next-actions.svg',
+        title: 'next-actions',
+        children: (
+          <div className={styles.ressourceContainer}>
+            <Resource
+              image='/images/agir.png'
+              text='alimentation-responsable'
+              href='https://agirpourlatransition.ademe.fr/particuliers/conso/alimentation'
+              withLink='Agir pour la transition'
+              tracking='Repas'
+            />
+            <Resource
+              image='/images/ngc.png'
+              text='ngc'
+              href='https://nosgestesclimat.fr/'
+              withLink='Nos Gestes Climat'
+              tracking='Repas'
+              imgSize='4.5rem'
+            />
+          </div>
+        ),
+      },
+    }
+  }
+  if (category.slug === 'boisson') {
+    return {
+      ...values,
+      hypothesis: {
+        image: '/images/icn-next-actions.svg',
+        title: 'next-actions',
+        children: (
+          <div className={styles.ressourceContainer}>
+            <Resource
+              image='/images/agir.png'
+              text='alimentation-responsable'
+              href='https://agirpourlatransition.ademe.fr/particuliers/conso/alimentation'
+              withLink='Agir pour la transition'
+              tracking='Boisson'
+            />
+            <Resource
+              image='/images/ngc.png'
+              text='ngc'
+              href='https://nosgestesclimat.fr/'
+              withLink='Nos Gestes Climat'
+              tracking='Boisson'
+              imgSize='4.5rem'
+            />
+          </div>
+        ),
+      },
+    }
+  }
+  if (category.slug === 'electromenager') {
+    return {
+      ...values,
+      hypothesis: {
+        image: '/images/icn-next-actions.svg',
+        title: 'next-actions',
+        children: (
+          <div className={styles.ressourceContainer}>
+            <Resource
+              image='/images/agir.png'
+              text='gestes'
+              href='https://agirpourlatransition.ademe.fr/particuliers/maison/economies-denergie-deau'
+              withLink='Agir pour la transition'
+              tracking='Électroménager'
+            />
+            <Resource
+              image='/images/ngc.png'
+              text='ngc'
+              href='https://nosgestesclimat.fr/'
+              withLink='Nos Gestes Climat'
+              tracking='Électroménager'
+              imgSize='4.5rem'
+            />
+          </div>
+        ),
+      },
+    }
+  }
+  if (category.slug === 'habillement') {
+    return {
+      ...values,
+      hypothesis: {
+        image: '/images/icn-next-actions.svg',
+        title: 'next-actions',
+        children: (
+          <div className={styles.ressourceContainer}>
+            <Resource
+              image='/images/agir.png'
+              text='mode'
+              href='https://agirpourlatransition.ademe.fr/particuliers/conso/mode'
+              withLink='Agir pour la transition'
+              tracking='Habillement'
+            />
+            <Resource
+              image='/images/gagner-place.png'
+              text='gagner-place'
+              href='https://librairie.ademe.fr/consommer-autrement/8192-9957-comment-gagner-de-la-place-chez-soi--9791029725135.html#/43-type_de_produit-format_imprime'
+              withLink='La librairie ADEME'
+              tracking='Habillement'
+            />
+            <Resource
+              image='/images/ngc.png'
+              text='ngc'
+              href='https://nosgestesclimat.fr/'
+              withLink='Nos Gestes Climat'
+              tracking='Habillement'
+              imgSize='4.5rem'
+            />
+          </div>
+        ),
+      },
+    }
+  }
+  if (category.slug === 'mobilier') {
+    return {
+      ...values,
+      hypothesis: {
+        image: '/images/icn-next-actions.svg',
+        title: 'next-actions',
+        children: (
+          <div className={styles.ressourceContainer}>
+            <Resource
+              image='/images/agir.png'
+              text='habitation'
+              href='https://agirpourlatransition.ademe.fr/particuliers/maison/emmenagement'
+              withLink='Agir pour la transition'
+              tracking='Mobilier'
+            />
+            <Resource
+              image='/images/gagner-place.png'
+              text='gagner-place'
+              href='https://librairie.ademe.fr/consommer-autrement/8192-9957-comment-gagner-de-la-place-chez-soi--9791029725135.html#/43-type_de_produit-format_imprime'
+              withLink='La librairie ADEME'
+              tracking='Mobilier'
+            />
+            <Resource
+              image='/images/ngc.png'
+              text='ngc'
+              href='https://nosgestesclimat.fr/'
+              withLink='Nos Gestes Climat'
+              tracking='Mobilier'
+              imgSize='4.5rem'
+            />
+          </div>
+        ),
+      },
+    }
+  }
+  if (category.slug === 'numerique') {
+    return {
+      ...values,
+      hypothesis: {
+        image: '/images/icn-next-actions.svg',
+        title: 'next-actions',
+        children: (
+          <div className={styles.ressourceContainer}>
+            <Resource
+              image='/images/agir.png'
+              text='numerique-responsable'
+              href='https://agirpourlatransition.ademe.fr/particuliers/maison/numerique'
+              withLink='Agir pour la transition'
+              tracking='Numérique'
+            />
+            <Resource
+              image='/images/sobriete.png'
+              text='sobriete'
+              href='https://librairie.ademe.fr/consommer-autrement/7575-9196-comment-adopter-la-sobriete-numerique--9791029724237.html#/43-type_de_produit-format_imprime'
+              withLink='ADEME'
+              tracking='Numérique'
+            />
+            <Resource
+              image='/images/ngc.png'
+              text='ngc'
+              href='https://nosgestesclimat.fr/'
+              withLink='Nos Gestes Climat'
+              tracking='Numérique'
+              imgSize='4.5rem'
+            />
+          </div>
+        ),
       },
     }
   }
