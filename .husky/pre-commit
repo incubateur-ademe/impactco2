@@ -1,1 +1,1 @@
-talisman --githook pre-commit
+./.git/hooks/bin/talisman --githook pre-commit
