@@ -35,6 +35,7 @@ const relais = [
   'https://www.gaite-lyrique.net',
   'https://www.terrabotanica.fr',
   'https://www.aquarium-st-malo.com',
+  'https://www.cobac-parc.com',
 ]
 
 export const getMatomoStats = async (begin: string, end: string) => {
