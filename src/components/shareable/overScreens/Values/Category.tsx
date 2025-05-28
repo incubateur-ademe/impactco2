@@ -313,7 +313,7 @@ export const overScreenCategoryValues: (category: Category) => Record<string, Ov
               image='/images/tools-alimentation.png'
               text='ico2-fiches-alimentation'
               href='https://impactco2.fr/kit/fiches-alimentation.zip'
-              withLink='Télécharger les 66 fiches'
+              withLink='Télécharger les 65 fiches'
               tracking='Alimentation'
             />
             <Resource
