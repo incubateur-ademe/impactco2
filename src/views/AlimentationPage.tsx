@@ -44,7 +44,7 @@ const AlimentationPage = () => {
           <Sources className={styles.sources} sources={alimentation.sources} tracking={alimentation.name} />
         )}
       </Block>
-      <Block id='repas' title='Graphique repas' description="Découvrir l'imapct carbone des différents types de repas">
+      <Block id='repas' title='Graphique repas' description="Découvrir l'impact carbone des différents types de repas">
         <Category
           category={{
             ...alimentation,
