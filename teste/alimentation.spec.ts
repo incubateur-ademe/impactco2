@@ -62,7 +62,7 @@ test('Alimentation simulateur params', async ({ page }) => {
   await expect(page.getByTestId('alimentation-category-boucherie')).not.toBeVisible()
   await expect(page.getByTestId('category-boeuf')).toHaveText('Boeuf28 kg CO₂e')
   await expect(page.getByRole('button', { name: 'Comprendre les données' })).toBeVisible()
-  await expect(page.getByRole('button', { name: 'Aller plus loin' })).toBeVisible()
+  await expect(page.getByRole('button', { name: 'Aller plus loin' }).nth(0)).toBeVisible()
   await expect(page.getByTestId('header-share-button')).toHaveCount(2)
   await expect(page.getByTestId('header-integrate-button')).toHaveCount(2)
 
@@ -75,7 +75,7 @@ test('Alimentation simulateur params', async ({ page }) => {
   await expect(page.getByTestId('category-boeuf')).toHaveText('Boeuf28 kg CO₂e')
   await expect(page.getByTestId('category-porc')).toHaveText('Porc6.67 kg CO₂e')
   await expect(page.getByRole('button', { name: 'Comprendre les données' })).toBeVisible()
-  await expect(page.getByRole('button', { name: 'Aller plus loin' })).toBeVisible()
+  await expect(page.getByRole('button', { name: 'Aller plus loin' }).nth(0)).toBeVisible()
   await expect(page.getByTestId('header-share-button')).toHaveCount(2)
   await expect(page.getByTestId('header-integrate-button')).toHaveCount(2)
 
@@ -86,7 +86,7 @@ test('Alimentation simulateur params', async ({ page }) => {
   await expect(page.getByTestId('category-boeuf')).toHaveText('Boeuf28 kg CO₂e')
   await expect(page.getByTestId('category-porc')).toHaveText('Porc6.67 kg CO₂e')
   await expect(page.getByRole('button', { name: 'Comprendre les données' })).not.toBeVisible()
-  await expect(page.getByRole('button', { name: 'Aller plus loin' })).not.toBeVisible()
+  await expect(page.getByRole('button', { name: 'Aller plus loin' }).nth(0)).not.toBeVisible()
   await expect(page.getByTestId('header-share-button')).not.toBeVisible()
   await expect(page.getByTestId('header-integrate-button')).not.toBeVisible()
 })

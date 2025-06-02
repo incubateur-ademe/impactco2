@@ -39,15 +39,15 @@ export const overScreenOsezChangerValues: () => Record<string, OverScreenInfo> =
             tracking='OsezChanger'
           />
           <Resource
-            image='/images/osez-changer-tri.png'
-            text='tri'
-            href='https://librairie.ademe.fr/consommer-autrement/5271-comment-faire-de-la-place-chez-soi-.html'
+            image='/images/gagner-place.png'
+            text='gagner-place'
+            href='https://librairie.ademe.fr/consommer-autrement/8192-9957-comment-gagner-de-la-place-chez-soi--9791029725135.html#/43-type_de_produit-format_imprime'
             tracking='OsezChanger'
           />
           <Resource
             image='/images/osez-changer-questions.png'
             text='questions'
-            href='https://librairie.ademe.fr/cadic/1529/le-revers-de-mon-look.pdf'
+            href='https://librairie.ademe.fr/consommer-autrement/3882-exposition-le-revers-de-mon-look-quels-impacts-ont-mes-vetements-sur-la-planete-.html'
             tracking='OsezChanger'
           />
           <Resource
