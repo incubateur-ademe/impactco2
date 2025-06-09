@@ -6,7 +6,7 @@ const createJestConfig = nextJest({
 const customJestConfig = {
   moduleDirectories: ['node_modules', '<rootDir>/', '<rootDir>/src/'],
   testEnvironment: 'jest-environment-jsdom',
-  setupFiles: ['./jest.polyfills.js'],
+  setupFilesAfterEnv: ['./jest.polyfills.js'],
   testMatch: [
     '**/testa/**/*.test.js',
     '**/testa/**/*.test.ts',
