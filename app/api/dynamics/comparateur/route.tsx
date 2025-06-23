@@ -32,6 +32,7 @@ export async function GET(req: NextRequest) {
     }))
   }
 
+  console.log('comparateur', req)
   const { searchParams } = new URL(req.url)
   return new ImageResponse(
     (
