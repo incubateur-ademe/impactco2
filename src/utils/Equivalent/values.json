@@ -1733,14 +1733,14 @@
   "pointrelais": {
     "category": 12,
     "value": 2030,
-    "fr": "livraison[s] en point relais",
+    "fr": "livraison[s] en point de retrait",
     "en": "delivery[s] in a relay point",
     "es": "entrega[s] en un punto de relevo"
   },
   "pointrelaisdouce": {
     "category": 12,
     "value": 510,
-    "fr": "livraison[s] en point relais",
+    "fr": "livraison[s] en point de retrait",
     "en": "delivery[s] in a relay point",
     "es": "entrega[s] en un punto de relevo"
   },

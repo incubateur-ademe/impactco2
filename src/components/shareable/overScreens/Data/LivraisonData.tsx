@@ -106,7 +106,7 @@ const FRLivraisonData = () => {
             <ul className={styles.list}>
               <li>
                 <b>Acheminement</b> : le colis est d’abord transporté en poids lourd moyen entre l’entrepôt et le centre
-                de distribution, puis en  véhicule utilitaire léger  jusqu’au magasin ou au point de relais.
+                de distribution, puis en  véhicule utilitaire léger  jusqu’au magasin ou au point de retrait.
               </li>
               <li>
                 L’impact carbone du transport intègre également la construction des infrastructures routières, la
@@ -123,9 +123,9 @@ const FRLivraisonData = () => {
                 une distance multipliée par deux. Il vous est possible d’ajuster cette distance pour chaque scénario.
               </li>
               <li>
-                <b>Livraison en point relais</b> : La distance moyenne par défaut entre le domicile et le point relais
-                est de 1,5 km à pied et 3,5 km en voiture. L’aller-retour est également pris en compte, doublant ainsi
-                la distance. Vous pouvez modifier cette valeur selon le scénario.
+                <b>Livraison en point de retrait</b> : La distance moyenne par défaut entre le domicile et le point de
+                retrait est de 1,5 km à pied et 3,5 km en voiture. L’aller-retour est également pris en compte, doublant
+                ainsi la distance. Vous pouvez modifier cette valeur selon le scénario.
               </li>
             </ul>
           </Dropdown>
@@ -161,9 +161,10 @@ const FRLivraisonData = () => {
               utilitaire lors de <b>la tournée de livraison</b>.
             </p>
           </Dropdown>
-          <Dropdown title='Livraison en point relais' className={styles.dropdown}>
+          <Dropdown title='Livraison en point de retrait' className={styles.dropdown}>
             <p>
-              Le colis suit le même circuit que pour la livraison à domicile, mais son trajet s’arrête au point relais.
+              Le colis suit le même circuit que pour la livraison à domicile, mais son trajet s’arrête au point de
+              retrait.
             </p>
           </Dropdown>
           <Dropdown title='Livraison en Click & Collect' className={styles.dropdown}>
