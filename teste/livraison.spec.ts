@@ -13,11 +13,11 @@ test('Livraison simulator', async ({ page }) => {
 
   await expect(page.getByTestId('category-pointrelais-value')).toHaveText('28.5')
   await expect(page.getByTestId('livraison-pointrelais')).toHaveText(
-    "Transport utilisé pour aller chercher l'objetVoiture thermiqueVoiture électrique3.5 km Distance parcourue pour Livraison en point relais"
+    "Transport utilisé pour aller chercher l'objetVoiture thermiqueVoiture électrique3.5 km Distance parcourue pour Livraison en point de retrait"
   )
   await page.getByRole('button', { name: 'Augmenter le nombre de km' }).first().click()
   await expect(page.getByTestId('livraison-pointrelais')).toHaveText(
-    "Transport utilisé pour aller chercher l'objetVoiture thermiqueVoiture électrique4 km Distance parcourue pour Livraison en point relais"
+    "Transport utilisé pour aller chercher l'objetVoiture thermiqueVoiture électrique4 km Distance parcourue pour Livraison en point de retrait"
   )
   await expect(page.getByTestId('category-pointrelais-value')).toHaveText('28.7')
   await page.getByTestId('text-select-transport-type-pointrelais').click()

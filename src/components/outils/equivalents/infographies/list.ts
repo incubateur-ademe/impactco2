@@ -161,7 +161,7 @@ export const imageInfographies: Record<string, { image: string; alt: string }[]>
     },
     {
       image: 'infographie-livraison-smartphone.png',
-      alt: 'Quel est l’impact carbone de mes choix de livraison pour l’achat d’un smartphone ? Pour une livraison en point relais (j’y vais à pieds, à proximité), mon déplacement représente 0 kg CO2e, la logistique et livraison représente 0,22 kg CO2e, soit un total de 0,22 kg CO2e. Pour une livraison à domicile standard, mon déplacement représente 0 kg CO2e, la logistique et livraison représente 0,26 kg CO2e, soit un total de 0,26 kg CO2e. Pour une livraison en point relais (j’y vais en voiture thermique à 3,5 km), mon déplacement représente 1,52 kg CO2e, la logistique et livraison représente 0,22 kg CO2e, soit un total de 1,74 CO2e.  Source : Base Empreinte, ADEME.',
+      alt: 'Quel est l’impact carbone de mes choix de livraison pour l’achat d’un smartphone ? Pour une livraison en point de retrait (j’y vais à pieds, à proximité), mon déplacement représente 0 kg CO2e, la logistique et livraison représente 0,22 kg CO2e, soit un total de 0,22 kg CO2e. Pour une livraison à domicile standard, mon déplacement représente 0 kg CO2e, la logistique et livraison représente 0,26 kg CO2e, soit un total de 0,26 kg CO2e. Pour une livraison en point de retrait (j’y vais en voiture thermique à 3,5 km), mon déplacement représente 1,52 kg CO2e, la logistique et livraison représente 0,22 kg CO2e, soit un total de 1,74 CO2e.  Source : Base Empreinte, ADEME.',
     },
   ],
   lit: [

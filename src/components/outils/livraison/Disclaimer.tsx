@@ -39,8 +39,8 @@ const Disclaimer = ({ animated, id }: { animated?: boolean; id: string }) => {
               est fixée à 15 km en voiture.
             </li>
             <li>
-              <b>Livraison en point relais</b> : La distance moyenne par défaut entre le domicile et le point relais est
-              de 3,5 km en voiture.
+              <b>Livraison en point de retrait</b> : La distance moyenne par défaut entre le domicile et le point de
+              retrait est de 3,5 km en voiture.
             </li>
           </ul>
           <br />
