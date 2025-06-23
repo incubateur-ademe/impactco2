@@ -37,9 +37,9 @@ const TransportSimulator = () => {
 
   useEffect(() => {
     if (selected === 'distance') {
-      setHideActions(false)
+      setHideActions('')
     } else {
-      setHideActions(!start || !end)
+      setHideActions(!start || !end ? 'transport' : '')
     }
   }, [selected, start, end])
 
