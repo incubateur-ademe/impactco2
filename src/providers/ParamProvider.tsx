@@ -68,8 +68,8 @@ const getFloat = (query: ReadonlyURLSearchParams, key: string) => {
 }
 
 export type Params = {
-  hideActions: boolean
-  setHideActions: Dispatch<SetStateAction<boolean>>
+  hideActions: string
+  setHideActions: Dispatch<SetStateAction<string>>
   overscreen: Record<string, string>
   setOverscreen: (slug: string, value: string) => void
   theme: string
@@ -204,7 +204,7 @@ export function ParamProvider({ children }: { children: ReactNode }) {
   const [theme, setTheme] = useState(initialTheme.theme)
   const [language, setLanguage] = useState<SiteLanguage>('fr')
 
-  const [hideActions, setHideActions] = useState(false)
+  const [hideActions, setHideActions] = useState('')
 
   const [overscreen, setOverscreen] = useState<Record<string, string>>({})
   const overscreenTrigger = useRef<HTMLElement | null>(null)
