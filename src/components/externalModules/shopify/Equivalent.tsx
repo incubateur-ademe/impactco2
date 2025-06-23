@@ -1,7 +1,7 @@
-import { ReactNode, useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { Language } from 'types/equivalent'
 import { getNumberPrecision } from 'utils/formatNumberPrecision'
-import LocalNumber from 'components/base/LocalNumber'
+import CO2Quantity from 'components/base/CO2Quantity'
 import EqualIcon from 'components/base/icons/equal'
 import RefreshIcon from 'components/base/icons/refresh'
 import Logo from '../Logo'
@@ -14,7 +14,6 @@ const Equivalent = ({
   className,
   baseValue,
   comparisons,
-  title,
   animated,
   url,
   language,
@@ -23,7 +22,6 @@ const Equivalent = ({
   className?: string
   baseValue: string | number
   comparisons: string[]
-  title?: (unit: string, roundedValue: number, intValue: number) => ReactNode
   animated?: boolean
   url?: string
   language: Language
@@ -56,16 +54,17 @@ const Equivalent = ({
 
   return (
     <div className={className}>
-      {title && title(unit, value, intValue)}
       <div className={styles.container}>
         <div className={styles.left}>
           <Logo value={preciseValue} url={url} />
-          <p className={styles.leftContent}>
-            <span className={styles.value} data-testid='etiquette-value'>
-              <LocalNumber number={value} />
-            </span>
-            <span className={styles.label}>{unit} CO₂e</span>
-          </p>
+          <CO2Quantity
+            quantity={preciseValue / 1000}
+            className={styles.leftContent}
+            valueClassName={styles.value}
+            data-testid='etiquette-value'
+            secondary
+            language={language}
+          />
         </div>
         <div className={styles.right}>
           <div className={isAnimated ? styles.animatedEqual : styles.equal}>

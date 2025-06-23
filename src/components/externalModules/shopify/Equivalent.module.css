@@ -43,6 +43,10 @@
   margin: auto !important;
   display: flex !important;
   flex-direction: column !important;
+
+  font-size: 0.75em !important;
+  font-weight: 500 !important;
+  line-height: 1.33em !important;
 }
 
 .rightColumn,
@@ -151,14 +155,10 @@
   visibility: visible !important;
 }
 
-.empty,
-.label {
+.empty {
   font-size: 0.75em !important;
   font-weight: 500 !important;
   line-height: 1.33em !important;
-}
-
-.empty {
   max-width: 10.375rem;
 }
 
