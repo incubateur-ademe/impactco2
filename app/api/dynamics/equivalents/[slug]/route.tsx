@@ -49,7 +49,6 @@ export async function GET(req: NextRequest, context: { params: Promise<{ slug: s
 
   const { searchParams } = new URL(req.url)
   const language = searchParams.get('language') || 'fr'
-  console.log('equivalents', req)
 
   return new ImageResponse(
     (
