@@ -7,6 +7,7 @@ import useParamContext from 'src/providers/ParamProvider'
 import { getName } from 'utils/Equivalent/equivalent'
 import { getNumberPrecision } from 'utils/formatNumberPrecision'
 import { metaTitles } from 'utils/meta'
+import { getUnit } from 'components/base/CO2Quantity'
 import EquivalentIcon from 'components/base/EquivalentIcon'
 import IframeableLink from 'components/base/IframeableLink'
 import LocalNumber from 'components/base/LocalNumber'
@@ -76,7 +77,7 @@ const ComparateurSimulator = () => {
           <p className={styles.description}>
             {t('title-bis-1')}{' '}
             <span className={styles.descriptionValue} data-testid='compared-equivalent-value'>
-              <LocalNumber number={value} /> {unit} CO₂e
+              <LocalNumber number={value} /> {getUnit(value, unit, language)} CO₂e
             </span>
             , {t('title-bis-2')}
           </p>

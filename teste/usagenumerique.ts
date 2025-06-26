@@ -3,7 +3,7 @@ import { FrameLocator, Page, expect } from 'playwright/test'
 export const usageNumeriqueTest = async (page: Page | FrameLocator, prod?: boolean) => {
   await expect(page.getByTestId('usagenumerique-generated-value')).toHaveText('0.28')
 
-  await expect(page.getByTestId('etiquette-value')).toHaveText('14.3')
+  await expect(page.getByTestId('etiquette-value')).toHaveText('14.3 kg CO₂e')
 
   await page.getByTestId('input-main-value-streaming').fill('10')
   await expect(page.getByTestId('usagenumerique-generated-value')).toHaveText('0.37')

@@ -1,14 +1,12 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import React from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { Category } from 'types/category'
 import { ComputedEquivalent } from 'types/equivalent'
 import { getName } from 'utils/Equivalent/equivalent'
-import { getNumberPrecision } from 'utils/formatNumberPrecision'
+import CO2Quantity from 'components/base/CO2Quantity'
 import EquivalentIcon from 'components/base/EquivalentIcon'
-import LocalNumber from 'components/base/LocalNumber'
 import styles from './EquivalentCardContent.module.css'
 
 const EquivalentCardContent = ({
@@ -20,9 +18,6 @@ const EquivalentCardContent = ({
   category: Category
   output?: string
 }) => {
-  const { value, unit } = getNumberPrecision(
-    equivalent.carpool ? equivalent.value / (equivalent.carpool + 1) : equivalent.value
-  )
   const { language } = useParamContext()
   const t = useTranslations('unit')
   const unitLabel = equivalent.unit || category.unit
@@ -32,12 +27,12 @@ const EquivalentCardContent = ({
       <div>
         <p className={styles.title}>{getName(language, equivalent)}</p>
         <Result form={output}>
-          <p className={styles.value}>
-            <span className={styles.valueNumber}>
-              <LocalNumber number={value} />
-            </span>{' '}
-            {unit} CO₂e
-          </p>
+          <CO2Quantity
+            quantity={equivalent.carpool ? equivalent.value / (equivalent.carpool + 1) : equivalent.value}
+            className={styles.value}
+            valueClassName={styles.valueNumber}
+            language={language}
+          />
         </Result>
         {unitLabel && (
           <p className={styles.unit}>
