@@ -1,0 +1,45 @@
+.gUnit,
+.tUnit,
+.mtUnit {
+  border-radius: 0.5rem;
+  padding: 0 0.5rem;
+  width: fit-content;
+}
+
+.gUnit {
+  background-color: var(--neutral-20);
+  color: var(--neutral-80);
+}
+
+.tUnit {
+  background-color: var(--neutral-60);
+  color: var(--neutral-10);
+}
+
+.mtUnit {
+  background-color: var(--neutral-80);
+  color: var(--neutral-10);
+}
+
+.gUnitSecondary,
+.tUnitSecondary,
+.mtUnitSecondary {
+  border-radius: 0.25rem;
+  padding: 0 0.25rem;
+  width: fit-content;
+}
+
+.gUnitSecondary {
+  background-color: var(--primary-20);
+  color: var(--primary-80);
+}
+
+.tUnitSecondary {
+  background-color: var(--primary-60);
+  color: var(--primary-10);
+}
+
+.mtUnitSecondary {
+  background-color: var(--primary-70);
+  color: var(--primary-10);
+}

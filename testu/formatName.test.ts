@@ -22,7 +22,7 @@ describe('formatName', () => {
     expect(res).toEqual('les cadeaux des choux')
   })
   test('le résultat peut éventuellement garder ses majuscules originales', () => {
-    const res = formatName('Le[s] Cadeau[x] De[s] Chou[x]', 2, true)
+    const res = formatName('Le[s] Cadeau[x] De[s] Chou[x]', 2)
     expect(res).toEqual('Les Cadeaux Des Choux')
   })
 })
