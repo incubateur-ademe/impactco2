@@ -25,12 +25,12 @@ export const comparateurTest = async (page: Page | FrameLocator, prod?: boolean,
   await expect(page.getByTestId('comparateur-ail-name')).toHaveText("kg d'ail")
 
   if (!noEtiquette) {
-    await expect(page.getByTestId('etiquette-value').nth(0)).toHaveText('145')
+    await expect(page.getByTestId('etiquette-value').nth(0)).toHaveText('145 kg CO₂e')
     await expect(page.getByTestId('etiquette-abricot-value').nth(0)).toHaveText('100')
     await expect(page.getByTestId('etiquette-abricot-name').nth(0)).toHaveText("kg d'abricot")
     await expect(page.getByTestId('etiquette-ail-value').nth(0)).toHaveText('378')
     await expect(page.getByTestId('etiquette-ail-name').nth(0)).toHaveText("kg d'ail")
-    await expect(page.getByTestId('etiquette-value').nth(1)).toHaveText('145')
+    await expect(page.getByTestId('etiquette-value').nth(1)).toHaveText('145 kg CO₂e')
     await expect(page.getByTestId('etiquette-abricot-value').nth(1)).toHaveText('100')
     await expect(page.getByTestId('etiquette-abricot-name').nth(1)).toHaveText("kg d'abricot")
     await expect(page.getByTestId('etiquette-ail-value').nth(1)).toHaveText('378')
@@ -41,10 +41,10 @@ export const comparateurTest = async (page: Page | FrameLocator, prod?: boolean,
   await expect(page.getByTestId('compared-equivalent-value')).toHaveText('7.26 kg CO₂e')
   await expect(page.getByTestId('comparateur-ail-value')).toHaveText('18.9')
   if (!noEtiquette) {
-    await expect(page.getByTestId('etiquette-value').nth(0)).toHaveText('7.26')
+    await expect(page.getByTestId('etiquette-value').nth(0)).toHaveText('7.26 kg CO₂e')
     await expect(page.getByTestId('etiquette-abricot-value').nth(0)).toHaveText('5')
     await expect(page.getByTestId('etiquette-ail-value').nth(0)).toHaveText('18.9')
-    await expect(page.getByTestId('etiquette-value').nth(1)).toHaveText('7.26')
+    await expect(page.getByTestId('etiquette-value').nth(1)).toHaveText('7.26 kg CO₂e')
     await expect(page.getByTestId('etiquette-abricot-value').nth(1)).toHaveText('5')
     await expect(page.getByTestId('etiquette-ail-value').nth(1)).toHaveText('18.9')
   }

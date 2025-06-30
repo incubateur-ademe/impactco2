@@ -2,7 +2,7 @@ import classNames from 'classnames'
 import { useEffect, useMemo, useState } from 'react'
 import { Language } from 'types/equivalent'
 import { getNumberPrecision } from 'utils/formatNumberPrecision'
-import LocalNumber from 'components/base/LocalNumber'
+import CO2Quantity from 'components/base/CO2Quantity'
 import EqualIcon from 'components/base/icons/equal'
 import RefreshIcon from 'components/base/icons/refresh'
 import Logo from '../Logo'
@@ -43,12 +43,14 @@ const ColumnEquivalent = ({
   return (
     <div className={classNames(styles.container, { [styles.withRandomize]: !!randomize })}>
       <div className={baseStyles.top}>
-        <p className={styles.leftContent}>
-          <span className={baseStyles.value} data-testid='etiquette-value'>
-            <LocalNumber number={value} />
-          </span>
-          <span className={baseStyles.label}>{unit} CO₂e</span>
-        </p>
+        <CO2Quantity
+          quantity={preciseValue / 1000}
+          className={styles.leftContent}
+          valueClassName={baseStyles.value}
+          data-testid='etiquette-value'
+          secondary
+          language={language}
+        />
         <Logo value={preciseValue} right />
       </div>
       <div className={baseStyles.rightColumn}>
