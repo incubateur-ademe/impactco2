@@ -38,7 +38,7 @@ const AlimentationPage = () => {
       <Block
         id='simulateur'
         title='Simulateur alimentation'
-        description="Comparer l'impact cabone de plus de 50 aliments">
+        description="Comparer l'impact caborne de plus de 50 aliments">
         <Category category={alimentation} simulator={<AlimentationSimulator />} />
         {alimentation.sources && (
           <Sources className={styles.sources} sources={alimentation.sources} tracking={alimentation.name} />
