@@ -1,11 +1,17 @@
-import React from 'react'
 import en from 'src/providers/locales/en.json'
 import es from 'src/providers/locales/es.json'
 import fr from 'src/providers/locales/fr.json'
 import { getComparisonSlug } from 'utils/Equivalent/equivalent'
 import { getNumberPrecision } from 'utils/formatNumberPrecision'
 import { buildCurrentUrlFor } from 'utils/urls'
+import { getUnit } from 'components/base/CO2Quantity'
 import { Logos } from './Logos'
+
+const colors: Record<string, { backgroundColor: string; color: string }> = {
+  g: { backgroundColor: '#E0F4F3', color: '#13706D' },
+  t: { backgroundColor: '#13706D', color: '#FFFFFF' },
+  mt: { backgroundColor: '#0C5956', color: '#FFFFFF' },
+}
 
 const Equivalent = ({
   language,
@@ -25,6 +31,8 @@ const Equivalent = ({
   const { value, unit: quantityUnit } = getNumberPrecision(quantity)
   const translatedUnit = ((language === 'en' ? en : language === 'es' ? es : fr).unit as Record<string, string>)[unit]
   const [ref] = slug.split('+')
+  const color = colors[quantityUnit] || { padding: 0 }
+
   return (
     <div
       style={{
@@ -60,18 +68,24 @@ const Equivalent = ({
             <div
               style={{
                 display: 'flex',
-                backgroundColor: '#E0F4F3',
-                alignItems: 'flex-end',
+                alignItems: 'center',
                 color: '#13706D',
                 gap: '1rem',
-                borderRadius: '0.5rem',
-                padding: '0 0.75rem',
                 height: '4rem',
                 lineHeight: '4rem',
                 marginTop: '1rem',
               }}>
-              <span>{value}</span>
-              <span style={{ fontSize: '2rem', lineHeight: '3rem' }}>{quantityUnit} CO₂e</span>
+              <span>{value.toLocaleString(language === 'fr' ? 'fr-FR' : language === 'es' ? 'es-ES' : 'en-EN')}</span>
+              <span
+                style={{
+                  fontSize: '2rem',
+                  lineHeight: '3rem',
+                  borderRadius: '0.5rem',
+                  padding: '0 0.75rem',
+                  ...color,
+                }}>
+                {getUnit(value, quantityUnit, language)} CO₂e
+              </span>
             </div>
           </div>
           {unit && (
