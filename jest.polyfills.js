@@ -20,6 +20,12 @@ Object.defineProperties(globalThis, {
 })
 
 const { Blob, File } = require('node:buffer')
+const { MessageChannel, MessagePort } = require('node:worker_threads')
+Object.defineProperties(globalThis, {
+  MessagePort: { value: MessagePort },
+  MessageChannel: { value: MessageChannel },
+})
+
 const { fetch, Headers, FormData, Request, Response } = require('undici')
 
 Object.defineProperties(globalThis, {
