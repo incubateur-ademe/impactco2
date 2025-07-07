@@ -1,4 +1,3 @@
-import classNames from 'classnames'
 import { getNumberPrecision } from 'utils/formatNumberPrecision'
 import LocalNumber from './LocalNumber'
 import styles from './CO2Quantity.module.css'
@@ -38,7 +37,7 @@ const CO2Quantity = ({
       <span className={valueClassName}>
         <LocalNumber number={value} />
       </span>{' '}
-      <span className={classNames(styles[`${unit}Unit${secondary ? 'Secondary' : ''}`])}>
+      <span className={styles[`${unit}Unit${secondary ? 'Secondary' : ''}`]}>
         {getUnit(value, unit, language)} CO₂e
       </span>
     </p>
