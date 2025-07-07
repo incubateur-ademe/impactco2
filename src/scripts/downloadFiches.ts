@@ -55,6 +55,7 @@ const downloadPage = async (page: Page, url: string, output: string) => {
   await page.pdf({
     path: output,
     format: 'A4',
+    printBackground: true,
   })
 }
 
