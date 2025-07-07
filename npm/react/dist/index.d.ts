@@ -4,6 +4,7 @@ declare module "@incubateur-ademe/impactco2-react" {
         comparisons: (
                 "2050" |
                 "abricot" |
+                "agricoleenfrancejour" |
                 "ail" |
                 "alimentationordinateur" |
                 "alimentationsmartphone" |
@@ -14,7 +15,9 @@ declare module "@incubateur-ademe/impactco2-react" {
                 "aspirateur" |
                 "aubergine" |
                 "autocar" |
+                "aviationcivileenfrance" |
                 "avion-courtcourrier" |
+                "avion-johannesburg-paris-rugby" |
                 "avion-longcourrier" |
                 "avion-moyencourrier" |
                 "avion-pny" |
@@ -56,14 +59,16 @@ declare module "@incubateur-ademe/impactco2-react" {
                 "cerise" |
                 "chaiseenbois" |
                 "champignonmorille" |
+                "chataigne" |
+                "chauffageelectrique" |
+                "chauffageenfrance" |
+                "chauffageenfrancejour" |
+                "chauffagefioul" |
+                "chauffagegaz" |
                 "chaussonauxpommes" |
                 "chaussuresdesport" |
                 "chaussuresencuir" |
                 "chaussuresentissu" |
-                "chataigne" |
-                "chauffageelectrique" |
-                "chauffagefioul" |
-                "chauffagegaz" |
                 "cheeseburger" |
                 "chemiseencoton" |
                 "chemiseenviscose" |
@@ -73,6 +78,9 @@ declare module "@incubateur-ademe/impactco2-react" {
                 "citron" |
                 "clefusb" |
                 "clementine" |
+                "clickcollect" |
+                "clickcollectdouce" |
+                "climatisationenfrancejour" |
                 "climatiseur" |
                 "coing" |
                 "concombre" |
@@ -82,6 +90,7 @@ declare module "@incubateur-ademe/impactco2-react" {
                 "crevettes" |
                 "cresson" |
                 "croissant" |
+                "datacenterjour" |
                 "datte" |
                 "disquedur" |
                 "dorade" |
@@ -93,20 +102,21 @@ declare module "@incubateur-ademe/impactco2-react" {
                 "enceintebluetooth" |
                 "endive" |
                 "epinard" |
-                "feta" |
                 "fenouil" |
+                "feta" |
                 "figue" |
+                "foretenfrancejour" |
                 "fourelectrique" |
                 "fraise" |
                 "framboise" |
                 "francais" |
                 "friends" |
                 "frites" |
-                "fruitdelapassion" |
                 "fromageblanc" |
                 "fromagebleu" |
                 "fromagedure" |
                 "fromagemolle" |
+                "fruitdelapassion" |
                 "game-of-thrones" |
                 "grenade" |
                 "groseille" |
@@ -116,8 +126,8 @@ declare module "@incubateur-ademe/impactco2-react" {
                 "huitres" |
                 "intercites" |
                 "jeans" |
-                "kebab" |
                 "kaki" |
+                "kebab" |
                 "kiwi" |
                 "laitdevache" |
                 "laitue" |
@@ -127,16 +137,21 @@ declare module "@incubateur-ademe/impactco2-react" {
                 "lentilles" |
                 "lieu" |
                 "lit" |
+                "livraisondomicile" |
                 "location" |
-                "madeleine" |
                 "mache" |
+                "madeleine" |
+                "magasin" |
+                "magasindouce" |
                 "mais" |
+                "maisonneuve" |
                 "mandarine" |
                 "mangue" |
                 "manteau" |
                 "matieregrasse" |
                 "melon" |
                 "metro" |
+                "microondes" |
                 "moto" |
                 "moules" |
                 "mozarella" |
@@ -147,17 +162,20 @@ declare module "@incubateur-ademe/impactco2-react" {
                 "noisette" |
                 "noix" |
                 "noixdecoco" |
+                "numeriqueenfrance" |
+                "numeriqueenfrancejour" |
                 "oeuf" |
                 "oignon" |
                 "orange" |
                 "ordinateurfixeparticulier" |
                 "ordinateurfixeprofessionnel" |
                 "ordinateurportable" |
-                "painauxraisins" |
                 "painauchocolat" |
+                "painauxraisins" |
                 "paindemie" |
                 "pamplemousse" |
                 "panais" |
+                "parcbovin" |
                 "pasteque" |
                 "pateatartiner" |
                 "pates" |
@@ -173,9 +191,12 @@ declare module "@incubateur-ademe/impactco2-react" {
                 "pomme" |
                 "pommedeterre" |
                 "pompeachaleur" |
+                "populationfrancaise" |
                 "porc" |
                 "potiron" |
                 "poulet" |
+                "pointrelais" |
+                "pointrelaisdouce" |
                 "prune" |
                 "pullenacrylique" |
                 "pullencotonrecycle" |
@@ -194,13 +215,13 @@ declare module "@incubateur-ademe/impactco2-react" {
                 "repasvegetalien" |
                 "repasvegetarien" |
                 "rer" |
-                "residencesecondaire" |
                 "reseaudechaleur" |
+                "residencesecondaire" |
                 "rhubarbe" |
+                "riz" |
                 "robeencoton" |
                 "robeenpolyester" |
                 "robeenviscose" |
-                "riz" |
                 "salsifis" |
                 "sardines" |
                 "saumon" |
@@ -227,15 +248,17 @@ declare module "@incubateur-ademe/impactco2-react" {
                 "tofu" |
                 "tomate" |
                 "topinambour" |
+                "traitementdechetsjour" |
+                "trainenfrancejour" |
                 "tramway" |
                 "trottinette" |
                 "tshirtencoton" |
                 "tshirtenpolyester" |
+                "veau" |
                 "velo" |
                 "veloelectrique" |
-                "veau" |
-                "vestesimilicuir" |
                 "vesteimpermeable" |
+                "vestesimilicuir" |
                 "vin" |
                 "visioconference" |
                 "voiture-lille-nimes" |
@@ -244,6 +267,9 @@ declare module "@incubateur-ademe/impactco2-react" {
                 "voitureelectrique+2" |
                 "voitureelectrique+3" |
                 "voitureelectrique+4" |
+                "voiturefrancaisean" |
+                "voiturefrancaiseheure" |
+                "voiturefrancaisejour" |
                 "voiturethermique" |
                 "voiturethermique+1" |
                 "voiturethermique+2" |
