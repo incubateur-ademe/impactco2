@@ -7,8 +7,7 @@
     "plugin:prettier/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/eslint-recommended",
-    "next/core-web-vitals",
-    "plugin:storybook/recommended"
+    "next/core-web-vitals"
   ],
   "parser": "@typescript-eslint/parser",
   "rules": {
@@ -23,7 +22,11 @@
       }
     ]
   },
-  "plugins": ["@typescript-eslint", "prettier", "jest"],
+  "plugins": [
+    "@typescript-eslint",
+    "prettier",
+    "jest"
+  ],
   "env": {
     "browser": true,
     "es2022": true,
