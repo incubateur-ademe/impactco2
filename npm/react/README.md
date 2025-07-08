@@ -317,11 +317,11 @@ Liste des équivalents à comparer parmis la liste suivante :
 - Usage du numérique
   - email : email
   - spam : spam
-  - stockagedonnee : stocker un go de donnée
+  - stockagedonnee : Go de données (1 an de stockage dans le cloud)
   - rechercheweb : recherche sur le web
   - streamingvideo : Heure de streaming vidéo
   - visioconference : Heure de visioconférence
-  - telechargement : go de donnée
+  - telechargement : Go de données (téléchargement)
 - Cas pratique
   - avion-pny : A/R paris - New-York en avion
   - tgv-paris-berlin" : A/R Paris - Berlin en tgv
