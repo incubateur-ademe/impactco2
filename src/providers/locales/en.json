@@ -319,7 +319,7 @@
     "fabrication": "Include the impact of manufacturing the object",
     "car": "I'm going by car",
     "foot": "I'm going on foot",
-    "etiquette": "What is the <important>carbon impact</important> of different purchasing methods?",
+    "etiquette": "What is the <important>carbon impact</important> of different purchasing methods? (1kg package)",
     "magasin": "Purchase in store",
     "livraisondomicile": "Home delivery",
     "pointrelais": "Delivery to a relay point",
@@ -457,7 +457,7 @@
         "tgv-paris-berlin": "Included are direct emissions, the construction of vehicles (manufacturing, maintenance, and end-of-life), and the production and distribution of fuel and electricity. The construction of infrastructure (roads, railways, airports...) is not included.",
         "tgv-paris-marseille": "Included are direct emissions, the construction of vehicles (manufacturing, maintenance, and end-of-life), and the production and distribution of fuel and electricity. The construction of infrastructure (roads, railways, airports...) is not included.",
         "voiture-lille-nimes": "Included are direct emissions, the construction of vehicles (manufacturing, maintenance, and end-of-life), and the production and distribution of fuel and electricity. The construction of infrastructure (roads, railways, airports...) is not included.",
-        "francais": "The French emit an average of 9.3 tons of CO₂e per year (data from the Statistical Data and Studies Department for 2022, Ministry of Ecological Transition). This average varies greatly depending on lifestyle, car and airplane usage, housing (house or apartment), heating method, diet, etc.",
+        "francais": "The French emit an average of 9.1 tonnes of co₂e per year. This average varies a lot depending on the lifestyles, the use or not of the car, purchases and consumption, home in house or apartment, heating mode, food etc.",
         "game-of-thrones": "An episode of Game of Thrones lasts an average of 1 hour. The data is calculated based on one hour of HD streaming on a television using Wi-Fi.",
         "friends": "The entire Friends series consists of 236 episodes of about 20 minutes each. The data is calculated based on one hour of HD streaming on a television using Wi-Fi."
       }

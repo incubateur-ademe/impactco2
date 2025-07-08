@@ -24,7 +24,13 @@ export const casPratiques = [
     slug: 'francais',
     category: 13,
     percentage: true,
-    total: 9300,
+    total: 9100,
+    sources: [
+      {
+        label: 'Nos Gestes Climat',
+        href: 'https://nosgestesclimat.fr',
+      },
+    ],
   },
   {
     synonyms: ['streaming', 'série', 'netflix'],
