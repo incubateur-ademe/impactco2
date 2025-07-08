@@ -319,7 +319,7 @@
     "fabrication": "Incluir el impacto de la fabricación del objeto",
     "car": "voy allí en coche",
     "foot": "voy a pie",
-    "etiquette": "¿Cuál es el <important>impacto de carbono</important> de los diferentes métodos de compra?",
+    "etiquette": "¿Cuál es el <important>impacto de carbono</important> de los diferentes métodos de compra? (paquete de 1kg)",
     "magasin": "Compra en tienda",
     "livraisondomicile": "Entrega a domicilio",
     "pointrelais": "Entrega al punto de relevo",
@@ -457,7 +457,7 @@
         "tgv-paris-berlin": "Se incluyen las emisiones directas, la construcción de vehículos (fabricación, mantenimiento y fin de vida), y la producción y distribución de combustible y electricidad. La construcción de infraestructuras (carreteras, vías férreas, aeropuertos...) no está incluida.",
         "tgv-paris-marseille": "Se incluyen las emisiones directas, la construcción de vehículos (fabricación, mantenimiento y fin de vida), y la producción y distribución de combustible y electricidad. La construcción de infraestructuras (carreteras, vías férreas, aeropuertos...) no está incluida.",
         "voiture-lille-nimes": "Se incluyen las emisiones directas, la construcción de vehículos (fabricación, mantenimiento y fin de vida), y la producción y distribución de combustible y electricidad. La construcción de infraestructuras (carreteras, vías férreas, aeropuertos...) no está incluida.",
-        "francais": "Los franceses emiten un promedio de 9.3 toneladas de CO₂e por año (datos del Servicio de Datos y Estudios Estadísticos para 2022, Ministerio de Transición Ecológica). Este promedio varía mucho según el estilo de vida, el uso o no del coche, el avión, la vida en casa o apartamento, el método de calefacción, la alimentación, etc.",
+        "francais": "Los franceses emiten un promedio de 9.1 toneladas de co₂e por año. Este promedio varía mucho según los estilos de vida, el uso o no del automóvil, compras y consumo, en casa o apartamento, modo de calefacción, comida, etc.",
         "game-of-thrones": "Un episodio de Game of Thrones dura en promedio 1 hora. El dato se calcula en base a una hora de transmisión en alta definición en un televisor usando Wi-Fi.",
         "friends": "La serie completa de Friends consta de 236 episodios de unos 20 minutos cada uno. El dato se calcula en base a una hora de transmisión en alta definición en un televisor usando Wi-Fi."
       }
