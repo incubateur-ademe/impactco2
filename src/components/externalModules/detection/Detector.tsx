@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import React, { MouseEvent, useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react'
+import { MouseEvent, useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react'
 import { track } from 'utils/matomo'
 import RefreshIcon from 'components/base/icons/refresh'
 import { getRandomEquivalentForValue } from 'components/comparateur/randomEtiquette'
@@ -90,8 +90,7 @@ const Detector = ({ impact, language }: { impact: string; language: 'fr' | 'en' 
   const etiquetteRef = useRef<HTMLDivElement>(null)
 
   // inspired from https://usehooks-ts.com/react-hook/use-intersection-observer
-  // Pas ouf de mettre React ici, mais sinon il est considere comme inutilisé et ca plante...
-  const [entry, setEntry] = React.useState<IntersectionObserverEntry>()
+  const [entry, setEntry] = useState<IntersectionObserverEntry>()
   const [observed, setObserved] = useState(false)
 
   useEffect(() => {

@@ -83,7 +83,7 @@ const AlimentationIntegrate = () => {
       <ClipboardBox
         form='alimentation-integrate'
         tracking='Alimentation'>{`<script name="impact-co2" src="${process.env.NEXT_PUBLIC_URL}/iframe.js" data-type="/alimentation" data-search="?${search}"></script>`}</ClipboardBox>
-      <IntegratePreview path='/alimentation' urlParams={search} />
+      <IntegratePreview path='alimentation' urlParams={search} />
     </>
   )
 }

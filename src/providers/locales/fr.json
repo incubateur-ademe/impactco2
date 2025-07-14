@@ -194,6 +194,13 @@
       "octobre": "Octobre",
       "novembre": "Novembre",
       "décembre": "Décembre"
+    },
+    "category": {
+      "title": "Choisir la thématique des équivalents proposés par le Détecteur",
+      "all": "Toutes",
+      "transport": "Transport",
+      "voiture": "Voiture thermique",
+      "numerique": "Numérique"
     }
   },
   "modal": {
@@ -629,5 +636,26 @@
     "epiceriesalee": "Épicerie salée",
     "epiceriesucree": "Épicerie sucrée",
     "select": "tout sélectionner"
+  },
+  "detecteur": {
+    "exemples": {
+      "1kg": "La quantité est inférieure à 1 kg",
+      "50kg": "Entre 1 et 50 kg",
+      "500kg": "Entre 50 et 500 kg",
+      "10t": "Entre 500 kg et 10 tonnes",
+      "100t": "Centaines de tonnes",
+      "1000t": "Milliers de tonnes",
+      "10000t": "Dizaines de milliers de tonnes",
+      "100000t": "Centaines de milliers de tonnes",
+      "mt": "Millions de tonnes",
+      "10mt": "Dizaines de millions de tonnes",
+      "100mt": "Centaines de millions de tonnes",
+      "exemple-0": "184,12 kilos CO2 eq",
+      "exemple-1": "24 tonnes de Carbone équivalent",
+      "exemple-2": "43.2 grammes de CO2",
+      "exemple-3": "32 kgCO2eq",
+      "exemple-4": "8 t co2e",
+      "exemple-5": "240 Gt CO2 e"
+    }
   }
 }

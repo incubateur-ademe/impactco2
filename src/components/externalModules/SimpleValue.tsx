@@ -26,7 +26,9 @@ export const getValues = (comparison: string, value: number) => {
       slug,
     }
   }
-  const meaningfullEquivalents = Object.entries(equivalents).filter(([, ecv]) => value / ecv.value > 1 && ecv.value > 0)
+  const meaningfullEquivalents = Object.entries(equivalents).filter(
+    ([, ecv]) => value / ecv.value >= 1 && value / ecv.value <= 99_999 && ecv.value > 0
+  )
   const categories = [...new Set(meaningfullEquivalents.map((equivalent) => equivalent[1].category))]
   const randomCategory = categories[Math.floor(Math.random() * categories.length)]
   const categoryEquivalents = meaningfullEquivalents.filter((equivalent) => equivalent[1].category === randomCategory)

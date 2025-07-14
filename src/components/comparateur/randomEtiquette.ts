@@ -1,5 +1,5 @@
 const defaultEquivalents = [
-  { max: 1000, equivalents: [['tgv'], ['eaudurobinet'], ['pomme']] },
+  { max: 1000, equivalents: [['tgv'], ['eaudurobinet'], ['pomme'], ['email']] },
   {
     max: 50000,
     equivalents: [

@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import DetectorInformation from 'components/outils/DetectorInformation'
 import DetectorScript from 'components/outils/DetectorScript'
 
 export const tools = [
@@ -133,29 +133,7 @@ export const smallTools = [
     description: 'L’outil pratique pour mettre en lumière vos données carbone.',
     meta: 'Valoriser et mieux faire comprendre les données carbones grâce au détecteur CO2 qui communique les bons ordres de grandeur',
     linkLabel: 'Découvrir',
-    content: (
-      <>
-        <p>
-          Impact CO₂ lance le détecteur CO₂, un nouveau format innovant pour détecter et surligner automatiquement les
-          mentions de données carbones dans vos contenus.
-        </p>
-        <p>
-          Cet <b>outil gratuit</b>, simple d’utilisation et basé sur les données de l’ADEME a vocation à s’intégrer sur
-          les sites internet de médias, d’entreprises ou d’associations pour{' '}
-          <b>vulgariser les bons ordres de grandeur et remettre en perspective les données carbones.</b>
-        </p>
-        <p>Un exemple vaut mieux que mille mots ! Découvrez par vous-même 👇</p>
-        <p>
-          <b>
-            L’Info Durable est le premier média spécialisé en développement durable à avoir intégré l’outil sur son site
-            internet (plus de 45 000 articles en ligne !).
-          </b>
-        </p>
-        <div>
-          <Image src='/images/detecteur-co2.jpg' alt='' width={680} height={208} />
-        </div>
-      </>
-    ),
+    content: <DetectorInformation />,
     script: <DetectorScript />,
   },
 ]
