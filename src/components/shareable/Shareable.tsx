@@ -205,15 +205,22 @@ const Shareable = ({
                 <div className={classNames('no-screenshot', small ? styles.bottomLanguage : styles.language)}>
                   <HiddenLabel htmlFor={`text-select-${slug}-language`}>{t('language.label')}</HiddenLabel>
                   <Select
+                    title={t('language.label')}
                     id={`${slug}-language`}
                     value={language}
                     onChange={(event) => {
                       track(tracking, 'Language', event.target.value)
                       setLanguage(event.target.value as SiteLanguage)
                     }}>
-                    <option value='fr'>FR</option>
-                    <option value='en'>EN</option>
-                    <option value='es'>ES</option>
+                    <option value='fr' lang='fr'>
+                      FR
+                    </option>
+                    <option value='en' lang='en'>
+                      EN
+                    </option>
+                    <option value='es' lang='es'>
+                      ES
+                    </option>
                   </Select>
                   <LanguageIcon />
                 </div>
