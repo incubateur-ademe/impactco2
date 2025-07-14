@@ -1,10 +1,12 @@
 import classNames from 'classnames'
-import React, { MouseEvent, useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react'
+import { MouseEvent, useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { SimpleEquivalent } from 'types/equivalent'
+import values from 'utils/Equivalent/values.json'
 import { track } from 'utils/matomo'
 import RefreshIcon from 'components/base/icons/refresh'
-import { getRandomEquivalentForValue } from 'components/comparateur/randomEtiquette'
+import { RandomCategory, getRandomEquivalentForValue } from 'components/comparateur/randomEtiquette'
 import Logo from '../Logo'
-import SimpleValue from '../SimpleValue'
+import SimpleValue, { getRandomEquivalent } from '../SimpleValue'
 import styles from './Detector.module.css'
 
 export const regexs = {
@@ -20,6 +22,7 @@ const getComputedStyle = (el: Element, property: string) => {
   return ''
 }
 const isOverflowHidden = (el: Element) => getComputedStyle(el, 'overflow') === 'hidden'
+
 const getOverflow = (element: HTMLDivElement) => {
   const elPositioning = element.getBoundingClientRect()
   if (elPositioning.left < 0) {
@@ -85,14 +88,78 @@ export const getValue = (regexResult: string[], language: 'fr' | 'en') =>
   getFactor(regexResult[4]) *
   getUnitFactor(language === 'fr' ? regexResult[12] : regexResult[10])
 
-const Detector = ({ impact, language }: { impact: string; language: 'fr' | 'en' }) => {
+const transportEquivalents = [
+  'tgv-paris-berlin',
+  'tgv-paris-marseille',
+  'avion-pny',
+  'voiture-lille-nimes',
+  'terre-voiture',
+  'trainenfrancejour',
+  'voiturefrancaiseheure',
+  'voiturefrancaisejour',
+  'aviationcivileenfrance',
+  'voiturefrancaisean',
+]
+const voitureEquivalents = [
+  'voiturethermique',
+  'terre-voiture',
+  'voiturefrancaiseheure',
+  'voiturefrancaisejour',
+  'voiturefrancaisean',
+]
+const numeriqueEquivalents = [
+  'game-of-thrones',
+  'friends',
+  'harry-potter',
+  'datacenterjour',
+  'numeriqueenfrance',
+  'numeriqueenfrancejour',
+]
+
+const allEquivalents = values as Record<string, SimpleEquivalent>
+const equivalentCategories: Record<RandomCategory, Record<string, SimpleEquivalent>> = {
+  all: allEquivalents,
+  transport: Object.fromEntries(
+    Object.entries(allEquivalents).filter(
+      ([key, equivalent]) => transportEquivalents.includes(key) || equivalent.category === 4
+    )
+  ),
+  voiture: Object.fromEntries(Object.entries(allEquivalents).filter(([key]) => voitureEquivalents.includes(key))),
+  numerique: Object.fromEntries(
+    Object.entries(allEquivalents).filter(
+      ([key, equivalent]) =>
+        numeriqueEquivalents.includes(key) || equivalent.category === 1 || equivalent.category === 10
+    )
+  ),
+  custom: {},
+}
+
+const getCustomEquivalents = (customEquivalents?: string) => {
+  if (!customEquivalents) {
+    return {}
+  }
+  const equivalents = customEquivalents.split(',').map((equivalent) => equivalent.trim())
+  return Object.fromEntries(Object.entries(allEquivalents).filter(([key]) => equivalents.includes(key)))
+}
+
+const Detector = ({
+  impact,
+  language,
+  category,
+  customEquivalents,
+}: {
+  impact: string
+  language: 'fr' | 'en'
+  category: RandomCategory
+  customEquivalents?: string
+}) => {
   const ref = useRef<HTMLDivElement>(null)
   const etiquetteRef = useRef<HTMLDivElement>(null)
 
   // inspired from https://usehooks-ts.com/react-hook/use-intersection-observer
-  // Pas ouf de mettre React ici, mais sinon il est considere comme inutilisé et ca plante...
-  const [entry, setEntry] = React.useState<IntersectionObserverEntry>()
+  const [entry, setEntry] = useState<IntersectionObserverEntry>()
   const [observed, setObserved] = useState(false)
+  const [display, setDisplay] = useState('')
 
   useEffect(() => {
     const node = ref.current // DOM Ref
@@ -113,21 +180,6 @@ const Detector = ({ impact, language }: { impact: string; language: 'fr' | 'en' 
     }
   }, [entry, observed])
 
-  const [display, setDisplay] = useState('')
-  const [reload, forceUpdate] = useReducer((x) => x + 1, 0)
-
-  const value = useMemo(() => {
-    const values = regexs[language].exec(impact)
-    if (values) {
-      return getValue(values, language)
-    }
-    return 0
-  }, [impact, language])
-
-  const equivalents = useMemo(() => {
-    return getRandomEquivalentForValue(value)
-  }, [value])
-
   const onClick = useCallback(
     (event: MouseEvent<HTMLButtonElement>) => {
       event.preventDefault()
@@ -145,7 +197,6 @@ const Detector = ({ impact, language }: { impact: string; language: 'fr' | 'en' 
     },
     [display, impact]
   )
-
   useEffect(() => {
     const handleClickOutside = (event: Event) => {
       if (ref.current && !ref.current.contains(event.target as Node)) {
@@ -166,6 +217,38 @@ const Detector = ({ impact, language }: { impact: string; language: 'fr' | 'en' 
       document.removeEventListener('keydown', handleKeyDown, true)
     }
   }, [])
+
+  const value = useMemo(() => {
+    const values = regexs[language].exec(impact)
+    if (values) {
+      return getValue(values, language)
+    }
+    return 0
+  }, [impact, language])
+
+  const startingEquivalents = useMemo(() => {
+    return getRandomEquivalentForValue(value, category)
+  }, [value, category])
+
+  const meaningfullEquivalents = useMemo(() => {
+    const equivalents = category === 'custom' ? getCustomEquivalents(customEquivalents) : equivalentCategories[category]
+    return Object.entries(equivalents).filter(
+      ([, ecv]) => value / ecv.value >= 1 && value / ecv.value <= 99_999 && ecv.value > 0
+    )
+  }, [value, category])
+
+  const [count, setCount] = useState(0)
+  const [equivalent, setEquivalent] = useState<string | null>(getRandomEquivalent(meaningfullEquivalents)?.slug || null)
+
+  const refresh = useCallback(() => {
+    setCount((prevCount) => prevCount + 1)
+    let newEquivalent = equivalent
+    while (newEquivalent === equivalent) {
+      newEquivalent = getRandomEquivalent(meaningfullEquivalents)?.slug || null
+    }
+
+    setEquivalent(newEquivalent)
+  }, [startingEquivalents, count])
 
   return (
     <div className={styles.container} ref={ref}>
@@ -193,19 +276,21 @@ const Detector = ({ impact, language }: { impact: string; language: 'fr' | 'en' 
             language={language}
             value={value}
             // Dirty tricks to refresh random values...
-            comparison={equivalents[reload] || (reload % 2 === 0 ? 'random' : '')}
+            comparison={startingEquivalents[count] || equivalent}
             id='etiquette-value'
           />
         </div>
-        <button
-          className={styles.random}
-          title='Obtenir une nouvelle comparaison'
-          onClick={() => {
-            forceUpdate()
-            track('Detecteur carbone', 'Reload', 'reload')
-          }}>
-          <RefreshIcon />
-        </button>
+        {meaningfullEquivalents.length > 1 && (
+          <button
+            className={styles.random}
+            title='Obtenir une nouvelle comparaison'
+            onClick={() => {
+              refresh()
+              track('Detecteur carbone', 'Reload', 'reload')
+            }}>
+            <RefreshIcon />
+          </button>
+        )}
       </div>
     </div>
   )

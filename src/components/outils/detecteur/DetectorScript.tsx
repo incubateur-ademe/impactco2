@@ -22,32 +22,28 @@ const DetectorScript = () => {
           Vous pouvez choisir les paramètres qui vous conviennent ci-dessous, puis copier/coller la balise HTML dans
           votre CMS pour intégrer le Détecteur dans vos contenus.
         </p>
-        <div lang={language}>
-          <CustomParam
-            tracking={'Detecteur CO2'}
-            slug='category'
-            param={{ value: category, setter: setCategory } as CustomParamValue}
-            visible
-          />
-          <div className={styles.separator} />
-          <CustomParam
-            tracking={'Detecteur CO2'}
-            slug='theme'
-            param={{ value: theme, setter: setTheme } as CustomParamValue}
-            visible
-          />
-          <CustomParam
-            tracking={'Detecteur CO2'}
-            slug='languageNoEs'
-            param={{ value: language, setter: setLanguage } as CustomParamValue}
-            visible
-          />
-        </div>
+        <CustomParam
+          tracking={'Detecteur CO2'}
+          slug='category'
+          param={{ value: category, setter: setCategory } as CustomParamValue}
+          visible
+        />
+        <div className={styles.separator} />
+        <CustomParam
+          tracking={'Detecteur CO2'}
+          slug='theme'
+          param={{ value: theme, setter: setTheme } as CustomParamValue}
+          visible
+        />
+        <CustomParam
+          tracking={'Detecteur CO2'}
+          slug='language'
+          param={{ value: language, setter: setLanguage } as CustomParamValue}
+          visible
+        />
       </fieldset>
-      <div lang={language}>
-        <ClipboardBox tracking='Detecteur carbone'>{`<script id="script-detecteur-impact-co2" src="https://impactco2.fr/scripts/detection.js" data-search="?${search}"></script>`}</ClipboardBox>
-        <IntegratePreview path='detecteur' urlParams={search} />
-      </div>
+      <ClipboardBox tracking='Detecteur carbone'>{`<script id="script-detecteur-impact-co2" src="https://impactco2.fr/scripts/detection.js" data-search="?${search}"></script>`}</ClipboardBox>
+      <IntegratePreview path='detecteur' urlParams={search} />
     </>
   )
 }

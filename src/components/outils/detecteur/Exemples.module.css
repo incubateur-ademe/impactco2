@@ -1,0 +1,59 @@
+.container {
+  background-color: var(--neutral-00);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+}
+
+.list {
+  margin-block: 1.5rem 2.5rem;
+  border-radius: 0.5rem;
+  border: 2px solid var(--neutral-20);
+
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    &:not(:last-child) {
+      border-bottom: 2px solid var(--neutral-20);
+    }
+  }
+}
+
+.label {
+  color: var(--neutral-70);
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.75rem;
+}
+
+.ex {
+  color: var(--neutral-50);
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.5rem;
+}
+
+.exemples {
+  margin-top: 1.25rem;
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.title {
+  margin-top: 2.5rem;
+  color: var(--neutral-80);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 2rem;
+}
+
+.regex {
+  color: var(--neutral-50);
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.75rem;
+  margin-top: 2.5rem;
+}

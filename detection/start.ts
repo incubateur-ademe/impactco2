@@ -1,12 +1,19 @@
 import React, { render } from 'preact/compat'
 import 'utils/variables.css'
+import { RandomCategory } from 'components/comparateur/randomEtiquette'
 import Detector, { regexs } from 'components/externalModules/detection/Detector'
 import './style.css'
 
 const className = 'impactCO2-container'
 const forbiddenTag = ['TITLE', 'HEAD', 'STYLE', 'SCRIPT', 'path', 'IMG', 'META', 'BUTTON', 'A']
 
-const transform = (element: Element, language: 'fr' | 'en', darkMode?: boolean) => {
+const transform = (
+  element: Element,
+  language: 'fr' | 'en',
+  category: RandomCategory,
+  equivalents?: string,
+  darkMode?: boolean
+) => {
   if (forbiddenTag.includes(element.tagName) || element.getAttribute('impactCO2') === 'managed') {
     return
   }
@@ -25,14 +32,23 @@ const transform = (element: Element, language: 'fr' | 'en', darkMode?: boolean) 
     const after = document.createElement('DIV')
     after.className = className
     after.innerHTML = existingValues[1]
-    transform(after, language, darkMode)
-    render(React.createElement(Detector, { impact: hasImpact[0], language }), etiquette)
+    transform(after, language, category, equivalents, darkMode)
+    render(
+      React.createElement(Detector, { impact: hasImpact[0], language, category, customEquivalents: equivalents }),
+      etiquette
+    )
     element.setAttribute('impactCO2', 'managed')
     element.replaceChildren(before, etiquette, after)
   }
 }
 
-const transformText = (element: Element, language: 'fr' | 'en', darkMode?: boolean) => {
+const transformText = (
+  element: Element,
+  language: 'fr' | 'en',
+  category: RandomCategory,
+  equivalents?: string,
+  darkMode?: boolean
+) => {
   ;[...element.childNodes.values()]
     .filter((child) => child.nodeName === '#text')
     .forEach((child) => {
@@ -51,8 +67,11 @@ const transformText = (element: Element, language: 'fr' | 'en', darkMode?: boole
           const after = document.createElement('DIV')
           after.className = className
           after.innerHTML = existingValues[1]
-          transform(after, language, darkMode)
-          render(React.createElement(Detector, { impact: hasImpact[0], language }), etiquette)
+          transform(after, language, category, equivalents, darkMode)
+          render(
+            React.createElement(Detector, { impact: hasImpact[0], language, category, customEquivalents: equivalents }),
+            etiquette
+          )
           child.replaceWith(before, etiquette, after)
         }
       }
@@ -91,7 +110,7 @@ export const initMatomo = () => {
   }
 }
 
-export const start = (darkMode?: boolean, language?: 'fr' | 'en') => {
+export const start = (darkMode?: boolean, language?: 'fr' | 'en', category?: RandomCategory, equivalents?: string) => {
   const elems = document.querySelectorAll('*')
 
   Array.from(elems)
@@ -128,12 +147,12 @@ export const start = (darkMode?: boolean, language?: 'fr' | 'en') => {
               child.nodeName === 'STRONG'
           )
         ) {
-          transform(elem, language || 'fr', darkMode)
+          transform(elem, language || 'fr', category || 'all', equivalents, darkMode)
         } else {
           ;[...elem.children].forEach((child) => {
-            transform(child, language || 'fr', darkMode)
+            transform(child, language || 'fr', category || 'all', equivalents, darkMode)
           })
-          transformText(elem, language || 'fr', darkMode)
+          transformText(elem, language || 'fr', category || 'all', equivalents, darkMode)
         }
       } catch (e) {
         console.error('Impossible de générer les équivalents', e)
