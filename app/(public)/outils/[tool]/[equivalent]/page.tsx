@@ -1,6 +1,5 @@
 import { Metadata, ResolvingMetadata } from 'next'
 import { notFound } from 'next/navigation'
-import React from 'react'
 import { categories } from 'data/categories'
 import Equivalent from 'components/outils/equivalents/EquivalentPage'
 import { equivalentsSimulators } from 'components/outils/equivalents/simulators/equivalentsSimulators'
@@ -59,10 +58,10 @@ export async function generateMetadata(props: Props, parent: ResolvingMetadata):
     title: `${getName(language, equivalent)} | Impact CO₂`,
     description:
       language === 'en'
-        ? `Discover the carbon impact of a ${getName(language, equivalent, true)} thanks to CO2 Impact and ADEME data`
+        ? `Discover the carbon impact of a ${getName(language, equivalent, true, 1, true)} thanks to CO2 Impact and ADEME data`
         : language === 'es'
-          ? `Décubre el impacto de carbono de ${getName(language, equivalent, true)} gracias a Impact CO2 y a los datos de la ADEME`
-          : `Découvrir l'impact carbone d'un ${getName(language, equivalent, true)} grâce à Impact CO2 et aux données de l'ADEME`,
+          ? `Décubre el impacto de carbono de ${getName(language, equivalent, true, 1, true)} gracias a Impact CO2 y a los datos de la ADEME`
+          : `Découvrir l'impact carbone d'1 ${getName(language, equivalent, true, 1, true)} grâce à Impact CO2 et aux données de l'ADEME`,
     openGraph: {
       creators: 'ADEME',
       images: `meta/${fullSlug}-${language}.png`,

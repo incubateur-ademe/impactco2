@@ -10,34 +10,39 @@ const m2: Record<string, string> = {
 
 const livraison: Record<string, Record<string, string>> = {
   magasin: {
-    fr: '15km en voiture',
-    en: '15km by car',
-    es: '15km en coche',
+    fr: "15km en voiture, colis d'1kg",
+    en: '15km by car, 1kg package',
+    es: '15km en coche, paquete de 1kg',
   },
   magasindouce: {
-    fr: 'à pied',
-    en: 'by foot',
-    es: 'a pie',
+    fr: "à pied, colis d'1kg",
+    en: 'by foot, 1kg package',
+    es: 'a pie, paquete de 1kg',
   },
   clickcollect: {
-    fr: '15km en voiture',
-    en: '15km by car',
-    es: '15km en coche',
+    fr: "15km en voiture, colis d'1kg",
+    en: '15km by car, 1kg package',
+    es: '15km en coche, paquete de 1kg',
   },
   clickcollectdouce: {
-    fr: 'à pied',
-    en: 'by foot',
-    es: 'a pie',
+    fr: "à pied, colis d'1kg",
+    en: 'by foot, 1kg package',
+    es: 'a pie, paquete de 1kg',
   },
   pointrelais: {
-    fr: '3,5km en voiture',
-    en: '3.5km by car',
-    es: '3,5km en coche',
+    fr: "3,5km en voiture, colis d'1kg",
+    en: '3.5km by car, 1kg package',
+    es: '3,5km en coche, paquete de 1kg',
   },
   pointrelaisdouce: {
-    fr: 'à pied',
-    en: 'by foot',
-    es: 'a pie',
+    fr: "à pied, colis d'1kg",
+    en: 'by foot, 1kg package',
+    es: 'a pie, paquete de 1kg',
+  },
+  livraisondomicile: {
+    fr: "colis d'1kg",
+    en: '1kg package',
+    es: 'paquete de 1kg',
   },
 }
 

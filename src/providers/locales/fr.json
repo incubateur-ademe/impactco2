@@ -319,7 +319,7 @@
     "fabrication": "Inclure l’impact de la fabrication de l’objet",
     "car": "J'y vais en voiture",
     "foot": "J'y vais à pied",
-    "etiquette": "Quel est <important>l'impact carbone</important> des différents modes d'achat ?",
+    "etiquette": "Quel est <important>l'impact carbone</important> des différents modes d'achat ? (colis d'1kg)",
     "magasin": "Achat en magasin",
     "livraisondomicile": "Livraison à domicile",
     "pointrelais": "Livraison en point de retrait",
@@ -457,7 +457,7 @@
         "tgv-paris-berlin": "Sont incluses les émissions directes, la construction des véhicules (fabrication, maintenance et fin de vie) et la production et distribution de carburant et d'électricité. La construction des infrastructures (routes, rails, aéroports...) n'est pas incluse.",
         "tgv-paris-marseille": "Sont incluses les émissions directes, la construction des véhicules (fabrication, maintenance et fin de vie) et la production et distribution de carburant et d'électricité. La construction des infrastructures (routes, rails, aéroports...) n'est pas incluse.",
         "voiture-lille-nimes": "Sont incluses les émissions directes, la construction des véhicules (fabrication, maintenance et fin de vie) et la production et distribution de carburant et d'électricité. La construction des infrastructures (routes, rails, aéroports...) n'est pas incluse.",
-        "francais": "Les français émettent en moyenne 9,3 tonnes de CO₂e par an (chiffre du Service des Données et Études Statistiques pour 2022, Ministère de la Transition Écologique). Cette moyenne varie beaucoup selon les modes de vie, l’utilisation ou non de la voiture, de l’avion, la vie en maison ou en appartement, le mode de chauffage, l’alimentation etc.",
+        "francais": "Les français émettent en moyenne 9,1 tonnes de CO₂e par an. Cette moyenne varie beaucoup selon les modes de vie, l’utilisation ou non de la voiture, les achats et consommation, l’habitation en maison ou en appartement, le mode de chauffage, l’alimentation etc.",
         "game-of-thrones": "Un épisode de Game of thrones dure en moyenne 1h. La donnée est calculé sur une heure de streaming en haute définition, sur une télévision, en connexion wifi.",
         "friends": "L’intégrale de Friends est composée de 236 épisodes d'environ 20min. La donnée est calculé sur une heure de streaming en haute définition, sur une télévision, en connexion wifi."
       }
