@@ -195,4 +195,206 @@ export const casPratiques = [
       },
     ],
   },
+  {
+    slug: 'voiturefrancaisejour',
+    category: 13,
+    total: 194520000,
+    sources: [
+      {
+        label: 'Citepa - Secten',
+        href: 'https://www.citepa.org/explorateur-de-donnees/',
+      },
+    ],
+  },
+  {
+    slug: 'voiturefrancaisean',
+    category: 13,
+    total: 36440000000,
+    sources: [
+      {
+        label: 'Citepa - Secten',
+        href: 'https://www.citepa.org/explorateur-de-donnees/',
+      },
+    ],
+  },
+  {
+    slug: 'populationfrancaise',
+    category: 13,
+    total: 624000000000,
+    sources: [
+      {
+        label: 'Nos Gest Climat',
+        href: 'https://nosgestesclimat.fr/blog/environnement/definition-empreinte-carbone#empreinte-carbone-individuelle-nationale-ou-dentreprise-quelles-differences/',
+      },
+    ],
+  },
+  {
+    slug: 'parcbovin',
+    category: 13,
+    total: 39600000000,
+    sources: [
+      {
+        label: 'Citepa - Secten',
+        href: 'https://www.citepa.org/explorateur-de-donnees/',
+      },
+    ],
+  },
+  {
+    slug: 'chauffageenfrance',
+    category: 13,
+    total: 36400000000,
+    sources: [
+      {
+        label: 'Batizoom',
+        href: 'https://batizoom.ademe.fr/indicateurs/emissions-de-ges-liees-a-lexploitation-des-batiments-residentiels-par-usage/',
+      },
+    ],
+  },
+  {
+    slug: 'numeriqueenfrance',
+    category: 13,
+    total: 29500000000,
+    sources: [
+      {
+        label: 'ADEME',
+        href: 'https://librairie.ademe.fr/societe-et-politiques-publiques/7880-evaluation-de-l-impact-environnemental-du-numerique-en-france.html',
+      },
+    ],
+  },
+  {
+    slug: 'aviationcivileenfrance',
+    category: 13,
+    total: 4400000000,
+    sources: [
+      {
+        label: 'Citepa - Secten',
+        href: 'https://www.citepa.org/explorateur-de-donnees/',
+      },
+    ],
+  },
+  {
+    slug: 'agricoleenfrancejour',
+    category: 13,
+    total: 217178000,
+    sources: [
+      {
+        label: 'Citepa - Secten',
+        href: 'https://www.citepa.org/explorateur-de-donnees/',
+      },
+    ],
+  },
+  {
+    slug: 'chauffageenfrancejour',
+    category: 13,
+    total: 119808000,
+    sources: [
+      {
+        label: 'Citepa - Secten',
+        href: 'https://www.citepa.org/explorateur-de-donnees/',
+      },
+    ],
+  },
+  {
+    slug: 'foretenfrancejour',
+    category: 13,
+    total: 56712000,
+    sources: [
+      {
+        label: 'Citepa - Secten',
+        href: 'https://www.citepa.org/explorateur-de-donnees/',
+      },
+    ],
+  },
+  {
+    slug: 'climatisationenfrancejour',
+    category: 13,
+    total: 3156000,
+    sources: [
+      {
+        label: 'Citepa - Secten',
+        href: 'https://www.citepa.org/explorateur-de-donnees/',
+      },
+    ],
+  },
+  {
+    slug: 'voiturefrancaiseheure',
+    category: 13,
+    total: 3156000,
+    sources: [
+      {
+        label: 'Citepa - Secten',
+        href: 'https://www.citepa.org/explorateur-de-donnees/',
+      },
+    ],
+  },
+  {
+    slug: 'numeriqueenfrancejour',
+    category: 13,
+    total: 7337000,
+    sources: [
+      {
+        label: 'ADEME',
+        href: 'https://librairie.ademe.fr/consommer-autrement/7883-avis-de-l-ademe-numerique-environnement-entre-opportunites-et-necessaire-sobriete.html/',
+      },
+    ],
+  },
+  {
+    slug: 'traitementdechetsjour',
+    category: 13,
+    total: 5178000,
+    sources: [
+      {
+        label: 'Citepa - Secten',
+        href: 'https://www.citepa.org/explorateur-de-donnees/',
+      },
+    ],
+  },
+  {
+    slug: 'trainenfrancejour',
+    category: 13,
+    total: 1178000,
+    sources: [
+      {
+        label: 'Citepa - Secten',
+        href: 'https://www.citepa.org/explorateur-de-donnees/',
+      },
+    ],
+  },
+  {
+    slug: 'datacenterjour',
+    category: 13,
+    total: 185000,
+    sources: [
+      {
+        label: 'ADEME',
+        href: 'https://operat.ademe.fr/public/home/',
+      },
+      {
+        label: 'The Conversation',
+        href: 'https://theconversation.page.link/V6Nj/',
+      },
+    ],
+  },
+  {
+    slug: 'avion-johannesburg-paris-rugby',
+    category: 13,
+    total: 56712000,
+    sources: [
+      {
+        label: 'Impact Transport',
+        href: 'https://impactco2.fr/outils/transport/',
+      },
+    ],
+  },
+  {
+    slug: 'maisonneuve',
+    category: 13,
+    total: 50000,
+    sources: [
+      {
+        label: 'ADEME',
+        href: 'https://www.citepa.org/explorateur-de-donnees/',
+      },
+    ],
+  },
 ]

@@ -339,3 +339,28 @@ Liste des équivalents à comparer parmis la liste suivante :
   - location : nuit dans une location saisonnière
   - residencesecondaire : nuit dans une résidence secondaire
   - 2050 : % de l'objectif citoyen pour 2050
+  - magasin : achat en magasin
+  - magasindouce : achat en magasin
+  - pointrelais : livraison en point de retrait
+  - pointrelaisdouce : livraison en point de retrait
+  - clickcollect : Click & Collect
+  - clickcollectdouce : Click & Collect
+  - livraisondomicile : livraison à domicile
+  - voiturefrancaisejour : jour de circulation des voitures particulières en France
+  - voiturefrancaisean : annés d’émissions des voitures particulières en France
+  - populationfrancaise : annés d’émissions de la population en France
+  - parcbovin : annés d’émissions du parc bovin en France
+  - chauffageenfrance : annés d’émissions du chauffage domestique en France
+  - numeriqueenfrance : annés d’émissions du numérique en France
+  - aviationcivileenfrance : annés d’émissions de l’aviation civile en France
+  - agricoleenfrancejour : jour d'activité agricole en France
+  - chauffageenfrancejour : jour d'utilisation du chauffage domestique en France
+  - foretenfrancejour : jour d’absorption de CO2e par les forêts et les prairies en France
+  - climatisationenfrancejour : jour d'utilisation des climatisations domestiques en France
+  - voiturefrancaiseheure : Heure[s] de circulation des voitures particulières en France
+  - numeriqueenfrancejour : jour d’utilisation des services numériques en France
+  - traitementdechetsjour : jour de traitement des déchets et eaux usées domestiques
+  - trainenfrancejour : jour de circulation des trains en France
+  - datacenterjour : jour de fonctionnement d’un campus de data center en France
+  - avion-johannesburg-paris-rugby : A/R Johannesburg-Paris d’une équipe de rugby
+  - maisonneuve : Construction d’une maison neuve
