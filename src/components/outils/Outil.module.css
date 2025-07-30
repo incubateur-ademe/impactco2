@@ -45,6 +45,10 @@
   }
 }
 
+.script {
+  margin-top: 3rem;
+}
+
 .link {
   border-top: 2px solid var(--neutral-20);
   padding-top: 2.25rem;

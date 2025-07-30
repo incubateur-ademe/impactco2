@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import React, { ReactNode, Suspense } from 'react'
+import { ReactNode, Suspense } from 'react'
 import TranslationProvider from 'src/providers/TranslationProvider'
 import Link from 'components/base/buttons/Link'
 import Breadcrumbs from 'components/breadcrumbs/Breadcrumbs'
@@ -31,14 +31,14 @@ const Outil = ({
               <Image src={tool.image || `/images/banner-${tool.slug}.png`} width={736} height={180} alt='' />
             </div>
             <div className={styles.content}>{tool.content}</div>
-            <div className={styles.link}>
-              {tool.toolLink && tool.toolLinkLabel && (
+            {tool.toolLink && tool.toolLinkLabel && (
+              <div className={styles.link}>
                 <Link asButton href={tool.toolLink}>
                   {tool.toolLinkLabel}
                 </Link>
-              )}
-              {tool.script}
-            </div>
+              </div>
+            )}
+            {tool.script && <div className={styles.script}>{tool.script}</div>}
           </Card>
         </Block>
         <Suspense>

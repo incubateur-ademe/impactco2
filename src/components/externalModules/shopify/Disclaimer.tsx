@@ -1,8 +1,7 @@
 'use client'
 
 import classNames from 'classnames'
-import React, { useEffect, useState } from 'react'
-import { SimpleEquivalent } from 'types/equivalent'
+import { useEffect, useState } from 'react'
 import { getName } from 'utils/Equivalent/equivalent'
 import formatNumber from 'utils/formatNumber'
 import CloseIcon from 'components/base/icons/close'
@@ -64,17 +63,17 @@ const Disclaimer = ({
   column?: boolean
 }) => {
   const [display, setDisplay] = useState(false)
-  const [factor, setFactor] = useState<number | undefined>(
+  const [factor, setFactor] = useState<number | null>(
     comparisons.length !== 1 || comparisons[0] === 'random'
-      ? undefined
-      : getValues(comparisons[0], value).equivalent.value
+      ? null
+      : getValues(comparisons[0], value)?.equivalent.value || null
   )
 
   useEffect(() => {
     setFactor(
       comparisons.length !== 1 || comparisons[0] === 'random'
-        ? undefined
-        : getValues(comparisons[0], value).equivalent.value
+        ? null
+        : getValues(comparisons[0], value)?.equivalent.value || null
     )
   }, [comparisons, value])
 

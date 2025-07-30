@@ -1774,7 +1774,7 @@
   },
   "voiturefrancaisejour": {
     "category": 13,
-    "value": 193699000,
+    "value": 193699000000,
     "fr": "Jour[s] de circulation des voitures particulières en France",
     "en": "Day[s] of circulation of private cars in France",
     "es": "Día[s] de circulación de coches particulares en Francia"

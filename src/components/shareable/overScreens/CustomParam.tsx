@@ -105,6 +105,22 @@ const configs: Record<
       { value: 'es', label: 'es' },
     ],
   },
+  languageNoEs: {
+    type: 'select',
+    options: [
+      { value: 'fr', label: 'fr' },
+      { value: 'en', label: 'en' },
+    ],
+  },
+  category: {
+    type: 'radio',
+    options: [
+      { value: 'all', label: 'all' },
+      { value: 'transport', label: 'transport' },
+      { value: 'voiture', label: 'voiture' },
+      { value: 'numerique', label: 'numerique' },
+    ],
+  },
 }
 
 export type CustomParamValue =

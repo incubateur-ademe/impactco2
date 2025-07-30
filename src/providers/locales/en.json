@@ -163,6 +163,11 @@
       "en": "English",
       "es": "Español"
     },
+    "languageNoEs": {
+      "label": "Language",
+      "fr": "Français",
+      "en": "English"
+    },
     "itineraire": {
       "label": "Customize route",
       "start": "From",
@@ -194,6 +199,13 @@
       "onglet-hint": "Select tab you want to see when on sharing",
       "onglets": "Tabs to integrate",
       "onglets-hint": "Select tabs you want to see in your iframe"
+    },
+    "category": {
+      "title": "Choose the theme of equivalents suggested by the Detector",
+      "all": "All",
+      "transport": "Transport",
+      "voiture": "Thermal car",
+      "numerique": "Digital"
     }
   },
   "modal": {
@@ -629,5 +641,30 @@
     "epiceriesalee": "Savory groceries",
     "epiceriesucree": "Sweet groceries",
     "select": "select all"
+  },
+  "detecteur": {
+    "description": "<important>The Carbon Detector provides a selection of equivalents adapted to the detected carbon quantity.</important> You can click on the quantities below to see the equivalents that the Detector automatically suggests, with the chosen parameters.",
+    "exemple": "<important>The tool detects many types of notations</important>, here are some examples:",
+    "regex": "→ An overview of recognized writings is available <link>at this address</link>.",
+    "integration": "Integrate the Detector",
+    "exemples": {
+      "1kg": "The quantity is less than 1 kg",
+      "50kg": "Between 1 and 50 kg",
+      "500kg": "Between 50 and 500 kg",
+      "10t": "Between 500 kg and 10 tons",
+      "100t": "Hundreds of tons",
+      "1000t": "Thousands of tons",
+      "10000t": "Tens of thousands of tons",
+      "100000t": "Hundreds of thousands of tons",
+      "mt": "Millions of tons",
+      "10mt": "Tens of millions of tons",
+      "100mt": "Hundreds of millions of tons",
+      "exemple-0": "100g of CO2 equivalent",
+      "exemple-1": "184.12 kilos CO2",
+      "exemple-2": "350 t CO2eq",
+      "exemple-3": "32 kgCO2eq",
+      "exemple-4": "8 giga tons co2e",
+      "exemple-5": "7 thousand kg CO₂"
+    }
   }
 }
