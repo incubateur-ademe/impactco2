@@ -1,4 +1,7 @@
 import axios from 'axios'
+import { config } from 'dotenv'
+
+config()
 
 export type Stats = {
   visits: number
@@ -50,7 +53,7 @@ export const getMatomoStats = async (begin: string, end: string) => {
       .filter((event) => event.label.startsWith('IFrame_'))
       .sort((a, b) => b.nb_visits - a.nb_visits)
       .map((event) => ({ label: event.label.replace('IFrame_', ''), visits: event.nb_visits }))
-      .filter(({ label }) => relais.includes(label))
+      .filter((event) => relais.includes(event.label))
   )
 }
 
