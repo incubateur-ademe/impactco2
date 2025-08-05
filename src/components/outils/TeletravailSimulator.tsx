@@ -60,7 +60,12 @@ const TeletravailSimulator = () => {
   }, [itineraries, deplacement, presentiel])
 
   useEffect(() => {
-    setEquivalents(getRandomEquivalentForValue(0.75 * homeOffice * total * 1000))
+    const newEquivalents = getRandomEquivalentForValue(0.75 * homeOffice * total * 1000)
+    if (newEquivalents.length > 0) {
+      setEquivalents(newEquivalents)
+    } else {
+      setEquivalents(getFullRandomEquivalents(0.75 * homeOffice * total))
+    }
   }, [total, homeOffice])
 
   return (
@@ -166,7 +171,7 @@ const TeletravailSimulator = () => {
               ref={ref}
               randomize={() => {
                 track('Télétravail', 'Randomize', 'randomize')
-                setEquivalents(getFullRandomEquivalents())
+                setEquivalents(getFullRandomEquivalents(0.75 * homeOffice * total))
               }}
               language={language}
             />

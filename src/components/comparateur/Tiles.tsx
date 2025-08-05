@@ -1,7 +1,7 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { track } from 'utils/matomo'
 import Button from 'components/base/buttons/Button'
@@ -15,7 +15,7 @@ const Tiles = () => {
   const t = useTranslations('comparateur')
   const {
     setOverscreen,
-    comparateur: { comparedEquivalent, equivalents, setEquivalents },
+    comparateur: { comparedEquivalent, equivalents, setEquivalents, baseValue, weight },
   } = useParamContext()
 
   const [generation, setGeneration] = useState<number | boolean>(false)
@@ -60,7 +60,7 @@ const Tiles = () => {
             track('Comparateur', 'Générer d’autres équivalents', 'generate_equivalent')
             setGeneration(0)
             setTimeout(() => {
-              setEquivalents(getRandomEquivalents(comparedEquivalent?.slug, equivalents.length))
+              setEquivalents(getRandomEquivalents(baseValue * weight, comparedEquivalent?.slug, equivalents.length))
               setTimeout(() => {
                 setGeneration(1)
                 if (firstRef.current) {

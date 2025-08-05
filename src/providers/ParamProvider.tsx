@@ -387,7 +387,11 @@ export function ParamProvider({ children }: { children: ReactNode }) {
           .filter((slug) => slug.includes('+') || computedEquivalents.find((equivalent) => equivalent.slug === slug))
       )
     } else {
-      setEquivalents(getRandomEquivalents(searchParams.get('equivalent') as string, 3))
+      const value = Number.parseFloat(searchParams.get('value') as string)
+
+      setEquivalents(
+        getRandomEquivalents(Number.isNaN(value) ? 100 : value, searchParams.get('equivalent') as string, 3)
+      )
     }
 
     if (searchParams.get('m2')) {
