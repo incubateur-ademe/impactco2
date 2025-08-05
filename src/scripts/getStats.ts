@@ -23,6 +23,7 @@ const internalPages = [
   'mobilier',
   'chauffage',
   'livraison',
+  'teletravail',
 ]
 
 export const getMatomoStats = async (date: string) => {
