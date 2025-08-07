@@ -1,7 +1,7 @@
 'use client'
 
-import { useSearchParams } from 'next/navigation'
-import React, { useEffect, useMemo, useState } from 'react'
+import { useRouter, useSearchParams } from 'next/navigation'
+import { useEffect, useMemo, useState } from 'react'
 import { Example } from 'types/example'
 import { track } from 'utils/matomo'
 import Card from 'components/cards/Card'
@@ -11,19 +11,16 @@ import ExamplesList from './ExamplesList'
 import styles from './AllExamples.module.css'
 
 const AllExamples = ({ examples, communications }: { examples: Example[]; communications: Example[] }) => {
-  const [activity, setActivity] = useState('all')
-  const [tool, setTool] = useState('all')
-
+  const router = useRouter()
   const searchParams = useSearchParams()
+  const [activity, setActivity] = useState(
+    searchParams.get('activity') ? decodeURI(searchParams.get('activity')!) : 'all'
+  )
+  const [tool, setTool] = useState(searchParams.get('tool') ? decodeURI(searchParams.get('tool')!) : 'all')
+
   useEffect(() => {
-    if (!searchParams) {
-      return
-    }
-    const tool = searchParams.get('tool')
-    if (tool) {
-      setTool(decodeURI(tool))
-    }
-  }, [searchParams])
+    router.replace(`/doc/exemples?activity=${activity}&tool=${tool}`)
+  }, [activity, tool])
 
   const filteredExamples = useMemo(
     () => examples.filter((example) => (tool === 'all' ? example : example.links.find((link) => link.label === tool))),
