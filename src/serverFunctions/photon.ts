@@ -2,9 +2,11 @@
 
 import axios from 'axios'
 
+const limit = 5000
+
 export const savePhotonTime = async ({ search, time }: { search: string; time: number }) => {
   const dbId = process.env.NOTION_API_DB_PHOTON
-  if (!dbId) {
+  if (!dbId || time < limit) {
     return false
   }
 
@@ -35,8 +37,7 @@ export const savePhotonTime = async ({ search, time }: { search: string; time: n
       }
     )
     return true
-  } catch (error) {
-    console.error(error)
+  } catch {
     return false
   }
 }
