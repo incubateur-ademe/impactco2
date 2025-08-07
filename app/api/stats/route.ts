@@ -18,11 +18,11 @@ export async function GET(req: NextRequest) {
 
   const stats: Stats[] = []
 
-  for (var i = 0; i < since; i++) {
+  for (let i = 0; i < since; i++) {
     if (today < minDate) {
       break
     }
-    let date = today.toISOString().split('T')[0]
+    const date = today.toISOString().split('T')[0]
     const [allVisits, allEventsByCategory] = await Promise.all([
       await axios
         .post<
