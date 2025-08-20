@@ -25,21 +25,10 @@
 }
 
 .link {
-  cursor: pointer;
-  padding: 0.75rem;
-  border: none;
-  background-color: transparent;
-  display: flex;
+  padding: 0.75rem !important;
+  display: flex !important;
+  border-radius: 0.5rem !important;
   gap: 0.5rem;
-  align-items: center;
-  text-decoration: none;
-  border-radius: 0.5rem;
-  font-weight: 500;
-  color: var(--neutral-70);
-
-  svg {
-    color: var(--primary-50);
-  }
 
   &:hover {
     background: var(--primary-10);
