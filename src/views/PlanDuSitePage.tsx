@@ -40,7 +40,7 @@ const PlanDuSitePage = () => {
             </Link>
           </li>
           <li>
-            <Link prefetch={false} href='/contenu/detecteur-co2'>
+            <Link prefetch={false} href='/outils/detecteur'>
               Le Détecteur CO₂
             </Link>
           </li>

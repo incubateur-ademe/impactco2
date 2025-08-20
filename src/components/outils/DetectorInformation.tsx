@@ -12,7 +12,7 @@ const DetectorInformation = () => {
         ligne et les rend plus parlantes grâce à des comparaisons concrètes choisies parmi plus de 250 objets ou gestes
         du quotidien.
       </p>
-      <p>Pour voir le Détecteur en action, vous pouvez cliquer sur : 100 kg CO2e</p>
+      <p className={styles.imageContainer}>Pour voir le Détecteur en action, vous pouvez cliquer sur : 100 kg CO2e</p>
       <p>
         <b>En fonction du poids identifié</b>, l’algorithme du Détecteur propose une sélection d’équivalents adaptés,
         permettant d’illustrer des quantités carbone aussi bien en grammes de CO2e qu’en millions de tonnes de CO2e.

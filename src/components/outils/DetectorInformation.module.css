@@ -19,3 +19,10 @@
   margin: auto;
   width: fit-content;
 }
+
+.imageContainer {
+  img {
+    border: none;
+    padding: 0;
+  }
+}
