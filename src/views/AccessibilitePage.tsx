@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import Link from 'next/link'
+import Link from 'components/base/buttons/Link'
 import styles from './Page.module.css'
 
 const AccessibilitePage = () => {
