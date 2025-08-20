@@ -112,21 +112,19 @@
 
 .card {
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  padding: 2.5rem;
+  display: flex !important;
+  padding: 2.5rem !important;
   gap: 0.5rem;
-  border: 2px solid var(--primary-30);
-  border-radius: 1rem;
-  background-color: var(--neutral-00);
-  color: var(--neutral-80);
-  font-size: 1.25rem;
-  font-weight: 700;
-  line-height: 1.75rem;
-  overflow: hidden;
+  border: 2px solid var(--primary-30) !important;
+  border-radius: 1rem !important;
+  background-color: var(--neutral-00) !important;
+  color: var(--neutral-80) !important;
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  line-height: 1.75rem !important;
   max-height: 100%;
   max-width: 50rem;
-  text-decoration: none;
+  text-decoration: none !important;
 
   img {
     margin-top: 5rem;
@@ -137,8 +135,8 @@
   }
 
   &:hover {
-    color: var(--neutral-80);
-    border-color: var(--primary-40);
+    color: var(--neutral-80) !important;
+    border-color: var(--primary-40) !important;
 
     .bannerLink {
       color: var(--primary-60);
