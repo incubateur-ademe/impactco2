@@ -1,6 +1,6 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import DetecteurPage from 'src/views/DetecteurPage'
+import Link from 'components/base/buttons/Link'
 import styles from './DetectorInformation.module.css'
 
 const DetectorInformation = () => {

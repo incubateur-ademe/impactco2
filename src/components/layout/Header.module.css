@@ -28,15 +28,16 @@
   padding: 0.75rem !important;
   display: flex !important;
   border-radius: 0.5rem !important;
+  text-decoration: none !important;
   gap: 0.5rem;
 
   &:hover {
-    background: var(--primary-10);
-    color: var(--primary-60);
+    background: var(--primary-10) !important;
+    color: var(--primary-60) !important;
   }
 
   &:focus {
-    color: var(--primary-70);
+    color: var(--primary-70) !important;
   }
 }
 
