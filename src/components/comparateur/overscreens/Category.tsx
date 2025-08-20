@@ -26,7 +26,7 @@ const Category = ({
   equivalents: string[]
 }) => {
   const {
-    comparateur: { comparedEquivalent, setEquivalents: setFinalEquivalents },
+    comparateur: { comparedEquivalent, setEquivalents: setFinalEquivalents, baseValue, weight },
   } = useParamContext()
 
   const [open, setOpen] = useState(false)
@@ -80,7 +80,7 @@ const Category = ({
               priority='outline'
               onClick={() => {
                 setFinalEquivalents(
-                  getRandomEquivalentsInCategory(comparedEquivalent?.slug, category.id).map(
+                  getRandomEquivalentsInCategory(baseValue * weight, comparedEquivalent?.slug, category.id).map(
                     (equivalent) => equivalent.slug
                   )
                 )
