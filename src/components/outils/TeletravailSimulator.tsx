@@ -5,11 +5,12 @@ import Image from 'next/image'
 import { useEffect, useMemo, useRef } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { Category } from 'types/category'
-import { ComputedEquivalent, DeplacementType } from 'types/equivalent'
+import { ComputedEquivalent, DeplacementEquivalent, DeplacementType } from 'types/equivalent'
 import { categories } from 'data/categories'
 import { deplacements } from 'data/categories/deplacement'
 import formatNumber from 'utils/formatNumber'
 import { track } from 'utils/matomo'
+import { filterByDistance } from 'utils/transport'
 import useItineraries from 'hooks/useItineraries'
 import LocalNumber from 'components/base/LocalNumber'
 import Etiquette from 'components/comparateur/Etiquette'
@@ -45,11 +46,19 @@ const TeletravailSimulator = () => {
   } = useParamContext()
 
   const t = useTranslations('transport.teletravail')
-  const deplacement = useMemo(
-    () => transports.find((x) => x.slug === transport) as ComputedEquivalent & { type: DeplacementType },
-    [transport]
-  )
   const { data: itineraries } = useItineraries(start, end, 'télétravail')
+  const deplacement = useMemo(() => {
+    if (transport === 'avion') {
+      const avions = transports.filter((x) => x.slug.startsWith('avion')) as DeplacementEquivalent[]
+      const distance = itineraries?.plane || 0
+      return (avions.find((avion) => filterByDistance(avion.display, distance)) || avions[0]) as ComputedEquivalent & {
+        type: DeplacementType
+      }
+    } else {
+      return transports.find((x) => x.slug === transport) as ComputedEquivalent & { type: DeplacementType }
+    }
+  }, [transport, itineraries])
+
   const total = useMemo(() => {
     if (itineraries && deplacement) {
       const distance = itineraries[deplacement.type]
@@ -60,7 +69,12 @@ const TeletravailSimulator = () => {
   }, [itineraries, deplacement, presentiel])
 
   useEffect(() => {
-    setEquivalents(getRandomEquivalentForValue(0.75 * homeOffice * total * 1000))
+    const newEquivalents = getRandomEquivalentForValue(0.75 * homeOffice * total * 1000)
+    if (newEquivalents.length > 0) {
+      setEquivalents(newEquivalents)
+    } else {
+      setEquivalents(getFullRandomEquivalents(0.75 * homeOffice * total))
+    }
   }, [total, homeOffice])
 
   return (
@@ -151,7 +165,7 @@ const TeletravailSimulator = () => {
               <span className={styles.header}>{t('or')}</span>
               <span className={styles.greenValue}>
                 <span className={styles.number} data-testid='teletravail-saved-percent'>
-                  <LocalNumber number={formatNumber((0.75 * homeOffice * total) / 99)} />
+                  <LocalNumber number={formatNumber((0.75 * homeOffice * total) / 91)} />
                 </span>{' '}
                 %
               </span>
@@ -166,7 +180,7 @@ const TeletravailSimulator = () => {
               ref={ref}
               randomize={() => {
                 track('Télétravail', 'Randomize', 'randomize')
-                setEquivalents(getFullRandomEquivalents())
+                setEquivalents(getFullRandomEquivalents(0.75 * homeOffice * total))
               }}
               language={language}
             />

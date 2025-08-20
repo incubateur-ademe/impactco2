@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const LocalNumber = ({ number }: { number: number }) => {
   const [value, setValue] = useState(number.toLocaleString('fr-FR'))

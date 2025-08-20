@@ -38,7 +38,7 @@ const CO2Quantity = ({
         <LocalNumber number={value} />
       </span>{' '}
       <span className={styles[`${unit}Unit${secondary ? 'Secondary' : ''}`]}>
-        {getUnit(value, unit, language)} CO₂e
+        {getUnit(value, unit, language)} CO₂e
       </span>
     </p>
   )

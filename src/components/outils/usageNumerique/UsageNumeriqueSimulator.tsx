@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl'
 import { useSearchParams } from 'next/navigation'
-import React, { useEffect, useMemo, useRef } from 'react'
+import { useEffect, useMemo, useRef } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import useUsageNumeriqueContext from 'src/providers/UsageNumeriqueProvider'
 import { Category } from 'types/category'
@@ -118,7 +118,12 @@ const UsageNumeriqueSimulator = () => {
   )
 
   useEffect(() => {
-    setEquivalents(getRandomEquivalentForValue(total * 52))
+    const newEquivalents = getRandomEquivalentForValue(total * 52)
+    if (newEquivalents.length > 0) {
+      setEquivalents(newEquivalents)
+    } else {
+      setEquivalents(getFullRandomEquivalents((total * 52) / 1000))
+    }
   }, [total])
 
   return (
@@ -160,7 +165,7 @@ const UsageNumeriqueSimulator = () => {
               ref={ref}
               randomize={() => {
                 track('Usage numérique', 'Randomize', 'randomize')
-                setEquivalents(getFullRandomEquivalents())
+                setEquivalents(getFullRandomEquivalents((total * 52) / 1000))
               }}
               language={language}
             />

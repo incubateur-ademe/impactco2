@@ -1771,5 +1771,131 @@
     "fr": "Micro-ondes",
     "en": "Microwave[s]",
     "es": "Microondas"
+  },
+  "voiturefrancaisejour": {
+    "category": 13,
+    "value": 193699000000,
+    "fr": "Jour[s] de circulation des voitures particulières en France",
+    "en": "Day[s] of circulation of private cars in France",
+    "es": "Día[s] de circulación de coches particulares en Francia"
+  },
+  "voiturefrancaisean": {
+    "category": 13,
+    "value": 70700135000000,
+    "fr": "Année[s] d’émissions des voitures particulières en France",
+    "en": "Year[s] of emissions of private cars in France",
+    "es": "Año[s] de emisiones de coches particulares en Francia"
+  },
+  "populationfrancaise": {
+    "category": 13,
+    "value": 624000000000000,
+    "fr": "Année[s] d’émissions de la population en France",
+    "en": "Year[s] of emissions of the population in France",
+    "es": "Año[s] de emisiones de la población en Francia"
+  },
+  "parcbovin": {
+    "category": 13,
+    "value": 38032000000000,
+    "fr": "Année[s] d’émissions du parc bovin en France",
+    "en": "Year[s] of emissions of the cattle herd in France",
+    "es": "Año[s] de emisiones del ganado vacuno en Francia"
+  },
+  "chauffageenfrance": {
+    "category": 13,
+    "value": 43320025000000,
+    "fr": "Année[s]  d’émissions du chauffage domestique en France",
+    "en": "Year[s] of emissions of domestic heating in France",
+    "es": "Año[s] de emisiones de calefacción doméstica en Francia"
+  },
+  "numeriqueenfrance": {
+    "category": 13,
+    "value": 29500000000000,
+    "fr": "Année[s] d’émissions du numérique en France",
+    "en": "Year[s] of emissions of digital technology in France",
+    "es": "Año[s] de emisiones digitales en Francia"
+  },
+  "aviationcivileenfrance": {
+    "category": 13,
+    "value": 4380000000000,
+    "fr": "Année[s] d’émissions de l’aviation civile en France",
+    "en": "Year[s] of emissions of civil aviation in France",
+    "es": "Año[s] de emisiones de aviación civil en Francia"
+  },
+  "agricoleenfrancejour": {
+    "category": 13,
+    "value": 216439000000,
+    "fr": "Jour[s] d'activité agricole en France",
+    "en": "Day[s] of agricultural activity in France",
+    "es": "Día[s] de actividad agrícola en Francia"
+  },
+  "chauffageenfrancejour": {
+    "category": 13,
+    "value": 118685000000,
+    "fr": "Jour[s] d'utilisation du chauffage domestique en France",
+    "en": "Day[s] of domestic heating use in France",
+    "es": "Día[s] de uso de calefacción doméstica en Francia"
+  },
+  "foretenfrancejour": {
+    "category": 13,
+    "value": 151636000000,
+    "fr": "Jour[s] d’absorption de CO2e par les forêts et les prairies en France",
+    "en": "Day[s] of CO2e absorption by forests and grasslands in France",
+    "es": "Día[s] de absorción de CO2e por bosques y praderas en Francia"
+  },
+  "climatisationenfrancejour": {
+    "category": 13,
+    "value": 3277000000,
+    "fr": "Jour[s] d'utilisation des climatisations domestiques en France",
+    "en": "Day[s] of domestic air conditioning use in France",
+    "es": "Día[s] de uso de aire acondicionado doméstico en Francia"
+  },
+  "voiturefrancaiseheure": {
+    "category": 13,
+    "value": 8071000000,
+    "fr": "Heure[s] de circulation des voitures particulières en France",
+    "en": "Hour[s] of circulation of private cars in France",
+    "es": "Hora[s] de circulación de coches particulares en Francia"
+  },
+  "numeriqueenfrancejour": {
+    "category": 13,
+    "value": 7337000000,
+    "fr": "Jour[s] d’utilisation des services numériques en France",
+    "en": "Day[s] of use of digital services in France",
+    "es": "Día[s] de uso de servicios digitales en Francia"
+  },
+  "traitementdechetsjour": {
+    "category": 13,
+    "value": 5178000000,
+    "fr": "Jour[s] de traitement des déchets et eaux usées domestiques",
+    "en": "Day[s] of treatment of domestic waste and wastewater",
+    "es": "Día[s] de tratamiento de residuos y aguas residuales domésticas"
+  },
+  "trainenfrancejour": {
+    "category": 13,
+    "value": 1178000000,
+    "fr": "Jour[s] de circulation des trains en France",
+    "en": "Day[s] of train circulation in France",
+    "es": "Día[s] de circulación de trenes en Francia"
+  },
+  "datacenterjour": {
+    "category": 13,
+    "value": 185000000,
+    "fr": "Jour[s] de fonctionnement d’un campus de data center en France",
+    "en": "Day[s] of operation of a data center campus in France",
+    "es": "Día[s] de funcionamiento de un campus de centro de datos en Francia"
+  },
+  "avion-johannesburg-paris-rugby": {
+    "category": 13,
+    "value": 119430000,
+    "fr": "A/R Johannesburg-Paris d’une équipe de rugby",
+    "en": "Roundtrip[s] Johannesburg-Paris of a rugby team",
+    "es": "Ida y vuelta Johannesburgo-París de un equipo de rugby"
+  },
+  "maisonneuve": {
+    "category": 13,
+    "value": 50000000,
+    "fr": "Maison[s] neuve[s]",
+    "en": "New[s] house[s]",
+    "es": "Casa[s] nueva[s]"
   }
 }

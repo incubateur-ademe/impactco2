@@ -143,6 +143,11 @@
       "en": "English",
       "es": "Español"
     },
+    "languageNoEs": {
+      "label": "Langue",
+      "fr": "Français",
+      "en": "English"
+    },
     "theme": {
       "label": "Mode d'affichage",
       "clair": "Clair",
@@ -194,6 +199,13 @@
       "octobre": "Octobre",
       "novembre": "Novembre",
       "décembre": "Décembre"
+    },
+    "category": {
+      "title": "Choisir la thématique des équivalents proposés par le Détecteur",
+      "all": "Toutes",
+      "transport": "Transport",
+      "voiture": "Voiture thermique",
+      "numerique": "Numérique"
     }
   },
   "modal": {
@@ -423,16 +435,16 @@
         "box": "Utilisation personnelle et professionnelle ; xDSL, FTTx.",
         "spam": "Non lu.",
         "stockagedonnee": "Pendant 1 an.",
-        "boeuf": "Moyenne des facteurs d’émission de la côte de boeuf, l’entrecôte, la langue de boeuf, la bavette, l’épaule de boeuf, la joue de boeuf",
-        "veau": "Moyenne des facteurs d’émission de la côte de veau, épaule de veau, escalope de veau, noix de veau, poitrine de veau et ris de veau",
-        "porc": "Moyenne des facteurs d’émission de la côte de porc, échine de porc, poitrine de porc, épaule de porc",
-        "dorade": "Moyenne des facteurs d’émission de la dorade royale d’élevage et la dorade royale sauvage",
-        "beurre": "Moyenne des facteurs d’émission du beurre doux et beurre salé",
+        "boeuf": "Moyenne des facteurs d’émission de la côte de boeuf, l’entrecôte, la langue de boeuf, la bavette, l’épaule de boeuf, la joue de boeuf.",
+        "veau": "Moyenne des facteurs d’émission de la côte de veau, épaule de veau, escalope de veau, noix de veau, poitrine de veau et ris de veau.",
+        "porc": "Moyenne des facteurs d’émission de la côte de porc, échine de porc, poitrine de porc, épaule de porc.",
+        "dorade": "Moyenne des facteurs d’émission de la dorade royale d’élevage et la dorade royale sauvage.",
+        "beurre": "Moyenne des facteurs d’émission du beurre doux et beurre salé.",
         "fromagedure": "Moyenne des facteurs d’émission des différents fromages à pâte dure : Emmental, gruyère, comté, gouda etc.",
         "fromagemolle": "Moyenne des facteurs d’émission de différents fromages à pâte molle : Camembert, brie, maroilles, mont-d’or etc.",
         "fromagebleu": "Moyenne des facteurs d’émission des différents fromages à pâte persillées : Roquefort, bleu d’Auvergne, gorgonzola etc.",
-        "riz": "Moyenne des facteurs d’émission des différents riz : Riz blanc, complet, rouge; sauvage",
-        "ble": "Moyenne des facteurs d’émission des différents blés : Blé dur entier, blé précuit, semoule de blé, blé tendre",
+        "riz": "Moyenne des facteurs d’émission des différents riz : Riz blanc, complet, rouge; sauvage.",
+        "ble": "Moyenne des facteurs d’émission des différents blés : Blé dur entier, blé précuit, semoule de blé, blé tendre.",
         "hotel": "Sont inclus les émissions liées à la consommation d’énergie (chauffage, électricité, climatisation, eau chaude), aux services d’entretien (nettoyage, blanchisserie), aux infrastructures (construction, maintenance), au déplacement domicile-travail du personnel.",
         "camping": "Sont inclus la construction et la consommation énergétique des infrastructures (les douches, sanitaires et l’éclairage).",
         "location": "Sont inclus les émissions liées à la consommation énergétique (chauffage, électricité, eau chaude), aux infrastructures (construction) et au services d’entretien.",
@@ -444,7 +456,25 @@
         "pointrelaisdouce": "Pour un colis d'un kilo et un déplacement à pied.",
         "clickcollect": "Pour un colis d'un kilo et un déplacement en voiture.",
         "clickcollectdouce": "Pour un colis d'un kilo et un déplacement à pied.",
-        "livraisondomicile": "Pour un colis d'un kilo."
+        "livraisondomicile": "Pour un colis d'un kilo.",
+        "voiturefrancaisejour": "Moyenne des émissions annuelles des voitures particulières thermiques de 2013 à 2024 (70,7 Mt CO2 e) rapportée à la journée.",
+        "voiturefrancaisean": "Moyenne des émissions annuelles des voitures particulières thermiques de 2013 à 2024.",
+        "populationfrancaise": "Estimation des gaz à effet de serre associés au mode de vie moyen de la population française, dont l’empreinte carbone est estimée à 9,1 T CO2 e. La population française est estimée à 68 606 000 habitants en 2025.",
+        "parcbovin": "Émissions inventoriées en 2024.",
+        "chauffageenfrance": "Moyenne des émissions annuelles liées au chauffage, eau chaude sanitaire et cuisson de 2013 à 2024 (43,32  Mt CO2 e).",
+        "numeriqueenfrance": "Émissions en 2022 liées à la fabrication, à la distribution, à l’utilisation et à la fin de vie des appareils.",
+        "aviationcivileenfrance": "Moyenne des émissions annuelles de 2013 à 2024 sur les vols intérieurs et vols internationaux au départ de France",
+        "agricoleenfrancejour": "Moyenne des émissions annuelles de l’agriculture de 2013 à 2024 (79 MT CO2e) rapportée à 1 jour. N’entrent pas le périmètre l’utilisation des terres, le changement d'affectation des terres et la foresterie.",
+        "chauffageenfrancejour": "Moyenne des émissions annuelles liées au chauffage, eau chaude sanitaire et cuisson de 2013 à 2024 (43,32  Mt CO2 e), rapporté à 1 jour",
+        "foretenfrancejour": "Absorption inventoriée en 2024 (51,1 MT CO2e), rapporté à 1 jour.",
+        "climatisationenfrancejour": "Émissions inventoriées en 2024 (1,196 MT CO2e), rapporté à 1 jour.",
+        "voiturefrancaiseheure": "Moyenne des émissions annuelles des voitures particulières thermiques de 2013 à 2024 (70,7 Mt CO2 e) rapportée à l’heure.",
+        "numeriqueenfrancejour": "La consommation électrique liée aux services numériques est de 51,5 TWh/an en 2022 reportée à la journée, puis calculée avec le mix électrique 2022. La consommation des data center à l’étranger, et la fabrication des appareils ne sont pas prises en compte.",
+        "traitementdechetsjour": "Moyenne des émissions annuelles liées au déchet et brûlage domestique et aux eaux usées de 2013 à 2024 (1,89 Mt CO2 e), rapporté à 1 jour",
+        "trainenfrancejour": "Moyenne des émissions annuelles trains de 2013 à 2024 pour transporter des personnes et des marchandises (0.43 MT CO2e) rapportée à 1 jour",
+        "datacenterjour": "Campus PAR1 à Nozar qui regroupe 23 centres de données, s’étend sur 110 hectares et est doté d’une puissance de 250 MW. Consommation électrique de 1,3TWh/an rapporté au mix électrique 2024.",
+        "avion-johannesburg-paris-rugby": "Pour la coupe du monde de 2023, déplacement par avion long courrier, d’une distance en vol d’oiseau de 8731 km avec une délégation de 45 personnes (33 joueurs et 12 membres du staff).",
+        "maisonneuve": "Construction d’une maison neuve conventionnelle de 130 m² habitable - cas des logement à Saint-Pierre et Miquelon."
       },
       "post": {
         "ski": "Inclus : l’impact carbone du transport (52%), du logement (4%), de l’alimentation (8%), du domaine skiable (3%), des infrastructures, équipements et services du domaine (17%), et de l’équipement (16%).",
@@ -611,5 +641,30 @@
     "epiceriesalee": "Épicerie salée",
     "epiceriesucree": "Épicerie sucrée",
     "select": "tout sélectionner"
+  },
+  "detecteur": {
+    "description": "<important>Le Détecteur carbone propose une sélection d’équivalents adaptés à la quantité carbone détectée.</important> Vous pouvez cliquer sur les quantités ci-dessous pour voir les équivalents que propose automatiquement le Détecteur, avec les paramètres choisis.",
+    "exemple": "<important>L’outil détecte de nombreux types de notations</important>, dont voici quelques exemples :",
+    "regex": "→ Un aperçu des écritures reconnues est disponible <link>à cette adresse</link>.",
+    "integration": "Intégrer le Détecteur",
+    "exemples": {
+      "1kg": "La quantité est inférieure à 1 kg",
+      "50kg": "Entre 1 et 50 kg",
+      "500kg": "Entre 50 et 500 kg",
+      "10t": "Entre 500 kg et 10 tonnes",
+      "100t": "Centaines de tonnes",
+      "1000t": "Milliers de tonnes",
+      "10000t": "Dizaines de milliers de tonnes",
+      "100000t": "Centaines de milliers de tonnes",
+      "mt": "Millions de tonnes",
+      "10mt": "Dizaines de millions de tonnes",
+      "100mt": "Centaines de millions de tonnes",
+      "exemple-0": "100g d'équivalent CO2",
+      "exemple-1": "184,12 kilos CO2",
+      "exemple-2": "350 t éqCO2",
+      "exemple-3": "32 kgCO2eq",
+      "exemple-4": "8 giga tonnes co2e",
+      "exemple-5": "7 mille kg CO₂"
+    }
   }
 }

@@ -49,7 +49,7 @@ const LivraisonEtiquetteIntegrate = ({ animated }: { animated?: boolean }) => {
       <ClipboardBox
         form='livraison-integrate'
         tracking='Livraison'>{`<script name="impact-co2" src="${process.env.NEXT_PUBLIC_URL}/iframe.js" data-type="/livraison/etiquette${animated ? '-animee' : ''} data-search="?${search}"></script>`}</ClipboardBox>
-      <IntegratePreview path={`/livraison/etiquette${animated ? '-animee' : ''}`} urlParams={search} />
+      <IntegratePreview path={`livraison/etiquette${animated ? '-animee' : ''}`} urlParams={search} />
     </>
   )
 }

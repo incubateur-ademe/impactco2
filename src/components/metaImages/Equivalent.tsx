@@ -84,7 +84,7 @@ const Equivalent = ({
                   padding: '0 0.75rem',
                   ...color,
                 }}>
-                {getUnit(value, quantityUnit, language)} CO₂e
+                {getUnit(value, quantityUnit, language)} CO₂e
               </span>
             </div>
           </div>

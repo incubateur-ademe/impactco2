@@ -163,6 +163,11 @@
       "en": "English",
       "es": "Español"
     },
+    "languageNoEs": {
+      "label": "Language",
+      "fr": "Français",
+      "en": "English"
+    },
     "itineraire": {
       "label": "Customize route",
       "start": "From",
@@ -194,6 +199,13 @@
       "onglet-hint": "Select tab you want to see when on sharing",
       "onglets": "Tabs to integrate",
       "onglets-hint": "Select tabs you want to see in your iframe"
+    },
+    "category": {
+      "title": "Choose the theme of equivalents suggested by the Detector",
+      "all": "All",
+      "transport": "Transport",
+      "voiture": "Thermal car",
+      "numerique": "Digital"
     }
   },
   "modal": {
@@ -423,28 +435,46 @@
         "box": "Personal and professional usage; xDSL, FTTx.",
         "spam": "Unread.",
         "stockagedonnee": "For 1 year.",
-        "boeuf": "Average of emission factors for rib steak, entrecôte, beef tongue, flank steak, beef shoulder, beef cheek",
-        "veau": "Average of emission factors for veal rib, veal shoulder, veal escalope, veal nut, veal breast, and veal sweetbread",
-        "porc": "Average of emission factors for pork chop, pork shoulder, pork belly, pork loin",
-        "dorade": "Average of emission factors for farmed gilthead seabream and wild gilthead seabream",
-        "beurre": "Average of emission factors for unsalted butter and salted butter",
+        "boeuf": "Average of emission factors for rib steak, entrecôte, beef tongue, flank steak, beef shoulder, beef cheek.",
+        "veau": "Average of emission factors for veal rib, veal shoulder, veal escalope, veal nut, veal breast, and veal sweetbread.",
+        "porc": "Average of emission factors for pork chop, pork shoulder, pork belly, pork loin.",
+        "dorade": "Average of emission factors for farmed gilthead seabream and wild gilthead seabream.",
+        "beurre": "Average of emission factors for unsalted butter and salted butter.",
         "fromagedure": "Average of emission factors for various hard cheeses: Emmental, Gruyère, Comté, Gouda, etc.",
         "fromagemolle": "Average of emission factors for various soft cheeses: Camembert, Brie, Maroilles, Mont-d'Or, etc.",
         "fromagebleu": "Average of emission factors for various blue cheeses: Roquefort, Bleu d'Auvergne, Gorgonzola, etc.",
-        "riz": "Average of emission factors for various rice types: white rice, brown rice, red rice, wild rice",
-        "ble": "Average of emission factors for various wheat types: whole durum wheat, precooked wheat, wheat semolina, soft wheat",
+        "riz": "Average of emission factors for various rice types: white rice, brown rice, red rice, wild rice.",
+        "ble": "Average of emission factors for various wheat types: whole durum wheat, precooked wheat, wheat semolina, soft wheat.",
         "hotel": "Includes emissions related to energy consumption (heating, electricity, air conditioning, hot water), maintenance services (cleaning, laundry), infrastructure (construction, maintenance), and commuting of staff.",
         "camping": "Includes the construction and energy consumption of infrastructure (showers, sanitary facilities, and lighting).",
         "location": "Includes emissions related to energy consumption (heating, electricity, hot water), infrastructure (construction), and maintenance services.",
         "residencesecondaire": "Includes emissions related to energy consumption (heating, electricity, hot water), infrastructure (construction), and maintenance services.",
         "2050": "The average French person emits nearly 9.3 tonnes of CO2 per year. To limit climate change, it is essential to reduce these emissions and achieve a maximum target of 2 tonnes of CO2e per person per year by 2050.",
-        "magasin": "For a 1 kg package, car travel",
-        "magasindouce": "For a 1 kg package, walking",
-        "pointrelais": "For a 1 kg package, car travel",
-        "pointrelaisdouce": "For a 1 kg package, walking",
-        "clickcollect": "For a 1 kg package, car travel",
-        "clickcollectdouce": "For a 1 kg package, walking",
-        "livraisondomicile": "For a 1 kg package."
+        "magasin": "For a 1 kg package, car travel.",
+        "magasindouce": "For a 1 kg package, walking.",
+        "pointrelais": "For a 1 kg package, car travel.",
+        "pointrelaisdouce": "For a 1 kg package, walking.",
+        "clickcollect": "For a 1 kg package, car travel.",
+        "clickcollectdouce": "For a 1 kg package, walking.",
+        "livraisondomicile": "For a 1 kg package.",
+        "voiturefrancaisejour": "Average annual emissions of private thermal cars from 2013 to 2024 (70.7 Mt CO2 e) reported per day.",
+        "voiturefrancaisean": "Average emissions of private cars in circulation from 2013 to 2024.",
+        "populationfrancaise": "Estimation of greenhouse gases associated with the average lifestyle of the French population, whose carbon footprint is estimated at 9.1 T CO2 e. The French population is estimated at 68,606,000 inhabitants in 2025.",
+        "parcbovin": "Programs inventoried in 2024.",
+        "chauffageenfrance": "Average annual emissions linked to heating, domestic hot water and cooking from 2013 to 2024 (43.32 Mt CO2 e).",
+        "numeriqueenfrance": "Establishments in 2022 linked to the manufacture, distribution, use and end of life of devices.",
+        "aviationcivileenfrance": "Average annual emissions from 2013 to 2024 on domestic flights and international flights departing from France.",
+        "agricoleenfrancejour": "Average annual emissions from agriculture from 2013 to 2024 (79 MT CO2e) reported on a 1-day basis. Land use, land-use change and forestry are not included in the scope.",
+        "chauffageenfrancejour": "Average annual emissions related to heating, domestic hot water and cooking from 2013 to 2024 (43.73 Mt CO2 e), reported per day.",
+        "foretenfrancejour": "Absorption inventoried in 2024 (51.1 Mt CO2E), reported to 1 day.",
+        "climatisationenfrancejour": "Programs invenided in 2024 (1,196 Mt CO2E), reported to 1 day.",
+        "voiturefrancaiseheure": "Average annual emissions of private thermal cars from 2013 to 2024 (70.7 Mt CO2 e) reported per hour.",
+        "numeriqueenfrancejour": "Electric consumption linked to digital services is 51.5 TWh/year in 2022 postponed by the day, then calculated with the 2022 electric mix. The consumption of data center abroad, and the manufacture of devices are not taken into account.",
+        "traitementdechetsjour": "Average annual emissions related to waste and domestic burning and wastewater from 2013 to 2024 (1.89 Mt CO2 e), reported per day.",
+        "trainenfrancejour": "Average annual train emissions from 2013 to 2024 for transporting people and goods (0.43 MT CO2e) reported per day",
+        "datacenterjour": "PAR1 campus in Nozar which includes 23 data centers, spans 110 hectares and has a power capacity of 250 MW. Electricity consumption of 1.3TWh/year reported to the 2024 electricity mix.",
+        "avion-johannesburg-paris-rugby": "For the 2023 World Cup, long-haul flight travel, with an as-the-crow-flies distance of 8,731 km with a delegation of 45 people (33 players and 12 staff members).",
+        "maisonneuve": "Construction of a new conventional house of 130 m² living space - case of housing in Saint-Pierre and Miquelon."
       },
       "post": {
         "ski": "Includes: the carbon impact of transportation (52%), accommodation (4%), food (8%), ski area (3%), infrastructure, equipment, and services (17%), and gear (16%).",
@@ -611,5 +641,30 @@
     "epiceriesalee": "Savory groceries",
     "epiceriesucree": "Sweet groceries",
     "select": "select all"
+  },
+  "detecteur": {
+    "description": "<important>The Carbon Detector provides a selection of equivalents adapted to the detected carbon quantity.</important> You can click on the quantities below to see the equivalents that the Detector automatically suggests, with the chosen parameters.",
+    "exemple": "<important>The tool detects many types of notations</important>, here are some examples:",
+    "regex": "→ An overview of recognized writings is available <link>at this address</link>.",
+    "integration": "Integrate the Detector",
+    "exemples": {
+      "1kg": "The quantity is less than 1 kg",
+      "50kg": "Between 1 and 50 kg",
+      "500kg": "Between 50 and 500 kg",
+      "10t": "Between 500 kg and 10 tons",
+      "100t": "Hundreds of tons",
+      "1000t": "Thousands of tons",
+      "10000t": "Tens of thousands of tons",
+      "100000t": "Hundreds of thousands of tons",
+      "mt": "Millions of tons",
+      "10mt": "Tens of millions of tons",
+      "100mt": "Hundreds of millions of tons",
+      "exemple-0": "100g of CO2 equivalent",
+      "exemple-1": "184.12 kilos CO2",
+      "exemple-2": "350 t CO2eq",
+      "exemple-3": "32 kgCO2eq",
+      "exemple-4": "8 giga tons co2e",
+      "exemple-5": "7 thousand kg CO₂"
+    }
   }
 }

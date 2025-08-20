@@ -2,7 +2,7 @@
 
 import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import formatName from 'utils/formatName'
 import formatNumber from 'utils/formatNumber'
@@ -31,8 +31,11 @@ const OsezChangerSimulator = () => {
   const total = (newValue || 0) * shoesImpact
 
   useEffect(() => {
-    if (newValue) {
-      setEquivalents(getRandomEquivalentForValue((newValue || 0) * shoesImpact * 1000))
+    const newEquivalents = getRandomEquivalentForValue((newValue || 0) * shoesImpact * 1000)
+    if (newEquivalents.length > 0) {
+      setEquivalents(newEquivalents)
+    } else {
+      setEquivalents(getFullRandomEquivalents((newValue || 0) * shoesImpact))
     }
   }, [newValue])
 
@@ -86,7 +89,7 @@ const OsezChangerSimulator = () => {
               ref={ref}
               randomize={() => {
                 track('OsezChanger', 'Randomize', 'randomize')
-                setEquivalents(getFullRandomEquivalents())
+                setEquivalents(getFullRandomEquivalents(total))
               }}
               language={language}
             />
