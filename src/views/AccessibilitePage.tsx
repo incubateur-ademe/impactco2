@@ -97,46 +97,70 @@ const AccessibilitePage = () => {
       <h3>Pages du site ayant fait l’objet de la vérification de conformité</h3>
       <ul>
         <li>
-          <Link href='/'> Accueil</Link>
+          <Link prefetch={false} href='/'>
+            {' '}
+            Accueil
+          </Link>
         </li>
         <li>
-          <Link href='/rendez-vous'>Contact</Link>
+          <Link prefetch={false} href='/rendez-vous'>
+            Contact
+          </Link>
         </li>
         <li>
-          <Link href='/mentions-legales'>Mentions légales</Link>
+          <Link prefetch={false} href='/mentions-legales'>
+            Mentions légales
+          </Link>
         </li>
         <li>
-          <Link href='/accessibilite'>Accessibilité</Link>
+          <Link prefetch={false} href='/accessibilite'>
+            Accessibilité
+          </Link>
         </li>
         <li>
-          <Link href='/plan-du-site'>Plan du site</Link>
+          <Link prefetch={false} href='/plan-du-site'>
+            Plan du site
+          </Link>
         </li>
         <li>
-          <Link href='/doc/questions-frequentes'>Aide</Link>
+          <Link prefetch={false} href='/doc/questions-frequentes'>
+            Aide
+          </Link>
         </li>
         <li>
-          <Link href='/outils/comparateur'>Comparateur carbone</Link>
+          <Link prefetch={false} href='/outils/comparateur'>
+            Comparateur carbone
+          </Link>
         </li>
         <li>
-          <Link href='/outils/transport'>Transport</Link>
+          <Link prefetch={false} href='/outils/transport'>
+            Transport
+          </Link>
         </li>
         <li>
-          <Link href='/outils/livraison'>Livraison</Link>
+          <Link prefetch={false} href='/outils/livraison'>
+            Livraison
+          </Link>
         </li>
         <li>
-          <Link href='/outils/usagenumerique/visioconference'>Visioconférence</Link>
+          <Link prefetch={false} href='/outils/usagenumerique/visioconference'>
+            Visioconférence
+          </Link>
         </li>
         <li>
-          <Link href='/doc/exemples'>Exemples d’utilisation</Link>
+          <Link prefetch={false} href='/doc/exemples'>
+            Exemples d’utilisation
+          </Link>
         </li>
         <li>
-          <Link href='/contenu/detecteur-co2'>Le Détecteur CO₂</Link>
+          <Link prefetch={false} href='/budget'>
+            Budget
+          </Link>
         </li>
         <li>
-          <Link href='/budget'>Budget</Link>
-        </li>
-        <li>
-          <Link href='/doc/usage-numerique/acv'>ACV</Link>
+          <Link prefetch={false} href='/doc/usage-numerique/acv'>
+            ACV
+          </Link>
         </li>
       </ul>
       <h2>Retour d’information et contact</h2>
