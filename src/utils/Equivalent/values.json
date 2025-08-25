@@ -9,7 +9,7 @@
   },
   "avion-pny": {
     "category": 13,
-    "value": 1770000,
+    "value": 2060000,
     "fr": "A/R Paris - New-York en avion",
     "en": "Roundtrip[s] Paris - New-York by plane",
     "es": "Viaje de ida y vuelta París - Nueva York en avión"
@@ -185,22 +185,29 @@
   },
   "avion-courtcourrier": {
     "category": 4,
-    "value": 258.58,
-    "fr": "km en ;avion court courrier",
+    "value": 225,
+    "fr": "km en ;avion trajet court",
     "en": "km by ;plane short-haul",
     "es": "km en ;avión corto recorrido"
   },
   "avion-moyencourrier": {
     "category": 4,
-    "value": 187.56,
-    "fr": "km en ;avion moyen courrier",
+    "value": 185,
+    "fr": "km en ;avion trajet moyen",
     "en": "km by ;plane medium-haul",
     "es": "km en ;avión medio recorrido"
   },
+  "avion-moyenlongcourrier": {
+    "category": 4,
+    "value": 167,
+    "fr": "km en ;avion trajet moyen à long",
+    "en": "km by ;plane medium to long-haul",
+    "es": "km en ;avión medio a largo recorrido"
+  },
   "avion-longcourrier": {
     "category": 4,
-    "value": 151.95999999999998,
-    "fr": "km en ;avion long courrier",
+    "value": 178,
+    "fr": "km en ;avion trajet long",
     "en": "km by ;plane long-haul",
     "es": "km en ;avión largo recorrido"
   },
@@ -234,7 +241,7 @@
   },
   "autocar": {
     "category": 4,
-    "value": 29.421306270000002,
+    "value": 37.56,
     "fr": "km en ;autocar thermique",
     "en": "km by ;combustion coach",
     "es": "km en ;autocar termico"
@@ -262,7 +269,7 @@
   },
   "busthermique": {
     "category": 4,
-    "value": 113.2,
+    "value": 122.42,
     "fr": "km en ;bus thermique",
     "en": "km by ;combustion bus",
     "es": "km en ;autobús termico"
@@ -290,7 +297,7 @@
   },
   "moto": {
     "category": 4,
-    "value": 191.3,
+    "value": 216.7,
     "fr": "km en ;moto thermique",
     "en": "km by ;combustion motorcycle",
     "es": "km en ;moto termico"
@@ -1886,7 +1893,7 @@
   },
   "avion-johannesburg-paris-rugby": {
     "category": 13,
-    "value": 119430000,
+    "value": 140000000,
     "fr": "A/R Johannesburg-Paris d’une équipe de rugby",
     "en": "Roundtrip[s] Johannesburg-Paris of a rugby team",
     "es": "Ida y vuelta Johannesburgo-París de un equipo de rugby"

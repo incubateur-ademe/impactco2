@@ -410,7 +410,7 @@
     "Approvisionnement": "Supply",
     "hypothesis": {
       "pre": {
-        "avion-pny": "Total distance traveled: 11,600 km.",
+        "avion-pny": "Travel by plane, very long journey. Total distance traveled: 11,600 km.",
         "tgv-paris-berlin": "Total distance traveled: 2,478 km.",
         "tgv-paris-marseille": "Total distance traveled: 1,504 km.",
         "voiture-lille-nimes": "Total distance traveled: 1,882 km.",

@@ -36,11 +36,11 @@ test('Transport distance default values', async ({ page }) => {
     'Scooter ou moto légère thermique1.14 kg CO₂e Modifier'
   )
   await expect(page.getByTestId('comparison-tile-1')).toHaveText(
-    'Avion court courrierDésolé !L’itinéraire demandé n’est pas compatible avec ce mode de transport Modifier'
+    'Avion trajet courtDésolé !L’itinéraire demandé n’est pas compatible avec ce mode de transport Modifier'
   )
 
   await page.getByText('Liste').click()
-  await expect(page.getByRole('link', { name: 'Bus thermique 1.7 kg CO₂e' })).toBeVisible()
+  await expect(page.getByRole('link', { name: 'Bus thermique 1.84 kg CO₂e' })).toBeVisible()
   await expect(page.getByRole('link', { name: 'Bus électrique 0.33 kg CO₂e' })).not.toBeVisible()
   await expect(
     page.getByRole('link', { name: 'Covoiturage électrique un conducteur plus 1 passager 0.78 kg CO₂e' })
@@ -50,7 +50,7 @@ test('Transport distance default values', async ({ page }) => {
   ).not.toBeVisible()
 
   await page.getByRole('button', { name: 'Voir tous les modes de' }).click()
-  await expect(page.getByRole('link', { name: 'Bus thermique 1.7 kg CO₂e' })).toBeVisible()
+  await expect(page.getByRole('link', { name: 'Bus thermique 1.84 kg CO₂e' })).toBeVisible()
   await expect(page.getByRole('link', { name: 'Bus électrique 0.33 kg CO₂e' })).not.toBeVisible()
 
   await page.goto('http://localhost:3000/outils/transport?modes=velo,voiturethermique&defaultMode=comparison', {
@@ -78,9 +78,9 @@ test('Transport distance default values', async ({ page }) => {
   await expect(page.getByTestId('transport-tab-itineraire')).not.toBeVisible()
   await expect(page.getByText("Mode d'affichage :ListeComparaison")).not.toBeVisible()
   await expect(page.getByTestId('comparison-tile-0')).toHaveText(
-    'Métro0.07 kg CO₂eMoyen le plus écologique3.81Kg CO₂eévités Modifier'
+    'Métro0.07 kg CO₂eMoyen le plus écologique3.3Kg CO₂eévités Modifier'
   )
-  await expect(page.getByTestId('comparison-tile-1')).toHaveText('Avion court courrier3.88 kg CO₂e Modifier')
+  await expect(page.getByTestId('comparison-tile-1')).toHaveText('Avion trajet court3.37 kg CO₂e Modifier')
 
   await page.goto(
     'http://localhost:3000/outils/transport?km=10&comparison=voiturethermique+1,voitureelectrique+2&defaultMode=comparison&language=fr&modes=voiturethermique+1,voitureelectrique+1',
