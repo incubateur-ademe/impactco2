@@ -1,7 +1,7 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import React, { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { computedEquivalents } from 'src/providers/equivalents'
 import { AlimentationCategories, equivalentsByCategory } from 'utils/alimentation'
@@ -20,7 +20,7 @@ const AlimentationSimulator = () => {
 
   const t = useTranslations('alimentation')
   const values = useMemo(() => equivalentsByCategory[category], [category])
-  const [openCategories, setOpenCategories] = React.useState<Record<string, boolean>>({})
+  const [openCategories, setOpenCategories] = useState<Record<string, boolean>>({})
 
   return customList ? (
     <CategorySimulator

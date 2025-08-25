@@ -330,11 +330,11 @@ export const casPratiques = [
   {
     slug: 'numeriqueenfrancejour',
     category: 13,
-    total: 7337000,
+    total: 80822000,
     sources: [
       {
         label: 'ADEME',
-        href: 'https://librairie.ademe.fr/consommer-autrement/7883-avis-de-l-ademe-numerique-environnement-entre-opportunites-et-necessaire-sobriete.html/',
+        href: 'https://librairie.ademe.fr/changement-climatique/7880-evaluation-de-l-impact-environnemental-du-numerique-en-france.html',
       },
     ],
   },

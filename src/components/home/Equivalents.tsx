@@ -16,7 +16,7 @@ import Input from 'components/form/Input'
 import EquivalentCard from './EquivalentCard'
 import styles from './Equivalents.module.css'
 
-const generate = () => getRandomEquivalents(100, '', 3).map((slug) => computedEquivalents.find((x) => x.slug === slug))
+const generate = () => getRandomEquivalents(0, '', 3).map((slug) => computedEquivalents.find((x) => x.slug === slug))
 
 const Equivalents = () => {
   const firstRef = useRef<HTMLAnchorElement>(null)

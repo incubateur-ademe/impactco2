@@ -1858,10 +1858,10 @@
   },
   "numeriqueenfrancejour": {
     "category": 13,
-    "value": 7337000000,
-    "fr": "Jour[s] d’utilisation des services numériques en France",
-    "en": "Day[s] of use of digital services in France",
-    "es": "Día[s] de uso de servicios digitales en Francia"
+    "value": 80822000000,
+    "fr": "Jour[s] de fonctionnement du numérique en France",
+    "en": "Day[s] of operation of digital services in France",
+    "es": "Día[s] de funcionamiento de servicios digitales en Francia"
   },
   "traitementdechetsjour": {
     "category": 13,

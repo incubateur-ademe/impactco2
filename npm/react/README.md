@@ -357,8 +357,8 @@ Liste des équivalents à comparer parmis la liste suivante :
   - chauffageenfrancejour : jour d'utilisation du chauffage domestique en France
   - foretenfrancejour : jour d’absorption de CO2e par les forêts et les prairies en France
   - climatisationenfrancejour : jour d'utilisation des climatisations domestiques en France
-  - voiturefrancaiseheure : Heure[s] de circulation des voitures particulières en France
-  - numeriqueenfrancejour : jour d’utilisation des services numériques en France
+  - voiturefrancaiseheure : heure de circulation des voitures particulières en France
+  - numeriqueenfrancejour : jour de fonctionnement du numérique en France
   - traitementdechetsjour : jour de traitement des déchets et eaux usées domestiques
   - trainenfrancejour : jour de circulation des trains en France
   - datacenterjour : jour de fonctionnement d’un campus de data center en France

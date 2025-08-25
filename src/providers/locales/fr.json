@@ -469,7 +469,7 @@
         "foretenfrancejour": "Absorption inventoriée en 2024 (51,1 MT CO2e), rapporté à 1 jour.",
         "climatisationenfrancejour": "Émissions inventoriées en 2024 (1,196 MT CO2e), rapporté à 1 jour.",
         "voiturefrancaiseheure": "Moyenne des émissions annuelles des voitures particulières thermiques de 2013 à 2024 (70,7 Mt CO2 e) rapportée à l’heure.",
-        "numeriqueenfrancejour": "La consommation électrique liée aux services numériques est de 51,5 TWh/an en 2022 reportée à la journée, puis calculée avec le mix électrique 2022. La consommation des data center à l’étranger, et la fabrication des appareils ne sont pas prises en compte.",
+        "numeriqueenfrancejour": "Émissions annuelle en 2022 liées à la fabrication, à la distribution, à l’utilisation et à la fin de vie des appareils, rapportées à la journée.",
         "traitementdechetsjour": "Moyenne des émissions annuelles liées au déchet et brûlage domestique et aux eaux usées de 2013 à 2024 (1,89 Mt CO2 e), rapporté à 1 jour",
         "trainenfrancejour": "Moyenne des émissions annuelles trains de 2013 à 2024 pour transporter des personnes et des marchandises (0.43 MT CO2e) rapportée à 1 jour",
         "datacenterjour": "Campus PAR1 à Nozar qui regroupe 23 centres de données, s’étend sur 110 hectares et est doté d’une puissance de 250 MW. Consommation électrique de 1,3TWh/an rapporté au mix électrique 2024.",
