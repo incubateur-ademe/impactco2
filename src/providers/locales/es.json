@@ -410,7 +410,7 @@
     "Approvisionnement": "Abastecimiento",
     "hypothesis": {
       "pre": {
-        "avion-pny": "Distancia total recorrida: 11,600 km.",
+        "avion-pny": "Viaje en avión, un trayecto muy largo. Distancia total recorrida: 11.600 km.",
         "tgv-paris-berlin": "Distancia total recorrida: 2,478 km.",
         "tgv-paris-marseille": "Distancia total recorrida: 1,504 km.",
         "voiture-lille-nimes": "Distancia total recorrida: 1,882 km.",
@@ -420,6 +420,7 @@
         "harry-potter": "El total de las películas de Harry Potter dura un promedio de 1,176 minutos = 19,6 horas. El dato se calcula en base a una hora de transmisión en alta definición en un televisor usando Wi-Fi.",
         "avion-courtcourrier": "Tasa de ocupación promedio: 101-220 pasajeros.",
         "avion-moyencourrier": "Tasa de ocupación promedio: 101-220 pasajeros.",
+        "avion-moyenlongcourrier": "Tasa de ocupación promedio: 101-220 pasajeros.",
         "avion-longcourrier": "Tasa de ocupación promedio: 101-220 pasajeros.",
         "lavelinge": "Capacidad: 7kg.",
         "lit": "Estructura + somier + colchón.",
@@ -473,7 +474,7 @@
         "traitementdechetsjour": "Promedio de emisiones anuales relacionadas con residuos y quema doméstica y aguas residuales de 2013 a 2024 (1,89 Mt CO2 e), reportado por día.",
         "trainenfrancejour": "Promedio de emisiones anuales de trenes de 2013 a 2024 para transportar personas y mercancías (0,43 MT CO2e) reportado por día",
         "datacenterjour": "Campus PAR1 en Nozar que agrupa 23 centros de datos, se extiende por 110 hectáreas y tiene una potencia de 250 MW. Consumo eléctrico de 1,3TWh/año reportado a la mezcla eléctrica 2024.",
-        "avion-johannesburg-paris-rugby": "Para la Copa del Mundo de 2023, viaje en avión de largo recorrido, con una distancia en línea recta de 8.731 km con una delegación de 45 personas (33 jugadores y 12 miembros del personal).",
+        "avion-johannesburg-paris-rugby": "Para el Mundial de 2023, viaje de una delegación de 45 personas (33 jugadores y 12 miembros del personal) en avión de larga distancia, sobre una distancia total recorrida de 17.462 kilómetros.",
         "maisonneuve": "Construcción de una casa nueva convencional de 130 m² habitables - caso de viviendas en San Pedro y Miquelón"
       },
       "post": {
@@ -482,6 +483,7 @@
         "terre-voiture": "Incluye: el impacto de carbono de un viaje en coche con motor de combustión.",
         "avion-courtcourrier": "Por persona en Francia. Se tiene en cuenta el impacto del carbono debido a la formación de estelas. Se incluyen las emisiones directas, la construcción de vehículos (fabricación, mantenimiento y fin de vida), y la producción y distribución de combustible y electricidad. La construcción de infraestructuras (carreteras, vías férreas, aeropuertos...) no está incluida.",
         "avion-moyencourrier": "Por persona en Francia. Se tiene en cuenta el impacto del carbono debido a la formación de estelas. Se incluyen las emisiones directas, la construcción de vehículos (fabricación, mantenimiento y fin de vida), y la producción y distribución de combustible y electricidad. La construcción de infraestructuras (carreteras, vías férreas, aeropuertos...) no está incluida.",
+        "avion-moyenlongcourrier": "Por persona en Francia. Se tiene en cuenta el impacto del carbono debido a la formación de estelas. Se incluyen las emisiones directas, la construcción de vehículos (fabricación, mantenimiento y fin de vida), y la producción y distribución de combustible y electricidad. La construcción de infraestructuras (carreteras, vías férreas, aeropuertos...) no está incluida.",
         "avion-longcourrier": "Por persona en Francia. Se tiene en cuenta el impacto del carbono debido a la formación de estelas. Se incluyen las emisiones directas, la construcción de vehículos (fabricación, mantenimiento y fin de vida), y la producción y distribución de combustible y electricidad. La construcción de infraestructuras (carreteras, vías férreas, aeropuertos...) no está incluida.",
         "avion-pny": "Se incluyen las emisiones directas, la construcción de vehículos (fabricación, mantenimiento y fin de vida), y la producción y distribución de combustible y electricidad. La construcción de infraestructuras (carreteras, vías férreas, aeropuertos...) no está incluida.",
         "tgv-paris-berlin": "Se incluyen las emisiones directas, la construcción de vehículos (fabricación, mantenimiento y fin de vida), y la producción y distribución de combustible y electricidad. La construcción de infraestructuras (carreteras, vías férreas, aeropuertos...) no está incluida.",
