@@ -185,21 +185,21 @@
   },
   "avion-courtcourrier": {
     "category": 4,
-    "value": 258.58,
+    "value": 226.372,
     "fr": "km en ;avion court courrier",
     "en": "km by ;plane short-haul",
     "es": "km en ;avión corto recorrido"
   },
   "avion-moyencourrier": {
     "category": 4,
-    "value": 187.56,
+    "value": 184.661,
     "fr": "km en ;avion moyen courrier",
     "en": "km by ;plane medium-haul",
     "es": "km en ;avión medio recorrido"
   },
   "avion-longcourrier": {
     "category": 4,
-    "value": 151.95999999999998,
+    "value": 166.794,
     "fr": "km en ;avion long courrier",
     "en": "km by ;plane long-haul",
     "es": "km en ;avión largo recorrido"
@@ -234,7 +234,7 @@
   },
   "autocar": {
     "category": 4,
-    "value": 29.421306270000002,
+    "value": 37.56,
     "fr": "km en ;autocar thermique",
     "en": "km by ;combustion coach",
     "es": "km en ;autocar termico"
@@ -262,7 +262,7 @@
   },
   "busthermique": {
     "category": 4,
-    "value": 113.2,
+    "value": 122.42,
     "fr": "km en ;bus thermique",
     "en": "km by ;combustion bus",
     "es": "km en ;autobús termico"
@@ -290,7 +290,7 @@
   },
   "moto": {
     "category": 4,
-    "value": 191.3,
+    "value": 216.7,
     "fr": "km en ;moto thermique",
     "en": "km by ;combustion motorcycle",
     "es": "km en ;moto termico"
