@@ -40,6 +40,18 @@
   &:focus {
     color: var(--primary-70) !important;
   }
+
+  svg {
+    color: var(--primary-50) !important;
+
+    &:hover {
+      color: var(--primary-60) !important;
+    }
+
+    &:focus {
+      color: var(--primary-70) !important;
+    }
+  }
 }
 
 .mainLinks {
