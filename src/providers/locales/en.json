@@ -214,13 +214,13 @@
   },
   "transport": {
     "sorry": "Sorry !",
-    "notFound": "This itinary is not available for this transport",
+    "notFound": "This itinerary is not available for this transport",
     "otherComparison": "See another comparison",
     "modify": "Modify",
     "avoided": "avoided",
     "itineraire": {
       "roundTrip": "Roundtrip",
-      "header": "See how much CO₂e you emit for this itinary",
+      "header": "See how much CO₂e you emit for this itinerary",
       "start": "From",
       "end": "To",
       "empty": "For example, the quantity of kg CO2e emitted for a 100km journey is..."
