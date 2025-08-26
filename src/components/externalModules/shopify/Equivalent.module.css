@@ -116,6 +116,7 @@
 .comparisons {
   display: flex !important;
   align-items: stretch !important;
+  list-style: none !important;
 }
 
 .comparisonsColumn {
