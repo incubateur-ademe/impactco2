@@ -44,6 +44,11 @@ const activities = [
     description: 'Ces festivals utilisent nos outils pour sensibiliser leur audience',
   },
   {
+    title: 'Loisirs',
+    label: 'Loisirs',
+    description: 'Ces exemples d’utilisation sont inspirants',
+  },
+  {
     title: 'Association',
     label: 'Associations',
     description: 'Les associations qui utilisent nos outils de façon exemplaire',
