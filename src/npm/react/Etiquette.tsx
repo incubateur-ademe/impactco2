@@ -1,9 +1,7 @@
 'use client'
 
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 import { Language } from 'types/equivalent'
-import '../../utils/styles.css'
-import '../../utils/variables.css'
 import InternalEtiquette from 'components/comparateur/Etiquette'
 
 const Etiquette = ({
@@ -20,6 +18,7 @@ const Etiquette = ({
   const ref = useRef(null)
   return (
     <InternalEtiquette
+      className='impact-co2-etiquette'
       ref={ref}
       comparisons={comparisons}
       baseValue={value}
