@@ -10,6 +10,53 @@ import Block from 'components/layout/Block'
 import ExamplesList from './ExamplesList'
 import styles from './AllExamples.module.css'
 
+const activities = [
+  { title: 'Média', label: 'Médias', description: 'Ces médias utilisent nos outils avec brio' },
+  { title: 'Entreprise', label: 'Entreprises', description: 'Ces entreprises ont intégré nos outils à la perfection' },
+  {
+    title: 'Culture',
+    label: 'Culture',
+    description: 'Ces acteurs du secteur culturel utilisent habilement les outils d’Impact CO₂',
+  },
+  {
+    title: 'Tourisme',
+    label: 'Tourisme',
+    description: 'Ces acteurs du tourisme se servent pertinemment de nos outils',
+  },
+  {
+    title: 'Salons',
+    label: 'Salons',
+    description: 'Ils se sont admirablement emparés de nos outils',
+  },
+  {
+    title: 'Sport',
+    label: 'Sport',
+    description: 'Le monde du sport s’empare de nos outils de façon brillante',
+  },
+  {
+    title: 'Hôtels',
+    label: 'Hôtels',
+    description: 'Ces hôtels et gîtes ont intégré nos outils idéalement',
+  },
+  {
+    title: 'Festivals',
+    label: 'Festivals',
+    description: 'Ces festivals utilisent nos outils pour sensibiliser leur audience',
+  },
+  {
+    title: 'Association',
+    label: 'Associations',
+    description: 'Les associations qui utilisent nos outils de façon exemplaire',
+  },
+  { title: 'Collectivité', label: 'Collectivités', description: "Ces collectivités ont fait le choix d'Impact CO₂" },
+  {
+    title: 'Éducation',
+    label: 'Éducation',
+    description: "Les exemples d'utilisation de nos outils dans le secteur de l'éducation",
+  },
+  { title: 'Institution', label: 'Institutions', description: 'Les mises en avant de nos outils par les institutions' },
+]
+
 const AllExamples = ({ examples, communications }: { examples: Example[]; communications: Example[] }) => {
   const router = useRouter()
   const searchParams = useSearchParams()
@@ -82,69 +129,18 @@ const AllExamples = ({ examples, communications }: { examples: Example[]; commun
           </div>
         </Card>
       </Block>
-      {(activity === 'all' || activity === 'Média') && (
-        <ExamplesList
-          withTags
-          title='Médias'
-          description='Ces médias utilisent nos outils avec brio'
-          examples={filteredExamples.filter((example) => example.activity === 'Média')}
-          forceDisplay={activity === 'Média'}
-        />
-      )}
-      {(activity === 'all' || activity === 'Entreprise') && (
-        <ExamplesList
-          withTags
-          title='Entreprises'
-          description='Ces entreprises ont intégré nos outils à la perfection'
-          examples={filteredExamples.filter((example) => example.activity === 'Entreprise')}
-          forceDisplay={activity === 'Entreprise'}
-        />
-      )}
-      {(activity === 'all' || activity === 'Culture/Tourisme') && (
-        <ExamplesList
-          withTags
-          title='Culture et Tourisme'
-          description='Ils utilisent nos outils de manière remarquable'
-          examples={filteredExamples.filter((example) => example.activity === 'Culture/Tourisme')}
-          forceDisplay={activity === 'Culture/Tourisme'}
-        />
-      )}
-      {(activity === 'all' || activity === 'Association') && (
-        <ExamplesList
-          withTags
-          title='Associations'
-          description='Les associations qui utilisent nos outils de façon exemplaire'
-          examples={filteredExamples.filter((example) => example.activity === 'Association')}
-          forceDisplay={activity === 'Association'}
-        />
-      )}
-      {(activity === 'all' || activity === 'Collectivité') && (
-        <ExamplesList
-          withTags
-          title='Collectivités'
-          description='Ces collectivités ont fait le choix d’Impact CO₂'
-          examples={filteredExamples.filter((example) => example.activity === 'Collectivité')}
-          forceDisplay={activity === 'Collectivité'}
-        />
-      )}
-      {(activity === 'all' || activity === 'Éducation') && (
-        <ExamplesList
-          withTags
-          title='Éducation'
-          description='Les exemples d’utilisation de nos outils dans le secteur de l’éducation'
-          examples={filteredExamples.filter((example) => example.activity === 'Éducation')}
-          forceDisplay={activity === 'Éducation'}
-        />
-      )}
-      {(activity === 'all' || activity === 'Institution') && (
-        <ExamplesList
-          withTags
-          title='Institutions'
-          description='Les mises en avant de nos outils par les institutions'
-          examples={filteredExamples.filter((example) => example.activity === 'Institution')}
-          forceDisplay={activity === 'Institution'}
-        />
-      )}
+      {activities
+        .filter((a) => activity === 'all' || activity === a.title)
+        .map((a) => (
+          <ExamplesList
+            key={a.title}
+            withTags
+            title={a.label}
+            description={a.description}
+            examples={filteredExamples.filter((example) => example.activity === a.title)}
+            forceDisplay={activity === a.title}
+          />
+        ))}
       {activity === 'all' && tool === 'all' && (
         <ExamplesList
           title='Ils parlent de nous'

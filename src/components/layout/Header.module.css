@@ -25,7 +25,7 @@
 }
 
 .link {
-  color: var(--primary-70) !important;
+  color: var(--neutral-70) !important;
   padding: 0.75rem !important;
   display: flex !important;
   border-radius: 0.5rem !important;
