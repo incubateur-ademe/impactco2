@@ -41,6 +41,11 @@
     }
   }
 
+  &:focus {
+    outline: solid 3px var(--primary-50);
+    outline-offset: -3px;
+  }
+
   @media screen and (max-width: 29.875rem) {
     gap: 1rem;
     img {
