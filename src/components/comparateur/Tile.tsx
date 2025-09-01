@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl'
 import { useMemo } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
+import useTrackingContext from 'src/providers/TrackingProvider'
 import { computedEquivalents } from 'src/providers/equivalents'
 import { getName } from 'utils/Equivalent/equivalent'
 import formatNumber from 'utils/formatNumber'
@@ -17,6 +18,7 @@ import PlusIcon from 'components/base/icons/plus'
 import styles from './Tile.module.css'
 
 const Tile = ({ slug, onAdd }: { slug?: string; onAdd?: () => void }) => {
+  const { trackOnce } = useTrackingContext()
   const t = useTranslations('comparateur')
   const {
     language,
@@ -70,6 +72,7 @@ const Tile = ({ slug, onAdd }: { slug?: string; onAdd?: () => void }) => {
         title={`Comparer les valeurs avec ${getName('fr', equivalent)}`}
         onClick={() => {
           track('Comparateur', 'Comparer', equivalent.slug)
+          trackOnce(`Comparer${equivalent.slug}`)
           setComparedEquivalent(equivalent)
         }}>
         <ArrowUpIcon />

@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl'
 import { useSearchParams } from 'next/navigation'
 import { ReactNode, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
+import { TrackingProvider } from 'src/providers/TrackingProvider'
 import TranslationProvider from 'src/providers/TranslationProvider'
 import { SiteLanguage } from 'types/languages'
 import { OverScreenInfo } from 'types/overscreen'
@@ -250,7 +251,9 @@ const Shareable = ({
 
 const ShareableWithTranslation = (props: ShareableProps) => (
   <TranslationProvider>
-    <Shareable {...props} />
+    <TrackingProvider tracking={props.tracking}>
+      <Shareable {...props} />
+    </TrackingProvider>
   </TranslationProvider>
 )
 

@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl'
 import useParamContext from 'src/providers/ParamProvider'
+import useTrackingContext from 'src/providers/TrackingProvider'
 import useItineraries from 'hooks/useItineraries'
 import useTransportations from 'hooks/useTransportations'
 import CheckboxInput from 'components/form/CheckboxInput'
@@ -14,6 +15,8 @@ import styles from './ItineraireSimulator.module.css'
 
 const tracking = 'Transport itinéraire'
 const ItineraireSimulator = ({ withComparisonMode }: { withComparisonMode: boolean }) => {
+  const { trackOnce } = useTrackingContext()
+
   const {
     transport: { comparisonMode },
     itineraire: { start, setStart, end, setEnd, displayAll, setDisplayAll, roundTrip, setRoundTrip },
@@ -21,7 +24,7 @@ const ItineraireSimulator = ({ withComparisonMode }: { withComparisonMode: boole
 
   const t = useTranslations('transport.itineraire')
 
-  const { data: itineraries } = useItineraries(start, end, 'itinéraire')
+  const { data: itineraries } = useItineraries(start, end, 'itinéraire', trackOnce)
   const { hasMore, equivalents } = useTransportations('Transport itinéraire', 'itineraire', itineraries)
 
   return (
