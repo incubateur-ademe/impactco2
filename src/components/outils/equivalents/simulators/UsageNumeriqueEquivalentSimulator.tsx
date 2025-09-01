@@ -2,7 +2,7 @@
 
 import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
-import { useMemo } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import useUsageNumeriqueContext from 'src/providers/UsageNumeriqueProvider'
 import { Category } from 'types/category'
@@ -56,7 +56,30 @@ const UsageNumeriqueEquivalentSimulator = ({ slug }: { slug: 'visio' | 'email' |
   const t = useTranslations('usage-numerique')
   const tEquivalent = useTranslations('equivalent.usage-numerique')
 
+  const values = usageNumeriqueConfig[slug]
+  const device = (situation[values.device] as string).replace(/'/g, '')
+
+  const [life, setLife] = useState(evaluateNumber(engine, `${device} . durée de vie`))
+  const [usage, setUsage] = useState(evaluateNumber(engine, `${device} . profil utilisation`))
+
+  useEffect(() => {
+    if (life > 0) {
+      track(getName('fr', equivalents[slug]), `Input ${slug} durée de vie`, life.toString())
+      setSituation({ ...situation, [`${device} . durée de vie`]: life.toString() })
+    }
+  }, [life])
+
+  useEffect(() => {
+    if (usage > 0) {
+      track(getName('fr', equivalents[slug]), `Input ${slug} profil utilisation`, usage.toString())
+      setSituation({ ...situation, [`${device} . profil utilisation`]: usage.toString() })
+    }
+  }, [usage])
+
   const computedEquivalent = useMemo(() => {
+    if (withConstruction && (life === 0 || usage === 0)) {
+      return { ...equivalents[slug], unit: 'param', ecv: [], value: 0 }
+    }
     engine.setSituation(situation)
 
     const total = engine.evaluate(slug)
@@ -78,10 +101,7 @@ const UsageNumeriqueEquivalentSimulator = ({ slug }: { slug: 'visio' | 'email' |
         .filter((value) => value.value),
       value: (total.nodeValue as number) / 1000 - (withConstruction ? 0 : construction),
     }
-  }, [situation, slug, engine, withConstruction])
-
-  const values = usageNumeriqueConfig[slug]
-  const device = (situation[values.device] as string).replace(/'/g, '')
+  }, [situation, slug, engine, withConstruction, life, usage])
   return (
     <>
       <div className={baseStyles.header}>
@@ -100,7 +120,7 @@ const UsageNumeriqueEquivalentSimulator = ({ slug }: { slug: 'visio' | 'email' |
             <div className={classNames(usageFormStyles.firstRow, { [usageFormStyles.onlyChild]: !values.secondValue })}>
               <NumberInput
                 id='main-value'
-                unit={`${tEquivalent(`${slug}-mainUnit`)}${(situation[values.mainValue] as number) > 1 ? 's' : ''}`}
+                unit={`${tEquivalent(`${slug}-mainUnit`)}${(situation[values.mainValue] as number) >= 2 ? 's' : ''}`}
                 value={(situation[values.mainValue] as number) / values.mainDivider}
                 setValue={(newValue) => {
                   track(getName('fr', equivalents[slug]), `Input ${slug} value`, newValue.toString())
@@ -112,7 +132,7 @@ const UsageNumeriqueEquivalentSimulator = ({ slug }: { slug: 'visio' | 'email' |
                   <HiddenLabel htmlFor='input-second'>{tEquivalent(`${slug}-secondTitle`)}</HiddenLabel>
                   <NumberInput
                     id='second'
-                    unit={`${tEquivalent(`${slug}-secondUnit`)}${(situation[values.secondValue] as number) > 1 ? 's' : ''}`}
+                    unit={`${tEquivalent(`${slug}-secondUnit`)}${(situation[values.secondValue] as number) >= 2 ? 's' : ''}`}
                     value={situation[values.secondValue] as number}
                     setValue={(newValue) => {
                       track(getName('fr', equivalents[slug]), `Input ${slug} second value`, newValue.toString())
@@ -169,6 +189,8 @@ const UsageNumeriqueEquivalentSimulator = ({ slug }: { slug: 'visio' | 'email' |
               onChange={(event) => {
                 track(getName('fr', equivalents[slug]), `Select ${slug} appareil`, event.target.value)
                 setSituation({ ...situation, [values.device]: event.target.value })
+                setLife(evaluateNumber(engine, `${event.target.value.replace(/'/g, '')} . durée de vie`))
+                setUsage(evaluateNumber(engine, `${event.target.value.replace(/'/g, '')} . profil utilisation`))
               }}>
               {values.appareils.map((option) => (
                 <option key={option} value={`'${option}'`}>
@@ -219,11 +241,10 @@ const UsageNumeriqueEquivalentSimulator = ({ slug }: { slug: 'visio' | 'email' |
               </label>
               <NumberInput
                 id='vie'
-                unit={evaluateNumber(engine, `${device} . durée de vie`) > 1 ? 'ans' : 'an'}
-                value={evaluateNumber(engine, `${device} . durée de vie`)}
+                unit={life >= 2 ? 'ans' : 'an'}
+                value={life}
                 setValue={(newValue) => {
-                  track(getName('fr', equivalents[slug]), `Input ${slug} durée de vie`, newValue.toString())
-                  setSituation({ ...situation, [`${device} . durée de vie`]: newValue.toString() })
+                  setLife(newValue)
                 }}
               />
             </div>
@@ -233,13 +254,10 @@ const UsageNumeriqueEquivalentSimulator = ({ slug }: { slug: 'visio' | 'email' |
               </label>
               <NumberInput
                 id='usage'
-                unit={
-                  evaluateNumber(engine, `${device} . profil utilisation`) > 1 ? 'heures par jour' : 'heure par jour'
-                }
-                value={evaluateNumber(engine, `${device} . profil utilisation`)}
+                unit={usage >= 2 ? 'heures par jour' : 'heure par jour'}
+                value={usage}
                 setValue={(newValue) => {
-                  track(getName('fr', equivalents[slug]), `Input ${slug} profil utilisation`, newValue.toString())
-                  setSituation({ ...situation, [`${device} . profil utilisation`]: newValue.toString() })
+                  setUsage(newValue)
                 }}
               />
             </div>
