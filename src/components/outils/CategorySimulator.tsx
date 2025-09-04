@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import { Dispatch, SetStateAction, useEffect, useMemo, useRef, useState } from 'react'
 import useParamContext, { Params } from 'src/providers/ParamProvider'
+import useTrackingContext from 'src/providers/TrackingProvider'
 import { ComputedEquivalent } from 'types/equivalent'
 import { TransportSimulateur } from 'types/transport'
 import { getNameWithoutSuffix } from 'utils/Equivalent/equivalent'
@@ -125,6 +126,7 @@ const CategorySimulator = ({
   reverse?: boolean
   forceLegendDown?: boolean
 }) => {
+  const { trackOnce } = useTrackingContext()
   const params = useParamContext()
   const t = useTranslations('category-simulator')
 
@@ -177,7 +179,8 @@ const CategorySimulator = ({
                     href={equivalent.link}
                     className={styles.link}
                     aria-live='polite'
-                    aria-label={`${equivalent.name || getNameWithoutSuffix(params.language, equivalent)}${equivalent.carpool ? ` un conducteur plus ${equivalent.carpool} ${formatName('passager[s]', equivalent.carpool)}` : ''} ${formatNumber(equivalent.value)} kg CO₂e (${barExplanation})`}>
+                    aria-label={`${equivalent.name || getNameWithoutSuffix(params.language, equivalent)}${equivalent.carpool ? ` un conducteur plus ${equivalent.carpool} ${formatName('passager[s]', equivalent.carpool)}` : ''} ${formatNumber(equivalent.value)} kg CO₂e (${barExplanation})`}
+                    onClick={() => trackOnce('ClickEquivalent')}>
                     <EquivalentIcon equivalent={equivalent} height={3} />
                     <div className={styles.content} data-testid={`category-${equivalent.slug}`}>
                       <p className={styles.name}>
@@ -278,7 +281,10 @@ const CategorySimulator = ({
           id={id}
           tracking={tracking}
           displayAll={displayAll}
-          setDisplayAll={setDisplayAll}
+          setDisplayAll={(value) => {
+            setDisplayAll(value)
+            trackOnce('DisplayAll')
+          }}
           displayAllText={t(`${moreText}.display`)}
           hideAllText={t(`${moreText}.hide`)}
         />

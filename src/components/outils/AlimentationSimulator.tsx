@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl'
 import { useMemo, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
+import useTrackingContext from 'src/providers/TrackingProvider'
 import { computedEquivalents } from 'src/providers/equivalents'
 import { AlimentationCategories, equivalentsByCategory } from 'utils/alimentation'
 import { track } from 'utils/matomo'
@@ -14,6 +15,7 @@ import alimentationStyles from './AlimentationSimulator.module.css'
 import styles from './Simulator.module.css'
 
 const AlimentationSimulator = () => {
+  const { trackOnce } = useTrackingContext()
   const {
     alimentation: { category, setCategory, customList, equivalents },
   } = useParamContext()
@@ -43,6 +45,7 @@ const AlimentationSimulator = () => {
           value={category}
           onChange={(e) => {
             track('Alimentation', 'Category', e.target.value)
+            trackOnce('Category')
             setCategory(e.target.value as AlimentationCategories)
           }}>
           {Object.values(AlimentationCategories).map((category) => (
@@ -76,6 +79,7 @@ const AlimentationSimulator = () => {
                 const open = openCategories[name]
                 setOpenCategories({ ...openCategories, [name]: !open })
                 track('Alimentation', value.name, open ? 'close' : 'open')
+                trackOnce(value.name)
               }}
             />
           ))

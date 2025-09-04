@@ -2,8 +2,9 @@
 
 import { useTranslations } from 'next-intl'
 import { SetStateAction } from 'preact/compat'
-import React, { Dispatch } from 'react'
+import { Dispatch } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
+import useTrackingContext from 'src/providers/TrackingProvider'
 import { track } from 'utils/matomo'
 import HiddenLabel from 'components/form/HiddenLabel'
 import NumberInput from 'components/form/NumberInput'
@@ -22,6 +23,7 @@ const UsageForm = ({
   value?: number
   setValue?: Dispatch<SetStateAction<number>>
 }) => {
+  const { trackOnce } = useTrackingContext()
   const {
     usageNumerique: { situation, setSituation },
   } = useParamContext()
@@ -42,6 +44,7 @@ const UsageForm = ({
             value={engineValue ? (situation[engineValue] as number) / 60 : (value as number)}
             setValue={(newValue) => {
               track('Usage numérique', `Input ${slug} value`, newValue.toString())
+              trackOnce(`Input ${slug} value`)
               if (engineValue) {
                 setSituation({ ...situation, [engineValue]: (newValue * 60).toString() })
               } else if (setValue) {
@@ -58,6 +61,7 @@ const UsageForm = ({
             value={situation[values.device] as string}
             onChange={(event) => {
               track('Usage numérique', `Select ${slug} appareil`, event.target.value)
+              trackOnce(`Select ${slug} appareil`)
               setSituation({ ...situation, [values.device]: event.target.value })
             }}>
             {values.appareils.map((option) => (
@@ -75,6 +79,7 @@ const UsageForm = ({
             value={situation[values.type] as string}
             onChange={(event) => {
               track('Usage numérique', `Select ${slug} type`, event.target.value)
+              trackOnce(`Select ${slug} type`)
               setSituation({ ...situation, [values.type]: event.target.value })
             }}>
             {values.types.map((option) => (
@@ -92,6 +97,7 @@ const UsageForm = ({
             value={situation[values.network] as string}
             onChange={(event) => {
               track('Usage numérique', `Select ${slug} réseau`, event.target.value)
+              trackOnce(`Select ${slug} réseau`)
               setSituation({ ...situation, [values.network]: event.target.value })
             }}>
             {values.networks.map((option) => (

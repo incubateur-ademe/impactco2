@@ -4,6 +4,7 @@ import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
 import { useMemo } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
+import useTrackingContext from 'src/providers/TrackingProvider'
 import { ComputedEquivalent } from 'types/equivalent'
 import { getNameWithoutSuffix } from 'utils/Equivalent/equivalent'
 import formatNumber from 'utils/formatNumber'
@@ -23,6 +24,7 @@ const LivraisonEquivalent = ({
   max: number
   index: number
 }) => {
+  const { trackOnce } = useTrackingContext()
   const { language, livraison } = useParamContext()
   const t = useTranslations('livraison')
 
@@ -36,7 +38,8 @@ const LivraisonEquivalent = ({
       className={classNames(styles.container, {
         [styles.static]: !animated,
       })}
-      href={`/outils/livraison/${equivalent.slug}`}>
+      href={`/outils/livraison/${equivalent.slug}`}
+      onClick={() => trackOnce(`Equivalent${equivalent.slug}`)}>
       <EquivalentIcon equivalent={equivalent} height={2.5} />
       <div className={styles.info}>
         <p>

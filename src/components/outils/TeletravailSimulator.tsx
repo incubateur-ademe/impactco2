@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import { useEffect, useMemo, useRef } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
+import useTrackingContext from 'src/providers/TrackingProvider'
 import { Category } from 'types/category'
 import { ComputedEquivalent, DeplacementEquivalent, DeplacementType } from 'types/equivalent'
 import { categories } from 'data/categories'
@@ -44,7 +45,7 @@ const TeletravailSimulator = () => {
       setEquivalents,
     },
   } = useParamContext()
-
+  const { trackOnce } = useTrackingContext()
   const t = useTranslations('transport.teletravail')
   const { data: itineraries } = useItineraries(start, end, 'télétravail')
   const deplacement = useMemo(() => {
@@ -61,6 +62,7 @@ const TeletravailSimulator = () => {
 
   const total = useMemo(() => {
     if (itineraries && deplacement) {
+      trackOnce('Résultat')
       const distance = itineraries[deplacement.type]
       // AR * (SEMAINE - VACANCES - RTT) = 2 * (52 - 5 - 1)
       return deplacement.value * distance * 92

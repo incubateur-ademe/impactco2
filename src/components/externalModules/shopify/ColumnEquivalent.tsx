@@ -5,6 +5,7 @@ import { getNumberPrecision } from 'utils/formatNumberPrecision'
 import CO2Quantity from 'components/base/CO2Quantity'
 import EqualIcon from 'components/base/icons/equal'
 import RefreshIcon from 'components/base/icons/refresh'
+import useTrackingContext from '../../../providers/TrackingProvider'
 import Logo from '../Logo'
 import SimpleValue from '../SimpleValue'
 import Disclaimer from './Disclaimer'
@@ -25,6 +26,7 @@ const ColumnEquivalent = ({
   randomize?: () => void
   animated?: boolean
 }) => {
+  const { trackOnce } = useTrackingContext()
   const isAnimated = useMemo(() => animated && comparisons.length > 1, [animated, comparisons])
   const [toDisplay, setToDisplay] = useState(0)
   const [fadeIn, setFadeIn] = useState(false)
@@ -51,7 +53,7 @@ const ColumnEquivalent = ({
           secondary
           language={language}
         />
-        <Logo value={preciseValue} right />
+        <Logo value={preciseValue} right onClick={() => trackOnce('Logo')} />
       </div>
       <div className={baseStyles.rightColumn}>
         <div className={isAnimated ? baseStyles.animatedEqualColumn : baseStyles.equalColumn}>

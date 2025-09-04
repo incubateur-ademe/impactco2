@@ -4,6 +4,7 @@ import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
 import { ReactNode, useEffect, useMemo, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
+import useTrackingContext from 'src/providers/TrackingProvider'
 import { computedEquivalents } from 'src/providers/equivalents'
 import { ComputedEquivalent } from 'types/equivalent'
 import { getNameWithoutSuffix } from 'utils/Equivalent/equivalent'
@@ -25,6 +26,7 @@ const voitureelectrique = computedEquivalents.find(
 ) as ComputedEquivalent
 
 const LivraisonSimulator = () => {
+  const { trackOnce } = useTrackingContext()
   const t = useTranslations('livraison')
   const { livraison, language } = useParamContext()
 
@@ -94,6 +96,7 @@ const LivraisonSimulator = () => {
           value={type}
           onChange={(e) => {
             track('Livraison', 'Type', e.target.value)
+            trackOnce('Type')
             setType(e.target.value as LivraisonType)
           }}>
           {livraison.types.map((type) => (
@@ -109,6 +112,7 @@ const LivraisonSimulator = () => {
             checked={livraison.withFabrication}
             setChecked={(checked) => {
               livraison.setWithFabrication(checked)
+              trackOnce('Fabrication')
               track('Livraison', 'Fabrication', checked.toString())
             }}
           />

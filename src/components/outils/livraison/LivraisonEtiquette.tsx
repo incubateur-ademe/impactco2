@@ -4,6 +4,7 @@ import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
 import { useMemo, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
+import useTrackingContext from 'src/providers/TrackingProvider'
 import { computedEquivalents } from 'src/providers/equivalents'
 import { track } from 'utils/matomo'
 import { buildCurrentUrlFor } from 'utils/urls'
@@ -20,6 +21,7 @@ const livraisonEquivalents = computedEquivalents
   .sort((a, b) => a.value - b.value)
 
 const LivraisonEtiquette = ({ animated, id }: { animated?: boolean; id: string }) => {
+  const { trackOnce } = useTrackingContext()
   const t = useTranslations('livraison')
 
   const {
@@ -58,6 +60,7 @@ const LivraisonEtiquette = ({ animated, id }: { animated?: boolean; id: string }
         </div>
         <Logo
           url={buildCurrentUrlFor('/outils/livraison')}
+          onClick={() => trackOnce('Logo')}
           right
           title='Lien externe : accéder au simulateur livraison sur le site Impact CO2'
         />

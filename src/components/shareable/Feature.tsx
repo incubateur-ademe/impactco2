@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import useParamContext from 'src/providers/ParamProvider'
+import useTrackingContext from 'src/providers/TrackingProvider'
 import { OverScreenInfo } from 'types/overscreen'
 import { track } from 'utils/matomo'
 import FullArrowRightIcon from 'components/base/icons/full-arrow-right'
@@ -22,12 +23,14 @@ const Feature = ({
   type: string
 }) => {
   const { setOverscreen } = useParamContext()
+  const { trackOnce } = useTrackingContext()
   const t = useTranslations('overscreen')
   return (
     <button
       className={styles.button}
       onClick={() => {
         track(tracking, name, `${tracking}_${name}`.replace(/ /g, '_').toLowerCase())
+        trackOnce(name)
         setOverscreen(slug, type)
       }}>
       {info.image && (

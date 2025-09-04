@@ -1,8 +1,8 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import React from 'react'
 import useParamContext from 'src/providers/ParamProvider'
+import useTrackingContext from 'src/providers/TrackingProvider'
 import { Category } from 'types/category'
 import { FruitsEtLegumesEquivalent } from 'types/equivalent'
 import { categories } from 'data/categories'
@@ -17,6 +17,7 @@ import styles from './Simulator.module.css'
 const flds = categories.find((category) => category.slug === 'fruitsetlegumes') as Category
 
 const FruitsEtLegumesSimulator = () => {
+  const { trackOnce } = useTrackingContext()
   const {
     fruitsetlegumes: { month, setMonth },
   } = useParamContext()
@@ -32,6 +33,7 @@ const FruitsEtLegumesSimulator = () => {
           value={month}
           onChange={(e) => {
             track('Fruits et légumes', 'Mois', e.target.value)
+            trackOnce('Mois')
             setMonth(Number(e.target.value))
           }}>
           {monthsOptions.map((month) => (

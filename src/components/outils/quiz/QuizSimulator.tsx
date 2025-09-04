@@ -4,6 +4,7 @@ import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import { useEffect, useMemo, useRef, useState } from 'react'
+import useTrackingContext from 'src/providers/TrackingProvider'
 import { track } from 'utils/matomo'
 import Resource from 'components/base/Resource'
 import Button from 'components/base/buttons/Button'
@@ -17,6 +18,7 @@ import shareableStyles from '../../shareable/Shareable.module.css'
 import styles from './QuizSimulator.module.css'
 
 const QuizSimulator = () => {
+  const { trackOnce } = useTrackingContext()
   const ref = useRef<HTMLDivElement>(null)
   const nextRef = useRef<HTMLButtonElement>(null)
 
@@ -31,6 +33,7 @@ const QuizSimulator = () => {
 
   useEffect(() => {
     if (answer && nextRef.current) {
+      trackOnce('Réponse')
       nextRef.current.focus()
     }
   }, [answer, nextRef])

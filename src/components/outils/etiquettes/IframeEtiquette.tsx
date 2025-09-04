@@ -1,7 +1,8 @@
 'use client'
 
 import { useSearchParams } from 'next/navigation'
-import React, { useMemo, useRef } from 'react'
+import { useMemo, useRef } from 'react'
+import { TrackingProvider } from 'src/providers/TrackingProvider'
 import { Language } from 'types/equivalent'
 import EtiquetteContent from 'components/comparateur/Etiquette'
 
@@ -18,7 +19,11 @@ const IFrameEtiquette = ({ animated }: { animated?: boolean }) => {
     }
   }, [params])
   const ref = useRef(null)
-  return values ? <EtiquetteContent {...values} animated={animated} ref={ref} /> : null
+  return values ? (
+    <TrackingProvider tracking='Étiquette'>
+      <EtiquetteContent {...values} animated={animated} ref={ref} />
+    </TrackingProvider>
+  ) : null
 }
 
 export default IFrameEtiquette
