@@ -25,6 +25,8 @@
 }
 
 .link {
+  background-color: transparent !important;
+  cursor: pointer !important;
   color: var(--neutral-70) !important;
   padding: 0.75rem !important;
   display: flex !important;
