@@ -7,20 +7,18 @@ test('search for an adress', async () => {
   const result = await searchAddress('6 rue du chemin vert')
 
   expect(result.length).toEqual(15)
-  expect(result[0].geometry.coordinates).toEqual([1.6386030000000045, 46.901450499999996])
+  expect(result[0].geometry.coordinates).toEqual([4.052435, 49.2461621])
   expect(result[0].properties).toEqual({
-    city: 'Vineuil',
-    county: 'Indre',
-    district: 'Montabord',
-    extent: [1.638497, 46.901526, 1.638693, 46.901388],
+    city: 'Reims',
+    county: 'Marne',
+    district: 'Chemin-Vert',
     housenumber: '6',
-    locality: 'Vineuil',
-    osm_id: 188630915,
-    osm_key: 'building',
-    osm_type: 'W',
-    osm_value: 'yes',
-    postcode: '36110',
-    state: 'Centre-Val de Loire',
+    osm_id: 5857342241,
+    osm_key: 'place',
+    osm_type: 'N',
+    osm_value: 'house',
+    postcode: '51100',
+    state: 'Grand Est',
     street: 'Rue du Chemin Vert',
     type: 'house',
     country: 'France',
@@ -37,7 +35,7 @@ test('search for a street', async () => {
   const result = await searchAddress('rue auvry')
 
   expect(result.length).toEqual(1)
-  expect(result[0].geometry.coordinates).toEqual([2.3878640930207595, 48.90383561069475])
+  expect(result[0].geometry.coordinates).toEqual([2.388846, 48.9036616])
   expect(result[0].properties).toEqual({
     extent: [2.3867991, 48.9040244, 2.3889291, 48.9036469],
     name: 'Rue Auvry',
