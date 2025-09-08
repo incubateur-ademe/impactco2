@@ -32,7 +32,7 @@ export async function trackAPIRequest(request: NextRequest, api: string, params?
     return name
   } catch (error) {
     await Sentry.captureException(error)
-    console.error(`tracking failed - ${referer}- ${authorization}`)
+    console.error(`tracking failed - ${referer} - ${authorization}`, error)
   }
 }
 
