@@ -1,11 +1,11 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
+import useTrackingContext from 'src/providers/TrackingProvider'
 import { Category } from 'types/category'
 import { categories } from 'data/categories'
-import { track } from 'utils/matomo'
 import NumberInput from 'components/form/NumberInput'
 import CategorySimulator from './CategorySimulator'
 import shareableStyles from '../shareable/Shareable.module.css'
@@ -14,6 +14,7 @@ import styles from './Simulator.module.css'
 const chauffage = categories.find((category) => category.slug === 'chauffage') as Category
 
 const ChauffageSimulator = () => {
+  const { trackOnce } = useTrackingContext()
   const {
     chauffage: { m2, setM2 },
   } = useParamContext()
@@ -37,7 +38,7 @@ const ChauffageSimulator = () => {
           id='m2-value'
           value={m2}
           setValue={(value) => {
-            track('Chauffage', 'Surface', value.toString())
+            trackOnce('Surface')
             setM2(value)
           }}
           label='Surface (en m²)'

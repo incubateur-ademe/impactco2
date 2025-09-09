@@ -1,10 +1,13 @@
+import { TrackingProvider } from 'src/providers/TrackingProvider'
 import TranslationProvider from 'src/providers/TranslationProvider'
 import LivraisonEtiquette from 'components/outils/livraison/LivraisonEtiquette'
 
 const page = () => {
   return (
     <TranslationProvider>
-      <LivraisonEtiquette id='static' />
+      <TrackingProvider tracking='Livraison étiquette'>
+        <LivraisonEtiquette id='static' />
+      </TrackingProvider>
     </TranslationProvider>
   )
 }

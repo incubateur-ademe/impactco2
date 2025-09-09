@@ -2,6 +2,7 @@ import { useTranslations } from 'next-intl'
 import Link from 'next/link'
 import { useMemo } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
+import useTrackingContext from 'src/providers/TrackingProvider'
 import { computedEquivalents } from 'src/providers/equivalents'
 import { ComputedEquivalent } from 'types/equivalent'
 import { getName, getNameWithoutSuffix, isEquivalentInMode } from 'utils/Equivalent/equivalent'
@@ -58,6 +59,7 @@ const TransportComparisonEquivalent = ({
   canChange?: boolean
   tracking: string
 }) => {
+  const { trackOnce } = useTrackingContext()
   const {
     language,
     setOverscreen,
@@ -83,7 +85,8 @@ const TransportComparisonEquivalent = ({
             title={`Voir plus d'information sur ${equivalent.name}`}
             href={equivalent.link}
             target='_blank'
-            rel='noreferrer noopener'>
+            rel='noreferrer noopener'
+            onClick={() => trackOnce('ClickEquivalent')}>
             <NewTabIcon noMargin />
           </Link>
           <div className={styles.top}>

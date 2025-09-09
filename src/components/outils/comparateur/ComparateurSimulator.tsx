@@ -4,6 +4,7 @@ import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
 import { useEffect, useRef } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
+import useTrackingContext from 'src/providers/TrackingProvider'
 import { getName } from 'utils/Equivalent/equivalent'
 import { getNumberPrecision } from 'utils/formatNumberPrecision'
 import { metaTitles } from 'utils/meta'
@@ -19,6 +20,7 @@ import simulatorStyles from '../Simulator.module.css'
 import styles from './ComparateurSimulator.module.css'
 
 const ComparateurSimulator = () => {
+  const { trackOnce } = useTrackingContext()
   const inputRef = useRef<HTMLInputElement>(null)
   const isInitialRender = useRef(true)
   const {
@@ -48,7 +50,10 @@ const ComparateurSimulator = () => {
             ref={inputRef}
             id='base-value'
             value={baseValue}
-            setValue={setBaseValue}
+            setValue={(value) => {
+              setBaseValue(value)
+              trackOnce('Valeur')
+            }}
             label={`${t('number-of')} ${comparedEquivalent ? getName(language, comparedEquivalent, true, baseValue, false, true) : t('co2-unit')}`}
             unit={
               comparedEquivalent ? (

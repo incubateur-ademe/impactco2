@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl'
 import { useEffect, useRef, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
+import useTrackingContext from 'src/providers/TrackingProvider'
 import { track } from 'utils/matomo'
 import Button from 'components/base/buttons/Button'
 import MagicWandIcon from 'components/base/icons/magic-wand'
@@ -11,6 +12,7 @@ import { getRandomEquivalents } from './random'
 import styles from './Tiles.module.css'
 
 const Tiles = () => {
+  const { trackOnce } = useTrackingContext()
   const firstRef = useRef<HTMLLIElement>(null)
   const t = useTranslations('comparateur')
   const {
@@ -49,7 +51,12 @@ const Tiles = () => {
         ))}
         {equivalents.length < 8 && (
           <li className={styles.tileContainer}>
-            <Tile onAdd={() => setOverscreen('comparateur', 'equivalents')} />
+            <Tile
+              onAdd={() => {
+                setOverscreen('comparateur', 'equivalents')
+                trackOnce('Ajouter')
+              }}
+            />
           </li>
         )}
       </ul>
@@ -60,6 +67,7 @@ const Tiles = () => {
             track('Comparateur', 'Générer d’autres équivalents', 'generate_equivalent')
             setGeneration(0)
             setTimeout(() => {
+              trackOnce('Générer')
               setEquivalents(getRandomEquivalents(baseValue * weight, comparedEquivalent?.slug, equivalents.length))
               setTimeout(() => {
                 setGeneration(1)
