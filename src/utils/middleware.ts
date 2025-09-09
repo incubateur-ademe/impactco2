@@ -12,11 +12,22 @@ export async function trackAPIRequest(request: NextRequest, api: string, params?
 
   try {
     let name = referer || ''
+
     if (authorization) {
-      const bearerToken = authorization.split(' ')
-      if (bearerToken.length === 2 && bearerToken[0].toLowerCase() === 'bearer') {
-        const apiKey = await prismaClient.apiKey.findUnique({ select: { owner: true }, where: { key: bearerToken[1] } })
-        name = apiKey && apiKey.owner ? apiKey.owner : bearerToken[1]
+      try {
+        const bearerToken = authorization.split(' ')
+        name = bearerToken[1] || authorization
+        if (bearerToken.length === 2 && bearerToken[0].toLowerCase() === 'bearer') {
+          const apiKey = await prismaClient.apiKey.findUnique({
+            select: { owner: true },
+            where: { key: bearerToken[1] },
+          })
+          if (apiKey && apiKey.owner) {
+            name = apiKey.owner
+          }
+        }
+      } catch (error) {
+        console.error(`incorrect authorization header - ${authorization}`)
       }
     }
 
