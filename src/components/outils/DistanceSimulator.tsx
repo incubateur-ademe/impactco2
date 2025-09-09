@@ -1,9 +1,8 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import React from 'react'
 import useParamContext from 'src/providers/ParamProvider'
-import { track } from 'utils/matomo'
+import useTrackingContext from 'src/providers/TrackingProvider'
 import useTransportations from 'hooks/useTransportations'
 import NumberInput from 'components/form/NumberInput'
 import CategorySimulator from './CategorySimulator'
@@ -12,6 +11,7 @@ import TransportComparisonSimulator from './TransportComparisonSimulator'
 import styles from './Simulator.module.css'
 
 const DistanceSimulator = ({ withComparisonMode }: { withComparisonMode: boolean }) => {
+  const { trackOnce } = useTrackingContext()
   const {
     transport: { comparisonMode },
     distance: { km, setKm, displayAll, setDisplayAll },
@@ -26,7 +26,7 @@ const DistanceSimulator = ({ withComparisonMode }: { withComparisonMode: boolean
           id='km-value'
           value={km}
           setValue={(value) => {
-            track('Transport distance', 'Distance', value.toString())
+            trackOnce('Distance')
             setKm(value)
           }}
           label='Distance parcourue (en km)'

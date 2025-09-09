@@ -1,8 +1,9 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import React, { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
+import useTrackingContext from 'src/providers/TrackingProvider'
 import { ComputedEquivalent } from 'types/equivalent'
 import { isEquivalentInMode } from 'utils/Equivalent/equivalent'
 import { track } from 'utils/matomo'
@@ -33,6 +34,7 @@ const TransportComparisonSimulator = ({
   tracking: string
   equivalents: ComputedEquivalent[]
 }) => {
+  const { trackOnce } = useTrackingContext()
   const t = useTranslations('transport')
   const {
     transport: { setComparison, comparison, modes },
@@ -121,6 +123,7 @@ const TransportComparisonSimulator = ({
         <Button
           className={styles.button}
           onClick={() => {
+            trackOnce('OtherComparison')
             setGeneration(0)
             setTimeout(() => {
               setIndex(typeof index === 'number' ? index + 1 : 1)

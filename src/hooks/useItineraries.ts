@@ -9,7 +9,12 @@ export type Point = {
   address: string
 }
 
-export default function useItineraries(start: Point | undefined, end: Point | undefined, tracking: string) {
+export default function useItineraries(
+  start: Point | undefined,
+  end: Point | undefined,
+  tracking: string,
+  trackOnce?: (event: string) => void
+) {
   return useQuery({
     queryKey: [start || '', end || ''],
     queryFn: async () => {
@@ -19,6 +24,9 @@ export default function useItineraries(start: Point | undefined, end: Point | un
 
       if (start.city && end.city) {
         track(`Transport ${tracking}`, 'Recherche', `${start.city}-${end.city}`)
+        if (trackOnce) {
+          trackOnce('Recherche')
+        }
       }
 
       const axiosClient = (await import('utils/axios')).default
