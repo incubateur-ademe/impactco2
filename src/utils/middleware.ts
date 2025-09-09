@@ -26,7 +26,7 @@ export async function trackAPIRequest(request: NextRequest, api: string, params?
             name = apiKey.owner
           }
         }
-      } catch () {
+      } catch {
         console.error(`incorrect authorization header - ${authorization}`)
       }
     }
