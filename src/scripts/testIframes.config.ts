@@ -174,7 +174,7 @@ export const checks = [
       await iframe.getByTestId('input-base-value').fill('100')
       await iframe.getByRole('button', { name: 'Ajouter un équivalent' }).click()
       await iframe.getByRole('button', { name: 'Cas pratiques 0 /' }).click()
-      await iframe.getByLabel('A/R Paris - Berlin en tgv').check()
+      await iframe.getByLabel('A/R Paris - Berlin en TGV').check()
       await iframe.getByRole('button', { name: 'Revenir au comparateur' }).click()
 
       await comparateurTest(iframe, true, true)

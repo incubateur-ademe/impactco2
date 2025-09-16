@@ -324,8 +324,8 @@ Liste des équivalents à comparer parmis la liste suivante :
   - telechargement : Go de données (téléchargement)
 - Cas pratique
   - avion-pny : A/R paris - New-York en avion
-  - tgv-paris-berlin" : A/R Paris - Berlin en tgv
-  - tgv-paris-marseille" : A/R Paris - Marseille en tgv
+  - tgv-paris-berlin" : A/R Paris - Berlin en TGV
+  - tgv-paris-marseille" : A/R Paris - Marseille en TGV
   - voiture-lille-nimes" : A/R Lille - Nîmes en voiture
   - francais : % de l'empreinte carbone d'un citoyen français
   - game-of-thrones : épisode de Game of Thrones en streaming

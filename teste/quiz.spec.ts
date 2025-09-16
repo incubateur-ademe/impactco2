@@ -6,7 +6,7 @@ test('Test quiz', async ({ page }) => {
   await expect(page.getByTestId('quiz-previous-button')).not.toBeVisible()
   await expect(page.getByTestId('quiz-question-result')).toContainText('Choisissez votre réponse ci dessous :')
   await expect(page.getByTestId('quiz-answer-A')).toContainText('A1Repas avec du boeuf')
-  await expect(page.getByTestId('quiz-answer-B')).toContainText('B1A/R Paris - Marseille en tgv')
+  await expect(page.getByTestId('quiz-answer-B')).toContainText('B1A/R Paris - Marseille en TGV')
   await expect(page.getByTestId('quiz-answer-value-A')).not.toBeVisible()
   await expect(page.getByTestId('quiz-answer-value-B')).not.toBeVisible()
   await expect(page.getByTestId('quiz-next-question')).not.toBeVisible()
@@ -85,7 +85,7 @@ test('Test quiz', async ({ page }) => {
   await expect(page.getByTestId('quiz-header')).toContainText('Question 1 / 10')
   await expect(page.getByTestId('quiz-question-result')).toContainText('Choisissez votre réponse ci dessous :')
   await expect(page.getByTestId('quiz-answer-A')).toContainText('A1Repas avec du boeuf')
-  await expect(page.getByTestId('quiz-answer-B')).toContainText('B1A/R Paris - Marseille en tgv')
+  await expect(page.getByTestId('quiz-answer-B')).toContainText('B1A/R Paris - Marseille en TGV')
   await expect(page.getByTestId('quiz-answer-value-A')).not.toBeVisible()
   await expect(page.getByTestId('quiz-answer-value-B')).not.toBeVisible()
   await expect(page.getByTestId('quiz-next-question')).not.toBeVisible()
@@ -133,7 +133,7 @@ test('Test quiz', async ({ page }) => {
   await expect(page.getByTestId('quiz-header')).toContainText('Question 1 / 10')
   await expect(page.getByTestId('quiz-question-result')).toContainText('Choisissez votre réponse ci dessous :')
   await expect(page.getByTestId('quiz-answer-A')).toContainText('A1Repas avec du boeuf')
-  await expect(page.getByTestId('quiz-answer-B')).toContainText('B1A/R Paris - Marseille en tgv')
+  await expect(page.getByTestId('quiz-answer-B')).toContainText('B1A/R Paris - Marseille en TGV')
 })
 
 test('Test quiz share', async ({ page }) => {
