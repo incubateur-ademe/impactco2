@@ -1,6 +1,5 @@
 import classNames from 'classnames'
 import Image from 'next/image'
-import React from 'react'
 import formatName from 'utils/formatName'
 import MinusIcon from 'components/base/icons/minus'
 import PlusIcon from 'components/base/icons/plus'
@@ -44,7 +43,10 @@ const PlusMinus = ({
       </div>
       <button
         className={styles.plus}
-        onClick={() => setValue(value + stepValue)}
+        onClick={(e) => {
+          e.preventDefault()
+          setValue(value + stepValue)
+        }}
         disabled={!!max && value === max}
         title={`Augmenter le nombre de ${formatName(label, 1)}`}>
         <PlusIcon />
