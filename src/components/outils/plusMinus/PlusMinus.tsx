@@ -29,7 +29,10 @@ const PlusMinus = ({
     <div className={classNames(styles.container, className)}>
       <button
         className={styles.minus}
-        onClick={() => setValue(value - stepValue)}
+        onClick={(e) => {
+          e.preventDefault()
+          setValue(value - stepValue)
+        }}
         disabled={value === stepValue}
         title={`Diminuer le nombre de ${formatName(label, 1)}`}>
         <MinusIcon />
