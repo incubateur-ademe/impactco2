@@ -17,14 +17,14 @@
   "tgv-paris-berlin": {
     "category": 13,
     "value": 7260,
-    "fr": "A/R Paris - Berlin en tgv",
+    "fr": "A/R Paris - Berlin en TGV",
     "en": "Roundtrip[s] Paris - Berlin by train",
     "es": "Viaje de ida y vuelta París - Berlin en tren"
   },
   "tgv-paris-marseille": {
     "category": 13,
     "value": 4400,
-    "fr": "A/R Paris - Marseille en tgv",
+    "fr": "A/R Paris - Marseille en TGV",
     "en": "Roundtrip[s] Paris - Marseille by train",
     "es": "Viaje de ida y vuelta París - Marseille en tren"
   },
