@@ -1,6 +1,7 @@
 const defaultEquivalents = {
   all: [
-    { max: 1_000, equivalents: [['tgv'], ['eaudurobinet'], ['pomme'], ['email']] },
+    { max: 5, equivalents: [['tgv'], ['eaudurobinet'], ['email']] },
+    { min: 5, max: 1_000, equivalents: [['tgv'], ['eaudurobinet'], ['pomme'], ['email']] },
     {
       min: 1_000,
       max: 50_000,

@@ -242,12 +242,14 @@ const Detector = ({
 
   const refresh = useCallback(() => {
     setCount((prevCount) => prevCount + 1)
-    let newEquivalent = equivalent
-    while (newEquivalent === equivalent) {
-      newEquivalent = getRandomEquivalent(meaningfullEquivalents)?.slug || null
-    }
+    if (count > startingEquivalents.length && meaningfullEquivalents.length > 1) {
+      let newEquivalent = equivalent
+      while (newEquivalent === equivalent) {
+        newEquivalent = getRandomEquivalent(meaningfullEquivalents)?.slug || null
+      }
 
-    setEquivalent(newEquivalent)
+      setEquivalent(newEquivalent)
+    }
   }, [startingEquivalents, count])
 
   return (
@@ -280,7 +282,8 @@ const Detector = ({
             id='etiquette-value'
           />
         </div>
-        {meaningfullEquivalents.length > 1 && (
+        {(count < startingEquivalents.length ||
+          (count >= startingEquivalents.length && meaningfullEquivalents.length > 1)) && (
           <button
             className={styles.random}
             title='Obtenir une nouvelle comparaison'
