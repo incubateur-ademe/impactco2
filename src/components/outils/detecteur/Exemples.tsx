@@ -7,9 +7,9 @@ import Link from 'components/base/buttons/Link'
 import styles from './Exemples.module.css'
 
 const values = [
-  { label: '1kg', ex: '320 g CO2e' },
-  { label: '50kg', ex: '16 kg CO2e ' },
-  { label: '500kg', ex: '412 kg CO2e ' },
+  { label: '1kg', ex: '0,12 g de CO2' },
+  { label: '50kg', ex: '0,14 g CO2e ' },
+  { label: '500kg', ex: '6 g CO2e ' },
   { label: '10t', ex: '4,32 t CO2e ' },
   { label: '100t', ex: '320 t CO2e ' },
   { label: '1000t', ex: '4800 t CO2e' },
