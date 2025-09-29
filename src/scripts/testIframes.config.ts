@@ -8,7 +8,6 @@ import { usageNumeriqueTest } from '../../teste/usagenumerique'
 export const checks = [
   {
     slug: 'operadeparis',
-    skipAutoCheck: true,
     url: 'https://www.operadeparis.fr/infos-pratiques/preparer-votre-venue/palais-garnier',
     scroll: true,
     before: async (page: Page) => {
@@ -19,7 +18,7 @@ export const checks = [
       await expect(iframe.getByTestId('header-share-button')).toBeInViewport()
       await expect(iframe.getByLabel('Arrivée')).toHaveAttribute(
         'value',
-        "L'Opéra Restaurant Place Jacques Rouché Paris 75009 France",
+        "Palais Garnier Place de l'Opéra Paris 75009 France",
         { timeout: 10000 }
       )
       await iframe.getByLabel('Arrivée').clear()
@@ -115,7 +114,7 @@ export const checks = [
       await page.getByRole('button', { name: 'Accept' }).click()
     },
     checkIframe: async (page: FrameLocator) => {
-      await expect(page.getByTestId('equivalent-total-value')).toHaveText('339 kg CO₂e')
+      await expect(page.getByTestId('equivalent-total-value')).toHaveText('339 kg CO₂e', { timeout: 20000 })
       await page.getByRole('button', { name: 'Augmenter le nombre de année' }).click()
       await expect(page.getByTestId('equivalent-total-value')).toHaveText('343 kg CO₂e')
     },
@@ -170,8 +169,7 @@ export const checks = [
     url: 'https://2050today.org/empreinte-climat/?lang=fr',
     iframeContent: (page: Page) => page.locator('#iFrameResizer01').contentFrame(),
     checkIframe: async (iframe: FrameLocator) => {
-      await expect(await iframe.getByTestId('input-base-value')).toHaveValue('10')
-      await iframe.getByTestId('input-base-value').fill('100')
+      await expect(await iframe.getByTestId('input-base-value')).toHaveValue('100')
       await iframe.getByRole('button', { name: 'Ajouter un équivalent' }).click()
       await iframe.getByRole('button', { name: 'Cas pratiques 0 /' }).click()
       await iframe.getByLabel('A/R Paris - Berlin en TGV').check()
