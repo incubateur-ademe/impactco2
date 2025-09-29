@@ -123,10 +123,10 @@ test('Roundtrip', async ({ page }) => {
   await page.getByLabel('Départ').fill('nantes')
   await page.getByText('Nantes 44000 France', { exact: true }).click()
   await page.getByLabel('Arrivée').fill('angers')
-  await page.getByText('Angers 49000 France', { exact: true }).click()
+  await page.getByText('Angers France', { exact: true }).click()
 
   await expect(page.getByLabel('Départ')).toHaveAttribute('value', 'Nantes 44000 France')
-  await expect(page.getByLabel('Arrivée')).toHaveAttribute('value', 'Angers 49000 France')
+  await expect(page.getByLabel('Arrivée')).toHaveAttribute('value', 'Angers France')
 
   await expect(page.getByTestId('category-intercites')).toBeAttached()
   await expect(page.getByTestId('category-intercites')).toHaveText(
@@ -143,16 +143,16 @@ test('Roundtrip', async ({ page }) => {
 
   await page.getByTestId('header-share-button').click()
   await expect(page.getByTestId('clipboard-box')).toHaveText(
-    'http://localhost:3000/outils/transport/itineraire?itineraireStart=Nantes 44000 France&itineraireEnd=Angers 49000 France&roundTrip=true&defaultMode=list&language=fr'
+    'http://localhost:3000/outils/transport/itineraire?itineraireStart=Nantes 44000 France&itineraireEnd=Angers France&roundTrip=true&defaultMode=list&language=fr'
   )
   await page.getByTestId('cancel-button').click()
   await page.getByTestId('header-integrate-button').click()
   await expect(page.getByTestId('clipboard-box')).toHaveText(
-    '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport/itineraire" data-search="?theme=default&language=fr&km=10&itineraireStart=Nantes 44000 France&itineraireEnd=Angers 49000 France&defaultMode=list&roundTrip=true"></script>'
+    '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport/itineraire" data-search="?theme=default&language=fr&km=10&itineraireStart=Nantes 44000 France&itineraireEnd=Angers France&defaultMode=list&roundTrip=true"></script>'
   )
   await page.getByTestId('custom-param-roundTrip-checkbox').click()
   await expect(page.getByTestId('clipboard-box')).toHaveText(
-    '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport/itineraire" data-search="?theme=default&language=fr&km=10&itineraireStart=Nantes 44000 France&itineraireEnd=Angers 49000 France&defaultMode=list"></script>'
+    '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport/itineraire" data-search="?theme=default&language=fr&km=10&itineraireStart=Nantes 44000 France&itineraireEnd=Angers France&defaultMode=list"></script>'
   )
   await page.getByTestId('cancel-button').click()
   await expect(page.getByTestId('category-intercites')).toHaveText(
@@ -160,7 +160,7 @@ test('Roundtrip', async ({ page }) => {
   )
 
   await page.goto(
-    'http://localhost:3000/outils/transport/itineraire?itineraireStart=Nantes 44000 France&itineraireEnd=Angers 49000 France&roundTrip=true&defaultMode=list&language=fr'
+    'http://localhost:3000/outils/transport/itineraire?itineraireStart=Nantes 44000 France&itineraireEnd=Angers France&roundTrip=true&defaultMode=list&language=fr'
   )
   await expect(page.getByTestId('category-intercites')).toHaveText(
     'Intercités  - 182 km1.64 kg CO₂eusage : 65%, construction : 35%',

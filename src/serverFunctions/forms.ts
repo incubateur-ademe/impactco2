@@ -17,6 +17,10 @@ const saveCrisp = async (feedback: NotionCommand) => {
     crisp.authenticateTier('plugin', id, key)
 
     const conversation = await crisp.website.createNewConversation(websiteId)
+    if (!conversation || !conversation.session_id) {
+      return false
+    }
+
     await crisp.website.updateConversationMetas(websiteId, conversation.session_id, {
       email: feedback.email,
       segments: [feedback.type, feedback.structure, feedback.suggestionType],
