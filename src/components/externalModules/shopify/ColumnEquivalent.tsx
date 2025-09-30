@@ -71,8 +71,7 @@ const ColumnEquivalent = ({
           <Disclaimer
             language={language}
             comparisons={comparisons}
-            unit={unit}
-            value={value}
+            baseValue={preciseValue}
             column
             id={animated ? 'animated' : 'static'}
           />

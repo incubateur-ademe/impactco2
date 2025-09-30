@@ -4,6 +4,7 @@ import classNames from 'classnames'
 import { useEffect, useState } from 'react'
 import { getName } from 'utils/Equivalent/equivalent'
 import formatNumber from 'utils/formatNumber'
+import { getNumberPrecision } from 'utils/formatNumberPrecision'
 import CloseIcon from 'components/base/icons/close'
 import InformationIcon from 'components/base/icons/information'
 import { getValues } from '../SimpleValue'
@@ -51,17 +52,17 @@ const Disclaimer = ({
   id,
   comparisons,
   language,
-  value,
-  unit,
+  baseValue,
   column,
 }: {
   id: string
   comparisons: string[]
   language: string
-  value: number
-  unit: string
+  baseValue: number
   column?: boolean
 }) => {
+  const { unit, value } = getNumberPrecision(baseValue / 1000)
+
   const [display, setDisplay] = useState(false)
   const [factor, setFactor] = useState<number | null>(
     comparisons.length !== 1 || comparisons[0] === 'random'
@@ -85,8 +86,7 @@ const Disclaimer = ({
           id={`etiquette-${id}-disclaimer`}>
           {basis[language]}
           <br />
-          {ques[language]} {value} {unit}{' '}
-          {getDisclaimer(language, comparisons, factor ? (unit === 'g' ? value : value * 1000) / factor : 0)}
+          {ques[language]} {value} {unit} {getDisclaimer(language, comparisons, factor ? baseValue / factor : 0)}
         </div>
       )}
       <button
