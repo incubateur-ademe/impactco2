@@ -187,5 +187,7 @@ const sentryWebpackPluginOptions = {
 
 module.exports = () =>
   //withStatoscope(
-  withBundleAnalyzer(withSentryConfig(nextConfig, sentryWebpackPluginOptions))
+  //withBundleAnalyzer(
+  withSentryConfig(nextConfig, sentryWebpackPluginOptions)
+//)
 //)
