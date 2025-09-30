@@ -52,7 +52,6 @@ const Equivalent = ({
 
   const intValue = Number(baseValue)
   const preciseValue = Number.isNaN(intValue) ? 100000 : intValue
-  const { unit, value } = getNumberPrecision(preciseValue / 1000)
 
   return (
     <div className={className}>
@@ -84,8 +83,7 @@ const Equivalent = ({
             <Disclaimer
               language={language}
               comparisons={comparisons}
-              unit={unit}
-              value={value}
+              baseValue={preciseValue}
               id={animated ? 'animated' : 'static'}
             />
             <ul className={isAnimated ? styles.animatedComparisons : styles.comparisons}>
