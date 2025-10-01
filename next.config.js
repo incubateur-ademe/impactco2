@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const helmet = require('helmet')
 const { withSentryConfig } = require('@sentry/nextjs')
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
+/*const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
 /*const withStatoscope = require('next-statoscope')({
@@ -187,5 +187,7 @@ const sentryWebpackPluginOptions = {
 
 module.exports = () =>
   //withStatoscope(
-  withBundleAnalyzer(withSentryConfig(nextConfig, sentryWebpackPluginOptions))
+  //withBundleAnalyzer(
+  withSentryConfig(nextConfig, sentryWebpackPluginOptions)
+//)
 //)
