@@ -242,7 +242,7 @@ const Detector = ({
 
   const refresh = useCallback(() => {
     setCount((prevCount) => prevCount + 1)
-    if (count > startingEquivalents.length && meaningfullEquivalents.length > 1) {
+    if (count >= startingEquivalents.length && meaningfullEquivalents.length > 1) {
       let newEquivalent = equivalent
       while (newEquivalent === equivalent) {
         newEquivalent = getRandomEquivalent(meaningfullEquivalents)?.slug || null
