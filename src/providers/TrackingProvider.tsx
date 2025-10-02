@@ -45,15 +45,18 @@ export function TrackingProvider({ children, tracking }: { children: ReactNode; 
   useEffect(() => {
     if (entry) {
       if (entry.isIntersecting) {
-        timeoutRef.current = setTimeout(() => {
-          trackOnce('Temps')
-        }, 10000)
+        timeoutRef.current = setTimeout(
+          () => {
+            trackOnce('Temps')
+          },
+          tracking.toLowerCase().replace(/é/g, 'e').includes('etiquette') ? 15000 : 45000
+        )
       } else if (timeoutRef.current) {
         clearTimeout(timeoutRef.current)
         timeoutRef.current = null
       }
     }
-  }, [entry])
+  }, [tracking, entry])
 
   return (
     <TrackingContext.Provider
