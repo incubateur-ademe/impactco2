@@ -410,7 +410,7 @@
     "Approvisionnement": "Abastecimiento",
     "hypothesis": {
       "pre": {
-        "avion-pny": "Distancia total recorrida: 11,600 km.",
+        "avion-pny": "Viaje en avión, un trayecto muy largo. Distancia total recorrida: 11.600 km.",
         "tgv-paris-berlin": "Distancia total recorrida: 2,478 km.",
         "tgv-paris-marseille": "Distancia total recorrida: 1,504 km.",
         "voiture-lille-nimes": "Distancia total recorrida: 1,882 km.",

@@ -14,63 +14,81 @@ export const deplacements = [
           min: 300,
           max: 1000,
         },
-        empreinteId: 28130,
         subtitle: 'courtcourrier',
         ecv: [
           {
             id: 5,
-            value: 0.00038,
+            value: 0.000372,
           },
           {
             id: 6,
-            value: 0.1412,
+            value: 0.1232,
           },
           {
             id: 7,
-            value: 0.117,
+            value: 0.101,
           },
         ],
       },
       {
         display: {
           min: 1001,
-          max: 3500,
+          max: 2000,
         },
-        empreinteId: 28132,
         subtitle: 'moyencourrier',
         ecv: [
           {
             id: 5,
-            value: 0.00036,
+            value: 0.000361,
           },
           {
             id: 6,
-            value: 0.1024,
+            value: 0.1013,
           },
           {
             id: 7,
-            value: 0.0848,
+            value: 0.083,
           },
         ],
       },
       {
-        empreinteId: 28134,
+        display: {
+          min: 2001,
+          max: 5000,
+        },
+        subtitle: 'moyenlongcourrier',
+        ecv: [
+          {
+            id: 5,
+            value: 0.000294,
+          },
+          {
+            id: 6,
+            value: 0.0915,
+          },
+          {
+            id: 7,
+            value: 0.075,
+          },
+        ],
+      },
+      {
         subtitle: 'longcourrier',
         display: {
-          min: 3501,
+          min: 2001,
         },
         ecv: [
           {
             id: 5,
-            value: 0.00026,
+            value: 0.000294,
           },
           {
             id: 6,
-            value: 0.08299999999999999,
+            value: 0.0976,
           },
           {
             id: 7,
-            value: 0.0687,
+            value: 0.08,
           },
         ],
       },
@@ -80,7 +98,6 @@ export const deplacements = [
   },
   {
     id: 2,
-    empreinteId: 42760,
     synonyms: ['train'],
     slug: 'tgv',
     type: 'rail',
@@ -103,7 +120,6 @@ export const deplacements = [
   },
   {
     id: 3,
-    empreinteId: 42756,
     synonyms: ['train'],
     slug: 'intercites',
     type: 'rail',
@@ -173,14 +189,12 @@ export const deplacements = [
     category: 4,
     ecv: [
       {
-        value: 0.025,
-        id: 6,
+        id: 5,
+        value: 0.00442,
       },
       {
-        value: 0.00442130627,
-        _comment:
-          '// = (Valeur en kgCO₂e/kg de véhicule * Masse type) / Nombre de passagers / Durée de vie en km = (4 * 12000) / 30 / 361884',
-        id: 5,
+        id: 6,
+        value: 0.03314,
       },
     ],
     default: true,
@@ -222,7 +236,6 @@ export const deplacements = [
   },
   {
     id: 8,
-    empreinteId: 28331,
     synonyms: ['pedaler'],
     slug: 'veloelectrique',
     type: 'foot',
@@ -245,7 +258,6 @@ export const deplacements = [
   },
   {
     id: 9,
-    empreinteId: 28004,
     subtitle: 'Thermique',
     slug: 'busthermique',
     type: 'car',
@@ -253,11 +265,11 @@ export const deplacements = [
     ecv: [
       {
         id: 5,
-        value: 0.0089,
+        value: 0.00892,
       },
       {
         id: 6,
-        value: 0.1043,
+        value: 0.1135,
       },
     ],
     default: true,
@@ -268,7 +280,6 @@ export const deplacements = [
   },
   {
     id: 10,
-    empreinteId: 42761,
     slug: 'tramway',
     type: 'rail',
     category: 4,
@@ -290,7 +301,6 @@ export const deplacements = [
   },
   {
     id: 11,
-    empreinteId: 42757,
     synonyms: ['rail'],
     slug: 'metro',
     type: 'rail',
@@ -313,7 +323,6 @@ export const deplacements = [
   },
   {
     id: 12,
-    empreinteId: 27992,
     slug: 'scooter',
     type: 'car',
     category: 4,
@@ -335,18 +344,17 @@ export const deplacements = [
   },
   {
     id: 13,
-    empreinteId: 27995,
     slug: 'moto',
     type: 'car',
     category: 4,
     ecv: [
       {
         id: 5,
-        value: 0.0265,
+        value: 0.0292,
       },
       {
         id: 6,
-        value: 0.1648,
+        value: 0.1875,
       },
     ],
     default: true,
@@ -357,7 +365,6 @@ export const deplacements = [
   },
   {
     id: 14,
-    empreinteId: 42758,
     synonyms: ['train', 'rail'],
     slug: 'rer',
     type: 'rail',
@@ -381,7 +388,6 @@ export const deplacements = [
   },
   {
     id: 15,
-    empreinteId: 42759,
     synonyms: ['train', 'rail'],
     slug: 'ter',
     type: 'rail',
@@ -404,7 +410,6 @@ export const deplacements = [
   },
   {
     id: 16,
-    empreinteId: 28003,
     subtitle: 'Électrique',
     slug: 'buselectrique',
     type: 'car',
@@ -427,7 +432,6 @@ export const deplacements = [
   },
   {
     id: 17,
-    empreinteId: 28329,
     slug: 'trottinette',
     type: 'foot',
     category: 4,
@@ -449,7 +453,6 @@ export const deplacements = [
   },
   {
     id: 21,
-    empreinteId: 28005,
     subtitle: 'GNV',
     slug: 'busgnv',
     type: 'car',
