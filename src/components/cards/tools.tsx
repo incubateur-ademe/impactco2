@@ -3,6 +3,13 @@ import DetectorScript from 'components/outils/DetectorScript'
 
 export const tools = [
   {
+    slug: 'rse',
+    title: 'Kit RSE',
+    description: 'La ressource clé en main pour sensibiliser à la transition écologique',
+    linkLabel: 'Obtenir',
+    link: 'https://tally.so/r/3yBzV6',
+  },
+  {
     slug: 'livraison',
     title: 'Livraison',
     description: 'Simuler l’impact carbone de vos livraisons de colis',
