@@ -59,11 +59,7 @@ const Home = () => {
           <Image src='/images/home-icons.png' width={316} height={220} alt='' />
         </Link>
       </div>
-      <Block
-        title='Les données en accès libre'
-        description='Explorer notre bibliothèque de 150+ objets et gestes du quotidien pour enrichir et illustrer vos contenus. 100% données ADEME.'>
-        <Equivalents />
-      </Block>
+      <Equivalents />
       <Suspense>
         <FAQs filter='Accueil' page='Accueil' />
       </Suspense>

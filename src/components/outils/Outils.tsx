@@ -74,11 +74,7 @@ const Outils = () => {
       <Block title='Pour les développeurs' description='Des outils spécifiques pour des usages avancés.'>
         <ToolCards tools={devTools} />
       </Block>
-      <Block
-        title='Les fiches'
-        description='Parcourir les fiches dédiées à l’impact carbone de plus de 150 objets et gestes courants.'>
-        <Equivalents />
-      </Block>
+      <Equivalents />
       <FAQs filter='Catalogue outils' page='Outils' />
     </>
   )

@@ -13,6 +13,7 @@ import Card from 'components/cards/Card'
 import { getRandomEquivalents } from 'components/comparateur/random'
 import HiddenLabel from 'components/form/HiddenLabel'
 import Input from 'components/form/Input'
+import Block from 'components/layout/Block'
 import EquivalentCard from './EquivalentCard'
 import styles from './Equivalents.module.css'
 
@@ -37,7 +38,9 @@ const Equivalents = () => {
   }, [searchValue])
 
   return (
-    <>
+    <Block
+      title='Les données en accès libre'
+      description='Explorer notre bibliothèque de 150+ objets et gestes du quotidien pour enrichir et illustrer vos contenus. 100% données ADEME.'>
       <Card colored>
         <HiddenLabel htmlFor='input-search'>Rechercher</HiddenLabel>
         <Input
@@ -76,7 +79,7 @@ const Equivalents = () => {
         }}>
         Afficher d'autres objets et gestes
       </Button>
-    </>
+    </Block>
   )
 }
 
