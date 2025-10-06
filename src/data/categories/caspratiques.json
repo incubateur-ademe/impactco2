@@ -7,7 +7,7 @@
     "unit": "A/R",
     "slug": "avion-pny",
     "category": 13,
-    "total": 1770,
+    "total": 2060,
     "default": false,
     "tile": false,
     "source": "https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=aerien",
@@ -16,7 +16,7 @@
       "description": "Impact carbone d'un aller retour Paris New-York en avion"
     },
     "include": {
-      "pre": "Distance totale parcourue : 11600 km.",
+      "pre": "Déplacement par avion trajet très long. Distance totale parcourue : 11600 km.",
       "postNewLine": "Sont incluses les émissions directes, la construction des véhicules (fabrication, maintenance et fin de vie) et la production et distribution de carburant et d'électricité. La construction des infrastructures (routes, rails, aéroports...) n'est pas incluse."
     }
   },

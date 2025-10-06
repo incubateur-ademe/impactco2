@@ -410,7 +410,7 @@
     "Approvisionnement": "Approvisionnement",
     "hypothesis": {
       "pre": {
-        "avion-pny": "Distance totale parcourue : 11600 km.",
+        "avion-pny": "Déplacement par avion trajet très long. Distance totale parcourue : 11600 km.",
         "tgv-paris-berlin": "Distance totale parcourue : 2478 km.",
         "tgv-paris-marseille": "Distance totale parcourue : 1504 km.",
         "voiture-lille-nimes": "Distance totale parcourue : 1882 km.",
