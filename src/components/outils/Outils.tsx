@@ -18,9 +18,8 @@ const Outils = () => {
       <News
         tools={[
           {
-            ...quiz,
-            title: 'Découvrez le quiz carbone',
-            linkLabel: 'Faire le quiz',
+            ...(tools.find((tool) => tool.slug === 'rse') as ToolCardProps),
+            title: 'Découvrez le Kit RSE !',
             description: (
               <>
                 <div className={styles.descriptionLine}>
@@ -32,7 +31,7 @@ const Outils = () => {
                       <CheckRoundIcon />
                     </div>
                   </div>
-                  <p>10 questions pour tester ses connaissances</p>
+                  <p>4 événements en lien avec la transition écologique</p>
                 </div>
                 <div className={styles.descriptionLine}>
                   <div className={styles.icons}>
@@ -43,80 +42,7 @@ const Outils = () => {
                       <CheckRoundIcon />
                     </div>
                   </div>
-                  <p>Un nouveau format interactif pour apprendre et sensibiliser</p>
-                </div>
-              </>
-            ),
-          },
-          {
-            ...(tools.find((tool) => tool.slug === 'alimentation') as ToolCardProps),
-            title: 'Comparez l’impact carbone des aliments !',
-            linkLabel: 'Découvrir',
-            description: (
-              <>
-                <div className={styles.descriptionLine}>
-                  <div className={styles.icons}>
-                    <div className={styles.shape}>
-                      <SimpleStarShapeIcon />
-                    </div>
-                    <div className={styles.check}>
-                      <CheckRoundIcon />
-                    </div>
-                  </div>
-                  <p>60 aliments à comparer entre eux</p>
-                </div>
-                <div className={styles.descriptionLine}>
-                  <div className={styles.icons}>
-                    <div className={styles.shape}>
-                      <SimpleStarShapeIcon />
-                    </div>
-                    <div className={styles.check}>
-                      <CheckRoundIcon />
-                    </div>
-                  </div>
-                  <p>Un classement d'impact par rayon du magasin, popularité...</p>
-                </div>
-                <div className={styles.descriptionLine}>
-                  <div className={styles.icons}>
-                    <div className={styles.shape}>
-                      <SimpleStarShapeIcon />
-                    </div>
-                    <div className={styles.check}>
-                      <CheckRoundIcon />
-                    </div>
-                  </div>
-                  <p>Un outil facile à intergrer dans un contenu de sensibilisation</p>
-                </div>
-              </>
-            ),
-          },
-          {
-            ...(tools.find((tool) => tool.slug === 'livraison') as ToolCardProps),
-            title: 'Découvrez Impact Livraison !',
-            linkLabel: 'Découvrir',
-            description: (
-              <>
-                <div className={styles.descriptionLine}>
-                  <div className={styles.icons}>
-                    <div className={styles.shape}>
-                      <SimpleStarShapeIcon />
-                    </div>
-                    <div className={styles.check}>
-                      <CheckRoundIcon />
-                    </div>
-                  </div>
-                  <p>7 scénarios de livraison à comparer pour 10 objets</p>
-                </div>
-                <div className={styles.descriptionLine}>
-                  <div className={styles.icons}>
-                    <div className={styles.shape}>
-                      <SimpleStarShapeIcon />
-                    </div>
-                    <div className={styles.check}>
-                      <CheckRoundIcon />
-                    </div>
-                  </div>
-                  <p>Un outil ludique pour sensibiliser sans culpabiliser</p>
+                  <p>Des contenus prêts à l’emploi (mails, visuels, défis…)</p>
                 </div>
               </>
             ),
@@ -125,7 +51,7 @@ const Outils = () => {
       />
       <Block
         title='Outils thématiques'
-        description='Notre collection de simulateurs, comparateurs et infographies thématiques.'>
+        description='Notre collection de simulateurs, contenus et infographies thématiques.'>
         <ToolCards tools={tools} />
       </Block>
       <Block

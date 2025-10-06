@@ -42,9 +42,9 @@ const Home = () => {
         </div>
         <ToolCards
           tools={[
+            tools.find((tool) => tool.slug === 'rse'),
             tools.find((tool) => tool.slug === 'livraison'),
             tools.find((tool) => tool.slug === 'transport'),
-            tools.find((tool) => tool.slug === 'comparateur'),
           ]}
         />
       </Block>
