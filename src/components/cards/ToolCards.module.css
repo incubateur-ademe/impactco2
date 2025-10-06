@@ -8,8 +8,7 @@
 
 .newsContainer {
   img {
-    width: unset;
-
+    width: 13.75rem;
     @media screen and (max-width: 48rem) {
       width: 7.5rem;
     }

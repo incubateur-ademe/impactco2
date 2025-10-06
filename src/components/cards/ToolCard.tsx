@@ -51,8 +51,8 @@ const ToolCard = ({ slug, title, description, linkLabel, horizontal, link, image
       )}
       <IframeableLink
         href={link || `/outils/${slug}`}
-        target={link && link.startsWith('http://') ? '_blank' : undefined}
-        rel={link && link.startsWith('http://') ? 'noreferrer noopener' : undefined}
+        target={link && (link.startsWith('http://') || link.startsWith('https://')) ? '_blank' : undefined}
+        rel={link && (link.startsWith('http://') || link.startsWith('https://')) ? 'noreferrer noopener' : undefined}
         className={classNames(styles.card, {
           [styles.horizontalCard]: horizontal,
         })}
