@@ -127,7 +127,6 @@ export const mobiliers = [
     ids: [26970, 26968, 26969],
     slug: 'lit',
     category: 7,
-    total: 115,
     ecv: [
       {
         id: 1,
