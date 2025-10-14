@@ -42,7 +42,7 @@
   "dependencies": {
     "@iframe-resizer/child": "^5.5.7",
     "@iframe-resizer/parent": "^5.5.7",
-    "@incubateur-ademe/publicodes-acv-numerique": "^2.0.0",
+    "@incubateur-ademe/publicodes-acv-numerique": "^2.1.0",
     "@prisma/client": "^6.16.2",
     "@publicodes/react-ui": "^1.9.1",
     "@r2wc/react-to-web-component": "^2.1.0",

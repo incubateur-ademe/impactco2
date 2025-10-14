@@ -1795,10 +1795,10 @@
   resolved "https://registry.yarnpkg.com/@img/sharp-win32-x64/-/sharp-win32-x64-0.34.4.tgz#b19f1f88ace8bfc20784a0ad31767f3438e025d1"
   integrity sha512-xIyj4wpYs8J18sVN3mSQjwrw7fKUqRw+Z5rnHNCy5fYTxigBz81u5mOMPmFumwjcn8+ld1ppptMBCLic1nz6ig==
 
-"@incubateur-ademe/publicodes-acv-numerique@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@incubateur-ademe/publicodes-acv-numerique/-/publicodes-acv-numerique-2.0.0.tgz#114373a2d4f8b763072aaf277c474ee9460fb210"
-  integrity sha512-+VCgVUqZCKdIKd4pl775+txUSJm0T9d1Ha0yGVq9R79KLmc4Db6D8AfZUlGEZVJbTFndyh1NRy5GTV3qutuGGg==
+"@incubateur-ademe/publicodes-acv-numerique@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@incubateur-ademe/publicodes-acv-numerique/-/publicodes-acv-numerique-2.1.0.tgz#3c561d8697435469333a57fb98ed091bac47ee98"
+  integrity sha512-3nB4T+Tl+sYnmKLGiP345c0+/Fm2NU07TJjafaOz9odn2DRsYHC69khYcaujvELjt13/G1RjKXEfiRjiAZwzYQ==
 
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.1.0"
