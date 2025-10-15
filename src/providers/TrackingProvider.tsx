@@ -72,7 +72,7 @@ const useTrackingContext = () => {
   const context = useContext(TrackingContext)
 
   if (!context) {
-    throw new Error('useTrackingContext has to be used within <TrackingProvider>')
+    return { trackOnce: () => {} }
   }
 
   return context

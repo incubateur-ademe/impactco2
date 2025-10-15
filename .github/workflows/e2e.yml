@@ -60,6 +60,10 @@ jobs:
           lighthouseCheckResults: ${{ steps.lighthouseCheck.outputs.lighthouseCheckResults }}
           minAccessibilityScore: '93'
           minBestPracticesScore: '100'
+      - name: Prune dev dependencies
+        run: yarn install --production
+      - name: Check repository size
+        run: ./scripts/check-repo-size.sh
       - name: Upload playwright artifacts
         uses: actions/upload-artifact@v4
         if: always()
