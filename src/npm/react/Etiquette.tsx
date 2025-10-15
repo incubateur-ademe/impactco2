@@ -2,7 +2,10 @@
 
 import { useRef } from 'react'
 import { Language } from 'types/equivalent'
+import '../../utils/fonts.css'
 import InternalEtiquette from 'components/comparateur/Etiquette'
+import './color.css'
+import './styles.css'
 
 const Etiquette = ({
   comparisons,
