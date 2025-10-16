@@ -25,7 +25,7 @@ const TelevisionPNY = () => {
       </div>
       <Etiquette
         ref={ref}
-        baseValue={1770000}
+        baseValue={2060000}
         comparisons={['avion-pny', 'francais']}
         language={language}
         className={styles.center}

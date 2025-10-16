@@ -1,7 +1,6 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import React from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { Category } from 'types/category'
 import { ComputedEquivalent } from 'types/equivalent'
@@ -37,7 +36,12 @@ const EquivalentHeader = ({ category, equivalent }: { category: Category; equiva
           {equivalent.carpool && <span>{getCarpool(language, equivalent.carpool)}</span>}
           {'months' in equivalent && <span>{getMonthsLabel(equivalent.months, language)} </span>}
           {hasPre && <span>{pre}</span>}
-          {hasPost && <span>{post}</span>}
+          {hasPost && (
+            <span>
+              {hasPre ? ' ' : ''}
+              {post}
+            </span>
+          )}
         </p>
       )}
     </>

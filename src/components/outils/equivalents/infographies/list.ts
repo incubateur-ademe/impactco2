@@ -115,7 +115,7 @@ export const imageInfographies: Record<string, { image: string; alt: string }[]>
     },
     {
       image: 'Impact-transport-hotellerie-3-nuits-a-500km.png',
-      alt: 'Quel est l’impact du transport pour un voyage de 4 jours à 2 personnes ? (3 nuits à l’hôtel, à 500 km du domicile, soit un trajet à 2 personnes de 1000 km aller-retour). En avion (court courrier), le trajet Aller Retour représente 518 kg CO2e, l’hébergement 15,9 kg CO2e, soit un total de 533,9 kg CO2e. En voiture (thermique), le trajet Aller Retour représente 218 kg CO2e, l’hébergement 15,9 kg CO2e, soit un total de 233,9 kg CO2e. En TGV, le trajet Aller Retour représente 5,8 kg CO2e, l’hébergement 15,9 kg CO2e, soit un total de 20,7 kg CO2e. Source : ADEME.',
+      alt: 'Quel est l’impact du transport pour un voyage de 4 jours à 2 personnes ? (3 nuits à l’hôtel, à 500 km du domicile, soit un trajet à 2 personnes de 1000 km aller-retour). En avion (court courrier), le trajet Aller Retour représente 450 kg CO2e, l’hébergement 31,8 kg CO2e, soit un total de 481,8 kg CO2e. En voiture (thermique), le trajet Aller Retour représente 218 kg CO2e, l’hébergement 31,8 kg CO2e, soit un total de 249,8 kg CO2e. En TGV, le trajet Aller Retour représente 5,8 kg CO2e, l’hébergement 31,8 kg CO2e, soit un total de 37,6 kg CO2e. Source : ADEME.',
     },
   ],
   camping: [
@@ -125,7 +125,7 @@ export const imageInfographies: Record<string, { image: string; alt: string }[]>
     },
     {
       image: 'Impact-transport-hotellerie-3-nuits-a-500km.png',
-      alt: 'Quel est l’impact du transport pour un voyage de 4 jours à 2 personnes ? (3 nuits à l’hôtel, à 500 km du domicile, soit un trajet à 2 personnes de 1000 km aller-retour). En avion (court courrier), le trajet Aller Retour représente 518 kg CO2e, l’hébergement 15,9 kg CO2e, soit un total de 533,9 kg CO2e. En voiture (thermique), le trajet Aller Retour représente 218 kg CO2e, l’hébergement 15,9 kg CO2e, soit un total de 233,9 kg CO2e. En TGV, le trajet Aller Retour représente 5,8 kg CO2e, l’hébergement 15,9 kg CO2e, soit un total de 20,7 kg CO2e. Source : ADEME.',
+      alt: 'Quel est l’impact du transport pour un voyage de 4 jours à 2 personnes ? (3 nuits à l’hôtel, à 500 km du domicile, soit un trajet à 2 personnes de 1000 km aller-retour). En avion (court courrier), le trajet Aller Retour représente 450 kg CO2e, l’hébergement 31,8 kg CO2e, soit un total de 481,8 kg CO2e. En voiture (thermique), le trajet Aller Retour représente 218 kg CO2e, l’hébergement 31,8 kg CO2e, soit un total de 249,8 kg CO2e. En TGV, le trajet Aller Retour représente 5,8 kg CO2e, l’hébergement 31,8 kg CO2e, soit un total de 37,6 kg CO2e. Source : ADEME.',
     },
   ],
   location: [
@@ -135,7 +135,7 @@ export const imageInfographies: Record<string, { image: string; alt: string }[]>
     },
     {
       image: 'Impact-transport-hotellerie-3-nuits-a-500km.png',
-      alt: 'Quel est l’impact du transport pour un voyage de 4 jours à 2 personnes ? (3 nuits à l’hôtel, à 500 km du domicile, soit un trajet à 2 personnes de 1000 km aller-retour). En avion (court courrier), le trajet Aller Retour représente 518 kg CO2e, l’hébergement 15,9 kg CO2e, soit un total de 533,9 kg CO2e. En voiture (thermique), le trajet Aller Retour représente 218 kg CO2e, l’hébergement 15,9 kg CO2e, soit un total de 233,9 kg CO2e. En TGV, le trajet Aller Retour représente 5,8 kg CO2e, l’hébergement 15,9 kg CO2e, soit un total de 20,7 kg CO2e. Source : ADEME.',
+      alt: 'Quel est l’impact du transport pour un voyage de 4 jours à 2 personnes ? (3 nuits à l’hôtel, à 500 km du domicile, soit un trajet à 2 personnes de 1000 km aller-retour). En avion (court courrier), le trajet Aller Retour représente 450 kg CO2e, l’hébergement 31,8 kg CO2e, soit un total de 481,8 kg CO2e. En voiture (thermique), le trajet Aller Retour représente 218 kg CO2e, l’hébergement 31,8 kg CO2e, soit un total de 249,8 kg CO2e. En TGV, le trajet Aller Retour représente 5,8 kg CO2e, l’hébergement 31,8 kg CO2e, soit un total de 37,6 kg CO2e. Source : ADEME.',
     },
   ],
   residencesecondaire: [
@@ -145,7 +145,7 @@ export const imageInfographies: Record<string, { image: string; alt: string }[]>
     },
     {
       image: 'Impact-transport-hotellerie-3-nuits-a-500km.png',
-      alt: 'Quel est l’impact du transport pour un voyage de 4 jours à 2 personnes ? (3 nuits à l’hôtel, à 500 km du domicile, soit un trajet à 2 personnes de 1000 km aller-retour). En avion (court courrier), le trajet Aller Retour représente 518 kg CO2e, l’hébergement 15,9 kg CO2e, soit un total de 533,9 kg CO2e. En voiture (thermique), le trajet Aller Retour représente 218 kg CO2e, l’hébergement 15,9 kg CO2e, soit un total de 233,9 kg CO2e. En TGV, le trajet Aller Retour représente 5,8 kg CO2e, l’hébergement 15,9 kg CO2e, soit un total de 20,7 kg CO2e. Source : ADEME.',
+      alt: 'Quel est l’impact du transport pour un voyage de 4 jours à 2 personnes ? (3 nuits à l’hôtel, à 500 km du domicile, soit un trajet à 2 personnes de 1000 km aller-retour). En avion (court courrier), le trajet Aller Retour représente 450 kg CO2e, l’hébergement 31,8 kg CO2e, soit un total de 481,8 kg CO2e. En voiture (thermique), le trajet Aller Retour représente 218 kg CO2e, l’hébergement 31,8 kg CO2e, soit un total de 249,8 kg CO2e. En TGV, le trajet Aller Retour représente 5,8 kg CO2e, l’hébergement 31,8 kg CO2e, soit un total de 37,6 kg CO2e. Source : ADEME.',
     },
   ],
   livraisondomicile: [

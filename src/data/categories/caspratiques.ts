@@ -2,7 +2,7 @@ export const casPratiques = [
   {
     slug: 'avion-pny',
     category: 13,
-    total: 1770,
+    total: 2060,
   },
   {
     slug: 'tgv-paris-berlin',
@@ -378,7 +378,7 @@ export const casPratiques = [
   {
     slug: 'avion-johannesburg-paris-rugby',
     category: 13,
-    total: 119430,
+    total: 140000,
     sources: [
       {
         label: 'Base Empreinte ADEME',
