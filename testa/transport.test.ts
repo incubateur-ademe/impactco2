@@ -68,12 +68,12 @@ describe('transport', () => {
         {
           id: 6,
           name: 'Autocar thermique',
-          value: 2.5,
+          value: 3.314,
         },
         {
           id: 13,
           name: 'Moto thermique',
-          value: 16.48,
+          value: 18.75,
         },
         {
           id: 14,
@@ -156,12 +156,12 @@ describe('transport', () => {
         {
           id: 6,
           name: 'Combustion coach',
-          value: 2.5,
+          value: 3.314,
         },
         {
           id: 13,
           name: 'Combustion motorcycle',
-          value: 16.48,
+          value: 18.75,
         },
         {
           id: 14,
@@ -188,8 +188,8 @@ describe('transport', () => {
       data: [
         {
           id: 1,
-          name: 'Avion court courrier',
-          value: 25.82,
+          name: 'Avion trajet court',
+          value: 22.42,
         },
         {
           id: 2,
@@ -254,7 +254,7 @@ describe('transport', () => {
         {
           id: 6,
           name: 'Autocar thermique',
-          value: 2.5,
+          value: 3.314,
         },
         {
           id: 30,
@@ -274,7 +274,7 @@ describe('transport', () => {
         {
           id: 9,
           name: 'Bus thermique',
-          value: 10.43,
+          value: 11.35,
         },
         {
           id: 10,
@@ -294,7 +294,7 @@ describe('transport', () => {
         {
           id: 13,
           name: 'Moto thermique',
-          value: 16.48,
+          value: 18.75,
         },
         {
           id: 14,
@@ -336,8 +336,8 @@ describe('transport', () => {
       data: [
         {
           id: 1,
-          name: 'Avion court courrier',
-          value: 25.82,
+          name: 'Avion trajet court',
+          value: 22.42,
         },
         {
           id: 3,
@@ -364,8 +364,8 @@ describe('transport', () => {
       data: [
         {
           id: 1,
-          name: 'Avion court courrier',
-          value: 14.12,
+          name: 'Avion trajet court',
+          value: 12.32,
         },
       ],
       warning:
@@ -398,12 +398,12 @@ describe('transport', () => {
         {
           id: 6,
           name: 'Autocar thermique',
-          value: 2.5,
+          value: 3.314,
         },
         {
           id: 13,
           name: 'Moto thermique',
-          value: 16.48,
+          value: 18.75,
         },
         {
           id: 14,
@@ -446,12 +446,12 @@ describe('transport', () => {
         {
           id: 6,
           name: 'Autocar thermique',
-          value: 2.5,
+          value: 3.314,
         },
         {
           id: 13,
           name: 'Moto thermique',
-          value: 16.48,
+          value: 18.75,
         },
         {
           id: 14,
@@ -530,12 +530,12 @@ describe('transport', () => {
         {
           id: 6,
           name: 'Autocar thermique',
-          value: 2.942130627,
+          value: 3.7560000000000002,
         },
         {
           id: 13,
           name: 'Moto thermique',
-          value: 19.13,
+          value: 21.67,
         },
         {
           id: 14,

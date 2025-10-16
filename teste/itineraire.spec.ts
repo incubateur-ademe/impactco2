@@ -112,7 +112,7 @@ test('Load correct number of tabs and redirect with params', async ({ page }) =>
 
     await expect(page.getByTestId('category-busthermique')).toBeAttached()
     await expect(page.getByTestId('category-busthermique')).toHaveText(
-      'Bus thermique1.36 kg CO₂eusage : 92%, construction : 8%'
+      'Bus thermique1.47 kg CO₂eusage : 93%, construction : 7%'
     )
   })
 })

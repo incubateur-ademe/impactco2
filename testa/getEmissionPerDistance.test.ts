@@ -28,12 +28,12 @@ describe('getEmissionPerDistance', () => {
     expect(data).toEqual([
       {
         emissions: {
-          gco2e: 258.2,
-          kgco2e: 0.2582,
-          tco2e: 0.0002582,
+          gco2e: 224.20000000000002,
+          kgco2e: 0.2242,
+          tco2e: 0.0002242,
         },
         id: 1,
-        name: 'Avion court courrier',
+        name: 'Avion trajet court',
       },
       {
         emissions: {
@@ -57,9 +57,9 @@ describe('getEmissionPerDistance', () => {
       { id: 5, name: 'Voiture électrique', emissions: { gco2e: 19.8, kgco2e: 0.0198, tco2e: 0.0000198 } },
       {
         emissions: {
-          gco2e: 25,
-          kgco2e: 0.025,
-          tco2e: 0.000025,
+          gco2e: 33.14,
+          kgco2e: 0.03314,
+          tco2e: 0.000033140000000000005,
         },
         id: 6,
         name: 'Autocar thermique',
@@ -71,7 +71,15 @@ describe('getEmissionPerDistance', () => {
         name: 'Vélo à assistance électrique',
         emissions: { gco2e: 2.2300000000000004, kgco2e: 0.00223, tco2e: 0.0000022300000000000002 },
       },
-      { id: 9, name: 'Bus thermique', emissions: { gco2e: 104.3, kgco2e: 0.1043, tco2e: 0.0001043 } },
+      {
+        id: 9,
+        name: 'Bus thermique',
+        emissions: {
+          gco2e: 113.5,
+          kgco2e: 0.1135,
+          tco2e: 0.00011350000000000001,
+        },
+      },
       { id: 10, name: 'Tramway', emissions: { gco2e: 3.8, kgco2e: 0.0038, tco2e: 0.0000038 } },
       { id: 11, name: 'Métro', emissions: { gco2e: 4.2, kgco2e: 0.0042, tco2e: 0.0000042 } },
       {
@@ -82,9 +90,9 @@ describe('getEmissionPerDistance', () => {
 
       {
         emissions: {
-          gco2e: 164.8,
-          kgco2e: 0.1648,
-          tco2e: 0.0001648,
+          gco2e: 187.5,
+          kgco2e: 0.1875,
+          tco2e: 0.0001875,
         },
         id: 13,
         name: 'Moto thermique',

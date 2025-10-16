@@ -41,15 +41,15 @@ export const distanceComparisonTest = async (page: Page | FrameLocator, prod?: b
   await page.getByTestId('comparison-tile-1').getByRole('button', { name: 'Modifier' }).click()
   await page.getByRole('button', { name: 'Avion', exact: true }).click()
   await expect(page.getByTestId('comparison-tile-0')).toHaveText(
-    'TGV0.03 kg CO₂eMoyen le plus écologique2.56Kg CO₂eévités Modifier'
+    'TGV0.03 kg CO₂eMoyen le plus écologique2.22Kg CO₂eévités Modifier'
   )
-  await expect(page.getByTestId('comparison-tile-1')).toHaveText('Avion court courrier2.59 kg CO₂e Modifier')
+  await expect(page.getByTestId('comparison-tile-1')).toHaveText('Avion trajet court2.25 kg CO₂e Modifier')
 
   await page.getByTestId('input-km-value').fill('10000')
   await expect(page.getByTestId('comparison-tile-0')).toHaveText(
-    'TGV29.3 kg CO₂eMoyen le plus écologique1,490Kg CO₂eévités Modifier'
+    'TGV29.3 kg CO₂eMoyen le plus écologique1,750Kg CO₂eévités Modifier'
   )
-  await expect(page.getByTestId('comparison-tile-1')).toHaveText('Avion long courrier1,520 kg CO₂e Modifier')
+  await expect(page.getByTestId('comparison-tile-1')).toHaveText('Avion trajet long1,779 kg CO₂e Modifier')
 }
 
 export const distanceTest = async (page: Page | FrameLocator, prod?: boolean) => {

@@ -410,7 +410,7 @@
     "Approvisionnement": "Supply",
     "hypothesis": {
       "pre": {
-        "avion-pny": "Total distance traveled: 11,600 km.",
+        "avion-pny": "Travel by plane, very long journey. Total distance traveled: 11,600 km.",
         "tgv-paris-berlin": "Total distance traveled: 2,478 km.",
         "tgv-paris-marseille": "Total distance traveled: 1,504 km.",
         "voiture-lille-nimes": "Total distance traveled: 1,882 km.",
@@ -420,6 +420,7 @@
         "harry-potter": "All Harry Potter films last an average of 1,176 minutes = 19.6 hours. The data is calculated based on one hour of HD streaming on a television using Wi-Fi.",
         "avion-courtcourrier": "Average occupancy rate: 101-220 passengers.",
         "avion-moyencourrier": "Average occupancy rate: 101-220 passengers.",
+        "avion-moyenlongcourrier": "Average occupancy rate: 101-220 passengers.",
         "avion-longcourrier": "Average occupancy rate: 101-220 passengers.",
         "lavelinge": "Capacity: 7kg.",
         "lit": "Frame + box spring + mattress.",
@@ -473,7 +474,7 @@
         "traitementdechetsjour": "Average annual emissions related to waste and domestic burning and wastewater from 2013 to 2024 (1.89 Mt CO2 e), reported per day.",
         "trainenfrancejour": "Average annual train emissions from 2013 to 2024 for transporting people and goods (0.43 MT CO2e) reported per day",
         "datacenterjour": "PAR1 campus in Nozar which includes 23 data centers, spans 110 hectares and has a power capacity of 250 MW. Electricity consumption of 1.3TWh/year reported to the 2024 electricity mix.",
-        "avion-johannesburg-paris-rugby": "For the 2023 World Cup, long-haul flight travel, with an as-the-crow-flies distance of 8,731 km with a delegation of 45 people (33 players and 12 staff members).",
+        "avion-johannesburg-paris-rugby": "For the 2023 World Cup, travel of a delegation of 45 people (33 players and 12 staff members) by long-distance plane, over a total distance traveled of 17,462 km.",
         "maisonneuve": "Construction of a new conventional house of 130 m² living space - case of housing in Saint-Pierre and Miquelon."
       },
       "post": {
@@ -482,6 +483,7 @@
         "terre-voiture": "Includes: the carbon impact of a trip in a gasoline car.",
         "avion-courtcourrier": "Per person in France. We account for the carbon impact of contrail formation. Included are direct emissions, the construction of vehicles (manufacturing, maintenance, and end-of-life), and the production and distribution of fuel and electricity. The construction of infrastructure (roads, railways, airports...) is not included.",
         "avion-moyencourrier": "Per person in France. We account for the carbon impact of contrail formation. Included are direct emissions, the construction of vehicles (manufacturing, maintenance, and end-of-life), and the production and distribution of fuel and electricity. The construction of infrastructure (roads, railways, airports...) is not included.",
+        "avion-moyenlongcourrier": "Per person in France. We account for the carbon impact of contrail formation. Included are direct emissions, the construction of vehicles (manufacturing, maintenance, and end-of-life), and the production and distribution of fuel and electricity. The construction of infrastructure (roads, railways, airports...) is not included.",
         "avion-longcourrier": "Per person in France. We account for the carbon impact of contrail formation. Included are direct emissions, the construction of vehicles (manufacturing, maintenance, and end-of-life), and the production and distribution of fuel and electricity. The construction of infrastructure (roads, railways, airports...) is not included.",
         "avion-pny": "Included are direct emissions, the construction of vehicles (manufacturing, maintenance, and end-of-life), and the production and distribution of fuel and electricity. The construction of infrastructure (roads, railways, airports...) is not included.",
         "tgv-paris-berlin": "Included are direct emissions, the construction of vehicles (manufacturing, maintenance, and end-of-life), and the production and distribution of fuel and electricity. The construction of infrastructure (roads, railways, airports...) is not included.",
