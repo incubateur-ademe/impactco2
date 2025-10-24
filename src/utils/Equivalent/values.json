@@ -185,28 +185,28 @@
   },
   "avion-courtcourrier": {
     "category": 4,
-    "value": 225,
+    "value": 224.572,
     "fr": "km en ;avion trajet court",
     "en": "km by ;plane short-haul",
     "es": "km en ;avión corto recorrido"
   },
   "avion-moyencourrier": {
     "category": 4,
-    "value": 185,
+    "value": 184.661,
     "fr": "km en ;avion trajet moyen",
     "en": "km by ;plane medium-haul",
     "es": "km en ;avión medio recorrido"
   },
   "avion-moyenlongcourrier": {
     "category": 4,
-    "value": 167,
+    "value": 166.794,
     "fr": "km en ;avion trajet moyen à long",
     "en": "km by ;plane medium to long-haul",
     "es": "km en ;avión medio a largo recorrido"
   },
   "avion-longcourrier": {
     "category": 4,
-    "value": 178,
+    "value": 177.894,
     "fr": "km en ;avion trajet long",
     "en": "km by ;plane long-haul",
     "es": "km en ;avión largo recorrido"
