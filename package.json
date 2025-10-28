@@ -9,9 +9,9 @@
   },
   "scripts": {
     "build:ecvs": "yarn build:empreinte & yarn build:agribalyse",
-    "build:empreinte": "ts-node src/scripts/buildFromEmpreinte.ts",
-    "build:agribalyse": "ts-node src/scripts/buildFromAgribalyse.ts",
-    "build:boisson": "ts-node src/scripts/buildFromAgribalyse.ts boissons",
+    "build:empreinte": "tsx src/scripts/buildFromEmpreinte.ts",
+    "build:agribalyse": "tsx src/scripts/buildFromAgribalyse.ts",
+    "build:boisson": "tsx src/scripts/buildFromAgribalyse.ts boissons",
     "test": "yarn testu && yarn testc && yarn testa && yarn teste",
     "testa": "NODE_ENV=test jest ./testa",
     "testc": "NODE_ENV=test jest ./testc",
@@ -27,13 +27,13 @@
     "build:analyze": "ANALYZE=true next build",
     "postbuild": "next-sitemap",
     "webpack": "dotenv -e .env webpack",
-    "stats:biz": "dotenv -e .env ts-node src/scripts/getBizStats.ts",
-    "stats": "dotenv -e .env ts-node src/scripts/getStats.ts",
-    "stats:yearly": "dotenv -e .env ts-node src/scripts/getYearlyStats.ts",
+    "stats:biz": "tsx src/scripts/getBizStats.ts",
+    "stats": "tsx src/scripts/getStats.ts",
+    "stats:yearly": "tsx src/scripts/getYearlyStats.ts",
     "start": "next start",
     "lint": "next lint",
     "chromatic": "chromatic --exit-zero-on-changes",
-    "testIframes": "npx playwright install chromium; npx ts-node -r dotenv/config src/scripts/testIframes.ts"
+    "testIframes": "npx playwright install chromium; npx tsx src/scripts/testIframes.ts"
   },
   "engines": {
     "node": ">22.0.0",
@@ -79,7 +79,7 @@
     "sharp": "^0.34.4",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-react": "^5.29.1",
-    "ts-node": "^10.9.2",
+    "tsx": "^4.20.6",
     "zod": "3.24.2"
   },
   "devDependencies": {
