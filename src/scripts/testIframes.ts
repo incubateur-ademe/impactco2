@@ -1,7 +1,10 @@
 import { chromium } from '@playwright/test'
 import axios from 'axios'
+import { config } from 'dotenv'
 import { mockRoutesItinerary } from '../../teste/mock-routes/mock-routes-itinerary'
 import { checks } from './testIframes.config'
+
+config()
 
 const test = async () => {
   console.log('Check iframes')

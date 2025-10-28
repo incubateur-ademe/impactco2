@@ -1,5 +1,8 @@
+import { config } from 'dotenv'
 import { getAllNotionDB } from '../utils/notion'
 import { prismaClient } from '../utils/prismaClient'
+
+config()
 
 const importFromNotion = async () => {
   if (process.env.AUTO_IMPORT_API_KEY !== 'true') {
