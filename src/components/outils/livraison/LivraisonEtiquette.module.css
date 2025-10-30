@@ -1,3 +1,4 @@
+.greyContainer,
 .container {
   background-color: var(--neutral-00);
   border-radius: 0.5rem;
@@ -84,4 +85,48 @@
   margin-right: 0;
   opacity: 1;
   visibility: visible;
+}
+
+.greyContainer {
+  border-color: #e4e7ec;
+
+  button,
+  a {
+    &:focus {
+      outline-color: var(--neutral-40);
+    }
+  }
+
+  .logo,
+  .disclaimer,
+  .header {
+    background-color: var(--neutral-00) !important;
+    border-color: #e4e7ec !important;
+  }
+
+  .disclaimerButton {
+    border-color: #e4e7ec;
+    color: var(--neutral-50);
+
+    &:hover {
+      background: var(--neutral-10);
+      color: var(--neutral-60);
+    }
+  }
+
+  .disclaimer,
+  .bold,
+  .title {
+    color: #12151b;
+  }
+
+  .disclaimer a {
+    color: #207fa7;
+  }
+
+  .logo {
+    &:hover {
+      background: var(--neutral-10) !important;
+    }
+  }
 }
