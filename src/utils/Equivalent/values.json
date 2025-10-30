@@ -1772,6 +1772,153 @@
     "en": "home delivery[s]",
     "es": "entrega[s] a domicilio"
   },
+  "magasin2kg": {
+    "category": 12,
+    "value": 7370.4,
+    "fr": "achat[s] en magasin",
+    "en": "purchase[s] in a store",
+    "es": "compra[s] en una tienda"
+  },
+  "magasindouce2kg": {
+    "category": 12,
+    "value": 830.4,
+    "fr": "achat[s] en magasin",
+    "en": "purchase[s] in a store",
+    "es": "compra[s] en una tienda"
+  },
+  "pointrelais2kg": {
+    "category": 12,
+    "value": 2467.67,
+    "fr": "livraison[s] en point de retrait",
+    "en": "delivery[s] in a relay point",
+    "es": "entrega[s] en un punto de relevo"
+  },
+  "pointrelaisdouce2kg": {
+    "category": 12,
+    "value": 941.67,
+    "fr": "livraison[s] en point de retrait",
+    "en": "delivery[s] in a relay point",
+    "es": "entrega[s] en un punto de relevo"
+  },
+  "clickcollect2kg": {
+    "category": 12,
+    "value": 7723.11,
+    "fr": "Click & Collect",
+    "en": "Click & Collect",
+    "es": "Click & Collect"
+  },
+  "clickcollectdouce2kg": {
+    "category": 12,
+    "value": 1183.11,
+    "fr": "Click & Collect",
+    "en": "Click & Collect",
+    "es": "Click & Collect"
+  },
+  "livraisondomicile2kg": {
+    "category": 12,
+    "value": 1074.98,
+    "fr": "livraison[s] à domicile",
+    "en": "home delivery[s]",
+    "es": "entrega[s] a domicilio"
+  },
+  "magasin15kg": {
+    "category": 12,
+    "value": 13476.07,
+    "fr": "achat[s] en magasin",
+    "en": "purchase[s] in a store",
+    "es": "compra[s] en una tienda"
+  },
+  "magasindouce15kg": {
+    "category": 12,
+    "value": 6936.07,
+    "fr": "achat[s] en magasin",
+    "en": "purchase[s] in a store",
+    "es": "compra[s] en una tienda"
+  },
+  "pointrelais15kg": {
+    "category": 12,
+    "value": 7684.76,
+    "fr": "livraison[s] en point de retrait",
+    "en": "delivery[s] in a relay point",
+    "es": "entrega[s] en un punto de relevo"
+  },
+  "pointrelaisdouce15kg": {
+    "category": 12,
+    "value": 6158.76,
+    "fr": "livraison[s] en point de retrait",
+    "en": "delivery[s] in a relay point",
+    "es": "entrega[s] en un punto de relevo"
+  },
+  "clickcollect15kg": {
+    "category": 12,
+    "value": 15113.13,
+    "fr": "Click & Collect",
+    "en": "Click & Collect",
+    "es": "Click & Collect"
+  },
+  "clickcollectdouce15kg": {
+    "category": 12,
+    "value": 8573.13,
+    "fr": "Click & Collect",
+    "en": "Click & Collect",
+    "es": "Click & Collect"
+  },
+  "livraisondomicile15kg": {
+    "category": 12,
+    "value": 7154.68,
+    "fr": "livraison[s] à domicile",
+    "en": "home delivery[s]",
+    "es": "entrega[s] a domicilio"
+  },
+  "magasin30kg": {
+    "category": 12,
+    "value": 20406.7,
+    "fr": "achat[s] en magasin",
+    "en": "purchase[s] in a store",
+    "es": "compra[s] en una tienda"
+  },
+  "magasindouce30kg": {
+    "category": 12,
+    "value": 13866.7,
+    "fr": "achat[s] en magasin",
+    "en": "purchase[s] in a store",
+    "es": "compra[s] en una tienda"
+  },
+  "pointrelais30kg": {
+    "category": 12,
+    "value": 13162.61,
+    "fr": "livraison[s] en point de retrait",
+    "en": "delivery[s] in a relay point",
+    "es": "entrega[s] en un punto de relevo"
+  },
+  "pointrelaisdouce30kg": {
+    "category": 12,
+    "value": 11636.61,
+    "fr": "livraison[s] en point de retrait",
+    "en": "delivery[s] in a relay point",
+    "es": "entrega[s] en un punto de relevo"
+  },
+  "clickcollect30kg": {
+    "category": 12,
+    "value": 23005.35,
+    "fr": "Click & Collect",
+    "en": "Click & Collect",
+    "es": "Click & Collect"
+  },
+  "clickcollectdouce30kg": {
+    "category": 12,
+    "value": 16465.35,
+    "fr": "Click & Collect",
+    "en": "Click & Collect",
+    "es": "Click & Collect"
+  },
+  "livraisondomicile30kg": {
+    "category": 12,
+    "value": 13628.45,
+    "fr": "livraison[s] à domicile",
+    "en": "home delivery[s]",
+    "es": "entrega[s] a domicilio"
+  },
   "microondes": {
     "category": 6,
     "value": 121350.00000000001,
