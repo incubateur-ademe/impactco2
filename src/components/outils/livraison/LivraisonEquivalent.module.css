@@ -11,6 +11,7 @@
   color: var(--neutral-60);
 }
 
+.greyContainer,
 .container {
   list-style: none;
   padding: calc(1.125rem - 2px) 1rem 1rem 1rem;
@@ -72,4 +73,40 @@
   font-size: 0.625rem;
   font-weight: 500;
   line-height: 1rem;
+}
+
+.greyContainer {
+  .bar,
+  .greenBar,
+  .plainBar {
+    border-color: var(--neutral-00);
+    background-color: #207fa7;
+  }
+
+  &:hover {
+    background: var(--neutral-10);
+
+    .value {
+      color: #207fa7;
+    }
+    .bar,
+    .greenBar,
+    .plainBar {
+      border-color: var(--neutral-10);
+    }
+  }
+
+  &.static {
+    border-color: #e4e7ec;
+  }
+
+  .green,
+  .grey {
+    color: #667085;
+  }
+
+  .value {
+    color: #207fa7;
+    font-weight: 700;
+  }
 }
