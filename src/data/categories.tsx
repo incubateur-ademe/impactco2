@@ -118,8 +118,8 @@ export const categories: Category[] = [
     slug: 'numerique',
     sources: [
       {
-        label: 'Etude ADEME / ARCEP - 2022',
-        href: 'https://librairie.ademe.fr/consommer-autrement/5226-evaluation-de-l-impact-environnemental-du-numerique-en-france-et-analyse-prospective.html',
+        label: 'Étude ADEME / ARCEP - mise à jour 2025',
+        href: 'https://librairie.ademe.fr/changement-climatique/7880-evaluation-de-l-impact-environnemental-du-numerique-en-france.html',
       },
       {
         label: 'Base Empreinte ADEME',

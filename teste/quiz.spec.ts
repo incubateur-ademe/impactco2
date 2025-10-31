@@ -62,7 +62,7 @@ test('Test quiz', async ({ page }) => {
   await expect(page.getByTestId('quiz-badge-critical-B')).not.toBeVisible()
   await expect(page.getByTestId('quiz-badge-success-B')).toBeVisible()
   await expect(page.getByTestId('quiz-answer-value-A')).toBeVisible()
-  await expect(page.getByTestId('quiz-answer-value-A')).toContainText('61.9 kg CO₂e')
+  await expect(page.getByTestId('quiz-answer-value-A')).toContainText('87.1 kg CO₂e')
   await expect(page.getByTestId('quiz-answer-value-A')).toBeVisible()
   await expect(page.getByTestId('quiz-answer-value-B')).toBeVisible()
   await expect(page.getByTestId('quiz-answer-value-B')).toContainText('44.9 kg CO₂e')
@@ -73,11 +73,11 @@ test('Test quiz', async ({ page }) => {
   await expect(page.getByTestId('quiz-next-question')).toBeVisible()
 
   await expect(
-    page.getByText('Tablette61.9 kg CO₂epar unitéHypothèses : Écran de 10,53 pouces, mix de')
+    page.getByText('Tablette87.1 kg CO₂epar unitéHypothèses : Écran de 10,53 pouces, mix de')
   ).not.toBeInViewport()
   await page.getByTestId('quiz-more-info-button').click()
   await expect(
-    page.getByText('Tablette61.9 kg CO₂epar unitéHypothèses : Écran de 10,53 pouces, mix de')
+    page.getByText('Tablette87.1 kg CO₂epar unitéHypothèses : Écran de 10,53 pouces, mix de')
   ).toBeInViewport()
 
   await page.getByTestId('quiz-previous-button').click()

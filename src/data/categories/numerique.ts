@@ -41,18 +41,18 @@ export const numeriques = [
     ecv: [
       {
         id: 4,
-        value: 2.1,
+        value: 2.27,
       },
       {
         id: 5,
-        value: 83,
+        value: 77,
       },
     ],
     usage: {
-      peryear: 0.22,
+      peryear: 0.25573725,
       defaultyears: 2.5,
     },
-    end: 0.2,
+    end: 0.246,
     default: true,
   },
   {
@@ -61,18 +61,18 @@ export const numeriques = [
     ecv: [
       {
         id: 4,
-        value: 2.9,
+        value: 2.94,
       },
       {
         id: 5,
-        value: 258.6,
+        value: 259,
       },
     ],
     usage: {
-      peryear: 5.2,
+      peryear: 5.304180000000001,
       defaultyears: 6,
     },
-    end: 6.6,
+    end: 6.61,
     default: true,
   },
   {
@@ -81,32 +81,32 @@ export const numeriques = [
     ecv: [
       {
         id: 4,
-        value: 1.8,
+        value: 1.85,
       },
       {
         id: 5,
-        value: 202.6,
+        value: 203,
       },
     ],
     usage: {
-      peryear: 7.85,
+      peryear: 7.956270000000001,
       defaultyears: 6,
     },
-    end: 6.6,
+    end: 6.61,
     default: true,
   },
   {
     slug: 'ecran',
     category: 1,
     usage: {
-      peryear: 3.6,
+      peryear: 3.7886999999999995,
       defaultyears: 6,
     },
-    end: 3.9,
+    end: 3.95,
     ecv: [
       {
         id: 4,
-        value: 1.3,
+        value: 1.29,
       },
       {
         id: 5,
@@ -118,18 +118,18 @@ export const numeriques = [
     slug: 'tabletteclassique',
     category: 1,
     usage: {
-      peryear: 0.6,
+      peryear: 0.9471749999999999,
       defaultyears: 3,
     },
-    end: 0.4,
+    end: 0.364,
     ecv: [
       {
         id: 4,
-        value: 3.4,
+        value: 3.43,
       },
       {
         id: 5,
-        value: 56.3,
+        value: 80.5,
       },
     ],
     default: true,
@@ -140,18 +140,18 @@ export const numeriques = [
     ecv: [
       {
         id: 4,
-        value: 3.2,
+        value: 3.26,
       },
       {
         id: 5,
-        value: 372.6,
+        value: 325,
       },
     ],
     usage: {
-      peryear: 10.6,
+      peryear: 3.6939825,
       defaultyears: 8,
     },
-    end: 11.8,
+    end: 11.9,
     default: true,
   },
   {
@@ -164,14 +164,14 @@ export const numeriques = [
       },
       {
         id: 5,
-        value: 170.3,
+        value: 170,
       },
     ],
     usage: {
-      peryear: 1.52,
+      peryear: 1.50600825,
       defaultyears: 5,
     },
-    end: 2.8,
+    end: 2.79,
     default: true,
   },
   {
@@ -188,7 +188,7 @@ export const numeriques = [
       },
     ],
     usage: {
-      peryear: 1.2,
+      peryear: 1.13661,
       defaultyears: 5,
     },
     end: 0.7,
@@ -214,18 +214,18 @@ export const numeriques = [
     ecv: [
       {
         id: 4,
-        value: 0.4,
+        value: 0.38,
       },
       {
         id: 5,
-        value: 70.4,
+        value: 70.35,
       },
     ],
     usage: {
-      peryear: 0.04,
+      peryear: 0.037887,
       defaultyears: 5,
     },
-    end: 1.3,
+    end: 1.675,
   },
   {
     subtitle: 'laptop',
@@ -234,14 +234,14 @@ export const numeriques = [
     ecv: [
       {
         id: 4,
-        value: 0.1,
+        value: 0.14,
       },
       {
         id: 5,
-        value: 3.5,
+        value: 3.51,
       },
     ],
-    end: 0.5,
+    end: 0.542,
   },
   {
     subtitle: 'smartphone',
@@ -250,14 +250,14 @@ export const numeriques = [
     ecv: [
       {
         id: 4,
-        value: 0,
+        value: 0.0136,
       },
       {
         id: 5,
-        value: 0.3,
+        value: 0.349,
       },
     ],
-    end: 0.1,
+    end: 0.052700000000000004,
   },
   {
     slug: 'disquedur',
@@ -265,14 +265,37 @@ export const numeriques = [
     ecv: [
       {
         id: 4,
-        value: 0.1,
+        value: 0.113,
       },
       {
         id: 5,
         value: 11.5,
       },
     ],
-    end: 0.3,
+    end: 0.287,
+    usage: {
+      peryear: 0.151548,
+      defaultyears: 5,
+    },
+  },
+  {
+    slug: 'ssd',
+    category: 1,
+    ecv: [
+      {
+        id: 4,
+        value: 0.0161,
+      },
+      {
+        id: 5,
+        value: 135,
+      },
+    ],
+    end: 0.07959999999999999,
+    usage: {
+      peryear: 0.0189435,
+      defaultyears: 5,
+    },
   },
   {
     slug: 'clefusb',
@@ -280,13 +303,18 @@ export const numeriques = [
     ecv: [
       {
         id: 4,
-        value: 0,
+        value: 0.00424,
       },
       {
         id: 5,
-        value: 2.9,
+        value: 5.16,
       },
     ],
+    usage: {
+      peryear: 0.0075774,
+      defaultyears: 5,
+    },
+    end: 0.015300000000000001,
   },
   {
     slug: 'box',
@@ -294,7 +322,7 @@ export const numeriques = [
     ecv: [
       {
         id: 4,
-        value: 0.6,
+        value: 0.61,
       },
       {
         id: 5,
@@ -302,9 +330,9 @@ export const numeriques = [
       },
     ],
     usage: {
-      peryear: 3.8,
+      peryear: 3.6371520000000004,
       defaultyears: 5,
     },
-    end: 1.6,
+    end: 1.63,
   },
 ]

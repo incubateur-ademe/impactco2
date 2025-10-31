@@ -17,6 +17,7 @@ const FruitsEtLegumesData = dynamic(() => import('../Data/FruitsEtLegumesData'))
 const LivraisonData = dynamic(() => import('../Data/LivraisonData'))
 const TransportData = dynamic(() => import('../Data/TransportData'))
 const UsageNumeriqueData = dynamic(() => import('../Data/UsageNumeriqueData'))
+const NumeriqueData = dynamic(() => import('../Data/NumeriqueData'))
 
 export const overScreenCategoryValues: (category: Category) => Record<string, OverScreenInfo> = (category) => {
   const values = {
@@ -561,6 +562,11 @@ export const overScreenCategoryValues: (category: Category) => Record<string, Ov
   if (category.slug === 'numerique') {
     return {
       ...values,
+      data: {
+        image: '/images/icn-understand.svg',
+        title: 'understand',
+        children: <NumeriqueData />,
+      },
       hypothesis: {
         image: '/images/icn-next-actions.svg',
         title: 'next-actions',
