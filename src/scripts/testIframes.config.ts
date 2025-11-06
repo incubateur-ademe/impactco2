@@ -149,6 +149,7 @@ export const checks = [
   },
   {
     slug: 'agir',
+    skipAutoCheck: true,
     skipWait: true,
     url: 'https://agirpourlatransition.ademe.fr/particuliers/bureau/calculez-lempreinte-carbone-usages-numeriques',
     before: async (page: Page) => {
