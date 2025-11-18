@@ -871,56 +871,56 @@
   },
   "smartphone": {
     "category": 1,
-    "value": 85850,
+    "value": 80155.643125,
     "fr": "smartphone[s]",
     "en": "smartphone[s]",
     "es": "smartphone[s]"
   },
   "ordinateurfixeparticulier": {
     "category": 1,
-    "value": 299300,
+    "value": 300375.08,
     "fr": "ordinateur[s] fixe[s] sans écran (particulier)",
     "en": "desktop computer[s] without screen (personal)",
     "es": "Ordenadores de sobremesa"
   },
   "ordinateurfixeprofessionnel": {
     "category": 1,
-    "value": 258100.00000000003,
+    "value": 259197.62,
     "fr": "ordinateur[s] fixe[s] sans écran (professionnel)",
     "en": "desktop computer[s] without screen (office)",
     "es": "Ordenadores de sobremesa (ofimáticos)"
   },
   "ecran": {
     "category": 1,
-    "value": 91400,
+    "value": 92572.2,
     "fr": "écran[s] d'ordinateur",
     "en": "computer screen[s]",
     "es": "pantalla[s] de computadora"
   },
   "tabletteclassique": {
     "category": 1,
-    "value": 61899.99999999999,
+    "value": 87135.525,
     "fr": "tablette[s]",
     "en": "tablet[s]",
     "es": "Tableta[s]"
   },
   "television": {
     "category": 1,
-    "value": 472400.00000000006,
+    "value": 369711.86,
     "fr": "télévision[s] ",
     "en": "television[s]",
     "es": "Televisore[s]"
   },
   "ordinateurportable": {
     "category": 1,
-    "value": 193000.00000000003,
+    "value": 192620.04125,
     "fr": "ordinateur[s] portable[s]",
     "en": "laptop[s]",
     "es": "Ordenadores portátiles"
   },
   "enceintebluetooth": {
     "category": 1,
-    "value": 26500,
+    "value": 26183.05,
     "fr": "enceinte[s] connectée[s]",
     "en": "Bluetooth speaker[s]",
     "es": "Altavoce[s] Bluetooth"
@@ -934,45 +934,52 @@
   },
   "casquevr": {
     "category": 1,
-    "value": 72300.00000000001,
+    "value": 72594.435,
     "fr": "casque[s] de réalité virtuelle",
     "en": "virtual reality headset[s]",
     "es": "casco[s] de realidad virtual"
   },
   "alimentationordinateur": {
     "category": 1,
-    "value": 4100,
+    "value": 4192,
     "fr": "alimentation[s] externe[s] pour ordinateur portable",
     "en": "external power supply[s] for laptop",
     "es": "fuente[s] de alimentación externa para computadora portátil"
   },
   "alimentationsmartphone": {
     "category": 1,
-    "value": 400,
+    "value": 415.3,
     "fr": "alimentation[s] externe[s] pour smartphone ou tablette",
     "en": "external power supply[s] for smartphone or tablet",
     "es": "fuente[s] de alimentación externa para teléfono inteligente o tableta"
   },
   "disquedur": {
     "category": 1,
-    "value": 11900,
+    "value": 12657.74,
     "fr": "disque[s] dur[s] externe[s]",
     "en": "external hard drive[s]",
     "es": "disco[s] duro[s] externo[s]"
   },
+  "ssd": {
+    "category": 1,
+    "value": 135190.4175,
+    "fr": "SSD externe[s]",
+    "en": "external SSD",
+    "es": "SSD externo[s]"
+  },
   "clefusb": {
     "category": 1,
-    "value": 2900,
+    "value": 5217.427,
     "fr": "clef[s] usb",
     "en": "usb key[s]",
     "es": "llave[s] USB"
   },
   "box": {
     "category": 1,
-    "value": 82000,
+    "value": 81225.76,
     "fr": "box[s]",
     "en": "box[s]",
-    "es": "caha de internet"
+    "es": "caja de internet"
   },
   "repasavecduboeuf": {
     "category": 2,
