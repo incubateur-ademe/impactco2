@@ -1,5 +1,4 @@
 import classNames from 'classnames'
-import React from 'react'
 import styles from './Logo.module.css'
 
 const Logo = ({
@@ -8,18 +7,20 @@ const Logo = ({
   value,
   onClick,
   title,
+  className,
 }: {
   right?: boolean
   url?: string
   value?: number
   onClick?: () => void
   title?: string
+  className?: string
 }) => {
   return (
     <a
       href={url || `https://impactco2.fr/comparateur?value=${(value || 1000) / 1000}`}
       onClick={onClick}
-      className={classNames(right ? styles.reverseLogo : styles.logo)}
+      className={classNames(right ? styles.reverseLogo : styles.logo, className)}
       target='_blank'
       rel='noreferrer noopener'
       aria-label='Impact CO2'

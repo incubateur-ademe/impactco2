@@ -44,6 +44,111 @@ const livraison: Record<string, Record<string, string>> = {
     en: '1kg package',
     es: 'paquete de 1kg',
   },
+  magasin2kg: {
+    fr: '15km en voiture, colis de 2kg',
+    en: '15km by car, 2kg package',
+    es: '15km en coche, paquete de 2kg',
+  },
+  magasindouce2kg: {
+    fr: 'à pied, colis de 2kg',
+    en: 'by foot, 2kg package',
+    es: 'a pie, paquete de 2kg',
+  },
+  clickcollect2kg: {
+    fr: '15km en voiture, colis de 2kg',
+    en: '15km by car, 2kg package',
+    es: '15km en coche, paquete de 2kg',
+  },
+  clickcollectdouce2kg: {
+    fr: 'à pied, colis de 2kg',
+    en: 'by foot, 2kg package',
+    es: 'a pie, paquete de 2kg',
+  },
+  pointrelais2kg: {
+    fr: '3,5km en voiture, colis de 2kg',
+    en: '3.5km by car, 2kg package',
+    es: '3,5km en coche, paquete de 2kg',
+  },
+  pointrelaisdouce2kg: {
+    fr: 'à pied, colis de 2kg',
+    en: 'by foot, 2kg package',
+    es: 'a pie, paquete de 2kg',
+  },
+  livraisondomicile2kg: {
+    fr: 'colis de 2kg',
+    en: '2kg package',
+    es: 'paquete de 2kg',
+  },
+  magasin15kg: {
+    fr: '15km en voiture, colis de 15kg',
+    en: '15km by car, 15kg package',
+    es: '15km en coche, paquete de 15kg',
+  },
+  magasindouce15kg: {
+    fr: 'à pied, colis de 15kg',
+    en: 'by foot, 15kg package',
+    es: 'a pie, paquete de 15kg',
+  },
+  clickcollect15kg: {
+    fr: '15km en voiture, colis de 15kg',
+    en: '15km by car, 15kg package',
+    es: '15km en coche, paquete de 15kg',
+  },
+  clickcollectdouce15kg: {
+    fr: 'à pied, colis de 15kg',
+    en: 'by foot, 15kg package',
+    es: 'a pie, paquete de 15kg',
+  },
+  pointrelais15kg: {
+    fr: '3,5km en voiture, colis de 15kg',
+    en: '3.5km by car, 15kg package',
+    es: '3,5km en coche, paquete de 15kg',
+  },
+  pointrelaisdouce15kg: {
+    fr: 'à pied, colis de 15kg',
+    en: 'by foot, 15kg package',
+    es: 'a pie, paquete de 15kg',
+  },
+  livraisondomicile15kg: {
+    fr: 'colis de 15kg',
+    en: '15kg package',
+    es: 'paquete de 15kg',
+  },
+  magasin30kg: {
+    fr: '15km en voiture, colis de 30kg',
+    en: '15km by car, 30kg package',
+    es: '15km en coche, paquete de 30kg',
+  },
+  magasindouce30kg: {
+    fr: 'à pied, colis de 30kg',
+    en: 'by foot, 30kg package',
+    es: 'a pie, paquete de 30kg',
+  },
+  clickcollect30kg: {
+    fr: '15km en voiture, colis de 30kg',
+    en: '15km by car, 30kg package',
+    es: '15km en coche, paquete de 30kg',
+  },
+  clickcollectdouce30kg: {
+    fr: 'à pied, colis de 30kg',
+    en: 'by foot, 30kg package',
+    es: 'a pie, paquete de 30kg',
+  },
+  pointrelais30kg: {
+    fr: '3,5km en voiture, colis de 30kg',
+    en: '3.5km by car, 30kg package',
+    es: '3,5km en coche, paquete de 30kg',
+  },
+  pointrelaisdouce30kg: {
+    fr: 'à pied, colis de 30kg',
+    en: 'by foot, 30kg package',
+    es: 'a pie, paquete de 30kg',
+  },
+  livraisondomicile30kg: {
+    fr: 'colis de 30kg',
+    en: '30kg package',
+    es: 'paquete de 30kg',
+  },
 }
 
 const carpooling: Record<string, Record<string, string>> = {
