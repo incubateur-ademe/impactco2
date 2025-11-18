@@ -13,19 +13,22 @@ import IframeableLink from 'components/base/IframeableLink'
 import LocalNumber from 'components/base/LocalNumber'
 import styles from './LivraisonEquivalent.module.css'
 
+const deplacementECVs = [56, 57]
 const LivraisonEquivalent = ({
   animated,
   equivalent,
   max,
   index,
+  customTheme,
 }: {
   animated?: boolean
   equivalent: ComputedEquivalent
   max: number
   index: number
+  customTheme?: string | null
 }) => {
   const { trackOnce } = useTrackingContext()
-  const { language, livraison } = useParamContext()
+  const { language } = useParamContext()
   const t = useTranslations('livraison')
 
   const extraName = useMemo(() => {
@@ -33,19 +36,21 @@ const LivraisonEquivalent = ({
     return extraName === `livraison.extranames.${equivalent.slug}` ? '' : extraName
   }, [equivalent])
 
+  const transport =
+    'ecv' in equivalent && equivalent.ecv && equivalent.ecv.find((ecv) => deplacementECVs.includes(ecv.id))
   return (
     <IframeableLink
-      className={classNames(styles.container, {
+      className={classNames(customTheme === 'grey' ? styles.greyContainer : styles.container, {
         [styles.static]: !animated,
       })}
       href={`/outils/livraison/${equivalent.slug}`}
       onClick={() => trackOnce(`Equivalent${equivalent.slug}`)}>
-      <EquivalentIcon equivalent={equivalent} height={2.5} />
+      <EquivalentIcon equivalent={equivalent} height={2.5} customTheme={customTheme} />
       <div className={styles.info}>
         <p>
           {getNameWithoutSuffix(language, equivalent)}
           {extraName ? extraName : ''}
-          {livraison.distance[equivalent.slug] && <span className={styles.gray}> - {t('car')}</span>}
+          {transport && <span className={styles.gray}> - {t('car')}</span>}
           {equivalent.slug.includes('douce') && <span className={styles.green}> - {t('foot')}</span>}
         </p>
         <div className={styles.barContainer}>

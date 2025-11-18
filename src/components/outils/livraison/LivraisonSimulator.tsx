@@ -41,6 +41,7 @@ const LivraisonSimulator = () => {
   const equivalents = useMemo(() => {
     const data = livraisonData[type]
     return livraisonEquivalents
+      .filter((equivalent) => !equivalent.slug.endsWith('kg'))
       .filter((equivalent) => {
         return livraison.modes.some((mode) => equivalent.slug.startsWith(mode))
       })
