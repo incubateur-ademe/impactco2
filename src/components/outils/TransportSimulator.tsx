@@ -5,6 +5,8 @@ import { useTranslations } from 'next-intl'
 import { usePathname, useSearchParams } from 'next/navigation'
 import { KeyboardEvent, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
+import useTrackingContext from 'src/providers/TrackingProvider'
+import { track } from 'utils/matomo'
 import DistanceSimulator from './DistanceSimulator'
 import ItineraireSimulator from './ItineraireSimulator'
 import styles from './TransportSimulator.module.css'
@@ -25,6 +27,7 @@ const TransportSimulator = () => {
     itineraire: { start, end },
   } = useParamContext()
 
+  const { trackOnce } = useTrackingContext()
   const distanceRef = useRef<HTMLButtonElement>(null)
   const itineraireRef = useRef<HTMLButtonElement>(null)
   const [forceFocus, setForceFocus] = useState(false)
@@ -101,7 +104,15 @@ const TransportSimulator = () => {
               [styles.selectedTab]: selected === 'distance',
               [styles.forceFocus]: forceFocus,
             })}
-            onClick={() => setSelected('distance')}
+            onClick={() => {
+              track(
+                selected === 'distance' ? 'Transport distance' : 'Transport itinéraire',
+                'Onglet ransport',
+                'Distance'
+              )
+              trackOnce('Onglet ransport Distance')
+              setSelected('distance')
+            }}
             data-testid='transport-tab-distance'
             role='tab'
             id='tab-distance'
@@ -122,7 +133,15 @@ const TransportSimulator = () => {
               [styles.selectedTab]: selected === 'itineraire',
               [styles.forceFocus]: forceFocus,
             })}
-            onClick={() => setSelected('itineraire')}
+            onClick={() => {
+              track(
+                selected === 'distance' ? 'Transport distance' : 'Transport itinéraire',
+                'Onglet ransport',
+                'Itinéraire'
+              )
+              trackOnce('Onglet ransport Itinéraire')
+              setSelected('itineraire')
+            }}
             data-testid='transport-tab-itineraire'
             role='tab'
             id='tab-itineraire'
