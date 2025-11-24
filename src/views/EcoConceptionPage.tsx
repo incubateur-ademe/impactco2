@@ -47,8 +47,8 @@ const EcoConceptionPage = () => {
       <h2>Critères et notes</h2>
       <Image
         className={styles.image}
-        src='/images/certificat-fruggr.jpg'
-        alt="Certificat d'empreinte 2024 Fruggr, Digital score 1, score global au 19/12/2024 : 87. Avec le detail suivant ; Carbone 87, Eau 85, Énergie 65, Accessibilité 97, Protection des données 85, Inclusion 94, Technique 80, Design 99 et Fonctionnel 96"
+        src='/images/certificat-fruggr.png'
+        alt="Certificat d'empreinte 2025 Fruggr, Digital score A, score global au 20/10/2025 : 87. Avec le détail suivant ; Carbone 83, Eau 76, Énergie 64, Accessibilité 97, Sécurité 94, Inclusion 93, Technique 87, Design 98 et Fonctionnel 95"
         width={1000}
         height={500}
       />
@@ -61,22 +61,22 @@ const EcoConceptionPage = () => {
       </p>
       <br />
       <p>
-        L’outil fruggr nous donne la note de <b>87/100</b> au 19/12/2024.
+        L’outil fruggr nous donne la note de <b>87/100</b> au 20/10/2025.
       </p>
       <br />
       <p>Ce score représente l'impact du service sur les 3 domaines adressés par fruggr :</p>
       <br />
       <ul>
         <li>
-          l'environnement (<b>79/100</b>)
+          l'environnement (<b>74/100</b>)
         </li>
         <br />
         <li>
-          le social (<b>92/100</b>)
+          le social (<b>95/100</b>)
         </li>
         <br />
         <li>
-          et la sobriété (<b>91/100</b>)
+          et la sobriété (<b>96/100</b>)
         </li>
       </ul>
       <br />
@@ -90,13 +90,13 @@ const EcoConceptionPage = () => {
       </p>
       <br />
       <ul>
-        <li>Simulateur Transport : 86/100 - 713kB</li>
+        <li>Simulateur Transport : 85/100 - 740kB</li>
         <br />
-        <li>Impact Alimentation : 85/100 - 724kB</li>
+        <li>Impact Alimentation : 85/100 - 743kB</li>
         <br />
-        <li>Quiz Carbone : 87/100 - 718kB</li>
+        <li>Quiz Carbone : 86/100 - 760kB</li>
         <br />
-        <li>Detecteur Carbone : 33.8kB</li>
+        <li>Detecteur Carbone : 36.5kB</li>
       </ul>
       <h2>Leviers d’amélioration</h2>
       <p>
