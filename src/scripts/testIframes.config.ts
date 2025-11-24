@@ -124,7 +124,7 @@ export const checks = [
     skipWait: true,
     url: 'https://www.homeexchange.fr/blog/bilan-carbone-2022/',
     before: async (page: Page) => {
-      await page.getByRole('button', { name: 'Accepter et fermer' }).click()
+      await page.getByRole('button', { name: 'OK pour moi' }).click()
     },
     check: async (page: Page) => {
       await detecteurCO2Test(page, 384134000, '384 134 tCO2e')
