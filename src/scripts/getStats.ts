@@ -1,4 +1,7 @@
 import axios from 'axios'
+import { config } from 'dotenv'
+
+config()
 
 export type Stats = {
   visits: number
