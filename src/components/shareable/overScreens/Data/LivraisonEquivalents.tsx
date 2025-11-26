@@ -16,6 +16,7 @@ import styles from './LivraisonEquivalents.module.css'
 
 const equivalents = computedEquivalents
   .filter((equivalent) => equivalent.category === 12)
+  .filter((equivalent) => !equivalent.slug.endsWith('kg'))
   .sort((a, b) => a.value - b.value)
 
 const deplacementECVs = [56, 57]
@@ -26,6 +27,7 @@ const LivraisonEquivalents = ({ slug }: { slug: LivraisonType }) => {
   const tEquivalent = useTranslations('equivalent')
   const values = useMemo(() => livraisonData[slug], [slug])
   const [displays, setDisplays] = useState(equivalents.map(() => false))
+
   return (
     <div className={styles.equivalents}>
       {equivalents.map((equivalent, index) => {
