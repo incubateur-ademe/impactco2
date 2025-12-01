@@ -1,4 +1,3 @@
-import React from 'react'
 import { SimpleEquivalent } from 'types/equivalent'
 import { getComparisonSlug, getName } from 'utils/Equivalent/equivalent'
 import values from 'utils/Equivalent/values.json'

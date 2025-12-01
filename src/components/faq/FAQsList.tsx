@@ -1,5 +1,4 @@
 import classNames from 'classnames'
-import React from 'react'
 import { FAQ as FAQType } from 'types/faq'
 import Link from 'components/base/buttons/Link'
 import Block, { BlockProps } from 'components/layout/Block'

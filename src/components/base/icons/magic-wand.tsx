@@ -1,5 +1,3 @@
-import React from 'react'
-
 const MagicWandIcon = () => (
   <svg aria-hidden='true' xmlns='http://www.w3.org/2000/svg' width='21' height='22' viewBox='0 0 21 22' fill='none'>
     <path

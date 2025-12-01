@@ -1,5 +1,4 @@
 import { Metadata } from 'next'
-import React from 'react'
 import Notion from 'components/Notion/Notion'
 import { getNotionContentProps } from 'components/Notion/utils'
 import Suggestion from 'components/layout/Suggestion'

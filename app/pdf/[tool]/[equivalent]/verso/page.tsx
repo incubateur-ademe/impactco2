@@ -1,5 +1,4 @@
 import { notFound } from 'next/navigation'
-import React from 'react'
 import { ParamProvider } from 'src/providers/ParamProvider'
 import TranslationProvider from 'src/providers/TranslationProvider'
 import { categories } from 'data/categories'

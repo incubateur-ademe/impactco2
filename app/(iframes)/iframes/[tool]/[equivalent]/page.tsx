@@ -1,5 +1,4 @@
 import { notFound } from 'next/navigation'
-import React from 'react'
 import { categories } from 'data/categories'
 import Equivalent from 'components/outils/equivalents/Equivalent'
 import { equivalentsSimulators } from 'components/outils/equivalents/simulators/equivalentsSimulators'

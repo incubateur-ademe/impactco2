@@ -1,4 +1,4 @@
-import { FrameLocator, Page, expect } from 'playwright/test'
+import { FrameLocator, Page, expect } from '@playwright/test'
 
 export const comparateurTest = async (page: Page | FrameLocator, prod?: boolean, noEtiquette?: boolean) => {
   await page.getByRole('button', { name: 'Ajouter un équivalent' }).click()

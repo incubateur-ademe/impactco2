@@ -1,5 +1,4 @@
 import { Metadata } from 'next'
-import React from 'react'
 import BudgetPage from 'src/views/BudgetPage'
 import Suggestion from 'components/layout/Suggestion'
 

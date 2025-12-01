@@ -1,4 +1,3 @@
-import React from 'react'
 import ToolCard, { ToolCardProps } from './ToolCard'
 import styles from './ToolCards.module.css'
 

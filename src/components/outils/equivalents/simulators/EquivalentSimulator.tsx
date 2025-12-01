@@ -1,6 +1,5 @@
 'use client'
 
-import React from 'react'
 import { Category } from 'types/category'
 import { ComputedEquivalent } from 'types/equivalent'
 import Detail from '../detail/Detail'

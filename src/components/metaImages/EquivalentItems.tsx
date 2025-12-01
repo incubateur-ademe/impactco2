@@ -1,4 +1,3 @@
-import React from 'react'
 import { SimpleEquivalent } from 'types/equivalent'
 import values from 'utils/Equivalent/values.json'
 import Round from './Round'

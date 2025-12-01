@@ -1,6 +1,5 @@
 'use server'
 
-import React from 'react'
 import { getFAQs } from 'utils/faq'
 import FAQsList, { FAQSListProps } from './FAQsList'
 

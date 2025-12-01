@@ -1,4 +1,3 @@
-import React from 'react'
 import { GuideUtilisationRow } from 'types/guideUtilisation'
 import Block from 'components/layout/Block'
 import FAQ from './FAQ'

@@ -1,4 +1,4 @@
-import { FrameLocator, Page, expect } from 'playwright/test'
+import { FrameLocator, Page, expect } from '@playwright/test'
 
 export const distanceComparisonTest = async (page: Page | FrameLocator, prod?: boolean) => {
   await expect(page.getByTestId('comparison-tile-0')).toHaveText('Voiture thermique2.18 kg CO₂e Modifier')

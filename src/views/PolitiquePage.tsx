@@ -1,5 +1,4 @@
 import classNames from 'classnames'
-import React from 'react'
 import IframeableLink from 'components/base/IframeableLink'
 import InformationIcon from 'components/base/icons/information'
 import styles from './Page.module.css'
