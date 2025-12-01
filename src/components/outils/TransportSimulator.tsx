@@ -107,10 +107,10 @@ const TransportSimulator = () => {
             onClick={() => {
               track(
                 selected === 'distance' ? 'Transport distance' : 'Transport itinéraire',
-                'Onglet ransport',
+                'Onglet transport',
                 'Distance'
               )
-              trackOnce('Onglet ransport Distance')
+              trackOnce('Onglet transport Distance')
               setSelected('distance')
             }}
             data-testid='transport-tab-distance'
@@ -136,10 +136,10 @@ const TransportSimulator = () => {
             onClick={() => {
               track(
                 selected === 'distance' ? 'Transport distance' : 'Transport itinéraire',
-                'Onglet ransport',
+                'Onglet transport',
                 'Itinéraire'
               )
-              trackOnce('Onglet ransport Itinéraire')
+              trackOnce('Onglet transport Itinéraire')
               setSelected('itineraire')
             }}
             data-testid='transport-tab-itineraire'
