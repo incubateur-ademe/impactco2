@@ -1,6 +1,5 @@
 'use client'
 
-import React from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { Category } from 'types/category'
 import { ComputedEquivalent } from 'types/equivalent'

@@ -1,5 +1,4 @@
 import { useTranslations } from 'next-intl'
-import React from 'react'
 import NewTabIcon from 'components/base/NewTabIcon'
 import Link from 'components/base/buttons/Link'
 import styles from './IntegratePreview.module.css'

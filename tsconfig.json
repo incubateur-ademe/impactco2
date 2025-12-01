@@ -18,7 +18,6 @@
     "incremental": true,
     "baseUrl": ".",
     "types": [
-      "node",
       "jest"
     ],
     "typeRoots": [

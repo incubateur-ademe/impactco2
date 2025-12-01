@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import React from 'react'
 import Card from 'components/cards/Card'
 import Download from 'components/kit/Download'
 import outilStyles from '../Outil.module.css'

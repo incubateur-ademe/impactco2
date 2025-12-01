@@ -1,6 +1,5 @@
 'use server'
 
-import React from 'react'
 import { getExamples } from 'utils/examples'
 import ExamplesList, { ExamplesListProps } from './ExamplesList'
 

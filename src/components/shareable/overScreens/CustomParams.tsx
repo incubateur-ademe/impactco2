@@ -1,4 +1,3 @@
-import React from 'react'
 import { track } from 'utils/matomo'
 import CustomParam, { CustomParamValue } from './CustomParam'
 import styles from './CustomParam.module.css'

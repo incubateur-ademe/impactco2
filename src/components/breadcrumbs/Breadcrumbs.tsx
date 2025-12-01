@@ -1,4 +1,3 @@
-import React from 'react'
 import Link from 'components/base/buttons/Link'
 import ArrowRightIcon from 'components/base/icons/arrow-right'
 import styles from './Breadcrumbs.module.css'

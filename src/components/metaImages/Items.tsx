@@ -1,4 +1,3 @@
-import React from 'react'
 import Round from './Round'
 
 const Items = ({ value, comparisons, language }: { value: number; comparisons: string[]; language: string }) => {

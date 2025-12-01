@@ -1,4 +1,3 @@
-import React from 'react'
 import styles from './NewTabIcon.module.css'
 
 export default function NewTabIcon({ noMargin }: { noMargin?: boolean }) {

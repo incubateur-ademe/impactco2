@@ -1,5 +1,3 @@
-import React from 'react'
-
 const SprinklesIcon = () => (
   <svg aria-hidden='true' xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 72 72' fill='none'>
     <path

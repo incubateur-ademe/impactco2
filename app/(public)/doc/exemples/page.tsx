@@ -1,5 +1,4 @@
 import { Metadata } from 'next'
-import React from 'react'
 import ExamplesPage from 'src/views/ExamplesPage'
 import { getCommunications, getExamples } from 'utils/examples'
 import Suggestion from 'components/layout/Suggestion'

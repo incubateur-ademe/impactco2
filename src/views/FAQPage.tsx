@@ -1,4 +1,3 @@
-import React from 'react'
 import { FAQ } from 'types/faq'
 import Breadcrumbs from 'components/breadcrumbs/Breadcrumbs'
 import AllFAQs from 'components/faq/AllFAQs'

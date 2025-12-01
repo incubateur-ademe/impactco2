@@ -1,5 +1,4 @@
 import classNames from 'classnames'
-import React from 'react'
 import styles from './Logo.module.css'
 
 export default function Ademe({ small }: { small?: boolean }) {

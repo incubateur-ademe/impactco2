@@ -1,4 +1,3 @@
-import React from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import Link from 'components/base/buttons/Link'
 import styles from './Data.module.css'

@@ -1,4 +1,4 @@
-import { FrameLocator, Page, expect } from 'playwright/test'
+import { FrameLocator, Page, expect } from '@playwright/test'
 
 export const usageNumeriqueTest = async (page: Page | FrameLocator, prod?: boolean) => {
   await expect(page.getByTestId('usagenumerique-generated-value')).toHaveText('0.28')

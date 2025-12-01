@@ -8,22 +8,20 @@
     "path": false
   },
   "scripts": {
-    "build:ecvs": "yarn build:empreinte & yarn build:agribalyse",
+    "build:ecvs": "pnpm build:empreinte & pnpm build:agribalyse",
     "build:empreinte": "tsx src/scripts/buildFromEmpreinte.ts",
     "build:agribalyse": "tsx src/scripts/buildFromAgribalyse.ts",
     "build:boisson": "tsx src/scripts/buildFromAgribalyse.ts boissons",
-    "test": "yarn testu && yarn testc && yarn testa && yarn teste",
+    "test": "pnpm testu && pnpm testa && pnpm teste",
     "testa": "NODE_ENV=test jest ./testa",
-    "testc": "NODE_ENV=test jest ./testc",
     "teste": "NODE_ENV=test playwright test --reporter=list",
     "testu": "NODE_ENV=test jest ./testu",
     "jest:local": "NODE_ENV=test jest --watch",
     "testa:local": "NODE_ENV=test jest --watch ./testa",
-    "testc:local": "DEBUG_PRINT_LIMIT=10000 NODE_ENV=test jest --watch ./testc",
     "teste:local": "NODE_ENV=test playwright test --ui",
     "testu:local": "NODE_ENV=test jest --watch ./testu",
     "dev": "next dev --turbopack",
-    "build": "yarn webpack && next build",
+    "build": "pnpm webpack && npx prisma generate && next build",
     "build:analyze": "ANALYZE=true next build",
     "postbuild": "next-sitemap",
     "webpack": "dotenv -e .env webpack",
@@ -33,11 +31,12 @@
     "start": "next start",
     "lint": "next lint",
     "chromatic": "chromatic --exit-zero-on-changes",
-    "testIframes": "npx playwright install chromium; npx tsx src/scripts/testIframes.ts"
+    "testIframes": "npx playwright install chromium; npx tsx src/scripts/testIframes.ts",
+    "preinstall": "npm install -D only-allow:1.2.2 & npx only-allow pnpm"
   },
   "engines": {
-    "node": ">22.0.0",
-    "yarn": "1.22"
+    "node": "^22.0.0",
+    "pnpm": "10.x"
   },
   "dependencies": {
     "@iframe-resizer/child": "^5.5.7",
@@ -64,12 +63,14 @@
     "next-query-params": "^5.1.0",
     "next-sitemap": "^4.2.3",
     "notion-client": "^7.6.0",
+    "notion-types": "^7.7.1",
     "postcss": "^8.5.6",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-import": "^16.1.1",
     "postcss-nested": "^7.0.2",
     "postcss-preset-env": "^10.4.0",
     "preact": "^10.27.2",
+    "prisma": "^6.16.2",
     "publicodes": "1.4.0",
     "qrcode": "^1.5.4",
     "react": "^19.1.1",
@@ -80,6 +81,7 @@
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-react": "^5.29.1",
     "tsx": "^4.20.6",
+    "use-intl": "^4.5.6",
     "zod": "3.24.2"
   },
   "devDependencies": {
@@ -100,14 +102,17 @@
     "@types/jest": "^30.0.0",
     "@types/node-pdftk": "^2.1.9",
     "@types/qrcode": "^1.5.5",
+    "@types/react": "^19.2.7",
     "@types/react-highlight-words": "^0.20.0",
     "@types/react-slick": "^0.23.13",
+    "@types/semver": "^7.7.1",
     "@types/swagger-jsdoc": "^6.0.4",
     "@types/swagger-ui-react": "^5.18.0",
     "@typescript-eslint/eslint-plugin": "^8.44.1",
     "@typescript-eslint/parser": "^8.44.1",
     "babel-loader": "^10.0.0",
     "css-loader": "6.11.0",
+    "dotenv": "^17.2.3",
     "eslint": "^9.36.0",
     "eslint-config-next": "^15.5.4",
     "eslint-config-prettier": "^10.1.8",
@@ -127,13 +132,14 @@
     "pdf-merger-js": "^5.1.2",
     "postcss-loader": "^8.2.0",
     "prettier": "^3.6.2",
-    "prisma": "^6.16.2",
+    "semver": "^7.7.3",
     "style-loader": "^4.0.0",
     "ts-jest": "^29.4.4",
     "typescript": "^5.9.2",
     "undici": "7.16.0",
     "webpack": "^5.101.3",
-    "webpack-cli": "^6.0.1"
+    "webpack-cli": "^6.0.1",
+    "yaml": "^2.8.2"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [

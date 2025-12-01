@@ -1,5 +1,3 @@
-import React from 'react'
-
 const StarShapeIcon = () => (
   <svg aria-hidden='true' xmlns='http://www.w3.org/2000/svg' width='98' height='102' viewBox='0 0 98 102' fill='none'>
     <g filter='url(#filter0_d_980_6265)'>
