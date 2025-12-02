@@ -21,7 +21,9 @@
     "teste:local": "NODE_ENV=test playwright test --ui",
     "testu:local": "NODE_ENV=test jest --watch ./testu",
     "dev": "next dev --turbopack",
-    "build": "pnpm webpack && npx prisma generate && next build",
+    "prebuild": "pnpm prisma:generate",
+    "prisma:generate": "prisma generate",
+    "build": "pnpm webpack && next build",
     "build:analyze": "ANALYZE=true next build",
     "postbuild": "next-sitemap",
     "webpack": "dotenv -e .env webpack",
@@ -31,8 +33,8 @@
     "start": "next start",
     "lint": "next lint",
     "chromatic": "chromatic --exit-zero-on-changes",
-    "testIframes": "npx playwright install chromium; npx tsx src/scripts/testIframes.ts",
-    "preinstall": "npm install -D only-allow:1.2.2 & npx only-allow pnpm"
+    "testIframes": "playwright install chromium; tsx src/scripts/testIframes.ts",
+    "preinstall": "pnpm add --ignore-scripts -D only-allow@1.2.2 && only-allow pnpm"
   },
   "engines": {
     "node": "^22.0.0",
@@ -129,6 +131,7 @@
     "node-mocks-http": "^1.17.2",
     "node-pdftk": "^2.1.3",
     "nyc": "^17.1.0",
+    "only-allow": "1.2.2",
     "pdf-merger-js": "^5.1.2",
     "postcss-loader": "^8.2.0",
     "prettier": "^3.6.2",
