@@ -34,7 +34,7 @@
     "lint": "next lint",
     "chromatic": "chromatic --exit-zero-on-changes",
     "testIframes": "playwright install chromium; tsx src/scripts/testIframes.ts",
-    "preinstall": "pnpm add --ignore-scripts -D only-allow@1.2.2 && only-allow pnpm"
+    "preinstall": "npx -y only-allow@1.2.2 pnpm"
   },
   "engines": {
     "node": "^22.0.0",
