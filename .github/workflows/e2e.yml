@@ -69,7 +69,7 @@ jobs:
           minAccessibilityScore: '93'
           minBestPracticesScore: '100'
       - name: Prune dev dependencies
-        run: pnpm install --production
+        run: rm -rf node_modules && pnpm install --production
       - name: Check repository size
         run: ./scripts/check-repo-size.sh
       - name: Upload playwright artifacts
