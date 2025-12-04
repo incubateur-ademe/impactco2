@@ -112,7 +112,7 @@ export async function GET(req: NextRequest) {
     return NextResponse.json(inputs.error, { status: 400 })
   }
 
-  const hasAPIKey = await trackAPIRequest(req, 'fruitsetlegumes', JSON.stringify(inputs.data))
+  const hasAPIKey = await trackAPIRequest(req, 'fruitsetlegumes')
 
   const month = inputs.data.month ? inputs.data.month - 1 : new Date().getMonth()
   return NextResponse.json(
