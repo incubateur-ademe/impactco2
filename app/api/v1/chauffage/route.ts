@@ -102,7 +102,7 @@ export async function GET(req: NextRequest) {
     return NextResponse.json(inputs.error, { status: 400 })
   }
 
-  const hasAPIKey = await trackAPIRequest(req, 'chauffage', JSON.stringify(inputs.data))
+  const hasAPIKey = await trackAPIRequest(req, 'chauffage')
   return NextResponse.json(
     {
       data: chauffage

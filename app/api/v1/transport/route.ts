@@ -232,7 +232,7 @@ export async function GET(req: NextRequest) {
     return NextResponse.json(inputs.error, { status: 400 })
   }
 
-  const hasAPIKey = await trackAPIRequest(req, 'transport', JSON.stringify(inputs.data))
+  const hasAPIKey = await trackAPIRequest(req, 'transport')
   const emissions = computeTransportEmission(
     inputs.data.km,
     inputs.data.transports,

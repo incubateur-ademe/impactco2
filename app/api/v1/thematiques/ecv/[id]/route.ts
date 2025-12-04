@@ -171,7 +171,7 @@ export async function GET(req: NextRequest, context: { params: Promise<{ id: str
 
   const { detail } = inputs.data
   const id = inputs.data.id === 'repas' ? 'alimentation' : inputs.data.id
-  const hasAPIKey = await trackAPIRequest(req, 'category', id)
+  const hasAPIKey = await trackAPIRequest(req, 'category')
   const idNumber = Number.parseInt(id)
   const category = Number.isNaN(idNumber)
     ? categories.find((category) => category.slug === id)

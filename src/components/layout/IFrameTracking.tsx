@@ -33,7 +33,7 @@ const IFrameTracking = ({ children }: { children: React.ReactNode }) => {
       const params = [...new URLSearchParams(urlWithoutSource).entries()]
       const type = path.replace('/iframes/', '')
       params.forEach(([key, value]) =>
-        track(`integration-${type === 'transport' ? 'transport/distance' : type}-${key}`, value, href, true)
+        track(`integration-${type === 'transport' ? 'transport/distance' : type}`, `${key}=${value}`, href, true)
       )
     }
   }, [entry, observed, path])
