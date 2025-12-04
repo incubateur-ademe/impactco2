@@ -1,1 +1,1 @@
-postdeploy: yarn prisma migrate deploy 
+postdeploy: pnpm prisma migrate deploy 

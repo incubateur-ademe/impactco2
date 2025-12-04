@@ -30,7 +30,7 @@ export async function POST(req: NextRequest) {
 
   const cached = await getCachedValue(inputs.data)
   if (cached) {
-    await trackAPIRequest(req, 'callGMap-cache', JSON.stringify(inputs.data))
+    await trackAPIRequest(req, 'callGMap-cache')
     return NextResponse.json(cached, { status: 200 })
   }
 
@@ -41,7 +41,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json('Not authorized', { status: 403 })
     }
 
-    const name = await trackAPIRequest(req, 'callGMap', JSON.stringify(inputs.data))
+    const name = await trackAPIRequest(req, 'callGMap')
     if (name !== 'Impact CO2') {
       if (name === 'HACK') {
         console.error('--- Wrong usage of CallGMAP API ---', req)

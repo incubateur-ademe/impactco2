@@ -1,4 +1,3 @@
-import React from 'react'
 import formatNumber from 'utils/formatNumber'
 import LocalNumber from 'components/base/LocalNumber'
 import styles from './Detail.module.css'

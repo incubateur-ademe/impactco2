@@ -1,5 +1,4 @@
 import { Metadata } from 'next'
-import React from 'react'
 import NotFoundPage from 'src/views/NotFoundPage'
 import Footer from 'components/layout/Footer'
 import Header from 'components/layout/Header'

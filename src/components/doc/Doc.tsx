@@ -1,4 +1,3 @@
-import React from 'react'
 import Breadcrumbs from 'components/breadcrumbs/Breadcrumbs'
 import ToolCard from 'components/cards/ToolCard'
 import Block from 'components/layout/Block'

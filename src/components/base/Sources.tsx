@@ -1,7 +1,6 @@
 'use client'
 
 import classNames from 'classnames'
-import React from 'react'
 import { track } from 'utils/matomo'
 import Link from 'components/base/buttons/Link'
 import styles from './Sources.module.css'

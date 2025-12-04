@@ -1,6 +1,5 @@
 'use client'
 
-import React from 'react'
 import { track } from 'utils/matomo'
 import Link from 'components/base/buttons/Link'
 

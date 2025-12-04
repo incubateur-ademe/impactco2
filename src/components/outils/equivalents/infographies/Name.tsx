@@ -1,6 +1,5 @@
 'use client'
 
-import React from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { ComputedEquivalent } from 'types/equivalent'
 import { getName, getPrefix } from 'utils/Equivalent/equivalent'

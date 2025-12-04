@@ -1,5 +1,4 @@
 import classNames from 'classnames'
-import React from 'react'
 import { buildCurrentUrlFor } from 'utils/urls'
 import IframeableLink from '../IframeableLink'
 import Ademe from './Ademe'

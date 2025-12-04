@@ -34,16 +34,14 @@ export async function GET(req: NextRequest) {
 
   const { searchParams } = new URL(req.url)
   return new ImageResponse(
-    (
-      <Comparateur
-        value={Number(searchParams.get('value') || '100') * 1000}
-        equivalent={searchParams.get('equivalent')}
-        comparisons={(searchParams.get('comparisons') || 'ananas,voiturethermique,tgv,smartphone,pomme')
-          .replace(/ /g, '+')
-          .split(',')}
-        language={searchParams.get('language') || 'fr'}
-      />
-    ),
+    <Comparateur
+      value={Number(searchParams.get('value') || '100') * 1000}
+      equivalent={searchParams.get('equivalent')}
+      comparisons={(searchParams.get('comparisons') || 'ananas,voiturethermique,tgv,smartphone,pomme')
+        .replace(/ /g, '+')
+        .split(',')}
+      language={searchParams.get('language') || 'fr'}
+    />,
     {
       width: 1200,
       height: 630,

@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react'
+import { Suspense } from 'react'
 import { ParamProvider } from 'src/providers/ParamProvider'
 import 'utils/iframeStyles.css'
 import IFrameChild from 'components/layout/IFrameChild'

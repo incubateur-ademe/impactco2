@@ -1,5 +1,4 @@
 import { notFound } from 'next/navigation'
-import React from 'react'
 import { categories } from 'data/categories'
 import Recto from 'components/outils/equivalents/pdf/Recto'
 import 'components/outils/equivalents/pdf/pdf.css'

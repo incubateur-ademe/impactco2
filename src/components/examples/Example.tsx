@@ -1,6 +1,5 @@
 'use client'
 
-import React from 'react'
 import { Example as ExampleType } from 'types/example'
 import { track } from 'utils/matomo'
 import IframeableLink from 'components/base/IframeableLink'

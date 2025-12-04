@@ -1,4 +1,3 @@
-import React from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { Equivalent } from 'types/equivalent'
 import { getName } from 'utils/Equivalent/equivalent'

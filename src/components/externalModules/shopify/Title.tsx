@@ -1,4 +1,3 @@
-import React from 'react'
 import { HtmlSanitizer } from '../sanitizer'
 import styles from './Title.module.css'
 

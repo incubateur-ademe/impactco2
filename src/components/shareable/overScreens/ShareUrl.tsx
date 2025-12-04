@@ -1,6 +1,5 @@
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
-import React from 'react'
 import { FacebookShareButton, LinkedinShareButton, TwitterShareButton, WhatsappShareButton } from 'react-share'
 import useParamContext from 'src/providers/ParamProvider'
 import { Category } from 'types/category'

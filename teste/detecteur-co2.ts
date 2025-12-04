@@ -1,5 +1,5 @@
 import { expect } from '@playwright/test'
-import { FrameLocator, Page } from 'playwright/test'
+import { FrameLocator, Page } from '@playwright/test'
 
 export const detecteurCO2Test = async (
   page: Page | FrameLocator,

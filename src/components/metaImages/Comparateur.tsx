@@ -1,4 +1,3 @@
-import React from 'react'
 import EquivalentItems from './EquivalentItems'
 import Items from './Items'
 import { Logos } from './Logos'

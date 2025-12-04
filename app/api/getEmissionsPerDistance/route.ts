@@ -6,7 +6,7 @@ export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url)
   const inputs = Object.fromEntries(searchParams)
 
-  await trackAPIRequest(req, 'getEmissionsPerDistance', JSON.stringify(inputs))
+  await trackAPIRequest(req, 'getEmissionsPerDistance')
 
   const km: number = inputs.km ? Number(inputs.km) : 1
   const filter = inputs.filter || (inputs.transportations ? 'all' : 'smart')

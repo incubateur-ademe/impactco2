@@ -1,7 +1,6 @@
 'use client'
 
 import Link from 'next/link'
-import React from 'react'
 import { track } from 'utils/matomo'
 import styles from './Tag.module.css'
 

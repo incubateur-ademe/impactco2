@@ -1,5 +1,4 @@
 import classNames from 'classnames'
-import React from 'react'
 import Link from 'components/base/buttons/Link'
 import styles from './Page.module.css'
 

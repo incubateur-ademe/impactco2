@@ -2,7 +2,7 @@ import * as Sentry from '@sentry/nextjs'
 import { NextRequest } from 'next/server'
 import { prismaClient } from 'utils/prismaClient'
 
-export async function trackAPIRequest(request: NextRequest, api: string, params?: string) {
+export async function trackAPIRequest(request: NextRequest, api: string) {
   if (!process.env.TRACK_API) {
     return null
   }
@@ -31,7 +31,7 @@ export async function trackAPIRequest(request: NextRequest, api: string, params?
       }
     }
 
-    const param = `e_c=API_${name}&e_a=${api}&e_n=${params || ''}`
+    const param = `e_c=API&e_a=${name}&e_n=${api}`
 
     await fetch(
       `${process.env.NEXT_PUBLIC_MATOMO_SITE_URL}/matomo.php?idsite=${process.env.NEXT_PUBLIC_MATOMO_SITE_ID}&rec=1&${param}`,

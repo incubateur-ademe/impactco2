@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react'
+import { Suspense } from 'react'
 import { ParamProvider } from 'src/providers/ParamProvider'
 import ScrollProvider from 'src/providers/ScrollProvider'
 import Footer from 'components/layout/Footer'

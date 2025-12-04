@@ -1,5 +1,4 @@
 import { Metadata } from 'next'
-import React from 'react'
 import { getGuideUtilisation } from 'utils/guideUtilisation'
 import GuideUtilisation from 'components/faq/GuideUtilisation'
 import Suggestion from 'components/layout/Suggestion'
