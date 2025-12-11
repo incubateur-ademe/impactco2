@@ -36,16 +36,19 @@ export const getExamples = unstable_cache(
             label: tool.name,
             tags,
           }))
-
           const example = examples[name]
           if (example) {
             example.links = example.links.concat(links)
+            if (new Date(result.last_edited_time) > new Date(example.lastEdited)) {
+              example.lastEdited = result.last_edited_time
+            }
           } else {
             examples[name] = {
               name,
               activity: result.properties.Secteur.select.name,
               logo: result.properties.Logo.files[0].file.url,
               links,
+              lastEdited: result.last_edited_time,
             }
           }
         } catch (e) {
@@ -77,6 +80,7 @@ export const getCommunications = unstable_cache(
           { href: result.properties.Lien.rich_text.map((text) => text.plain_text).join(''), label: '', tags: [] },
         ],
         activity: '',
+        lastEdited: result.last_edited_time,
       }))
     } catch {
       return []

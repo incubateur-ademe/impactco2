@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Example as ExampleType } from 'types/example'
 import DropdownArrowDownIcon from 'components/base/icons/dropdown-arrow-down'
 import DropdownArrowUpIcon from 'components/base/icons/dropdown-arrow-up'
@@ -22,7 +22,10 @@ const ExamplesList = ({ examples, extraText, forceDisplay, withTags, ...blockPro
   return !forceDisplay && length === 0 ? null : (
     <Block {...blockProps}>
       <ul className={styles.examples}>
-        {(displayAll ? examples : examples.slice(0, 9)).map((example) => (
+        {(displayAll
+          ? examples.sort((a, b) => new Date(b.lastEdited).getTime() - new Date(a.lastEdited).getTime())
+          : examples.sort((a, b) => new Date(b.lastEdited).getTime() - new Date(a.lastEdited).getTime()).slice(0, 9)
+        ).map((example) => (
           <Example key={example.name} example={example} withTags={withTags} />
         ))}
       </ul>

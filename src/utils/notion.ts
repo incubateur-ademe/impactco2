@@ -46,7 +46,9 @@ export const NotionCommandValidation = z.discriminatedUnion('type', [
 
 export type NotionCommand = z.infer<typeof NotionCommandValidation>
 
-export const getAllNotionDB = async <T>(url: string): Promise<{ id: string; properties: T }[]> => {
+export const getAllNotionDB = async <T>(
+  url: string
+): Promise<{ id: string; last_edited_time: string; properties: T }[]> => {
   if (!process.env.NOTION_API_KEY) {
     return []
   }
@@ -72,7 +74,9 @@ export const getAllNotionDB = async <T>(url: string): Promise<{ id: string; prop
       has_more: boolean
     }>(
       url,
-      { start_cursor: axiosResponse ? axiosResponse.data.next_cursor : undefined },
+      {
+        start_cursor: axiosResponse ? axiosResponse.data.next_cursor : undefined,
+      },
       {
         headers: {
           Authorization: `Bearer ${process.env.NOTION_API_KEY}`,
