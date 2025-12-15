@@ -66,13 +66,7 @@ export const getMatomoStats = async (year: string): Promise<Stats> => {
     visits: allVisits.filter((visit) => visit.label !== 'iframes').reduce((acc, visit) => acc + visit.nb_visits, 0),
     iframes: iframes.reduce((acc, visit) => acc + visit.nb_visits, 0),
     api: allEventsByCategory
-      .filter(
-        (event) =>
-          event.label.startsWith('API_') &&
-          event.label !== 'API_Impact+CO2' &&
-          event.label !== 'API_https://impactco2.fr/api-doc' &&
-          event.label !== 'API_https://impactco2.fr/doc/api'
-      )
+      .filter((event) => event.label.startsWith('API'))
       .reduce((acc, visit) => acc + visit.nb_events, 0),
     shared: allEventsByAction
       .filter((event) => event.label === 'Partager')
