@@ -21,8 +21,8 @@ const values = [
 ]
 const numberOfExemples = 6
 const regexLinks = {
-  fr: 'https://regex101.com/r/yqhsPM/1',
-  en: 'https://regex101.com/r/AinInG/1',
+  fr: 'https://regex101.com/r/q8dxHw/1',
+  en: 'https://regex101.com/r/4tDYKx/1',
   es: '',
 }
 

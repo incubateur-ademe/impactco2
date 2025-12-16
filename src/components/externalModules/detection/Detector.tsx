@@ -10,8 +10,8 @@ import SimpleValue, { getRandomEquivalent } from '../SimpleValue'
 import styles from './Detector.module.css'
 
 export const regexs = {
-  fr: /([0-9]+(,*|\.*|\s*|&nbsp;*)[0-9]*)(\s|&nbsp;)*(millier(s)?|mille(s)?|million(s)?|milliard(s)?|giga(s)?)?(\s|&nbsp;)*(de\s|&nbsp;)?(kg(s)?|kilo(s)?|kilo(&shy;|­)?gramme(s)?|g|t|tonne(s)?)(\s|&nbsp;)*(d'émissions\s|&nbsp;)?(de\s|&nbsp;)*(d(’|')équivalent\s|&nbsp;)?(eq)?(éq)?(\s|&nbsp;)*(c(o|0)(2|₂|<sub>2(\s|&nbsp;)*<\/sub>)|dioxyde de carbone)(eq|((\s|&nbsp;)*équivalent)|e)?/i,
-  en: /([0-9]+(,*|\.*|\s*|&nbsp;*)[0-9]*)(\s|&nbsp;)*(thousand(s)?|million(s)?|billion(s)?|giga(s)?)?(\s|&nbsp;)*(kg(s)?|kilo(s)?|kilo(&shy;|­)?gram(s)?|g|t|ton(s)|tonne(s)?)(\s|&nbsp;)*(of\s|&nbsp;)*(equivalent)?(eq)?(\s|&nbsp;)*(c(o|0)(2|₂|<sub>2(\s|&nbsp;)*<\/sub>)|carbon dyoxide)(eq|((\s|&nbsp;)*equivalent)|e)?/i,
+  fr: /([0-9]+(?:[,.\s|&nbsp;][0-9]+)*)(?:\s|&nbsp;)*(milliers?|milles?|millions?|milliards?|gigas?|mégas?|megas?)?(?:\s|&nbsp;)*(?:de(?:\s|&nbsp;)*)?(gigatonnes?|gigatons?|kgs?|kilos?|kilo(?:&shy;|­)?grammes?|tonnes?|(?:\(\s*)?[mMgG]t(?:\s*\))?|[gt])(?:\s|&nbsp;)*(?:\(\s*[mMgG]t\s*\))?(?:\s|&nbsp;)*(?:d'émissions(?:\s|&nbsp;)*)?(?:de(?:\s|&nbsp;)*)?(?:d['']équivalent(?:\s|&nbsp;)*)?(eq|équivalent|éq)?(?:\s|&nbsp;)*(c(?:o|0)(?:2|₂|<sub>2(?:\s|&nbsp;)*<\/sub>)|dioxyde de carbone)(?:eq|(?:(?:\s|&nbsp;)*équivalent)|e)?/i,
+  en: /([0-9]+(?:[,.\s|&nbsp;][0-9]+)*)(?:\s|&nbsp;)*(thousands?|millions?|billions?|gigas?|megas?)?(?:\s|&nbsp;)*(?:of(?:\s|&nbsp;)*)?(gigatonnes?|gigatons?|kgs?|kilos?|kilo(?:&shy;|­)?grams?|tonnes?|tons?|(?:\(\s*)?[mMgG]t(?:\s*\))?|[gt])(?:\s|&nbsp;)*(?:\(\s*[mMgG]t\s*\))?(?:\s|&nbsp;)*(?:of(?:\s|&nbsp;)*)?(?:emissions(?:\s|&nbsp;)*)?(?:of(?:\s|&nbsp;)*)?(equivalent|eq)?(?:\s|&nbsp;)*(c(?:o|0)(?:2|₂|<sub>2(?:\s|&nbsp;)*<\/sub>)|carbon (?:di)?oxide)(?:eq|(?:(?:\s|&nbsp;)*equivalent)|e)?/i,
 }
 
 const getComputedStyle = (el: Element, property: string) => {
@@ -49,11 +49,25 @@ const getOverflow = (element: HTMLDivElement) => {
 }
 
 const getUnitFactor = (unit: string) => {
-  if (unit === 't' || unit.includes('ton')) {
+  if (!unit) {
+    return 1
+  }
+
+  const lowerUnit = unit.toLowerCase().replace(/[()\s]/g, '')
+
+  if (lowerUnit === 'gt' || lowerUnit.includes('gigatonne') || lowerUnit.includes('gigaton')) {
+    return 1000000000000000
+  }
+
+  if (lowerUnit === 'mt') {
+    return 1000000000000
+  }
+
+  if (lowerUnit === 't' || lowerUnit.includes('ton')) {
     return 1000000
   }
 
-  if (unit === 'kg' || unit === 'kgs' || unit.includes('kilo')) {
+  if (lowerUnit === 'kg' || lowerUnit === 'kgs' || lowerUnit.includes('kilo')) {
     return 1000
   }
 
@@ -65,28 +79,44 @@ const getFactor = (unit: string) => {
     return 1
   }
 
-  if (unit.includes('milliard') || unit.includes('giga') || unit.includes('billion')) {
+  const lowerUnit = unit.toLowerCase()
+
+  if (lowerUnit.includes('milliard') || lowerUnit.includes('billion')) {
     return 1000000000
   }
-  if (unit.includes('million')) {
+  if (lowerUnit.includes('million')) {
     return 1000000
   }
-  if (unit.includes('millier') || unit.includes('mille') || unit.includes('thousand')) {
+  if (lowerUnit.includes('millier') || lowerUnit.includes('mille') || lowerUnit.includes('thousand')) {
     return 1000
+  }
+  if (lowerUnit === 'giga' || lowerUnit === 'gigas') {
+    return 1000000000
+  }
+  if (lowerUnit === 'méga' || lowerUnit === 'mega' || lowerUnit === 'mégas' || lowerUnit === 'megas') {
+    return 1000000
   }
 
   return 1
 }
 
-export const getValue = (regexResult: string[], language: 'fr' | 'en') =>
-  Number(
-    regexResult[1]
-      .replace(/,/g, '.')
-      .replace(/&nbsp;/g, '')
-      .replace(/\s/g, '')
-  ) *
-  getFactor(regexResult[4]) *
-  getUnitFactor(language === 'fr' ? regexResult[12] : regexResult[10])
+export const getValue = (regexResult: string[], language: 'fr' | 'en') => {
+  const numberStr = regexResult[1]
+    .replace(/,/g, '.') // virgule -> point décimal
+    .replace(/&nbsp;/g, '') // supprime &nbsp;
+    .replace(/\s/g, '') // supprime espaces
+
+  const number = Number(numberStr)
+
+  // Groupe 2: multiplicateur (million, milliard, etc.)
+  const multiplier = getFactor(regexResult[2])
+
+  // Groupe 3: unité (kg, t, Mt, Gt, gigatonnes, etc.)
+  const unit = regexResult[3]
+  const unitFactor = getUnitFactor(unit)
+
+  return number * multiplier * unitFactor
+}
 
 const transportEquivalents = [
   'tgv-paris-berlin',
