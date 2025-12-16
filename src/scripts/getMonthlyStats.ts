@@ -238,11 +238,4 @@ const getStatsForMonth = async (month: string) => {
 
 const month = process.argv[2]
 
-for (var i = 1; i <= 12; i++) {
-  const monthStr = i < 10 ? `0${i}` : `${i}`
-  getStatsForMonth(`2024-${monthStr}`)
-}
-for (var i = 1; i <= 12; i++) {
-  const monthStr = i < 10 ? `0${i}` : `${i}`
-  getStatsForMonth(`2025-${monthStr}`)
-}
+getStatsForMonth(month)
