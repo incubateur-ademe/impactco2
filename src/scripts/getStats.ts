@@ -119,9 +119,34 @@ export const getMatomoStats = async (date: string) => {
         detectorVisit[key] = event.nb_visits
       }
     })
+
+  const iframeEngagement = allEventsByCategory
+    .filter((event) => event.label.startsWith('Engagement'))
+    .filter((event) => {
+      const data = event.label.split('_')
+      return data.length === 3
+    })
+    .reduce((acc, event) => acc + event.nb_visits, 0)
+
+  const siteEngagement = allEventsByCategory
+    .filter((event) => event.label.startsWith('Engagement'))
+    .filter((event) => {
+      const data = event.label.split('_')
+      return data.length === 2
+    })
+    .reduce((acc, event) => acc + event.nb_visits, 0)
+
   const results = {
     visits: impactco2Visits.reduce((acc, visit) => acc + visit.nb_visits, 0),
+    siteEngagement,
+    siteEngagementTaux: Math.round(
+      (100 * siteEngagement) / impactco2Visits.reduce((acc, visit) => acc + visit.nb_visits, 0)
+    ),
     iframes: iframes.reduce((acc, visit) => acc + visit.nb_visits, 0),
+    iframeEngagement,
+    iframeEngagementTaux: Math.round(
+      (100 * iframeEngagement) / iframes.reduce((acc, visit) => acc + visit.nb_visits, 0)
+    ),
     api: allEventsByCategory
       .filter((event) => event.label.startsWith('API'))
       .reduce((acc, visit) => acc + visit.nb_events, 0),
