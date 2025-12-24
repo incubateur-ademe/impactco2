@@ -2,12 +2,6 @@ import { ComputedEquivalent, Equivalent } from 'types/equivalent'
 import formatName from 'utils/formatName'
 import values from './values.json'
 
-const m2: Record<string, string> = {
-  fr: 'par m²',
-  en: 'per m²',
-  es: 'por m²',
-}
-
 const livraison: Record<string, Record<string, string>> = {
   magasin: {
     fr: "15km en voiture, colis d'1kg",
@@ -260,7 +254,7 @@ export const getName = (
   livraisonInfo?: boolean
 ) => {
   const name = getNameWithoutSuffix(language, equivalent, withPrefix, value, lowerCase)
-  return `${name}${equivalent.category === 8 ? ` ${m2[language]}` : ''}${equivalent.carpool ? `(${equivalent.carpool} ${formatName(passengers[language], equivalent.carpool)})` : ''}${livraisonInfo ? getLivraisonInfo(language, equivalent.slug) : ''}`
+  return `${name}${equivalent.carpool ? `(${equivalent.carpool} ${formatName(passengers[language], equivalent.carpool)})` : ''}${livraisonInfo ? getLivraisonInfo(language, equivalent.slug) : ''}`
 }
 
 export const isEquivalentInMode = (equivalent: ComputedEquivalent, mode: string) =>
