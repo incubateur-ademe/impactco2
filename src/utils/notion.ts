@@ -46,17 +46,15 @@ export const NotionCommandValidation = z.discriminatedUnion('type', [
 
 export type NotionCommand = z.infer<typeof NotionCommandValidation>
 
-export const getAllNotionDB = async <T>(url: string): Promise<{ id: string; properties: T }[]> => {
+type NotionResult<T> = { id: string; properties: T; last_edited_time: string }
+export const getAllNotionDB = async <T>(url: string) => {
   if (!process.env.NOTION_API_KEY) {
     return []
   }
-  let results: { id: string; properties: T }[] = []
+  let results: NotionResult<T>[] = []
   let axiosResponse:
     | AxiosResponse<{
-        results: {
-          id: string
-          properties: T
-        }[]
+        results: NotionResult<T>[]
         next_cursor: boolean
         has_more: boolean
       }>
@@ -64,15 +62,14 @@ export const getAllNotionDB = async <T>(url: string): Promise<{ id: string; prop
 
   while (!axiosResponse || axiosResponse.data.has_more) {
     axiosResponse = await axios.post<{
-      results: {
-        id: string
-        properties: T
-      }[]
+      results: NotionResult<T>[]
       next_cursor: boolean
       has_more: boolean
     }>(
       url,
-      { start_cursor: axiosResponse ? axiosResponse.data.next_cursor : undefined },
+      {
+        start_cursor: axiosResponse ? axiosResponse.data.next_cursor : undefined,
+      },
       {
         headers: {
           Authorization: `Bearer ${process.env.NOTION_API_KEY}`,

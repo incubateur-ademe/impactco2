@@ -28,7 +28,10 @@ export const getExamples = unstable_cache(
             return
           }
 
-          const name = result.properties.Nom.title.map((text) => text.plain_text).join('')
+          const name = result.properties.Nom.title
+            .map((text) => text.plain_text)
+            .join('')
+            .trim()
           const url = result.properties.Lien.rich_text.map((text) => text.plain_text).join('')
           const tags = result.properties['Tags site'].multi_select.map((select) => select.name)
           const links = result.properties.Outil.multi_select.map((tool) => ({
@@ -36,16 +39,19 @@ export const getExamples = unstable_cache(
             label: tool.name,
             tags,
           }))
-
           const example = examples[name]
           if (example) {
             example.links = example.links.concat(links)
+            if (new Date(result.last_edited_time) > new Date(example.lastEdited)) {
+              example.lastEdited = result.last_edited_time
+            }
           } else {
             examples[name] = {
               name,
               activity: result.properties.Secteur.select.name,
               logo: result.properties.Logo.files[0].file.url,
               links,
+              lastEdited: result.last_edited_time,
             }
           }
         } catch (e) {
@@ -77,6 +83,7 @@ export const getCommunications = unstable_cache(
           { href: result.properties.Lien.rich_text.map((text) => text.plain_text).join(''), label: '', tags: [] },
         ],
         activity: '',
+        lastEdited: result.last_edited_time,
       }))
     } catch {
       return []
