@@ -72,7 +72,7 @@ const AllExamples = ({ examples, communications }: { examples: Example[]; commun
 
   useEffect(() => {
     router.replace(`/doc/exemples?activity=${activity}&tool=${tool}`)
-  }, [activity, tool])
+  }, [activity, tool, router])
 
   const filteredExamples = useMemo(
     () => examples.filter((example) => (tool === 'all' ? example : example.links.find((link) => link.label === tool))),
