@@ -21,7 +21,7 @@ const DistanceSimulator = ({ withComparisonMode }: { withComparisonMode: boolean
 
   return (
     <>
-      <div className={styles.distanceSimulator}>
+      <div className={styles.smallInputSimulator}>
         <NumberInput
           id='km-value'
           value={km}

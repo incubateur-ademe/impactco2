@@ -7,7 +7,8 @@ import Link from 'components/base/buttons/Link'
 import { improveAccessibility } from './utils'
 import 'react-notion-x/src/styles.css'
 
-const DynamicNotion = ({ recordMap }: { recordMap: ExtendedRecordMap }) => {
+export type DynamicNotionProps = { recordMap: ExtendedRecordMap }
+const DynamicNotion = ({ recordMap }: DynamicNotionProps) => {
   const ref = useRef<HTMLDivElement>(null)
   useEffect(() => {
     if (ref.current) {
@@ -17,7 +18,7 @@ const DynamicNotion = ({ recordMap }: { recordMap: ExtendedRecordMap }) => {
     }
   }, [ref])
   return (
-    <div ref={ref}>
+    <div ref={ref} className='notion'>
       <NotionRenderer
         recordMap={recordMap}
         components={{

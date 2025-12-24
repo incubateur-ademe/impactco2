@@ -38,7 +38,7 @@ const EquivalentPage = ({
   return (
     <>
       <Breadcrumbs
-        current={getName('fr', equivalent)}
+        current={getName('fr', equivalent, equivalent.category === 8)}
         links={[
           { label: 'Accueil', link: '/' },
           { label: 'Les outils', link: '/outils' },
@@ -47,7 +47,10 @@ const EquivalentPage = ({
             : { label: category.name, link: `/outils/${category.slug}` },
         ]}
       />
-      <Block title={getName('fr', equivalent)} as='h1' description="Détail de l'impact carbone">
+      <Block
+        title={getName('fr', equivalent, equivalent.category === 8)}
+        as='h1'
+        description="Détail de l'impact carbone">
         <Equivalent category={category} equivalent={equivalent} simulator={simulator} />
         {sources && sources.length > 0 && (
           <Sources className={styles.sources} sources={sources} tracking={category.name} />
