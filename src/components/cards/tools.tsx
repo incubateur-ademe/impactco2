@@ -7,7 +7,7 @@ export const tools = [
     title: 'Kit RSE',
     description: 'La ressource clé en main pour sensibiliser à la transition écologique',
     linkLabel: 'Obtenir',
-    link: 'https://tally.so/r/3yBzV6',
+    link: 'https://tally.so/r/XxLGeY',
   },
   {
     slug: 'livraison',

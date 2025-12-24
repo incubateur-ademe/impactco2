@@ -31,7 +31,7 @@ const Outils = () => {
                       <CheckRoundIcon />
                     </div>
                   </div>
-                  <p>4 événements en lien avec la transition écologique</p>
+                  <p>8 événements en lien avec la transition écologique</p>
                 </div>
                 <div className={styles.descriptionLine}>
                   <div className={styles.icons}>
