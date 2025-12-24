@@ -19,13 +19,14 @@ const ExamplesList = ({ examples, extraText, forceDisplay, withTags, ...blockPro
   const length = examples.length
   const [displayAll, setDisplayAll] = useState(false)
 
+  // Create a sorted copy to avoid mutating the original array
+  const sortedExamples = [...examples].sort((a, b) => new Date(b.lastEdited).getTime() - new Date(a.lastEdited).getTime())
+  const displayedExamples = displayAll ? sortedExamples : sortedExamples.slice(0, 9)
+
   return !forceDisplay && length === 0 ? null : (
     <Block {...blockProps}>
       <ul className={styles.examples}>
-        {(displayAll
-          ? examples.sort((a, b) => new Date(b.lastEdited).getTime() - new Date(a.lastEdited).getTime())
-          : examples.sort((a, b) => new Date(b.lastEdited).getTime() - new Date(a.lastEdited).getTime()).slice(0, 9)
-        ).map((example) => (
+        {displayedExamples.map((example) => (
           <Example key={example.name} example={example} withTags={withTags} />
         ))}
       </ul>
