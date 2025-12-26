@@ -171,7 +171,7 @@ const Shareable = ({
             {showButtons &&
             hideActions !== slug &&
             overScreens &&
-            ('hypothesis' in overScreens || 'data' in overScreens) ? (
+            ('hypothesis' in overScreens || 'data' in overScreens || 'faq' in overScreens) ? (
               <div className={classNames('no-screenshot', styles.ressources)}>
                 {'data' in overScreens && (
                   <Feature
@@ -188,6 +188,15 @@ const Shareable = ({
                     type='hypothesis'
                     info={overScreens.hypothesis}
                     name='Aller plus loin'
+                    tracking={tracking}
+                  />
+                )}
+                {'faq' in overScreens && (
+                  <Feature
+                    slug={slug}
+                    type='faq'
+                    info={overScreens.faq}
+                    name='Questions fréquentes'
                     tracking={tracking}
                   />
                 )}
