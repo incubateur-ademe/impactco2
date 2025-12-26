@@ -1,20 +1,20 @@
 import { useMemo } from 'react'
-import { ZodError } from 'zod'
+import { ZodError, treeifyError } from 'zod'
 
-const findError = (id: string, errors?: ZodError | null) => {
+const findError = (id: string, errors?: ZodError<Record<string, unknown>> | null) => {
   if (!errors) {
     return null
   }
 
-  const error = errors.flatten().fieldErrors[id]
+  const error = treeifyError<Record<string, unknown>>(errors).properties?.[id]
   if (!error) {
     return null
   }
 
-  return error.join(', ')
+  return error.errors.join(', ')
 }
 
-export default function useError(id: string | undefined, errors: ZodError | null | undefined) {
+export default function useError(id: string | undefined, errors: ZodError<Record<string, unknown>> | null | undefined) {
   const error = useMemo(() => (id ? findError(id, errors) : null), [id, errors])
 
   return error

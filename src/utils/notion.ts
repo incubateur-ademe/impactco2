@@ -4,42 +4,38 @@ import { z } from 'zod'
 export const NotionCommandValidation = z.discriminatedUnion('type', [
   z.object({
     type: z.literal('rendezvous'),
-    from: z.string(),
+    from: z.string({ message: 'Required' }),
     structure: z
-      .string({ required_error: 'Veuillez renseigner votre structure.' })
+      .string({ message: 'Veuillez renseigner votre structure.' })
       .min(1, 'Veuillez renseigner votre structure.'),
     suggestionType: z
-      .string({ required_error: 'Veuillez renseigner votre demande.' })
+      .string({ message: 'Veuillez renseigner votre demande.' })
       .min(1, 'Veuillez renseigner votre demande.'),
-    text: z
-      .string({ required_error: 'Veuillez renseigner votre message.' })
-      .min(1, 'Veuillez renseigner votre message.'),
-    email: z
-      .string({ required_error: 'Veuillez renseigner un email valide.' })
-      .email({ message: 'Veuillez renseigner un email valide.' }),
-    accepted: z.literal(true, {
-      errorMap: () => ({ message: 'Veuillez lire et accepter la politique de protection des données personnelles' }),
-    }),
+    text: z.string({ message: 'Veuillez renseigner votre message.' }).min(1, 'Veuillez renseigner votre message.'),
+    email: z.string({ message: 'Veuillez renseigner un email valide.' }).email('Veuillez renseigner un email valide.'),
+    accepted: z
+      .boolean({ message: 'Veuillez lire et accepter la politique de protection des données personnelles' })
+      .refine((v) => v === true, {
+        message: 'Veuillez lire et accepter la politique de protection des données personnelles',
+      }),
     newsletter: z.boolean(),
   }),
   z.object({
     type: z.literal('suggestion'),
-    from: z.string(),
+    from: z.string({ message: 'Required' }),
     structure: z
-      .string({ required_error: 'Veuillez renseigner votre structure.' })
+      .string({ message: 'Veuillez renseigner votre structure.' })
       .min(1, 'Veuillez renseigner votre structure.'),
     suggestionType: z
-      .string({ required_error: 'Veuillez spécifier votre type de retour.' })
+      .string({ message: 'Veuillez spécifier votre type de retour.' })
       .min(1, 'Veuillez spécifier votre type de retour.'),
-    text: z
-      .string({ required_error: 'Veuillez renseigner votre message.' })
-      .min(1, 'Veuillez renseigner votre message.'),
-    email: z
-      .string({ required_error: 'Veuillez renseigner un email valide.' })
-      .email({ message: 'Veuillez renseigner un email valide.' }),
-    accepted: z.literal(true, {
-      errorMap: () => ({ message: 'Veuillez lire et accepter la politique de protection des données personnelles' }),
-    }),
+    text: z.string({ message: 'Veuillez renseigner votre message.' }).min(1, 'Veuillez renseigner votre message.'),
+    email: z.string({ message: 'Veuillez renseigner un email valide.' }).email('Veuillez renseigner un email valide.'),
+    accepted: z
+      .boolean({ message: 'Veuillez lire et accepter la politique de protection des données personnelles' })
+      .refine((v) => v === true, {
+        message: 'Veuillez lire et accepter la politique de protection des données personnelles',
+      }),
     newsletter: z.boolean(),
   }),
 ])

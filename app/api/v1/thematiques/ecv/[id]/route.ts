@@ -166,7 +166,7 @@ export async function GET(req: NextRequest, context: { params: Promise<{ id: str
     language: searchParams.get('language') || 'fr',
   })
   if (!inputs.success) {
-    return NextResponse.json(inputs.error, { status: 400 })
+    return NextResponse.json(z.treeifyError(inputs.error), { status: 400 })
   }
 
   const { detail } = inputs.data

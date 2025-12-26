@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { NextRequest, NextResponse } from 'next/server'
+import { z } from 'zod'
 import { GMapValidation, getCachedValue, insertCachedValue } from 'utils/gmaps'
 import { trackAPIRequest } from 'utils/middleware'
 
@@ -20,7 +21,7 @@ export async function POST(req: NextRequest) {
 
   const inputs = GMapValidation.safeParse(body)
   if (!inputs.success) {
-    return NextResponse.json(inputs.error)
+    return NextResponse.json(z.treeifyError(inputs.error), { status: 400 })
   }
 
   if (!process.env.GMAP_API_KEY) {
