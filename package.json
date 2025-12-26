@@ -75,7 +75,7 @@
     "postcss-preset-env": "^10.5.0",
     "preact": "^10.28.1",
     "prisma": "^7.2.0",
-    "publicodes": "1.4.0",
+    "publicodes": "1.9.1",
     "qrcode": "^1.5.4",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",

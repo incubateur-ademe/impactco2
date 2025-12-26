@@ -19,7 +19,7 @@ importers:
         version: 5.5.7
       '@incubateur-ademe/publicodes-acv-numerique':
         specifier: ^2.1.0
-        version: 2.1.0(publicodes@1.4.0(@types/mocha@9.1.1))
+        version: 2.1.0(publicodes@1.9.1)
       '@prisma/adapter-pg':
         specifier: ^7.2.0
         version: 7.2.0
@@ -28,7 +28,7 @@ importers:
         version: 7.2.0(prisma@7.2.0(@types/react@19.2.7)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(typescript@5.9.3))(typescript@5.9.3)
       '@publicodes/react-ui':
         specifier: ^1.10.0
-        version: 1.10.0(publicodes@1.4.0(@types/mocha@9.1.1))(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+        version: 1.10.0(publicodes@1.9.1)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@r2wc/react-to-web-component':
         specifier: ^2.1.0
         version: 2.1.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
@@ -114,8 +114,8 @@ importers:
         specifier: ^7.2.0
         version: 7.2.0(@types/react@19.2.7)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(typescript@5.9.3)
       publicodes:
-        specifier: 1.4.0
-        version: 1.4.0(@types/mocha@9.1.1)
+        specifier: 1.9.1
+        version: 1.9.1
       qrcode:
         specifier: ^1.5.4
         version: 1.5.4
@@ -3212,9 +3212,6 @@ packages:
 
   '@types/md5@2.3.6':
     resolution: {integrity: sha512-WD69gNXtRBnpknfZcb4TRQ0XJQbUPZcai/Qdhmka3sxUR3Et8NrXoeAoknG/LghYHTf4ve795rInVYHBTQdNVA==}
-
-  '@types/mocha@9.1.1':
-    resolution: {integrity: sha512-Z61JK7DKDtdKTWwLeElSEBcWGRLY8g95ic5FoQqI9CMx0ns/Ghep3B4DfcEimiKMvtamNVULVNKEsiwV3aQmXw==}
 
   '@types/mysql@2.15.27':
     resolution: {integrity: sha512-YfWiV16IY0OeBfBCk8+hXKmdTKrKlwKN1MNKAPBu5JYxLwBEZl7QzeEpGnlZb3VMGJrrGmB84gXiH+ofs/TezA==}
@@ -6959,10 +6956,8 @@ packages:
   proxy-from-env@1.1.0:
     resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==}
 
-  publicodes@1.4.0:
-    resolution: {integrity: sha512-42LTuqGB8g8DP3ZUbT4vKu+D6fR7iJ+Ibcsw0SALFw25UKPpRBi8ibYvcoDt4FWf9CAFUKaSdLe6EYN1GS2W3w==}
-    peerDependencies:
-      '@types/mocha': ^9.0.0
+  publicodes@1.9.1:
+    resolution: {integrity: sha512-sXBgGuAH/bIehF8waXm4Pp/EnqjFmxZJb6FNSAZ9FRO1neACHRYKv34lxFM3qZNyJ2RaI5jwtOupGlozMW0fcA==}
 
   pump@3.0.3:
     resolution: {integrity: sha512-todwxLMY7/heScKmntwQG8CXVkWUOdYxIvY2s0VWAAMh/nd8SoYiRaKjlr7+iCs984f2P8zvrfWcDDYVb73NfA==}
@@ -9826,9 +9821,9 @@ snapshots:
   '@img/sharp-win32-x64@0.34.5':
     optional: true
 
-  '@incubateur-ademe/publicodes-acv-numerique@2.1.0(publicodes@1.4.0(@types/mocha@9.1.1))':
+  '@incubateur-ademe/publicodes-acv-numerique@2.1.0(publicodes@1.9.1)':
     dependencies:
-      publicodes: 1.4.0(@types/mocha@9.1.1)
+      publicodes: 1.9.1
 
   '@istanbuljs/load-nyc-config@1.1.0':
     dependencies:
@@ -10674,10 +10669,10 @@ snapshots:
 
   '@protobufjs/utf8@1.1.0': {}
 
-  '@publicodes/react-ui@1.10.0(publicodes@1.4.0(@types/mocha@9.1.1))(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
+  '@publicodes/react-ui@1.10.0(publicodes@1.9.1)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
     dependencies:
       fuse.js: 7.1.0
-      publicodes: 1.4.0(@types/mocha@9.1.1)
+      publicodes: 1.9.1
       react: 19.2.3
       react-dom: 19.2.3(react@19.2.3)
       styled-components: 6.1.19(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
@@ -11764,8 +11759,6 @@ snapshots:
       '@types/node': 24.10.1
 
   '@types/md5@2.3.6': {}
-
-  '@types/mocha@9.1.1': {}
 
   '@types/mysql@2.15.27':
     dependencies:
@@ -16057,9 +16050,7 @@ snapshots:
 
   proxy-from-env@1.1.0: {}
 
-  publicodes@1.4.0(@types/mocha@9.1.1):
-    dependencies:
-      '@types/mocha': 9.1.1
+  publicodes@1.9.1: {}
 
   pump@3.0.3:
     dependencies:
