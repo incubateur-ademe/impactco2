@@ -21,7 +21,6 @@ describe('Notion api command', () => {
 
     it('does not allow valid command with not accepted', () => {
       expectZodValidationToFail(
-        // @ts-expect-error: Zod too complex
         NotionCommandValidation,
         validCommand,
         {
@@ -38,7 +37,6 @@ describe('Notion api command', () => {
 
     it('does not allow valid command with empty acceptation', () => {
       expectZodValidationToFail(
-        // @ts-expect-error: Zod too complex
         NotionCommandValidation,
         validCommand,
         {
@@ -55,7 +53,6 @@ describe('Notion api command', () => {
 
     it('does not allow unvalid email', () => {
       expectZodValidationToFail(
-        // @ts-expect-error: Zod too complex
         NotionCommandValidation,
         validCommand,
         {
@@ -72,7 +69,6 @@ describe('Notion api command', () => {
 
     it('does not allow empty suggestion', () => {
       expectZodValidationToFail(
-        // @ts-expect-error: Zod too complex
         NotionCommandValidation,
         validCommand,
         {
@@ -89,7 +85,6 @@ describe('Notion api command', () => {
 
     it('does not allow empty structure', () => {
       expectZodValidationToFail(
-        // @ts-expect-error: Zod too complex
         NotionCommandValidation,
         validCommand,
         {
@@ -106,7 +101,6 @@ describe('Notion api command', () => {
 
     it('does not allow empty from', () => {
       expectZodValidationToFail(
-        // @ts-expect-error: Zod too complex
         NotionCommandValidation,
         validCommand,
         {
@@ -123,7 +117,6 @@ describe('Notion api command', () => {
 
     it('does not allow empty text ', () => {
       expectZodValidationToFail(
-        // @ts-expect-error: Zod too complex
         NotionCommandValidation,
         validCommand,
         {
@@ -157,7 +150,6 @@ describe('Notion api command', () => {
 
     it('does not allow valid command with not accepted', () => {
       expectZodValidationToFail(
-        // @ts-expect-error: Zod too complex
         NotionCommandValidation,
         validCommand,
         {
@@ -174,7 +166,6 @@ describe('Notion api command', () => {
 
     it('does not allow valid command with empty acceptation', () => {
       expectZodValidationToFail(
-        // @ts-expect-error: Zod too complex
         NotionCommandValidation,
         validCommand,
         {
@@ -191,7 +182,6 @@ describe('Notion api command', () => {
 
     it('does not allow unvalid email', () => {
       expectZodValidationToFail(
-        // @ts-expect-error: Zod too complex
         NotionCommandValidation,
         validCommand,
         {
@@ -208,7 +198,6 @@ describe('Notion api command', () => {
 
     it('does not allow empty suggestion', () => {
       expectZodValidationToFail(
-        // @ts-expect-error: Zod too complex
         NotionCommandValidation,
         validCommand,
         {
@@ -225,7 +214,6 @@ describe('Notion api command', () => {
 
     it('does not allow empty structure', () => {
       expectZodValidationToFail(
-        // @ts-expect-error: Zod too complex
         NotionCommandValidation,
         validCommand,
         {
@@ -242,7 +230,6 @@ describe('Notion api command', () => {
 
     it('does not allow empty from', () => {
       expectZodValidationToFail(
-        // @ts-expect-error: Zod too complex
         NotionCommandValidation,
         validCommand,
         {
@@ -259,7 +246,6 @@ describe('Notion api command', () => {
 
     it('does not allow empty text ', () => {
       expectZodValidationToFail(
-        // @ts-expect-error: Zod too complex
         NotionCommandValidation,
         validCommand,
         {

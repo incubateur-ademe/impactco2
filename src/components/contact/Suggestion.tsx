@@ -69,7 +69,7 @@ const Suggestion = () => {
       }
       setSent(true)
     } else {
-      const input = document.getElementById(`input-${body.error.issues[0].path[0]}`)
+      const input = document.getElementById(`input-${String(body.error.issues[0].path[0])}`)
       if (input) {
         input.scrollIntoView({ behavior: 'smooth' })
         input.focus({ preventScroll: true })
