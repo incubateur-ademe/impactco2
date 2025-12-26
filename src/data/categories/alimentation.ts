@@ -15,7 +15,7 @@ export const alimentation = [
       },
       {
         id: 32,
-        value: 0.21699999999999997,
+        value: 0.217,
       },
       {
         id: 33,
@@ -47,7 +47,7 @@ export const alimentation = [
       },
       {
         id: 32,
-        value: 0.21699999999999997,
+        value: 0.217,
       },
       {
         id: 33,
@@ -55,7 +55,7 @@ export const alimentation = [
       },
       {
         id: 34,
-        value: 0.044000000000000004,
+        value: 0.044,
       },
       {
         id: 35,
@@ -71,7 +71,7 @@ export const alimentation = [
     ecv: [
       {
         id: 30,
-        value: 6.0649999999999995,
+        value: 6.065,
       },
       {
         id: 31,
@@ -79,7 +79,7 @@ export const alimentation = [
       },
       {
         id: 32,
-        value: 0.22549999999999998,
+        value: 0.2255,
       },
       {
         id: 33,
@@ -87,7 +87,7 @@ export const alimentation = [
       },
       {
         id: 34,
-        value: 0.045649999999999996,
+        value: 0.04565,
       },
       {
         id: 35,
@@ -487,7 +487,7 @@ export const alimentation = [
       },
       {
         id: 31,
-        value: 0.050199999999999995,
+        value: 0.0502,
       },
       {
         id: 32,
@@ -523,7 +523,7 @@ export const alimentation = [
       },
       {
         id: 32,
-        value: 0.40975000000000006,
+        value: 0.40975,
       },
       {
         id: 33,
@@ -587,7 +587,7 @@ export const alimentation = [
       },
       {
         id: 32,
-        value: 0.17325000000000002,
+        value: 0.17325,
       },
       {
         id: 33,
@@ -647,7 +647,7 @@ export const alimentation = [
       },
       {
         id: 31,
-        value: 0.22399999999999998,
+        value: 0.224,
       },
       {
         id: 32,
@@ -806,7 +806,7 @@ export const alimentation = [
       },
       {
         id: 31,
-        value: 0.00013575000000000002,
+        value: 0.00013575,
       },
       {
         id: 32,

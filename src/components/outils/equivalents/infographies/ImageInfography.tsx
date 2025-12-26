@@ -25,7 +25,7 @@ const ImageInfography = ({
       overScreens={overScreens}
       secondary=''
       smallPadding>
-      <img src={`/images/${image}`} alt={alt} className={styles.image} />
+      <img src={`/infographies/${image}`} alt={alt} className={styles.image} />
     </Shareable>
   )
 }
