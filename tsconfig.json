@@ -36,6 +36,9 @@
       ],
       "hooks/*": [
         "src/hooks/*"
+      ],
+      "@prisma/*": [
+        "prisma/generated/prisma/*"
       ]
     },
     "module": "esnext",
