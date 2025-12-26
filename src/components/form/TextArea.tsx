@@ -16,7 +16,7 @@ const TextArea = ({
   label?: string
   hint?: string
   color?: 'secondary'
-  errors?: ZodError | null
+  errors?: ZodError<Record<string, unknown>> | null
 } & TextareaHTMLAttributes<HTMLTextAreaElement>) => {
   const error = useError(id, errors)
 

@@ -18,7 +18,7 @@ import styles from './Form.module.css'
 
 const Suggestion = () => {
   const params = useSearchParams()
-  const [errors, setErrors] = useState<ZodError | null>()
+  const [errors, setErrors] = useState<ZodError<Record<string, unknown>> | null>()
 
   const [email, setEmail] = useState('')
   const [text, setText] = useState('')

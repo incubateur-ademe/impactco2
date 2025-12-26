@@ -40,7 +40,7 @@ const Input = (
     icon?: ReactNode
     iconAria?: string
     onIconClick?: () => void
-    errors?: ZodError | null
+    errors?: ZodError<Record<string, unknown>> | null
     unit?: ReactNode
     unitTitle?: string
     secondaryUnitStyle?: boolean

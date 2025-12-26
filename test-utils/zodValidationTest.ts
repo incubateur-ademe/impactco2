@@ -1,14 +1,14 @@
 import z from 'zod'
 
-export const normalizeZodErrorForTestExpect = (errors: { path: (string | number)[]; message: string }[]) =>
+export const normalizeZodErrorForTestExpect = (errors: { path: (string | number | symbol)[]; message: string }[]) =>
   Object.fromEntries(
     errors
-      .map((error): [string, string] => [error.path.join('.'), error.message])
+      .map((error): [string, string] => [error.path.map((p) => String(p)).join('.'), error.message])
       .sort((a, b) => a[0].localeCompare(b[0]))
   )
 
-export const expectZodValidationToFail = <T, U extends object, V extends z.ZodRawShape>(
-  validation: z.ZodObject<V, 'strict' | 'strip', z.ZodTypeAny, T, T>,
+export const expectZodValidationToFail = <T, U extends object>(
+  validation: z.ZodTypeAny,
   validObject: T,
   fields: U,
   errors: { path: string[]; message: string }[]

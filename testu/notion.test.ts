@@ -1,3 +1,4 @@
+/// <reference types="jest" />
 import { NotionCommand, NotionCommandValidation } from '../src/utils/notion'
 import { expectZodValidationToFail } from '../test-utils/zodValidationTest'
 

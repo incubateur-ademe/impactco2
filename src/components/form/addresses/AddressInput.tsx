@@ -27,7 +27,7 @@ const AddressInput = ({
   id: string
   label?: string
   hint?: string
-  errors?: ZodError | null
+  errors?: ZodError<Record<string, unknown>> | null
   place?: string
   setPlace: Dispatch<SetStateAction<Point | undefined>>
   large?: boolean
