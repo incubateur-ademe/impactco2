@@ -229,7 +229,7 @@ export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url)
   const inputs = transportValidation.safeParse(Object.fromEntries(searchParams))
   if (!inputs.success) {
-    return NextResponse.json(inputs.error, { status: 400 })
+    return NextResponse.json(z.treeifyError(inputs.error), { status: 400 })
   }
 
   const hasAPIKey = await trackAPIRequest(req, 'transport')

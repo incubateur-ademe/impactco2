@@ -75,7 +75,7 @@
     "postcss-preset-env": "^10.5.0",
     "preact": "^10.28.1",
     "prisma": "^7.2.0",
-    "publicodes": "1.9.1",
+    "publicodes": "^1.9.1",
     "qrcode": "^1.5.4",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
@@ -86,7 +86,7 @@
     "swagger-ui-react": "^5.31.0",
     "tsx": "^4.21.0",
     "use-intl": "^4.6.1",
-    "zod": "3.24.2"
+    "zod": "^4.2.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.28.3",
