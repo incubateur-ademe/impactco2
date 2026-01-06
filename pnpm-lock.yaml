@@ -56,6 +56,9 @@ importers:
       crisp-api:
         specifier: ^10.2.0
         version: 10.2.0
+      dotenv:
+        specifier: ^17.2.3
+        version: 17.2.3
       dotenv-cli:
         specifier: ^11.0.0
         version: 11.0.0
@@ -261,9 +264,6 @@ importers:
       css-loader:
         specifier: ^7.1.2
         version: 7.1.2(@rspack/core@1.6.5)(webpack@5.104.1)
-      dotenv:
-        specifier: ^17.2.3
-        version: 17.2.3
       eslint:
         specifier: ^9.39.2
         version: 9.39.2(jiti@2.6.1)
