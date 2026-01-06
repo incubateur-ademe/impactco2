@@ -26,20 +26,20 @@ describe('infographies', () => {
     expect(boeufTransport).toBe(0.31)
     expect(boeufTotal).toBe(28.01)
 
-    const pommeTotal = round(pomme?.total as number)
+    const pommeTotal = round(pomme?.value)
     expect(pommeTotal).toBe(0.41)
 
-    const mangueTotal = round(mangue?.total as number)
+    const mangueTotal = round(mangue?.value)
     expect(mangueTotal).toBe(11.66)
 
     const agricultureTransportAlt = imageInfographies.boeuf[0].alt
 
     const boeufAutres = round(boeufTotal - boeufAgriculture - boeufTransport)
-    const pommeAgriculture = round(pomme?.ecv.find((ecv) => ecv.id === 30)?.value as number)
+    const pommeAgriculture = round(pomme?.ecv.find((ecv) => ecv.id === 30)?.value!)
     const pommeTransport = 0.26
     const pommeAutres = round(pommeTotal - pommeAgriculture - pommeTransport)
     const mangueTransport = 11.4
-    const mangueAgriculture = round(mangue?.ecv.find((ecv) => ecv.id === 30)?.value as number)
+    const mangueAgriculture = round(mangue?.ecv.find((ecv) => ecv.id === 30)?.value!)
     const mangueAutres = round(mangueTotal - mangueAgriculture - mangueTransport)
 
     const expectedAlt =

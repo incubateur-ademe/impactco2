@@ -4,6 +4,7 @@ import { alimentation } from 'data/categories/alimentation'
 import { boissons } from 'data/categories/boisson'
 import { casPratiques } from 'data/categories/caspratiques'
 import { chauffage } from 'data/categories/chauffage'
+import { dedupeEquivalents } from 'data/categories/dedupeEquivalents'
 import { deplacements } from 'data/categories/deplacement'
 import { electromenager } from 'data/categories/electromenager'
 import { flattenEquivalents } from 'data/categories/flattenEquivalents'
@@ -16,7 +17,7 @@ import { repas } from 'data/categories/repas'
 import { usageNumeriques } from 'data/categories/usagenumerique'
 import { computeECV } from 'utils/computeECV'
 
-export const computedEquivalents = [
+const combinedEquivalents = [
   ...boissons,
   ...flattenEquivalents(deplacements),
   ...electromenager,
@@ -30,7 +31,8 @@ export const computedEquivalents = [
   ...fruitsEtLegumes,
   ...casPratiques,
   ...livraison,
-].map((equivalent) => ({
+]
+export const computedEquivalents = dedupeEquivalents(combinedEquivalents).map((equivalent) => ({
   ...equivalent,
   link: `/outils/${categories.find((category) => category.id === equivalent.category)?.slug}/${equivalent.slug}`,
   value: computeECV(equivalent),
