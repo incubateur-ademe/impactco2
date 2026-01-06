@@ -179,7 +179,7 @@ importers:
         version: 3.3.3
       '@incubateur-ademe/publicodes-empreinte-carbone-chauffage':
         specifier: ^0.0.7
-        version: 0.0.7(publicodes@1.4.0(@types/mocha@9.1.1))
+        version: 0.0.7(publicodes@1.9.1)
       '@keyv/etcd':
         specifier: ^2.1.1
         version: 2.1.1(keyv@4.5.4)
@@ -9784,9 +9784,9 @@ snapshots:
     dependencies:
       publicodes: 1.9.1
 
-  '@incubateur-ademe/publicodes-empreinte-carbone-chauffage@0.0.7(publicodes@1.4.0(@types/mocha@9.1.1))':
+  '@incubateur-ademe/publicodes-empreinte-carbone-chauffage@0.0.7(publicodes@1.9.1)':
     dependencies:
-      publicodes: 1.4.0(@types/mocha@9.1.1)
+      publicodes: 1.9.1
 
   '@istanbuljs/load-nyc-config@1.1.0':
     dependencies:
