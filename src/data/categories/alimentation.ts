@@ -1590,7 +1590,28 @@ export const alimentation = [
   {
     slug: 'pomme',
     category: 9,
-    total: 0.408195,
+    ecv: [
+      {
+        id: 30,
+        value: 0.0919,
+      },
+      {
+        id: 31,
+        value: 0.0000949,
+      },
+      {
+        id: 33,
+        value: 0.262,
+      },
+      {
+        id: 34,
+        value: 0.0219,
+      },
+      {
+        id: 35,
+        value: 0.0323,
+      },
+    ],
   },
   {
     slug: 'carotte',
@@ -1625,7 +1646,28 @@ export const alimentation = [
   {
     slug: 'mangue',
     category: 9,
-    total: 11.65551,
+    ecv: [
+      {
+        id: 30,
+        value: 0.15,
+      },
+      {
+        id: 31,
+        value: 0.000108,
+      },
+      {
+        id: 33,
+        value: 11.4,
+      },
+      {
+        id: 34,
+        value: 0.0248,
+      },
+      {
+        id: 35,
+        value: 0.0806,
+      },
+    ],
   },
   {
     slug: 'poireau',
