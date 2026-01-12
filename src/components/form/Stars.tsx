@@ -1,7 +1,7 @@
 'use client'
 
 import classNames from 'classnames'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { ZodError } from 'zod'
 import ErrorIcon from 'components/base/icons/error'
 import FullStarIcon from 'components/base/icons/full-star'
@@ -16,7 +16,7 @@ export type StarsProps = {
   id: string
   value?: number
   setValue: (value: number) => void
-  errors?: ZodError | null
+  errors?: ZodError<Record<string, unknown>> | null
 }
 
 const isFull = (index: number, hovered: number, value?: number) => {
