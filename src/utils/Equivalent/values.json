@@ -151,9 +151,9 @@
   "chauffageelectrique": {
     "category": 8,
     "value": 2409.69157390629,
-    "fr": "année[s] de chauffage avec ;Chaudière électrique",
-    "en": "year[s] of heating with ;Electric boiler",
-    "es": "Años de calefacción con ;Caldera eléctrica"
+    "fr": "année[s] de chauffage via ;Électricité",
+    "en": "year[s] of heating via ;Electricity",
+    "es": "Años de calefacción a través de ;Electricidad"
   },
   "pompeachaleur": {
     "category": 8,
