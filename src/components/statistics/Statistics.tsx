@@ -28,8 +28,14 @@ const Statistics = ({ defaultStats, defaultYear }: { defaultStats: Stats; defaul
       <div className={styles.title}>
         En <HiddenLabel htmlFor='select-year'>Année des statistiques</HiddenLabel>
         <Select value={year} id='select-year' onChange={(e) => setYear(e.target.value)} className={styles.select}>
-          <option value='2024'>2024</option>
-          <option value='2025'>2025</option>
+          {Array.from({ length: new Date().getFullYear() - 2023 }, (_, i) => {
+            const yearValue = 2024 + i
+            return (
+              <option key={yearValue} value={yearValue.toString()}>
+                {yearValue}
+              </option>
+            )
+          })}
         </Select>
          :
       </div>

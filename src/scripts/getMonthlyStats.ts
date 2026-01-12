@@ -22,6 +22,9 @@ const internalPages: Record<string, string> = {
 }
 
 const iframeToSimulateur: Record<string, string> = {
+  '/iframes/%C2%ABtransport%C2%BB%C2%AB': 'Transport',
+  '/iframes/%E2%80%9Etransport%E2%80%9C%E2%80%9E': 'Transport',
+  '/iframes/%E2%80%98transport%E2%80%99%E2%80%98': 'Transport',
   '/iframes/transport/itineraire': 'Transport',
   '/iframes/transport': 'Transport',
   '/iframes/transport/marche': 'Marche',
@@ -229,10 +232,8 @@ const getStatsForMonth = async (month: string) => {
       return `${month.split('-')[0]},${month.split('-')[1]},${site},"${simulateur}",${stats.visit},${stats.engagement}`
     })
   )
-  if (!fs.existsSync(filePath)) {
-    fs.writeFileSync(filePath, 'year,month,site,simulateur,visits,engagements\n')
-  }
-  fs.appendFileSync(filePath, dataRows.join('\n') + '\n')
+
+  fs.writeFileSync(filePath, dataRows.join('\n') + '\n')
   console.log(`Données ajoutées à : ${filePath}`)
 }
 

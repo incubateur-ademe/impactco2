@@ -76,3 +76,5 @@ public/webcomponents/
 public/pdf/
 
 prisma/generated/prisma/
+
+stats.csv
