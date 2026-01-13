@@ -2,7 +2,7 @@ import swaggerJSDoc from 'swagger-jsdoc'
 
 const config = {
   definition: {
-    openapi: '3.1.0',
+    openapi: '3.0.0',
     info: {
       title: 'Impact CO₂',
       description: `Bienvenue sur la documentation technique de **API Impact CO₂**. Cette page présente les caractéristiques techniques de l’API. 
