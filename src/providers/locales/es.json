@@ -88,6 +88,7 @@
     "next-actions": "Siguientes acciones",
     "comparison": "Cambiar el modo de transporte comparar",
     "understand": "Entender los datos",
+    "faq": "Preguntas frecuentes",
     "download": "Descargar",
     "alimentationCategoryIntegrate": {
       "title": "Lista para mostrar por defecto",
@@ -256,7 +257,7 @@
     }
   },
   "chauffage": {
-    "title": "Descubre la cantidad de CO₂e que emites para calentar esta superficie por año"
+    "title": "Descubre la cantidad de CO₂e que emites cada año para calentar esta superficie"
   },
   "flds": {
     "label": "Descubre las frutas y verduras del mes de",
@@ -609,8 +610,6 @@
     "tri": "Ordenar tus armarios para ganar espacio en casa",
     "questions": "Hacerse las preguntas correctas antes de comprar: ¿realmente lo necesito?",
     "deuxieme-vie": "Dar una segunda vida a la ropa y zapatos no utilizados",
-    "chauffage-bois": "Adoptar calefacción de madera",
-    "wattris": "Simular el consumo eléctrico de tu hogar",
     "ngc": "Estimar tu huella de carbono de consumo",
     "lvao": "Alarga la vida de tus objetos",
     "agir-tt": "¿El teletrabajo, qué cambia para el planeta?",
@@ -621,8 +620,6 @@
     "deplacements": "Infórmate para desplazarte de otra manera",
     "vacances": "Infórmate para unas vacaciones más responsables",
     "alimentation-responsable": "Infórmate para una alimentación más responsable",
-    "chauffage": "Infórmate para calentar tu hogar de otra manera",
-    "hiver": "¿Cómo pasar un invierno cálido?",
     "gestes": "Infórmate sobre los gestos cotidianos",
     "mode": "Infórmate sobre la moda responsable",
     "numerique-responsable": "Infórmate sobre el uso responsable del mundo digital",

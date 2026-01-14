@@ -136,52 +136,66 @@
   },
   "chauffagegaz": {
     "category": 8,
-    "value": 39000,
-    "fr": "année[s] de ;chauffage au gaz",
-    "en": "year[s] of ;gas heating",
-    "es": "Años de ;calefacción de gas"
+    "value": 17837.078297821858,
+    "fr": "année[s] de chauffage par m² avec ;Chaudière à gaz",
+    "en": "year[s] of heating per m² with ;Gas boiler",
+    "es": "Años de calefacción por m² con ;caldera de gas"
   },
   "chauffagefioul": {
     "category": 8,
-    "value": 57170,
-    "fr": "année[s] de ;chauffage au fioul",
-    "en": "year[s] of ;oil heating",
-    "es": "Años de ;calefacción de fuel"
+    "value": 34971.17557474335,
+    "fr": "année[s] de chauffage par m² avec ;Chaudière au fioul",
+    "en": "year[s] of heating per m² with ;Oil boiler",
+    "es": "Años de calefacción por m² con ;Caldera de fuel"
   },
   "chauffageelectrique": {
     "category": 8,
-    "value": 11850,
-    "fr": "année[s] de ;chauffage électrique",
-    "en": "year[s] of ;electric heating",
-    "es": "Años de ;calefacción eléctrica"
+    "value": 2409.69157390629,
+    "fr": "année[s] de chauffage par m² avec ;Chaudière électrique",
+    "en": "year[s] of heating per m² with ;Electric boiler",
+    "es": "Años de calefacción por m² con ;Caldera eléctrica"
   },
   "pompeachaleur": {
     "category": 8,
-    "value": 3950,
-    "fr": "année[s] de ;chauffage avec une pompe à chaleur",
-    "en": "year[s] of ;heating with a heat pump",
-    "es": "Años de ;calefacción con bomba de calor"
+    "value": 1633.3840880841795,
+    "fr": "année[s] de chauffage par m² avec ;Pompe à chaleur",
+    "en": "year[s] of heating per m² with ;Heat pump",
+    "es": "Años de calefacción por m² con ;Bomba de calor"
   },
   "poeleagranule": {
     "category": 8,
-    "value": 5640,
-    "fr": "année[s] de ;chauffage avec un poêle à granulés",
-    "en": "year[s] of ;heating with a pellet stove",
-    "es": "Años de ;calefacción con estufa de pellets"
+    "value": 5916.95473372542,
+    "fr": "année[s] de chauffage par m² avec ;Poêle à granulés",
+    "en": "year[s] of heating per m² with ;Pellet stove",
+    "es": "Años de calefacción por m² con ;Estufa de pellets"
   },
   "poeleabois": {
     "category": 8,
-    "value": 9200,
-    "fr": "année[s] de ;chauffage avec un poêle à bois",
-    "en": "year[s] of ;heating with a wood stove",
-    "es": "Años de ;calefacción con estufa de leña"
+    "value": 8505.622429730291,
+    "fr": "année[s] de chauffage par m² avec ;Poêle à bûches",
+    "en": "year[s] of heating per m² with ;Wood stove",
+    "es": "Años de calefacción por m² con ;Estufa de leña"
+  },
+  "chaudiereagranule": {
+    "category": 8,
+    "value": 5976.712890838115,
+    "fr": "année[s] de chauffage par m² avec ;Chaudière à granulés",
+    "en": "year[s] of heating per m² with ;Pellet boiler",
+    "es": "Años de calefacción por m² con ;Caldera de pellets"
+  },
+  "chaudiereabois": {
+    "category": 8,
+    "value": 8591.52478057979,
+    "fr": "année[s] de chauffage par m² avec ;Chaudière à bûches",
+    "en": "year[s] of heating per m² with ;Wood boiler",
+    "es": "Años de calefacción por m² con ;Caldera de leña"
   },
   "reseaudechaleur": {
     "category": 8,
-    "value": 18670,
-    "fr": "année[s] de ;chauffage via un réseau de chaleur",
-    "en": "year[s] of ;heating via a district heating network",
-    "es": "Años de ;calefacción a través de una red de calefacción"
+    "value": 11077.353589467888,
+    "fr": "année[s] de chauffage par m² via ;Réseau de chaleur",
+    "en": "year[s] of heating per m² via ;District heating",
+    "es": "Años de calefacción por m² a través de ;Red de calor"
   },
   "avion-courtcourrier": {
     "category": 4,
