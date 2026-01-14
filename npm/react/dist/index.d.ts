@@ -60,6 +60,8 @@ declare module "@incubateur-ademe/impactco2-react" {
                 "chaiseenbois" |
                 "champignonmorille" |
                 "chataigne" |
+                "chaudiereabois" |
+                "chaudiereagranule" |
                 "chauffageelectrique" |
                 "chauffageenfrance" |
                 "chauffageenfrancejour" |

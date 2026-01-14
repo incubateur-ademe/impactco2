@@ -88,6 +88,7 @@
     "next-actions": "Explore further",
     "comparison": "Change the mode of transport compared",
     "understand": "Understanding data",
+    "faq": "Frequently Asked Questions",
     "download": "Download",
     "alimentationCategoryIntegrate": {
       "title": "List to display by default",
@@ -256,7 +257,7 @@
     }
   },
   "chauffage": {
-    "title": "Discover how much CO₂e you emit to heat this surface per year"
+    "title": "Discover the amount of CO₂e you emit each year to heat this surface"
   },
   "flds": {
     "label": "Discover fruits and vegetables for the month of",
@@ -609,8 +610,6 @@
     "tri": "Sort through your cupboards to make more space at home",
     "questions": "Ask yourself the right questions before buying: Do I really need it?",
     "deuxieme-vie": "Give a second life to unused clothes and shoes",
-    "chauffage-bois": "Adopt wood heating",
-    "wattris": "Simulate the electrical consumption of your home",
     "ngc": "Estimate your consumption carbon footprint",
     "lvao": "Extend the life of your objects",
     "agir-tt": "What does telecommuting change for the planet?",
@@ -621,8 +620,6 @@
     "deplacements": "Learn to travel differently",
     "vacances": "Learn about more responsible vacations",
     "alimentation-responsable": "Learn about more responsible food choices",
-    "chauffage": "Learn to heat your home differently",
-    "hiver": "How to stay warm in winter?",
     "gestes": "Learn about everyday eco-friendly actions",
     "mode": "Learn about responsible fashion",
     "numerique-responsable": "Learn about responsible digital practices",

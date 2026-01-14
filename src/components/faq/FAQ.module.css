@@ -2,6 +2,7 @@
   :global(.notion) {
     font-family: 'Marianne', Arial, sans-serif;
     font-size: 1rem;
+    color: var(--neutral-50);
   }
 
   :global(.notion-page-icon-inline) {

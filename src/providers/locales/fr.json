@@ -88,6 +88,7 @@
     "next-actions": "Aller plus loin",
     "comparison": "Changer le mode de transport comparé",
     "understand": "Comprendre les données",
+    "faq": "Questions fréquentes",
     "download": "Télécharger",
     "alimentationCategoryIntegrate": {
       "title": "Liste à afficher par défaut",
@@ -256,7 +257,7 @@
     }
   },
   "chauffage": {
-    "title": "Découvrez la quantité de CO₂e que vous émettez pour chauffer cette surface par an"
+    "title": "Découvrez la quantité de CO₂e que vous émettez chaque année pour chauffer cette surface"
   },
   "flds": {
     "label": "Découvres les fruits et légumes du mois de",
@@ -609,8 +610,6 @@
     "tri": "Faire le tri dans ses placards pour gagner de la place chez soi",
     "questions": "Se poser les bonnes questions avant d’acheter : en ai-je vraiment besoin ?",
     "deuxieme-vie": "Donner une seconde vie aux vêtements et chaussures non utilisées",
-    "chauffage-bois": "Adopter le chauffage au bois",
-    "wattris": "Simuler la consommation électrique de son logement",
     "ngc": "Estimer son empreinte carbone de consommation",
     "lvao": "Prolonger la vie de ses objets",
     "agir-tt": "Le télétravail, ça change quoi pour la planète ?",
@@ -621,8 +620,6 @@
     "deplacements": "S’informer pour se déplacer autrement",
     "vacances": "S’informer pour des vacances plus responsables",
     "alimentation-responsable": "S’informer pour une alimentation plus responsable",
-    "chauffage": "S’informer pour se chauffer autrement",
-    "hiver": "Comment passer un hiver au chaud ?",
     "gestes": "S’informer sur les gestes du quotidien",
     "mode": "S’informer sur la mode responsable",
     "numerique-responsable": "S’informer sur le numérique responsable",

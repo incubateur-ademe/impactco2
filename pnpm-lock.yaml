@@ -177,6 +177,9 @@ importers:
       '@eslint/eslintrc':
         specifier: ^3.3.3
         version: 3.3.3
+      '@incubateur-ademe/publicodes-empreinte-carbone-chauffage':
+        specifier: ^0.0.7
+        version: 0.0.7(publicodes@1.9.1)
       '@keyv/etcd':
         specifier: ^2.1.1
         version: 2.1.1(keyv@4.5.4)
@@ -1786,6 +1789,11 @@ packages:
 
   '@incubateur-ademe/publicodes-acv-numerique@2.1.0':
     resolution: {integrity: sha512-3nB4T+Tl+sYnmKLGiP345c0+/Fm2NU07TJjafaOz9odn2DRsYHC69khYcaujvELjt13/G1RjKXEfiRjiAZwzYQ==}
+    peerDependencies:
+      publicodes: ^1.8.5
+
+  '@incubateur-ademe/publicodes-empreinte-carbone-chauffage@0.0.7':
+    resolution: {integrity: sha512-CHVvve3rz/+qzUKeAn6rdu4JaHksUR1CfD8qOXYCxi5/C8lGxCk3KNbwyBNSrvqisLjZhhXUD6W/zps4FOCQXg==}
     peerDependencies:
       publicodes: ^1.8.5
 
@@ -9773,6 +9781,10 @@ snapshots:
     optional: true
 
   '@incubateur-ademe/publicodes-acv-numerique@2.1.0(publicodes@1.9.1)':
+    dependencies:
+      publicodes: 1.9.1
+
+  '@incubateur-ademe/publicodes-empreinte-carbone-chauffage@0.0.7(publicodes@1.9.1)':
     dependencies:
       publicodes: 1.9.1
 

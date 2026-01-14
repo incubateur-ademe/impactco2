@@ -33,7 +33,7 @@ const ChauffageSimulator = () => {
 
   return (
     <>
-      <div className={styles.simulator}>
+      <div className={styles.smallInputSimulator}>
         <NumberInput
           id='m2-value'
           value={m2}
