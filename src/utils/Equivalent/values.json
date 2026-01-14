@@ -151,9 +151,9 @@
   "chauffageelectrique": {
     "category": 8,
     "value": 2409.69157390629,
-    "fr": "année[s] de chauffage par m² via ;Électricité",
-    "en": "year[s] of heating per m² via ;Electricity",
-    "es": "Años de calefacción por m² a través de ;Electricidad"
+    "fr": "année[s] de chauffage par m² avec ;Chaudière électrique",
+    "en": "year[s] of heating per m² with ;Electric boiler",
+    "es": "Años de calefacción por m² con ;Caldera eléctrica"
   },
   "pompeachaleur": {
     "category": 8,

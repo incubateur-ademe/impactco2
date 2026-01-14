@@ -293,7 +293,7 @@ Liste des équivalents à comparer parmis la liste suivante :
 - Chauffage
   - chauffagegaz : année de chauffage avec une chaudière à gaz par m²
   - chauffagefioul : année de chauffage avec une chaudière au fioul par m²
-  - chauffageelectrique : année de chauffage via électricité par m²
+  - chauffageelectrique : année de chauffage avec une chaudière électrique par m²
   - pompeachaleur : année de chauffage avec une pompe à chaleur par m²
   - poeleagranule : année de chauffage avec un poêle à granulés par m²
   - poeleabois : année de chauffage avec un poêle à bûches par m²
