@@ -43,7 +43,7 @@ export const overScreenCategoryValues: (category: Category) => Record<string, Ov
       faq: {
         image: '/images/icn-understand.svg',
         title: 'faq',
-        children: <FAQsClient filter={category.name} page={category.name} />,
+        children: <FAQsClient filter={category.name} page={category.name} inSimulator />,
       },
     }
   }

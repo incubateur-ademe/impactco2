@@ -12,9 +12,10 @@ export type FAQSListProps = {
   page?: string
   DynamicNotion?: ElementType<DynamicNotionProps>
   small?: boolean
+  inSimulator?: boolean
 } & BlockProps
 
-const FAQsList = ({ faqs, page, DynamicNotion, small, ...blockProps }: FAQSListProps) => {
+const FAQsList = ({ faqs, page, DynamicNotion, small, inSimulator, ...blockProps }: FAQSListProps) => {
   const content = (
     <>
       <ul>
@@ -27,12 +28,16 @@ const FAQsList = ({ faqs, page, DynamicNotion, small, ...blockProps }: FAQSListP
           <p>Vous ne trouvez pas de réponse à vos questions ?</p>
           <ul className={styles.footer}>
             <li className={styles.footer}>
-              <Link href={`/rendez-vous?fromLabel=${page}`}>Contactez-nous</Link>
-              <div className={styles.separator} />
+              <Link href={inSimulator ? `/suggestion?fromLabel=${page}` : `/rendez-vous?fromLabel=${page}`}>
+                Contactez-nous
+              </Link>
             </li>
-            <li>
-              <Link href='/doc/questions-frequentes'>Toutes les questions</Link>
-            </li>
+            {!inSimulator && (
+              <li>
+                <div className={styles.separator} />
+                <Link href='/doc/questions-frequentes'>Toutes les questions</Link>
+              </li>
+            )}
           </ul>
         </div>
       )}
