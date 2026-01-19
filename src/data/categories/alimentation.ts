@@ -1590,52 +1590,266 @@ export const alimentation = [
   {
     slug: 'pomme',
     category: 9,
-    total: 0.408195,
+    ecv: [
+      {
+        id: 30,
+        value: 0.0919,
+      },
+      {
+        id: 31,
+        value: 0.0000949,
+      },
+      {
+        id: 33,
+        value: 0.262,
+      },
+      {
+        id: 34,
+        value: 0.0219,
+      },
+      {
+        id: 35,
+        value: 0.0323,
+      },
+    ],
   },
   {
     slug: 'carotte',
     category: 9,
-    total: 0.3960665,
+
+    ecv: [
+      {
+        id: 30,
+        value: 0.0828,
+      },
+      {
+        id: 31,
+        value: 0.0000665,
+      },
+      {
+        id: 33,
+        value: 0.262,
+      },
+      {
+        id: 34,
+        value: 0.0189,
+      },
+      {
+        id: 35,
+        value: 0.0323,
+      },
+    ],
   },
   {
     slug: 'courgette',
     category: 9,
-    total: 0.498507,
+    ecv: [
+      {
+        id: 30,
+        value: 0.181,
+      },
+      {
+        id: 31,
+        value: 0.000107,
+      },
+      {
+        id: 33,
+        value: 0.262,
+      },
+      {
+        id: 34,
+        value: 0.0231,
+      },
+      {
+        id: 35,
+        value: 0.0323,
+      },
+    ],
   },
   {
     slug: 'tomate',
     category: 9,
-    total: 0.6256,
+
+    ecv: [
+      {
+        id: 30,
+        value: 0.222,
+      },
+      {
+        id: 33,
+        value: 0.298,
+      },
+      {
+        id: 34,
+        value: 0.025,
+      },
+      {
+        id: 35,
+        value: 0.0806,
+      },
+    ],
   },
   {
     slug: 'potiron',
     category: 9,
-    total: 0.638233,
+
+    ecv: [
+      {
+        id: 30,
+        value: 0.205,
+      },
+      {
+        id: 31,
+        value: 0.000133,
+      },
+      {
+        id: 33,
+        value: 0.325,
+      },
+      {
+        id: 34,
+        value: 0.0275,
+      },
+      {
+        id: 35,
+        value: 0.0806,
+      },
+    ],
   },
   {
     slug: 'laitue',
     category: 9,
-    total: 0.868145,
+
+    ecv: [
+      {
+        id: 30,
+        value: 0.181,
+      },
+      {
+        id: 31,
+        value: 0.000545,
+      },
+      {
+        id: 33,
+        value: 0.397,
+      },
+      {
+        id: 34,
+        value: 0.0746,
+      },
+      {
+        id: 35,
+        value: 0.215,
+      },
+    ],
   },
   {
     slug: 'banane',
     category: 9,
-    total: 0.908523,
+
+    ecv: [
+      {
+        id: 30,
+        value: 0.295,
+      },
+      {
+        id: 31,
+        value: 0.000123,
+      },
+      {
+        id: 33,
+        value: 0.447,
+      },
+      {
+        id: 34,
+        value: 0.0284,
+      },
+      {
+        id: 35,
+        value: 0.138,
+      },
+    ],
   },
   {
     slug: 'mangue',
     category: 9,
-    total: 11.65551,
+
+    ecv: [
+      {
+        id: 30,
+        value: 0.15,
+      },
+      {
+        id: 31,
+        value: 0.000108,
+      },
+      {
+        id: 33,
+        value: 11.4,
+      },
+      {
+        id: 34,
+        value: 0.0248,
+      },
+      {
+        id: 35,
+        value: 0.0806,
+      },
+    ],
   },
   {
     slug: 'poireau',
     category: 9,
-    total: 0.6113778000000001,
+
+    ecv: [
+      {
+        id: 30,
+        value: 0.211,
+      },
+      {
+        id: 31,
+        value: 0.0000778,
+      },
+      {
+        id: 33,
+        value: 0.298,
+      },
+      {
+        id: 34,
+        value: 0.0217,
+      },
+      {
+        id: 35,
+        value: 0.0806,
+      },
+    ],
   },
   {
     slug: 'avocat',
     category: 9,
-    total: 1.552523,
+
+    ecv: [
+      {
+        id: 30,
+        value: 0.878,
+      },
+      {
+        id: 31,
+        value: 0.000123,
+      },
+      {
+        id: 33,
+        value: 0.508,
+      },
+      {
+        id: 34,
+        value: 0.0284,
+      },
+      {
+        id: 35,
+        value: 0.138,
+      },
+    ],
   },
   {
     slug: 'pommedeterre',
