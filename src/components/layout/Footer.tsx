@@ -93,6 +93,11 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
+                  <Link prefetch={false} href='/equivalents.csv'>
+                    Liste des équivalents
+                  </Link>
+                </li>
+                <li>
                   <Link prefetch={false} href='/doc/api'>
                     API
                   </Link>

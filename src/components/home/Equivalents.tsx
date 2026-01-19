@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import { computedEquivalents } from 'src/providers/equivalents'
 import { useSearchEquivalent } from 'src/providers/useSearchEquivalent'
@@ -79,6 +80,10 @@ const Equivalents = () => {
         }}>
         Afficher d'autres objets et gestes
       </Button>
+      <p className={styles.link}>
+        Vous souhaitez parcourir l’ensemble des équivalents ?{' '}
+        <Link href='/equivalents.csv'>Télécharger la liste des équivalents (.csv | 33KB)</Link>
+      </p>
     </Block>
   )
 }
