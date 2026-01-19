@@ -1,4 +1,4 @@
-import { ComputedEquivalent, Equivalent, type UsageNumeriqueEquivalent } from 'types/equivalent'
+import { ComputedEquivalent, Equivalent } from 'types/equivalent'
 import formatName from 'utils/formatName'
 import values from './values.json'
 
@@ -268,5 +268,3 @@ export const isEquivalentInMode = (equivalent: ComputedEquivalent, mode: string)
 
 export const getComparisonSlug = (slug: string) =>
   slug.startsWith('avion-') && slug.endsWith('courrier') ? 'avion' : slug
-
-export const isUsageNumeriqueEquivalent = (item: Equivalent): item is UsageNumeriqueEquivalent => 'ecv' in item

@@ -6,13 +6,13 @@ Application web sous Next.js permettant de comparer la consommation en CO₂e de
 
 ## Installation 💾
 
-`pnpm install` pour installer l'application
+`yarn` pour installer l'application
 
-`pnpm dev` pour lancer un serveur de développement sur [http://localhost:3000](http://localhost:3000/)
+`yarn dev` pour lancer un serveur de développement sur [http://localhost:3000](http://localhost:3000/)
 
-`pnpm build` pour build l'application
+`yarn build` pour build l'application
 
-`pnpm start` pour lancer un serveur de production
+`yarn start` pour lancer un serveur de production
 
 ## Déploiement 🚀
 
@@ -20,11 +20,11 @@ Le site est hébergé sur [Scalingo](https://scalingo.com/) via des serveurs en 
 
 ## Développement ⚙️
 
-- `pnpm dev` lance le serveur web local
+- `yarn dev` lance le serveur web local
 
-- `pnpm testa:local` lance les tests de l'API en continu (avec Jest)
-- `pnpm testu:local` lance les tests unitaires en continu (avec Jest)
-- `pnpm teste:local` lance les tests de bout en bout ("end-to-end") en continu (avec Playwright)
+- `yarn testa:local` lance les tests de l'API en continu (avec Jest)
+- `yarn testu:local` lance les tests unitaires en continu (avec Jest)
+- `yarn teste:local` lance les tests de bout en bout ("end-to-end") en continu (avec Playwright)
 
 Lors du premier lancement des tests end-to-end, une installation de Playwright peut être demandée.
 
@@ -38,19 +38,19 @@ Il vous faut un fichier `.env` dont les valeurs sont documentées dans `.env.dis
 
 Vous pouvez calculer la couverture de test sur votre machine locale.
 
-Si vous n'avez jamais lancé de tests e2e avant, vous devrez installez Playwright en local avec `pnpm install playwright`.
+Si vous n'avez jamais lancé de tests e2e avant, vous devrez installez Playwright en local avec `yarn install playwright`.
 
-Assurez-vous d'avoir les bonnes variables d'environnement dans le fichier `.env`, puis installez les dépendances avec la commande `pnpm install`, puis lancez le serveur local avec `pnpm dev`.
+Assurez-vous d'avoir les bonnes variables d'environnement dans le fichier `.env`, puis installez les dépendances avec la commande `yarn`, puis lancez le serveur local avec `yarn dev`.
 
 Ouvrez un autre terminal et lancez les commandes suivantes dans l'ordre :
 
-1 - `pnpm cov:clean` : Supprime le répertoire "coverage" pour partir d'un état propre.
-2 - `pnpm cov:pw` : Lance les tests Playwright avec la couverture. Le répertoire "coverage" est alors créé, et contient des fichiers de couverture au format JSON.
-3 - `pnpm cov:jest` : Lance les tests Jest, couverture incluse. Le répertoire "coverage" s'enrichit du fichier de couverture des tests Jest, au format JSON.
-4 - `pnpm cov:report` : Merge tous les rapports JSON précédents, calcule la couverture finale, et créé un rapport facilement lisible. Le répertoire `coverage/summary` est alors créé, le fichier `index.html` contenant le rapport final.
-5 - `pnpm cov:show` : Affiche dans votre navigateur le rapport de couverture final (sous `coverage/summary/index.html`)
+1 - `yarn cov:clean` : Supprime le répertoire "coverage" pour partir d'un état propre.
+2 - `yarn cov:pw` : Lance les tests Playwright avec la couverture. Le répertoire "coverage" est alors créé, et contient des fichiers de couverture au format JSON.
+3 - `yarn cov:jest` : Lance les tests Jest, couverture incluse. Le répertoire "coverage" s'enrichit du fichier de couverture des tests Jest, au format JSON.
+4 - `yarn cov:report` : Merge tous les rapports JSON précédents, calcule la couverture finale, et créé un rapport facilement lisible. Le répertoire `coverage/summary` est alors créé, le fichier `index.html` contenant le rapport final.
+5 - `yarn cov:show` : Affiche dans votre navigateur le rapport de couverture final (sous `coverage/summary/index.html`)
 
-La commande `pnpm cov:full` permet de réaliser toutes les étapes de 1 à 5 en une seule fois.
+La commande `yarn cov:full` permet de réaliser toutes les étapes de 1 à 5 en une seule fois.
 
 ## Workflow Git ⚙️
 
@@ -84,8 +84,8 @@ Il y a un cas de figure entre les deux : un fichier batch se connecte à une API
 
 Pour mettre à jour ce fichier,
 
-- lancer `pnpm build:fruit` pour les fruits et légumes,
-- lancer `pnpm build:boisson` pour les boissons.
+- lancer `yarn build:fruit` pour les fruits et légumes,
+- lancer `yarn build:boisson` pour les boissons.
 
 ## Architecture 🏛️
 
