@@ -360,7 +360,7 @@
   },
   "pomme": {
     "category": 9,
-    "value": 408.19489999999996,
+    "value": 408.1949,
     "fr": "kg de ;pomme",
     "en": "kg of ;apple",
     "es": "kg de ;manzanas"
@@ -507,7 +507,7 @@
   },
   "mangue": {
     "category": 9,
-    "value": 11655.508000000002,
+    "value": 11655.508,
     "fr": "kg de ;mangue (importée par avion)",
     "en": "kg of ;mango (imported by plane)",
     "es": "kg de ;mangos (importados por avión)"
@@ -885,7 +885,7 @@
   },
   "smartphone": {
     "category": 1,
-    "value": 80155.643125,
+    "value": 80155.343125,
     "fr": "smartphone[s]",
     "en": "smartphone[s]",
     "es": "smartphone[s]"
@@ -1210,7 +1210,7 @@
     "value": 443810.00000000006,
     "fr": "lit",
     "en": "bed",
-    "es": "Cama)"
+    "es": "Cama"
   },
   "bouilloire": {
     "category": 6,

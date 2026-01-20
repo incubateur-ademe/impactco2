@@ -1,4 +1,10 @@
 {
+  "faq": {
+    "loading": "Chargement en cours...",
+    "notFound": "Vous ne trouvez pas de réponse à vos questions ?",
+    "contact": "Contactez-nous",
+    "allFAQs": "Toutes les questions"
+  },
   "quiz": {
     "infography": "REVOIR LES ORDRES DE GRANDEURS",
     "hideAll": "Replier la liste des ordres de grandeur",

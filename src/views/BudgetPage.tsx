@@ -19,50 +19,48 @@ const BudgetPage = () => {
       </p>
       <div className={styles.box}>
         <ul>
-          <li>Les besoins des utilisateurs sont prioritaires sur les besoins de l’administration</li>
-          <li>Le mode de gestion de l’équipe repose sur la confiance</li>
-          <li>L’équipe adopte une approche itérative et d’amélioration en continu</li>
+          <li>
+            <b>Les besoins des utilisateurs passent avant ceux de l’administration</b>, afin de concentrer les moyens
+            publics là où ils créent le plus d’impact.
+          </li>
+          <li>
+            <b>L’équipe fonctionne sur la confiance et l’autonomie</b>, pour décider rapidement et efficacement de
+            l’usage du budget.
+          </li>
+          <li>
+            <b>Nous avançons par itérations et amélioration continue</b>, en mesurant systématiquement l’impact réel de
+            nos actions.
+          </li>
         </ul>
       </div>
       <h2>Fonctionnement</h2>
       <p>
-        Impact CO₂ est une start-up d’état : l’équipe est donc portée par un intrapreneur qui est responsable du service
-        numérique développé au sein de son administration (l’ADEME en l’occurence).
+        Impact CO₂ est une “start-up d'Etat” : l'équipe est donc portée par une intrapreneure qui est responsable du
+        service numérique développé au sein de son administration (l'ADEME en l'occurrence).
       </p>
       <br />
       <p>
-        Son rôle est multiple : déploiement, gestion des produits, référent auprès de son administration (budget, compte
-        rendus d’avancement).
+        Son rôle est multiple : définition de la stratégie et de la feuille de route, pilotage des équipes, gestion des
+        produits, déploiement du service, référent auprès de son administration (budget, compte rendus d'avancement).
       </p>
       <br />
       <p>
-        Le budget exposé ici ne prend pas en compte l’intrapeneur puisque qu’il est salarié de l’ADEME mais concerne les
-        membres de l’équipe.
+        Le budget exposé ici ne prend pas en compte l'intrapreneure qui est salariée de la DINUM (Direction
+        Interministérielle du numérique) et détachée à l’ADEME, mais concerne les membres de l'équipe.
       </p>
       <h2 id='budget-title'>Budget consommé</h2>
       <ByYear labelId='budget-title' />
       <br />
       <h3>Description des catégories de coût</h3>
-      <ul>
-        <li>
-          <b>Développement, déploiement, produit, design 👨‍💻</b>
-          <br />
-          <p>
-            Les coûts de développement, produit, déploiement et design représentent la grande majorité de notre budget.
-            Nous sommes une petite équipe de 6 freelances, pluridisciplinaires aussi bien sur les aspects techniques,
-            stratégiques et métiers.
-          </p>
-        </li>
-        <li>
-          <b>Logiciels et hébergement 💻</b>
-          <br />
-          <p>
-            Notre modèle open-source nous permet d’accéder gratuitement à la majorité des outils que nous utilisons
-            (hébergement de code, serveurs de tests, etc.). Le site est hébergé sur{' '}
-            <Link href='https://scalingo.com/'>Scalingo</Link>.
-          </p>
-        </li>
-      </ul>
+      <p>
+        Les coûts de développement, produit, déploiement et design sont exclusivement du “temps homme” de l’équipe. 7
+        personnes travaillent pour Impact CO2 en freelance et à temps partiel (entre 50 et 80% de leur temps), ce qui
+        représente 3,4 ETP sur l’année.
+        <br />
+        Notre modèle open-source nous permet d’accéder gratuitement à la majorité des outils que nous utilisons
+        (hébergement de code, serveurs de tests, etc.). Le site est hébergé sur{' '}
+        <Link href='https://scalingo.com/'>Scalingo</Link>.
+      </p>
       <br />
       <div className={styles.box}>
         <p>
