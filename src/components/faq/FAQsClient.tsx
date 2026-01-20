@@ -1,13 +1,21 @@
 'use client'
 
+import classNames from 'classnames'
+import { useTranslations } from 'next-intl'
+import Link from 'next/link'
 import { ElementType, useEffect, useState } from 'react'
+import useParamContext from 'src/providers/ParamProvider'
 import { fetchFaqs } from 'src/serverFunctions/faqs'
-import { FAQ } from 'types/faq'
+import { FAQ as FAQType } from 'types/faq'
 import { DynamicNotionProps } from '../Notion/DynamicNotion'
-import FAQsList, { FAQSListProps } from './FAQsList'
+import FAQ from './FAQ'
+import { FAQSListProps } from './FAQsList'
+import styles from './FAQsList.module.css'
 
-const FAQsClient = ({ filter, ...rest }: { filter: string } & Omit<FAQSListProps, 'faqs'>) => {
-  const [faqs, setFaqs] = useState<FAQ[]>([])
+const FAQsClient = ({ filter, page }: { filter: string } & Omit<FAQSListProps, 'faqs'>) => {
+  const { language } = useParamContext()
+  const t = useTranslations('faq')
+  const [faqs, setFaqs] = useState<FAQType[]>([])
   const [DynamicNotion, setDynamicNotion] = useState<ElementType<DynamicNotionProps> | undefined>(undefined)
 
   useEffect(() => {
@@ -21,7 +29,7 @@ const FAQsClient = ({ filter, ...rest }: { filter: string } & Omit<FAQSListProps
 
     const load = async () => {
       try {
-        const data = await fetchFaqs(filter)
+        const data = await fetchFaqs(filter, language)
         if (!cancelled) {
           setFaqs(data)
         }
@@ -38,13 +46,29 @@ const FAQsClient = ({ filter, ...rest }: { filter: string } & Omit<FAQSListProps
     return () => {
       cancelled = true
     }
-  }, [filter])
+  }, [filter, language])
 
   if (faqs.length === 0 || !DynamicNotion) {
-    return <p>Chargement en cours...</p>
+    return <p>{t('loading')}</p>
   }
 
-  return <FAQsList faqs={faqs} small DynamicNotion={DynamicNotion} {...rest} />
+  return (
+    <>
+      <ul>
+        {faqs.map((faq) => (
+          <FAQ key={faq.title} faq={faq} page={page} DynamicNotion={DynamicNotion} small />
+        ))}
+      </ul>
+      <div className={classNames(styles.footer, styles.footerTop)}>
+        <p>{t('notFound')}</p>
+        <ul className={styles.footer}>
+          <li className={styles.footer}>
+            <Link href={`/suggestion?fromLabel=${page}`}>{t('contact')}</Link>
+          </li>
+        </ul>
+      </div>
+    </>
+  )
 }
 
 export default FAQsClient

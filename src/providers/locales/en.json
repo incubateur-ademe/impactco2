@@ -1,4 +1,10 @@
 {
+  "faq": {
+    "loading": "Loading...",
+    "notFound": "Can't find an answer to your questions?",
+    "contact": "Contact us",
+    "allFAQs": "All questions"
+  },
   "quiz": {
     "infography": "REVIEW THE ORDERS OF MAGNITUDE",
     "hideAll": "Collapse the list of orders of magnitude",
