@@ -1,4 +1,10 @@
 {
+  "faq": {
+    "loading": "Cargando...",
+    "notFound": "¿No encuentras una respuesta a tus preguntas?",
+    "contact": "Contáctanos",
+    "allFAQs": "Todas las preguntas"
+  },
   "quiz": {
     "infography": "REVIEW SIZE ORDERS",
     "hideAll": "Hide the list of magnitudes",
