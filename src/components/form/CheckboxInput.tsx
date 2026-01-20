@@ -29,7 +29,7 @@ const CheckboxInput = (
     label: ReactNode
     children?: ReactNode
     ['data-testid']?: string
-    errors?: ZodError | null
+    errors?: ZodError<Record<string, unknown>> | null
     reversed?: boolean
   } & InputHTMLAttributes<HTMLInputElement>,
   ref: ForwardedRef<HTMLInputElement>

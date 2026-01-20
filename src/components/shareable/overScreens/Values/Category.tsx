@@ -3,6 +3,7 @@ import { Category } from 'types/category'
 import { OverScreenInfo } from 'types/overscreen'
 import Resource from 'components/base/Resource'
 import ComparisonOverscreen from 'components/comparateur/overscreens/ComparisonOverscreen'
+import FAQsClient from 'components/faq/FAQsClient'
 import AlimentationIntegrate from '../AlimentationIntegrate'
 import AlimentationData from '../Data/AlimentationData'
 import Integrate from '../Integrate'
@@ -12,7 +13,6 @@ import TransportIntegrate from '../TransportIntegrate'
 import TransportShare from '../TransportShare'
 import styles from './Values.module.css'
 
-const ChauffageData = dynamic(() => import('../Data/ChauffageData'))
 const FruitsEtLegumesData = dynamic(() => import('../Data/FruitsEtLegumesData'))
 const LivraisonData = dynamic(() => import('../Data/LivraisonData'))
 const TransportData = dynamic(() => import('../Data/TransportData'))
@@ -40,54 +40,10 @@ export const overScreenCategoryValues: (category: Category) => Record<string, Ov
   if (category.slug === 'chauffage') {
     return {
       ...values,
-      hypothesis: {
-        image: '/images/icn-next-actions.svg',
-        title: 'next-actions',
-        children: (
-          <div className={styles.ressourceContainer}>
-            <Resource
-              image='/images/category-chauffage-bois.jpg'
-              text='chauffage-bois'
-              href='https://librairie.ademe.fr/urbanisme-et-batiment/5667-adopter-le-chauffage-au-bois-9791029719769.html'
-              withLink='ADEME'
-              tracking='Chauffage'
-            />
-            <Resource
-              image='/images/category-wattris.png'
-              text='wattris'
-              href='https://wattris.ademe.fr/'
-              withLink='Wattris'
-              tracking='Chauffage'
-            />
-            <Resource
-              image='/images/agir.png'
-              text='chauffage'
-              href='https://agirpourlatransition.ademe.fr/particuliers/maison/chauffage'
-              withLink='Agir pour la transition'
-              tracking='Chauffage'
-            />
-            <Resource
-              image='/images/hiver.png'
-              text='hiver'
-              href='https://librairie.ademe.fr/batiment/8106-9873-comment-passer-un-hiver-au-chaud--9791029725210.html#/43-type_de_produit-format_imprime'
-              withLink='La librairie ADEME'
-              tracking='Chauffage'
-            />
-            <Resource
-              image='/images/ngc.png'
-              text='ngc'
-              href='https://nosgestesclimat.fr/'
-              withLink='Nos Gestes Climat'
-              tracking='Chauffage'
-              imgSize='4.5rem'
-            />
-          </div>
-        ),
-      },
-      data: {
+      faq: {
         image: '/images/icn-understand.svg',
-        title: 'understand',
-        children: <ChauffageData />,
+        title: 'faq',
+        children: <FAQsClient filter={category.name} page={category.name} />,
       },
     }
   }

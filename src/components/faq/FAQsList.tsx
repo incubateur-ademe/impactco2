@@ -1,18 +1,24 @@
 import classNames from 'classnames'
+import { ElementType } from 'react'
 import { FAQ as FAQType } from 'types/faq'
+import { DynamicNotionProps } from 'components/Notion/DynamicNotion'
 import Link from 'components/base/buttons/Link'
 import Block, { BlockProps } from 'components/layout/Block'
 import FAQ from './FAQ'
 import styles from './FAQsList.module.css'
 
-export type FAQSListProps = { faqs: FAQType[]; page?: string } & BlockProps
+export type FAQSListProps = {
+  faqs: FAQType[]
+  page?: string
+  DynamicNotion?: ElementType<DynamicNotionProps>
+} & BlockProps
 
-const FAQsList = ({ faqs, page, ...blockProps }: FAQSListProps) => {
+const FAQsList = ({ faqs, page, DynamicNotion, ...blockProps }: FAQSListProps) => {
   return faqs.length === 0 ? null : (
     <Block {...blockProps}>
       <ul>
         {faqs.map((faq) => (
-          <FAQ key={faq.title} faq={faq} page={page} />
+          <FAQ key={faq.title} faq={faq} page={page} DynamicNotion={DynamicNotion} />
         ))}
       </ul>
       {page && (

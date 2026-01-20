@@ -150,12 +150,6 @@ export const getMatomoStats = async (date: string) => {
     api: allEventsByCategory
       .filter((event) => event.label.startsWith('API'))
       .reduce((acc, visit) => acc + visit.nb_events, 0),
-    shared: allEventsByAction
-      .filter((event) => event.label === 'Partager')
-      .reduce((acc, visit) => acc + visit.nb_visits, 0),
-    screenshots: allEventsByAction
-      .filter((event) => event.label === 'Screenshot')
-      .reduce((acc, visit) => acc + visit.nb_visits, 0),
     detectorViews: detectorEvents
       .filter((event) => event.Events_EventAction === 'View')
       .reduce((acc, event) => acc + event.nb_visits, 0),
@@ -174,10 +168,6 @@ export const getMatomoStats = async (date: string) => {
       .sort((a, b) => b[1] - a[1])
       .slice(0, 3)
       .map(([label, visits]) => ({ label, visits })),
-    topDetectorIFrame: Object.entries(detectorVisit)
-      .sort((a, b) => b[1] - a[1])
-      .slice(0, 5)
-      .map(([label, visits]) => ({ label: `https://${label}`, visits })),
     newIframe: iframes
       .filter((iframe) => !lastWeekIframes.find((lastWeek) => lastWeek.label === iframe.label))
       .sort((a, b) => b.nb_visits - a.nb_visits)

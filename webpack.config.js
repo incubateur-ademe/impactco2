@@ -58,8 +58,38 @@ module.exports = [
           },
         },
         {
-          test: /\.css$/i,
-          use: ['style-loader', 'css-loader', 'postcss-loader'],
+          test: /\.module\.css$/i,
+          use: [
+            {
+              loader: 'style-loader',
+              options: { esModule: false },
+            },
+            {
+              loader: 'css-loader',
+              options: {
+                esModule: false,
+                modules: true,
+              },
+            },
+            'postcss-loader',
+          ],
+        },
+        {
+          test: /(?<!\.module)\.css$/i,
+          use: [
+            {
+              loader: 'style-loader',
+              options: { esModule: false },
+            },
+            {
+              loader: 'css-loader',
+              options: {
+                esModule: false,
+                modules: false,
+              },
+            },
+            'postcss-loader',
+          ],
         },
       ],
     },
@@ -129,8 +159,38 @@ module.exports = [
           },
         },
         {
-          test: /\.css$/i,
-          use: ['style-loader', 'css-loader', 'postcss-loader'],
+          test: /\.module\.css$/i,
+          use: [
+            {
+              loader: 'style-loader',
+              options: { esModule: false },
+            },
+            {
+              loader: 'css-loader',
+              options: {
+                esModule: false,
+                modules: true,
+              },
+            },
+            'postcss-loader',
+          ],
+        },
+        {
+          test: /(?<!\.module)\.css$/i,
+          use: [
+            {
+              loader: 'style-loader',
+              options: { esModule: false },
+            },
+            {
+              loader: 'css-loader',
+              options: {
+                esModule: false,
+                modules: false,
+              },
+            },
+            'postcss-loader',
+          ],
         },
       ],
     },
@@ -173,8 +233,38 @@ module.exports = [
           },
         },
         {
-          test: /\.css$/i,
-          use: ['style-loader', 'css-loader', 'postcss-loader'],
+          test: /\.module\.css$/i,
+          use: [
+            {
+              loader: 'style-loader',
+              options: { esModule: false },
+            },
+            {
+              loader: 'css-loader',
+              options: {
+                esModule: false,
+                modules: true,
+              },
+            },
+            'postcss-loader',
+          ],
+        },
+        {
+          test: /(?<!\.module)\.css$/i,
+          use: [
+            {
+              loader: 'style-loader',
+              options: { esModule: false },
+            },
+            {
+              loader: 'css-loader',
+              options: {
+                esModule: false,
+                modules: false,
+              },
+            },
+            'postcss-loader',
+          ],
         },
       ],
     },

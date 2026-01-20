@@ -13,7 +13,7 @@ export type RadioProps = {
   label: ReactNode
   hint?: string
   required?: boolean
-  errors?: ZodError | null
+  errors?: ZodError<Record<string, unknown>> | null
   className?: string
 }
 

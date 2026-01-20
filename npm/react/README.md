@@ -291,12 +291,14 @@ Liste des équivalents à comparer parmis la liste suivante :
   - armoire : armoire
   - lit : lit
 - Chauffage
-  - chauffagegaz : année de chauffage au gaz par m²
-  - chauffagefioul : année de chauffage au fioul par m²
-  - chauffageelectrique : année de chauffage électrique par m²
+  - chauffagegaz : année de chauffage avec une chaudière à gaz par m²
+  - chauffagefioul : année de chauffage avec une chaudière au fioul par m²
+  - chauffageelectrique : année de chauffage avec une chaudière ou convecteur électrique par m²
   - pompeachaleur : année de chauffage avec une pompe à chaleur par m²
   - poeleagranule : année de chauffage avec un poêle à granulés par m²
-  - poeleabois : année de chauffage avec un poêle à bois par m²
+  - poeleabois : année de chauffage avec un poêle à bûches par m²
+  - chaudiereagranule : année de chauffage avec une chaudière à granulés par m²
+  - chaudiereabois : année de chauffage avec une chaudière à bûches par m²
   - reseaudechaleur : année de chauffage via un réseau de chaleur par m²
 - Numérique
   - smartphone : smartphone

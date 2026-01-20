@@ -18,7 +18,7 @@ import styles from './Form.module.css'
 
 const Suggestion = () => {
   const params = useSearchParams()
-  const [errors, setErrors] = useState<ZodError | null>()
+  const [errors, setErrors] = useState<ZodError<Record<string, unknown>> | null>()
 
   const [email, setEmail] = useState('')
   const [text, setText] = useState('')
@@ -69,7 +69,7 @@ const Suggestion = () => {
       }
       setSent(true)
     } else {
-      const input = document.getElementById(`input-${body.error.issues[0].path[0]}`)
+      const input = document.getElementById(`input-${String(body.error.issues[0].path[0])}`)
       if (input) {
         input.scrollIntoView({ behavior: 'smooth' })
         input.focus({ preventScroll: true })

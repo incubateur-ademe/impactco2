@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useMemo, useState } from 'react'
+import { useMemo, useState } from 'react'
 import { FAQ } from 'types/faq'
 import { track } from 'utils/matomo'
 import Link from 'components/base/buttons/Link'
@@ -109,6 +109,15 @@ const AllFAQs = ({ faqs }: { faqs: FAQ[] }) => {
         description={
           <>
             Questions fréquentes à propos de l’outil <Link href='/outils/alimentation'>Alimentation</Link>
+          </>
+        }
+      />
+      <FAQsList
+        faqs={filteredFaqs.filter((faq) => faq.section === 'Chauffage')}
+        title='Chauffage'
+        description={
+          <>
+            Questions fréquentes à propos de l’outil <Link href='/outils/chauffage'>Chauffage</Link>
           </>
         }
       />

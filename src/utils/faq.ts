@@ -5,12 +5,13 @@ import { getAllNotionDB } from './notion'
 import { getRevalidate } from './revalidate'
 
 export const getFAQs = unstable_cache(
-  async (filter?: string): Promise<FAQ[]> => {
+  async (filter?: string, language?: string): Promise<FAQ[]> => {
     try {
       const results = await getAllNotionDB<{
         Name: { title: { plain_text: string }[] }
         'Page(s)': { multi_select: { name: string }[] }
         Section: { select: { name: string } }
+        Langage: { select: { name: string } }
         Order: { number: number }
       }>('https://api.notion.com/v1/databases/f21b76594988440c98fc153d73ad5730/query')
 
@@ -40,6 +41,7 @@ export const getFAQs = unstable_cache(
             result.properties['Page(s)'].multi_select.length > 0 &&
             result.properties.Section.select
         )
+        .filter((result) => result.properties.Langage.select?.name.toUpperCase() === (language?.toUpperCase() || 'FR'))
         .sort((a, b) => a.properties.Order.number - b.properties.Order.number)
         .map((result) => {
           try {
