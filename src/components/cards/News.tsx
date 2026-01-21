@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import { useMemo } from 'react'
 import Block from 'components/layout/Block'
 import ToolCard, { ToolCardProps } from './ToolCard'
 import styles from './ToolCards.module.css'
