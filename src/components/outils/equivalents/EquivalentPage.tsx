@@ -70,9 +70,9 @@ const EquivalentPage = ({
       <Block title='Étiquette' description='Le petit format à intégrer dans vos contenus et applications.'>
         <Etiquette equivalent={equivalent} />
       </Block>
-      {tool && (
-        <Block>
-          <ul>
+      <Block>
+        <ul className={styles.tools}>
+          {tool && (
             <ToolCard
               horizontal
               title={tool.title}
@@ -80,9 +80,17 @@ const EquivalentPage = ({
               slug={tool.slug}
               linkLabel={tool.linkLabel}
             />
-          </ul>
-        </Block>
-      )}
+          )}
+          <ToolCard
+            horizontal
+            title='Télécharger la liste des équivalents'
+            description='L’impact carbone de nos 300+ objets et gestes dans un simple tableau.'
+            slug='csv'
+            link='/equivalents.csv'
+            linkLabel='Télécharger (.CSV | 33KB)'
+          />
+        </ul>
+      </Block>
     </>
   )
 }

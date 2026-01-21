@@ -47,6 +47,38 @@ const Outils = () => {
               </>
             ),
           },
+          {
+            slug: 'csv',
+            title: 'Télécharger la liste des équivalents',
+            description: (
+              <>
+                <div className={styles.descriptionLine}>
+                  <div className={styles.icons}>
+                    <div className={styles.shape}>
+                      <SimpleStarShapeIcon />
+                    </div>
+                    <div className={styles.check}>
+                      <CheckRoundIcon />
+                    </div>
+                  </div>
+                  <p>+ de 300 équivalents avec leurs facteurs d’émission</p>
+                </div>
+                <div className={styles.descriptionLine}>
+                  <div className={styles.icons}>
+                    <div className={styles.shape}>
+                      <SimpleStarShapeIcon />
+                    </div>
+                    <div className={styles.check}>
+                      <CheckRoundIcon />
+                    </div>
+                  </div>
+                  <p>Un simple tableau au format CSV</p>
+                </div>
+              </>
+            ),
+            linkLabel: 'Télécharger (.CSV | 33KB)',
+            link: '/equivalents.csv',
+          },
         ]}
       />
       <Block

@@ -4,3 +4,9 @@
   margin-top: 1rem;
   gap: 0.5rem;
 }
+
+.tools {
+  > li:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+}

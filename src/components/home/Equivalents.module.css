@@ -7,4 +7,9 @@
 
 .button {
   width: 100% !important;
+  margin-bottom: 1.25rem;
+}
+
+.link {
+  color: var(--neutral-50);
 }

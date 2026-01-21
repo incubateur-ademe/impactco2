@@ -39,7 +39,7 @@ test('Transport distance default values', async ({ page }) => {
     'Avion trajet courtDésolé !L’itinéraire demandé n’est pas compatible avec ce mode de transport Modifier'
   )
 
-  await page.getByText('Liste').click()
+  await page.getByText('Liste', { exact: true }).click()
   await expect(page.getByRole('link', { name: 'Bus thermique 1.84 kg CO₂e' })).toBeVisible()
   await expect(page.getByRole('link', { name: 'Bus électrique 0.33 kg CO₂e' })).not.toBeVisible()
   await expect(

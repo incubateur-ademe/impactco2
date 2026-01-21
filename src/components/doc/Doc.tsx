@@ -45,6 +45,14 @@ const Doc = () => {
             linkLabel='Consulter'
             link='/doc/kit-communication'
           />
+          <ToolCard
+            slug='doc-csv'
+            horizontal
+            title='Liste des équivalents'
+            description='L’impact carbone de nos 300+ objets et gestes dans un simple tableau'
+            linkLabel='Télécharger (.CSV | 33KB)'
+            link='/equivalents.csv'
+          />
         </ul>
       </Block>
     </>
