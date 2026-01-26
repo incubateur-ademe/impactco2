@@ -29,7 +29,7 @@ const Dropdown = ({
         aria-controls={`dropdown-${title}-content`}
         onClick={() => {
           if (onClick) {
-            onClick(display)
+            onClick(!display)
           }
           setDisplay(!display)
         }}>

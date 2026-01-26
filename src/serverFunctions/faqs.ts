@@ -2,9 +2,10 @@
 
 import { getFAQs } from 'utils/faq'
 
-export const fetchFaqs = async (filter?: string, language?: string) => {
+export const fetchFaqsSection = async (section: string, language?: string) => {
   try {
-    return await getFAQs(filter, language)
+    const faqs = await getFAQs(undefined, language)
+    return faqs.filter((faq) => faq.section === section)
   } catch (error) {
     console.error('Unable to fetch FAQs via server function', error)
     return []
