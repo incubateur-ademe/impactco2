@@ -3,15 +3,15 @@ import { expect, test } from '@playwright/test'
 test('Livraison simulator', async ({ page }) => {
   await page.goto('http://localhost:3000/outils/livraison')
 
-  await expect(page.getByTestId('category-magasindouce-value')).toHaveText('6.15')
+  await expect(page.getByTestId('category-magasindouce-value')).toHaveText('6.85')
   await page.getByTestId('text-select-type').click()
   await page.getByTestId('text-select-type').selectOption('lavelinge')
-  await expect(page.getByTestId('category-magasindouce-value')).toHaveText('25.4')
+  await expect(page.getByTestId('category-magasindouce-value')).toHaveText('27.9')
   await page.getByTestId('checkbox-fabrication').click()
-  await expect(page.getByTestId('category-magasindouce-value')).toHaveText('300')
+  await expect(page.getByTestId('category-magasindouce-value')).toHaveText('303')
   await page.getByTestId('checkbox-fabrication').click({ force: true })
 
-  await expect(page.getByTestId('category-pointrelais-value')).toHaveText('28.5')
+  await expect(page.getByTestId('category-pointrelais-value')).toHaveText('25.6')
   await expect(page.getByTestId('livraison-pointrelais')).toHaveText(
     "Transport utilisé pour aller chercher l'objetVoiture thermiqueVoiture électrique3.5 km Distance parcourue pour Livraison en point de retrait"
   )
@@ -19,10 +19,10 @@ test('Livraison simulator', async ({ page }) => {
   await expect(page.getByTestId('livraison-pointrelais')).toHaveText(
     "Transport utilisé pour aller chercher l'objetVoiture thermiqueVoiture électrique4 km Distance parcourue pour Livraison en point de retrait"
   )
-  await expect(page.getByTestId('category-pointrelais-value')).toHaveText('28.7')
+  await expect(page.getByTestId('category-pointrelais-value')).toHaveText('25.8')
   await page.getByTestId('text-select-transport-type-pointrelais').click()
   await page.getByTestId('text-select-transport-type-pointrelais').selectOption('voitureelectrique')
-  await expect(page.getByTestId('category-pointrelais-value')).toHaveText('27.8')
+  await expect(page.getByTestId('category-pointrelais-value')).toHaveText('24.9')
 
   await page.getByTestId('header-share-button').first().click()
   await expect(page.getByTestId('clipboard-box')).toHaveText(
@@ -61,7 +61,7 @@ test('Livraison iframes', async ({ page }) => {
   await page.goto(
     'http://localhost:3000/iframes/livraison?withFabrication=true&types=lavelinge,lit,smartphone,vin,cafetiere'
   )
-  await expect(page.getByTestId('category-magasindouce-value')).toHaveText('300')
+  await expect(page.getByTestId('category-magasindouce-value')).toHaveText('303')
 
   const select = await page.getByTestId('text-select-type')
   const options = await select.evaluate((select) =>
@@ -71,5 +71,5 @@ test('Livraison iframes', async ({ page }) => {
   await page.goto(
     'http://localhost:3000/iframes/livraison?withFabrication=false&types=lavelinge,lit,smartphone,vin,cafetiere'
   )
-  await expect(page.getByTestId('category-magasindouce-value')).toHaveText('25.4')
+  await expect(page.getByTestId('category-magasindouce-value')).toHaveText('27.9')
 })
