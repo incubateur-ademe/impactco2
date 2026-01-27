@@ -5,16 +5,16 @@ export const livraison = [
     category: 12,
     ecv: [
       {
-        id: 55,
-        value: 0.026,
+        id: 33,
+        value: 0.28555639174924774,
       },
       {
-        id: 33,
-        value: 0.284,
+        id: 55,
+        value: 0.25928997888800026,
       },
       {
         id: 57,
-        value: 6.53,
+        value: 6.54,
       },
     ],
   },
@@ -24,12 +24,12 @@ export const livraison = [
     category: 12,
     ecv: [
       {
-        id: 55,
-        value: 0.026,
+        id: 33,
+        value: 0.28555639174924774,
       },
       {
-        id: 33,
-        value: 0.284,
+        id: 55,
+        value: 0.25928997888800026,
       },
     ],
   },
@@ -39,20 +39,20 @@ export const livraison = [
     category: 12,
     ecv: [
       {
+        id: 33,
+        value: 0.28555639174924774,
+      },
+      {
         id: 54,
-        value: 0.207,
+        value: 0.35270905003298764,
       },
       {
         id: 55,
-        value: 0.019,
-      },
-      {
-        id: 33,
-        value: 0.284,
+        value: 0.017852855600329006,
       },
       {
         id: 56,
-        value: 1.52,
+        value: 1.526,
       },
     ],
   },
@@ -62,16 +62,16 @@ export const livraison = [
     category: 12,
     ecv: [
       {
+        id: 33,
+        value: 0.28555639174924774,
+      },
+      {
         id: 54,
-        value: 0.207,
+        value: 0.35270905003298764,
       },
       {
         id: 55,
-        value: 0.019,
-      },
-      {
-        id: 33,
-        value: 0.284,
+        value: 0.017852855600329006,
       },
     ],
   },
@@ -81,20 +81,20 @@ export const livraison = [
     category: 12,
     ecv: [
       {
+        id: 33,
+        value: 0.28555639174924774,
+      },
+      {
         id: 54,
-        value: 0.207,
+        value: 0.35270905003298764,
       },
       {
         id: 55,
-        value: 0.026,
-      },
-      {
-        id: 33,
-        value: 0.284,
+        value: 0.25928997888800026,
       },
       {
         id: 57,
-        value: 6.53,
+        value: 6.54,
       },
     ],
   },
@@ -104,16 +104,16 @@ export const livraison = [
     category: 12,
     ecv: [
       {
+        id: 33,
+        value: 0.28555639174924774,
+      },
+      {
         id: 54,
-        value: 0.207,
+        value: 0.35270905003298764,
       },
       {
         id: 55,
-        value: 0.026,
-      },
-      {
-        id: 33,
-        value: 0.284,
+        value: 0.25928997888800026,
       },
     ],
   },
@@ -123,16 +123,16 @@ export const livraison = [
     category: 12,
     ecv: [
       {
+        id: 33,
+        value: 0.3529758858942337,
+      },
+      {
         id: 54,
-        value: 0.207,
+        value: 0.35270905003298764,
       },
       {
         id: 55,
-        value: 0.018,
-      },
-      {
-        id: 33,
-        value: 0.351,
+        value: 0.01631557888800014,
       },
     ],
   },
@@ -142,12 +142,12 @@ export const livraison = [
     category: 12,
     ecv: [
       {
-        id: 55,
-        value: 0.25929,
+        id: 33,
+        value: 0.5711127834984955,
       },
       {
-        id: 33,
-        value: 0.57111,
+        id: 55,
+        value: 0.25928997888800026,
       },
       {
         id: 57,
@@ -161,12 +161,12 @@ export const livraison = [
     category: 12,
     ecv: [
       {
-        id: 55,
-        value: 0.25929,
+        id: 33,
+        value: 0.5711127834984955,
       },
       {
-        id: 33,
-        value: 0.57111,
+        id: 55,
+        value: 0.25928997888800026,
       },
     ],
   },
@@ -176,16 +176,16 @@ export const livraison = [
     category: 12,
     ecv: [
       {
+        id: 33,
+        value: 0.5711127834984955,
+      },
+      {
         id: 54,
-        value: 0.35271,
+        value: 0.35270905003298764,
       },
       {
         id: 55,
-        value: 0.01785,
-      },
-      {
-        id: 33,
-        value: 0.57111,
+        value: 0.017852855600329006,
       },
       {
         id: 56,
@@ -199,16 +199,16 @@ export const livraison = [
     category: 12,
     ecv: [
       {
+        id: 33,
+        value: 0.5711127834984955,
+      },
+      {
         id: 54,
-        value: 0.35271,
+        value: 0.35270905003298764,
       },
       {
         id: 55,
-        value: 0.01785,
-      },
-      {
-        id: 33,
-        value: 0.57111,
+        value: 0.017852855600329006,
       },
     ],
   },
@@ -218,16 +218,16 @@ export const livraison = [
     category: 12,
     ecv: [
       {
+        id: 33,
+        value: 0.5711127834984955,
+      },
+      {
         id: 54,
-        value: 0.35271,
+        value: 0.35270905003298764,
       },
       {
         id: 55,
-        value: 0.25929,
-      },
-      {
-        id: 33,
-        value: 0.57111,
+        value: 0.25928997888800026,
       },
       {
         id: 57,
@@ -241,16 +241,16 @@ export const livraison = [
     category: 12,
     ecv: [
       {
+        id: 33,
+        value: 0.5711127834984955,
+      },
+      {
         id: 54,
-        value: 0.35271,
+        value: 0.35270905003298764,
       },
       {
         id: 55,
-        value: 0.25929,
-      },
-      {
-        id: 33,
-        value: 0.57111,
+        value: 0.25928997888800026,
       },
     ],
   },
@@ -260,16 +260,16 @@ export const livraison = [
     category: 12,
     ecv: [
       {
+        id: 33,
+        value: 0.7059517717884674,
+      },
+      {
         id: 54,
-        value: 0.35271,
+        value: 0.35270905003298764,
       },
       {
         id: 55,
-        value: 0.01632,
-      },
-      {
-        id: 33,
-        value: 0.70595,
+        value: 0.01631557888800014,
       },
     ],
   },
@@ -279,12 +279,12 @@ export const livraison = [
     category: 12,
     ecv: [
       {
-        id: 55,
-        value: 2.65272,
+        id: 33,
+        value: 4.283345876238715,
       },
       {
-        id: 33,
-        value: 4.28335,
+        id: 55,
+        value: 2.6527235781360003,
       },
       {
         id: 57,
@@ -298,12 +298,12 @@ export const livraison = [
     category: 12,
     ecv: [
       {
-        id: 55,
-        value: 2.65272,
+        id: 33,
+        value: 4.283345876238715,
       },
       {
-        id: 33,
-        value: 4.28335,
+        id: 55,
+        value: 2.6527235781360003,
       },
     ],
   },
@@ -313,16 +313,16 @@ export const livraison = [
     category: 12,
     ecv: [
       {
+        id: 33,
+        value: 4.283345876238715,
+      },
+      {
         id: 54,
-        value: 1.63706,
+        value: 1.63706337496858,
       },
       {
         id: 55,
-        value: 0.23835,
-      },
-      {
-        id: 33,
-        value: 4.28335,
+        value: 0.23835234525928786,
       },
       {
         id: 56,
@@ -336,16 +336,16 @@ export const livraison = [
     category: 12,
     ecv: [
       {
+        id: 33,
+        value: 4.283345876238715,
+      },
+      {
         id: 54,
-        value: 1.63706,
+        value: 1.63706337496858,
       },
       {
         id: 55,
-        value: 0.23835,
-      },
-      {
-        id: 33,
-        value: 4.28335,
+        value: 0.23835234525928786,
       },
     ],
   },
@@ -355,16 +355,16 @@ export const livraison = [
     category: 12,
     ecv: [
       {
+        id: 33,
+        value: 4.283345876238715,
+      },
+      {
         id: 54,
-        value: 1.63706,
+        value: 1.63706337496858,
       },
       {
         id: 55,
-        value: 2.65272,
-      },
-      {
-        id: 33,
-        value: 4.28335,
+        value: 2.6527235781360003,
       },
       {
         id: 57,
@@ -378,16 +378,16 @@ export const livraison = [
     category: 12,
     ecv: [
       {
+        id: 33,
+        value: 4.283345876238715,
+      },
+      {
         id: 54,
-        value: 1.63706,
+        value: 1.63706337496858,
       },
       {
         id: 55,
-        value: 2.65272,
-      },
-      {
-        id: 33,
-        value: 4.28335,
+        value: 2.6527235781360003,
       },
     ],
   },
@@ -397,16 +397,16 @@ export const livraison = [
     category: 12,
     ecv: [
       {
+        id: 33,
+        value: 5.294638288413504,
+      },
+      {
         id: 54,
-        value: 1.63706,
+        value: 1.63706337496858,
       },
       {
         id: 55,
-        value: 0.22298,
-      },
-      {
-        id: 33,
-        value: 5.29464,
+        value: 0.22297957813600017,
       },
     ],
   },
@@ -416,12 +416,12 @@ export const livraison = [
     category: 12,
     ecv: [
       {
-        id: 55,
-        value: 5.30001,
+        id: 33,
+        value: 8.56669175247743,
       },
       {
-        id: 33,
-        value: 8.56669,
+        id: 55,
+        value: 5.300008629976,
       },
       {
         id: 57,
@@ -435,12 +435,12 @@ export const livraison = [
     category: 12,
     ecv: [
       {
-        id: 55,
-        value: 5.30001,
+        id: 33,
+        value: 8.56669175247743,
       },
       {
-        id: 33,
-        value: 8.56669,
+        id: 55,
+        value: 5.300008629976,
       },
     ],
   },
@@ -450,16 +450,16 @@ export const livraison = [
     category: 12,
     ecv: [
       {
+        id: 33,
+        value: 8.56669175247743,
+      },
+      {
         id: 54,
-        value: 2.59865,
+        value: 2.598651687679973,
       },
       {
         id: 55,
-        value: 0.47127,
-      },
-      {
-        id: 33,
-        value: 8.56669,
+        value: 0.47126616422257556,
       },
       {
         id: 56,
@@ -473,16 +473,16 @@ export const livraison = [
     category: 12,
     ecv: [
       {
+        id: 33,
+        value: 8.56669175247743,
+      },
+      {
         id: 54,
-        value: 2.59865,
+        value: 2.598651687679973,
       },
       {
         id: 55,
-        value: 0.47127,
-      },
-      {
-        id: 33,
-        value: 8.56669,
+        value: 0.47126616422257556,
       },
     ],
   },
@@ -492,16 +492,16 @@ export const livraison = [
     category: 12,
     ecv: [
       {
+        id: 33,
+        value: 8.56669175247743,
+      },
+      {
         id: 54,
-        value: 2.59865,
+        value: 2.598651687679973,
       },
       {
         id: 55,
-        value: 5.30001,
-      },
-      {
-        id: 33,
-        value: 8.56669,
+        value: 5.300008629976,
       },
       {
         id: 57,
@@ -515,16 +515,16 @@ export const livraison = [
     category: 12,
     ecv: [
       {
+        id: 33,
+        value: 8.56669175247743,
+      },
+      {
         id: 54,
-        value: 2.59865,
+        value: 2.598651687679973,
       },
       {
         id: 55,
-        value: 5.30001,
-      },
-      {
-        id: 33,
-        value: 8.56669,
+        value: 5.300008629976,
       },
     ],
   },
@@ -534,16 +534,16 @@ export const livraison = [
     category: 12,
     ecv: [
       {
+        id: 33,
+        value: 10.589276576827007,
+      },
+      {
         id: 54,
-        value: 2.59865,
+        value: 2.598651687679973,
       },
       {
         id: 55,
-        value: 0.44052,
-      },
-      {
-        id: 33,
-        value: 10.58928,
+        value: 0.44052062997600017,
       },
     ],
   },
