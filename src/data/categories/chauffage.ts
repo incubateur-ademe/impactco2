@@ -45,12 +45,12 @@ export const chauffage = [
     id: 8,
     slug: 'chaudiereagranule',
     category: 8,
-    total: 5.976712890838115,
+    total: 3.944630507953157,
   },
   {
     id: 9,
     slug: 'chaudiereabois',
     category: 8,
-    total: 8.59152478057979,
+    total: 5.670406355182663,
   },
 ]

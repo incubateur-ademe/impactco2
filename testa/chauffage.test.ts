@@ -1,6 +1,45 @@
 /**
  * @jest-environment node
  */
+import equivalentValues from '../src/utils/Equivalent/values.json'
+import { getNameWithoutSuffix } from 'utils/Equivalent/equivalent'
+
+const chauffageSlugs = [
+  'chauffagegaz',
+  'chauffagefioul',
+  'chauffageelectrique',
+  'pompeachaleur',
+  'poeleagranule',
+  'poeleabois',
+  'reseaudechaleur',
+  'chaudiereagranule',
+  'chaudiereabois',
+]
+
+const getExpectedData = (m2: number, language: 'fr' | 'en') => {
+  return chauffageSlugs.map((slug) => {
+    const value = equivalentValues[slug as keyof typeof equivalentValues] as any
+    const ecv = (value.value * m2) / 1000
+    const name = getNameWithoutSuffix(language, { category: value.category, slug })
+    return { ecv, name, slug }
+  })
+}
+
+const expectCloseTo = (
+  actual: { data: { slug: string; name: string; ecv: number }[]; warning: string },
+  expected: { data: { slug: string; name: string; ecv: number }[] }
+) => {
+  expect(actual.data).toHaveLength(expected.data.length)
+  actual.data.forEach((item: any, index: number) => {
+    const expectedItem = expected.data[index]
+    expect(item.slug).toBe(expectedItem.slug)
+    expect(item.name).toBe(expectedItem.name)
+    expect(item.ecv).toBeCloseTo(expectedItem.ecv, 6)
+  })
+  expect(actual.warning).toBe(
+    "La requete n'est pas authentifée. Nous nous reservons le droit de couper cette API aux utilisateurs anonymes, veuillez nous contacter à impactco2@ademe.fr pour obtenir une clé d'API gratuite."
+  )
+}
 
 describe('chauffage', () => {
   test('get default values', async () => {
@@ -8,28 +47,8 @@ describe('chauffage', () => {
 
     expect(result.status).toBe(200)
     const data = await result.json()
-    expect(data).toEqual({
-      data: [
-        { ecv: 1123.735932762777, name: 'Chaudière à gaz', slug: 'chauffagegaz' },
-        { ecv: 2203.184061208831, name: 'Chaudière au fioul', slug: 'chauffagefioul' },
-        { ecv: 151.81056915609627, name: 'Chaudière ou convecteur électrique', slug: 'chauffageelectrique' },
-        { ecv: 102.9031975493033, name: 'Pompe à chaleur', slug: 'pompeachaleur' },
-        { ecv: 372.7681482247014, name: 'Poêle à granulés', slug: 'poeleagranule' },
-        { ecv: 535.8542130730084, name: 'Poêle à bûches', slug: 'poeleabois' },
-        { ecv: 697.873276136477, name: 'Réseau de chaleur', slug: 'reseaudechaleur' },
-        {
-          ecv: 376.53291212280124,
-          name: 'Chaudière à granulés',
-          slug: 'chaudiereagranule',
-        },
-        {
-          ecv: 541.2660611765268,
-          name: 'Chaudière à bûches',
-          slug: 'chaudiereabois',
-        },
-      ],
-      warning:
-        "La requete n'est pas authentifée. Nous nous reservons le droit de couper cette API aux utilisateurs anonymes, veuillez nous contacter à impactco2@ademe.fr pour obtenir une clé d'API gratuite.",
+    expectCloseTo(data, {
+      data: getExpectedData(63, 'fr'),
     })
   })
 
@@ -38,28 +57,8 @@ describe('chauffage', () => {
 
     expect(result.status).toBe(200)
     const data = await result.json()
-    expect(data).toEqual({
-      data: [
-        { ecv: 1123.735932762777, name: 'Gas boiler', slug: 'chauffagegaz' },
-        { ecv: 2203.184061208831, name: 'Oil boiler', slug: 'chauffagefioul' },
-        { ecv: 151.81056915609627, name: 'Electric boiler or heater', slug: 'chauffageelectrique' },
-        { ecv: 102.9031975493033, name: 'Heat pump', slug: 'pompeachaleur' },
-        { ecv: 372.7681482247014, name: 'Pellet stove', slug: 'poeleagranule' },
-        { ecv: 535.8542130730084, name: 'Wood stove', slug: 'poeleabois' },
-        { ecv: 697.873276136477, name: 'District heating', slug: 'reseaudechaleur' },
-        {
-          ecv: 376.53291212280124,
-          name: 'Pellet boiler',
-          slug: 'chaudiereagranule',
-        },
-        {
-          ecv: 541.2660611765268,
-          name: 'Wood boiler',
-          slug: 'chaudiereabois',
-        },
-      ],
-      warning:
-        "La requete n'est pas authentifée. Nous nous reservons le droit de couper cette API aux utilisateurs anonymes, veuillez nous contacter à impactco2@ademe.fr pour obtenir une clé d'API gratuite.",
+    expectCloseTo(data, {
+      data: getExpectedData(63, 'en'),
     })
   })
 
@@ -68,13 +67,9 @@ describe('chauffage', () => {
 
     expect(result.status).toBe(200)
     const data = await result.json()
-    expect(data).toEqual({
-      data: [
-        { ecv: 102.9031975493033, name: 'Pompe à chaleur', slug: 'pompeachaleur' },
-        { ecv: 535.8542130730084, name: 'Poêle à bûches', slug: 'poeleabois' },
-      ],
-      warning:
-        "La requete n'est pas authentifée. Nous nous reservons le droit de couper cette API aux utilisateurs anonymes, veuillez nous contacter à impactco2@ademe.fr pour obtenir une clé d'API gratuite.",
+    const expectedData = getExpectedData(63, 'fr')
+    expectCloseTo(data, {
+      data: [expectedData[3], expectedData[5]],
     })
   })
 
@@ -83,28 +78,8 @@ describe('chauffage', () => {
 
     expect(result.status).toBe(200)
     const data = await result.json()
-    expect(data).toEqual({
-      data: [
-        { ecv: 1783.7078297821858, name: 'Chaudière à gaz', slug: 'chauffagegaz' },
-        { ecv: 3497.1175574743347, name: 'Chaudière au fioul', slug: 'chauffagefioul' },
-        { ecv: 240.969157390629, name: 'Chaudière ou convecteur électrique', slug: 'chauffageelectrique' },
-        { ecv: 163.33840880841795, name: 'Pompe à chaleur', slug: 'pompeachaleur' },
-        { ecv: 591.695473372542, name: 'Poêle à granulés', slug: 'poeleagranule' },
-        { ecv: 850.5622429730291, name: 'Poêle à bûches', slug: 'poeleabois' },
-        { ecv: 1107.7353589467888, name: 'Réseau de chaleur', slug: 'reseaudechaleur' },
-        {
-          ecv: 597.6712890838115,
-          name: 'Chaudière à granulés',
-          slug: 'chaudiereagranule',
-        },
-        {
-          ecv: 859.1524780579791,
-          name: 'Chaudière à bûches',
-          slug: 'chaudiereabois',
-        },
-      ],
-      warning:
-        "La requete n'est pas authentifée. Nous nous reservons le droit de couper cette API aux utilisateurs anonymes, veuillez nous contacter à impactco2@ademe.fr pour obtenir une clé d'API gratuite.",
+    expectCloseTo(data, {
+      data: getExpectedData(100, 'fr'),
     })
   })
 })

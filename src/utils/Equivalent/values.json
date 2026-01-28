@@ -178,14 +178,14 @@
   },
   "chaudiereagranule": {
     "category": 8,
-    "value": 5976.712890838115,
+    "value": 3944.630507953157,
     "fr": "année[s] de chauffage par m² avec ;Chaudière à granulés",
     "en": "year[s] of heating per m² with ;Pellet boiler",
     "es": "Años de calefacción por m² con ;Caldera de pellets"
   },
   "chaudiereabois": {
     "category": 8,
-    "value": 8591.52478057979,
+    "value": 5670.406355182663,
     "fr": "année[s] de chauffage par m² avec ;Chaudière à bûches",
     "en": "year[s] of heating per m² with ;Wood boiler",
     "es": "Años de calefacción por m² con ;Caldera de leña"
