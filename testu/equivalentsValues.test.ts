@@ -1,4 +1,3 @@
-import { EquivalentValue } from 'types/equivalent'
 import { categories } from 'data/categories'
 import values from 'utils/Equivalent/values.json'
 
@@ -15,6 +14,44 @@ const allComputed = categories.flatMap((cat) =>
 )
 
 describe('Equivalents vs values.json', () => {
+  it('Categories have unique slugs', () => {
+    const seen = new Set<string>()
+    const duplicates = new Set<string>()
+
+    for (const { slug } of categories) {
+      if (seen.has(slug)) {
+        duplicates.add(slug)
+      } else {
+        seen.add(slug)
+      }
+    }
+
+    if (duplicates.size) {
+      throw new Error(`Duplicate category slugs: ${Array.from(duplicates).join(', ')}`)
+    }
+
+    expect(true).toBe(true)
+  })
+
+  it('Equivalent slugs are unique', () => {
+    const seen = new Set<string>()
+    const duplicates = new Set<string>()
+
+    for (const { slug } of allComputed) {
+      if (seen.has(slug)) {
+        duplicates.add(slug)
+      } else {
+        seen.add(slug)
+      }
+    }
+
+    if (duplicates.size) {
+      throw new Error(`Duplicate equivalent slugs: ${Array.from(duplicates).join(', ')}`)
+    }
+
+    expect(true).toBe(true)
+  })
+
   it('Every category equivalent slug exists in values.json with correct total', () => {
     const missing: string[] = []
     const mismatched: { slug: string; expectedGrams: number; got?: number }[] = []
@@ -53,79 +90,6 @@ describe('Equivalents vs values.json', () => {
         .join('\n')
 
       throw new Error(details)
-    }
-
-    expect(true).toBe(true)
-  })
-
-  it('Duplicate slugs across categories have identical computed values', () => {
-    const bySlug = new Map<string, number[]>()
-    for (const { slug, valueKg } of allComputed) {
-      const list = bySlug.get(slug) || []
-      list.push(valueKg)
-      bySlug.set(slug, list)
-    }
-
-    const diffs: { slug: string; values: number[] }[] = []
-
-    for (const [slug, valuesKg] of bySlug.entries()) {
-      if (valuesKg.length <= 1) {
-        continue
-      }
-      const first = valuesKg[0]
-      for (let i = 1; i < valuesKg.length; i++) {
-        if (!isClose(valuesKg[i], first)) {
-          diffs.push({ slug, values: valuesKg })
-          break
-        }
-      }
-    }
-
-    if (diffs.length) {
-      const msg = diffs.map((d) => `${d.slug}: ${d.values.join(' vs ')}`).join('; ')
-      throw new Error(`Duplicate slug(s) with differing values: ${msg}`)
-    }
-
-    expect(true).toBe(true)
-  })
-
-  it('Duplicate slugs across categories have identical ECV', () => {
-    const bySlug = new Map<string, EquivalentValue[][]>()
-    for (const { slug, ecv } of allComputed) {
-      const list = bySlug.get(slug) || []
-      list.push(ecv)
-      bySlug.set(slug, list)
-    }
-
-    const diffs: { slug: string; values: EquivalentValue[][] }[] = []
-
-    for (const [slug, ecvs] of bySlug.entries()) {
-      if (ecvs.length <= 1) {
-        continue
-      }
-      const first = ecvs[0]
-      for (let i = 1; i < ecvs.length; i++) {
-        const ecv = ecvs[i]
-        if (ecv.length !== first.length) {
-          diffs.push({ slug, values: ecvs })
-          break
-        }
-        if (
-          ecv.filter((value) =>
-            first.find((firstValue) => firstValue.id === value.id && isClose(firstValue.value, value.value))
-          ).length !== ecv.length
-        ) {
-          diffs.push({ slug, values: ecvs })
-          break
-        }
-      }
-    }
-
-    if (diffs.length) {
-      const msg = diffs
-        .map((d) => `${d.slug}: ${d.values.map((value) => JSON.stringify(value)).join(' vs ')}`)
-        .join('\n')
-      throw new Error(`Duplicate slug(s) with differing values: ${msg}`)
     }
 
     expect(true).toBe(true)
