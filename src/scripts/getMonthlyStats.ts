@@ -22,6 +22,7 @@ const internalPages: Record<string, string> = {
 }
 
 const iframeToSimulateur: Record<string, string> = {
+  '/iframes/caspratiques/maisonneuve': 'Maison neuve',
   '/iframes/%C2%ABtransport%C2%BB%C2%AB': 'Transport',
   '/iframes/%E2%80%9Etransport%E2%80%9C%E2%80%9E': 'Transport',
   '/iframes/%E2%80%98transport%E2%80%99%E2%80%98': 'Transport',
