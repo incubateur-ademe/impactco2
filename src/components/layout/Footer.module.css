@@ -134,3 +134,29 @@
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
+
+.etiquette {
+  width: 100%;
+}
+
+.etiquetteLabel {
+  margin: 0.75rem 0;
+  color: var(--neutral-80);
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.25rem;
+}
+
+.etiquetteLink {
+  display: block;
+  margin: 0.75rem 0;
+  color: var(--primary-50) !important;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  text-decoration-line: underline !important;
+}
+
+.etiquetteColumn {
+  margin-bottom: 1.5rem;
+}

@@ -24,6 +24,6 @@ export const detecteurCO2Test = async (
     .nth(locator || 0)
     .textContent()
 
-  await page.getByRole('button', { name: 'Obtenir une nouvelle' }).click()
+  await page.getByRole('button', { name: 'Obtenir une nouvelle' }).first().click()
   await expect(await page.locator('.impactCO2-etiquette-value').nth(locator || 0)).not.toHaveText(value || '')
 }

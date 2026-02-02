@@ -2,6 +2,7 @@ import Ademe from 'components/base/Logo/Ademe'
 import Logo from 'components/base/Logo/ImpactCO2'
 import Marianne from 'components/base/Logo/Marianne'
 import Link from 'components/base/buttons/Link'
+import RandomEtiquette from 'components/comparateur/RandomEtiquette'
 import styles from './Footer.module.css'
 
 export default function Footer() {
@@ -27,6 +28,13 @@ export default function Footer() {
               target='_blank'>
               Suivre nos actualités sur LinkedIn
             </Link>
+            <div className={styles.etiquette}>
+              <p className={styles.etiquetteLabel}>LE SAVIEZ-VOUS ?</p>
+              <RandomEtiquette columnClassName={styles.etiquetteColumn} />
+              <Link prefetch={false} href='/outils/comparateur' className={styles.etiquetteLink}>
+                En savoir plus
+              </Link>
+            </div>
           </div>
           <div className={styles.topLinks}>
             <div>
