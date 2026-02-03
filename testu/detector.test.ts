@@ -40,6 +40,9 @@ const frenchDetections = [
   { text: '65 Mt eqCO2', value: 65_000_000_000_000 },
   { text: '3.2 Gt CO2', value: 3_200_000_000_000_000 },
   { text: '150 Mt de CO2', value: 150_000_000_000_000 },
+  { text: 'Quatre tonnes de CO2', value: 4_000_000 },
+  { text: 'quatre vingt dix neuf kg de CO2', value: 99_000 },
+  { text: 'vingt-trois kg de CO2', value: 23_000 },
 ]
 
 const englishDetections = [
@@ -79,6 +82,9 @@ const englishDetections = [
   { text: '442 millions tons equivalent CO2', value: 442_000_000_000_000 },
   { text: '65 Mt eqCO2', value: 65_000_000_000_000 },
   { text: '3.2 Gt CO2', value: 3_200_000_000_000_000 },
+  { text: 'Four tonnes CO2', value: 4_000_000 },
+  { text: 'ninety nine kg CO2', value: 99_000 },
+  { text: 'twenty-three kg CO2', value: 23_000 },
 ]
 
 describe('french detector regex', () => {
