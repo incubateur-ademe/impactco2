@@ -9,9 +9,20 @@ import Logo from '../Logo'
 import SimpleValue, { getRandomEquivalent } from '../SimpleValue'
 import styles from './Detector.module.css'
 
+const writtenNumbersFr =
+  'un|une|deux|trois|quatre|cinq|six|sept|huit|neuf|dix|onze|douze|treize|quatorze|quinze|seize|vingt|trente|quarante|cinquante|soixante'
+const writtenNumbersEn =
+  'one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety'
+
 export const regexs = {
-  fr: /([0-9]+(?:[,.\s|&nbsp;][0-9]+)*)(?:\s|&nbsp;)*(milliers?|milles?|millions?|milliards?|gigas?|mégas?|megas?)?(?:\s|&nbsp;)*(?:de(?:\s|&nbsp;)*)?(gigatonnes?|gigatons?|kgs?|kilos?|kilo(?:&shy;|­)?grammes?|tonnes?|(?:\(\s*)?[mMgG]t(?:\s*\))?|[gt])(?:\s|&nbsp;)*(?:\(\s*[mMgG]t\s*\))?(?:\s|&nbsp;)*(?:d'émissions(?:\s|&nbsp;)*)?(?:de(?:\s|&nbsp;)*)?(?:d['']équivalent(?:\s|&nbsp;)*)?(eq|équivalent|éq)?(?:\s|&nbsp;)*(c(?:o|0)(?:2|₂|<sub>2(?:\s|&nbsp;)*<\/sub>)|dioxyde de carbone)(?:eq|(?:(?:\s|&nbsp;)*équivalent)|e)?/i,
-  en: /([0-9]+(?:[,.\s|&nbsp;][0-9]+)*)(?:\s|&nbsp;)*(thousands?|millions?|billions?|gigas?|megas?)?(?:\s|&nbsp;)*(?:of(?:\s|&nbsp;)*)?(gigatonnes?|gigatons?|kgs?|kilos?|kilo(?:&shy;|­)?grams?|tonnes?|tons?|(?:\(\s*)?[mMgG]t(?:\s*\))?|[gt])(?:\s|&nbsp;)*(?:\(\s*[mMgG]t\s*\))?(?:\s|&nbsp;)*(?:of(?:\s|&nbsp;)*)?(?:emissions(?:\s|&nbsp;)*)?(?:of(?:\s|&nbsp;)*)?(equivalent|eq)?(?:\s|&nbsp;)*(c(?:o|0)(?:2|₂|<sub>2(?:\s|&nbsp;)*<\/sub>)|carbon (?:di)?oxide)(?:eq|(?:(?:\s|&nbsp;)*equivalent)|e)?/i,
+  fr: new RegExp(
+    `((?:[0-9]+(?:[,.\\s|&nbsp;][0-9]+)*)|(?:${writtenNumbersFr})(?:(?:-| |&nbsp;)+(?:${writtenNumbersFr}))*)(?:\\s|&nbsp;)*(milliers?|milles?|millions?|milliards?|gigas?|mégas?|megas?)?(?:\\s|&nbsp;)*(?:de(?:\\s|&nbsp;)*)?(gigatonnes?|gigatons?|kgs?|kilos?|kilo(?:&shy;|­)?grammes?|tonnes?|(?:\\(\\s*)?[mMgG]t(?:\\s*\\))?|[gt])(?:\\s|&nbsp;)*(?:\\(\\s*[mMgG]t\\s*\\))?(?:\\s|&nbsp;)*(?:d'émissions(?:\\s|&nbsp;)*)?(?:de(?:\\s|&nbsp;)*)?(?:d['']équivalent(?:\\s|&nbsp;)*)?(eq|équivalent|éq)?(?:\\s|&nbsp;)*(c(?:o|0)(?:2|₂|<sub>2(?:\\s|&nbsp;)*<\\/sub>)|dioxyde de carbone)(?:eq|(?:(?:\\s|&nbsp;)*équivalent)|e)?`,
+    'i'
+  ),
+  en: new RegExp(
+    `((?:[0-9]+(?:[,.\\s|&nbsp;][0-9]+)*)|(?:${writtenNumbersEn})(?:(?:-| |&nbsp;)+(?:${writtenNumbersEn}))*)(?:\\s|&nbsp;)*(thousands?|millions?|billions?|gigas?|megas?)?(?:\\s|&nbsp;)*(?:of(?:\\s|&nbsp;)*)?(gigatonnes?|gigatons?|kgs?|kilos?|kilo(?:&shy;|­)?grams?|tonnes?|tons?|(?:\\(\\s*)?[mMgG]t(?:\\s*\\))?|[gt])(?:\\s|&nbsp;)*(?:\\(\\s*[mMgG]t\\s*\\))?(?:\\s|&nbsp;)*(?:of(?:\\s|&nbsp;)*)?(?:emissions(?:\\s|&nbsp;)*)?(?:of(?:\\s|&nbsp;)*)?(equivalent|eq)?(?:\\s|&nbsp;)*(c(?:o|0)(?:2|₂|<sub>2(?:\\s|&nbsp;)*<\\/sub>)|carbon (?:di)?oxide)(?:eq|(?:(?:\\s|&nbsp;)*equivalent)|e)?`,
+    'i'
+  ),
 }
 
 const getComputedStyle = (el: Element, property: string) => {
@@ -100,13 +111,99 @@ const getFactor = (unit: string) => {
   return 1
 }
 
+const dictionnaries: Record<string, Record<string, number>> = {
+  fr: {
+    un: 1,
+    une: 1,
+    deux: 2,
+    trois: 3,
+    quatre: 4,
+    cinq: 5,
+    six: 6,
+    sept: 7,
+    huit: 8,
+    neuf: 9,
+    dix: 10,
+    onze: 11,
+    douze: 12,
+    treize: 13,
+    quatorze: 14,
+    quinze: 15,
+    seize: 16,
+    vingt: 20,
+    trente: 30,
+    quarante: 40,
+    cinquante: 50,
+    soixante: 60,
+  },
+  en: {
+    one: 1,
+    two: 2,
+    three: 3,
+    four: 4,
+    five: 5,
+    six: 6,
+    seven: 7,
+    eight: 8,
+    nine: 9,
+    ten: 10,
+    eleven: 11,
+    twelve: 12,
+    thirteen: 13,
+    fourteen: 14,
+    fifteen: 15,
+    sixteen: 16,
+    seventeen: 17,
+    eighteen: 18,
+    nineteen: 19,
+    twenty: 20,
+    thirty: 30,
+    forty: 40,
+    fifty: 50,
+    sixty: 60,
+    seventy: 70,
+    eighty: 80,
+    ninety: 90,
+  },
+}
+
+const parseWrittenNumber = (str: string, language: 'fr' | 'en'): number | null => {
+  const cleaned = str
+    .toLowerCase()
+    .trim()
+    .replace(/&nbsp;/g, ' ')
+    .replace(/-/g, ' ')
+
+  const dictionnary = dictionnaries[language]
+  if (dictionnary[cleaned]) {
+    return dictionnary[cleaned]
+  }
+
+  if (cleaned.includes('quatre vingt')) {
+    return 80 + (parseWrittenNumber(cleaned.replace('quatre vingt', '').trim(), language) || 0)
+  }
+
+  const parts = cleaned.split(/[\s-]+/)
+  const total = parts.reduce((acc, part) => acc + (dictionnary[part] || 0), 0)
+  return total > 0 ? total : null
+}
+
 export const getValue = (regexResult: string[], language: 'fr' | 'en') => {
   const numberStr = regexResult[1]
-    .replace(/,/g, '.') // virgule -> point décimal
-    .replace(/&nbsp;/g, '') // supprime &nbsp;
-    .replace(/\s/g, '') // supprime espaces
 
-  const number = Number(numberStr)
+  const writtenNumber = parseWrittenNumber(numberStr, language)
+
+  let number: number
+  if (writtenNumber !== null) {
+    number = writtenNumber
+  } else {
+    // Parse as numeric string
+    const cleanedStr = numberStr
+      .replace(/,/g, '.') // virgule -> point décimal
+      .replace(/&nbsp;/g, '') // supprime &nbsp;
+      .replace(/\s/g, '') // supprime espaces
+    number = Number(cleanedStr)
+  }
 
   // Groupe 2: multiplicateur (million, milliard, etc.)
   const multiplier = getFactor(regexResult[2])
