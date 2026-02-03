@@ -151,13 +151,13 @@ export const imageInfographies: Record<string, { image: string; alt: string }[]>
   livraisondomicile: [
     {
       image: 'infographie-fabrication-vs-livraison.png',
-      alt: 'Quel est l’impact de la fabrication de nos achats par rapport à leur livraison ? Pour la livraison à domicile d’une cafetière, la fabrication représente 41 kg CO2e, la logistique et livraison représente 3,09 kg CO2e, soit un total de 44,09 kg CO2e. Pour la livraison à domicile d’un smartphone, la fabrication représente 85 kg CO2e, la logistique et livraison représente 0,25 kg CO2e, soit un total de 85,25 kg CO2e. Pour la livraison à domicile d’un lit complet, la fabrication représente 421 kg CO2e, la logistique et livraison représente 59,07 kg CO2e, soit un total de 480,07 kg CO2e. Source : Base Empreinte, ADEME.',
+      alt: 'Quel est l’impact de la fabrication de nos achats par rapport à leur livraison ? Pour la livraison à domicile d’une cafetière, la fabrication représente 41 kg CO2e, la logistique et livraison représente 3,38 kg CO2e, soit un total de 44,38 kg CO2e. Pour la livraison à domicile d’un smartphone, la fabrication représente 77 kg CO2e, la logistique et livraison représente 0,25 kg CO2e, soit un total de 77,25 kg CO2e. Pour la livraison à domicile d’un lit complet, la fabrication représente 421 kg CO2e, la logistique et livraison représente 56,24 kg CO2e, soit un total de 477,24 kg CO2e. Source : Base Empreinte, ADEME.',
     },
   ],
   smartphone: [
     {
       image: 'infographie-fabrication-vs-livraison.png',
-      alt: 'Quel est l’impact de la fabrication de nos achats par rapport à leur livraison ? Pour la livraison à domicile d’une cafetière, la fabrication représente 41 kg CO2e, la logistique et livraison représente 3,09 kg CO2e, soit un total de 44,09 kg CO2e. Pour la livraison à domicile d’un smartphone, la fabrication représente 85 kg CO2e, la logistique et livraison représente 0,26 kg CO2E, soit un total de 85,26 kg CO2e. Pour la livraison à domicile d’un lit complet, la fabrication représente 421 kg CO2e, la logistique et livraison représente 59,02 kgCO2e, soit un total de 480,02 kg CO2e. Source : Base Empreinte, ADEME.',
+      alt: 'Quel est l’impact de la fabrication de nos achats par rapport à leur livraison ? Pour la livraison à domicile d’une cafetière, la fabrication représente 41 kg CO2e, la logistique et livraison représente 3,38 kg CO2e, soit un total de 44,38 kg CO2e. Pour la livraison à domicile d’un smartphone, la fabrication représente 77 kg CO2e, la logistique et livraison représente 0,25 kg CO2e, soit un total de 77,25 kg CO2e. Pour la livraison à domicile d’un lit complet, la fabrication représente 421 kg CO2e, la logistique et livraison représente 56,24 kg CO2e, soit un total de 477,24 kg CO2e. Source : Base Empreinte, ADEME.',
     },
     {
       image: 'infographie-livraison-smartphone.png',
@@ -167,13 +167,13 @@ export const imageInfographies: Record<string, { image: string; alt: string }[]>
   lit: [
     {
       image: 'infographie-fabrication-vs-livraison.png',
-      alt: 'Quel est l’impact de la fabrication de nos achats par rapport à leur livraison ? Pour la livraison à domicile d’une cafetière, la fabrication représente 41 kg CO2e, la logistique et livraison représente 3,09 kg CO2e, soit un total de 44,09 kg CO2e. Pour la livraison à domicile d’un smartphone, la fabrication représente 85 kg CO2e, la logistique et livraison représente 0,26 kg CO2E, soit un total de 85,26 kg CO2e. Pour la livraison à domicile d’un lit complet, la fabrication représente 421 kg CO2e, la logistique et livraison représente 59,02 kgCO2e, soit un total de 480,02 kg CO2e. Source : Base Empreinte, ADEME.',
+      alt: 'Quel est l’impact de la fabrication de nos achats par rapport à leur livraison ? Pour la livraison à domicile d’une cafetière, la fabrication représente 41 kg CO2e, la logistique et livraison représente 3,38 kg CO2e, soit un total de 44,38 kg CO2e. Pour la livraison à domicile d’un smartphone, la fabrication représente 77 kg CO2e, la logistique et livraison représente 0,25 kg CO2e, soit un total de 77,25 kg CO2e. Pour la livraison à domicile d’un lit complet, la fabrication représente 421 kg CO2e, la logistique et livraison représente 56,24 kg CO2e, soit un total de 477,24 kg CO2e. Source : Base Empreinte, ADEME.',
     },
   ],
   magasindouce: [
     {
       image: 'infographie-courses.png',
-      alt: 'Quel est l’impact carbone des différentes façons de faire ses courses ? Pour des courses au magasin (j’y vais à pieds, à proximité), mon déplacement représente 0 kg CO2e, la logistique et livraison représente 6,15 kg CO2e, soit un total de 6,15 kg CO2e. Pour des courses en livraison à domicile en véhicule utilitaire, mon déplacement représente 0 kg CO2e, la logistique et livraison représente 7,99 kg CO2e, soit un total de 7,99 kg CO2e. Pour des courses en drive (j’y vais en voiture thermique à 15 km), mon déplacement représente 6,64 kg CO2e, la logistique et livraison représente 6,68 kg CO2e, soit un total de 13,32 kg CO2e. Le panier de courses inclut une sélection d’aliments secs et boissons pour un poids d’environ 20 kg. Source : Base Empreinte, ADEME.',
+      alt: 'Quel est l’impact carbone des différentes façons de faire ses courses ? Pour des courses au magasin (j’y vais à pieds, à proximité), mon déplacement représente 0 kg CO2e, la logistique et livraison représente 6,85 kg CO2e, soit un total de 6,85 kg CO2e. Pour des courses en livraison à domicile en véhicule utilitaire, mon déplacement représente 0 kg CO2e, la logistique et livraison représente 8,06 kg CO2e, soit un total de 8,06 kg CO2e. Pour des courses en drive (j’y vais en voiture thermique à 15 km), mon déplacement représente 6,64 kg CO2e, la logistique et livraison représente 7,81 kg CO2e, soit un total de 13,32 kg CO2e. Le panier de courses inclut une sélection d’aliments secs et boissons pour un poids d’environ 20 kg. Source : Base Empreinte, ADEME.',
     },
   ],
 }

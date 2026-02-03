@@ -15,13 +15,13 @@ export const chauffage = [
     id: 3,
     slug: 'chauffageelectrique',
     category: 8,
-    total: 2.40969157390629,
+    total: 2.144625500776598,
   },
   {
     id: 4,
     slug: 'pompeachaleur',
     category: 8,
-    total: 1.6333840880841795,
+    total: 1.2087042251822928,
   },
   {
     id: 5,
@@ -45,12 +45,12 @@ export const chauffage = [
     id: 8,
     slug: 'chaudiereagranule',
     category: 8,
-    total: 5.976712890838115,
+    total: 3.964948281371474,
   },
   {
     id: 9,
     slug: 'chaudiereabois',
     category: 8,
-    total: 8.59152478057979,
+    total: 5.699613154471493,
   },
 ]
