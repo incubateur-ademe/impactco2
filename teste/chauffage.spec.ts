@@ -5,13 +5,13 @@ test('Simulator chauffage', async ({ page }) => {
 
   await expect(page.getByTestId('input-m2-value')).toHaveValue('63')
   await expect(page.getByTestId('category-link')).toHaveCount(9)
-  await expect(page.getByTestId('category-pompeachaleur-value')).toHaveText('103')
+  await expect(page.getByTestId('category-pompeachaleur-value')).toHaveText('76.1')
 
   await page.getByTestId('input-m2-value').fill('200')
 
   await expect(page.getByTestId('input-m2-value')).toHaveValue('200')
   await expect(page.getByTestId('category-link')).toHaveCount(9)
-  await expect(page.getByTestId('category-pompeachaleur-value')).toHaveText('327')
+  await expect(page.getByTestId('category-pompeachaleur-value')).toHaveText('242')
 
   await page.getByTestId('header-integrate-button').click()
   await expect(page.getByTestId('clipboard-box')).toHaveText(
@@ -29,7 +29,7 @@ test('Simulator chauffage', async ({ page }) => {
     '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="chauffage" data-search="?m2=300&language=fr&theme=night"></script>'
   )
   await expect(page.getByTestId('category-link')).toHaveCount(9)
-  await expect(page.getByTestId('category-pompeachaleur-value')).toHaveText('490')
+  await expect(page.getByTestId('category-pompeachaleur-value')).toHaveText('363')
 })
 
 test('Simulator chauffage default value', async ({ page }) => {
@@ -37,7 +37,7 @@ test('Simulator chauffage default value', async ({ page }) => {
 
   await expect(page.getByTestId('input-m2-value')).toHaveValue('150')
   await expect(page.getByTestId('category-link')).toHaveCount(9)
-  await expect(page.getByTestId('category-pompeachaleur-value')).toHaveText('245')
+  await expect(page.getByTestId('category-pompeachaleur-value')).toHaveText('181')
 })
 
 test('Iframes link are opened in new tab', async ({ page }) => {
