@@ -180,6 +180,9 @@ importers:
       '@incubateur-ademe/publicodes-empreinte-carbone-chauffage':
         specifier: ^1.1.0
         version: 1.1.0(publicodes@1.9.1)
+      '@incubateur-ademe/publicodes-impact-livraison':
+        specifier: ^0.7.0
+        version: 0.7.0(publicodes@1.9.1)
       '@keyv/etcd':
         specifier: ^2.1.1
         version: 2.1.1(keyv@4.5.4)
@@ -1830,6 +1833,11 @@ packages:
     resolution: {integrity: sha512-tnF7zqMWkbbJhj1KpV9ok0iIuy6sHLdaxaPEGL8xIF8bq9Ok+zz1ultHjHkusFthDzTZ4s7tQIBPkSDXM42dCQ==}
     peerDependencies:
       publicodes: ^1.8.5
+
+  '@incubateur-ademe/publicodes-impact-livraison@0.7.0':
+    resolution: {integrity: sha512-3ZtSBxc/t3xufuNGrvmUCmbKiSJ3ev+jGc3pWljH7eaBC0ZZbYinPrZVxmn3/aUVzIfB2NqD41dpw4edQ3NdwQ==}
+    peerDependencies:
+      publicodes: ^1.8.2
 
   '@istanbuljs/load-nyc-config@1.1.0':
     resolution: {integrity: sha512-VjeHSlIzpv/NyD3N0YuHfXOPDIixcA1q2ZV98wsMqcYlPmv2n3Yb2lYP9XMElnaFVXg5A7YLTeLu6V84uQDjmQ==}
@@ -9920,6 +9928,10 @@ snapshots:
       publicodes: 1.9.1
 
   '@incubateur-ademe/publicodes-empreinte-carbone-chauffage@1.1.0(publicodes@1.9.1)':
+    dependencies:
+      publicodes: 1.9.1
+
+  '@incubateur-ademe/publicodes-impact-livraison@0.7.0(publicodes@1.9.1)':
     dependencies:
       publicodes: 1.9.1
 

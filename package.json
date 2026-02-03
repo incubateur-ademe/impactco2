@@ -99,6 +99,7 @@
     "@babel/runtime": "^7.28.6",
     "@eslint/eslintrc": "^3.3.3",
     "@incubateur-ademe/publicodes-empreinte-carbone-chauffage": "^1.1.0",
+    "@incubateur-ademe/publicodes-impact-livraison": "^0.7.0",
     "@keyv/etcd": "^2.1.1",
     "@keyv/mongo": "^3.1.0",
     "@keyv/mysql": "^2.1.10",

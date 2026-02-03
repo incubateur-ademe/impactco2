@@ -284,7 +284,7 @@ describe('infographies', () => {
   test('Cafetière - Smartphone - Lit Complet (coût de fabrication et de livraison à domicile)', () => {
     // infographie-fabrication-vs-livraison
     expect(livraisonData.cafetiere.fabrication).toEqual(41)
-    expect(livraisonData.smartphone.fabrication).toEqual(85)
+    expect(livraisonData.smartphone.fabrication).toEqual(77)
     expect(livraisonData.lit.fabrication).toEqual(421)
 
     const cafetiereLivraison = round(
@@ -295,17 +295,17 @@ describe('infographies', () => {
     )
     const litLivraison = round(livraisonData.lit.ecv.livraisondomicile.reduce((acc, item) => acc + item.value, 0))
 
-    expect(cafetiereLivraison).toBe(3.09)
+    expect(cafetiereLivraison).toBe(3.38)
     expect(smartphoneLivraison).toBe(0.25)
-    expect(litLivraison).toBe(59.07)
+    expect(litLivraison).toBe(56.24)
 
     const cafetiereTotal = round(livraisonData.cafetiere.fabrication + cafetiereLivraison)
     const smartphoneTotal = round(livraisonData.smartphone.fabrication + smartphoneLivraison)
     const litTotal = round(livraisonData.lit.fabrication + litLivraison)
 
-    expect(cafetiereTotal).toBe(44.09)
-    expect(smartphoneTotal).toBe(85.25)
-    expect(litTotal).toBe(480.07)
+    expect(cafetiereTotal).toBe(44.38)
+    expect(smartphoneTotal).toBe(77.25)
+    expect(litTotal).toBe(477.24)
 
     const fabricationLivraisonAlt = imageInfographies.livraisondomicile[0].alt
 
@@ -336,13 +336,13 @@ describe('infographies', () => {
     )
     const coursesDrive = round(livraisonData.courses.ecv.clickcollect.reduce((acc, item) => acc + item.value, 0))
 
-    expect(coursesMagasin).toBe(6.15)
-    expect(coursesLivraison).toBe(7.99)
-    expect(coursesDrive).toBe(6.68)
+    expect(coursesMagasin).toBe(6.85)
+    expect(coursesLivraison).toBe(8.06)
+    expect(coursesDrive).toBe(7.81)
 
     const driveTotal = round(voitureDrive + coursesDrive)
 
-    expect(driveTotal).toBe(13.21)
+    expect(driveTotal).toBe(14.34)
 
     const coursesAlt = imageInfographies.magasindouce[0].alt
 
