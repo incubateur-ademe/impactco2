@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl'
 import useParamContext from 'src/providers/ParamProvider'
 import useTrackingContext from 'src/providers/TrackingProvider'
 import useTransportations from 'hooks/useTransportations'
+import Button from 'components/base/buttons/Button'
 import NumberInput from 'components/form/NumberInput'
 import CategorySimulator from './CategorySimulator'
 import TransportComparisonMode from './TransportComparisonMode'
@@ -13,6 +14,8 @@ import styles from './Simulator.module.css'
 const DistanceSimulator = ({ withComparisonMode }: { withComparisonMode: boolean }) => {
   const { trackOnce } = useTrackingContext()
   const {
+    setFaqAnchor,
+    setOverscreen,
     transport: { comparisonMode },
     distance: { km, setKm, displayAll, setDisplayAll },
   } = useParamContext()
@@ -32,7 +35,30 @@ const DistanceSimulator = ({ withComparisonMode }: { withComparisonMode: boolean
           label='Distance parcourue (en km)'
           unit='km'
         />
-        <p>{t('header')}</p>
+        <p>
+          {t.rich('header', {
+            co2e: (chunks) => (
+              <Button
+                asLink
+                onClick={() => {
+                  setFaqAnchor('CO2e')
+                  setOverscreen('transport', 'faq')
+                }}>
+                {chunks}
+              </Button>
+            ),
+            parpersonne: (chunks) => (
+              <Button
+                asLink
+                onClick={() => {
+                  setFaqAnchor('Taux de remplissage')
+                  setOverscreen('transport', 'faq')
+                }}>
+                {chunks}
+              </Button>
+            ),
+          })}
+        </p>
       </div>
       {withComparisonMode && <TransportComparisonMode tracking='Transport distance' />}
       {comparisonMode === 'list' ? (
@@ -44,6 +70,7 @@ const DistanceSimulator = ({ withComparisonMode }: { withComparisonMode: boolean
           moreText='transport'
           withSimulator
           type='distance'
+          withFaq
         />
       ) : (
         <TransportComparisonSimulator tracking='Transport distance' equivalents={equivalents} />

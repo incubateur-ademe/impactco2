@@ -12,7 +12,18 @@
     width: 100%;
   }
 
-  select {
+  input {
     max-width: 100%;
+  }
+}
+
+.searchExemples {
+  margin-top: 0.5rem;
+  color: var(--neutral-60);
+  font-weight: 500;
+
+  button {
+    color: var(--primary-60);
+    font-weight: 700;
   }
 }
