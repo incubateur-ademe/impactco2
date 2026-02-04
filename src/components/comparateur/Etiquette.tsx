@@ -1,6 +1,7 @@
 'use client'
 
-import React, { ForwardedRef, forwardRef, useEffect, useState } from 'react'
+import classNames from 'classnames'
+import { ForwardedRef, forwardRef, useEffect, useState } from 'react'
 import { Language } from 'types/equivalent'
 import ColumnEquivalent from 'components/externalModules/shopify/ColumnEquivalent'
 import EmptyEquivalent from 'components/externalModules/shopify/EmptyEquivalent'
@@ -14,6 +15,7 @@ export default forwardRef(function Etiquette(
     language,
     randomize,
     className,
+    columnClassName,
   }: {
     comparisons: string[]
     baseValue: string | number
@@ -21,6 +23,7 @@ export default forwardRef(function Etiquette(
     language: Language
     randomize?: () => void
     className?: string
+    columnClassName?: string
   },
   ref: ForwardedRef<HTMLDivElement>
 ) {
@@ -42,7 +45,7 @@ export default forwardRef(function Etiquette(
   }, [comparisons, ref, animated])
 
   return (
-    <div ref={ref} className={className}>
+    <div ref={ref} className={classNames(className, { [columnClassName || '']: !inline })}>
       {Number(baseValue) === 0 ? (
         <EmptyEquivalent />
       ) : inline ? (
