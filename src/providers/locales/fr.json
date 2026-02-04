@@ -3,7 +3,26 @@
     "loading": "Chargement en cours...",
     "notFound": "Vous ne trouvez pas de réponse à vos questions ?",
     "contact": "Contactez-nous",
-    "allFAQs": "Toutes les questions"
+    "allFAQs": "Toutes les questions",
+    "search": "Rechercher un sujet, une question...",
+    "exemple": "Par exemple :",
+    "Transport": {
+      "exemple-1": "construction",
+      "exemple-2": "taux de remplissage",
+      "exemple-3": "avion",
+      "exemple-4": "voiture thermique"
+    },
+    "Chauffage": {
+      "exemple-1": "température",
+      "exemple-2": "consommation d’énergie",
+      "exemple-3": "factures",
+      "exemple-4": "chaudière à bois"
+    },
+    "or": "ou",
+    "noResult": "Aucun résultat pour",
+    "clear": "Supprimer la recherche",
+    "noResultExplanation": "Nous sommes désolés, nous n’avons trouvé aucun résultat qui corresponde aux termes de votre recherche.",
+    "noResultAdditionalInfo": "Nous essayons d’apporter des réponses aux questions les plus fréquentes mais il se peut que nous n’ayons pas envisagé tous les cas de figure. Si vous pensez que votre question peut également aider d’autres utilisateurs dans leur démarche, n’hésitez pas à <contact>nous contacter</contact> pour nous en faire part."
   },
   "quiz": {
     "infography": "REVOIR LES ORDRES DE GRANDEURS",
@@ -227,7 +246,7 @@
     "avoided": "évités",
     "itineraire": {
       "roundTrip": "Aller / retour",
-      "header": "Découvrez la quantité de CO₂e que vous émettez pour ce trajet",
+      "header": "Calculer l’impact carbone de votre trajet en <co2e>CO₂e</co2e> et <parpersonne>par personne</parpersonne>",
       "start": "Départ",
       "end": "Arrivée",
       "empty": "À titre d’exemple, la quantité de kg CO2e émise pour un trajet de 100km est de..."
@@ -251,7 +270,7 @@
       "total": "SOIT AUTANT D’ÉMISSIONS QUE..."
     },
     "distance": {
-      "header": "Découvrez la quantité de CO₂e que vous émettez pour cette distance"
+      "header": "Calculer l’impact carbone de votre trajet en <co2e>CO₂e</co2e> et <parpersonne>par personne</parpersonne>"
     },
     "mode-selector": {
       "distance": "Distance",
@@ -281,7 +300,8 @@
       "usage": "Usage",
       "logistique": "Logistique / Livraison",
       "deplacement": "Mon déplacement",
-      "fabrication": "Fabrication"
+      "fabrication": "Fabrication",
+      "faq": "À quoi ça correspond ?"
     },
     "vetement": {
       "display": "Voir tous les vêtements",
@@ -623,8 +643,6 @@
     "agir-livraison": "S’informer pour consommer autrement",
     "epargnonsnosressources": "Évaluer votre besoin réel avant d’acheter",
     "gagner-place": "Gagner de la place chez soi ?",
-    "deplacements": "S’informer pour se déplacer autrement",
-    "vacances": "S’informer pour des vacances plus responsables",
     "alimentation-responsable": "S’informer pour une alimentation plus responsable",
     "gestes": "S’informer sur les gestes du quotidien",
     "mode": "S’informer sur la mode responsable",

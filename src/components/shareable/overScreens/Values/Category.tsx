@@ -3,7 +3,7 @@ import { Category } from 'types/category'
 import { OverScreenInfo } from 'types/overscreen'
 import Resource from 'components/base/Resource'
 import ComparisonOverscreen from 'components/comparateur/overscreens/ComparisonOverscreen'
-import FAQsClient from 'components/faq/FAQsClient'
+import FaqsOverscreen from 'components/faq/FaqsOverscreen'
 import AlimentationIntegrate from '../AlimentationIntegrate'
 import AlimentationData from '../Data/AlimentationData'
 import Integrate from '../Integrate'
@@ -15,7 +15,6 @@ import styles from './Values.module.css'
 
 const FruitsEtLegumesData = dynamic(() => import('../Data/FruitsEtLegumesData'))
 const LivraisonData = dynamic(() => import('../Data/LivraisonData'))
-const TransportData = dynamic(() => import('../Data/TransportData'))
 const UsageNumeriqueData = dynamic(() => import('../Data/UsageNumeriqueData'))
 const NumeriqueData = dynamic(() => import('../Data/NumeriqueData'))
 
@@ -43,7 +42,9 @@ export const overScreenCategoryValues: (category: Category) => Record<string, Ov
       faq: {
         image: '/images/icn-understand.svg',
         title: 'faq',
-        children: <FAQsClient filter={category.name} page={category.name} />,
+        children: <FaqsOverscreen filter={category.name} page={category.name} slug={category.slug} />,
+        hideTitle: true,
+        fullHeight: true,
       },
     }
   }
@@ -136,40 +137,12 @@ export const overScreenCategoryValues: (category: Category) => Record<string, Ov
         title: 'integrate',
         children: <TransportIntegrate />,
       },
-      hypothesis: {
-        image: '/images/icn-next-actions.svg',
-        title: 'next-actions',
-        children: (
-          <div className={styles.ressourceContainer}>
-            <Resource
-              image='/images/ngc.png'
-              text='ngc'
-              href='https://nosgestesclimat.fr/'
-              withLink='Nos Gestes Climat'
-              tracking='Transport'
-              imgSize='4.5rem'
-            />
-            <Resource
-              image='/images/agir.png'
-              text='deplacements'
-              href='https://agirpourlatransition.ademe.fr/particuliers/bureau/deplacements'
-              withLink='Agir pour la transition'
-              tracking='Transport'
-            />
-            <Resource
-              image='/images/agir.png'
-              text='vacances'
-              href='https://agirpourlatransition.ademe.fr/particuliers/conso/vacances'
-              withLink='Agir pour la transition'
-              tracking='Transport'
-            />
-          </div>
-        ),
-      },
-      data: {
+      faq: {
         image: '/images/icn-understand.svg',
-        title: 'understand',
-        children: <TransportData />,
+        title: 'faq',
+        children: <FaqsOverscreen filter={category.name} page={category.name} slug={category.slug} />,
+        fullHeight: true,
+        hideTitle: true,
       },
       comparison0: {
         title: 'comparison',

@@ -42,7 +42,7 @@ export const NotionCommandValidation = z.discriminatedUnion('type', [
 
 export type NotionCommand = z.infer<typeof NotionCommandValidation>
 
-type NotionResult<T> = { id: string; properties: T; last_edited_time: string }
+type NotionResult<T> = { id: string; properties: T; last_edited_time: string; created_time: string }
 export const getAllNotionDB = async <T>(url: string) => {
   if (!process.env.NOTION_API_KEY) {
     return []
