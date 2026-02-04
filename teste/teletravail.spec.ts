@@ -47,7 +47,7 @@ test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
   })
 
   await expect(page.getByTestId('teletravail-generated-value')).toHaveText('7,289')
-  await expect(page.getByTestId('etiquette-value')).toHaveText('1.37 t CO₂e')
+  await expect(page.getByTestId('etiquette-value').first()).toHaveText('1.37 t CO₂e')
 
   await page.getByTestId('text-select-mode').selectOption('tramway')
   await expect(page.getByTestId('teletravail-generated-value')).toHaveText('144')
@@ -57,14 +57,14 @@ test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
   await expect(page.getByTestId('teletravail-generated-value')).toHaveText('71.8')
   await expect(page.getByTestId('teletravail-saved-value')).toHaveText('26.9')
   await expect(page.getByTestId('teletravail-saved-percent')).toHaveText('0.3')
-  await expect(page.getByTestId('etiquette-value')).toHaveText('26.9 kg CO₂e')
+  await expect(page.getByTestId('etiquette-value').first()).toHaveText('26.9 kg CO₂e')
 
   await page.getByTestId('input-teletravail-value').fill('4')
   await expect(page.getByTestId('input-presentiel-value')).toHaveValue('2')
   await expect(page.getByTestId('teletravail-generated-value')).toHaveText('71.8')
   await expect(page.getByTestId('teletravail-saved-value')).toHaveText('108')
   await expect(page.getByTestId('teletravail-saved-percent')).toHaveText('1.18')
-  await expect(page.getByTestId('etiquette-value')).toHaveText('108 kg CO₂e')
+  await expect(page.getByTestId('etiquette-value').first()).toHaveText('108 kg CO₂e')
 
   await page.getByTestId('header-share-button').click()
   await expect(page.getByTestId('clipboard-box')).toHaveText(
@@ -85,7 +85,7 @@ test('Teletravail default values', async ({ page }) => {
   await expect(page.getByTestId('teletravail-generated-value')).toHaveText('71.8', { timeout: 10000 })
   await expect(page.getByTestId('teletravail-saved-value')).toHaveText('108')
   await expect(page.getByTestId('teletravail-saved-percent')).toHaveText('1.18')
-  await expect(page.getByTestId('etiquette-value')).toHaveText('108 kg CO₂e')
+  await expect(page.getByTestId('etiquette-value').first()).toHaveText('108 kg CO₂e')
 })
 
 const getNbOfSuggestions = async (page: Page) => {

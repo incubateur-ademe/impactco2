@@ -1,7 +1,6 @@
 import classNames from 'classnames'
 import { useEffect, useMemo, useState } from 'react'
 import { Language } from 'types/equivalent'
-import { getNumberPrecision } from 'utils/formatNumberPrecision'
 import CO2Quantity from 'components/base/CO2Quantity'
 import EqualIcon from 'components/base/icons/equal'
 import RefreshIcon from 'components/base/icons/refresh'
@@ -40,7 +39,6 @@ const ColumnEquivalent = ({
 
   const intValue = Number(baseValue)
   const preciseValue = Number.isNaN(intValue) ? 100000 : intValue
-  const { unit, value } = getNumberPrecision(preciseValue / 1000)
 
   return (
     <div className={classNames(styles.container, { [styles.withRandomize]: !!randomize })}>
