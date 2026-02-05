@@ -643,6 +643,7 @@
   },
   "alimentation": {
     "title": "Discover <important>the carbon impact for 1 kg of food</important> presented by...",
+    "customTitle": "Discover <important>the carbon impact for 1 kg of food</important>",
     "label": "Select how to group the results",
     "group": "Food groups (meats, fish, dairy products...)",
     "rayon": "Store sections (savory groceries, bakery, deli...)",
