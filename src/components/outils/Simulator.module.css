@@ -38,3 +38,7 @@
     max-width: 12rem;
   }
 }
+
+.withBorder {
+  border-bottom: 2px solid var(--primary-30);
+}

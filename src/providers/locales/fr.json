@@ -643,6 +643,7 @@
   },
   "alimentation": {
     "title": "Découvrir <important>l’impact carbone pour 1 kg d'aliments</important> présentés par...",
+    "customTitle": "Découvrir <important>l’impact carbone pour 1 kg d'aliments</important>",
     "label": "Selectionner comment grouper les résultats",
     "group": "Groupe d'aliments (viandes, poissons, produits laitiers...)",
     "rayon": "Rayons du magasin (épicerie salée, boulangerie, traiteur...)",
