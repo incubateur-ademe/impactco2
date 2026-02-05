@@ -1,5 +1,6 @@
 'use client'
 
+import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
 import { useMemo, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
@@ -25,15 +26,21 @@ const AlimentationSimulator = () => {
   const [openCategories, setOpenCategories] = useState<Record<string, boolean>>({})
 
   return customList ? (
-    <CategorySimulator
-      equivalents={computedEquivalents.filter(
-        (equivalent, index) =>
-          equivalents.includes(equivalent.slug) &&
-          computedEquivalents.findIndex((e) => e.slug === equivalent.slug) === index
-      )}
-      tracking='Alimentation'
-      reverse
-    />
+    <>
+      <div className={classNames(styles.simulator, styles.withBorder)}>
+        <p>{t.rich('customTitle', { important: (chunks) => <b>{chunks}</b> })}</p>
+      </div>
+      <CategorySimulator
+        equivalents={computedEquivalents.filter(
+          (equivalent, index) =>
+            equivalents.includes(equivalent.slug) &&
+            computedEquivalents.findIndex((e) => e.slug === equivalent.slug) === index
+        )}
+        tracking='Alimentation'
+        reverse
+        withSimulator
+      />
+    </>
   ) : (
     <>
       <div className={styles.simulator}>

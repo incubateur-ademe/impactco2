@@ -1,5 +1,6 @@
 'use client'
 
+import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
 import useParamContext from 'src/providers/ParamProvider'
 import useTrackingContext from 'src/providers/TrackingProvider'
@@ -21,7 +22,7 @@ const DistanceSimulator = ({ withComparisonMode }: { withComparisonMode: boolean
 
   return (
     <>
-      <div className={styles.smallInputSimulator}>
+      <div className={classNames(styles.smallInputSimulator, { [styles.withBorder]: !withComparisonMode })}>
         <NumberInput
           id='km-value'
           value={km}
