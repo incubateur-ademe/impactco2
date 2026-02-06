@@ -3,7 +3,17 @@
     "loading": "Cargando...",
     "notFound": "¿No encuentras una respuesta a tus preguntas?",
     "contact": "Contáctanos",
-    "allFAQs": "Todas las preguntas"
+    "allFAQs": "Todas las preguntas",
+    "search": "Buscar un tema, una pregunta...",
+    "exemple": "Por ejemplo:",
+    "exemple-1": "construcción",
+    "exemple-2": "tasa de llenado",
+    "exemple-3": "calefacción",
+    "or": "o",
+    "noResult":  "Ningún resultado para",
+    "clear": "Borrar búsqueda",
+    "noResultExplanation": "Lo sentimos, no hemos encontrado ningún resultado que coincida con los términos de su búsqueda.",
+    "noResultAdditionalInfo": "Intentamos proporcionar respuestas a las preguntas más frecuentes, pero es posible que no hayamos considerado todos los casos posibles. Si cree que su pregunta también puede ayudar a otros usuarios en su proceso, no dude en <contact>contactarnos</contact> para hacérnoslo saber."
   },
   "quiz": {
     "infography": "REVIEW SIZE ORDERS",
@@ -227,7 +237,7 @@
     "avoided": "evitados",
     "itineraire": {
       "roundTrip": "Ida y vuelta",
-      "header": "Descubre la cantidad de CO₂e que emites para este trayecto",
+      "header": "Calcular el impacto de carbono de su viaje en <co2e>CO₂e</co2e> y <parpersonne>por persona</parpersonne>",
       "start": "Salida",
       "end": "Llegada",
       "empty": "Por ejemplo, la cantidad de kg CO2e emitidos en un viaje de 100 km es..."
@@ -251,7 +261,7 @@
       "total": "ES DECIR TANTAS EMISIONES COMO..."
     },
     "distance": {
-      "header": "Descubre la cantidad de CO₂e que emites para esta distancia"
+      "header": "Calcular el impacto de carbono de su viaje en <co2e>CO₂e</co2e> y <parpersonne>por persona</parpersonne>"
     },
     "mode-selector": {
       "distance": "Distancia",
@@ -281,7 +291,8 @@
       "usage": "Uso",
       "logistique": "Logística / Entrega",
       "deplacement": "Mi movimiento",
-      "fabrication": "fabricación"
+      "fabrication": "fabricación",
+      "faq": "¿A qué equivale esto?"
     },
     "vetement": {
       "display": "Ver todas las prendas",
@@ -623,8 +634,6 @@
     "agir-livraison": "Infórmate para consumir de otra manera",
     "epargnonsnosressources": "Evalúa tu necesidad real antes de comprar",
     "gagner-place": "¿Ganar espacio en casa?",
-    "deplacements": "Infórmate para desplazarte de otra manera",
-    "vacances": "Infórmate para unas vacaciones más responsables",
     "alimentation-responsable": "Infórmate para una alimentación más responsable",
     "gestes": "Infórmate sobre los gestos cotidianos",
     "mode": "Infórmate sobre la moda responsable",

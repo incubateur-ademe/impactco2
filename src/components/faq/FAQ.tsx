@@ -9,13 +9,13 @@ import styles from './FAQ.module.css'
 const FAQ = ({
   faq,
   page,
-  small,
   loadingText,
+  withAnchor,
 }: {
-  faq: Pick<FAQType, 'title' | 'content'>
+  faq: Pick<FAQType, 'title' | 'content' | 'ancre'>
   page?: string
-  small?: boolean
   loadingText?: string
+  withAnchor?: boolean
 }) => {
   const [display, setDisplay] = useState(false)
   const [DynamicNotion, setDynamicNotion] = useState<ElementType<DynamicNotionProps> | undefined>(undefined)
@@ -31,8 +31,8 @@ const FAQ = ({
 
   return faq.content ? (
     <Dropdown
+      anchor={withAnchor ? faq.ancre || undefined : undefined}
       className={styles.faq}
-      small={small}
       title={faq.title}
       onClick={(display) => {
         setDisplay(display)

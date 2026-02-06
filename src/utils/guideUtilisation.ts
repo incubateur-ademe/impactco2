@@ -30,7 +30,7 @@ export const getGuideUtilisation = unstable_cache(
         .sort((a, b) => a.properties.Order.number - b.properties.Order.number)
         .map((result) => ({
           title: result.properties.Name.title.map((title) => title.plain_text).join(''),
-          content: contents.find((content) => content.id === result.id)?.content,
+          content: contents.find((content) => content.id === result.id)?.content || undefined,
         }))
     } catch {
       return []

@@ -68,6 +68,8 @@ const getFloat = (query: ReadonlyURLSearchParams, key: string) => {
 }
 
 export type Params = {
+  faqAnchor: string | undefined
+  setFaqAnchor: Dispatch<SetStateAction<string | undefined>>
   hideActions: string
   setHideActions: Dispatch<SetStateAction<string>>
   overscreen: Record<string, string>
@@ -203,6 +205,8 @@ export function ParamProvider({ children }: { children: ReactNode }) {
   const initialTheme = useTheme()
   const [theme, setTheme] = useState(initialTheme.theme)
   const [language, setLanguage] = useState<SiteLanguage>('fr')
+
+  const [faqAnchor, setFaqAnchor] = useState<string | undefined>(undefined)
 
   const [hideActions, setHideActions] = useState('')
 
@@ -533,6 +537,8 @@ export function ParamProvider({ children }: { children: ReactNode }) {
   return (
     <ParamContext.Provider
       value={{
+        faqAnchor,
+        setFaqAnchor,
         hideActions,
         setHideActions,
         overscreen,
