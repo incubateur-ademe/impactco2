@@ -262,3 +262,32 @@
     }
   }
 }
+
+.faqLegend {
+  cursor: pointer;
+  color: var(--neutral-50);
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--neutral-10);
+  &:hover {
+    background-color: var(--neutral-20);
+    color: var(--neutral-60);
+  }
+  @media screen and (max-width: 38rem) {
+    height: 2.25rem;
+    width: 2.25rem;
+  }
+}
+
+.faqLegendTitle {
+  @media screen and (max-width: 38rem) {
+    display: none;
+  }
+}

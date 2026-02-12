@@ -5,6 +5,7 @@ import useParamContext from 'src/providers/ParamProvider'
 import useTrackingContext from 'src/providers/TrackingProvider'
 import useItineraries from 'hooks/useItineraries'
 import useTransportations from 'hooks/useTransportations'
+import Button from 'components/base/buttons/Button'
 import CheckboxInput from 'components/form/CheckboxInput'
 import AddressInput from 'components/form/addresses/AddressInput'
 import CategorySimulator from './CategorySimulator'
@@ -18,6 +19,8 @@ const ItineraireSimulator = ({ withComparisonMode }: { withComparisonMode: boole
   const { trackOnce } = useTrackingContext()
 
   const {
+    setOverscreen,
+    setFaqAnchor,
     transport: { comparisonMode },
     itineraire: { start, setStart, end, setEnd, displayAll, setDisplayAll, roundTrip, setRoundTrip },
   } = useParamContext()
@@ -30,7 +33,30 @@ const ItineraireSimulator = ({ withComparisonMode }: { withComparisonMode: boole
   return (
     <>
       <div className={styles.simulator}>
-        <p>{t('header')}</p>
+        <p>
+          {t.rich('header', {
+            co2e: (chunks) => (
+              <Button
+                asLink
+                onClick={() => {
+                  setFaqAnchor('CO2e')
+                  setOverscreen('transport', 'faq')
+                }}>
+                {chunks}
+              </Button>
+            ),
+            parpersonne: (chunks) => (
+              <Button
+                asLink
+                onClick={() => {
+                  setFaqAnchor('Taux de remplissage')
+                  setOverscreen('transport', 'faq')
+                }}>
+                {chunks}
+              </Button>
+            ),
+          })}
+        </p>
         <div className={styles.addresses}>
           <AddressInput large id='itineraire-start' label={t('start')} place={start?.address} setPlace={setStart} />
           <AddressInput large id='itineraire-end' label={t('end')} place={end?.address} setPlace={setEnd} />
@@ -51,6 +77,7 @@ const ItineraireSimulator = ({ withComparisonMode }: { withComparisonMode: boole
               moreText='transport'
               withSimulator
               type='itineraire'
+              withFaq
             />
           ) : (
             <TransportComparisonSimulator tracking={tracking} equivalents={equivalents} />
