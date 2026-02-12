@@ -1,139 +1,52 @@
 'use client'
-
-import { useMemo, useState } from 'react'
+import { useState } from 'react'
 import { FAQ } from 'types/faq'
-import { track } from 'utils/matomo'
-import Link from 'components/base/buttons/Link'
+import Button from 'components/base/buttons/Button'
+import SearchIcon from 'components/base/icons/search'
 import Card from 'components/cards/Card'
-import ToolCard from 'components/cards/ToolCard'
-import Select from 'components/form/Select'
-import Block from 'components/layout/Block'
+import Input from 'components/form/Input'
 import FAQsList from './FAQsList'
+import useSearchableFAQs from './SearchableFAQs'
 import styles from './AllFAQs.module.css'
 
 const AllFAQs = ({ faqs }: { faqs: FAQ[] }) => {
-  const [search, setSearch] = useState('all')
-  const filteredFaqs = useMemo(
-    () => (search === 'all' ? faqs : faqs.filter((faq) => faq.pages.includes(search))),
-    [search, faqs]
-  )
+  const [search, setSearch] = useState('')
+  const { faqsByCategory } = useSearchableFAQs({ faqs, search })
   return (
     <>
-      <Block
-        as='h1'
-        title='Questions fréquentes'
-        description='Explorer la FAQ pour trouver les réponses à vos questions'>
-        <Card colored className={styles.filter}>
-          <label htmlFor='text-select-search'>
-            <b>Filtrer</b> par sujet ou outil
-          </label>
-          <Select
-            id='search'
-            value={search}
-            onChange={(event) => {
-              track('FAQ', 'Filter', event.target.value)
-              setSearch(event.target.value)
-            }}>
-            <option value='all'>Tous les sujets et outils</option>
-            {faqs
-              .flatMap((faq) => faq.pages)
-              .filter((value, index, array) => array.findIndex((key) => key === value) === index)
-              .filter((value) => value !== 'Accueil' && value !== 'Questions fréquentes')
-              .sort((a, b) => a.localeCompare(b))
-              .map((value) => (
-                <option key={value} value={value}>
-                  {value}
-                </option>
-              ))}
-          </Select>
-        </Card>
-      </Block>
-      <FAQsList
-        faqs={filteredFaqs.filter((faq) => faq.section === 'Questions générales')}
-        title='Questions générales'
-        description='Questions fréquentes à propos du site Impact CO₂'
-      />
-      <FAQsList
-        faqs={filteredFaqs.filter((faq) => faq.section === 'Données')}
-        title='Données'
-        description='Questions fréquentes à propos de nos données'
-      />
-      <FAQsList
-        faqs={filteredFaqs.filter((faq) => faq.section === 'Transports')}
-        title='Transport'
-        description={
-          <>
-            Questions fréquentes à propos de l’outil <Link href='/outils/transport'>Transport</Link>
-          </>
-        }
-      />
-      <FAQsList
-        faqs={filteredFaqs.filter((faq) => faq.section === 'API')}
-        title='API'
-        description={
-          <>
-            Questions fréquentes à propos de l'<Link href='/doc/api'>API</Link>
-          </>
-        }
-      />
-      <FAQsList
-        faqs={filteredFaqs.filter((faq) => faq.section === 'Étiquettes')}
-        title='Étiquettes'
-        description={
-          <>
-            Questions fréquentes à propos des <Link href='/outils/etiquettes'>Étiquettes</Link>
-          </>
-        }
-      />
-      <FAQsList
-        faqs={filteredFaqs.filter((faq) => faq.section === 'Détecteur CO₂')}
-        title='Détecteur CO₂'
-        description={
-          <>
-            Questions fréquentes à propos du <Link href='/outils/detecteur'>Détecteur CO₂</Link>
-          </>
-        }
-      />
-      <FAQsList
-        faqs={filteredFaqs.filter((faq) => faq.section === 'Package NPM')}
-        title='Package NPM'
-        description={
-          <>
-            Questions fréquentes à propos du <Link href='/outils/npm'>package NPM</Link>
-          </>
-        }
-      />
-      <FAQsList
-        faqs={filteredFaqs.filter((faq) => faq.section === 'Alimentation')}
-        title='Alimentation'
-        description={
-          <>
-            Questions fréquentes à propos de l’outil <Link href='/outils/alimentation'>Alimentation</Link>
-          </>
-        }
-      />
-      <FAQsList
-        faqs={filteredFaqs.filter((faq) => faq.section === 'Chauffage')}
-        title='Chauffage'
-        description={
-          <>
-            Questions fréquentes à propos de l’outil <Link href='/outils/chauffage'>Chauffage</Link>
-          </>
-        }
-      />
-      <Block>
-        <ul>
-          <ToolCard
-            slug='faq'
-            horizontal
-            image='/images/doc-faq.svg'
-            title='Une question plus précise ?'
-            description='N’hésitez pas à nous contacter pour obtenir plus d’informations.'
-            linkLabel='Nous contacter'
-            link='/rendez-vous?fromLabel=faq'
-          />
-        </ul>
-      </Block>
+      <Card colored className={styles.filter}>
+        <label htmlFor='faq-search' className='ico2-hidden'>
+          Rechercher un sujet, une question...
+        </label>
+        <Input
+          id='faq-search'
+          value={search}
+          onChange={(event) => setSearch(event.target.value)}
+          placeholder='Rechercher un sujet, une question...'
+          icon={<SearchIcon />}
+        />
+        <p className={styles.searchExemples}>
+          Par exemple :{' '}
+          <Button onClick={() => setSearch('intégrer l’outil')} asLink>
+            intégrer l’outil
+          </Button>
+          ,{' '}
+          <Button onClick={() => setSearch('API')} asLink>
+            API
+          </Button>
+          ,{' '}
+          <Button onClick={() => setSearch('données CO2')} asLink>
+            données CO2
+          </Button>{' '}
+          ou{' '}
+          <Button onClick={() => setSearch('statistiques d’utilisation')} asLink>
+            statistiques d’utilisation
+          </Button>
+        </p>
+      </Card>
+      {faqsByCategory.map(([category, categoryFaqs]) => (
+        <FAQsList key={category} faqs={categoryFaqs} title={category} />
+      ))}
     </>
   )
 }

@@ -3,7 +3,26 @@
     "loading": "Loading...",
     "notFound": "Can't find an answer to your questions?",
     "contact": "Contact us",
-    "allFAQs": "All questions"
+    "allFAQs": "All questions",
+    "search": "Search for a topic, a question...",
+    "exemple": "For example:",
+    "Transport": {
+      "exemple-1": "construction",
+      "exemple-2": "occupancy rate",
+      "exemple-3": "plane",
+      "exemple-4": "combustion engine vehicle"
+    },
+    "Chauffage": {
+      "exemple-1": "temperature",
+      "exemple-2": "energy consumption",
+      "exemple-3": "invoices",
+      "exemple-4": "wood boiler"
+    },
+    "or": "or",
+    "noResult": "No results for",
+    "clear": "Clear search",
+    "noResultExplanation": "Sorry, we didn't find any results matching your search terms.",
+    "noResultAdditionalInfo": "We try to provide answers to the most frequently asked questions, but we may not have considered all possible scenarios. If you think your question could also help other users in their process, please feel free to <contact>contact us</contact> to let us know."
   },
   "quiz": {
     "infography": "REVIEW THE ORDERS OF MAGNITUDE",
@@ -227,7 +246,7 @@
     "avoided": "avoided",
     "itineraire": {
       "roundTrip": "Roundtrip",
-      "header": "See how much CO₂e you emit for this itinerary",
+      "header": "Calculate the carbon impact of your trip in <co2e>CO₂e</co2e> and <parpersonne>per person</parpersonne>",
       "start": "From",
       "end": "To",
       "empty": "For example, the quantity of kg CO2e emitted for a 100km journey is..."
@@ -251,7 +270,7 @@
       "total": "WHICH CORRESPONDS TO.."
     },
     "distance": {
-      "header": "See how much CO₂e you emit for this distance"
+      "header": "Calculate the carbon impact of your trip in <co2e>CO₂e</co2e> and <parpersonne>per person</parpersonne>"
     },
     "mode-selector": {
       "distance": "Distance",
@@ -281,7 +300,8 @@
       "usage": "Usage",
       "logistique": "Logistics / Delivery",
       "deplacement": "My displacement",
-      "fabrication": "Manufacture"
+      "fabrication": "Manufacture",
+      "faq": "What does this correspond to?"
     },
     "vetement": {
       "display": "See every clothes",
@@ -623,8 +643,6 @@
     "agir-livraison": "Learn to consume differently",
     "epargnonsnosressources": "Assess your real need before buying",
     "gagner-place": "Make more space at home?",
-    "deplacements": "Learn to travel differently",
-    "vacances": "Learn about more responsible vacations",
     "alimentation-responsable": "Learn about more responsible food choices",
     "gestes": "Learn about everyday eco-friendly actions",
     "mode": "Learn about responsible fashion",

@@ -37,7 +37,6 @@ const CategoryPage = ({
           filter={category.name}
           tool={category.tool}
         />
-        <Suspense />
         <FAQs filter={category.name} page={category.name} />
       </Suspense>
     </>

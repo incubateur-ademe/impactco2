@@ -16,6 +16,7 @@ import { track } from 'utils/matomo'
 import EquivalentIcon from 'components/base/EquivalentIcon'
 import IframeableLink from 'components/base/IframeableLink'
 import LocalNumber from 'components/base/LocalNumber'
+import HelpIcon from 'components/base/icons/help'
 import HiddenLabel from 'components/form/HiddenLabel'
 import Select from 'components/form/Select'
 import CategoryDisplayAll from './CategoryDisplayAll'
@@ -114,6 +115,7 @@ const CategorySimulator = ({
   type,
   reverse,
   forceLegendDown,
+  withFaq,
 }: {
   id?: string
   tracking: string
@@ -125,6 +127,7 @@ const CategorySimulator = ({
   type?: TransportSimulateur
   reverse?: boolean
   forceLegendDown?: boolean
+  withFaq?: boolean
 }) => {
   const { trackOnce } = useTrackingContext()
   const params = useParamContext()
@@ -301,6 +304,19 @@ const CategorySimulator = ({
               <p>{t(`legend.${legend.label}`)}</p>
             </div>
           ))}
+          {withFaq && (
+            <button
+              onClick={() => {
+                params.setFaqAnchor('A quoi ça correspond')
+                params.setOverscreen('transport', 'faq')
+              }}
+              className={styles.faqLegend}
+              aria-label={t('legend.faq')}
+              title={t('legend.faq')}>
+              <HelpIcon />
+              <p className={styles.faqLegendTitle}>{t('legend.faq')}</p>
+            </button>
+          )}
         </div>
       )}
     </div>

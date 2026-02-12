@@ -15,3 +15,56 @@
   height: 1.25rem;
   background: var(--neutral-20);
 }
+
+.categories {
+  margin-top: 2.5rem;
+}
+
+.category {
+  margin-bottom: 2rem;
+}
+
+.categoryTitle {
+  color: var(--neutral-80);
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.searchExemples {
+  width: 100%;
+  color: var(--neutral-60);
+  font-weight: 500;
+
+  button {
+    color: var(--primary-60);
+    font-weight: 700;
+  }
+}
+
+.noResult {
+  margin: 2.5rem 0 0.75rem 0;
+  color: var(--neutral-80);
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+
+  b {
+    font-weight: 500;
+  }
+
+  em {
+    color: var(--neutral-50);
+    font-weight: 500;
+  }
+}
+
+.noResultExplanation {
+  color: var(--neutral-60);
+}
+
+.noResultAdditionalInfo {
+  color: var(--neutral-50);
+  font-weight: 400;
+}
