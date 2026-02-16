@@ -60,7 +60,7 @@
     "dotenv-cli": "^11.0.0",
     "fuse.js": "^7.1.0",
     "helmet": "^8.1.0",
-    "html-to-image": "^1.11.13",
+    "html-to-image": "1.11.11",
     "markdown-to-jsx": "^9.6.1",
     "next": "^16.1.6",
     "next-intl": "^4.8.1",
