@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Language } from 'types/equivalent'
-import { getNumberPrecision } from 'utils/formatNumberPrecision'
 import CO2Quantity from 'components/base/CO2Quantity'
 import EqualIcon from 'components/base/icons/equal'
 import RefreshIcon from 'components/base/icons/refresh'
@@ -57,7 +56,16 @@ const Equivalent = ({
     <div className={className}>
       <div className={styles.container}>
         <div className={styles.left}>
-          <Logo value={preciseValue} url={url} onClick={() => trackOnce('Logo')} />
+          <Logo
+            value={preciseValue}
+            url={url}
+            onClick={() => trackOnce('Logo')}
+            comparisons={
+              comparisons.length > 2
+                ? comparisons
+                : [comparisons[0] || 'random', comparisons[1] || 'random', comparisons[2] || 'random']
+            }
+          />
           <CO2Quantity
             quantity={preciseValue / 1000}
             className={styles.leftContent}

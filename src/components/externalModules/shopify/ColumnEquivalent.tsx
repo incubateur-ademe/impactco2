@@ -51,7 +51,16 @@ const ColumnEquivalent = ({
           secondary
           language={language}
         />
-        <Logo value={preciseValue} right onClick={() => trackOnce('Logo')} />
+        <Logo
+          value={preciseValue}
+          right
+          onClick={() => trackOnce('Logo')}
+          comparisons={
+            comparisons.length > 2
+              ? comparisons
+              : [comparisons[0] || 'random', comparisons[1] || 'random', comparisons[2] || 'random']
+          }
+        />
       </div>
       <div className={baseStyles.rightColumn}>
         <div className={isAnimated ? baseStyles.animatedEqualColumn : baseStyles.equalColumn}>

@@ -8,6 +8,7 @@ const Logo = ({
   onClick,
   title,
   className,
+  comparisons,
 }: {
   right?: boolean
   url?: string
@@ -15,10 +16,14 @@ const Logo = ({
   onClick?: () => void
   title?: string
   className?: string
+  comparisons?: string[]
 }) => {
   return (
     <a
-      href={url || `https://impactco2.fr/comparateur?value=${(value || 1000) / 1000}`}
+      href={
+        url ||
+        `https://impactco2.fr/comparateur?value=${(value || 1000) / 1000}${comparisons ? `&comparisons=${comparisons.join(',')}` : ''}`
+      }
       onClick={onClick}
       className={classNames(right ? styles.reverseLogo : styles.logo, className)}
       target='_blank'
