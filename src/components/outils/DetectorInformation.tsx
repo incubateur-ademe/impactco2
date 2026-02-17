@@ -47,7 +47,7 @@ const DetectorInformation = () => {
           target='_blank'
           rel='noreferrer noopener'>
           Greenly
-        </Link>
+        </Link>{' '}
         ou encore{' '}
         <Link href='https://www.homeexchange.fr/blog/bilan-carbone-2022/' target='_blank' rel='noreferrer noopener'>
           HomeExchange
