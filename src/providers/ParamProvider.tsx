@@ -383,16 +383,29 @@ export function ParamProvider({ children }: { children: ReactNode }) {
       )
     }
 
+    const value = Number.parseFloat(searchParams.get('value') as string)
     if (searchParams.get('comparisons')) {
-      setEquivalents(
-        (searchParams.get('comparisons') as string)
-          .replace(/ /g, '+')
-          .split(',')
-          .filter((slug) => slug.includes('+') || computedEquivalents.find((equivalent) => equivalent.slug === slug))
-      )
+      const newEquivalents = (searchParams.get('comparisons') as string)
+        .replace(/ /g, '+')
+        .split(',')
+        .filter(
+          (slug) =>
+            slug.includes('+') ||
+            slug === 'random' ||
+            computedEquivalents.find((equivalent) => equivalent.slug === slug)
+        )
+      const randomCount = newEquivalents.filter((slug) => slug === 'random').length
+      const randomEquivalents =
+        randomCount > 0
+          ? getRandomEquivalents(
+              Number.isNaN(value) ? 100 : value,
+              searchParams.get('equivalent') as string,
+              randomCount
+            )
+          : []
+      let randomIndex = 0
+      setEquivalents(newEquivalents.map((slug) => (slug === 'random' ? randomEquivalents[randomIndex++] : slug)))
     } else {
-      const value = Number.parseFloat(searchParams.get('value') as string)
-
       setEquivalents(
         getRandomEquivalents(Number.isNaN(value) ? 100 : value, searchParams.get('equivalent') as string, 3)
       )
