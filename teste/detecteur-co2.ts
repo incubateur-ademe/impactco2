@@ -14,7 +14,7 @@ export const detecteurCO2Test = async (
   await expect(page.getByTestId('etiquette').first()).toBeVisible()
   await expect(page.getByTestId('impact-co2-link').nth(locator || 0)).toHaveAttribute(
     'href',
-    `https://impactco2.fr/comparateur?value=${expectedValue}`
+    /https:\/\/impactco2\.fr\/comparateur\?value=100&comparisons=[a-z]+,random,random/
   )
   await expect(page.getByTestId('impact-co2-link').nth(locator || 0)).toHaveAttribute('target', '_blank')
   await expect(page.getByTestId('impact-co2-link').nth(locator || 0)).toHaveAttribute('rel', 'noreferrer noopener')

@@ -399,7 +399,11 @@ const Detector = ({
           [styles.left]: display.includes('left'),
         })}
         ref={etiquetteRef}>
-        <Logo value={value} onClick={() => track('Detecteur carbone', 'Logo', 'logo')} />
+        <Logo
+          value={value}
+          onClick={() => track('Detecteur carbone', 'Logo', 'logo')}
+          comparisons={[startingEquivalents[count] || equivalent || 'random', 'random', 'random']}
+        />
         <div className={styles.simpleValue}>
           <SimpleValue
             language={language}
