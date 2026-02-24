@@ -1,7 +1,7 @@
 'use client'
 
 import classNames from 'classnames'
-import React, {
+import {
   ForwardedRef,
   InputHTMLAttributes,
   ReactNode,
@@ -78,7 +78,9 @@ const Input = (
       const onResize = () => {
         if (unitRef.current) {
           const dim = unitRef.current.getBoundingClientRect()
-          setUnitDim({ width: dim.width, height: dim.height })
+          if (dim.width > 0 && dim.height > 0) {
+            setUnitDim({ width: dim.width, height: dim.height })
+          }
         }
       }
       window.addEventListener('resize', onResize)
