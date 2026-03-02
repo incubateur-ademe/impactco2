@@ -74,7 +74,7 @@ test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
 
   await page.getByTestId('header-integrate-button').click()
   await expect(page.getByTestId('clipboard-box')).toHaveText(
-    '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="teletravail" data-search="?teletravailStart=Nantes 44000 France&teletravailEnd=Angers 49000 France&transport=tramway&presentiel=2&homeOffice=4&language=fr&theme=default"></script>'
+    '<script data-name="impact-co2" src="http://localhost:3000/iframe.js" data-type="teletravail" data-search="?teletravailStart=Nantes 44000 France&teletravailEnd=Angers 49000 France&transport=tramway&presentiel=2&homeOffice=4&language=fr&theme=default"></script>'
   )
 })
 

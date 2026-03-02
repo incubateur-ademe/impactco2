@@ -147,6 +147,6 @@ test('Test quiz share', async ({ page }) => {
   await page.getByTestId('header-integrate-button').click()
 
   await expect(page.getByTestId('clipboard-box')).toHaveText(
-    '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="quiz" data-search="?&language=fr&theme=default"></script>'
+    '<script data-name="impact-co2" src="http://localhost:3000/iframe.js" data-type="quiz" data-search="?&language=fr&theme=default"></script>'
   )
 })
