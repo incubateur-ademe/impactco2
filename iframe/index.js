@@ -64,7 +64,8 @@ if (buttonOnly) {
 } else if (script) {
   setupIframe(script)
 } else {
-  const elements = document.getElementsByName('impact-co2')
+  let elements = [...document.querySelectorAll('[data-name="impact-co2"]'), ...document.getElementsByName('impact-co2')]
+
   if (elements) {
     elements.forEach((element) => {
       if (!element['loaded']) {

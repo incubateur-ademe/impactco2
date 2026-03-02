@@ -148,11 +148,11 @@ test('Roundtrip', async ({ page }) => {
   await page.getByTestId('cancel-button').click()
   await page.getByTestId('header-integrate-button').click()
   await expect(page.getByTestId('clipboard-box')).toHaveText(
-    '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport/itineraire" data-search="?theme=default&language=fr&km=10&itineraireStart=Nantes 44000 France&itineraireEnd=Angers France&defaultMode=list&roundTrip=true"></script>'
+    '<script data-name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport/itineraire" data-search="?theme=default&language=fr&km=10&itineraireStart=Nantes 44000 France&itineraireEnd=Angers France&defaultMode=list&roundTrip=true"></script>'
   )
   await page.getByTestId('custom-param-roundTrip-checkbox').click()
   await expect(page.getByTestId('clipboard-box')).toHaveText(
-    '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport/itineraire" data-search="?theme=default&language=fr&km=10&itineraireStart=Nantes 44000 France&itineraireEnd=Angers France&defaultMode=list"></script>'
+    '<script data-name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport/itineraire" data-search="?theme=default&language=fr&km=10&itineraireStart=Nantes 44000 France&itineraireEnd=Angers France&defaultMode=list"></script>'
   )
   await page.getByTestId('cancel-button').click()
   await expect(page.getByTestId('category-intercites')).toHaveText(
