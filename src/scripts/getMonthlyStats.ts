@@ -22,6 +22,13 @@ const internalPages: Record<string, string> = {
 }
 
 const iframeToSimulateur: Record<string, string> = {
+  '/iframes/transport/itinerai': '',
+  '/iframes/transport/itiner': '',
+  '/iframes/transport/itin': '',
+  '/iframes/transport/i': '',
+  '/iframes/tra': '',
+  '/iframes/chauffage/chauffagegaz': 'Chauffage au gaz',
+  '/iframes/livraison/etiquette%20data-search=': 'Livraison étiquette',
   '/iframes/caspratiques/maisonneuve': 'Maison neuve',
   '/iframes/%C2%ABtransport%C2%BB%C2%AB': 'Transport',
   '/iframes/%E2%80%9Etransport%E2%80%9C%E2%80%9E': 'Transport',
@@ -193,9 +200,12 @@ const getStatsForMonth = async (month: string) => {
       }
 
       const simulateur = iframeToSimulateur[event.Events_EventName.split('?')[0]]
-      if (!simulateur) {
+      if (simulateur === undefined) {
         console.log(`Simulateur non mappé pour l'iframe : ${event.Events_EventName.split('?')[0]}`)
         return
+      }
+      if (simulateur === '') {
+        continue
       }
       if (!rows[site][simulateur]) {
         rows[site][simulateur] = { visit: 0, engagement: 0 }
