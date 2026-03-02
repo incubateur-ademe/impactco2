@@ -148,7 +148,7 @@ Les utilisateurs qui veulent cette iframe dans leur projet n'ont plus qu'à copi
 
 ```html
 <script
-  name="impact-co2"
+  data-name="impact-co2"
   src="https://impactco2.fr/iframe.js"
   data-type="livraison"
   data-search="?theme=default"></script>

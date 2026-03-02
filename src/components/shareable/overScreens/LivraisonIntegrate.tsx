@@ -88,7 +88,7 @@ const LivraisonIntegrate = () => {
       </form>
       <ClipboardBox
         form='livraison-integrate'
-        tracking='Livraison'>{`<script name="impact-co2" src="${process.env.NEXT_PUBLIC_URL}/iframe.js" data-type="/livraison" data-search="?${search}"></script>`}</ClipboardBox>
+        tracking='Livraison'>{`<script data-name="impact-co2" src="${process.env.NEXT_PUBLIC_URL}/iframe.js" data-type="/livraison" data-search="?${search}"></script>`}</ClipboardBox>
       <IntegratePreview path='livraison' urlParams={search} />
     </>
   )

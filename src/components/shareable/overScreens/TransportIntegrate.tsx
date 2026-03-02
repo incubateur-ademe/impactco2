@@ -258,7 +258,7 @@ const TransportIntegrate = () => {
         form='transport-integrate'
         tracking={
           tracking
-        }>{`<script name="impact-co2" src="${process.env.NEXT_PUBLIC_URL}/iframe.js" data-type="${type}" data-search="?${search}"></script>`}</ClipboardBox>
+        }>{`<script data-name="impact-co2" src="${process.env.NEXT_PUBLIC_URL}/iframe.js" data-type="${type}" data-search="?${search}"></script>`}</ClipboardBox>
       <IntegratePreview path={type} urlParams={search} />
     </>
   )

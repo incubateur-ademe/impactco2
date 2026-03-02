@@ -36,15 +36,15 @@ test('Livraison simulator', async ({ page }) => {
 
   await page.getByTestId('header-integrate-button').first().click()
   await expect(page.getByTestId('clipboard-box')).toHaveText(
-    '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="/livraison" data-search="?&withFabrication=true&theme=default&language=fr"></script>'
+    '<script data-name="impact-co2" src="http://localhost:3000/iframe.js" data-type="/livraison" data-search="?&withFabrication=true&theme=default&language=fr"></script>'
   )
   await page.getByTestId('custom-param-withFabrication-checkbox').click()
   await expect(page.getByTestId('clipboard-box')).toHaveText(
-    '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="/livraison" data-search="?&theme=default&language=fr"></script>'
+    '<script data-name="impact-co2" src="http://localhost:3000/iframe.js" data-type="/livraison" data-search="?&theme=default&language=fr"></script>'
   )
   await page.getByLabel('Intégrer').getByText('Courses alimentaires').click()
   await expect(page.getByTestId('clipboard-box')).toHaveText(
-    '<script name="impact-co2" src="http://localhost:3000/iframe.js" data-type="/livraison" data-search="?&theme=default&language=fr&types=chaussure,livre,microondes,vetements,lavelinge,lit,smartphone,vin,cafetiere"></script>'
+    '<script data-name="impact-co2" src="http://localhost:3000/iframe.js" data-type="/livraison" data-search="?&theme=default&language=fr&types=chaussure,livre,microondes,vetements,lavelinge,lit,smartphone,vin,cafetiere"></script>'
   )
   await page.getByLabel('Intégrer').getByText('Paire de chaussures').click()
   await page.getByLabel('Intégrer').getByText('Micro-ondes').click()
