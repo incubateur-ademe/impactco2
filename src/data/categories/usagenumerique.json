@@ -32,8 +32,7 @@
     "meta": {
       "title": "",
       "description": ""
-    },
-    "source": "https://negaoctet.org/"
+    }
   },
   {
     "name": "Spam",
@@ -60,8 +59,7 @@
     "meta": {
       "title": "",
       "description": ""
-    },
-    "source": "https://negaoctet.org/"
+    }
   },
   {
     "name": "Stocker un Go de donnée",
@@ -84,8 +82,7 @@
     "meta": {
       "title": "",
       "description": ""
-    },
-    "source": "https://negaoctet.org/"
+    }
   },
   {
     "name": "Recherche[s] sur le web",
@@ -119,8 +116,7 @@
     "meta": {
       "title": "",
       "description": ""
-    },
-    "source": "https://negaoctet.org/"
+    }
   },
   {
     "name": "Streaming vidéo",
@@ -156,8 +152,7 @@
     "meta": {
       "title": "",
       "description": ""
-    },
-    "source": "https://negaoctet.org/"
+    }
   },
   {
     "name": "Visioconférence",
@@ -192,8 +187,7 @@
     "meta": {
       "title": "",
       "description": ""
-    },
-    "source": "https://negaoctet.org/"
+    }
   },
   {
     "name": "Go de donnée",
@@ -218,7 +212,6 @@
     "meta": {
       "title": "",
       "description": ""
-    },
-    "source": "https://negaoctet.org/"
+    }
   }
 ]
