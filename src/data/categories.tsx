@@ -31,10 +31,6 @@ export const categories: Category[] = [
     slug: 'usagenumerique',
     sources: [
       {
-        label: 'Étude NégaOctet - 2022',
-        href: 'https://base-empreinte.ademe.fr/documentation/base-impact?state=aWZCflVtbFNGbzBuREZJYVF5SmNVQUhtQThOQlhQQjBYcnRtZFVUWm96XzBl&session_state=7a05d0ef-f903-4d12-8c46-6d0b8301d7c5&code=b72ffd5d-c06a-4c52-bd55-e553b8ca6eb4.7a05d0ef-f903-4d12-8c46-6d0b8301d7c5.e8e7e1ec-ca0a-42ac-bf39-2abdf82b7fb2',
-      },
-      {
         label: 'Base Empreinte ADEME',
         href: 'https://base-empreinte.ademe.fr/donnees/jeu-donnees',
       },

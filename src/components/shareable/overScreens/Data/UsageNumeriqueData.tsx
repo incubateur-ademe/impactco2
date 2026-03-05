@@ -7,10 +7,7 @@ const FRUsageNumeriqueData = () => {
   return (
     <>
       <div className={styles.content}>
-        <p>
-          L'ensemble des calculs est issu d'une{' '}
-          <Link href='https://base-empreinte.ademe.fr/documentation/base-impact'>étude réalisée par NégaOctet</Link>
-        </p>
+        <p>L'ensemble des calculs est issu d'une étude réalisée par NégaOctet</p>
       </div>
       <h2 className={styles.title}>Hypothèses pour l’email</h2>
       <p className={styles.content}>
@@ -50,10 +47,7 @@ const ESUsageNumeriqueData = () => {
   return (
     <>
       <div className={styles.content}>
-        <p>
-          Todos los cálculos se basan en un{' '}
-          <Link href='https://base-empreinte.ademe.fr/documentation/base-impact'>estudio realizado por NegaOctet</Link>
-        </p>
+        <p>Todos los cálculos se basan en un estudio realizado por NegaOctet</p>
       </div>
       <h2 className={styles.title}>Supuestos para el correo electrónico</h2>
       <p className={styles.content}>
@@ -93,10 +87,7 @@ const ENUsageNumeriqueData = () => {
   return (
     <>
       <div className={styles.content}>
-        <p>
-          All calculations come from a{' '}
-          <Link href='https://base-empreinte.ademe.fr/documentation/base-impact'>study carried out by NégaOctet</Link>
-        </p>
+        <p>All calculations come from a study carried out by NégaOctet</p>
       </div>
       <h2 className={styles.title}>Assumptions for email</h2>
       <p className={styles.content}>
