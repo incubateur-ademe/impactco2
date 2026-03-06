@@ -11,7 +11,7 @@ export const checks = [
     url: 'https://www.operadeparis.fr/infos-pratiques/preparer-votre-venue/palais-garnier',
     scroll: true,
     before: async (page: Page) => {
-      await page.getByLabel('Accepter et fermer').click()
+      await page.getByLabel('Accepter les cookies').click()
       await page.getByRole('button', { name: "Calculez l'empreinte carbone" }).click()
     },
     checkIframe: async (iframe: FrameLocator) => {
