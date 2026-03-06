@@ -1,5 +1,6 @@
 import { FrameLocator, Page } from '@playwright/test'
 import { expect } from '@playwright/test'
+import { distanceTest } from 'teste/distance'
 import { comparateurTest } from '../../teste/comparateur'
 import { detecteurCO2Test } from '../../teste/detecteur-co2'
 import { itineraireTest } from '../../teste/itineraire'
@@ -133,9 +134,6 @@ export const checks = [
   {
     slug: 'gaite-lyrique',
     url: 'https://www.gaite-lyrique.net/infos-pratiques#acces',
-    before: async (page: Page) => {
-      await page.getByRole('button', { name: 'TOUT ACCEPTER' }).click()
-    },
 
     checkIframe: async (iframe: FrameLocator) => {
       await expect(iframe.getByLabel('Arrivée')).toHaveAttribute(
@@ -144,7 +142,7 @@ export const checks = [
         { timeout: 10000 }
       )
       await iframe.getByLabel('Arrivée').clear({ force: true })
-      await itineraireTest(iframe, true)
+      await distanceTest(iframe, true)
     },
   },
   {
