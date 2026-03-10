@@ -22,6 +22,7 @@ checks.forEach(({ slug, before, url, check, checkIframe, scroll, iframeContent }
     await mockRoutesItinerary(page)
 
     await page.goto(url)
+    await page.waitForLoadState('networkidle', { timeout: 60000 })
 
     if (before) {
       await before(page)
