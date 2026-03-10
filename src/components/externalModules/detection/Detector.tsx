@@ -16,11 +16,11 @@ const writtenNumbersEn =
 
 export const regexs = {
   fr: new RegExp(
-    `((?:[0-9]+(?:[,.\\s|&nbsp;][0-9]+)*)|(?:${writtenNumbersFr})(?:(?:-| |&nbsp;)+(?:${writtenNumbersFr}))*)(?:\\s|&nbsp;)*(milliers?|milles?|millions?|milliards?|gigas?|mégas?|megas?)?(?:\\s|&nbsp;)*(?:de(?:\\s|&nbsp;)*)?(gigatonnes?|gigatons?|kgs?|kilos?|kilo(?:&shy;|­)?grammes?|tonnes?|(?:\\(\\s*)?[mMgG]t(?:\\s*\\))?|[gt])(?:\\s|&nbsp;)*(?:\\(\\s*[mMgG]t\\s*\\))?(?:\\s|&nbsp;)*(?:d'émissions(?:\\s|&nbsp;)*)?(?:de(?:\\s|&nbsp;)*)?(?:d['']équivalent(?:\\s|&nbsp;)*)?(eq|équivalent|éq)?(?:\\s|&nbsp;)*(c(?:o|0)(?:2|₂|<sub>2(?:\\s|&nbsp;)*<\\/sub>)|dioxyde de carbone)(?:eq|(?:(?:\\s|&nbsp;)*équivalent)|e)?`,
+    `((?:[0-9]+(?:(?:[,.\\s]|&nbsp;)[0-9]+)*)|(?:${writtenNumbersFr})(?:(?:-| |&nbsp;)+(?:${writtenNumbersFr}))*)(?:\\s|&nbsp;)*(milliers?|milles?|millions?|milliards?|gigas?|mégas?|megas?)?(?:\\s|&nbsp;)*(?:de(?:\\s|&nbsp;)*)?(gigatonnes?|gigatons?|kgs?|kilos?|kilo(?:&shy;|­)?grammes?|tonnes?|(?:\\(\\s*)?[mMgG]t(?:\\s*\\))?|[gt])(?:\\s|&nbsp;)*(?:\\(\\s*[mMgG]t\\s*\\))?(?:\\s|&nbsp;)*(?:d'émissions(?:\\s|&nbsp;)*)?(?:de(?:\\s|&nbsp;)*)?(?:d['']équivalent(?:\\s|&nbsp;)*)?(eq|équivalent|éq)?(?:\\s|&nbsp;)*(c(?:o|0)(?:2|₂|<sub>2(?:\\s|&nbsp;)*<\\/sub>)|dioxyde de carbone)(?:eq|(?:(?:\\s|&nbsp;)*équivalent)|e)?`,
     'i'
   ),
   en: new RegExp(
-    `((?:[0-9]+(?:[,.\\s|&nbsp;][0-9]+)*)|(?:${writtenNumbersEn})(?:(?:-| |&nbsp;)+(?:${writtenNumbersEn}))*)(?:\\s|&nbsp;)*(thousands?|millions?|billions?|gigas?|megas?)?(?:\\s|&nbsp;)*(?:of(?:\\s|&nbsp;)*)?(gigatonnes?|gigatons?|kgs?|kilos?|kilo(?:&shy;|­)?grams?|tonnes?|tons?|(?:\\(\\s*)?[mMgG]t(?:\\s*\\))?|[gt])(?:\\s|&nbsp;)*(?:\\(\\s*[mMgG]t\\s*\\))?(?:\\s|&nbsp;)*(?:of(?:\\s|&nbsp;)*)?(?:emissions(?:\\s|&nbsp;)*)?(?:of(?:\\s|&nbsp;)*)?(equivalent|eq)?(?:\\s|&nbsp;)*(c(?:o|0)(?:2|₂|<sub>2(?:\\s|&nbsp;)*<\\/sub>)|carbon (?:di)?oxide)(?:eq|(?:(?:\\s|&nbsp;)*equivalent)|e)?`,
+    `((?:[0-9]+(?:(?:[,.\\s]|&nbsp;)[0-9]+)*)|(?:${writtenNumbersEn})(?:(?:-| |&nbsp;)+(?:${writtenNumbersEn}))*)(?:\\s|&nbsp;)*(thousands?|millions?|billions?|gigas?|megas?)?(?:\\s|&nbsp;)*(?:of(?:\\s|&nbsp;)*)?(gigatonnes?|gigatons?|kgs?|kilos?|kilo(?:&shy;|­)?grams?|tonnes?|tons?|(?:\\(\\s*)?[mMgG]t(?:\\s*\\))?|[gt])(?:\\s|&nbsp;)*(?:\\(\\s*[mMgG]t\\s*\\))?(?:\\s|&nbsp;)*(?:of(?:\\s|&nbsp;)*)?(?:emissions(?:\\s|&nbsp;)*)?(?:of(?:\\s|&nbsp;)*)?(equivalent|eq)?(?:\\s|&nbsp;)*(c(?:o|0)(?:2|₂|<sub>2(?:\\s|&nbsp;)*<\\/sub>)|carbon (?:di)?oxide)(?:eq|(?:(?:\\s|&nbsp;)*equivalent)|e)?`,
     'i'
   ),
 }

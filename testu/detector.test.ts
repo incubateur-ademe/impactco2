@@ -18,6 +18,7 @@ const frenchDetections = [
   { text: '7 mille de kg CO₂', value: 7_000_000 },
   { text: '21 gigatonnes de CO2 eq', value: 21_000_000_000_000_000 },
   { text: '15&nbsp;kg co₂e', value: 15_000 },
+  { text: '233&nbsp;000 tonnes de C02', value: 233000000000 },
   { text: '4t C02', value: 4_000_000 },
   { text: '1 tonne eq C02', value: 1_000_000 },
   {
