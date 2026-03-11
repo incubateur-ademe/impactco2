@@ -145,11 +145,10 @@ export const start = (darkMode?: boolean, language?: 'fr' | 'en', category?: Ran
               child.nodeName === 'SUB' ||
               child.nodeName === 'SUP' ||
               child.nodeName === 'STRONG'
-          )
+          ) &&
+          !elem.querySelector('[impactCO2="managed"]')
         ) {
-          if (!elem.querySelector('[impactCO2="managed"]')) {
-            transform(elem, language || 'fr', category || 'all', equivalents, darkMode)
-          }
+          transform(elem, language || 'fr', category || 'all', equivalents, darkMode)
         } else {
           ;[...elem.children].forEach((child) => {
             transform(child, language || 'fr', category || 'all', equivalents, darkMode)
