@@ -29,9 +29,9 @@
     "hideAll": "Replier la liste des ordres de grandeur",
     "displayAll": "Afficher tous les ordres de grandeur",
     "question": "Question",
-    "previous": "Prec.",
+    "previous": "Préc.",
     "title": "D’après vous, qu’est-ce qui a <important>le moins</important> d’impact sur le climat ?",
-    "tag": "Choisissez votre réponse ci dessous :",
+    "tag": "Choisissez votre réponse ci-dessous :",
     "ou": "ou",
     "correct": "<important>Bien joué !</important> C’est exactement ça !",
     "missed": "<important>Raté...</important> C’était la réponse",
@@ -59,39 +59,39 @@
       "line-1": "Les appareils électroménagers ont aussi un fort impact sur le climat. Tout comme les appareils numériques, l’étape de fabrication est celle qui pèse le plus lourd dans leur bilan carbone."
     },
     "eau-the": {
-      "line-1": "Boire un litre d’eau en bouteille a <important>6x plus d’impacts</important> que boire un litre de thé. Pourquoi ? Car la fabrication de l’emballage plastique de la bouteille et de sa distribution dans les différents points de ventes viennent fortement alourdir l’empreinte carbone."
+      "line-1": "Boire un litre d’eau en bouteille a <important>6x plus d’impacts</important> que boire un litre de thé. Pourquoi ? Car la fabrication de l’emballage plastique de la bouteille et sa distribution dans les différents points de vente viennent fortement alourdir l’empreinte carbone."
     },
     "friends-voiture": {
       "line-1": "Regarder les 236 épisodes de Friends en streaming a <important>50 fois moins d’impact sur l’environnement</important> qu’un déplacement de presque 1000 km en voiture thermique.",
-      "line-2": "En effet, aujourd’hui le secteur du transport représente 30% des émission de gaz à effet de serre en France, alors que le secteur du numérique seulement 2,5%."
+      "line-2": "En effet, aujourd’hui le secteur du transport représente 30% des émissions de gaz à effet de serre en France, alors que le secteur du numérique seulement 2,5%."
     },
     "manteau-bouilloire": {
       "line-1": "La fabrication de nos vêtements a de nombreux impacts sur l’environnement : émissions de gaz à effet de serre, pollution des sols, de l’air et de l’eau. Le problème : nous achetons beaucoup de vêtements et nous ne les gardons pas toujours très longtemps.",
       "line-2": "Alors pour réduire notre impact sur le climat, n’achetons que ce dont nous avons besoin et faisons durer le plus longtemps possible nos vêtements."
     },
     "television-pny": {
-      "line-1": "Les déplacements en avion, court moyen et long courrier, émettent une quantité très importante de CO2.",
+      "line-1": "Les déplacements en avion, court, moyen et long-courriers, émettent une quantité très importante de CO2.",
       "line-2": "L’empreinte carbone annuelle d’une personne vivant en France est environ de 9 tonnes de CO2 par an, et un aller-retour Paris/New York émet près de 2 tonnes de CO2, <important>soit presque 20% de cette empreinte.</important>"
     },
     "email-smartphone": {
-      "line-1": "Même si nous envoyons beaucoup d’e-mails, leurs impacts sur le climat est bien moins important que ceux générés par la fabrication et, dans une moindre mesure, l’utilisation d’un smartphone.",
+      "line-1": "Même si nous envoyons beaucoup d’e-mails, leur impact sur le climat est bien moins important que celui généré par la fabrication et, dans une moindre mesure, l’utilisation d’un smartphone.",
       "line-2": "Pour baisser les impacts du numérique, gardons nos smartphones le plus longtemps possible."
     },
     "velo-mangue": {
-      "line-1": "Utiliser un vélo électrique pour se déplacer a beaucoup moins d’impacts sur le climat que d’autres modes de transports qui utilisent des combustibles fossiles, même si on prend en compte la fabrication du vélo et de la batterie.",
+      "line-1": "Utiliser un vélo électrique pour se déplacer a beaucoup moins d’impacts sur le climat que d’autres modes de transport qui utilisent des combustibles fossiles, même si on prend en compte la fabrication du vélo et de la batterie.",
       "line-2": "Le bilan carbone de la mangue a, comme tous les fruits exotiques, un bilan carbone alourdi par son transport. Les impacts de la mangue, souvent importée par avion, sont encore plus importants que d’autres fruits exotiques qui voyagent par bateau."
     }
   },
   "clipboard": {
     "copier": "Copier",
     "copie": "Copié",
-    "copied": "Copie du code effectué",
+    "copied": "Copie du code effectuée",
     "information-1": "Cette balise HTML vous permet d'afficher le simulateur à l'intérieur d'une page de votre site internet.",
     "information-2": "Le module sera automatiquement mis à jour avec les dernières nouveautés."
   },
   "overscreen": {
     "equivalent": "Ajouter de nouveaux équivalents",
-    "disclaimer": "Résultats basés sur les données des bases carbonne Françaises de ",
+    "disclaimer": "Résultats basés sur les données des bases carbone françaises de ",
     "default-true": "Affiché par défaut",
     "default-false": "Afficher par défaut",
     "usage": "Usage",
@@ -109,7 +109,7 @@
     "livraisonKitDescription": "Afin de vous faciliter la tâche, nous avons concocté des visuels prêts à l’emploi pour communiquer autour d’Impact Livraison.",
     "extraKitLink": "Télécharger",
     "integrate": "Intégrer",
-    "preview": "Aperçu de l'integration",
+    "preview": "Aperçu de l'intégration",
     "next-actions": "Aller plus loin",
     "comparison": "Changer le mode de transport comparé",
     "understand": "Comprendre les données",
@@ -201,10 +201,10 @@
       "title": "Moyen de transport",
       "search": "Rechercher un mode de transport",
       "back": "Revenir au simulateur",
-      "mode-share": "Modes d’affichages à partager",
-      "mode-integrate": "Modes d’affichages à intégrer",
+      "mode-share": "Modes d’affichage à partager",
+      "mode-integrate": "Modes d’affichage à intégrer",
       "comparison": "Comparaison affichée par défaut",
-      "modes": "Modes de transports à intégrer",
+      "modes": "Modes de transport à intégrer",
       "modes-hint": "Il n’est pas possible d’intégrer moins de 2 modes de transport dans le simulateur.",
       "onglet": "Onglet à partager",
       "onglet-hint": "Sélectionnez l’onglet que vous souhaitez voir affiché lors du partage",
@@ -266,7 +266,7 @@
       "home": "en télétravaillant",
       "work": "en vous déplaçant",
       "or": "SOIT",
-      "economised": "d'économisé sur votre empreinte carbone annuelle",
+      "economised": "d'économies sur votre empreinte carbone annuelle",
       "total": "SOIT AUTANT D’ÉMISSIONS QUE..."
     },
     "distance": {
@@ -285,7 +285,7 @@
     "title": "Découvrez la quantité de CO₂e que vous émettez chaque année pour chauffer cette surface"
   },
   "flds": {
-    "label": "Découvres les fruits et légumes du mois de",
+    "label": "Découvrez les fruits et légumes du mois de",
     "title": "Découvrez l’impact carbone des fruits et légumes de saison pour ce mois"
   },
   "category-simulator": {
@@ -340,7 +340,7 @@
       "compare": "Comparer avec cette catégorie seulement",
       "compare-button": "Voir la comparaison",
       "max": "équivalents déjà sélectionnés",
-      "equivalents-group": "Équivalents de la categorie"
+      "equivalents-group": "Équivalents de la catégorie"
     }
   },
   "livraison": {
@@ -445,7 +445,7 @@
         "ski": "Valeur moyenne. Étude réalisée pour une journée de ski à La Clusaz, le Grand Bornand et Tignes.",
         "piscine": "Dimension moyenne d’une piscine d’un particulier 8 x 4m avec une profondeur allant d'1,50 mètre à 2,10 mètres.",
         "terre-voiture": "Distance totale parcourue : 40 000 km",
-        "harry-potter": "L’ensemble des films d’Harry Potter durent en moyenne 1176 minutes = 19,6 heures. La donnée est calculé sur une heure de streaming en haute définition, sur une télévision, en connexion wifi.",
+        "harry-potter": "L’ensemble des films d’Harry Potter dure en moyenne 1176 minutes = 19,6 heures. La donnée est calculée sur une heure de streaming en haute définition, sur une télévision, en connexion Wi-Fi.",
         "avion-courtcourrier": "Taux de remplissage moyen 101-220 passagers",
         "avion-moyencourrier": "Taux de remplissage moyen 101-220 passagers",
         "avion-moyenlongcourrier": "Taux de remplissage moyen 101-220 passagers",
@@ -476,7 +476,7 @@
         "ble": "Moyenne des facteurs d’émission des différents blés : Blé dur entier, blé précuit, semoule de blé, blé tendre.",
         "hotel": "Sont inclus les émissions liées à la consommation d’énergie (chauffage, électricité, climatisation, eau chaude), aux services d’entretien (nettoyage, blanchisserie), aux infrastructures (construction, maintenance), au déplacement domicile-travail du personnel.",
         "camping": "Sont inclus la construction et la consommation énergétique des infrastructures (les douches, sanitaires et l’éclairage).",
-        "location": "Sont inclus les émissions liées à la consommation énergétique (chauffage, électricité, eau chaude), aux infrastructures (construction) et au services d’entretien.",
+        "location": "Sont incluses les émissions liées à la consommation énergétique (chauffage, électricité, eau chaude), aux infrastructures (construction) et aux services d’entretien.",
         "residencesecondaire": "Sont inclus les émissions liées à la consommation énergétique (chauffage, électricité, eau chaude), aux infrastructures (construction) et services d’entretien.",
         "2050": "Un Français émet en moyenne près de 9,3 tonnes de CO2 par an. Pour limiter le dérèglement climatique, il est essentiel de réduire ces émissions et d'atteindre un objectif maximum de 2 tonnes de CO2e par personne par an d'ici 2050.",
         "magasin": "Pour un colis d'un kilo et un déplacement en voiture.",
@@ -514,17 +514,17 @@
         "chauffageenfrance": "Moyenne des émissions annuelles liées au chauffage, eau chaude sanitaire et cuisson de 2013 à 2024 (43,32  Mt CO2 e).",
         "numeriqueenfrance": "Émissions en 2022 liées à la fabrication, à la distribution, à l’utilisation et à la fin de vie des appareils.",
         "aviationcivileenfrance": "Moyenne des émissions annuelles de 2013 à 2024 sur les vols intérieurs et vols internationaux au départ de France",
-        "agricoleenfrancejour": "Moyenne des émissions annuelles de l’agriculture de 2013 à 2024 (79 MT CO2e) rapportée à 1 jour. N’entrent pas le périmètre l’utilisation des terres, le changement d'affectation des terres et la foresterie.",
-        "chauffageenfrancejour": "Moyenne des émissions annuelles liées au chauffage, eau chaude sanitaire et cuisson de 2013 à 2024 (43,32  Mt CO2 e), rapporté à 1 jour",
-        "foretenfrancejour": "Absorption inventoriée en 2024 (51,1 MT CO2e), rapporté à 1 jour.",
-        "climatisationenfrancejour": "Émissions inventoriées en 2024 (1,196 MT CO2e), rapporté à 1 jour.",
+        "agricoleenfrancejour": "Moyenne des émissions annuelles de l’agriculture de 2013 à 2024 (79 MT CO2e) rapportée à 1 jour. N’entrent pas dans le périmètre l’utilisation des terres, le changement d'affectation des terres et la foresterie.",
+        "chauffageenfrancejour": "Moyenne des émissions annuelles liées au chauffage, à l’eau chaude sanitaire et à la cuisson de 2013 à 2024 (43,32 Mt CO2 e), rapportée à 1 jour",
+        "foretenfrancejour": "Absorption inventoriée en 2024 (51,1 MT CO2e), rapportée à 1 jour.",
+        "climatisationenfrancejour": "Émissions inventoriées en 2024 (1,196 MT CO2e), rapportées à 1 jour.",
         "voiturefrancaiseheure": "Moyenne des émissions annuelles des voitures particulières thermiques de 2013 à 2024 (70,7 Mt CO2 e) rapportée à l’heure.",
-        "numeriqueenfrancejour": "Émissions annuelle en 2022 liées à la fabrication, à la distribution, à l’utilisation et à la fin de vie des appareils, rapportées à la journée.",
-        "traitementdechetsjour": "Moyenne des émissions annuelles liées au déchet et brûlage domestique et aux eaux usées de 2013 à 2024 (1,89 Mt CO2 e), rapporté à 1 jour",
-        "trainenfrancejour": "Moyenne des émissions annuelles trains de 2013 à 2024 pour transporter des personnes et des marchandises (0.43 MT CO2e) rapportée à 1 jour",
-        "datacenterjour": "Campus PAR1 à Nozar qui regroupe 23 centres de données, s’étend sur 110 hectares et est doté d’une puissance de 250 MW. Consommation électrique de 1,3TWh/an rapporté au mix électrique 2024.",
-        "avion-johannesburg-paris-rugby": "Pour la coupe du monde de 2023, déplacement d’une délégation de 45 personnes (33 joueurs et 12 membres du staff) par avion trajet long, sur une distance distance totale parcourue de 17462 km.",
-        "maisonneuve": "Construction d’une maison neuve conventionnelle de 130 m² habitable - cas des logement à Saint-Pierre et Miquelon."
+        "numeriqueenfrancejour": "Émissions annuelles en 2022 liées à la fabrication, à la distribution, à l’utilisation et à la fin de vie des appareils, rapportées à la journée.",
+        "traitementdechetsjour": "Moyenne des émissions annuelles liées aux déchets, au brûlage domestique et aux eaux usées de 2013 à 2024 (1,89 Mt CO2 e), rapportée à 1 jour",
+        "trainenfrancejour": "Moyenne des émissions annuelles des trains de 2013 à 2024 pour transporter des personnes et des marchandises (0.43 MT CO2e) rapportée à 1 jour",
+        "datacenterjour": "Campus PAR1 à Nozay qui regroupe 23 centres de données, s’étend sur 110 hectares et est doté d’une puissance de 250 MW. Consommation électrique de 1,3 TWh/an rapportée au mix électrique 2024.",
+        "avion-johannesburg-paris-rugby": "Pour la coupe du monde de 2023, déplacement d’une délégation de 45 personnes (33 joueurs et 12 membres du staff) par avion trajet long, sur une distance totale parcourue de 17462 km.",
+        "maisonneuve": "Construction d’une maison neuve conventionnelle de 130 m² habitables - cas des logements à Saint-Pierre-et-Miquelon."
       },
       "post": {
         "ski": "Inclus : l’impact carbone du transport (52%), du logement (4%), de l’alimentation (8%), du domaine skiable (3%), des infrastructures, équipements et services du domaine (17%), et de l’équipement (16%).",
@@ -538,9 +538,9 @@
         "tgv-paris-berlin": "Sont incluses les émissions directes, la construction des véhicules (fabrication, maintenance et fin de vie) et la production et distribution de carburant et d'électricité. La construction des infrastructures (routes, rails, aéroports...) n'est pas incluse.",
         "tgv-paris-marseille": "Sont incluses les émissions directes, la construction des véhicules (fabrication, maintenance et fin de vie) et la production et distribution de carburant et d'électricité. La construction des infrastructures (routes, rails, aéroports...) n'est pas incluse.",
         "voiture-lille-nimes": "Sont incluses les émissions directes, la construction des véhicules (fabrication, maintenance et fin de vie) et la production et distribution de carburant et d'électricité. La construction des infrastructures (routes, rails, aéroports...) n'est pas incluse.",
-        "francais": "Les français émettent en moyenne 9,1 tonnes de CO₂e par an. Cette moyenne varie beaucoup selon les modes de vie, l’utilisation ou non de la voiture, les achats et consommation, l’habitation en maison ou en appartement, le mode de chauffage, l’alimentation etc.",
-        "game-of-thrones": "Un épisode de Game of thrones dure en moyenne 1h. La donnée est calculé sur une heure de streaming en haute définition, sur une télévision, en connexion wifi.",
-        "friends": "L’intégrale de Friends est composée de 236 épisodes d'environ 20min. La donnée est calculé sur une heure de streaming en haute définition, sur une télévision, en connexion wifi."
+        "francais": "Les Français émettent en moyenne 9,1 tonnes de CO₂e par an. Cette moyenne varie beaucoup selon les modes de vie, l’utilisation ou non de la voiture, les achats et la consommation, l’habitation en maison ou en appartement, le mode de chauffage, l’alimentation, etc.",
+        "game-of-thrones": "Un épisode de Game of Thrones dure en moyenne 1 h. La donnée est calculée sur une heure de streaming en haute définition, sur une télévision, en connexion Wi-Fi.",
+        "friends": "L’intégrale de Friends est composée de 236 épisodes d'environ 20 min. La donnée est calculée sur une heure de streaming en haute définition, sur une télévision, en connexion Wi-Fi."
       }
     },
     "usage-numerique": {
@@ -656,13 +656,13 @@
     "ico2-fruitsetlegumes": "Découvrir les fruits et légumes de saison et leur impact",
     "ico2-repas": "Comparer l'impact carbone des repas",
     "ico2-fiches-alimentation": "Télécharger les fiches d’Impact Alimentation",
-    "fiches": "Télécharger les fiches du quizz à imprimer",
+    "fiches": "Télécharger les fiches du quiz à imprimer",
     "commerce": "Voir l’impact environnemental du commerce en ligne"
   },
   "alimentation": {
     "title": "Découvrir <important>l’impact carbone pour 1 kg d'aliments</important> présentés par...",
     "customTitle": "Découvrir <important>l’impact carbone pour 1 kg d'aliments</important>",
-    "label": "Selectionner comment grouper les résultats",
+    "label": "Sélectionner comment grouper les résultats",
     "group": "Groupe d'aliments (viandes, poissons, produits laitiers...)",
     "rayon": "Rayons du magasin (épicerie salée, boulangerie, traiteur...)",
     "popularity": "Popularité (les 10 aliments les plus consommés)",
@@ -674,7 +674,7 @@
     "hide": "Replier",
     "viandes": "Viandes",
     "poissons": "Poissons et fruits de mer",
-    "laitier": "Oeufs et produits laitiers",
+    "laitier": "Œufs et produits laitiers",
     "cereales": "Céréales et légumineuses",
     "plats": "Plats préparés",
     "encas": "En-cas",
@@ -705,7 +705,7 @@
       "mt": "Millions de tonnes",
       "10mt": "Dizaines de millions de tonnes",
       "100mt": "Centaines de millions de tonnes",
-      "exemple-0": "100g d'équivalent CO2",
+      "exemple-0": "100 g d'équivalent CO2",
       "exemple-1": "184,12 kilos CO2",
       "exemple-2": "350 t éqCO2",
       "exemple-3": "32 kgCO2eq",

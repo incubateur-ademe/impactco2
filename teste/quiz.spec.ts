@@ -4,7 +4,7 @@ test('Test quiz', async ({ page }) => {
   await page.goto('http://localhost:3000/outils/quiz')
   await expect(page.getByTestId('quiz-header')).toContainText('Question 1 / 10')
   await expect(page.getByTestId('quiz-previous-button')).not.toBeVisible()
-  await expect(page.getByTestId('quiz-question-result')).toContainText('Choisissez votre réponse ci dessous :')
+  await expect(page.getByTestId('quiz-question-result')).toContainText('Choisissez votre réponse ci-dessous :')
   await expect(page.getByTestId('quiz-answer-A')).toContainText('A1Repas avec du boeuf')
   await expect(page.getByTestId('quiz-answer-B')).toContainText('B1A/R Paris - Marseille en TGV')
   await expect(page.getByTestId('quiz-answer-value-A')).not.toBeVisible()
@@ -45,7 +45,7 @@ test('Test quiz', async ({ page }) => {
 
   await expect(page.getByTestId('quiz-previous-button')).toBeVisible()
   await expect(page.getByTestId('quiz-header')).toContainText('Question 2 / 10')
-  await expect(page.getByTestId('quiz-question-result')).toContainText('Choisissez votre réponse ci dessous :')
+  await expect(page.getByTestId('quiz-question-result')).toContainText('Choisissez votre réponse ci-dessous :')
   await expect(page.getByTestId('quiz-answer-A')).toContainText('A1Tablette')
   await expect(page.getByTestId('quiz-answer-B')).toContainText('B3Paires de chaussures en cuir')
   await expect(page.getByTestId('quiz-answer-value-A')).not.toBeVisible()
@@ -83,7 +83,7 @@ test('Test quiz', async ({ page }) => {
   await page.getByTestId('quiz-previous-button').click()
 
   await expect(page.getByTestId('quiz-header')).toContainText('Question 1 / 10')
-  await expect(page.getByTestId('quiz-question-result')).toContainText('Choisissez votre réponse ci dessous :')
+  await expect(page.getByTestId('quiz-question-result')).toContainText('Choisissez votre réponse ci-dessous :')
   await expect(page.getByTestId('quiz-answer-A')).toContainText('A1Repas avec du boeuf')
   await expect(page.getByTestId('quiz-answer-B')).toContainText('B1A/R Paris - Marseille en TGV')
   await expect(page.getByTestId('quiz-answer-value-A')).not.toBeVisible()
@@ -131,7 +131,7 @@ test('Test quiz', async ({ page }) => {
   await page.getByTestId('quiz-restart-button').click()
 
   await expect(page.getByTestId('quiz-header')).toContainText('Question 1 / 10')
-  await expect(page.getByTestId('quiz-question-result')).toContainText('Choisissez votre réponse ci dessous :')
+  await expect(page.getByTestId('quiz-question-result')).toContainText('Choisissez votre réponse ci-dessous :')
   await expect(page.getByTestId('quiz-answer-A')).toContainText('A1Repas avec du boeuf')
   await expect(page.getByTestId('quiz-answer-B')).toContainText('B1A/R Paris - Marseille en TGV')
 })
