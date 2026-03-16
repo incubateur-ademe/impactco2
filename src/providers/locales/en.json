@@ -85,7 +85,7 @@
   "clipboard": {
     "copier": "Copy",
     "copie": "Copied",
-    "copied": "Copia del código realizado",
+    "copied": "Code copied",
     "information-1": "This code anchor allows you to display the simulator inside any page of your website.",
     "information-2": "The simulator will be automatically updated with any new features."
   },
@@ -111,7 +111,7 @@
     "integrate": "Integrate",
     "preview": "Preview the integration",
     "next-actions": "Explore further",
-    "comparison": "Change the mode of transport compared",
+    "comparison": "Change the compared mode of transport",
     "understand": "Understanding data",
     "faq": "Frequently Asked Questions",
     "download": "Download",
@@ -216,13 +216,13 @@
       "title": "Transport mode",
       "search": "Search a transport",
       "back": "Back to the simulator",
-      "mode-share": "Display mode to share",
-      "mode-integrate": "Display mode to integrate",
+      "mode-share": "Display modes to share",
+      "mode-integrate": "Display modes to integrate",
       "comparison": "Comparison displayed by default",
       "modes": "Transport modes to integrate",
       "modes-hint": "You cannot integrate less than 2 modes in the simulator.",
       "onglet": "Tab to share",
-      "onglet-hint": "Select tab you want to see when on sharing",
+      "onglet-hint": "Select the tab you want to display when shared",
       "onglets": "Tabs to integrate",
       "onglets-hint": "Select tabs you want to see in your iframe"
     },
@@ -304,22 +304,22 @@
       "faq": "What does this correspond to?"
     },
     "vetement": {
-      "display": "See every clothes",
-      "hide": "See only main clothes"
+      "display": "See all clothes",
+      "hide": "See only the main clothes"
     },
     "appareils": {
-      "display": "See all equipments",
-      "hide": "See only main equipments"
+      "display": "See all devices",
+      "hide": "See only the main devices"
     },
     "transport": {
-      "display": "See every transport modes",
-      "hide": "Display less transport modes"
+      "display": "See all transport modes",
+      "hide": "Show fewer transport modes"
     }
   },
   "comparateur": {
-    "title": "It is as much emisssion as fabricating, consuming or travelling...",
+    "title": "That is as many emissions as producing, consuming, or traveling...",
     "title-bis-1": "It's",
-    "title-bis-2": "as much emisssion as fabricating, consuming or travelling...",
+    "title-bis-2": "as many emissions as producing, consuming, or traveling...",
     "detail": " See more",
     "number-of": "Number of",
     "co2-unit": "kg of CO₂",
@@ -332,15 +332,15 @@
       "back": "Go back",
       "back-title": "Validate the selection and return to the comparator",
       "equivalents": "equivalents",
-      "no-result-1": "No result with your research.",
+      "no-result-1": "No results match your search.",
       "no-result-2": "You can try with other words or",
       "no-result-3": "go back to the equivalents list",
       "hide": "Hide elements of",
       "show": "See elements of",
-      "compare": "Compare with only this category",
-      "compare-button": "See comparaison",
+      "compare": "Compare only with this category",
+      "compare-button": "See comparison",
       "max": "equivalents already selected",
-      "equivalents-group": "Equivalents of category"
+      "equivalents-group": "Equivalents in this category"
     }
   },
   "livraison": {
@@ -359,7 +359,7 @@
     "car": "I'm going by car",
     "foot": "I'm going on foot",
     "etiquette": "What is the <important>carbon impact</important> of different purchasing methods? ({value}kg package)",
-    "greyEtiquette": "What is the <important>carbon impact</important> of different purchasing methods? ({value}kg package)",
+    "greyEtiquette": "What is the <important>carbon impact</important> of different delivery methods? ({value}kg package)",
     "magasin": "Purchase in store",
     "livraisondomicile": "Home delivery",
     "pointrelais": "Delivery to a relay point",
@@ -370,20 +370,20 @@
       "magasin": " at 15km"
     },
     "data": {
-      "open": "Collapse",
-      "close": "Expand",
+      "open": "Expand",
+      "close": "Collapse",
       "optionnel": "optional"
     }
   },
   "usage-numerique": {
-    "title": "Compare the impact of your usages with the impact of construction",
-    "description": "In most case, the majority of your digital footprint comes from the construction fo your digital devices, not from using them",
-    "usages": "YOUR USES EMIT",
-    "or": "OR...",
+    "title": "Compare the impact of your usage with the impact of manufacturing",
+    "description": "In most cases, the majority of your digital footprint comes from manufacturing your devices, not from using them.",
+    "usages": "YOUR USAGE EMITS",
+    "or": "OR..",
     "total": "THIS EQUALS..",
     "email-title": "Emails sent",
-    "visio-title": "videoconferencing hours",
-    "streaming-title": "streaming hours",
+    "visio-title": "Videoconferencing hours",
+    "streaming-title": "Streaming hours",
     "by-week": "per week",
     "by-year": "per year",
     "email-year": "1 year of email",
@@ -396,8 +396,8 @@
     "ordinateur portable": "Laptop",
     "ordinateur et écran": "Desktop",
     "0075": "Without attachment",
-    "1075": "1Mo attachment",
-    "5075": "5Mo attachment",
+    "1075": "1 MB attachment",
+    "5075": "5 MB attachment",
     "audio": "Audio",
     "TV": "Television",
     "SD": "Low def",
@@ -509,20 +509,20 @@
         "livraisondomicile30kg": "For a 30kg package.",
         "voiturefrancaisejour": "Average annual emissions of private thermal cars from 2013 to 2024 (70.7 Mt CO2 e) reported per day.",
         "voiturefrancaisean": "Average emissions of private cars in circulation from 2013 to 2024.",
-        "populationfrancaise": "Estimation of greenhouse gases associated with the average lifestyle of the French population, whose carbon footprint is estimated at 9.1 T CO2 e. The French population is estimated at 68,606,000 inhabitants in 2025.",
-        "parcbovin": "Programs inventoried in 2024.",
+        "populationfrancaise": "Estimate of greenhouse gases associated with the average lifestyle of the French population, whose carbon footprint is estimated at 9.1 t CO2e. The French population is estimated at 68,606,000 inhabitants in 2025.",
+        "parcbovin": "Emissions inventoried in 2024.",
         "chauffageenfrance": "Average annual emissions linked to heating, domestic hot water and cooking from 2013 to 2024 (43.32 Mt CO2 e).",
-        "numeriqueenfrance": "Establishments in 2022 linked to the manufacture, distribution, use and end of life of devices.",
+        "numeriqueenfrance": "Emissions in 2022 linked to the manufacture, distribution, use, and end of life of devices.",
         "aviationcivileenfrance": "Average annual emissions from 2013 to 2024 on domestic flights and international flights departing from France.",
         "agricoleenfrancejour": "Average annual emissions from agriculture from 2013 to 2024 (79 MT CO2e) reported on a 1-day basis. Land use, land-use change and forestry are not included in the scope.",
         "chauffageenfrancejour": "Average annual emissions related to heating, domestic hot water and cooking from 2013 to 2024 (43.73 Mt CO2 e), reported per day.",
-        "foretenfrancejour": "Absorption inventoried in 2024 (51.1 Mt CO2E), reported to 1 day.",
-        "climatisationenfrancejour": "Programs invenided in 2024 (1,196 Mt CO2E), reported to 1 day.",
+        "foretenfrancejour": "Absorption inventoried in 2024 (51.1 Mt CO2e), reported per day.",
+        "climatisationenfrancejour": "Emissions inventoried in 2024 (1.196 Mt CO2e), reported per day.",
         "voiturefrancaiseheure": "Average annual emissions of private thermal cars from 2013 to 2024 (70.7 Mt CO2 e) reported per hour.",
-        "numeriqueenfrancejour": "Annual emissions in 2022 related to the manufacture, distribution, use and end of life of devices, reported to the day.",
+        "numeriqueenfrancejour": "Annual emissions in 2022 related to the manufacture, distribution, use, and end of life of devices, reported per day.",
         "traitementdechetsjour": "Average annual emissions related to waste and domestic burning and wastewater from 2013 to 2024 (1.89 Mt CO2 e), reported per day.",
-        "trainenfrancejour": "Average annual train emissions from 2013 to 2024 for transporting people and goods (0.43 MT CO2e) reported per day",
-        "datacenterjour": "PAR1 campus in Nozar which includes 23 data centers, spans 110 hectares and has a power capacity of 250 MW. Electricity consumption of 1.3TWh/year reported to the 2024 electricity mix.",
+        "trainenfrancejour": "Average annual train emissions from 2013 to 2024 for transporting people and goods (0.43 MT CO2e), reported per day.",
+        "datacenterjour": "PAR1 campus in Nozay, which includes 23 data centers, spans 110 hectares, and has a power capacity of 250 MW. Electricity consumption of 1.3 TWh/year, reported using the 2024 electricity mix.",
         "avion-johannesburg-paris-rugby": "For the 2023 World Cup, travel of a delegation of 45 people (33 players and 12 staff members) by long-distance plane, over a total distance traveled of 17,462 km.",
         "maisonneuve": "Construction of a new conventional house of 130 m² living space - case of housing in Saint-Pierre and Miquelon."
       },
@@ -538,7 +538,7 @@
         "tgv-paris-berlin": "Included are direct emissions, the construction of vehicles (manufacturing, maintenance, and end-of-life), and the production and distribution of fuel and electricity. The construction of infrastructure (roads, railways, airports...) is not included.",
         "tgv-paris-marseille": "Included are direct emissions, the construction of vehicles (manufacturing, maintenance, and end-of-life), and the production and distribution of fuel and electricity. The construction of infrastructure (roads, railways, airports...) is not included.",
         "voiture-lille-nimes": "Included are direct emissions, the construction of vehicles (manufacturing, maintenance, and end-of-life), and the production and distribution of fuel and electricity. The construction of infrastructure (roads, railways, airports...) is not included.",
-        "francais": "The French emit an average of 9.1 tonnes of co₂e per year. This average varies a lot depending on the lifestyles, the use or not of the car, purchases and consumption, home in house or apartment, heating mode, food etc.",
+        "francais": "French people emit an average of 9.1 tonnes of CO2e per year. This average varies widely depending on lifestyle: whether or not people use a car, their purchases and consumption, whether they live in a house or an apartment, their heating method, and their diet.",
         "game-of-thrones": "An episode of Game of Thrones lasts an average of 1 hour. The data is calculated based on one hour of HD streaming on a television using Wi-Fi.",
         "friends": "The entire Friends series consists of 236 episodes of about 20 minutes each. The data is calculated based on one hour of HD streaming on a television using Wi-Fi."
       }
@@ -610,7 +610,7 @@
     "name-alimentation": "Food",
     "name-habillement": "Clothing",
     "name-mobilier": "Furniture",
-    "name-electromenager": "Home applicance",
+    "name-electromenager": "Home appliances",
     "name-boisson": "Drink",
     "name-livraison": "Delivery"
   },
@@ -650,12 +650,12 @@
     "sobriete": "How to adopt digital sobriety?",
     "habitation": "Learn about responsible housing",
     "calendar": "Seasonal fruits and vegetables calendar",
-    "leger": "How to work with a low impact ?",
+    "leger": "How to work with a low impact?",
     "ecoresponsable": "Eco-responsible at work",
     "ico2-transport": "Calculate the carbon impact of your journeys",
     "ico2-fruitsetlegumes": "Discover seasonal fruits and vegetables and their impact",
-    "ico2-repas": "Comparing the carbon impact of meals",
-    "ico2-fiches-alimentation": "Download impact alimentation sheets",
+    "ico2-repas": "Compare the carbon impact of meals",
+    "ico2-fiches-alimentation": "Download Impact Alimentation sheets",
     "fiches": "Download the printable quiz sheets",
     "commerce": "See the environmental impact of online commerce"
   },
@@ -705,11 +705,11 @@
       "mt": "Millions of tons",
       "10mt": "Tens of millions of tons",
       "100mt": "Hundreds of millions of tons",
-      "exemple-0": "100g of CO2 equivalent",
+      "exemple-0": "100 g CO2e",
       "exemple-1": "184.12 kilos CO2",
       "exemple-2": "350 t CO2eq",
       "exemple-3": "32 kgCO2eq",
-      "exemple-4": "8 giga tons co2e",
+      "exemple-4": "8 gigatons CO2e",
       "exemple-5": "7 thousand kg CO₂"
     }
   }

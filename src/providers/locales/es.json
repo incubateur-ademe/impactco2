@@ -21,8 +21,8 @@
     "or": "o",
     "noResult": "Ningún resultado para",
     "clear": "Borrar búsqueda",
-    "noResultExplanation": "Lo sentimos, no hemos encontrado ningún resultado que coincida con los términos de su búsqueda.",
-    "noResultAdditionalInfo": "Intentamos proporcionar respuestas a las preguntas más frecuentes, pero es posible que no hayamos considerado todos los casos posibles. Si cree que su pregunta también puede ayudar a otros usuarios en su proceso, no dude en <contact>contactarnos</contact> para hacérnoslo saber."
+    "noResultExplanation": "Lo sentimos, no hemos encontrado ningún resultado que coincida con los términos de tu búsqueda.",
+    "noResultAdditionalInfo": "Intentamos proporcionar respuestas a las preguntas más frecuentes, pero es posible que no hayamos considerado todos los casos posibles. Si crees que tu pregunta también puede ayudar a otros usuarios en su proceso, no dudes en <contact>contactarnos</contact> para hacérnoslo saber."
   },
   "quiz": {
     "infography": "REVISA LOS ÓRDENES DE MAGNITUD",
@@ -100,18 +100,18 @@
     "integrate": "Integrar",
     "communicate": "COMUNICAR SOBRE NUESTRAS HERRAMIENTAS",
     "kitTitle": "Kit de comunicación",
-    "kitDescription": "Todo lo que necesitas para comunicar sobre el impacto del CO₂",
+    "kitDescription": "Todo lo necesario para comunicar sobre Impact CO₂",
     "kitLink": "Consultar",
     "alimentationKitTitle": "Kit de comunicación para Impacto Alimentación",
-    "alimentationKitDescription": "Hemos preparado imágenes listas para usar para permitirle comunicar fácilmente sobre Impacto Alimentación.",
+    "alimentationKitDescription": "Hemos preparado recursos visuales listos para usar para ayudarte a comunicar fácilmente sobre Impacto Alimentación.",
     "quizKitTitle": "Kit de comunicación para el Quiz de carbono",
-    "quizKitDescription": "Para facilitarle la tarea, hemos creado imágenes listas para usar para comunicar sobre el Quiz de carbono.",
-    "livraisonKitTitle": "Kit de comunicación para entrega de impacto",
-    "livraisonKitDescription": "Para facilitarle las cosas, hemos elaborado imágenes listas para usar para comunicar sobre Impact Livraison",
+    "quizKitDescription": "Para facilitarte la tarea, hemos creado recursos visuales listos para usar para comunicar sobre el Quiz de carbono.",
+    "livraisonKitTitle": "Kit de comunicación para Impact Livraison",
+    "livraisonKitDescription": "Para facilitarte la tarea, hemos preparado recursos visuales listos para usar para comunicar sobre Impact Livraison.",
     "extraKitLink": "Descargar",
     "preview": "Vista previa de la integración",
     "next-actions": "Siguientes acciones",
-    "comparison": "Cambiar el modo de transporte comparar",
+    "comparison": "Cambiar el modo de transporte comparado",
     "understand": "Entender los datos",
     "faq": "Preguntas frecuentes",
     "download": "Descargar",
@@ -159,7 +159,7 @@
     "situation": "mi propia simulación",
     "display": {
       "title": "Integrar",
-      "graphic": "El grafico",
+      "graphic": "El gráfico",
       "simulator": "El simulador"
     },
     "comparateur": "mi propia comparación",
@@ -246,7 +246,7 @@
     "avoided": "evitados",
     "itineraire": {
       "roundTrip": "Ida y vuelta",
-      "header": "Calcular el impacto de carbono de su viaje en <co2e>CO₂e</co2e> y <parpersonne>por persona</parpersonne>",
+      "header": "Calcular el impacto de carbono de tu viaje en <co2e>CO₂e</co2e> y <parpersonne>por persona</parpersonne>",
       "start": "Salida",
       "end": "Llegada",
       "empty": "Por ejemplo, la cantidad de kg CO2e emitidos en un viaje de 100 km es..."
@@ -270,7 +270,7 @@
       "total": "ES DECIR TANTAS EMISIONES COMO..."
     },
     "distance": {
-      "header": "Calcular el impacto de carbono de su viaje en <co2e>CO₂e</co2e> y <parpersonne>por persona</parpersonne>"
+      "header": "Calcular el impacto de carbono de tu viaje en <co2e>CO₂e</co2e> y <parpersonne>por persona</parpersonne>"
     },
     "mode-selector": {
       "distance": "Distancia",
@@ -340,11 +340,11 @@
       "compare": "Comparar solo con esta categoría",
       "compare-button": "Ver la comparación",
       "max": "equivalentes ya seleccionados",
-      "equivalents-group": "Grupo de equivalentes"
+      "equivalents-group": "Equivalentes de la categoría"
     }
   },
   "livraison": {
-    "title": "Elige un objeto para descubrir el impacto del carbono de diferentes métodos de compra",
+    "title": "Elige un objeto para descubrir el impacto de carbono de los diferentes métodos de compra",
     "courses": "Compras de comida",
     "chaussure": "Par de zapatos",
     "livre": "Libros",
@@ -352,26 +352,26 @@
     "vetements": "Ropa",
     "lavelinge": "Lavadora",
     "lit": "Cama completa",
-    "smartphone": "teléfono inteligente",
+    "smartphone": "Teléfono inteligente",
     "vin": "Caja de vino",
-    "cafetiere": "cafetera para café expreso",
+    "cafetiere": "Cafetera exprés",
     "fabrication": "Incluir el impacto de la fabricación del objeto",
-    "car": "voy allí en coche",
-    "foot": "voy a pie",
+    "car": "Voy en coche",
+    "foot": "Voy a pie",
     "etiquette": "¿Cuál es el <important>impacto de carbono</important> de los diferentes métodos de compra? (paquete de {value}kg)",
     "greyEtiquette": "¿Cuál es el <important>impacto de carbono</important> de los diferentes métodos de entrega? (paquete de {value}kg)",
     "magasin": "Compra en tienda",
     "livraisondomicile": "Entrega a domicilio",
     "pointrelais": "Entrega al punto de relevo",
-    "clickcollect": "Haz clic y recoge",
+    "clickcollect": "Click & Collect",
     "extranames": {
       "clickcollect": " a 15km",
       "pointrelais": " a 3,5km",
       "magasin": " a 15km"
     },
     "data": {
-      "open": "Plegar",
-      "close": "Desplegar",
+      "open": "Desplegar",
+      "close": "Plegar",
       "optionnel": "opcional"
     }
   },
@@ -510,19 +510,19 @@
         "voiturefrancaisejour": "Promedio de emisiones anuales de automóviles particulares térmicos de 2013 a 2024 (70,7 Mt CO2 e) reportado por día.",
         "voiturefrancaisean": "Promedio de emisiones de automóviles particulares en circulación de 2013 a 2024.",
         "populationfrancaise": "Estimación de gases de efecto invernadero asociados al estilo de vida promedio de la población francesa, cuya huella de carbono se estima en 9,1 T CO2 e. La población francesa se estima en 68.606.000 habitantes en 2025.",
-        "parcbovin": "Programas inventariados en 2024.",
+        "parcbovin": "Emisiones inventariadas en 2024.",
         "chauffageenfrance": "Emisiones medias anuales vinculadas a la calefacción, el agua caliente sanitaria y la cocina de 2013 a 2024 (43,32 Mt CO2 e).",
-        "numeriqueenfrance": "Los establecimientos en 2022 vinculados a la fabricación, distribución, uso y fin de vida de los dispositivos.",
+        "numeriqueenfrance": "Emisiones en 2022 vinculadas a la fabricación, la distribución, el uso y el fin de vida de los dispositivos.",
         "aviationcivileenfrance": "Promedio de emisiones anuales de 2013 a 2024 en vuelos domésticos y vuelos internacionales con salida desde Francia.",
         "agricoleenfrancejour": "Emisiones anuales promedio de la agricultura de 2013 a 2024 (79 MT de CO₂e) reportadas diariamente. El uso del suelo, el cambio de uso del suelo y la silvicultura no se incluyen en el alcance.",
         "chauffageenfrancejour": "Promedio de emisiones anuales relacionadas con calefacción, agua caliente sanitaria y cocción de 2013 a 2024 (43,73 Mt CO2 e), reportado por día.",
-        "foretenfrancejour": "La absorción inventariada en 2024 (51.1 TM CO2E), reportada a 1 día.",
-        "climatisationenfrancejour": "Los programas invenieron en 2024 (1,196 MT CO2E), reportados a 1 día.",
+        "foretenfrancejour": "Absorción inventariada en 2024 (51,1 Mt CO2e), reportada por día.",
+        "climatisationenfrancejour": "Emisiones inventariadas en 2024 (1,196 Mt CO2e), reportadas por día.",
         "voiturefrancaiseheure": "Promedio de emisiones anuales de automóviles particulares térmicos de 2013 a 2024 (70,7 Mt CO2 e) reportado por hora.",
         "numeriqueenfrancejour": "Emisiones anuales en 2022 relacionadas con la fabricación, distribución, uso y fin de vida útil de dispositivos, reportadas por día.",
         "traitementdechetsjour": "Promedio de emisiones anuales relacionadas con residuos y quema doméstica y aguas residuales de 2013 a 2024 (1,89 Mt CO2 e), reportado por día.",
         "trainenfrancejour": "Promedio de emisiones anuales de trenes de 2013 a 2024 para transportar personas y mercancías (0,43 MT CO2e) reportado por día",
-        "datacenterjour": "Campus PAR1 en Nozar que agrupa 23 centros de datos, se extiende por 110 hectáreas y tiene una potencia de 250 MW. Consumo eléctrico de 1,3TWh/año reportado a la mezcla eléctrica 2024.",
+        "datacenterjour": "Campus PAR1 en Nozay, que agrupa 23 centros de datos, se extiende por 110 hectáreas y tiene una potencia de 250 MW. Consumo eléctrico de 1,3 TWh/año, reportado según el mix eléctrico de 2024.",
         "avion-johannesburg-paris-rugby": "Para el Mundial de 2023, viaje de una delegación de 45 personas (33 jugadores y 12 miembros del personal) en avión de larga distancia, sobre una distancia total recorrida de 17.462 kilómetros.",
         "maisonneuve": "Construcción de una casa nueva convencional de 130 m² habitables - caso de viviendas en San Pedro y Miquelón"
       },
@@ -538,7 +538,7 @@
         "tgv-paris-berlin": "Se incluyen las emisiones directas, la construcción de vehículos (fabricación, mantenimiento y fin de vida), y la producción y distribución de combustible y electricidad. La construcción de infraestructuras (carreteras, vías férreas, aeropuertos...) no está incluida.",
         "tgv-paris-marseille": "Se incluyen las emisiones directas, la construcción de vehículos (fabricación, mantenimiento y fin de vida), y la producción y distribución de combustible y electricidad. La construcción de infraestructuras (carreteras, vías férreas, aeropuertos...) no está incluida.",
         "voiture-lille-nimes": "Se incluyen las emisiones directas, la construcción de vehículos (fabricación, mantenimiento y fin de vida), y la producción y distribución de combustible y electricidad. La construcción de infraestructuras (carreteras, vías férreas, aeropuertos...) no está incluida.",
-        "francais": "Los franceses emiten un promedio de 9.1 toneladas de co₂e por año. Este promedio varía mucho según los estilos de vida, el uso o no del automóvil, compras y consumo, en casa o apartamento, modo de calefacción, comida, etc.",
+        "francais": "Los franceses emiten un promedio de 9,1 toneladas de CO2e al año. Este promedio varía mucho según el estilo de vida: el uso o no del automóvil, las compras y el consumo, vivir en casa o en apartamento, el modo de calefacción y la alimentación.",
         "game-of-thrones": "Un episodio de Game of Thrones dura en promedio 1 hora. El dato se calcula en base a una hora de transmisión en alta definición en un televisor usando Wi-Fi.",
         "friends": "La serie completa de Friends consta de 236 episodios de unos 20 minutos cada uno. El dato se calcula en base a una hora de transmisión en alta definición en un televisor usando Wi-Fi."
       }
@@ -652,12 +652,12 @@
     "calendar": "Calendario de frutas y verduras de temporada",
     "leger": "¿Cómo trabajar con bajo impacto?",
     "ecoresponsable": "Eco-responsabilidad en el trabajo",
-    "ico2-transport": "Calcule el impacto de carbono de sus viajes",
+    "ico2-transport": "Calcula el impacto de carbono de tus viajes",
     "ico2-fruitsetlegumes": "Descubre frutas y verduras de temporada y su impacto",
-    "ico2-repas": "Compare el impacto de carbono de las comidas",
-    "ico2-fiches-alimentation": "Descargue las hojas del impacto alimentación",
-    "fiches": "Descargue las hojas del cuestionario para imprimir",
-    "commerce": "Conozca el impacto ambiental del comercio en línea"
+    "ico2-repas": "Compara el impacto de carbono de las comidas",
+    "ico2-fiches-alimentation": "Descarga las fichas de Impacto Alimentación",
+    "fiches": "Descarga las fichas del quiz para imprimir",
+    "commerce": "Descubre el impacto ambiental del comercio en línea"
   },
   "alimentation": {
     "title": "Descubrir <important>el impacto de carbono por 1 kg de alimentos.</important> presentados por...",
@@ -666,7 +666,7 @@
     "group": "Grupo de alimentos (carnes, pescados, productos lácteos...)",
     "rayon": "Secciones de la tienda (comestibles salados, panadería, charcutería...)",
     "popularity": "Popularidad (los 10 alimentos más consumidos)",
-    "click": "Haga clic en una categoría para mostrar su contenido",
+    "click": "Haz clic en una categoría para mostrar su contenido",
     "biggest": "Impacto más alto",
     "smallest": "Impacto más bajo",
     "more": "otros",
