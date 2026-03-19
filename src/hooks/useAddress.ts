@@ -33,6 +33,7 @@ export function useSuggestions(search: string, place?: string) {
   return useQuery({
     queryKey: ['search', search],
     queryFn: () => (!place && search && search.length > 2 ? searchAddress(search) : Promise.resolve([])),
+    enabled: !place && !!search && search.length > 2,
     refetchOnWindowFocus: false,
     staleTime: Infinity,
   })
