@@ -1,7 +1,7 @@
 /*!
  *  @preserve
  *  
- *  @module      iframe-resizer/parent 5.5.8 (umd) - 2026-01-26
+ *  @module      iframe-resizer/parent 5.5.9 (umd) - 2026-02-06
  *
  *  @license     GPL-3.0 for non-commercial use only.
  *               For commercial use, you must purchase a license from
