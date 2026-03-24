@@ -1,5 +1,7 @@
 import axios, { AxiosResponse } from 'axios'
+import { unstable_cache } from 'next/cache'
 import { z } from 'zod'
+import { getRevalidate } from './revalidate'
 
 export const NotionCommandValidation = z.discriminatedUnion('type', [
   z.object({
@@ -43,7 +45,11 @@ export const NotionCommandValidation = z.discriminatedUnion('type', [
 export type NotionCommand = z.infer<typeof NotionCommandValidation>
 
 type NotionResult<T> = { id: string; properties: T; last_edited_time: string; created_time: string }
-export const getAllNotionDB = async <T>(url: string) => {
+export const getAllNotionDB = unstable_cache(async <T>(url: string) => getAllNotionDBUncached<T>(url), undefined, {
+  revalidate: getRevalidate(process.env.NOTION_TABLE_REVALIDATE),
+})
+
+export const getAllNotionDBUncached = async <T>(url: string) => {
   if (!process.env.NOTION_API_KEY) {
     return []
   }

@@ -1,9 +1,20 @@
+import { unstable_cache } from 'next/cache'
 import { NotionAPI } from 'notion-client'
+import { getRevalidate } from 'utils/revalidate'
 
-export const getNotionContentProps = async (id: string) => {
-  const notion = new NotionAPI()
-  return notion.getPage(id)
-}
+const notion = new NotionAPI()
+export const getNotionContentProps = unstable_cache(
+  async (id: string) => {
+    try {
+      const result = await notion.getPage(id)
+      return result
+    } catch {
+      return undefined
+    }
+  },
+  undefined,
+  { revalidate: getRevalidate(process.env.NOTION_TABLE_REVALIDATE) }
+)
 
 export const improveAccessibility = (ref: HTMLDivElement) => {
   const elements = ref.getElementsByTagName('svg')
