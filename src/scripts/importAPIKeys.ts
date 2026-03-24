@@ -1,5 +1,5 @@
 import { config } from 'dotenv'
-import { getAllNotionDB } from '../utils/notion'
+import { getAllNotionDBUncached } from '../utils/notion'
 import { prismaClient } from '../utils/prismaClient'
 
 config()
@@ -9,7 +9,7 @@ const importFromNotion = async () => {
     return
   }
 
-  const results = await getAllNotionDB<{
+  const results = await getAllNotionDBUncached<{
     Clé: { title: ({ plain_text: string } | undefined)[] }
     Nom: { rich_text: ({ plain_text: string } | undefined)[] }
   }>('https://api.notion.com/v1/databases/0590cbd6751c4814905717009b971774/query')
