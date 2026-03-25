@@ -145,23 +145,28 @@ const livraison: Record<string, Record<string, string>> = {
   },
 }
 
-const carpooling: Record<string, Record<string, string>> = {
-  voiturethermique: {
-    fr: 'Covoiturage thermique',
-    en: 'Carpooling combustion',
-    es: 'Compartir coche termico',
-  },
-  voitureelectrique: {
-    fr: 'Covoiturage électrique',
-    en: 'Carpooling electric',
-    es: 'Compartir coche eléctrico',
-  },
+const carpooling: Record<string, string> = {
+  fr: 'Covoiturage',
+  en: 'Carpooling',
+  es: 'Compartir',
 }
 
-const passengers: Record<string, string> = {
-  fr: 'passager[s]',
-  en: 'passenger[s]',
-  es: 'pasajero[s]',
+const carpoolingBasis: Record<string, Record<string, string>> = {
+  voiturethermique: {
+    fr: 'thermique',
+    en: 'combustion',
+    es: 'coche termico',
+  },
+  voitureelectrique: {
+    fr: 'électrique',
+    en: 'electric',
+    es: 'coche eléctrico',
+  },
+  voiturehybride: {
+    fr: 'hybride',
+    en: 'hybrid',
+    es: 'híbrido',
+  },
 }
 
 const allValues: Record<string, { fr: string; en: string; es: string }> = {
@@ -185,12 +190,32 @@ const getValues = (
   }
 
   //@ts-expect-error: expect translation
-  const translation = value[language]
+  const translation = value[language] as string
+  if (equivalent.carpool) {
+    const carpool = carpooling[language]
+    const [prefix, name] = translation.split(';')
+    if (carpoolingBasis[ref]) {
+      const basis = carpoolingBasis[ref][language]
+      return { prefix, name: `${carpool} ${basis}` }
+    }
+    if (ref.startsWith('voiture-')) {
+      if (ref.includes('electrique')) {
+        return { prefix, name: `${carpool} ${carpoolingBasis.voitureelectrique[language]}` }
+      }
+      if (ref.includes('hybride')) {
+        return { prefix, name: `${carpool} ${carpoolingBasis.voitureelectrique[language]}` }
+      }
+      if (ref.includes('essence') || ref.includes('diesel')) {
+        return { prefix, name: `${carpool} ${carpoolingBasis.voitureelectrique[language]}` }
+      }
+    }
+    return { prefix, name: `${carpool} ${name}` }
+  }
   if (translation.includes('=')) {
     const [name, prefix] = translation.split('=')
     return {
       prefix,
-      name: equivalent.carpool ? `${carpooling[ref][language]} ` : name,
+      name,
     }
   }
 
@@ -198,13 +223,13 @@ const getValues = (
     const [prefix, name] = translation.split(';')
     return {
       prefix,
-      name: equivalent.carpool ? `${carpooling[ref][language]} ` : name,
+      name,
     }
   }
 
   return {
     prefix: '',
-    name: equivalent.carpool ? `${carpooling[ref][language]} ` : translation,
+    name: translation,
   }
 }
 
@@ -235,14 +260,80 @@ export const getNameWithoutSuffix = (
     return `${nameWithoutSuffix[0].toUpperCase()}${nameWithoutSuffix.slice(1)}`
   }
 }
+const sizes: Record<string, Record<string, string>> = {
+  citadine: {
+    fr: 'Citadine',
+    en: 'City car',
+    es: 'Coche urbano',
+  },
+  compact: {
+    fr: 'Compacte',
+    en: 'Compact',
+    es: 'Compacto',
+  },
+  berline: {
+    fr: 'Berline',
+    en: 'Sedan',
+    es: 'Berlina',
+  },
+  grandeberline: {
+    fr: 'SUV',
+    en: 'SUV',
+    es: 'SUV',
+  },
+}
 
-const getLivraisonInfo = (language: string, slug: string) => {
+const engines: Record<string, Record<string, string>> = {
+  essence: {
+    fr: 'Essence',
+    en: 'Gasoline',
+    es: 'Gasolina',
+  },
+  diesel: {
+    fr: 'Diesel',
+    en: 'Diesel',
+    es: 'Diésel',
+  },
+  electrique: {
+    fr: 'Électrique',
+    en: 'Electric',
+    es: 'Eléctrico',
+  },
+  hybride: {
+    fr: 'Hybride non rechargeable',
+    en: 'Non rechargeable hybrid',
+    es: 'Híbrido no recargable',
+  },
+  hybriderechargeable: {
+    fr: 'Hybride rechargeable',
+    en: 'Plug-in hybrid',
+    es: 'Híbrido enchufable',
+  },
+}
+
+const persons: Record<string, string> = {
+  fr: 'personnes',
+  en: 'people',
+  es: 'personas',
+}
+
+const getExtraInfo = (language: string, slug: string) => {
   const infos = livraison[slug]
-  if (!infos) {
-    return ''
+  if (infos) {
+    return ` (${infos[language]})`
   }
 
-  return ` (${infos[language]})`
+  if (slug.startsWith('voiture-') || (slug.startsWith('voiture') && slug.includes('+'))) {
+    const [info, carpool] = slug.split('+')
+    const [car, size, engine] = info.split('-')
+    return size && sizes[size] && engine && engines[engine]
+      ? ` (${sizes[size][language]} - ${engines[engine][language]}${carpool ? ` - ${Number.parseInt(carpool) + 1} ${persons[language]}` : ''})`
+      : carpool
+        ? ` (${Number.parseInt(carpool) + 1} ${persons[language]})`
+        : ''
+  }
+
+  return ''
 }
 
 export const getName = (
@@ -251,10 +342,10 @@ export const getName = (
   withPrefix?: boolean,
   value?: number,
   lowerCase?: boolean,
-  livraisonInfo?: boolean
+  extraInfo?: boolean
 ) => {
   const name = getNameWithoutSuffix(language, equivalent, withPrefix, value, lowerCase)
-  return `${name}${equivalent.carpool ? `(${equivalent.carpool} ${formatName(passengers[language], equivalent.carpool)})` : ''}${livraisonInfo ? getLivraisonInfo(language, equivalent.slug) : ''}`
+  return `${name}${extraInfo ? getExtraInfo(language, equivalent.slug) : ''}`
 }
 
 export const isEquivalentInMode = (equivalent: ComputedEquivalent, mode: string) =>

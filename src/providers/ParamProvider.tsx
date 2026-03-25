@@ -7,8 +7,8 @@ import { ComputedEquivalent, Equivalent } from 'types/equivalent'
 import { SiteLanguage } from 'types/languages'
 import { TransportSimulateur } from 'types/transport'
 import { deplacements } from 'data/categories/deplacement'
-import { comparisons } from 'components/outils/TransportComparisonSimulator'
 import { LivraisonMode, LivraisonType } from 'components/outils/livraison/Type'
+import { comparisons } from 'components/outils/transport/TransportComparisonSimulator'
 import { displayAddress } from 'utils/address'
 import { AlimentationCategories } from 'utils/alimentation'
 import { slugs } from 'utils/months'
@@ -116,6 +116,8 @@ export type Params = {
     setModes: Dispatch<SetStateAction<string[]>>
     selected: TransportSimulateur
     setSelected: Dispatch<SetStateAction<TransportSimulateur>>
+    carInfos: Record<string, { size: string; engine: string }>
+    setCarInfos: Dispatch<SetStateAction<Record<string, { size: string; engine: string }>>>
   }
   distance: {
     km: number
@@ -271,6 +273,15 @@ export function ParamProvider({ children }: { children: ReactNode }) {
   const [roundTrip, setRoundTrip] = useState(false)
 
   // Transport
+  const [carInfos, setCarInfos] = useState<Record<string, { size: string; engine: string }>>({
+    voiturethermique: { size: 'citadine', engine: 'diesel' },
+    covoituragethermique: { size: 'citadine', engine: 'diesel' },
+    voitureelectrique: { size: 'citadine', engine: 'electrique' },
+    covoiturageelectrique: { size: 'citadine', engine: 'electrique' },
+    voiturehybride: { size: 'citadine', engine: 'hybride' },
+    covoituragehybride: { size: 'citadine', engine: 'hybride' },
+  })
+
   const [modes, setModes] = useState<string[]>(
     deplacements.flatMap((transport) =>
       transport.withCarpool ? [`${transport.slug}+1`, transport.slug] : [transport.slug]
@@ -598,6 +609,8 @@ export function ParamProvider({ children }: { children: ReactNode }) {
           setModes,
           selected,
           setSelected,
+          carInfos,
+          setCarInfos,
         },
         distance: {
           km,

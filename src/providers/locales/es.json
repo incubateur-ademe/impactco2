@@ -289,12 +289,15 @@
     "title": "Descubre el impacto de carbono de las frutas y verduras de temporada para este mes"
   },
   "category-simulator": {
-    "passenger": "pasajero[s]",
+    "person": "persona[s]",
+    "personShort": "pers.",
     "in": "en",
     "distance": "Distancia recorrida durante",
     "voiturethermique": "Coche térmico",
     "voitureelectrique": "Coche eléctrico",
     "transportSelect": "Transporte utilizado para buscar el objeto",
+    "transportSizeSelect": "Tamaño del vehículo",
+    "transportEngineSelect": "Tipo de motor",
     "legend": {
       "construction": "Construcción",
       "usage": "Uso",
@@ -524,7 +527,27 @@
         "trainenfrancejour": "Promedio de emisiones anuales de trenes de 2013 a 2024 para transportar personas y mercancías (0,43 MT CO2e) reportado por día",
         "datacenterjour": "Campus PAR1 en Nozay, que agrupa 23 centros de datos, se extiende por 110 hectáreas y tiene una potencia de 250 MW. Consumo eléctrico de 1,3 TWh/año, reportado según el mix eléctrico de 2024.",
         "avion-johannesburg-paris-rugby": "Para el Mundial de 2023, viaje de una delegación de 45 personas (33 jugadores y 12 miembros del personal) en avión de larga distancia, sobre una distancia total recorrida de 17.462 kilómetros.",
-        "maisonneuve": "Construcción de una casa nueva convencional de 130 m² habitables - caso de viviendas en San Pedro y Miquelón"
+        "maisonneuve": "Construcción de una casa nueva convencional de 130 m² habitables - caso de viviendas en San Pedro y Miquelón",
+        "voiture-citadine-essence": "Coche urbano - Gasolina",
+        "voiture-citadine-diesel": "Coche urbano - Diésel",
+        "voiture-citadine-electrique": "Coche urbano - Eléctrico",
+        "voiture-citadine-hybride": "Coche urbano - Híbrido no recargable",
+        "voiture-citadine-hybriderechargeable": "Coche urbano - Híbrido enchufable",
+        "voiture-compact-essence": "Compacto - Gasolina",
+        "voiture-compact-diesel": "Compacto - Diésel",
+        "voiture-compact-electrique": "Compacto - Eléctrico",
+        "voiture-compact-hybride": "Compacto - Híbrido no recargable",
+        "voiture-compact-hybriderechargeable": "Compacto - Híbrido enchufable",
+        "voiture-berline-essence": "Berlina - Gasolina",
+        "voiture-berline-diesel": "Berlina - Diésel",
+        "voiture-berline-electrique": "Berlina - Eléctrico",
+        "voiture-berline-hybride": "Berlina - Híbrido no recargable",
+        "voiture-berline-hybriderechargeable": "Berlina - Híbrido enchufable",
+        "voiture-grandeberline-essence": "SUV - Gasolina",
+        "voiture-grandeberline-diesel": "SUV - Diésel",
+        "voiture-grandeberline-electrique": "SUV - Eléctrico",
+        "voiture-grandeberline-hybride": "SUV - Híbrido no recargable",
+        "voiture-grandeberline-hybriderechargeable": "SUV - Híbrido enchufable"
       },
       "post": {
         "ski": "Incluye: el impacto de carbono del transporte (52%), alojamiento (4%), alimentos (8%), la estación de esquí (3%), infraestructura, equipo y servicios (17%), y equipo (16%).",
@@ -712,5 +735,16 @@
       "exemple-4": "8 giga toneladas co2e",
       "exemple-5": "7 mil kg CO₂"
     }
+  },
+  "voiture": {
+    "diesel": "Diésel",
+    "essence": "Gasolina",
+    "hybride": "No recargable",
+    "hybriderechargeable": "Recargable",
+    "electrique": "Eléctrico",
+    "citadine": "Mediana",
+    "compact": "Pequeña",
+    "berline": "Sedán",
+    "grandeberline": "SUV"
   }
 }

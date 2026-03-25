@@ -25,7 +25,7 @@ const EquivalentCardContent = ({
   return (
     <div className={styles.content}>
       <div>
-        <p className={styles.title}>{getName(language, equivalent, equivalent.category === 8)}</p>
+        <p className={styles.title}>{getName(language, equivalent, equivalent.category === 8, 1, false, true)}</p>
         <Result form={output}>
           <CO2Quantity
             quantity={equivalent.carpool ? equivalent.value / (equivalent.carpool + 1) : equivalent.value}

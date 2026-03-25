@@ -1,8 +1,6 @@
 'use client'
-
 import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
-import Image from 'next/image'
 import { Dispatch, SetStateAction, useEffect, useMemo, useRef, useState } from 'react'
 import useParamContext, { Params } from 'src/providers/ParamProvider'
 import useTrackingContext from 'src/providers/TrackingProvider'
@@ -12,15 +10,13 @@ import { getNameWithoutSuffix } from 'utils/Equivalent/equivalent'
 import formatName from 'utils/formatName'
 import formatNumber from 'utils/formatNumber'
 import formatUsage from 'utils/formatUsage'
-import { track } from 'utils/matomo'
 import EquivalentIcon from 'components/base/EquivalentIcon'
 import IframeableLink from 'components/base/IframeableLink'
 import LocalNumber from 'components/base/LocalNumber'
 import HelpIcon from 'components/base/icons/help'
-import HiddenLabel from 'components/form/HiddenLabel'
-import Select from 'components/form/Select'
 import CategoryDisplayAll from './CategoryDisplayAll'
-import PlusMinus from './plusMinus/PlusMinus'
+import LivraisonType from './livraison/LivraisonType'
+import Carpool from './transport/Carpool'
 import styles from './CategorySimulator.module.css'
 
 const getValue = (equivalent: ComputedEquivalent, params: Params, type?: TransportSimulateur) => {
@@ -52,11 +48,7 @@ const computeLegends = (equivalents: ComputedEquivalent[]) => {
         'ecv' in equivalent && equivalent.ecv && equivalent.ecv?.some((ecv) => livraisonECVs.includes(ecv.id))
     )
   ) {
-    const livraisonECVs = [{ label: 'logistique', style: styles.stripped }]
-
-    if (equivalents.some((equivalent) => equivalent.livraison)) {
-      livraisonECVs.push({ label: 'deplacement', style: styles.plain })
-    }
+    const livraisonECVs = []
     if (
       equivalents.some(
         (equivalent) => 'ecv' in equivalent && equivalent.ecv && equivalent.ecv?.some((ecv) => ecv.id === 58)
@@ -64,13 +56,19 @@ const computeLegends = (equivalents: ComputedEquivalent[]) => {
     ) {
       livraisonECVs.push({ label: 'fabrication', style: styles.gray })
     }
+
+    livraisonECVs.push({ label: 'logistique', style: styles.stripped })
+
+    if (equivalents.some((equivalent) => equivalent.livraison)) {
+      livraisonECVs.push({ label: 'deplacement', style: styles.plain })
+    }
     return livraisonECVs
   }
 
   if (equivalents.some((equivalent) => formatUsage(equivalent))) {
     return [
-      { label: 'usage', style: styles.stripped },
       { label: 'construction', style: styles.plain },
+      { label: 'usage', style: styles.stripped },
     ]
   }
 }
@@ -168,6 +166,7 @@ const CategorySimulator = ({
       <ul ref={ref} id={`category-${id || ''}-equivalents-list`}>
         {equivalents &&
           equivalents
+            .filter((equivalent) => !equivalent.ignore)
             .sort((a, b) => (getValue(a, initialParams, type) - getValue(b, initialParams, type)) * (reverse ? -1 : 1))
             .map((equivalent, index) => {
               const detail = getDetail(equivalent)
@@ -216,67 +215,10 @@ const CategorySimulator = ({
                       {legends && <p className='ico2-hidden'>{barExplanation}</p>}
                     </div>
                   </IframeableLink>
-                  {!!equivalent.carpool && type && (
-                    <div className={styles.carpool}>
-                      <div className={styles.triangle} />
-                      <div className={styles.conducteur}>
-                        <Image src='/icons/conducteur.svg' alt='un conducteur dans la voiture' width={20} height={24} />
-                      </div>
-                      <PlusMinus
-                        value={params[type].carpool[equivalent.slug] || 1}
-                        setValue={(value) => {
-                          track(
-                            `Transport ${type === 'distance' ? 'distance' : 'itinéraire'}`,
-                            `Covoiturage ${equivalent.slug}`,
-                            value.toString()
-                          )
-                          params[type].setCarpool({ ...params[type].carpool, [equivalent.slug]: value })
-                        }}
-                        max={4}
-                        label={formatName(t('passenger'), params[type].carpool[equivalent.slug] || 1)}
-                        hiddenLabel={`${t('in')} ${getNameWithoutSuffix(params.language, equivalent)}`}
-                        icon='/icons/passager.svg'
-                      />
-                    </div>
+                  {equivalent.slug.startsWith('voiture') && type && (
+                    <Carpool carpoolValue={equivalent.carpool} type={type} equivalent={equivalent} />
                   )}
-                  {!!equivalent.livraison && (
-                    <div className={styles.carpool} data-testid={`livraison-${equivalent.slug}`}>
-                      <div className={styles.triangle} />
-                      <div className={styles.transport}>
-                        <HiddenLabel htmlFor={`text-select-transport-type-${equivalent.slug}`}>
-                          {t('transportSelect')}
-                        </HiddenLabel>
-                        <Select
-                          id={`transport-type-${equivalent.slug}`}
-                          className={styles.select}
-                          value={params.livraison.transport[equivalent.slug] || 'voiturethermique'}
-                          onChange={(event) => {
-                            track('Livraison', `Transport ${equivalent.slug}`, event.target.value)
-                            params.livraison.setTransport({
-                              ...params.livraison.transport,
-                              [equivalent.slug]: event.target.value,
-                            })
-                          }}
-                          style={{
-                            backgroundImage: `url('/icons/mini-${params.livraison.transport[equivalent.slug] || 'voiturethermique'}.svg')`,
-                          }}>
-                          <option value='voiturethermique'>{t('voiturethermique')}</option>
-                          <option value='voitureelectrique'>{t('voitureelectrique')}</option>
-                        </Select>
-                      </div>
-                      <PlusMinus
-                        value={params.livraison.distance[equivalent.slug] || 1}
-                        setValue={(value) => {
-                          track('Livraison', `Distance ${equivalent.slug}`, value.toString())
-                          params.livraison.setDistance({ ...params.livraison.distance, [equivalent.slug]: value })
-                        }}
-                        step={0.5}
-                        max={100}
-                        label={'km'}
-                        hiddenLabel={`${t('distance')} ${getNameWithoutSuffix(params.language, equivalent)}`}
-                      />
-                    </div>
-                  )}
+                  {!!equivalent.livraison && <LivraisonType equivalent={equivalent} />}
                 </li>
               )
             })}

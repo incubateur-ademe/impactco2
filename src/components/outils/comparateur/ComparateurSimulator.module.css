@@ -62,8 +62,6 @@
 
 .numberInput,
 .numberInputWithEquivalent {
-  padding: 0 4rem;
-
   input {
     max-width: 100%;
   }

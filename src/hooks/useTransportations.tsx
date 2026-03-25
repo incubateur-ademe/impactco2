@@ -19,6 +19,7 @@ export default function useTransportations(
   const params = useParamContext()
 
   const transportations = useMemo(() => {
+    const { carInfos } = params.transport
     const { km } = params.distance
     const { displayAll, carpool } = params[type]
     const values = itineraries ? { ...itineraries } : null
@@ -60,29 +61,58 @@ export default function useTransportations(
                 onClick: () => track(tracking, 'Navigation equivalent', equivalent.slug),
               }
             })
-            .flatMap((equivalent) => {
+            .flatMap((equivalent, index, equivalents) => {
               const distance =
                 (values && equivalent.type ? values[equivalent.type as DeplacementType] : km) * roundTripFactor
 
+              const carInfo = carInfos[equivalent.slug]
+              const realEquivalent =
+                (carInfo && equivalents.find((eq) => eq.slug === `voiture-${carInfo.size}-${carInfo.engine}`)) ||
+                equivalent
+              const carpoolCarInfo = carInfos[`covoiturage${equivalent.slug.replace('voiture', '')}`]
+              const carpoolEquivalent =
+                (carpoolCarInfo &&
+                  equivalents.find((eq) => eq.slug === `voiture-${carpoolCarInfo.size}-${carpoolCarInfo.engine}`)) ||
+                equivalent
+
               const carpoolValue = equivalent.withCarpool && carpool[equivalent.slug] ? carpool[equivalent.slug] : 1
-              return equivalent.withCarpool &&
+              return carpoolEquivalent.withCarpool &&
                 params.transport.modes.find((mode) => mode.startsWith(`${equivalent.slug}+`))
                 ? [
                     {
-                      ...equivalent,
+                      ...carpoolEquivalent,
+                      default: equivalent.default,
+                      ignore: equivalent.ignore,
+                      slug: equivalent.slug,
                       carpool: carpoolValue,
                       name:
                         getNameWithoutSuffix(params.language, { ...equivalent, carpool: carpoolValue }) +
                         (values ? ` - ${formatNumber(distance).toLocaleString()} km` : ''),
                       initialValue: equivalent.value,
-                      value: equivalent.value / (carpoolValue + 1),
-                      ecv: equivalent.ecv.map((ecv) => ({ ...ecv, value: ecv.value / (carpoolValue + 1) })),
-                      usage: equivalent.usage / (carpoolValue + 1),
-                      link: `${equivalent.link}+${carpoolValue}`,
+                      value: carpoolEquivalent.value / (carpoolValue + 1),
+                      ecv: carpoolEquivalent.ecv.map((ecv) => ({ ...ecv, value: ecv.value / (carpoolValue + 1) })),
+                      usage: carpoolEquivalent.usage / (carpoolValue + 1),
+                      link: `${carpoolEquivalent.link}+${carpoolValue}`,
                     },
-                    equivalent,
+                    {
+                      ...realEquivalent,
+                      default: equivalent.default,
+                      ignore: equivalent.ignore,
+                      name: equivalent.name,
+                      slug: equivalent.slug,
+                      initialValue: equivalent.value,
+                    },
                   ]
-                : [equivalent]
+                : [
+                    {
+                      ...realEquivalent,
+                      default: equivalent.default,
+                      ignore: equivalent.ignore,
+                      name: equivalent.name,
+                      slug: equivalent.slug,
+                      initialValue: equivalent.value,
+                    },
+                  ]
             })
             .filter((equivalent) => {
               if (equivalent.withCarpool) {

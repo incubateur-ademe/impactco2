@@ -98,6 +98,7 @@
     "@babel/preset-typescript": "^7.28.5",
     "@babel/runtime": "^7.29.2",
     "@eslint/eslintrc": "^3.3.5",
+    "@incubateur-ademe/nosgestesclimat": "^4.10.0",
     "@incubateur-ademe/publicodes-empreinte-carbone-chauffage": "^1.1.0",
     "@incubateur-ademe/publicodes-impact-livraison": "^0.7.0",
     "@keyv/etcd": "^2.1.1",

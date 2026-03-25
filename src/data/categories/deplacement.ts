@@ -1,3 +1,4 @@
+// attention aux ids réservé pour le covoiturage (22 -> 29 et a partir de 100)
 export const deplacements = [
   {
     id: 1,
@@ -94,7 +95,6 @@ export const deplacements = [
       },
     ],
     default: true,
-    tile: false,
   },
   {
     id: 2,
@@ -113,7 +113,6 @@ export const deplacements = [
       },
     ],
     default: true,
-    tile: true,
     display: {
       min: 150,
     },
@@ -135,14 +134,12 @@ export const deplacements = [
       },
     ],
     default: true,
-    tile: false,
     display: {
       min: 31,
     },
   },
   {
     id: 4,
-    subtitle: 'Thermique',
     synonyms: ['conduire'],
     slug: 'voiturethermique',
     withCarpool: true,
@@ -150,20 +147,18 @@ export const deplacements = [
     category: 4,
     ecv: [
       {
-        value: 0.192,
         id: 6,
+        value: 0.09416971630563031,
       },
       {
-        value: 0.0256,
         id: 5,
+        value: 0.027733695652173936,
       },
     ],
     default: true,
-    tile: true,
   },
   {
     id: 5,
-    subtitle: 'Électrique',
     synonyms: ['conduire'],
     slug: 'voitureelectrique',
     withCarpool: true,
@@ -171,16 +166,15 @@ export const deplacements = [
     category: 4,
     ecv: [
       {
-        value: 0.0198,
         id: 6,
+        value: 0.011504485055630311,
       },
       {
-        value: 0.0836,
         id: 5,
+        value: 0.046089130434782626,
       },
     ],
     default: true,
-    tile: false,
   },
   {
     id: 6,
@@ -198,7 +192,6 @@ export const deplacements = [
       },
     ],
     default: true,
-    tile: false,
     display: {
       min: 16,
     },
@@ -210,7 +203,6 @@ export const deplacements = [
     type: 'foot',
     category: 4,
     default: true,
-    tile: false,
     total: 0,
     display: {
       max: 30,
@@ -223,7 +215,6 @@ export const deplacements = [
     type: 'foot',
     category: 4,
     default: true,
-    tile: false,
     display: {
       max: 30,
     },
@@ -251,14 +242,12 @@ export const deplacements = [
       },
     ],
     default: true,
-    tile: false,
     display: {
       max: 30,
     },
   },
   {
     id: 9,
-    subtitle: 'Thermique',
     slug: 'busthermique',
     type: 'car',
     category: 4,
@@ -273,7 +262,6 @@ export const deplacements = [
       },
     ],
     default: true,
-    tile: false,
     display: {
       max: 15,
     },
@@ -294,7 +282,6 @@ export const deplacements = [
       },
     ],
     default: false,
-    tile: false,
     display: {
       max: 12,
     },
@@ -316,7 +303,6 @@ export const deplacements = [
       },
     ],
     default: true,
-    tile: false,
     display: {
       max: 12,
     },
@@ -337,7 +323,6 @@ export const deplacements = [
       },
     ],
     default: true,
-    tile: false,
     display: {
       max: 50,
     },
@@ -358,7 +343,6 @@ export const deplacements = [
       },
     ],
     default: true,
-    tile: false,
     display: {
       min: 51,
     },
@@ -380,7 +364,6 @@ export const deplacements = [
       },
     ],
     default: true,
-    tile: false,
     display: {
       min: 11,
       max: 100,
@@ -403,14 +386,12 @@ export const deplacements = [
       },
     ],
     default: false,
-    tile: false,
     display: {
       max: 150,
     },
   },
   {
     id: 16,
-    subtitle: 'Électrique',
     slug: 'buselectrique',
     type: 'car',
     category: 4,
@@ -425,7 +406,6 @@ export const deplacements = [
       },
     ],
     default: false,
-    tile: false,
     display: {
       max: 15,
     },
@@ -446,14 +426,12 @@ export const deplacements = [
       },
     ],
     default: true,
-    tile: false,
     display: {
       max: 30,
     },
   },
   {
     id: 21,
-    subtitle: 'GNV',
     slug: 'busgnv',
     type: 'car',
     category: 4,
@@ -468,9 +446,427 @@ export const deplacements = [
       },
     ],
     default: false,
-    tile: false,
     display: {
       max: 15,
     },
+  },
+  {
+    id: 100,
+    synonyms: ['conduire'],
+    slug: 'voiture-citadine-essence',
+    withCarpool: true,
+    ignore: true,
+    type: 'car',
+    category: 4,
+    ecv: [
+      {
+        id: 6,
+        value: 0.1169810600556303,
+      },
+      {
+        id: 5,
+        value: 0.027733695652173936,
+      },
+    ],
+    default: true,
+  },
+  {
+    id: 105,
+    synonyms: ['conduire'],
+    slug: 'voiture-citadine-diesel',
+    withCarpool: true,
+    ignore: true,
+    type: 'car',
+    category: 4,
+    ecv: [
+      {
+        id: 6,
+        value: 0.09416971630563031,
+      },
+      {
+        id: 5,
+        value: 0.027733695652173936,
+      },
+    ],
+    default: true,
+  },
+  {
+    id: 110,
+    synonyms: ['conduire'],
+    slug: 'voiture-citadine-electrique',
+    withCarpool: true,
+    ignore: true,
+    type: 'car',
+    category: 4,
+    ecv: [
+      {
+        id: 6,
+        value: 0.011504485055630311,
+      },
+      {
+        id: 5,
+        value: 0.046089130434782626,
+      },
+    ],
+    default: true,
+  },
+  {
+    id: 115,
+    synonyms: ['conduire'],
+    slug: 'voiture-citadine-hybride',
+    withCarpool: true,
+    ignore: true,
+    type: 'car',
+    category: 4,
+    ecv: [
+      {
+        id: 6,
+        value: 0.1060514350556303,
+      },
+      {
+        id: 5,
+        value: 0.02919796195652175,
+      },
+    ],
+    default: true,
+  },
+  {
+    id: 120,
+    synonyms: ['conduire'],
+    slug: 'voiture-citadine-hybriderechargeable',
+    withCarpool: true,
+    ignore: true,
+    type: 'car',
+    category: 4,
+    ecv: [
+      {
+        id: 6,
+        value: 0.09211716005563031,
+      },
+      {
+        id: 5,
+        value: 0.03677027173913044,
+      },
+    ],
+    default: true,
+  },
+  {
+    id: 125,
+    synonyms: ['conduire'],
+    slug: 'voiture-compact-essence',
+    withCarpool: true,
+    ignore: true,
+    type: 'car',
+    category: 4,
+    ecv: [
+      {
+        id: 6,
+        value: 0.1380123725556303,
+      },
+      {
+        id: 5,
+        value: 0.03169565217391306,
+      },
+    ],
+    default: true,
+  },
+  {
+    id: 130,
+    synonyms: ['conduire'],
+    slug: 'voiture-compact-diesel',
+    withCarpool: true,
+    ignore: true,
+    type: 'car',
+    category: 4,
+    ecv: [
+      {
+        id: 6,
+        value: 0.1105577600556303,
+      },
+      {
+        id: 5,
+        value: 0.03169565217391306,
+      },
+    ],
+    default: true,
+  },
+  {
+    id: 135,
+    synonyms: ['conduire'],
+    slug: 'voiture-compact-electrique',
+    withCarpool: true,
+    ignore: true,
+    type: 'car',
+    category: 4,
+    ecv: [
+      {
+        id: 6,
+        value: 0.01208836005563031,
+      },
+      {
+        id: 5,
+        value: 0.05527690217391306,
+      },
+    ],
+    default: true,
+  },
+  {
+    id: 140,
+    synonyms: ['conduire'],
+    slug: 'voiture-compact-hybride',
+    withCarpool: true,
+    ignore: true,
+    type: 'car',
+    category: 4,
+    ecv: [
+      {
+        id: 6,
+        value: 0.1134194350556303,
+      },
+      {
+        id: 5,
+        value: 0.03315991847826087,
+      },
+    ],
+    default: true,
+  },
+  {
+    id: 145,
+    synonyms: ['conduire'],
+    slug: 'voiture-compact-hybriderechargeable',
+    withCarpool: true,
+    ignore: true,
+    type: 'car',
+    category: 4,
+    ecv: [
+      {
+        id: 6,
+        value: 0.0931681350556303,
+      },
+      {
+        id: 5,
+        value: 0.04073222826086956,
+      },
+    ],
+    default: true,
+  },
+  {
+    id: 150,
+    synonyms: ['conduire'],
+    slug: 'voiture-berline-essence',
+    withCarpool: true,
+    ignore: true,
+    type: 'car',
+    category: 4,
+    ecv: [
+      {
+        id: 6,
+        value: 0.1496510600556303,
+      },
+      {
+        id: 5,
+        value: 0.03961956521739131,
+      },
+    ],
+    default: true,
+  },
+  {
+    id: 155,
+    synonyms: ['conduire'],
+    slug: 'voiture-berline-diesel',
+    withCarpool: true,
+    ignore: true,
+    type: 'car',
+    category: 4,
+    ecv: [
+      {
+        id: 6,
+        value: 0.1437828350556303,
+      },
+      {
+        id: 5,
+        value: 0.03961956521739131,
+      },
+    ],
+    default: true,
+  },
+  {
+    id: 160,
+    synonyms: ['conduire'],
+    slug: 'voiture-berline-electrique',
+    withCarpool: true,
+    ignore: true,
+    type: 'car',
+    category: 4,
+    ecv: [
+      {
+        id: 6,
+        value: 0.014735260055630313,
+      },
+      {
+        id: 5,
+        value: 0.0759790760869565,
+      },
+    ],
+    default: true,
+  },
+  {
+    id: 165,
+    synonyms: ['conduire'],
+    slug: 'voiture-berline-hybride',
+    withCarpool: true,
+    ignore: true,
+    type: 'car',
+    category: 4,
+    ecv: [
+      {
+        id: 6,
+        value: 0.12976718505563029,
+      },
+      {
+        id: 5,
+        value: 0.041083831521739125,
+      },
+    ],
+    default: true,
+  },
+  {
+    id: 170,
+    synonyms: ['conduire'],
+    slug: 'voiture-berline-hybriderechargeable',
+    withCarpool: true,
+    ignore: true,
+    type: 'car',
+    category: 4,
+    ecv: [
+      {
+        id: 6,
+        value: 0.11580859130563032,
+      },
+      {
+        id: 5,
+        value: 0.048656141304347804,
+      },
+    ],
+    default: true,
+  },
+  {
+    id: 175,
+    synonyms: ['conduire'],
+    slug: 'voiture-grandeberline-essence',
+    withCarpool: true,
+    ignore: true,
+    type: 'car',
+    category: 4,
+    ecv: [
+      {
+        id: 6,
+        value: 0.2066193725556303,
+      },
+      {
+        id: 5,
+        value: 0.03961956521739131,
+      },
+    ],
+    default: true,
+  },
+  {
+    id: 180,
+    synonyms: ['conduire'],
+    slug: 'voiture-grandeberline-diesel',
+    withCarpool: true,
+    ignore: true,
+    type: 'car',
+    category: 4,
+    ecv: [
+      {
+        id: 6,
+        value: 0.1300887163056303,
+      },
+      {
+        id: 5,
+        value: 0.03961956521739131,
+      },
+    ],
+    default: true,
+  },
+  {
+    id: 185,
+    synonyms: ['conduire'],
+    slug: 'voiture-grandeberline-electrique',
+    withCarpool: true,
+    ignore: true,
+    type: 'car',
+    category: 4,
+    ecv: [
+      {
+        id: 6,
+        value: 0.014112460055630311,
+      },
+      {
+        id: 5,
+        value: 0.08024456521739132,
+      },
+    ],
+    default: true,
+  },
+  {
+    id: 190,
+    synonyms: ['conduire'],
+    slug: 'voiture-grandeberline-hybride',
+    withCarpool: true,
+    ignore: true,
+    type: 'car',
+    category: 4,
+    ecv: [
+      {
+        id: 6,
+        value: 0.1408191850556303,
+      },
+      {
+        id: 5,
+        value: 0.041083831521739125,
+      },
+    ],
+    default: true,
+  },
+  {
+    id: 195,
+    synonyms: ['conduire'],
+    slug: 'voiture-grandeberline-hybriderechargeable',
+    withCarpool: true,
+    ignore: true,
+    type: 'car',
+    category: 4,
+    ecv: [
+      {
+        id: 6,
+        value: 0.1373241350556303,
+      },
+      {
+        id: 5,
+        value: 0.048656141304347804,
+      },
+    ],
+    default: true,
+  },
+  {
+    id: 200,
+    synonyms: ['conduire'],
+    slug: 'voiturehybride',
+    withCarpool: true,
+    type: 'car',
+    category: 4,
+    ecv: [
+      {
+        id: 6,
+        value: 0.1060514350556303,
+      },
+      {
+        id: 5,
+        value: 0.02919796195652175,
+      },
+    ],
+    default: false,
   },
 ]

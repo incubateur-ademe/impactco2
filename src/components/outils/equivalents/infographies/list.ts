@@ -115,7 +115,7 @@ export const imageInfographies: Record<string, { image: string; alt: string }[]>
     },
     {
       image: 'Impact-transport-hotellerie-3-nuits-a-500km.png',
-      alt: 'Quel est l’impact du transport pour un voyage de 4 jours à 2 personnes ? (3 nuits à l’hôtel, à 500 km du domicile, soit un trajet à 2 personnes de 1000 km aller-retour). En avion (court courrier), le trajet Aller Retour représente 449,14 kg CO2e, l’hébergement 25,8 kg CO2e, soit un total de 474,94 kg CO2e. En voiture (thermique), le trajet Aller Retour représente 217,6 kg CO2e, l’hébergement 25,8 kg CO2e, soit un total de 243,4 kg CO2e. En TGV, le trajet Aller Retour représente 5,86 kg CO2e, l’hébergement 25,8 kg CO2e, soit un total de 31,66 kg CO2e. Source : ADEME.',
+      alt: 'Quel est l’impact du transport pour un voyage de 4 jours à 2 personnes ? (3 nuits à l’hôtel, à 500 km du domicile, soit un trajet à 2 personnes de 1000 km aller-retour). En avion (court courrier), le trajet Aller Retour représente 449,14 kg CO2e, l’hébergement 25,8 kg CO2e, soit un total de 474,94 kg CO2e. En voiture (thermique), le trajet Aller Retour représente 121,9 kg CO2e, l’hébergement 25,8 kg CO2e, soit un total de 147,7 kg CO2e. En TGV, le trajet Aller Retour représente 5,86 kg CO2e, l’hébergement 25,8 kg CO2e, soit un total de 31,66 kg CO2e. Source : ADEME.',
     },
   ],
   camping: [
@@ -125,7 +125,7 @@ export const imageInfographies: Record<string, { image: string; alt: string }[]>
     },
     {
       image: 'Impact-transport-hotellerie-3-nuits-a-500km.png',
-      alt: 'Quel est l’impact du transport pour un voyage de 4 jours à 2 personnes ? (3 nuits à l’hôtel, à 500 km du domicile, soit un trajet à 2 personnes de 1000 km aller-retour). En avion (court courrier), le trajet Aller Retour représente 450 kg CO2e, l’hébergement 31,8 kg CO2e, soit un total de 481,8 kg CO2e. En voiture (thermique), le trajet Aller Retour représente 218 kg CO2e, l’hébergement 31,8 kg CO2e, soit un total de 249,8 kg CO2e. En TGV, le trajet Aller Retour représente 5,8 kg CO2e, l’hébergement 31,8 kg CO2e, soit un total de 37,6 kg CO2e. Source : ADEME.',
+      alt: 'Quel est l’impact du transport pour un voyage de 4 jours à 2 personnes ? (3 nuits à l’hôtel, à 500 km du domicile, soit un trajet à 2 personnes de 1000 km aller-retour). En avion (court courrier), le trajet Aller Retour représente 449,14 kg CO2e, l’hébergement 25,8 kg CO2e, soit un total de 474,94 kg CO2e. En voiture (thermique), le trajet Aller Retour représente 121,9 kg CO2e, l’hébergement 25,8 kg CO2e, soit un total de 147,7 kg CO2e. En TGV, le trajet Aller Retour représente 5,86 kg CO2e, l’hébergement 25,8 kg CO2e, soit un total de 31,66 kg CO2e. Source : ADEME.',
     },
   ],
   location: [
@@ -135,7 +135,7 @@ export const imageInfographies: Record<string, { image: string; alt: string }[]>
     },
     {
       image: 'Impact-transport-hotellerie-3-nuits-a-500km.png',
-      alt: 'Quel est l’impact du transport pour un voyage de 4 jours à 2 personnes ? (3 nuits à l’hôtel, à 500 km du domicile, soit un trajet à 2 personnes de 1000 km aller-retour). En avion (court courrier), le trajet Aller Retour représente 450 kg CO2e, l’hébergement 31,8 kg CO2e, soit un total de 481,8 kg CO2e. En voiture (thermique), le trajet Aller Retour représente 218 kg CO2e, l’hébergement 31,8 kg CO2e, soit un total de 249,8 kg CO2e. En TGV, le trajet Aller Retour représente 5,8 kg CO2e, l’hébergement 31,8 kg CO2e, soit un total de 37,6 kg CO2e. Source : ADEME.',
+      alt: 'Quel est l’impact du transport pour un voyage de 4 jours à 2 personnes ? (3 nuits à l’hôtel, à 500 km du domicile, soit un trajet à 2 personnes de 1000 km aller-retour). En avion (court courrier), le trajet Aller Retour représente 449,14 kg CO2e, l’hébergement 25,8 kg CO2e, soit un total de 474,94 kg CO2e. En voiture (thermique), le trajet Aller Retour représente 121,9 kg CO2e, l’hébergement 25,8 kg CO2e, soit un total de 147,7 kg CO2e. En TGV, le trajet Aller Retour représente 5,86 kg CO2e, l’hébergement 25,8 kg CO2e, soit un total de 31,66 kg CO2e. Source : ADEME.',
     },
   ],
   residencesecondaire: [
@@ -145,7 +145,7 @@ export const imageInfographies: Record<string, { image: string; alt: string }[]>
     },
     {
       image: 'Impact-transport-hotellerie-3-nuits-a-500km.png',
-      alt: 'Quel est l’impact du transport pour un voyage de 4 jours à 2 personnes ? (3 nuits à l’hôtel, à 500 km du domicile, soit un trajet à 2 personnes de 1000 km aller-retour). En avion (court courrier), le trajet Aller Retour représente 450 kg CO2e, l’hébergement 31,8 kg CO2e, soit un total de 481,8 kg CO2e. En voiture (thermique), le trajet Aller Retour représente 218 kg CO2e, l’hébergement 31,8 kg CO2e, soit un total de 249,8 kg CO2e. En TGV, le trajet Aller Retour représente 5,8 kg CO2e, l’hébergement 31,8 kg CO2e, soit un total de 37,6 kg CO2e. Source : ADEME.',
+      alt: 'Quel est l’impact du transport pour un voyage de 4 jours à 2 personnes ? (3 nuits à l’hôtel, à 500 km du domicile, soit un trajet à 2 personnes de 1000 km aller-retour). En avion (court courrier), le trajet Aller Retour représente 449,14 kg CO2e, l’hébergement 25,8 kg CO2e, soit un total de 474,94 kg CO2e. En voiture (thermique), le trajet Aller Retour représente 121,9 kg CO2e, l’hébergement 25,8 kg CO2e, soit un total de 147,7 kg CO2e. En TGV, le trajet Aller Retour représente 5,86 kg CO2e, l’hébergement 25,8 kg CO2e, soit un total de 31,66 kg CO2e. Source : ADEME.',
     },
   ],
   livraisondomicile: [
@@ -161,7 +161,7 @@ export const imageInfographies: Record<string, { image: string; alt: string }[]>
     },
     {
       image: 'infographie-livraison-smartphone.png',
-      alt: 'Quel est l’impact carbone de mes choix de livraison pour l’achat d’un smartphone ? Pour une livraison en point de retrait (j’y vais à pieds, à proximité), mon déplacement représente 0 kg CO2e, la logistique et livraison représente 0,22 kg CO2e, soit un total de 0,22 kg CO2e. Pour une livraison à domicile standard, mon déplacement représente 0 kg CO2e, la logistique et livraison représente 0,25 kg CO2e, soit un total de 0,25 kg CO2e. Pour une livraison en point de retrait (j’y vais en voiture thermique à 3,5 km), mon déplacement représente 1,52 kg CO2e, la logistique et livraison représente 0,22 kg CO2e, soit un total de 1,74 CO2e.  Source : Base Empreinte, ADEME.',
+      alt: 'Quel est l’impact carbone de mes choix de livraison pour l’achat d’un smartphone ? Pour une livraison en point de retrait (j’y vais à pieds, à proximité), mon déplacement représente 0 kg CO2e, la logistique et livraison représente 0,22 kg CO2e, soit un total de 0,22 kg CO2e. Pour une livraison à domicile standard, mon déplacement représente 0 kg CO2e, la logistique et livraison représente 0,25 kg CO2e, soit un total de 0,25 kg CO2e. Pour une livraison en point de retrait (j’y vais en voiture thermique à 3,5 km), mon déplacement représente 0,85 kg CO2e, la logistique et livraison représente 0,22 kg CO2e, soit un total de 1,07 CO2e.  Source : Base Empreinte, ADEME.',
     },
   ],
   lit: [

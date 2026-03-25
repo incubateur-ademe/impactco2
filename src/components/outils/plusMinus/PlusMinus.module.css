@@ -69,3 +69,16 @@
     height: 2.5rem;
   }
 }
+
+.bigLabel {
+  @media screen and (max-width: 33.125rem) {
+    display: none;
+  }
+}
+
+.smallLabel {
+  display: none;
+  @media screen and (max-width: 33.125rem) {
+    display: inline;
+  }
+}

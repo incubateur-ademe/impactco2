@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { z } from 'zod'
 import { deplacements } from 'data/categories/deplacement'
-import { getName, getNameWithoutSuffix } from 'utils/Equivalent/equivalent'
+import { getName } from 'utils/Equivalent/equivalent'
 import { trackAPIRequest } from 'utils/middleware'
 import { filterByDistance } from 'utils/transport'
 
@@ -36,7 +36,12 @@ export const computeTransportEmission = (
               ...transportation,
               carpool: index + 1,
               slug: `${transportation.slug}+${index + 1}`,
-              id: transportation.id === 4 ? 22 + index : 26 + index,
+              id:
+                transportation.id === 4
+                  ? 22 + index
+                  : transportation.id === 5
+                    ? 26 + index
+                    : transportation.id + index + 1,
             })),
             transportation,
           ]
@@ -45,15 +50,22 @@ export const computeTransportEmission = (
     .filter((transportation) => (activeTransportations ? activeTransportations.includes(transportation.id) : true))
     .map((transportation) => {
       let values = [{ id: 6, value: transportation.total || 0 }]
-      let name = getName(language || 'fr', transportation)
+      let name = getName(language || 'fr', transportation, false, 1, false, true)
       if ('ecvs' in transportation && transportation.ecvs) {
         const currentECV = transportation.ecvs.find((value) => (value.display.max ? value.display.max >= km : true))
         if (currentECV) {
           values = currentECV.ecv
-          name = getNameWithoutSuffix(language || 'fr', {
-            ...transportation,
-            slug: `${transportation.slug}-${currentECV.subtitle}`,
-          })
+          name = getName(
+            language || 'fr',
+            {
+              ...transportation,
+              slug: `${transportation.slug}-${currentECV.subtitle}`,
+            },
+            false,
+            1,
+            false,
+            true
+          )
         }
       } else if (transportation.ecv) {
         values = transportation.ecv
@@ -158,15 +170,120 @@ export const computeTransportEmission = (
  *         - 16 : Bus électrique
  *         - 17 : Trottinette à assistance électrique
  *         - 21 : Bus (GNV)
- *         - 22 : Covoiturage thermique (1 passager)
- *         - 23 : Covoiturage thermique (2 passagers)
- *         - 24 : Covoiturage thermique (3 passagers)
- *         - 25 : Covoiturage thermique (4 passagers)
- *         - 26 : Covoiturage électrique (1 passager)
- *         - 27 : Covoiturage électrique (2 passagers)
- *         - 28 : Covoiturage électrique (3 passagers)
- *         - 29 : Covoiturage électrique (4 passagers)
+ *         - 22 : Covoiturage thermique (2 personnes)
+ *         - 23 : Covoiturage thermique (3 personnes)
+ *         - 24 : Covoiturage thermique (4 personnes)
+ *         - 25 : Covoiturage thermique (5 personnes)
+ *         - 26 : Covoiturage électrique (2 personnes)
+ *         - 27 : Covoiturage électrique (3 personnes)
+ *         - 28 : Covoiturage électrique (4 personnes)
+ *         - 29 : Covoiturage électrique (5 personnes)
  *         - 30 : Marche
+ *         - 100 : Citadine - Essence
+ *         - 101 : Citadine - Essence (2 personnes)
+ *         - 102 : Citadine - Essence (3 personnes)
+ *         - 103 : Citadine - Essence (4 personnes)
+ *         - 104 : Citadine - Essence (5 personnes)
+ *         - 105 : Citadine - Diesel
+ *         - 106 : Citadine - Diesel (2 personnes)
+ *         - 107 : Citadine - Diesel (3 personnes)
+ *         - 108 : Citadine - Diesel (4 personnes)
+ *         - 109 : Citadine - Diesel (5 personnes)
+ *         - 110 : Citadine - Électrique
+ *         - 111 : Citadine - Électrique (2 personnes)
+ *         - 112 : Citadine - Électrique (3 personnes)
+ *         - 113 : Citadine - Électrique (4 personnes)
+ *         - 114 : Citadine - Électrique (5 personnes)
+ *         - 115 : Citadine - Hybride non rechargeable
+ *         - 116 : Citadine - Hybride non rechargeable (2 personnes)
+ *         - 117 : Citadine - Hybride non rechargeable (3 personnes)
+ *         - 118 : Citadine - Hybride non rechargeable (4 personnes)
+ *         - 119 : Citadine - Hybride non rechargeable (5 personnes)
+ *         - 120 : Citadine - Hybride rechargeable
+ *         - 121 : Citadine - Hybride rechargeable (2 personnes)
+ *         - 122 : Citadine - Hybride rechargeable (3 personnes)
+ *         - 123 : Citadine - Hybride rechargeable (4 personnes)
+ *         - 124 : Citadine - Hybride rechargeable (5 personnes)
+ *         - 125 : Compacte - Essence
+ *         - 126 : Compacte - Essence (2 personnes)
+ *         - 127 : Compacte - Essence (3 personnes)
+ *         - 128 : Compacte - Essence (4 personnes)
+ *         - 129 : Compacte - Essence (5 personnes)
+ *         - 130 : Compacte - Diesel
+ *         - 131 : Compacte - Diesel (2 personnes)
+ *         - 132 : Compacte - Diesel (3 personnes)
+ *         - 133 : Compacte - Diesel (4 personnes)
+ *         - 134 : Compacte - Diesel (5 personnes)
+ *         - 135 : Compacte - Électrique
+ *         - 136 : Compacte - Électrique (2 personnes)
+ *         - 137 : Compacte - Électrique (3 personnes)
+ *         - 138 : Compacte - Électrique (4 personnes)
+ *         - 139 : Compacte - Électrique (5 personnes)
+ *         - 140 : Compacte - Hybride non rechargeable
+ *         - 141 : Compacte - Hybride non rechargeable (2 personnes)
+ *         - 142 : Compacte - Hybride non rechargeable (3 personnes)
+ *         - 143 : Compacte - Hybride non rechargeable (4 personnes)
+ *         - 144 : Compacte - Hybride non rechargeable (5 personnes)
+ *         - 145 : Compacte - Hybride rechargeable
+ *         - 146 : Compacte - Hybride rechargeable (2 personnes)
+ *         - 147 : Compacte - Hybride rechargeable (3 personnes)
+ *         - 148 : Compacte - Hybride rechargeable (4 personnes)
+ *         - 149 : Compacte - Hybride rechargeable (5 personnes)
+ *         - 150 : Berline - Essence
+ *         - 151 : Berline - Essence (2 personnes)
+ *         - 152 : Berline - Essence (3 personnes)
+ *         - 153 : Berline - Essence (4 personnes)
+ *         - 154 : Berline - Essence (5 personnes)
+ *         - 155 : Berline - Diesel
+ *         - 156 : Berline - Diesel (2 personnes)
+ *         - 157 : Berline - Diesel (3 personnes)
+ *         - 158 : Berline - Diesel (4 personnes)
+ *         - 159 : Berline - Diesel (5 personnes)
+ *         - 160 : Berline - Électrique
+ *         - 161 : Berline - Électrique (2 personnes)
+ *         - 162 : Berline - Électrique (3 personnes)
+ *         - 163 : Berline - Électrique (4 personnes)
+ *         - 164 : Berline - Électrique (5 personnes)
+ *         - 165 : Berline - Hybride non rechargeable
+ *         - 166 : Berline - Hybride non rechargeable (2 personnes)
+ *         - 167 : Berline - Hybride non rechargeable (3 personnes)
+ *         - 168 : Berline - Hybride non rechargeable (4 personnes)
+ *         - 169 : Berline - Hybride non rechargeable (5 personnes)
+ *         - 170 : Berline - Hybride rechargeable
+ *         - 171 : Berline - Hybride rechargeable (2 personnes)
+ *         - 172 : Berline - Hybride rechargeable (3 personnes)
+ *         - 173 : Berline - Hybride rechargeable (4 personnes)
+ *         - 174 : Berline - Hybride rechargeable (5 personnes)
+ *         - 175 : SUV - Essence
+ *         - 176 : SUV - Essence (2 personnes)
+ *         - 177 : SUV - Essence (3 personnes)
+ *         - 178 : SUV - Essence (4 personnes)
+ *         - 179 : SUV - Essence (5 personnes)
+ *         - 180 : SUV - Diesel
+ *         - 181 : SUV - Diesel (2 personnes)
+ *         - 182 : SUV - Diesel (3 personnes)
+ *         - 183 : SUV - Diesel (4 personnes)
+ *         - 184 : SUV - Diesel (5 personnes)
+ *         - 185 : SUV - Électrique
+ *         - 186 : SUV - Électrique (2 personnes)
+ *         - 187 : SUV - Électrique (3 personnes)
+ *         - 188 : SUV - Électrique (4 personnes)
+ *         - 189 : SUV - Électrique (5 personnes)
+ *         - 190 : SUV - Hybride non rechargeable
+ *         - 191 : SUV - Hybride non rechargeable (2 personnes)
+ *         - 192 : SUV - Hybride non rechargeable (3 personnes)
+ *         - 193 : SUV - Hybride non rechargeable (4 personnes)
+ *         - 194 : SUV - Hybride non rechargeable (5 personnes)
+ *         - 195 : SUV - Hybride rechargeable
+ *         - 196 : SUV - Hybride rechargeable (2 personnes)
+ *         - 197 : SUV - Hybride rechargeable (3 personnes)
+ *         - 198 : SUV - Hybride rechargeable (4 personnes)
+ *         - 199 : SUV - Hybride rechargeable (5 personnes)
+ *         - 200 : Voiture hybride
+ *         - 201 : Voiture hybride (2 personnes)
+ *         - 202 : Voiture hybride (3 personnes)
+ *         - 203 : Voiture hybride (4 personnes)
+ *         - 204 : Voiture hybride (5 personnes)
  *     - in: query
  *       name: ignoreRadiativeForcing
  *       default: 0

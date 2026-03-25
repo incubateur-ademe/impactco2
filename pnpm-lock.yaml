@@ -177,6 +177,9 @@ importers:
       '@eslint/eslintrc':
         specifier: ^3.3.5
         version: 3.3.5
+      '@incubateur-ademe/nosgestesclimat':
+        specifier: ^4.10.0
+        version: 4.10.0(publicodes@1.10.1)
       '@incubateur-ademe/publicodes-empreinte-carbone-chauffage':
         specifier: ^1.1.0
         version: 1.1.0(publicodes@1.10.1)
@@ -1853,6 +1856,12 @@ packages:
     engines: {node: ^18.17.0 || ^20.3.0 || >=21.0.0}
     cpu: [x64]
     os: [win32]
+
+  '@incubateur-ademe/nosgestesclimat@4.10.0':
+    resolution: {integrity: sha512-M1hjBpD4lfkayWdE6sOIgZ3GOxFTmkE5RxNvS/5nBtTvnWYxoZ1X5z4jHWIAGi1kfe9wqmcYS6U39l0yMSRCYQ==}
+    engines: {node: '>=22'}
+    peerDependencies:
+      publicodes: ^1.8.5
 
   '@incubateur-ademe/publicodes-acv-numerique@2.1.0':
     resolution: {integrity: sha512-3nB4T+Tl+sYnmKLGiP345c0+/Fm2NU07TJjafaOz9odn2DRsYHC69khYcaujvELjt13/G1RjKXEfiRjiAZwzYQ==}
@@ -10208,6 +10217,10 @@ snapshots:
   '@img/sharp-win32-x64@0.34.5':
     optional: true
 
+  '@incubateur-ademe/nosgestesclimat@4.10.0(publicodes@1.10.1)':
+    dependencies:
+      publicodes: 1.10.1
+
   '@incubateur-ademe/publicodes-acv-numerique@2.1.0(publicodes@1.10.1)':
     dependencies:
       publicodes: 1.10.1
@@ -17697,7 +17710,7 @@ snapshots:
     dependencies:
       '@istanbuljs/schema': 0.1.3
       glob: 7.2.3
-      minimatch: 3.1.2
+      minimatch: 3.1.5
 
   test-exclude@8.0.0:
     dependencies:
