@@ -5,7 +5,7 @@ import LivraisonEtiquette from 'components/outils/livraison/LivraisonEtiquette'
 const page = () => {
   return (
     <TranslationProvider>
-      <TrackingProvider tracking='Livraison etiquette'>
+      <TrackingProvider tracking='Livraison étiquette'>
         <LivraisonEtiquette id='animated' animated />
       </TrackingProvider>
     </TranslationProvider>

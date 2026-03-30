@@ -1,6 +1,7 @@
 import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
 import useParamContext from 'src/providers/ParamProvider'
+import useTrackingContext from 'src/providers/TrackingProvider'
 import { track } from 'utils/matomo'
 import CheckRoundIcon from 'components/base/icons/check-round'
 import ComparisonIcon from 'components/base/icons/comparison'
@@ -11,6 +12,7 @@ const TransportComparisonMode = ({ tracking }: { tracking: string }) => {
   const {
     transport: { comparisonMode, setComparisonMode },
   } = useParamContext()
+  const { trackOnce } = useTrackingContext()
   const t = useTranslations('transport.mode-selector')
   return (
     <div className={classNames(styles.container, { [styles.withBorder]: comparisonMode === 'list' })}>
@@ -24,6 +26,7 @@ const TransportComparisonMode = ({ tracking }: { tracking: string }) => {
             onClick={() => {
               setComparisonMode('list')
               track(tracking, 'Display list', 'display_list')
+              trackOnce('List mode')
             }}
           />
           <span className={classNames(styles.leftLabel, { [styles.clickeable]: comparisonMode !== 'list' })}>
@@ -40,6 +43,7 @@ const TransportComparisonMode = ({ tracking }: { tracking: string }) => {
             onClick={() => {
               setComparisonMode('comparison')
               track(tracking, 'Display comparison', 'display_comparison')
+              trackOnce('Comparison mode')
             }}
           />
           <span className={classNames(styles.rightLabel, { [styles.clickeable]: comparisonMode !== 'comparison' })}>
