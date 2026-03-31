@@ -62,11 +62,15 @@ const TransportIntegrate = () => {
 
   const tracking = useMemo(() => getTracking(allParams.transport.selected), [allParams.transport.selected])
   const type = useMemo(() => {
+    if (tabs.length === 1) {
+      return tabs[0] === DISTANCE ? 'transport' : 'transport/itineraire'
+    }
+
     if (defaultTab === 'itineraire') {
       return 'transport/itineraire'
     }
     return 'transport'
-  }, [defaultTab])
+  }, [defaultTab, tabs])
 
   const search = useMemo(() => {
     let result = `theme=${theme}&language=${language}`

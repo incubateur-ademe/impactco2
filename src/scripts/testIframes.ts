@@ -30,11 +30,11 @@ const test = async () => {
       }
 
       if (checkIframe) {
-        const iframe = iframeContent ? iframeContent(page) : page.locator('#iFrameResizer0').contentFrame()
+        const iframe = iframeContent ? iframeContent(page) : page.locator('#iFrameResizer0')
         if (scroll) {
-          await iframe.locator('.main-iframe').scrollIntoViewIfNeeded()
+          await iframe.scrollIntoViewIfNeeded()
         }
-        await checkIframe(iframe)
+        await checkIframe(iframe.contentFrame())
       } else if (check) {
         await check(page)
       }

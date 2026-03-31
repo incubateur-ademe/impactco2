@@ -8,6 +8,31 @@ import { usageNumeriqueTest } from '../../teste/usagenumerique'
 
 export const checks = [
   {
+    slug: 'bioparc',
+    url: 'https://www.bioparc-zoo.fr/informations-pratiques/venir-au-parc',
+    scroll: true,
+    iframeContent: (page: Page) => page.locator('iframe[name*="CO2"]').first(),
+    before: async (page: Page) => {
+      await page.getByRole('link', { name: 'Tout refuser' }).click()
+      await page.getByRole('button', { name: 'Tout refuser' }).click()
+    },
+    checkIframe: async (iframe: FrameLocator) => {
+      await expect(iframe.getByTestId('header-share-button')).toBeInViewport()
+      await expect(iframe.getByLabel('Arrivée')).toHaveAttribute(
+        'value',
+        'Bioparc - Zoo de Doué La Fontaine 103 Rue de Cholet Doué La Fontaine 49700 France',
+        { timeout: 10000 }
+      )
+      await iframe.getByLabel('Arrivée').clear()
+
+      await itineraireTest(
+        iframe,
+        true,
+        '&modes=avion,tgv,intercites,voiturethermique+1,voiturethermique,voitureelectrique+1,voitureelectrique,autocar,marche,velo,veloelectrique,busthermique,tramway,scooter,moto,ter,buselectrique,trottinette'
+      )
+    },
+  },
+  {
     slug: 'operadeparis',
     url: 'https://www.operadeparis.fr/infos-pratiques/preparer-votre-venue/palais-garnier',
     scroll: true,
@@ -54,7 +79,7 @@ export const checks = [
       await page.goto(`https://immobilier.lefigaro.fr/annonces/annonce-${id}.html#mon-impact-transport`)
       await page
         .locator('#appconsent iframe')
-        .contentFrame()
+
         .getByRole('button', { name: 'Continuer sans accepter' })
         .click()
     },
@@ -110,7 +135,7 @@ export const checks = [
   {
     slug: 'gorecycle',
     url: 'https://www.gorecycle.com/en/blog/4-good-reasons-to-buy-a-used-appliance/',
-    iframeContent: (page: Page) => page.locator('iframe').first().contentFrame(),
+    iframeContent: (page: Page) => page.locator('iframe').first(),
     before: async (page: Page) => {
       await page.getByRole('button', { name: 'Accept' }).click()
     },
@@ -169,7 +194,7 @@ export const checks = [
     slug: '2050today',
     skipAutoCheck: true,
     url: 'https://2050today.org/empreinte-climat/?lang=fr',
-    iframeContent: (page: Page) => page.locator('#iFrameResizer01').contentFrame(),
+    iframeContent: (page: Page) => page.locator('#iFrameResizer01'),
     checkIframe: async (iframe: FrameLocator) => {
       await expect(await iframe.getByTestId('input-base-value')).toHaveValue('100')
       await iframe.getByRole('button', { name: 'Ajouter un équivalent' }).click()
