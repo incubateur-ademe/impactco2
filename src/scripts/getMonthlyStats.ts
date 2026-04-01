@@ -22,11 +22,13 @@ const internalPages: Record<string, string> = {
 }
 
 const iframeToSimulateur: Record<string, string> = {
+  '/iframes/comparateur/bandeau': '',
   '/iframes/transport/itinerai': '',
   '/iframes/transport/itiner': '',
   '/iframes/transport/itin': '',
   '/iframes/transport/i': '',
   '/iframes/tra': '',
+  '/iframes/caspratiques/aviationcivileenfrance': 'Année d’émissions de l’aviation civile en France',
   '/iframes/chauffage/chauffagegaz': 'Chauffage au gaz',
   '/iframes/livraison/etiquette%20data-search=': 'Livraison étiquette',
   '/iframes/caspratiques/maisonneuve': 'Maison neuve',
