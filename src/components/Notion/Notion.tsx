@@ -1,9 +1,9 @@
 'use client'
 
+import dynamic from 'next/dynamic'
 import { LinkProps } from 'next/link'
 import { ExtendedRecordMap } from 'notion-types'
 import { ReactNode, useEffect, useRef } from 'react'
-import { NotionRenderer } from 'react-notion-x'
 import { Collection } from 'react-notion-x/build/third-party/collection'
 import Link from 'components/base/buttons/Link'
 import Breadcrumbs from 'components/breadcrumbs/Breadcrumbs'
@@ -12,6 +12,10 @@ import NotionErrorBoundary from './NotionErrorBoundary'
 import { improveAccessibility } from './utils'
 import styles from './Notion.module.css'
 import 'react-notion-x/src/styles.css'
+
+const NotionRenderer = dynamic(() => import('react-notion-x').then((mod) => mod.NotionRenderer), {
+  ssr: false,
+})
 
 const Notion = ({
   title,
