@@ -43,13 +43,7 @@ export const callGMap = async (data: GMapCommand): Promise<CallGMapDistances> =>
       throw new Error('Not authorized')
     }
 
-    const name = await trackAPIRequestFromHeaders(requestHeaders, 'callGMap')
-    if (name !== 'Impact CO2') {
-      if (name === 'HACK') {
-        console.error('--- Wrong usage of CallGMAP API ---', { referer })
-      }
-      throw new Error('Not authorized')
-    }
+    await trackAPIRequestFromHeaders(requestHeaders, 'callGMap')
   }
 
   const R = 6371e3 // metres
