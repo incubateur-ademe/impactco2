@@ -8,6 +8,7 @@ import { Collection } from 'react-notion-x/build/third-party/collection'
 import Link from 'components/base/buttons/Link'
 import Breadcrumbs from 'components/breadcrumbs/Breadcrumbs'
 import Block from 'components/layout/Block'
+import NotionErrorBoundary from './NotionErrorBoundary'
 import { improveAccessibility } from './utils'
 import styles from './Notion.module.css'
 import 'react-notion-x/src/styles.css'
@@ -36,39 +37,41 @@ const Notion = ({
       {recordMap && (
         <Block title={title} description={description} as='h1'>
           <div className={styles.container} ref={ref}>
-            <NotionRenderer
-              recordMap={recordMap}
-              fullPage={true}
-              disableHeader
-              isLinkCollectionToUrlProperty
-              components={{
-                Link: ({ href, children, ...props }: LinkProps & { children: ReactNode }) => {
-                  if (href.toString().startsWith('https://sources/')) {
+            <NotionErrorBoundary>
+              <NotionRenderer
+                recordMap={recordMap}
+                fullPage={true}
+                disableHeader
+                isLinkCollectionToUrlProperty
+                components={{
+                  Link: ({ href, children, ...props }: LinkProps & { children: ReactNode }) => {
+                    if (href.toString().startsWith('https://sources/')) {
+                      return (
+                        <button
+                          className={styles.buttonRef}
+                          onClick={() => {
+                            const block = document.getElementsByClassName(
+                              `notion-block-${href.toString().replace('https://sources/', '')}`
+                            )
+                            if (block && block[0]) {
+                              block[0].scrollIntoView({ behavior: 'smooth' })
+                            }
+                          }}>
+                          ({children})
+                        </button>
+                      )
+                    }
                     return (
-                      <button
-                        className={styles.buttonRef}
-                        onClick={() => {
-                          const block = document.getElementsByClassName(
-                            `notion-block-${href.toString().replace('https://sources/', '')}`
-                          )
-                          if (block && block[0]) {
-                            block[0].scrollIntoView({ behavior: 'smooth' })
-                          }
-                        }}>
-                        ({children})
-                      </button>
+                      // @ts-expect-error: notion type error
+                      <Link href={href} {...props} target='_blank' rel='noopener noreferrer'>
+                        {children}
+                      </Link>
                     )
-                  }
-                  return (
-                    // @ts-expect-error: notion type error
-                    <Link href={href} {...props} target='_blank' rel='noopener noreferrer'>
-                      {children}
-                    </Link>
-                  )
-                },
-                Collection,
-              }}
-            />
+                  },
+                  Collection,
+                }}
+              />
+            </NotionErrorBoundary>
           </div>
         </Block>
       )}
