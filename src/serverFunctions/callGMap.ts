@@ -1,8 +1,10 @@
+'use server'
+
 import axios from 'axios'
-import { NextRequest, NextResponse } from 'next/server'
+import { headers } from 'next/headers'
 import { z } from 'zod'
-import { GMapValidation, getCachedValue, insertCachedValue } from 'utils/gmaps'
-import { trackAPIRequest } from 'utils/middleware'
+import { CallGMapDistances, GMapCommand, GMapValidation, getCachedValue, insertCachedValue } from 'utils/gmaps'
+import { trackAPIRequestFromHeaders } from 'utils/middleware'
 
 type GMapDistance = { elements: { status: string; distance: { value: number } }[] }
 type GMapDistances = { rows: GMapDistance[] }
@@ -16,38 +18,37 @@ const getValue = (distance: GMapDistances) => {
   return (element.status === 'OK' && element.distance.value / 1000) || 0
 }
 
-export async function POST(req: NextRequest) {
-  const body = await req.json()
-
-  const inputs = GMapValidation.safeParse(body)
+export const callGMap = async (data: GMapCommand): Promise<CallGMapDistances> => {
+  const inputs = GMapValidation.safeParse(data)
   if (!inputs.success) {
-    return NextResponse.json(z.treeifyError(inputs.error), { status: 400 })
+    throw new Error(JSON.stringify(z.treeifyError(inputs.error)))
   }
 
   if (!process.env.GMAP_API_KEY) {
-    // Fake Paris Lyon
-    return NextResponse.json({ car: 465.021, foot: 440.747, rail: 456.409, plane: 391.8120136890189 }, { status: 200 })
+    return { car: 91.021, foot: 87.914, rail: 91.153, plane: 80.69557099482829 }
   }
+
+  const requestHeaders = await headers()
 
   const cached = await getCachedValue(inputs.data)
   if (cached) {
-    await trackAPIRequest(req, 'callGMap-cache')
-    return NextResponse.json(cached, { status: 200 })
+    await trackAPIRequestFromHeaders(requestHeaders, 'callGMap-cache')
+    return cached
   }
 
   if (process.env.LIMIT_API === 'true') {
-    const referer = req.headers.get('referer')
+    const referer = requestHeaders.get('referer')
 
     if (!process.env.NEXT_PUBLIC_URL || !referer?.startsWith(process.env.NEXT_PUBLIC_URL)) {
-      return NextResponse.json('Not authorized', { status: 403 })
+      throw new Error('Not authorized')
     }
 
-    const name = await trackAPIRequest(req, 'callGMap')
+    const name = await trackAPIRequestFromHeaders(requestHeaders, 'callGMap')
     if (name !== 'Impact CO2') {
       if (name === 'HACK') {
-        console.error('--- Wrong usage of CallGMAP API ---', req)
+        console.error('--- Wrong usage of CallGMAP API ---', { referer })
       }
-      return NextResponse.json('Not authorized', { status: 401 })
+      throw new Error('Not authorized')
     }
   }
 
@@ -87,5 +88,5 @@ export async function POST(req: NextRequest) {
     plane: planeDistance,
   }
   await insertCachedValue(inputs.data, result)
-  return NextResponse.json(result, { status: 200 })
+  return result
 }
