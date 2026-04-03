@@ -27,7 +27,10 @@ const extractTextFromRecordMap = (recordMap: FAQ['content']) => {
   }
 
   return Object.values(recordMap.block)
-    .map((block) => extractPlainText(block?.value?.properties).join(' '))
+    .map((block) => {
+      const value = 'value' in block ? block.value : block
+      return extractPlainText((value as { properties?: unknown }).properties).join(' ')
+    })
     .filter(Boolean)
     .join(' ')
 }
