@@ -3,6 +3,8 @@ import PauseIcon from 'components/base/icons/pause'
 import PlayIcon from 'components/base/icons/play'
 import styles from './Progress.module.css'
 
+const duration = process.env.NEXT_PUBLIC_PROGRESS_TIME ? parseInt(process.env.NEXT_PUBLIC_PROGRESS_TIME, 10) : 50
+
 const Progress = ({
   className,
   comparisons,
@@ -22,7 +24,7 @@ const Progress = ({
 
   const updateWithTimeout = useCallback(() => {
     setProgress((value) => value + 1)
-    displayedTimeoutRef.current = setTimeout(updateWithTimeout, 50)
+    displayedTimeoutRef.current = setTimeout(updateWithTimeout, duration)
   }, [])
 
   useEffect(() => {
@@ -35,7 +37,7 @@ const Progress = ({
         clearTimeout(fadeInTimeoutRef.current)
       }
     } else {
-      displayedTimeoutRef.current = setTimeout(updateWithTimeout, 50)
+      displayedTimeoutRef.current = setTimeout(updateWithTimeout, duration)
     }
   }, [paused])
 
