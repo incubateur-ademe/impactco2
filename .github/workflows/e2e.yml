@@ -40,6 +40,7 @@ jobs:
         run: pnpm build
         env:
           NOTION_API_KEY: ${{ secrets.NOTION_API_KEY}}
+          NEXT_PUBLIC_PROGRESS_TIME: 500
       - name: Generate db
         run: pnpm prisma generate
       - name: Migrate db
@@ -66,7 +67,7 @@ jobs:
         uses: foo-software/lighthouse-check-status-action@master
         with:
           lighthouseCheckResults: ${{ steps.lighthouseCheck.outputs.lighthouseCheckResults }}
-          minAccessibilityScore: '93'
+          minAccessibilityScore: '100'
           minBestPracticesScore: '100'
       - name: Prune dev dependencies
         run: rm -rf node_modules && pnpm install --production

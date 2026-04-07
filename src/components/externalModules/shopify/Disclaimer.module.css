@@ -4,14 +4,14 @@
   cursor: pointer;
   top: 0;
   right: 0;
-  padding: 0.25rem 0.5rem;
+  padding: 0.325rem 0.5rem;
   border-radius: 0rem 0.5rem 0rem 0;
   background-color: transparent;
   color: var(--neutral-50);
   border-bottom: 2px solid var(--neutral-20);
   border-left: 2px solid var(--neutral-20);
   line-height: 1;
-  height: 1.375rem;
+  height: 1.5rem;
   font-size: 0.75rem;
 
   svg {

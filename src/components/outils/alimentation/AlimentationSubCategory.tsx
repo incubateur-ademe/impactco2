@@ -45,6 +45,7 @@ const AlimentationSubCategory = ({
           <p>{t(name)}</p>
           <div className={styles.barContainer}>
             <div
+              role='img'
               className={hasCategoryOpen ? styles.displayedBar : styles.bar}
               style={{ width: `${proportion * 100}%` }}
               aria-label={t('impact', { value: proportion * 100 })}
