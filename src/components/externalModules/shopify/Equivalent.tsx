@@ -88,12 +88,18 @@ const Equivalent = ({
                 setToDisplay={setToDisplay}
               />
             )}
-            <Disclaimer
-              language={language}
-              comparisons={comparisons}
-              baseValue={preciseValue}
-              id={animated ? 'animated' : 'static'}
-            />
+            {
+              // On n'affiche le dislaimer que si il n'y a pas le bouton randomize, pour des soucis d'accessibilité
+              // Aujourd'hui c'est juste sur le site donc pas de soucis. A voir comment on fera plus tard
+              !randomize && (
+                <Disclaimer
+                  language={language}
+                  comparisons={comparisons}
+                  baseValue={preciseValue}
+                  id={animated ? 'animated' : 'static'}
+                />
+              )
+            }
             <ul className={isAnimated ? styles.animatedComparisons : styles.comparisons}>
               {comparisons.map((comparison, index) => (
                 <li

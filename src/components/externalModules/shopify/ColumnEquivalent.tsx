@@ -75,13 +75,15 @@ const ColumnEquivalent = ({
               setToDisplay={setToDisplay}
             />
           )}
-          <Disclaimer
-            language={language}
-            comparisons={comparisons}
-            baseValue={preciseValue}
-            column
-            id={animated ? 'animated' : 'static'}
-          />
+          {!randomize && (
+            <Disclaimer
+              language={language}
+              comparisons={comparisons}
+              baseValue={preciseValue}
+              column
+              id={animated ? 'animated' : 'static'}
+            />
+          )}
           <ul className={isAnimated ? styles.animatedComparisonsColumn : ''}>
             {comparisons.map((comparison, index) => (
               <li
