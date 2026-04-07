@@ -89,6 +89,7 @@
 
 .greyContainer {
   border-color: #e4e7ec;
+  max-width: unset;
 
   button,
   a {
