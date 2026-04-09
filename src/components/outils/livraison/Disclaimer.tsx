@@ -42,21 +42,14 @@ const Disclaimer = ({
             </p>
             <br />
             <p>
-              Les résultats présentés sont basés sur la livraison d’un colis de <b>{mode || 1} kg</b>, commandé en{' '}
-              <b>54 minutes</b> et emballé dans <b>un carton de {weights[mode] || weights['1']}</b>.
+              Les résultats présentés sont basés sur la livraison d’un colis de <b>{mode || 1} kg</b> emballé dans{' '}
+              <b>un carton de {weights[mode] || weights['1']}</b>.
             </p>
             <br />
             <p>
               Ce colis suit plusieurs étapes d’acheminement : le transport en poids lourd moyen entre les lieux de
               stockage et de transit, puis la livraison finale en véhicule utilitaire moyen. Ces étapes ainsi que le
               déplacement du consommateur pour récupérer le colis détermineront son impact final.
-            </p>
-            <br />
-            <p>
-              Afin d’ajuster les paramètres et explorer les données plus en détail, vous pouvez{' '}
-              <IframeableLink className={styles.link} href='/outils/livraison'>
-                utiliser le simulateur Impact Livraison
-              </IframeableLink>
             </p>
           </div>
         )}
