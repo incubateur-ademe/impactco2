@@ -25,10 +25,7 @@ const Disclaimer = ({
       <div className={styles.content}>
         {animated ? (
           <div>
-            <p>
-              Scénarios moyens, basés sur la livraison d’un colis de 1 kg, commandé en 54 minutes et emballé dans un
-              carton de 468 g.
-            </p>
+            <p>Scénarios moyens, basés sur la livraison d’un colis de 1 kg emballé dans un carton de 468 g.</p>
             <IframeableLink className={styles.link} href='/outils/livraison'>
               Accéder au simulateur Impact Livraison{' '}
             </IframeableLink>
