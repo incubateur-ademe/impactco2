@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infographie - Intégrabook</title>
+  <link rel="stylesheet" href="shared.css">
+</head>
+
+<body>
+  <div class="layout">
+    <header>
+      <h1>Infographie <span class="badge badge-iframe">iframe</span></h1>
+      <a class="back" href="index.html">← Intégrabook</a>
+    </header>
+
+    <div id="config-bar" class="config-bar"></div>
+
+    <!-- Infographie iframe -->
+    <div class="section">
+      <h2>Infographie (via script iframe.js)</h2>
+      <p class="desc">Visualisation infographique des équivalents CO2.</p>
+      <div id="params-infographie"></div>
+      <div id="code-infographie" class="code-block"></div>
+      <div id="render-infographie" class="render-zone"></div>
+    </div>
+
+    <!-- Détecteur iframe -->
+    <div class="section">
+      <h2>Détecteur (via script iframe.js)</h2>
+      <p class="desc">Module de détection/auto-découverte des équivalents.</p>
+      <div id="code-detecteur" class="code-block"></div>
+      <div id="render-detecteur" class="render-zone"></div>
+    </div>
+
+    <!-- Iframe direct infographie -->
+    <div class="section">
+      <h2>Infographie (iframe direct)</h2>
+      <p class="desc">Iframe brut sans script intermédiaire.</p>
+      <div id="code-direct" class="code-block"></div>
+      <div id="render-direct" class="render-zone"></div>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="shared.js"></script>
+  <script>
+    function renderInfographie(extra) {
+      const base = getBaseUrl()
+      const search = buildSearch(extra)
+      renderCodeBlock('code-infographie',
+        `<script
+  data-name="impact-co2"
+  src="${base}/iframe.js"
+  data-type="infographie"
+  data-search="${search}"><\/script>`)
+      reRenderIframeScript('render-infographie', 'infographie', extra)
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const base = getBaseUrl()
+      const search = buildSearch()
+
+      buildParamsEditor('params-infographie', [
+        { name: 'equivalents', type: 'text', default: 'voiturethermique,tgv,avioncourtcourrier', placeholder: 'voiturethermique,tgv,avion', hint: 'Slugs d\'équivalents (séparés par virgule). Le premier est obligatoire.' },
+      ], (values) => {
+        renderInfographie(getExtraSearchFromParams(values))
+      })
+
+      renderInfographie({ equivalents: 'voiturethermique,tgv,avioncourtcourrier' })
+
+      renderCodeBlock('code-detecteur',
+        `<script
+  data-name="impact-co2"
+  src="${base}/iframe.js"
+  data-type="detecteur"
+  data-search="${search}"><\/script>`)
+      injectIframeScript('render-detecteur', 'detecteur')
+
+      const defaultEquivalents = 'voiturethermique,tgv,avioncourtcourrier'
+      const directSrc = `${base}/iframes/infographie${search}${search ? '&' : '?'}equivalents=${defaultEquivalents}&source=${encodeURIComponent(window.location.href)}`
+      renderCodeBlock('code-direct',
+        `<iframe
+  src="${directSrc}"
+  style="border: none; width: 100%; min-height: 500px;"
+  allowfullscreen></iframe>`)
+      injectDirectIframe('render-direct', 'infographie', { equivalents: defaultEquivalents })
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legacy isolé - Intégrabook</title>
+  <link rel="stylesheet" href="shared.css">
+</head>
+
+<body>
+  <div class="layout">
+    <header>
+      <h1>Legacy isolé <span class="badge badge-legacy">legacy</span></h1>
+      <a class="back" href="legacy.html">← Legacy</a>
+    </header>
+
+    <div id="config-bar" class="config-bar"></div>
+
+    <div class="section">
+      <h2 id="title"></h2>
+      <p class="desc" id="desc"></p>
+      <div id="code" class="code-block"></div>
+      <div id="render" class="render-zone"></div>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="shared.js"></script>
+  <script>
+    const LEGACY_IDS = {
+      'mon-impact-transport': 'Génère un bouton de redirection, pas un iframe',
+      'impact-co2': 'Charge le comparateur par défaut',
+      'impact-livraison': 'Charge le module livraison',
+      'datagir-mon-convertisseur-co2': 'Charge le comparateur (ancien ID Datagir)',
+      'datagir-impact-co2': 'Charge le comparateur (ancien ID Datagir)',
+      'ecolab-transport': 'Charge le transport (ancien ID Ecolab)',
+      'datagir-teletravail': 'Charge le module télétravail',
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search)
+      const id = params.get('id')
+
+      if (!id || !LEGACY_IDS[id]) {
+        document.getElementById('title').textContent = 'ID manquant ou invalide'
+        document.getElementById('desc').textContent =
+          'Utilisez ?id=<legacy-id>. IDs valides : ' + Object.keys(LEGACY_IDS).join(', ')
+        return
+      }
+
+      const base = getBaseUrl()
+
+      document.title = `#${id} - Intégrabook`
+      document.getElementById('title').textContent = `#${id}`
+      document.getElementById('desc').textContent = LEGACY_IDS[id]
+
+      renderCodeBlock('code',
+        `<div id="${id}"></div>\n<script src="${base}/iframe.js"><\/script>`)
+
+      const target = document.createElement('div')
+      target.id = id
+      document.getElementById('render').appendChild(target)
+
+      const script = document.createElement('script')
+      script.src = `${base}/iframe.js`
+      document.getElementById('render').appendChild(script)
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Livraison - Intégrabook</title>
+  <link rel="stylesheet" href="shared.css">
+</head>
+
+<body>
+  <div class="layout">
+    <header>
+      <h1>Livraison <span class="badge badge-iframe">iframe</span></h1>
+      <a class="back" href="index.html">← Intégrabook</a>
+    </header>
+
+    <div id="config-bar" class="config-bar"></div>
+
+    <!-- Livraison principale -->
+    <div class="section">
+      <h2>Livraison (via script iframe.js)</h2>
+      <p class="desc">Comparateur d'impact carbone des modes de livraison.</p>
+      <div id="params-livraison"></div>
+      <div id="code-livraison" class="code-block"></div>
+      <div id="render-livraison" class="render-zone"></div>
+    </div>
+
+    <!-- Étiquette livraison statique -->
+    <div class="section">
+      <h2>Étiquette livraison (statique)</h2>
+      <p class="desc">Étiquette de synthèse de l'impact livraison.</p>
+      <div id="params-etiquette"></div>
+      <div id="code-etiquette" class="code-block"></div>
+      <div id="render-etiquette" class="render-zone"></div>
+    </div>
+
+    <!-- Étiquette livraison animée -->
+    <div class="section">
+      <h2>Étiquette livraison (animée)</h2>
+      <p class="desc">Version animée de l'étiquette livraison.</p>
+      <div id="params-etiquette-animee"></div>
+      <div id="code-etiquette-animee" class="code-block"></div>
+      <div id="render-etiquette-animee" class="render-zone"></div>
+    </div>
+
+    <!-- Iframe direct -->
+    <div class="section">
+      <h2>Livraison (iframe direct)</h2>
+      <p class="desc">Iframe brut sans script intermédiaire.</p>
+      <div id="code-direct" class="code-block"></div>
+      <div id="render-direct" class="render-zone"></div>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="shared.js"></script>
+  <script>
+    const livraisonEtiquetteParams = [
+      { name: 'mode', type: 'number', default: '', placeholder: '1', hint: 'Filtre par poids (kg). Ex: 1, 5, 10' },
+      {
+        name: 'customTheme', type: 'select', default: '', options: [
+          { value: 'grey', label: 'Gris' }
+        ], hint: 'Thème de couleur personnalisé'
+      },
+      { name: 'withFabrication', type: 'checkbox', default: false, hint: 'Inclure la fabrication dans le calcul' },
+    ]
+
+    const livraisonParams = [
+      { name: 'types', type: 'text', default: '', placeholder: '', hint: 'Types de livraison (séparés par virgule)' },
+      { name: 'modes', type: 'text', default: '', placeholder: 'pointrelais,magasin,clickcollect', hint: 'Modes de livraison (séparés par virgule)' },
+    ]
+
+    function renderLivraison(extra) {
+      const base = getBaseUrl()
+      const search = buildSearch(extra)
+      renderCodeBlock('code-livraison',
+        `<script
+  data-name="impact-co2"
+  src="${base}/iframe.js"
+  data-type="livraison"
+  data-search="${search}"><\/script>`)
+      reRenderIframeScript('render-livraison', 'livraison', extra)
+    }
+
+    function renderEtiquette(extra) {
+      const base = getBaseUrl()
+      const search = buildSearch(extra)
+      renderCodeBlock('code-etiquette',
+        `<script
+  data-name="impact-co2"
+  src="${base}/iframe.js"
+  data-type="livraison/etiquette"
+  data-search="${search}"><\/script>`)
+      reRenderIframeScript('render-etiquette', 'livraison/etiquette', extra)
+    }
+
+    function renderEtiquetteAnimee(extra) {
+      const base = getBaseUrl()
+      const search = buildSearch(extra)
+      renderCodeBlock('code-etiquette-animee',
+        `<script
+  data-name="impact-co2"
+  src="${base}/iframe.js"
+  data-type="livraison/etiquette-animee"
+  data-search="${search}"><\/script>`)
+      reRenderIframeScript('render-etiquette-animee', 'livraison/etiquette-animee', extra)
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const base = getBaseUrl()
+      const search = buildSearch()
+
+      buildParamsEditor('params-livraison', livraisonParams, (values) => {
+        renderLivraison(getExtraSearchFromParams(values))
+      })
+
+      buildParamsEditor('params-etiquette', livraisonEtiquetteParams, (values) => {
+        renderEtiquette(getExtraSearchFromParams(values))
+      })
+
+      buildParamsEditor('params-etiquette-animee', livraisonEtiquetteParams, (values) => {
+        renderEtiquetteAnimee(getExtraSearchFromParams(values))
+      })
+
+      renderLivraison({})
+      renderEtiquette({})
+      renderEtiquetteAnimee({})
+
+      const directSrc = `${base}/iframes/livraison${search}${search ? '&' : '?'}source=${encodeURIComponent(window.location.href)}`
+      renderCodeBlock('code-direct',
+        `<iframe
+  src="${directSrc}"
+  style="border: none; width: 100%; min-height: 500px;"
+  allowfullscreen></iframe>`)
+      injectDirectIframe('render-direct', 'livraison')
+    })
+  </script>
+</body>
+
+</html>

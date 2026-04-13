@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IDs Legacy - Intégrabook</title>
+  <link rel="stylesheet" href="shared.css">
+</head>
+
+<body>
+  <div class="layout">
+    <header>
+      <h1>IDs Legacy <span class="badge badge-legacy">legacy</span> <span class="badge badge-script">script</span></h1>
+      <a class="back" href="index.html">← Intégrabook</a>
+    </header>
+
+    <div id="config-bar" class="config-bar"></div>
+
+    <p class="desc" style="margin-bottom: 2rem;">
+      Le script <code>iframe.js</code> détecte automatiquement certains IDs historiques dans le DOM
+      et décide du type de widget à charger en fonction de l'ID trouvé.
+      Chaque section ci-dessous utilise un ID différent. Seul le premier est activé par défaut
+      (les autres sont commentés car le script ne détecte que le premier trouvé).
+    </p>
+
+    <!-- mon-impact-transport (bouton) -->
+    <div class="section">
+      <h2>#mon-impact-transport</h2>
+      <p class="desc">
+        Cas spécial : cet ID génère un <strong>bouton</strong> de redirection, pas un iframe.
+        Le script détecte cet ID en priorité.
+      </p>
+      <div id="code-transport-btn" class="code-block"></div>
+      <div id="render-transport-btn" class="render-zone"></div>
+    </div>
+
+    <!-- impact-co2 -->
+    <div class="section">
+      <h2>#impact-co2</h2>
+      <p class="desc">
+        ID générique qui charge le comparateur par défaut.
+      </p>
+      <div id="code-impact-co2" class="code-block"></div>
+      <div id="render-impact-co2" class="render-zone"></div>
+    </div>
+
+    <!-- impact-livraison -->
+    <div class="section">
+      <h2>#impact-livraison</h2>
+      <p class="desc">
+        ID spécifique au module livraison.
+      </p>
+      <div id="code-impact-livraison" class="code-block"></div>
+      <div id="render-impact-livraison" class="render-zone"></div>
+    </div>
+
+    <!-- datagir-mon-convertisseur-co2 -->
+    <div class="section">
+      <h2>#datagir-mon-convertisseur-co2</h2>
+      <p class="desc">
+        Ancien ID Datagir pour le convertisseur CO2. Charge le comparateur.
+      </p>
+      <div id="code-datagir-convert" class="code-block"></div>
+      <div id="render-datagir-convert" class="render-zone"></div>
+    </div>
+
+    <!-- datagir-impact-co2 -->
+    <div class="section">
+      <h2>#datagir-impact-co2</h2>
+      <p class="desc">
+        Ancien ID Datagir générique. Charge le comparateur.
+      </p>
+      <div id="code-datagir-impact" class="code-block"></div>
+      <div id="render-datagir-impact" class="render-zone"></div>
+    </div>
+
+    <!-- ecolab-transport -->
+    <div class="section">
+      <h2>#ecolab-transport</h2>
+      <p class="desc">
+        Ancien ID Ecolab pour le transport.
+      </p>
+      <div id="code-ecolab" class="code-block"></div>
+      <div id="render-ecolab" class="render-zone"></div>
+    </div>
+
+    <!-- datagir-teletravail -->
+    <div class="section">
+      <h2>#datagir-teletravail</h2>
+      <p class="desc">
+        Ancien ID pour le télétravail. Redirige vers le module teletravail.
+      </p>
+      <div id="code-teletravail" class="code-block"></div>
+      <div id="render-teletravail" class="render-zone"></div>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="shared.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const base = getBaseUrl()
+
+      const legacyIds = [
+        { id: 'mon-impact-transport', codeId: 'code-transport-btn', renderId: 'render-transport-btn', note: 'Génère un bouton, pas un iframe' },
+        { id: 'impact-co2', codeId: 'code-impact-co2', renderId: 'render-impact-co2', note: 'Charge le comparateur' },
+        { id: 'impact-livraison', codeId: 'code-impact-livraison', renderId: 'render-impact-livraison', note: 'Charge la livraison' },
+        { id: 'datagir-mon-convertisseur-co2', codeId: 'code-datagir-convert', renderId: 'render-datagir-convert', note: 'Charge le comparateur' },
+        { id: 'datagir-impact-co2', codeId: 'code-datagir-impact', renderId: 'render-datagir-impact', note: 'Charge le comparateur' },
+        { id: 'ecolab-transport', codeId: 'code-ecolab', renderId: 'render-ecolab', note: 'Charge le transport' },
+        { id: 'datagir-teletravail', codeId: 'code-teletravail', renderId: 'render-teletravail', note: 'Charge le télétravail' },
+      ]
+
+      const firstRender = document.getElementById('render-transport-btn')
+      const btnTarget = document.createElement('div')
+      btnTarget.id = 'mon-impact-transport'
+      firstRender.replaceChildren(btnTarget)
+
+      const script = document.createElement('script')
+      script.src = `${base}/iframe.js`
+      firstRender.appendChild(script)
+
+      legacyIds.forEach(({ id, codeId, renderId }) => {
+        renderCodeBlock(codeId,
+          `<div id="${id}"></div>
+<script src="${base}/iframe.js"><\/script>`)
+
+        if (renderId === 'render-transport-btn') return
+
+        const renderZone = document.getElementById(renderId)
+
+        const link = document.createElement('a')
+        link.href = `legacy-isolated.html?id=${id}`
+        link.textContent = 'Ouvrir en page isolée'
+        link.style.cssText = 'display: inline-block; margin-bottom: 0.5rem; font-size: 0.85rem;'
+        renderZone.appendChild(link)
+      })
+    })
+  </script>
+</body>
+
+</html>
