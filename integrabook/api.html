@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API REST - Intégrabook</title>
+  <link rel="stylesheet" href="shared.css">
+</head>
+
+<body>
+  <div class="layout">
+    <header>
+      <h1>API REST <span class="badge badge-api">api</span></h1>
+      <a class="back" href="index.html">← Intégrabook</a>
+    </header>
+
+    <div id="config-bar" class="config-bar"></div>
+
+    <!-- Thématiques -->
+    <div class="section">
+      <h2>GET /api/v1/thematiques</h2>
+      <p class="desc">Liste de toutes les thématiques disponibles avec leurs IDs et slugs.</p>
+      <div id="code-thematiques" class="code-block"></div>
+      <div class="api-controls">
+        <button onclick="fetchApi('thematiques', 'result-thematiques')">Exécuter</button>
+        <button onclick="fetchApi('thematiques?language=en', 'result-thematiques')">EN</button>
+        <button onclick="fetchApi('thematiques?language=es', 'result-thematiques')">ES</button>
+      </div>
+      <div id="result-thematiques" class="api-result">-</div>
+    </div>
+
+    <!-- Thématiques ECV -->
+    <div class="section">
+      <h2>GET /api/v1/thematiques/ecv/[id]</h2>
+      <p class="desc">Détail ECV (Empreinte Carbone de la Vie) pour une thématique.</p>
+      <div id="code-ecv" class="code-block"></div>
+      <div class="api-controls">
+        <button onclick="fetchApi('thematiques/ecv/4', 'result-ecv')">Transport (4)</button>
+        <button onclick="fetchApi('thematiques/ecv/6', 'result-ecv')">Alimentation (6)</button>
+        <button onclick="fetchApi('thematiques/ecv/8', 'result-ecv')">Chauffage (8)</button>
+        <button onclick="fetchApi('thematiques/ecv/11', 'result-ecv')">Habillement (11)</button>
+        <button onclick="fetchApi('thematiques/ecv/12', 'result-ecv')">Livraison (12)</button>
+      </div>
+      <div id="result-ecv" class="api-result">-</div>
+    </div>
+
+    <!-- Transport -->
+    <div class="section">
+      <h2>GET /api/v1/transport</h2>
+      <p class="desc">Calcul des émissions par mode de transport.</p>
+      <div id="code-transport" class="code-block"></div>
+      <div id="params-transport"></div>
+      <div id="result-transport" class="api-result">-</div>
+    </div>
+
+    <!-- Alimentation -->
+    <div class="section">
+      <h2>GET /api/v1/alimentation</h2>
+      <p class="desc">Données d'impact alimentaire par catégorie.</p>
+      <div id="code-alimentation" class="code-block"></div>
+      <div class="api-controls">
+        <button onclick="fetchApi('alimentation?category=group', 'result-alimentation')">Groupe</button>
+        <button onclick="fetchApi('alimentation?category=rayon', 'result-alimentation')">Rayon</button>
+        <button onclick="fetchApi('alimentation?category=popularity', 'result-alimentation')">Popularité</button>
+      </div>
+      <div id="result-alimentation" class="api-result">-</div>
+    </div>
+
+    <!-- Chauffage -->
+    <div class="section">
+      <h2>GET /api/v1/chauffage</h2>
+      <p class="desc">Comparaison des modes de chauffage.</p>
+      <div id="code-chauffage" class="code-block"></div>
+      <div class="api-controls">
+        <button onclick="fetchApi('chauffage', 'result-chauffage')">Exécuter</button>
+      </div>
+      <div id="result-chauffage" class="api-result">-</div>
+    </div>
+
+    <!-- Fruits et Légumes -->
+    <div class="section">
+      <h2>GET /api/v1/fruitsetlegumes</h2>
+      <p class="desc">Fruits et légumes de saison avec leur impact.</p>
+      <div id="code-fl" class="code-block"></div>
+      <div class="api-controls">
+        <button onclick="fetchApi('fruitsetlegumes', 'result-fl')">Exécuter</button>
+        <button onclick="fetchApi('fruitsetlegumes?month=1', 'result-fl')">Janvier</button>
+        <button onclick="fetchApi('fruitsetlegumes?month=6', 'result-fl')">Juin</button>
+        <button onclick="fetchApi('fruitsetlegumes?month=12', 'result-fl')">Décembre</button>
+      </div>
+      <div id="result-fl" class="api-result">-</div>
+    </div>
+
+    <!-- Doc OpenAPI -->
+    <div class="section">
+      <h2>GET /api/v1/doc</h2>
+      <p class="desc">Spécification OpenAPI/Swagger complète.</p>
+      <div id="code-doc" class="code-block"></div>
+      <div class="api-controls">
+        <button onclick="fetchApi('doc', 'result-doc')">Télécharger la spec</button>
+      </div>
+      <div id="result-doc" class="api-result">-</div>
+    </div>
+
+    <!-- Custom endpoint -->
+    <div class="section">
+      <h2>Endpoint personnalisé</h2>
+      <p class="desc">Testez n'importe quel endpoint manuellement.</p>
+      <div style="display: flex; gap: 0.5rem; margin-bottom: 0.75rem; align-items: center;">
+        <span style="color: var(--text-muted); font-size: 0.85rem;" id="custom-prefix"></span>
+        <input type="text" id="custom-endpoint" value="transport?km=50"
+          style="flex: 1; background: var(--code-bg); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.6rem; border-radius: 4px; font-family: var(--font-mono); font-size: 0.85rem;">
+        <button onclick="fetchApi(document.getElementById('custom-endpoint').value, 'result-custom')"
+          style="background: var(--accent); color: var(--bg); border: none; padding: 0.4rem 1rem; border-radius: 4px; font-weight: 600; cursor: pointer;">GO</button>
+      </div>
+      <div id="result-custom" class="api-result">-</div>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="shared.js"></script>
+  <script>
+    function callTransport(values) {
+      const km = values.km || '100'
+      const transports = values.transports || ''
+      const construction = values.includeConstruction
+      const radiative = values.ignoreRadiativeForcing
+      const passengers = values.numberOfPassenger || ''
+
+      let endpoint = `transport?km=${km}`
+      if (transports) endpoint += `&transports=${transports}`
+      if (construction) endpoint += '&includeConstruction=1'
+      if (radiative) endpoint += '&ignoreRadiativeForcing=1'
+      if (passengers) endpoint += `&numberOfPassenger=${passengers}`
+
+      fetchApi(endpoint, 'result-transport')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const base = getBaseUrl()
+
+      document.getElementById('custom-prefix').textContent = `${base}/api/v1/`
+
+      renderCodeBlock('code-thematiques',
+        `fetch('${base}/api/v1/thematiques')
+  .then(res => res.json())
+  .then(data => console.log(data))`)
+
+      renderCodeBlock('code-ecv',
+        `fetch('${base}/api/v1/thematiques/ecv/4')
+  .then(res => res.json())
+  .then(data => console.log(data))`)
+
+      renderCodeBlock('code-transport',
+        `fetch('${base}/api/v1/transport?km=100&displayAll=1')
+  .then(res => res.json())
+  .then(data => console.log(data))`)
+
+      renderCodeBlock('code-alimentation',
+        `fetch('${base}/api/v1/alimentation?category=group')
+  .then(res => res.json())
+  .then(data => console.log(data))`)
+
+      renderCodeBlock('code-chauffage',
+        `fetch('${base}/api/v1/chauffage')
+  .then(res => res.json())
+  .then(data => console.log(data))`)
+
+      renderCodeBlock('code-fl',
+        `fetch('${base}/api/v1/fruitsetlegumes')
+  .then(res => res.json())
+  .then(data => console.log(data))`)
+
+      renderCodeBlock('code-doc',
+        `fetch('${base}/api/v1/doc')
+  .then(res => res.json())
+  .then(spec => console.log(spec))`)
+
+      buildParamsEditor('params-transport', [
+        { name: 'km', type: 'number', default: '100', hint: 'Distance en kilomètres' },
+        { name: 'transports', type: 'text', default: '', placeholder: '1,2,3', hint: 'IDs séparés par virgule' },
+        { name: 'numberOfPassenger', type: 'number', default: '', placeholder: '1', hint: 'Nombre de passagers' },
+        { name: 'includeConstruction', type: 'checkbox', default: false, hint: 'Inclure la construction' },
+        { name: 'ignoreRadiativeForcing', type: 'checkbox', default: false, hint: 'Ignorer le forçage radiatif' },
+      ], (values) => {
+        callTransport(values)
+      })
+    })
+  </script>
+</body>
+
+</html>

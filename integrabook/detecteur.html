@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Détecteur - Intégrabook</title>
+  <link rel="stylesheet" href="shared.css">
+</head>
+
+<body>
+  <div class="layout">
+    <header>
+      <h1>Détecteur <span class="badge badge-script">script</span></h1>
+      <a class="back" href="index.html">← Intégrabook</a>
+    </header>
+
+    <div id="config-bar" class="config-bar"></div>
+
+    <p class="desc" style="margin-bottom: 2rem;">
+      Les scripts de détection scannent le DOM à la recherche de textes contenant des valeurs CO2
+      (ex: "1,75 tonnes CO2", "27 kg CO2e") et les remplacent par des étiquettes interactives.
+      Les deux variantes (sync/async) sont mutuellement exclusives : rechargez la page entre les tests.
+    </p>
+
+    <!-- Detection sync -->
+    <div class="section">
+      <h2>Détection synchrone (detection.js)</h2>
+      <p class="desc">S'exécute automatiquement au chargement du script. Scanne tout le DOM.</p>
+      <div id="code-sync" class="code-block"></div>
+      <div class="api-controls">
+        <button id="btn-sync" onclick="loadSyncDetection()">Charger detection.js</button>
+      </div>
+      <div id="render-sync" class="render-zone">
+        <p>Un vol Paris-New York émet environ 1,75 tonnes CO2 par passager.</p>
+        <p>Le chauffage d'un logement moyen représente 2,2 tonnes CO2 par an.</p>
+        <p>Une voiture thermique parcourant 15 000 km émet 2,7 tonnes CO2e.</p>
+        <p>La production d'1 kg de bœuf génère environ 27 kg CO2 équivalent.</p>
+        <p>An average European emits about 8.4 tonnes CO2 per year.</p>
+      </div>
+    </div>
+
+    <!-- Detection async -->
+    <div class="section">
+      <h2>Détection asynchrone (detection-async.js)</h2>
+      <p class="desc">Charge le script sans exécution immédiate. Expose <code>window.impactCO2Detection()</code>
+        pour déclencher manuellement.</p>
+      <div id="code-async" class="code-block"></div>
+      <div class="api-controls">
+        <button id="btn-async-load" onclick="loadAsyncDetection()">1. Charger detection-async.js</button>
+        <button id="btn-async-trigger" onclick="triggerAsyncDetection()" disabled>2. Déclencher
+          impactCO2Detection()</button>
+      </div>
+      <div id="render-async" class="render-zone">
+        <p>Un aller-retour Paris-Marseille en avion émet 250 kg CO2.</p>
+        <p>La fabrication d'un smartphone représente 30 kg CO2e.</p>
+        <p>Streaming 1h par jour pendant un an : 11 kg CO2 équivalent.</p>
+      </div>
+    </div>
+
+    <!-- Detection via iframe -->
+    <div class="section">
+      <h2>Détecteur (via iframe.js)</h2>
+      <p class="desc">Le module détecteur peut aussi être chargé comme iframe classique.</p>
+      <div id="code-iframe" class="code-block"></div>
+      <div id="render-iframe" class="render-zone"></div>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="shared.js"></script>
+  <script>
+    let syncLoaded = false
+    let asyncLoaded = false
+
+    function loadSyncDetection() {
+      if (syncLoaded) return
+      syncLoaded = true
+      document.getElementById('btn-sync').disabled = true
+      document.getElementById('btn-sync').textContent = 'Chargé'
+
+      const base = getBaseUrl()
+      const search = buildSearch()
+      const dataSearch = search.replace('?', '')
+
+      const target = document.createElement('div')
+      target.id = 'script-detecteur-impact-co2'
+      if (dataSearch) target.setAttribute('data-search', dataSearch)
+      document.getElementById('render-sync').prepend(target)
+
+      const script = document.createElement('script')
+      script.src = `${base}/scripts/detection.js`
+      document.getElementById('render-sync').appendChild(script)
+    }
+
+    function loadAsyncDetection() {
+      if (asyncLoaded) return
+      asyncLoaded = true
+      document.getElementById('btn-async-load').disabled = true
+      document.getElementById('btn-async-load').textContent = '1. Chargé'
+
+      const base = getBaseUrl()
+      const search = buildSearch()
+      const dataSearch = search.replace('?', '')
+
+      const target = document.createElement('div')
+      target.id = 'script-detecteur-impact-co2'
+      if (dataSearch) target.setAttribute('data-search', dataSearch)
+      document.getElementById('render-async').prepend(target)
+
+      const script = document.createElement('script')
+      script.src = `${base}/scripts/detection-async.js`
+      script.onload = () => {
+        document.getElementById('btn-async-trigger').disabled = false
+      }
+      document.getElementById('render-async').appendChild(script)
+    }
+
+    function triggerAsyncDetection() {
+      if (typeof window.impactCO2Detection === 'function') {
+        window.impactCO2Detection()
+        document.getElementById('btn-async-trigger').textContent = '2. Déclenché'
+        document.getElementById('btn-async-trigger').disabled = true
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const base = getBaseUrl()
+      const search = buildSearch()
+      const dataSearch = search.replace('?', '')
+
+      renderCodeBlock('code-sync',
+        `<div id="script-detecteur-impact-co2"
+     data-search="${dataSearch}"></div>
+<script src="${base}/scripts/detection.js"><\/script>`)
+
+      renderCodeBlock('code-async',
+        `<div id="script-detecteur-impact-co2"
+     data-search="${dataSearch}"></div>
+<script src="${base}/scripts/detection-async.js"><\/script>
+<script>
+  // Déclenchement manuel :
+  window.impactCO2Detection()
+<\/script>`)
+
+      renderCodeBlock('code-iframe',
+        `<script
+  data-name="impact-co2"
+  src="${base}/iframe.js"
+  data-type="detecteur"
+  data-search="${search}"><\/script>`)
+
+      injectIframeScript('render-iframe', 'detecteur')
+    })
+  </script>
+</body>
+
+</html>

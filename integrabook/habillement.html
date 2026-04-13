@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Habillement - Intégrabook</title>
+  <link rel="stylesheet" href="shared.css">
+</head>
+
+<body>
+  <div class="layout">
+    <header>
+      <h1>Habillement <span class="badge badge-iframe">iframe</span></h1>
+      <a class="back" href="index.html">← Intégrabook</a>
+    </header>
+
+    <div id="config-bar" class="config-bar"></div>
+
+    <!-- Habillement iframe -->
+    <div class="section">
+      <h2>Habillement (via script iframe.js)</h2>
+      <p class="desc">Comparateur d'impact carbone des vêtements et textiles.</p>
+      <div id="code-habillement" class="code-block"></div>
+      <div id="render-habillement" class="render-zone"></div>
+    </div>
+
+    <!-- Osez Changer -->
+    <div class="section">
+      <h2>Osez Changer</h2>
+      <p class="desc">Campagne « Osez Changer » : challenges pour réduire son impact textile.</p>
+      <div id="code-osez" class="code-block"></div>
+      <div id="render-osez" class="render-zone"></div>
+    </div>
+
+    <!-- Iframe direct -->
+    <div class="section">
+      <h2>Habillement (iframe direct)</h2>
+      <p class="desc">Iframe brut sans script intermédiaire.</p>
+      <div id="code-direct" class="code-block"></div>
+      <div id="render-direct" class="render-zone"></div>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="shared.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const base = getBaseUrl()
+      const search = buildSearch()
+
+      renderCodeBlock('code-habillement',
+        `<script
+  data-name="impact-co2"
+  src="${base}/iframe.js"
+  data-type="habillement"
+  data-search="${search}"><\/script>`)
+      injectIframeScript('render-habillement', 'habillement')
+
+      renderCodeBlock('code-osez',
+        `<script
+  data-name="impact-co2"
+  src="${base}/iframe.js"
+  data-type="habillement/osez-changer"
+  data-search="${search}"><\/script>`)
+      injectIframeScript('render-osez', 'habillement/osez-changer')
+
+      const directSrc = `${base}/iframes/habillement${search}${search ? '&' : '?'}source=${encodeURIComponent(window.location.href)}`
+      renderCodeBlock('code-direct',
+        `<iframe
+  src="${directSrc}"
+  style="border: none; width: 100%; min-height: 500px;"
+  allowfullscreen></iframe>`)
+      injectDirectIframe('render-direct', 'habillement')
+    })
+  </script>
+</body>
+
+</html>

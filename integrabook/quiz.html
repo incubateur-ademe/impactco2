@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz - Intégrabook</title>
+  <link rel="stylesheet" href="shared.css">
+</head>
+
+<body>
+  <div class="layout">
+    <header>
+      <h1>Quiz <span class="badge badge-iframe">iframe</span></h1>
+      <a class="back" href="index.html">← Intégrabook</a>
+    </header>
+
+    <div id="config-bar" class="config-bar"></div>
+
+    <!-- Quiz iframe -->
+    <div class="section">
+      <h2>Quiz (via script iframe.js)</h2>
+      <p class="desc">Quiz interactif sur l'empreinte carbone.</p>
+      <div id="code-quiz" class="code-block"></div>
+      <div id="render-quiz" class="render-zone"></div>
+    </div>
+
+    <!-- Quiz infographie -->
+    <div class="section">
+      <h2>Quiz Infographie</h2>
+      <p class="desc">Version infographique du quiz avec visualisations.</p>
+      <div id="code-quiz-infographie" class="code-block"></div>
+      <div id="render-quiz-infographie" class="render-zone"></div>
+    </div>
+
+    <!-- Iframe direct quiz -->
+    <div class="section">
+      <h2>Quiz (iframe direct)</h2>
+      <p class="desc">Iframe brut sans script intermédiaire.</p>
+      <div id="code-direct" class="code-block"></div>
+      <div id="render-direct" class="render-zone"></div>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="shared.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const base = getBaseUrl()
+      const search = buildSearch()
+
+      renderCodeBlock('code-quiz',
+        `<script
+  data-name="impact-co2"
+  src="${base}/iframe.js"
+  data-type="quiz"
+  data-search="${search}"><\/script>`)
+      injectIframeScript('render-quiz', 'quiz')
+
+      renderCodeBlock('code-quiz-infographie',
+        `<script
+  data-name="impact-co2"
+  src="${base}/iframe.js"
+  data-type="quiz-infographie"
+  data-search="${search}"><\/script>`)
+      injectIframeScript('render-quiz-infographie', 'quiz-infographie')
+
+      const directSrc = `${base}/iframes/quiz${search}${search ? '&' : '?'}source=${encodeURIComponent(window.location.href)}`
+      renderCodeBlock('code-direct',
+        `<iframe
+  src="${directSrc}"
+  style="border: none; width: 100%; min-height: 500px;"
+  allowfullscreen></iframe>`)
+      injectDirectIframe('render-direct', 'quiz')
+    })
+  </script>
+</body>
+
+</html>

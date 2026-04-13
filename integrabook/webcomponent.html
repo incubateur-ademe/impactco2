@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Component - Intégrabook</title>
+  <link rel="stylesheet" href="shared.css">
+</head>
+
+<body>
+  <div class="layout">
+    <header>
+      <h1>Web Component <span class="badge badge-wc">web component</span></h1>
+      <a class="back" href="index.html">← Intégrabook</a>
+    </header>
+
+    <div id="config-bar" class="config-bar"></div>
+
+    <!-- Web Component configurable -->
+    <div class="section">
+      <h2>&lt;etiquette-ico2&gt; (configurable)</h2>
+      <p class="desc">Custom element HTML natif. Modifiez les paramètres et cliquez Appliquer pour re-rendre.</p>
+      <div id="params-wc"></div>
+      <div id="code-wc" class="code-block"></div>
+      <div id="render-wc" class="render-zone"></div>
+    </div>
+
+    <!-- Web Component dark -->
+    <div class="section">
+      <h2>&lt;etiquette-ico2&gt; (dark mode)</h2>
+      <p class="desc">Le composant dans un contexte sombre (classe <code>night</code> sur le parent).</p>
+      <div id="params-wc-dark"></div>
+      <div id="code-dark" class="code-block"></div>
+      <div id="render-dark" class="render-zone night" data-force-theme="night"></div>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="shared.js"></script>
+  <script>
+    let wcLoaded = false
+
+    const wcParams = [
+      { name: 'value', type: 'number', default: '10000', placeholder: '10000', hint: 'Impact CO2 en grammes' },
+      { name: 'comparisons', type: 'text', default: 'voiturethermique,tgv,avioncourtcourrier', placeholder: 'voiturethermique,tgv,avion', hint: 'Slugs d\'équivalents (séparés par virgule)' },
+      { name: 'animated', type: 'checkbox', default: false, hint: 'Activer les animations' },
+      {
+        name: 'language', type: 'select', default: 'fr', options: [
+          { value: 'fr', label: 'Français' },
+          { value: 'en', label: 'English' },
+          { value: 'es', label: 'Español' },
+        ], allowEmpty: false, hint: 'Langue d\'affichage'
+      },
+    ]
+
+    function renderWC(containerId, values) {
+      const container = document.getElementById(containerId)
+      while (container.firstChild) container.removeChild(container.firstChild)
+
+      const comparisons = values.comparisons.split(',').map(s => s.trim()).filter(Boolean)
+      const el = document.createElement('etiquette-ico2')
+      el.setAttribute('value', values.value || '10000')
+      el.setAttribute('comparisons', JSON.stringify(comparisons))
+      if (values.animated) el.setAttribute('animated', '')
+      el.setAttribute('language', values.language || 'fr')
+      container.appendChild(el)
+    }
+
+    function updateCode(codeId, values) {
+      const base = getBaseUrl()
+      const comparisons = values.comparisons.split(',').map(s => s.trim()).filter(Boolean)
+      renderCodeBlock(codeId,
+        `<script src="${base}/webcomponents/etiquette.js"><\/script>
+<etiquette-ico2
+  value="${values.value || '10000'}"
+  comparisons='${JSON.stringify(comparisons)}'${values.animated ? '\n  animated' : ''}
+  language="${values.language || 'fr'}">
+</etiquette-ico2>`)
+    }
+
+    function loadWCScript(callback) {
+      if (wcLoaded) { callback(); return }
+      const base = getBaseUrl()
+      const script = document.createElement('script')
+      script.src = `${base}/webcomponents/etiquette.js`
+      script.onload = () => { wcLoaded = true; callback() }
+      script.onerror = () => {
+        document.getElementById('render-wc').textContent = `Erreur de chargement: ${base}/webcomponents/etiquette.js`
+      }
+      document.head.appendChild(script)
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const defaultValues = { value: '10000', comparisons: 'voiturethermique,tgv,avioncourtcourrier', animated: false, language: getLanguage() }
+      const darkDefaultValues = { value: '15000', comparisons: 'smartphone,ordinateurportable,television', animated: true, language: getLanguage() }
+
+      buildParamsEditor('params-wc', wcParams, (values) => {
+        updateCode('code-wc', values)
+        loadWCScript(() => renderWC('render-wc', values))
+      })
+
+      buildParamsEditor('params-wc-dark', wcParams.map(p => {
+        if (p.name === 'value') return { ...p, default: '15000' }
+        if (p.name === 'comparisons') return { ...p, default: 'smartphone,ordinateurportable,television' }
+        if (p.name === 'animated') return { ...p, default: true }
+        return p
+      }), (values) => {
+        updateCode('code-dark', values)
+        loadWCScript(() => renderWC('render-dark', values))
+      })
+
+      updateCode('code-wc', defaultValues)
+      updateCode('code-dark', darkDefaultValues)
+
+      loadWCScript(() => {
+        renderWC('render-wc', defaultValues)
+        renderWC('render-dark', darkDefaultValues)
+      })
+    })
+  </script>
+</body>
+
+</html>

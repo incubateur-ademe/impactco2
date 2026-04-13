@@ -1,0 +1,36 @@
+name: Sync integrabook
+
+on:
+  push:
+    branches: [main]
+    paths: [integrabook/**]
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: integrabook
+
+      - uses: actions/checkout@v4
+        with:
+          repository: incubateur-ademe/impactco2-integrabook
+          path: target
+          token: ${{ secrets.INTEGRABOOK_SYNC_TOKEN }}
+
+      - name: Sync files
+        env:
+          COMMIT_MSG: ${{ github.event.head_commit.message }}
+        run: |
+          rsync -a --delete --exclude='.git' integrabook/ target/
+          cd target
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to sync"
+          else
+            git -c user.name="impactco2-sync" -c user.email="noreply@impactco2.fr" commit -m "sync: $COMMIT_MSG"
+            git push
+          fi
