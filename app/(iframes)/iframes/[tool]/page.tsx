@@ -5,10 +5,8 @@ import { simulators } from 'components/outils/simulators'
 import { getCategory } from 'utils/category'
 
 type Props = { params: Promise<{ tool: string }> }
+export const dynamic = 'force-dynamic'
 
-export async function generateStaticParams() {
-  return categories.map((category) => ({ tool: category.slug }))
-}
 
 const page = async (props: Props) => {
   const params = await props.params
