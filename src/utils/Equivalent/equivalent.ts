@@ -203,10 +203,10 @@ const getValues = (
         return { prefix, name: `${carpool} ${carpoolingBasis.voitureelectrique[language]}` }
       }
       if (ref.includes('hybride')) {
-        return { prefix, name: `${carpool} ${carpoolingBasis.voitureelectrique[language]}` }
+        return { prefix, name: `${carpool} ${carpoolingBasis.voiturehybride[language]}` }
       }
       if (ref.includes('essence') || ref.includes('diesel')) {
-        return { prefix, name: `${carpool} ${carpoolingBasis.voitureelectrique[language]}` }
+        return { prefix, name: `${carpool} ${carpoolingBasis.voiturethermique[language]}` }
       }
     }
     return { prefix, name: `${carpool} ${name}` }
@@ -262,14 +262,14 @@ export const getNameWithoutSuffix = (
 }
 const sizes: Record<string, Record<string, string>> = {
   citadine: {
-    fr: 'Citadine',
-    en: 'City car',
-    es: 'Coche urbano',
+    fr: 'Petite',
+    en: 'Small',
+    es: 'Pequeña',
   },
   compact: {
-    fr: 'Compacte',
-    en: 'Compact',
-    es: 'Compacto',
+    fr: 'Moyenne',
+    en: 'Medium',
+    es: 'Mediana',
   },
   berline: {
     fr: 'Berline',
@@ -300,14 +300,14 @@ const engines: Record<string, Record<string, string>> = {
     es: 'Eléctrico',
   },
   hybride: {
-    fr: 'Hybride non rechargeable',
-    en: 'Non rechargeable hybrid',
-    es: 'Híbrido no recargable',
+    fr: 'Non rechargeable',
+    en: 'Non rechargeable',
+    es: 'No recargable',
   },
   hybriderechargeable: {
-    fr: 'Hybride rechargeable',
-    en: 'Plug-in hybrid',
-    es: 'Híbrido enchufable',
+    fr: 'Rechargeable',
+    en: 'Plug-in',
+    es: 'Enchufable',
   },
 }
 
@@ -323,7 +323,7 @@ const getExtraInfo = (language: string, slug: string) => {
     return ` (${infos[language]})`
   }
 
-  if (slug.startsWith('voiture-') || (slug.startsWith('voiture') && slug.includes('+'))) {
+  if (slug.startsWith('voiture') || (slug.startsWith('voiture') && slug.includes('+'))) {
     const [info, carpool] = slug.split('+')
     const [car, size, engine] = info.split('-')
     return size && sizes[size] && engine && engines[engine]

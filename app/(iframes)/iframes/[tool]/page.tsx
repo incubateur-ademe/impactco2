@@ -1,12 +1,10 @@
 import { notFound } from 'next/navigation'
-import { categories } from 'data/categories'
 import Category from 'components/outils/Category'
 import { simulators } from 'components/outils/simulators'
 import { getCategory } from 'utils/category'
 
 type Props = { params: Promise<{ tool: string }> }
 export const dynamic = 'force-dynamic'
-
 
 const page = async (props: Props) => {
   const params = await props.params

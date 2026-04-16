@@ -1,5 +1,6 @@
 import fs from 'fs'
 import path from 'path'
+import { casPratiques } from 'data/categories/caspratiques'
 import { chauffage } from 'data/categories/chauffage'
 import { deplacements } from 'data/categories/deplacement'
 import { livraison } from 'data/categories/livraison'
@@ -42,10 +43,14 @@ function updateDataFile(category: string) {
       console.log(`\nValeurs sauvegardées dans: ${dataPath}`)
     } else if (category === 'voiture') {
       extractVoitureValues()
-      const backupContent = `export const deplacements = ${JSON.stringify(deplacements, null, 2)}`
-      const backupPath = path.join(__dirname, '../data/categories/deplacement.ts')
-      fs.writeFileSync(backupPath, backupContent, 'utf8')
-      console.log(`\nValeurs sauvegardées dans: ${backupPath}`)
+      const backupDeplacementContent = `export const deplacements = ${JSON.stringify(deplacements, null, 2)}`
+      const backupDeplacementPath = path.join(__dirname, '../data/categories/deplacement.ts')
+      fs.writeFileSync(backupDeplacementPath, backupDeplacementContent, 'utf8')
+      console.log(`\nValeurs sauvegardées dans: ${backupDeplacementPath}`)
+      const backupCasPratiquesContent = `export const casPratiques = ${JSON.stringify(casPratiques, null, 2)}`
+      const backupCasPratiquesPath = path.join(__dirname, '../data/categories/caspratiques.ts')
+      fs.writeFileSync(backupCasPratiquesPath, backupCasPratiquesContent, 'utf8')
+      console.log(`\nValeurs sauvegardées dans: ${backupCasPratiquesPath}`)
     }
   } catch (error) {
     console.error('Erreur lors de la mise à jour:', error)

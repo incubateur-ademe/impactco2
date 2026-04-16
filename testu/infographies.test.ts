@@ -250,7 +250,7 @@ describe('infographies', () => {
     const tgvTrajet = round((tgv?.ecv.reduce((acc, ecv) => acc + ecv.value, 0) as number) * distance * personne)
 
     expect(avionTrajet).toBe(449.14)
-    expect(voitureTrajet).toBe(121.9)
+    expect(voitureTrajet).toBe(142.25)
     expect(tgvTrajet).toBe(5.86)
 
     const hotelNuits = round((hotel?.ecv.reduce((acc, ecv) => acc + ecv.value, 0) as number) * nuits * personne)
@@ -263,7 +263,7 @@ describe('infographies', () => {
 
     const totalVoiture = round(voitureTrajet + hotelNuits)
 
-    expect(totalVoiture).toBe(147.7)
+    expect(totalVoiture).toBe(168.05)
 
     const totalTgv = round(tgvTrajet + hotelNuits)
 
@@ -328,7 +328,7 @@ describe('infographies', () => {
 
     const voitureDrive = round((voiture.ecv.reduce((acc, ecv) => acc + ecv.value, 0) as number) * 30)
 
-    expect(voitureDrive).toBe(3.66)
+    expect(voitureDrive).toBe(4.27)
 
     const coursesMagasin = round(livraisonData.courses.ecv.magasin.reduce((acc, item) => acc + item.value, 0))
     const coursesLivraison = round(
@@ -342,7 +342,7 @@ describe('infographies', () => {
 
     const driveTotal = round(voitureDrive + coursesDrive)
 
-    expect(driveTotal).toBe(11.47)
+    expect(driveTotal).toBe(12.08)
 
     const coursesAlt = imageInfographies.magasindouce[0].alt
 
@@ -350,7 +350,7 @@ describe('infographies', () => {
       `Quel est l’impact carbone des différentes façons de faire ses courses ? ` +
       `Pour des courses au magasin (j’y vais à pieds, à proximité), mon déplacement représente 0 kg CO2e, la logistique et livraison représente ${formatFr(coursesMagasin)} kg CO2e, soit un total de ${formatFr(coursesMagasin)} kg CO2e. ` +
       `Pour des courses en livraison à domicile en véhicule utilitaire, mon déplacement représente 0 kg CO2e, la logistique et livraison représente ${formatFr(coursesLivraison)} kg CO2e, soit un total de ${formatFr(coursesLivraison)} kg CO2e. ` +
-      `Pour des courses en drive (j’y vais en voiture thermique à 15 km), mon déplacement représente 6,64 kg CO2e, la logistique et livraison représente ${formatFr(coursesDrive)} kg CO2e, soit un total de 13,32 kg CO2e. ` +
+      `Pour des courses en drive (j’y vais en voiture thermique à 15 km), mon déplacement représente ${formatFr(voitureDrive)} kg CO2e, la logistique et livraison représente ${formatFr(coursesDrive)} kg CO2e, soit un total de ${formatFr(driveTotal)} kg CO2e. ` +
       `Le panier de courses inclut une sélection d’aliments secs et boissons pour un poids d’environ 20 kg. ` +
       `Source : Base Empreinte, ADEME.`
 
@@ -363,7 +363,7 @@ describe('infographies', () => {
 
     const voiturePointRelais = round((voiture.ecv.reduce((acc, ecv) => acc + ecv.value, 0) as number) * 7)
 
-    expect(voiturePointRelais).toBe(0.85)
+    expect(voiturePointRelais).toBe(1)
 
     const smartphonePointRelaisDouce = round(
       livraisonData.smartphone.ecv.pointrelaisdouce.reduce((acc, item) => acc + item.value, 0)
@@ -381,7 +381,7 @@ describe('infographies', () => {
 
     const pointRelaisVoitureTotal = round(voiturePointRelais + smartphonePointRelais)
 
-    expect(pointRelaisVoitureTotal).toBe(1.07)
+    expect(pointRelaisVoitureTotal).toBe(1.22)
 
     const smartphoneAlt = imageInfographies.smartphone[1].alt
 

@@ -63,21 +63,21 @@ export const comparateurTest = async (page: Page | FrameLocator, prod?: boolean,
   await page.getByText('Covoiturage électrique (3').click()
   await page.getByRole('button', { name: 'Revenir au comparateur' }).click()
 
-  await expect(page.getByTestId('comparateur-voitureelectrique+3-value')).toHaveText('281')
-  await page.getByRole('button', { name: 'Comparer les valeurs avec Covoiturage électrique (3 passagers)' }).click()
+  await expect(page.getByTestId('comparateur-voitureelectrique+2-value')).toHaveText('323')
+  await page.getByRole('button', { name: 'Comparer les valeurs avec Covoiturage électrique (3 personnes)' }).click()
   await expect(page.getByTestId('compared-equivalent-link')).toHaveAttribute(
     'href',
-    '/outils/transport/voitureelectrique+3'
+    '/outils/transport/voitureelectrique+2'
   )
-  await expect(page.getByTestId('input-base-value-unit')).toHaveText('km en covoiturage électrique (3 passagers)')
-  await expect(page.getByTestId('compared-equivalent-value')).toHaveText('2.59 kg CO₂e')
+  await expect(page.getByTestId('input-base-value-unit')).toHaveText('km en covoiturage électrique (3 personnes)')
+  await expect(page.getByTestId('compared-equivalent-value')).toHaveText('2.25 kg CO₂e')
 
   await page.getByRole('button', { name: 'Comparer les valeurs avec Abricot' }).click()
   await page.getByLabel("kg d'abricot").fill('5')
 
   await page.getByTestId('header-integrate-button').nth(0).click()
   await expect(page.getByTestId('clipboard-box')).toHaveText(
-    `<script data-name="impact-co2" src="${prod ? 'https://impactco2.fr' : 'http://localhost:3000'}/iframe.js" data-type="comparateur" data-search="?value=5&comparisons=ail,tomate,voitureelectrique+3&equivalent=abricot&language=fr&theme=default"></script>`
+    `<script data-name="impact-co2" src="${prod ? 'https://impactco2.fr' : 'http://localhost:3000'}/iframe.js" data-type="comparateur" data-search="?value=5&comparisons=ail,tomate,voitureelectrique+2&equivalent=abricot&language=fr&theme=default"></script>`
   )
 
   await page.locator('label').filter({ hasText: 'Intégrer ma propre comparaison' }).locator('span').nth(1).click()
@@ -88,12 +88,12 @@ export const comparateurTest = async (page: Page | FrameLocator, prod?: boolean,
   if (!noEtiquette) {
     await page.getByTestId('header-integrate-button').nth(1).click()
     await expect(page.getByTestId('clipboard-box').nth(1)).toHaveText(
-      `<script data-name="impact-co2" src="${prod ? 'https://impactco2.fr' : 'http://localhost:3000'}/iframe.js" data-type="comparateur/etiquette-animee" data-search="?value=7.2575400000000005&comparisons=abricot,ail,tomate,voitureelectrique+3&language=fr&theme=default"></script>`
+      `<script data-name="impact-co2" src="${prod ? 'https://impactco2.fr' : 'http://localhost:3000'}/iframe.js" data-type="comparateur/etiquette-animee" data-search="?value=7.2575400000000005&comparisons=abricot,ail,tomate,voitureelectrique+2&language=fr&theme=default"></script>`
     )
 
     await page.getByTestId('header-integrate-button').nth(2).click()
     await expect(page.getByTestId('clipboard-box').nth(2)).toHaveText(
-      `<script data-name="impact-co2" src="${prod ? 'https://impactco2.fr' : 'http://localhost:3000'}/iframe.js" data-type="comparateur/etiquette" data-search="?value=7.2575400000000005&comparisons=abricot,ail,tomate,voitureelectrique+3&language=fr&theme=default"></script>`
+      `<script data-name="impact-co2" src="${prod ? 'https://impactco2.fr' : 'http://localhost:3000'}/iframe.js" data-type="comparateur/etiquette" data-search="?value=7.2575400000000005&comparisons=abricot,ail,tomate,voitureelectrique+2&language=fr&theme=default"></script>`
     )
   }
 
@@ -101,5 +101,5 @@ export const comparateurTest = async (page: Page | FrameLocator, prod?: boolean,
   await page.getByRole('button', { name: "kg d'abricot" }).click()
   await expect(page.getByTestId('comparateur-abricot-value')).toHaveText('68.9')
   await expect(page.getByTestId('comparateur-ail-value')).toHaveText('261')
-  await expect(page.getByTestId('comparateur-voitureelectrique+3-value')).toHaveText('3,868')
+  await expect(page.getByTestId('comparateur-voitureelectrique+2-value')).toHaveText('4,453')
 }

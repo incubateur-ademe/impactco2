@@ -1,4 +1,3 @@
-// attention aux ids réservé pour le covoiturage (22 -> 29 et a partir de 100)
 export const deplacements = [
   {
     id: 1,
@@ -142,17 +141,23 @@ export const deplacements = [
     id: 4,
     synonyms: ['conduire'],
     slug: 'voiturethermique',
+    sources: [
+      {
+        label: 'Modélisation de l’empreinte carbone de la voiture - 2025',
+        href: 'https://www.notion.so/accelerateur-transition-ecologique-ademe/Mod-lisation-de-l-empreinte-carbone-de-la-voiture-1f46523d57d780b3a1a8f1ceb5ff7f87',
+      },
+    ],
     withCarpool: true,
     type: 'car',
     category: 4,
     ecv: [
       {
         id: 6,
-        value: 0.09416971630563031,
+        value: 0.1105577600556303,
       },
       {
         id: 5,
-        value: 0.027733695652173936,
+        value: 0.03169565217391306,
       },
     ],
     default: true,
@@ -161,17 +166,23 @@ export const deplacements = [
     id: 5,
     synonyms: ['conduire'],
     slug: 'voitureelectrique',
+    sources: [
+      {
+        label: 'Modélisation de l’empreinte carbone de la voiture - 2025',
+        href: 'https://www.notion.so/accelerateur-transition-ecologique-ademe/Mod-lisation-de-l-empreinte-carbone-de-la-voiture-1f46523d57d780b3a1a8f1ceb5ff7f87',
+      },
+    ],
     withCarpool: true,
     type: 'car',
     category: 4,
     ecv: [
       {
         id: 6,
-        value: 0.011504485055630311,
+        value: 0.01208836005563031,
       },
       {
         id: 5,
-        value: 0.046089130434782626,
+        value: 0.05527690217391306,
       },
     ],
     default: true,
@@ -454,6 +465,12 @@ export const deplacements = [
     id: 100,
     synonyms: ['conduire'],
     slug: 'voiture-citadine-essence',
+    sources: [
+      {
+        label: 'Modélisation de l’empreinte carbone de la voiture - 2025',
+        href: 'https://www.notion.so/accelerateur-transition-ecologique-ademe/Mod-lisation-de-l-empreinte-carbone-de-la-voiture-1f46523d57d780b3a1a8f1ceb5ff7f87',
+      },
+    ],
     withCarpool: true,
     ignore: true,
     type: 'car',
@@ -474,6 +491,12 @@ export const deplacements = [
     id: 105,
     synonyms: ['conduire'],
     slug: 'voiture-citadine-diesel',
+    sources: [
+      {
+        label: 'Modélisation de l’empreinte carbone de la voiture - 2025',
+        href: 'https://www.notion.so/accelerateur-transition-ecologique-ademe/Mod-lisation-de-l-empreinte-carbone-de-la-voiture-1f46523d57d780b3a1a8f1ceb5ff7f87',
+      },
+    ],
     withCarpool: true,
     ignore: true,
     type: 'car',
@@ -494,6 +517,12 @@ export const deplacements = [
     id: 110,
     synonyms: ['conduire'],
     slug: 'voiture-citadine-electrique',
+    sources: [
+      {
+        label: 'Modélisation de l’empreinte carbone de la voiture - 2025',
+        href: 'https://www.notion.so/accelerateur-transition-ecologique-ademe/Mod-lisation-de-l-empreinte-carbone-de-la-voiture-1f46523d57d780b3a1a8f1ceb5ff7f87',
+      },
+    ],
     withCarpool: true,
     ignore: true,
     type: 'car',
@@ -514,6 +543,12 @@ export const deplacements = [
     id: 115,
     synonyms: ['conduire'],
     slug: 'voiture-citadine-hybride',
+    sources: [
+      {
+        label: 'Modélisation de l’empreinte carbone de la voiture - 2025',
+        href: 'https://www.notion.so/accelerateur-transition-ecologique-ademe/Mod-lisation-de-l-empreinte-carbone-de-la-voiture-1f46523d57d780b3a1a8f1ceb5ff7f87',
+      },
+    ],
     withCarpool: true,
     ignore: true,
     type: 'car',
@@ -534,6 +569,12 @@ export const deplacements = [
     id: 120,
     synonyms: ['conduire'],
     slug: 'voiture-citadine-hybriderechargeable',
+    sources: [
+      {
+        label: 'Modélisation de l’empreinte carbone de la voiture - 2025',
+        href: 'https://www.notion.so/accelerateur-transition-ecologique-ademe/Mod-lisation-de-l-empreinte-carbone-de-la-voiture-1f46523d57d780b3a1a8f1ceb5ff7f87',
+      },
+    ],
     withCarpool: true,
     ignore: true,
     type: 'car',
@@ -554,6 +595,12 @@ export const deplacements = [
     id: 125,
     synonyms: ['conduire'],
     slug: 'voiture-compact-essence',
+    sources: [
+      {
+        label: 'Modélisation de l’empreinte carbone de la voiture - 2025',
+        href: 'https://www.notion.so/accelerateur-transition-ecologique-ademe/Mod-lisation-de-l-empreinte-carbone-de-la-voiture-1f46523d57d780b3a1a8f1ceb5ff7f87',
+      },
+    ],
     withCarpool: true,
     ignore: true,
     type: 'car',
@@ -574,6 +621,12 @@ export const deplacements = [
     id: 130,
     synonyms: ['conduire'],
     slug: 'voiture-compact-diesel',
+    sources: [
+      {
+        label: 'Modélisation de l’empreinte carbone de la voiture - 2025',
+        href: 'https://www.notion.so/accelerateur-transition-ecologique-ademe/Mod-lisation-de-l-empreinte-carbone-de-la-voiture-1f46523d57d780b3a1a8f1ceb5ff7f87',
+      },
+    ],
     withCarpool: true,
     ignore: true,
     type: 'car',
@@ -594,6 +647,12 @@ export const deplacements = [
     id: 135,
     synonyms: ['conduire'],
     slug: 'voiture-compact-electrique',
+    sources: [
+      {
+        label: 'Modélisation de l’empreinte carbone de la voiture - 2025',
+        href: 'https://www.notion.so/accelerateur-transition-ecologique-ademe/Mod-lisation-de-l-empreinte-carbone-de-la-voiture-1f46523d57d780b3a1a8f1ceb5ff7f87',
+      },
+    ],
     withCarpool: true,
     ignore: true,
     type: 'car',
@@ -614,6 +673,12 @@ export const deplacements = [
     id: 140,
     synonyms: ['conduire'],
     slug: 'voiture-compact-hybride',
+    sources: [
+      {
+        label: 'Modélisation de l’empreinte carbone de la voiture - 2025',
+        href: 'https://www.notion.so/accelerateur-transition-ecologique-ademe/Mod-lisation-de-l-empreinte-carbone-de-la-voiture-1f46523d57d780b3a1a8f1ceb5ff7f87',
+      },
+    ],
     withCarpool: true,
     ignore: true,
     type: 'car',
@@ -634,6 +699,12 @@ export const deplacements = [
     id: 145,
     synonyms: ['conduire'],
     slug: 'voiture-compact-hybriderechargeable',
+    sources: [
+      {
+        label: 'Modélisation de l’empreinte carbone de la voiture - 2025',
+        href: 'https://www.notion.so/accelerateur-transition-ecologique-ademe/Mod-lisation-de-l-empreinte-carbone-de-la-voiture-1f46523d57d780b3a1a8f1ceb5ff7f87',
+      },
+    ],
     withCarpool: true,
     ignore: true,
     type: 'car',
@@ -654,6 +725,12 @@ export const deplacements = [
     id: 150,
     synonyms: ['conduire'],
     slug: 'voiture-berline-essence',
+    sources: [
+      {
+        label: 'Modélisation de l’empreinte carbone de la voiture - 2025',
+        href: 'https://www.notion.so/accelerateur-transition-ecologique-ademe/Mod-lisation-de-l-empreinte-carbone-de-la-voiture-1f46523d57d780b3a1a8f1ceb5ff7f87',
+      },
+    ],
     withCarpool: true,
     ignore: true,
     type: 'car',
@@ -674,6 +751,12 @@ export const deplacements = [
     id: 155,
     synonyms: ['conduire'],
     slug: 'voiture-berline-diesel',
+    sources: [
+      {
+        label: 'Modélisation de l’empreinte carbone de la voiture - 2025',
+        href: 'https://www.notion.so/accelerateur-transition-ecologique-ademe/Mod-lisation-de-l-empreinte-carbone-de-la-voiture-1f46523d57d780b3a1a8f1ceb5ff7f87',
+      },
+    ],
     withCarpool: true,
     ignore: true,
     type: 'car',
@@ -694,6 +777,12 @@ export const deplacements = [
     id: 160,
     synonyms: ['conduire'],
     slug: 'voiture-berline-electrique',
+    sources: [
+      {
+        label: 'Modélisation de l’empreinte carbone de la voiture - 2025',
+        href: 'https://www.notion.so/accelerateur-transition-ecologique-ademe/Mod-lisation-de-l-empreinte-carbone-de-la-voiture-1f46523d57d780b3a1a8f1ceb5ff7f87',
+      },
+    ],
     withCarpool: true,
     ignore: true,
     type: 'car',
@@ -714,6 +803,12 @@ export const deplacements = [
     id: 165,
     synonyms: ['conduire'],
     slug: 'voiture-berline-hybride',
+    sources: [
+      {
+        label: 'Modélisation de l’empreinte carbone de la voiture - 2025',
+        href: 'https://www.notion.so/accelerateur-transition-ecologique-ademe/Mod-lisation-de-l-empreinte-carbone-de-la-voiture-1f46523d57d780b3a1a8f1ceb5ff7f87',
+      },
+    ],
     withCarpool: true,
     ignore: true,
     type: 'car',
@@ -734,6 +829,12 @@ export const deplacements = [
     id: 170,
     synonyms: ['conduire'],
     slug: 'voiture-berline-hybriderechargeable',
+    sources: [
+      {
+        label: 'Modélisation de l’empreinte carbone de la voiture - 2025',
+        href: 'https://www.notion.so/accelerateur-transition-ecologique-ademe/Mod-lisation-de-l-empreinte-carbone-de-la-voiture-1f46523d57d780b3a1a8f1ceb5ff7f87',
+      },
+    ],
     withCarpool: true,
     ignore: true,
     type: 'car',
@@ -754,6 +855,12 @@ export const deplacements = [
     id: 175,
     synonyms: ['conduire'],
     slug: 'voiture-grandeberline-essence',
+    sources: [
+      {
+        label: 'Modélisation de l’empreinte carbone de la voiture - 2025',
+        href: 'https://www.notion.so/accelerateur-transition-ecologique-ademe/Mod-lisation-de-l-empreinte-carbone-de-la-voiture-1f46523d57d780b3a1a8f1ceb5ff7f87',
+      },
+    ],
     withCarpool: true,
     ignore: true,
     type: 'car',
@@ -774,6 +881,12 @@ export const deplacements = [
     id: 180,
     synonyms: ['conduire'],
     slug: 'voiture-grandeberline-diesel',
+    sources: [
+      {
+        label: 'Modélisation de l’empreinte carbone de la voiture - 2025',
+        href: 'https://www.notion.so/accelerateur-transition-ecologique-ademe/Mod-lisation-de-l-empreinte-carbone-de-la-voiture-1f46523d57d780b3a1a8f1ceb5ff7f87',
+      },
+    ],
     withCarpool: true,
     ignore: true,
     type: 'car',
@@ -794,6 +907,12 @@ export const deplacements = [
     id: 185,
     synonyms: ['conduire'],
     slug: 'voiture-grandeberline-electrique',
+    sources: [
+      {
+        label: 'Modélisation de l’empreinte carbone de la voiture - 2025',
+        href: 'https://www.notion.so/accelerateur-transition-ecologique-ademe/Mod-lisation-de-l-empreinte-carbone-de-la-voiture-1f46523d57d780b3a1a8f1ceb5ff7f87',
+      },
+    ],
     withCarpool: true,
     ignore: true,
     type: 'car',
@@ -814,6 +933,12 @@ export const deplacements = [
     id: 190,
     synonyms: ['conduire'],
     slug: 'voiture-grandeberline-hybride',
+    sources: [
+      {
+        label: 'Modélisation de l’empreinte carbone de la voiture - 2025',
+        href: 'https://www.notion.so/accelerateur-transition-ecologique-ademe/Mod-lisation-de-l-empreinte-carbone-de-la-voiture-1f46523d57d780b3a1a8f1ceb5ff7f87',
+      },
+    ],
     withCarpool: true,
     ignore: true,
     type: 'car',
@@ -834,6 +959,12 @@ export const deplacements = [
     id: 195,
     synonyms: ['conduire'],
     slug: 'voiture-grandeberline-hybriderechargeable',
+    sources: [
+      {
+        label: 'Modélisation de l’empreinte carbone de la voiture - 2025',
+        href: 'https://www.notion.so/accelerateur-transition-ecologique-ademe/Mod-lisation-de-l-empreinte-carbone-de-la-voiture-1f46523d57d780b3a1a8f1ceb5ff7f87',
+      },
+    ],
     withCarpool: true,
     ignore: true,
     type: 'car',
@@ -854,17 +985,23 @@ export const deplacements = [
     id: 200,
     synonyms: ['conduire'],
     slug: 'voiturehybride',
+    sources: [
+      {
+        label: 'Modélisation de l’empreinte carbone de la voiture - 2025',
+        href: 'https://www.notion.so/accelerateur-transition-ecologique-ademe/Mod-lisation-de-l-empreinte-carbone-de-la-voiture-1f46523d57d780b3a1a8f1ceb5ff7f87',
+      },
+    ],
     withCarpool: true,
     type: 'car',
     category: 4,
     ecv: [
       {
         id: 6,
-        value: 0.1060514350556303,
+        value: 0.0931681350556303,
       },
       {
         id: 5,
-        value: 0.02919796195652175,
+        value: 0.04073222826086956,
       },
     ],
     default: false,

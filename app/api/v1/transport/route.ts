@@ -179,56 +179,56 @@ export const computeTransportEmission = (
  *         - 28 : Covoiturage électrique (4 personnes)
  *         - 29 : Covoiturage électrique (5 personnes)
  *         - 30 : Marche
- *         - 100 : Citadine - Essence
- *         - 101 : Citadine - Essence (2 personnes)
- *         - 102 : Citadine - Essence (3 personnes)
- *         - 103 : Citadine - Essence (4 personnes)
- *         - 104 : Citadine - Essence (5 personnes)
- *         - 105 : Citadine - Diesel
- *         - 106 : Citadine - Diesel (2 personnes)
- *         - 107 : Citadine - Diesel (3 personnes)
- *         - 108 : Citadine - Diesel (4 personnes)
- *         - 109 : Citadine - Diesel (5 personnes)
- *         - 110 : Citadine - Électrique
- *         - 111 : Citadine - Électrique (2 personnes)
- *         - 112 : Citadine - Électrique (3 personnes)
- *         - 113 : Citadine - Électrique (4 personnes)
- *         - 114 : Citadine - Électrique (5 personnes)
- *         - 115 : Citadine - Hybride non rechargeable
- *         - 116 : Citadine - Hybride non rechargeable (2 personnes)
- *         - 117 : Citadine - Hybride non rechargeable (3 personnes)
- *         - 118 : Citadine - Hybride non rechargeable (4 personnes)
- *         - 119 : Citadine - Hybride non rechargeable (5 personnes)
- *         - 120 : Citadine - Hybride rechargeable
- *         - 121 : Citadine - Hybride rechargeable (2 personnes)
- *         - 122 : Citadine - Hybride rechargeable (3 personnes)
- *         - 123 : Citadine - Hybride rechargeable (4 personnes)
- *         - 124 : Citadine - Hybride rechargeable (5 personnes)
- *         - 125 : Compacte - Essence
- *         - 126 : Compacte - Essence (2 personnes)
- *         - 127 : Compacte - Essence (3 personnes)
- *         - 128 : Compacte - Essence (4 personnes)
- *         - 129 : Compacte - Essence (5 personnes)
- *         - 130 : Compacte - Diesel
- *         - 131 : Compacte - Diesel (2 personnes)
- *         - 132 : Compacte - Diesel (3 personnes)
- *         - 133 : Compacte - Diesel (4 personnes)
- *         - 134 : Compacte - Diesel (5 personnes)
- *         - 135 : Compacte - Électrique
- *         - 136 : Compacte - Électrique (2 personnes)
- *         - 137 : Compacte - Électrique (3 personnes)
- *         - 138 : Compacte - Électrique (4 personnes)
- *         - 139 : Compacte - Électrique (5 personnes)
- *         - 140 : Compacte - Hybride non rechargeable
- *         - 141 : Compacte - Hybride non rechargeable (2 personnes)
- *         - 142 : Compacte - Hybride non rechargeable (3 personnes)
- *         - 143 : Compacte - Hybride non rechargeable (4 personnes)
- *         - 144 : Compacte - Hybride non rechargeable (5 personnes)
- *         - 145 : Compacte - Hybride rechargeable
- *         - 146 : Compacte - Hybride rechargeable (2 personnes)
- *         - 147 : Compacte - Hybride rechargeable (3 personnes)
- *         - 148 : Compacte - Hybride rechargeable (4 personnes)
- *         - 149 : Compacte - Hybride rechargeable (5 personnes)
+ *         - 100 : Petite - Essence
+ *         - 101 : Petite - Essence (2 personnes)
+ *         - 102 : Petite - Essence (3 personnes)
+ *         - 103 : Petite - Essence (4 personnes)
+ *         - 104 : Petite - Essence (5 personnes)
+ *         - 105 : Petite - Diesel
+ *         - 106 : Petite - Diesel (2 personnes)
+ *         - 107 : Petite - Diesel (3 personnes)
+ *         - 108 : Petite - Diesel (4 personnes)
+ *         - 109 : Petite - Diesel (5 personnes)
+ *         - 110 : Petite - Électrique
+ *         - 111 : Petite - Électrique (2 personnes)
+ *         - 112 : Petite - Électrique (3 personnes)
+ *         - 113 : Petite - Électrique (4 personnes)
+ *         - 114 : Petite - Électrique (5 personnes)
+ *         - 115 : Petite - Hybride non rechargeable
+ *         - 116 : Petite - Hybride non rechargeable (2 personnes)
+ *         - 117 : Petite - Hybride non rechargeable (3 personnes)
+ *         - 118 : Petite - Hybride non rechargeable (4 personnes)
+ *         - 119 : Petite - Hybride non rechargeable (5 personnes)
+ *         - 120 : Petite - Hybride rechargeable
+ *         - 121 : Petite - Hybride rechargeable (2 personnes)
+ *         - 122 : Petite - Hybride rechargeable (3 personnes)
+ *         - 123 : Petite - Hybride rechargeable (4 personnes)
+ *         - 124 : Petite - Hybride rechargeable (5 personnes)
+ *         - 125 : Moyenne - Essence
+ *         - 126 : Moyenne - Essence (2 personnes)
+ *         - 127 : Moyenne - Essence (3 personnes)
+ *         - 128 : Moyenne - Essence (4 personnes)
+ *         - 129 : Moyenne - Essence (5 personnes)
+ *         - 130 : Moyenne - Diesel
+ *         - 131 : Moyenne - Diesel (2 personnes)
+ *         - 132 : Moyenne - Diesel (3 personnes)
+ *         - 133 : Moyenne - Diesel (4 personnes)
+ *         - 134 : Moyenne - Diesel (5 personnes)
+ *         - 135 : Moyenne - Électrique
+ *         - 136 : Moyenne - Électrique (2 personnes)
+ *         - 137 : Moyenne - Électrique (3 personnes)
+ *         - 138 : Moyenne - Électrique (4 personnes)
+ *         - 139 : Moyenne - Électrique (5 personnes)
+ *         - 140 : Moyenne - Hybride non rechargeable
+ *         - 141 : Moyenne - Hybride non rechargeable (2 personnes)
+ *         - 142 : Moyenne - Hybride non rechargeable (3 personnes)
+ *         - 143 : Moyenne - Hybride non rechargeable (4 personnes)
+ *         - 144 : Moyenne - Hybride non rechargeable (5 personnes)
+ *         - 145 : Moyenne - Hybride rechargeable
+ *         - 146 : Moyenne - Hybride rechargeable (2 personnes)
+ *         - 147 : Moyenne - Hybride rechargeable (3 personnes)
+ *         - 148 : Moyenne - Hybride rechargeable (4 personnes)
+ *         - 149 : Moyenne - Hybride rechargeable (5 personnes)
  *         - 150 : Berline - Essence
  *         - 151 : Berline - Essence (2 personnes)
  *         - 152 : Berline - Essence (3 personnes)

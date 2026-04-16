@@ -50,7 +50,7 @@ const Doc = () => {
             horizontal
             title='Liste des équivalents'
             description='L’impact carbone de nos 300+ objets et gestes dans un simple tableau'
-            linkLabel='Télécharger (.CSV | 33KB)'
+            linkLabel='Télécharger (.CSV | 53KB)'
             link='/equivalents.csv'
           />
         </ul>

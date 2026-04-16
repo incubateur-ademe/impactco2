@@ -12,6 +12,7 @@ import customStyles from './CustomParam.module.css'
 import styles from './TransportListParam.module.css'
 
 const transports = deplacements
+  .filter((transport) => !transport.ignore)
   .flatMap((transport) =>
     transport.withCarpool ? [{ ...transport, slug: `${transport.slug}+1`, carpool: 1 }, transport] : [transport]
   )

@@ -6,8 +6,7 @@ import useParamContext, { Params } from 'src/providers/ParamProvider'
 import useTrackingContext from 'src/providers/TrackingProvider'
 import { ComputedEquivalent } from 'types/equivalent'
 import { TransportSimulateur } from 'types/transport'
-import { getNameWithoutSuffix } from 'utils/Equivalent/equivalent'
-import formatName from 'utils/formatName'
+import { getName, getNameWithoutSuffix } from 'utils/Equivalent/equivalent'
 import formatNumber from 'utils/formatNumber'
 import formatUsage from 'utils/formatUsage'
 import EquivalentIcon from 'components/base/EquivalentIcon'
@@ -181,7 +180,7 @@ const CategorySimulator = ({
                     href={equivalent.link}
                     className={styles.link}
                     aria-live='polite'
-                    aria-label={`${equivalent.name || getNameWithoutSuffix(params.language, equivalent)}${equivalent.carpool ? ` un conducteur plus ${equivalent.carpool} ${formatName('passager[s]', equivalent.carpool)}` : ''} ${formatNumber(equivalent.value)} kg CO₂e (${barExplanation})`}
+                    aria-label={`${getName(params.language, equivalent, false, 1, false, true)} ${formatNumber(equivalent.value)} kg CO₂e (${barExplanation})`}
                     onClick={() => trackOnce('ClickEquivalent')}>
                     <EquivalentIcon equivalent={equivalent} height={3} />
                     <div className={styles.content} data-testid={`category-${equivalent.slug}`}>

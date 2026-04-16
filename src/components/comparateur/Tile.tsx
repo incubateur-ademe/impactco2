@@ -52,7 +52,7 @@ const Tile = ({ slug, onAdd }: { slug?: string; onAdd?: () => void }) => {
       <button
         data-testid='comparateur-tile-close'
         className={styles.close}
-        title={`Supprimer la comparaison avec ${getName('fr', equivalent)}`}
+        title={`Supprimer la comparaison avec ${getName('fr', equivalent, false, 1, false, true)}`}
         onClick={() => setEquivalents(equivalents.filter((e) => e !== equivalent.slug))}>
         <CloseIcon />
       </button>
@@ -69,7 +69,7 @@ const Tile = ({ slug, onAdd }: { slug?: string; onAdd?: () => void }) => {
       </div>
       <button
         className={buttonStyles.roundButton}
-        title={`Comparer les valeurs avec ${getName('fr', equivalent)}`}
+        title={`Comparer les valeurs avec ${getName('fr', equivalent, false, 1, false, true)}`}
         onClick={() => {
           track('Comparateur', 'Comparer', equivalent.slug)
           trackOnce(`Comparer${equivalent.slug}`)

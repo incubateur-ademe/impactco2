@@ -231,8 +231,12 @@
   color: var(--primary-60);
   max-width: 500px;
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 875px) {
     max-width: 400px;
+  }
+
+  @media screen and (max-width: 750px) {
+    max-width: 300px;
   }
 
   @media screen and (max-width: 700px) {

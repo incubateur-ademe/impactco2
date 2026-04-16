@@ -274,18 +274,18 @@ export function ParamProvider({ children }: { children: ReactNode }) {
 
   // Transport
   const [carInfos, setCarInfos] = useState<Record<string, { size: string; engine: string }>>({
-    voiturethermique: { size: 'citadine', engine: 'diesel' },
-    covoituragethermique: { size: 'citadine', engine: 'diesel' },
-    voitureelectrique: { size: 'citadine', engine: 'electrique' },
-    covoiturageelectrique: { size: 'citadine', engine: 'electrique' },
-    voiturehybride: { size: 'citadine', engine: 'hybride' },
-    covoituragehybride: { size: 'citadine', engine: 'hybride' },
+    voiturethermique: { size: 'compact', engine: 'diesel' },
+    covoituragethermique: { size: 'compact', engine: 'diesel' },
+    voitureelectrique: { size: 'compact', engine: 'electrique' },
+    covoiturageelectrique: { size: 'compact', engine: 'electrique' },
+    voiturehybride: { size: 'compact', engine: 'hybride' },
+    covoituragehybride: { size: 'compact', engine: 'hybride' },
   })
 
   const [modes, setModes] = useState<string[]>(
-    deplacements.flatMap((transport) =>
-      transport.withCarpool ? [`${transport.slug}+1`, transport.slug] : [transport.slug]
-    )
+    deplacements
+      .filter((deplacement) => !deplacement.ignore)
+      .flatMap((transport) => (transport.withCarpool ? [`${transport.slug}+1`, transport.slug] : [transport.slug]))
   )
   const [comparisonMode, setComparisonMode] = useState<'list' | 'comparison'>('list')
   const [comparison, setComparison] = useState<string[]>(['voiturethermique', 'tgv'])

@@ -30,7 +30,7 @@
   },
   "voiture-lille-nimes": {
     "category": 13,
-    "value": 410000,
+    "value": 267720.9218160006,
     "fr": "A/R Lille - Nîmes en voiture",
     "en": "Roundtrip[s] Lille - Nîmes by car",
     "es": "Viaje de ida y vuelta Lille - Nîmes en coche"
@@ -73,7 +73,7 @@
   },
   "terre-voiture": {
     "category": 13,
-    "value": 8704000,
+    "value": 7570825.010920865,
     "fr": "Tour[s] de la terre en voiture",
     "en": "Tour[s] of the earth by car",
     "es": "Recorrido[s] por la tierra en coche"
@@ -241,21 +241,21 @@
   },
   "voiturethermique": {
     "category": 4,
-    "value": 121.90341195780424,
+    "value": 142.25341222954336,
     "fr": "km en ;voiture thermique",
     "en": "km by ;combustion car",
     "es": "km en ;coche termico"
   },
   "voitureelectrique": {
     "category": 4,
-    "value": 57.59361549041294,
+    "value": 67.36526222954336,
     "fr": "km en ;voiture électrique",
     "en": "km by ;electric car",
     "es": "km en ;coche eléctrico"
   },
   "voiturehybride": {
     "category": 4,
-    "value": 135.24939701215205,
+    "value": 133.90036331649983,
     "fr": "km en ;voiture hybride",
     "en": "km by ;hybrid car",
     "es": "km en ;coche híbrido"

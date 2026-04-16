@@ -1,5 +1,6 @@
 import voitureRules from '@incubateur-ademe/nosgestesclimat/public/co2-model.FR-lang.fr.json'
 import Engine from 'publicodes'
+import { casPratiques } from 'data/categories/caspratiques'
 import { deplacements } from 'data/categories/deplacement'
 
 const voitureTypeMapping = {
@@ -47,9 +48,9 @@ export const extractVoitureValues = () => {
     ])
   ) as [string, Record<string, string>][]
 
-  situations.push(['voiturethermique', situations.find(([slug]) => slug === 'voiture-citadine-diesel')![1]])
-  situations.push(['voitureelectrique', situations.find(([slug]) => slug === 'voiture-citadine-electrique')![1]])
-  situations.push(['voiturehybride', situations.find(([slug]) => slug === 'voiture-citadine-hybriderechargeable')![1]])
+  situations.push(['voiturethermique', situations.find(([slug]) => slug === 'voiture-compact-diesel')![1]])
+  situations.push(['voitureelectrique', situations.find(([slug]) => slug === 'voiture-compact-electrique')![1]])
+  situations.push(['voiturehybride', situations.find(([slug]) => slug === 'voiture-compact-hybriderechargeable')![1]])
   for (const [slug, situation] of situations) {
     try {
       const data = deplacements.find((item) => item.slug === slug)
@@ -82,5 +83,22 @@ export const extractVoitureValues = () => {
     } catch (error) {
       console.error(`Erreur lors de l'extraction de ${slug}:`, error)
     }
+  }
+
+  const arLilleNime = casPratiques.find((item) => item.slug === 'voiture-lille-nimes')
+  if (arLilleNime) {
+    arLilleNime.total =
+      1_882 *
+      (deplacements.find((item) => item.slug === 'voiturethermique')?.ecv?.reduce((sum, ecv) => sum + ecv.value, 0) ??
+        0)
+  }
+
+  const earth = casPratiques.find((item) => item.slug === 'terre-voiture')
+  if (earth) {
+    earth.total =
+      40_000 *
+      (deplacements
+        .find((item) => item.slug === 'voiture-berline-essence')
+        ?.ecv?.reduce((sum, ecv) => sum + ecv.value, 0) ?? 0)
   }
 }

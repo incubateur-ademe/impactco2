@@ -30,7 +30,7 @@ const Carpool = ({
       {carInfos && (
         <>
           <div className={styles.transport}>
-            <HiddenLabel htmlFor={`car-size-${slug}`}>{t('transportSizeSelect')}</HiddenLabel>
+            <HiddenLabel htmlFor={`text-select-car-size-${slug}`}>{t('transportSizeSelect')}</HiddenLabel>
             <Select
               id={`car-size-${slug}`}
               className={styles.select}
@@ -54,7 +54,7 @@ const Carpool = ({
           </div>
           {!slug.endsWith('electrique') && (
             <div className={styles.transport}>
-              <HiddenLabel htmlFor={`car-engine-${slug}`}>{t('transportEngineSelect')}</HiddenLabel>
+              <HiddenLabel htmlFor={`text-select-car-engine-${slug}`}>{t('transportEngineSelect')}</HiddenLabel>
               <Select
                 id={`car-engine-${slug}`}
                 className={styles.select}

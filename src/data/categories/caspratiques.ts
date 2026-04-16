@@ -17,7 +17,7 @@ export const casPratiques = [
   {
     slug: 'voiture-lille-nimes',
     category: 13,
-    total: 410,
+    total: 267.7209218160006,
   },
   {
     unit: 'an',
@@ -78,7 +78,7 @@ export const casPratiques = [
     synonyms: ['voyage', 'parcourir'],
     slug: 'terre-voiture',
     category: 13,
-    total: 8704,
+    total: 7570.825010920866,
     sources: [
       {
         label: 'Base Empreinte ADEME',

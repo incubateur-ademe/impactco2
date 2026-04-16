@@ -16,7 +16,7 @@ const LivraisonType = ({ equivalent }: { equivalent: ComputedEquivalent }) => {
     <div className={styles.carpool} data-testid={`livraison-${equivalent.slug}`}>
       <div className={styles.triangle} />
       <div className={styles.transport}>
-        <HiddenLabel htmlFor={`transport-type-${equivalent.slug}`}>{t('transportSelect')}</HiddenLabel>
+        <HiddenLabel htmlFor={`text-select-transport-type-${equivalent.slug}`}>{t('transportSelect')}</HiddenLabel>
         <Select
           id={`transport-type-${equivalent.slug}`}
           className={styles.pictoSelect}

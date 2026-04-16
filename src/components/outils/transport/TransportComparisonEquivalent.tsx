@@ -5,7 +5,7 @@ import useParamContext from 'src/providers/ParamProvider'
 import useTrackingContext from 'src/providers/TrackingProvider'
 import { computedEquivalents } from 'src/providers/equivalents'
 import { ComputedEquivalent } from 'types/equivalent'
-import { getName, getNameWithoutSuffix, isEquivalentInMode } from 'utils/Equivalent/equivalent'
+import { getName, isEquivalentInMode } from 'utils/Equivalent/equivalent'
 import { getEquivalentWithCarpool } from 'utils/carpool'
 import formatNumber from 'utils/formatNumber'
 import { track } from 'utils/matomo'
@@ -33,18 +33,21 @@ const getEquivalent = (language: string, equivalents: ComputedEquivalent[], slug
     if (!equivalent) {
       return undefined
     }
-    const newName = getName(language, { ...equivalent, carpool: Number(carpool) })
-    const oldName = getNameWithoutSuffix(language, equivalent)
 
     return {
       ...equivalent,
-      name: (typeof equivalent.name === 'string' ? equivalent.name : '').replace(oldName, newName),
-      carpool: Number(carpool),
-      value: (equivalent.initialValue || equivalent.value) / (Number(carpool) + 1),
-      link: `${equivalent.link}+${carpool}`,
+      name: getName(
+        language,
+        { ...equivalent, slug: carpool ? `${equivalent.slug}+${carpool}` : equivalent.slug, carpool: Number(carpool) },
+        false,
+        1,
+        false,
+        true
+      ),
       found: true,
     }
   }
+
   return equivalent ? { ...equivalent, found: true } : undefined
 }
 

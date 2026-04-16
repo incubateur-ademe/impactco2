@@ -11,7 +11,7 @@ test('Livraison simulator', async ({ page }) => {
   await expect(page.getByTestId('category-magasindouce-value')).toHaveText('303')
   await page.getByTestId('checkbox-fabrication').click({ force: true })
 
-  await expect(page.getByTestId('category-pointrelais-value')).toHaveText('25.6')
+  await expect(page.getByTestId('category-pointrelais-value')).toHaveText('25.1')
   await expect(page.getByTestId('livraison-pointrelais')).toHaveText(
     "Transport utilisé pour aller chercher l'objetVoiture thermiqueVoiture électrique3.5 km Distance parcourue pour Livraison en point de retrait"
   )
@@ -19,10 +19,10 @@ test('Livraison simulator', async ({ page }) => {
   await expect(page.getByTestId('livraison-pointrelais')).toHaveText(
     "Transport utilisé pour aller chercher l'objetVoiture thermiqueVoiture électrique4 km Distance parcourue pour Livraison en point de retrait"
   )
-  await expect(page.getByTestId('category-pointrelais-value')).toHaveText('25.8')
+  await expect(page.getByTestId('category-pointrelais-value')).toHaveText('25.2')
   await page.getByTestId('text-select-transport-type-pointrelais').click()
   await page.getByTestId('text-select-transport-type-pointrelais').selectOption('voitureelectrique')
-  await expect(page.getByTestId('category-pointrelais-value')).toHaveText('24.9')
+  await expect(page.getByTestId('category-pointrelais-value')).toHaveText('24.6')
 
   await page.getByTestId('header-share-button').first().click()
   await expect(page.getByTestId('clipboard-box')).toHaveText(

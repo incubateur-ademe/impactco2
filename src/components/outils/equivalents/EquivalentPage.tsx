@@ -87,7 +87,7 @@ const EquivalentPage = ({
             description='L’impact carbone de nos 300+ objets et gestes dans un simple tableau.'
             slug='csv'
             link='/equivalents.csv'
-            linkLabel='Télécharger (.CSV | 33KB)'
+            linkLabel='Télécharger (.CSV | 53KB)'
           />
         </ul>
       </Block>

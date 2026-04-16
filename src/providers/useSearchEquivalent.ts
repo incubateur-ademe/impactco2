@@ -71,7 +71,7 @@ export const useSearchEquivalent = (
       .filter((equivalent) => !category || equivalent.category === category)
       .map((equivalent) => ({
         ...equivalent,
-        name: getName(language, equivalent),
+        name: getName(language, equivalent, false, 1, true),
       }))
     setFuses({
       fuse: new Fuse([...translatedEquivalents], config),

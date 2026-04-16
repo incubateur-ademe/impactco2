@@ -88,7 +88,7 @@ export default function useTransportations(
                       name:
                         getNameWithoutSuffix(params.language, { ...equivalent, carpool: carpoolValue }) +
                         (values ? ` - ${formatNumber(distance).toLocaleString()} km` : ''),
-                      initialValue: equivalent.value,
+                      initialValue: equivalent.value / 2,
                       value: carpoolEquivalent.value / (carpoolValue + 1),
                       ecv: carpoolEquivalent.ecv.map((ecv) => ({ ...ecv, value: ecv.value / (carpoolValue + 1) })),
                       usage: carpoolEquivalent.usage / (carpoolValue + 1),
