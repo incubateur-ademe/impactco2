@@ -3,9 +3,7 @@ import { NextRequest } from 'next/server'
 import { prismaClient } from 'utils/prismaClient'
 
 export const trackAPIRequest = async (request: NextRequest, api: string) => {
-  console.log(`tracking API request - ${api}`)
   if (process.env.TRACK_API !== 'true') {
-    console.log('tracking disabled')
     return null
   }
 
@@ -35,13 +33,12 @@ export const trackAPIRequest = async (request: NextRequest, api: string) => {
 
     const param = `e_c=API&e_a=${name}&e_n=${api}`
 
-    const result = await fetch(
+    await fetch(
       `${process.env.NEXT_PUBLIC_MATOMO_SITE_URL}/matomo.php?idsite=${process.env.NEXT_PUBLIC_MATOMO_SITE_ID}&rec=1&${param}`,
       {
         method: 'POST',
       }
     )
-    console.log(`tracking result - ${result.status} - ${referer} - ${authorization} - ${param}`)
     return name
   } catch (error) {
     await Sentry.captureException(error)
