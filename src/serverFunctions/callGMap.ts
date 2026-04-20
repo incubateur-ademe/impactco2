@@ -1,10 +1,8 @@
 'use server'
-
 import axios from 'axios'
 import { headers } from 'next/headers'
 import { z } from 'zod'
 import { CallGMapDistances, GMapCommand, GMapValidation, getCachedValue, insertCachedValue } from 'utils/gmaps'
-import { trackAPIRequestFromHeaders } from 'utils/middleware'
 
 type GMapDistance = { elements: { status: string; distance: { value: number } }[] }
 type GMapDistances = { rows: GMapDistance[] }
@@ -32,7 +30,6 @@ export const callGMap = async (data: GMapCommand): Promise<CallGMapDistances> =>
 
   const cached = await getCachedValue(inputs.data)
   if (cached) {
-    await trackAPIRequestFromHeaders(requestHeaders, 'callGMap-cache')
     return cached
   }
 
@@ -42,8 +39,6 @@ export const callGMap = async (data: GMapCommand): Promise<CallGMapDistances> =>
     if (!process.env.NEXT_PUBLIC_URL || !referer?.startsWith(process.env.NEXT_PUBLIC_URL)) {
       throw new Error('Not authorized')
     }
-
-    await trackAPIRequestFromHeaders(requestHeaders, 'callGMap')
   }
 
   const R = 6371e3 // metres
