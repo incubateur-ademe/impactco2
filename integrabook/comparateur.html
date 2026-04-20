@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comparateur - Intégrabook</title>
+  <link rel="stylesheet" href="shared.css">
+</head>
+
+<body>
+  <div class="layout">
+    <header>
+      <h1>Comparateur <span class="badge badge-iframe">iframe</span></h1>
+      <a class="back" href="index.html">← Intégrabook</a>
+    </header>
+
+    <div id="config-bar" class="config-bar"></div>
+
+    <!-- Comparateur principal -->
+    <div class="section">
+      <h2>Comparateur (via script iframe.js)</h2>
+      <p class="desc">Widget complet de comparaison des équivalents CO2. Chargement via le script officiel.</p>
+      <div id="params-comparateur"></div>
+      <div id="code-comparateur" class="code-block"></div>
+      <div id="render-comparateur" class="render-zone"></div>
+    </div>
+
+    <!-- Étiquette statique -->
+    <div class="section">
+      <h2>Étiquette statique</h2>
+      <p class="desc">Étiquette CO2 fixe, sans animation.</p>
+      <div id="params-etiquette"></div>
+      <div id="code-etiquette" class="code-block"></div>
+      <div id="render-etiquette" class="render-zone"></div>
+    </div>
+
+    <!-- Étiquette animée -->
+    <div class="section">
+      <h2>Étiquette animée</h2>
+      <p class="desc">Étiquette CO2 avec transitions animées.</p>
+      <div id="params-etiquette-animee"></div>
+      <div id="code-etiquette-animee" class="code-block"></div>
+      <div id="render-etiquette-animee" class="render-zone"></div>
+    </div>
+
+    <!-- Iframe direct -->
+    <div class="section">
+      <h2>Comparateur (iframe direct)</h2>
+      <p class="desc">Iframe intégré directement sans passer par iframe.js (pour tester le comportement cross-origin
+        brut).</p>
+      <div id="code-direct" class="code-block"></div>
+      <div id="render-direct" class="render-zone"></div>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="shared.js"></script>
+  <script>
+    const comparateurParams = [
+      { name: 'value', type: 'number', default: '', placeholder: '100', hint: 'Valeur de base en grammes (multiplié par 1000 à l\'affichage)' },
+      { name: 'equivalent', type: 'text', default: '', placeholder: 'voiturethermique', hint: 'Slug d\'un équivalent à comparer' },
+      { name: 'comparisons', type: 'text', default: '', placeholder: 'tgv,avioncourtcourrier,random', hint: 'Équivalents de comparaison, séparés par virgule. Supporte "random"' },
+    ]
+
+    function renderComparateur(extra) {
+      const base = getBaseUrl()
+      const search = buildSearch(extra)
+      renderCodeBlock('code-comparateur',
+        `<script
+  data-name="impact-co2"
+  src="${base}/iframe.js"
+  data-type="comparateur"
+  data-search="${search}"><\/script>`)
+      reRenderIframeScript('render-comparateur', 'comparateur', extra)
+    }
+
+    function renderEtiquette(extra) {
+      const base = getBaseUrl()
+      const search = buildSearch(extra)
+      renderCodeBlock('code-etiquette',
+        `<script
+  data-name="impact-co2"
+  src="${base}/iframe.js"
+  data-type="comparateur/etiquette"
+  data-search="${search}"><\/script>`)
+      reRenderIframeScript('render-etiquette', 'comparateur/etiquette', extra)
+    }
+
+    function renderEtiquetteAnimee(extra) {
+      const base = getBaseUrl()
+      const search = buildSearch(extra)
+      renderCodeBlock('code-etiquette-animee',
+        `<script
+  data-name="impact-co2"
+  src="${base}/iframe.js"
+  data-type="comparateur/etiquette-animee"
+  data-search="${search}"><\/script>`)
+      reRenderIframeScript('render-etiquette-animee', 'comparateur/etiquette-animee', extra)
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const base = getBaseUrl()
+      const search = buildSearch()
+
+      buildParamsEditor('params-comparateur', comparateurParams, (values) => {
+        renderComparateur(getExtraSearchFromParams(values))
+      })
+
+      buildParamsEditor('params-etiquette', comparateurParams, (values) => {
+        renderEtiquette(getExtraSearchFromParams(values))
+      })
+
+      buildParamsEditor('params-etiquette-animee', comparateurParams, (values) => {
+        renderEtiquetteAnimee(getExtraSearchFromParams(values))
+      })
+
+      renderComparateur({})
+      renderEtiquette({})
+      renderEtiquetteAnimee({})
+
+      const directSrc = `${base}/iframes/comparateur${search}${search ? '&' : '?'}source=${encodeURIComponent(window.location.href)}`
+      renderCodeBlock('code-direct',
+        `<iframe
+  src="${directSrc}"
+  style="border: none; width: 100%; min-height: 500px;"
+  allowfullscreen></iframe>`)
+      injectDirectIframe('render-direct', 'comparateur')
+    })
+  </script>
+</body>
+
+</html>

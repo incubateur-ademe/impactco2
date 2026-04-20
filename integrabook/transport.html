@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transport - Intégrabook</title>
+  <link rel="stylesheet" href="shared.css">
+</head>
+
+<body>
+  <div class="layout">
+    <header>
+      <h1>Transport <span class="badge badge-iframe">iframe</span> <span class="badge badge-api">api</span></h1>
+      <a class="back" href="index.html">← Intégrabook</a>
+    </header>
+
+    <div id="config-bar" class="config-bar"></div>
+
+    <!-- Transport iframe -->
+    <div class="section">
+      <h2>Transport (via script iframe.js)</h2>
+      <p class="desc">Calculateur d'impact transport par mode de déplacement.</p>
+      <div id="params-transport"></div>
+      <div id="code-transport" class="code-block"></div>
+      <div id="render-transport" class="render-zone"></div>
+    </div>
+
+    <!-- Itinéraire iframe -->
+    <div class="section">
+      <h2>Transport / Itinéraire (iframe direct)</h2>
+      <p class="desc">Module itinéraire intégré via iframe direct.</p>
+      <div id="params-itineraire"></div>
+      <div id="code-itineraire" class="code-block"></div>
+      <div id="render-itineraire" class="render-zone"></div>
+    </div>
+
+    <!-- API Transport -->
+    <div class="section">
+      <h2>API REST /api/v1/transport</h2>
+      <p class="desc">Appel direct à l'API transport. Teste le CORS cross-origin et la réponse JSON.</p>
+      <div id="code-api" class="code-block"></div>
+      <div id="params-api"></div>
+      <div class="api-controls">
+        <button onclick="callTransportApi()">Exécuter</button>
+      </div>
+      <div id="api-result" class="api-result">Configurez les paramètres et cliquez sur Exécuter.</div>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="shared.js"></script>
+  <script>
+    function renderTransportIframe(extra) {
+      const base = getBaseUrl()
+      const search = buildSearch(extra)
+      renderCodeBlock('code-transport',
+        `<script
+  data-name="impact-co2"
+  src="${base}/iframe.js"
+  data-type="transport"
+  data-search="${search}"><\/script>`)
+      reRenderIframeScript('render-transport', 'transport', extra)
+    }
+
+    function renderItineraireIframe(extra) {
+      const base = getBaseUrl()
+      const search = buildSearch(extra)
+      const src = `${base}/iframes/transport/itineraire${search}${search ? '&' : '?'}source=${encodeURIComponent(window.location.href)}`
+      renderCodeBlock('code-itineraire',
+        `<iframe
+  src="${src}"
+  style="border: none; width: 100%; min-height: 500px;"
+  allowfullscreen></iframe>`)
+      reRenderDirectIframe('render-itineraire', 'transport/itineraire', extra)
+    }
+
+    function callTransportApi() {
+      const km = document.getElementById('param-km-api').value || '100'
+      const transports = document.getElementById('param-transports-api').value
+      const construction = document.getElementById('param-includeConstruction').checked
+      const radiative = document.getElementById('param-ignoreRadiativeForcing').checked
+      const passengers = document.getElementById('param-numberOfPassenger').value
+      const displayAll = document.getElementById('param-displayAll').checked
+
+      let endpoint = `transport?km=${km}`
+      if (transports) endpoint += `&transports=${transports}`
+      if (construction) endpoint += '&includeConstruction=1'
+      if (radiative) endpoint += '&ignoreRadiativeForcing=1'
+      if (passengers) endpoint += `&numberOfPassenger=${passengers}`
+      if (displayAll) endpoint += '&displayAll=1'
+
+      fetchApi(endpoint, 'api-result')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const base = getBaseUrl()
+
+      buildParamsEditor('params-transport', [
+        { name: 'km', type: 'number', default: '10', hint: 'Distance en kilomètres (défaut: 10)' },
+        { name: 'roundTrip', type: 'checkbox', default: false, hint: 'Aller-retour' },
+        { name: 'modes', type: 'text', default: '', placeholder: 'voiturethermique,tgv,velo', hint: 'Modes à afficher, séparés par virgule' },
+        { name: 'tabs', type: 'text', default: '', placeholder: 'distance,itineraire', hint: 'Onglets visibles' },
+        {
+          name: 'defaultMode', type: 'select', default: '', options: [
+            { value: 'list', label: 'Liste' },
+            { value: 'comparison', label: 'Comparaison' }
+          ], hint: 'Mode d\'affichage par défaut'
+        },
+      ], (values) => {
+        renderTransportIframe(getExtraSearchFromParams(values))
+      })
+
+      buildParamsEditor('params-itineraire', [
+        { name: 'start', type: 'text', default: '', placeholder: 'Paris', hint: 'Adresse de départ (géocodée)' },
+        { name: 'end', type: 'text', default: '', placeholder: 'Lyon', hint: 'Adresse d\'arrivée (géocodée)' },
+        { name: 'modes', type: 'text', default: '', placeholder: 'voiturethermique,tgv', hint: 'Modes à comparer' },
+      ], (values) => {
+        renderItineraireIframe(getExtraSearchFromParams(values))
+      })
+
+      buildParamsEditor('params-api', [
+        { name: 'km-api', type: 'number', default: '100', hint: 'Distance en km (requis)' },
+        { name: 'transports-api', type: 'text', default: '', placeholder: '1,2,3', hint: 'IDs de transports, séparés par virgule' },
+        { name: 'numberOfPassenger', type: 'number', default: '', placeholder: '1', hint: 'Nombre de passagers' },
+        { name: 'includeConstruction', type: 'checkbox', default: false, hint: 'Inclure la construction du véhicule' },
+        { name: 'ignoreRadiativeForcing', type: 'checkbox', default: false, hint: 'Ignorer le forçage radiatif (avion)' },
+        { name: 'displayAll', type: 'checkbox', default: false, hint: 'Afficher tous les modes' },
+      ], (values) => {
+        callTransportApi()
+      })
+
+      renderCodeBlock('code-api',
+        `fetch('${base}/api/v1/transport?km=100')
+  .then(res => res.json())
+  .then(data => console.log(data))`)
+
+      renderTransportIframe({})
+      renderItineraireIframe({})
+    })
+  </script>
+</body>
+
+</html>

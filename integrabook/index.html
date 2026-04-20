@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intégrabook - Impact CO2</title>
+  <link rel="stylesheet" href="shared.css">
+</head>
+
+<body>
+  <div class="layout">
+    <header>
+      <h1>Intégrabook - Impact CO2</h1>
+    </header>
+
+    <div id="config-bar" class="config-bar"></div>
+
+    <p style="color: var(--text-muted); margin-bottom: 2rem;">
+      Pages de test d'intégration pour audit de sécurité.
+      Chaque page simule un site tiers intégrant un module Impact CO2.
+      Configurez la base URL ci-dessus pour cibler l'environnement souhaité.
+    </p>
+
+    <h2 style="margin-bottom: 1rem;">Modules thématiques</h2>
+    <div class="grid-nav">
+      <a class="card" href="comparateur.html">
+        <h3>Comparateur</h3>
+        <p>Comparateur CO2 complet, étiquette statique et animée</p>
+        <div class="tags">
+          <span class="badge badge-iframe">iframe</span>
+          <span class="badge badge-script">script</span>
+        </div>
+      </a>
+      <a class="card" href="transport.html">
+        <h3>Transport</h3>
+        <p>Calculateur d'impact transport + itinéraire</p>
+        <div class="tags">
+          <span class="badge badge-iframe">iframe</span>
+          <span class="badge badge-api">api</span>
+        </div>
+      </a>
+      <a class="card" href="livraison.html">
+        <h3>Livraison</h3>
+        <p>Impact livraison, étiquette statique et animée</p>
+        <div class="tags">
+          <span class="badge badge-iframe">iframe</span>
+          <span class="badge badge-script">script</span>
+        </div>
+      </a>
+      <a class="card" href="alimentation.html">
+        <h3>Alimentation</h3>
+        <p>Impact alimentaire par catégorie</p>
+        <div class="tags">
+          <span class="badge badge-iframe">iframe</span>
+          <span class="badge badge-api">api</span>
+        </div>
+      </a>
+      <a class="card" href="habillement.html">
+        <h3>Habillement</h3>
+        <p>Impact textile + campagne Osez Changer</p>
+        <div class="tags">
+          <span class="badge badge-iframe">iframe</span>
+        </div>
+      </a>
+      <a class="card" href="chauffage.html">
+        <h3>Chauffage</h3>
+        <p>Comparaison des modes de chauffage</p>
+        <div class="tags">
+          <span class="badge badge-iframe">iframe</span>
+          <span class="badge badge-api">api</span>
+        </div>
+      </a>
+      <a class="card" href="quiz.html">
+        <h3>Quiz</h3>
+        <p>Quiz empreinte carbone + infographie</p>
+        <div class="tags">
+          <span class="badge badge-iframe">iframe</span>
+        </div>
+      </a>
+      <a class="card" href="infographie.html">
+        <h3>Infographie</h3>
+        <p>Visualisations infographiques</p>
+        <div class="tags">
+          <span class="badge badge-iframe">iframe</span>
+        </div>
+      </a>
+    </div>
+
+    <h2 style="margin: 2rem 0 1rem;">Méthodes d'intégration transverses</h2>
+    <div class="grid-nav">
+      <a class="card" href="detecteur.html">
+        <h3>Détecteur</h3>
+        <p>Scripts de détection sync et async (injection DOM automatique)</p>
+        <div class="tags">
+          <span class="badge badge-script">script</span>
+        </div>
+      </a>
+      <a class="card" href="webcomponent.html">
+        <h3>Web Component</h3>
+        <p>Custom element &lt;etiquette-ico2&gt;</p>
+        <div class="tags">
+          <span class="badge badge-wc">web component</span>
+        </div>
+      </a>
+      <a class="card" href="api.html">
+        <h3>API REST</h3>
+        <p>Tous les endpoints /api/v1/* (transport, alimentation, chauffage, etc.)</p>
+        <div class="tags">
+          <span class="badge badge-api">api</span>
+        </div>
+      </a>
+      <a class="card" href="legacy.html">
+        <h3>IDs Legacy</h3>
+        <p>Intégration via les anciens IDs (mon-impact-transport, datagir-*, etc.)</p>
+        <div class="tags">
+          <span class="badge badge-legacy">legacy</span>
+          <span class="badge badge-script">script</span>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="shared.js"></script>
+</body>
+
+</html>

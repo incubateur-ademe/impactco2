@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chauffage - Intégrabook</title>
+  <link rel="stylesheet" href="shared.css">
+</head>
+
+<body>
+  <div class="layout">
+    <header>
+      <h1>Chauffage <span class="badge badge-iframe">iframe</span> <span class="badge badge-api">api</span></h1>
+      <a class="back" href="index.html">← Intégrabook</a>
+    </header>
+
+    <div id="config-bar" class="config-bar"></div>
+
+    <!-- Chauffage iframe -->
+    <div class="section">
+      <h2>Chauffage (via script iframe.js)</h2>
+      <p class="desc">Comparaison de l'impact carbone des différents modes de chauffage.</p>
+      <div id="params-chauffage"></div>
+      <div id="code-chauffage" class="code-block"></div>
+      <div id="render-chauffage" class="render-zone"></div>
+    </div>
+
+    <!-- Iframe direct -->
+    <div class="section">
+      <h2>Chauffage (iframe direct)</h2>
+      <p class="desc">Iframe brut sans script intermédiaire.</p>
+      <div id="code-direct" class="code-block"></div>
+      <div id="render-direct" class="render-zone"></div>
+    </div>
+
+    <!-- API Chauffage -->
+    <div class="section">
+      <h2>API REST /api/v1/chauffage</h2>
+      <p class="desc">Appel direct à l'API chauffage.</p>
+      <div id="code-api" class="code-block"></div>
+      <div class="api-controls">
+        <button onclick="fetchApi('chauffage', 'api-result')">Tous les modes</button>
+        <button onclick="fetchApi('chauffage?language=en', 'api-result')">Tous les modes (EN)</button>
+      </div>
+      <div id="api-result" class="api-result">Cliquez sur un bouton pour lancer un appel API.</div>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="shared.js"></script>
+  <script>
+    function renderChauffage(extra) {
+      const base = getBaseUrl()
+      const search = buildSearch(extra)
+      renderCodeBlock('code-chauffage',
+        `<script
+  data-name="impact-co2"
+  src="${base}/iframe.js"
+  data-type="chauffage"
+  data-search="${search}"><\/script>`)
+      reRenderIframeScript('render-chauffage', 'chauffage', extra)
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const base = getBaseUrl()
+      const search = buildSearch()
+
+      buildParamsEditor('params-chauffage', [
+        { name: 'm2', type: 'number', default: '63', placeholder: '63', hint: 'Surface en m² (défaut: 63)' },
+      ], (values) => {
+        renderChauffage(getExtraSearchFromParams(values))
+      })
+
+      renderChauffage({})
+
+      const directSrc = `${base}/iframes/chauffage${search}${search ? '&' : '?'}source=${encodeURIComponent(window.location.href)}`
+      renderCodeBlock('code-direct',
+        `<iframe
+  src="${directSrc}"
+  style="border: none; width: 100%; min-height: 500px;"
+  allowfullscreen></iframe>`)
+      injectDirectIframe('render-direct', 'chauffage')
+
+      renderCodeBlock('code-api',
+        `fetch('${base}/api/v1/chauffage')
+  .then(res => res.json())
+  .then(data => console.log(data))`)
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alimentation - Intégrabook</title>
+  <link rel="stylesheet" href="shared.css">
+</head>
+
+<body>
+  <div class="layout">
+    <header>
+      <h1>Alimentation <span class="badge badge-iframe">iframe</span> <span class="badge badge-api">api</span></h1>
+      <a class="back" href="index.html">← Intégrabook</a>
+    </header>
+
+    <div id="config-bar" class="config-bar"></div>
+
+    <!-- Alimentation iframe -->
+    <div class="section">
+      <h2>Alimentation (via script iframe.js)</h2>
+      <p class="desc">Comparateur d'impact carbone alimentaire.</p>
+      <div id="params-alimentation"></div>
+      <div id="code-alimentation" class="code-block"></div>
+      <div id="render-alimentation" class="render-zone"></div>
+    </div>
+
+    <!-- Iframe direct -->
+    <div class="section">
+      <h2>Alimentation (iframe direct)</h2>
+      <p class="desc">Iframe brut sans script intermédiaire.</p>
+      <div id="code-direct" class="code-block"></div>
+      <div id="render-direct" class="render-zone"></div>
+    </div>
+
+    <!-- API Alimentation -->
+    <div class="section">
+      <h2>API REST /api/v1/alimentation</h2>
+      <p class="desc">Appel direct pour récupérer les données alimentaires par catégorie.</p>
+      <div id="code-api" class="code-block"></div>
+      <div class="api-controls">
+        <button onclick="fetchApi('alimentation?category=group', 'api-result')">Par groupe</button>
+        <button onclick="fetchApi('alimentation?category=rayon', 'api-result')">Par rayon</button>
+        <button onclick="fetchApi('alimentation?category=popularity', 'api-result')">Par popularité</button>
+        <button onclick="fetchApi('alimentation?category=group&language=en', 'api-result')">Par groupe (EN)</button>
+      </div>
+      <div id="api-result" class="api-result">Cliquez sur un bouton pour lancer un appel API.</div>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="shared.js"></script>
+  <script>
+    function renderAlimentation(extra) {
+      const base = getBaseUrl()
+      const search = buildSearch(extra)
+      renderCodeBlock('code-alimentation',
+        `<script
+  data-name="impact-co2"
+  src="${base}/iframe.js"
+  data-type="alimentation"
+  data-search="${search}"><\/script>`)
+      reRenderIframeScript('render-alimentation', 'alimentation', extra)
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const base = getBaseUrl()
+      const search = buildSearch()
+
+      buildParamsEditor('params-alimentation', [
+        {
+          name: 'alimentationCategory', type: 'select', default: '', options: [
+            { value: 'group', label: 'Groupe' },
+            { value: 'rayon', label: 'Rayon' },
+            { value: 'popularity', label: 'Popularité' },
+          ], hint: 'Catégorie de tri'
+        },
+        { name: 'alimentationEquivalents', type: 'text', default: '', placeholder: 'tomate,carotte,poulet', hint: 'Équivalents personnalisés (slugs séparés par virgule)' },
+      ], (values) => {
+        renderAlimentation(getExtraSearchFromParams(values))
+      })
+
+      renderAlimentation({})
+
+      const directSrc = `${base}/iframes/alimentation${search}${search ? '&' : '?'}source=${encodeURIComponent(window.location.href)}`
+      renderCodeBlock('code-direct',
+        `<iframe
+  src="${directSrc}"
+  style="border: none; width: 100%; min-height: 500px;"
+  allowfullscreen></iframe>`)
+      injectDirectIframe('render-direct', 'alimentation')
+
+      renderCodeBlock('code-api',
+        `fetch('${base}/api/v1/alimentation?category=group')
+  .then(res => res.json())
+  .then(data => console.log(data))`)
+    })
+  </script>
+</body>
+
+</html>
