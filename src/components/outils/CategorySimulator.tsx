@@ -132,7 +132,10 @@ const CategorySimulator = ({
 
   const ref = useRef<HTMLUListElement>(null)
   const firstElementRef = useRef<HTMLAnchorElement>(null)
-  const max = Math.max.apply(null, equivalents?.map((equivalent) => equivalent.value) || [])
+  const max = Math.max.apply(
+    null,
+    equivalents?.filter((equivalent) => !equivalent.ignore).map((equivalent) => equivalent.value) || []
+  )
   const legends = useMemo(() => computeLegends(equivalents), [equivalents])
   const [basePercent, setBasePercent] = useState(80)
   const [legendRelative, setLegendRelative] = useState(false)

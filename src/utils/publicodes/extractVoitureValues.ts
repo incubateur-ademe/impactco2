@@ -50,7 +50,7 @@ export const extractVoitureValues = () => {
 
   situations.push(['voiturethermique', situations.find(([slug]) => slug === 'voiture-compact-diesel')![1]])
   situations.push(['voitureelectrique', situations.find(([slug]) => slug === 'voiture-compact-electrique')![1]])
-  situations.push(['voiturehybride', situations.find(([slug]) => slug === 'voiture-compact-hybriderechargeable')![1]])
+  situations.push(['voiturehybride', situations.find(([slug]) => slug === 'voiture-compact-hybride')![1]])
   for (const [slug, situation] of situations) {
     try {
       const data = deplacements.find((item) => item.slug === slug)

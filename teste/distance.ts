@@ -29,10 +29,10 @@ export const distanceComparisonTest = async (page: Page | FrameLocator, prod?: b
   await page.getByRole('button', { name: 'Covoiturage thermique (3 personnes)' }).click()
 
   await expect(page.getByTestId('comparison-tile-1')).toHaveText(
-    'Covoiturage thermique (3 personnes)0.71 kg CO₂e Modifier'
+    'Covoiturage thermique (3 personnes)0.47 kg CO₂e Modifier'
   )
   await expect(page.getByTestId('comparison-tile-0')).toHaveText(
-    'TGV0.03 kg CO₂eMoyen le plus écologique0.68Kg CO₂eévités Modifier'
+    'TGV0.03 kg CO₂eMoyen le plus écologique0.44Kg CO₂eévités Modifier'
   )
   await page.getByTestId('comparison-tile-1').getByRole('button', { name: 'Modifier' }).click()
   await page.getByRole('button', { name: 'Avion', exact: true }).click()

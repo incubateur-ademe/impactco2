@@ -43,11 +43,18 @@ const TransportComparison = ({
     () =>
       equivalents
         .filter((equivalent) => {
-          if (equivalent.carpool) {
-            const [slug] = equivalent.slug.split('+')
-            return modes.includes(`${slug}+1`)
+          const infos = equivalent.slug.split('+')
+          let slug = infos[0]
+          if (equivalent.slug.startsWith('voiture-')) {
+            if (equivalent.slug.includes('hybride')) {
+              slug = `voiturehybride`
+            } else if (equivalent.slug.includes('electrique')) {
+              slug = `voitureelectrique`
+            } else {
+              slug = 'voiturethermique'
+            }
           }
-          return modes.includes(equivalent.slug)
+          return infos[1] ? modes.includes(`${slug}+1`) : modes.includes(slug)
         })
         .sort((a, b) => a.slug.localeCompare(b.slug)),
     [modes]

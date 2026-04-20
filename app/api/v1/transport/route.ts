@@ -179,106 +179,106 @@ export const computeTransportEmission = (
  *         - 28 : Covoiturage électrique (4 personnes)
  *         - 29 : Covoiturage électrique (5 personnes)
  *         - 30 : Marche
- *         - 100 : Petite - Essence
- *         - 101 : Petite - Essence (2 personnes)
- *         - 102 : Petite - Essence (3 personnes)
- *         - 103 : Petite - Essence (4 personnes)
- *         - 104 : Petite - Essence (5 personnes)
- *         - 105 : Petite - Diesel
- *         - 106 : Petite - Diesel (2 personnes)
- *         - 107 : Petite - Diesel (3 personnes)
- *         - 108 : Petite - Diesel (4 personnes)
- *         - 109 : Petite - Diesel (5 personnes)
- *         - 110 : Petite - Électrique
- *         - 111 : Petite - Électrique (2 personnes)
- *         - 112 : Petite - Électrique (3 personnes)
- *         - 113 : Petite - Électrique (4 personnes)
- *         - 114 : Petite - Électrique (5 personnes)
- *         - 115 : Petite - Hybride non rechargeable
- *         - 116 : Petite - Hybride non rechargeable (2 personnes)
- *         - 117 : Petite - Hybride non rechargeable (3 personnes)
- *         - 118 : Petite - Hybride non rechargeable (4 personnes)
- *         - 119 : Petite - Hybride non rechargeable (5 personnes)
- *         - 120 : Petite - Hybride rechargeable
- *         - 121 : Petite - Hybride rechargeable (2 personnes)
- *         - 122 : Petite - Hybride rechargeable (3 personnes)
- *         - 123 : Petite - Hybride rechargeable (4 personnes)
- *         - 124 : Petite - Hybride rechargeable (5 personnes)
- *         - 125 : Moyenne - Essence
- *         - 126 : Moyenne - Essence (2 personnes)
- *         - 127 : Moyenne - Essence (3 personnes)
- *         - 128 : Moyenne - Essence (4 personnes)
- *         - 129 : Moyenne - Essence (5 personnes)
- *         - 130 : Moyenne - Diesel
- *         - 131 : Moyenne - Diesel (2 personnes)
- *         - 132 : Moyenne - Diesel (3 personnes)
- *         - 133 : Moyenne - Diesel (4 personnes)
- *         - 134 : Moyenne - Diesel (5 personnes)
- *         - 135 : Moyenne - Électrique
- *         - 136 : Moyenne - Électrique (2 personnes)
- *         - 137 : Moyenne - Électrique (3 personnes)
- *         - 138 : Moyenne - Électrique (4 personnes)
- *         - 139 : Moyenne - Électrique (5 personnes)
- *         - 140 : Moyenne - Hybride non rechargeable
- *         - 141 : Moyenne - Hybride non rechargeable (2 personnes)
- *         - 142 : Moyenne - Hybride non rechargeable (3 personnes)
- *         - 143 : Moyenne - Hybride non rechargeable (4 personnes)
- *         - 144 : Moyenne - Hybride non rechargeable (5 personnes)
- *         - 145 : Moyenne - Hybride rechargeable
- *         - 146 : Moyenne - Hybride rechargeable (2 personnes)
- *         - 147 : Moyenne - Hybride rechargeable (3 personnes)
- *         - 148 : Moyenne - Hybride rechargeable (4 personnes)
- *         - 149 : Moyenne - Hybride rechargeable (5 personnes)
- *         - 150 : Berline - Essence
- *         - 151 : Berline - Essence (2 personnes)
- *         - 152 : Berline - Essence (3 personnes)
- *         - 153 : Berline - Essence (4 personnes)
- *         - 154 : Berline - Essence (5 personnes)
- *         - 155 : Berline - Diesel
- *         - 156 : Berline - Diesel (2 personnes)
- *         - 157 : Berline - Diesel (3 personnes)
- *         - 158 : Berline - Diesel (4 personnes)
- *         - 159 : Berline - Diesel (5 personnes)
- *         - 160 : Berline - Électrique
- *         - 161 : Berline - Électrique (2 personnes)
- *         - 162 : Berline - Électrique (3 personnes)
- *         - 163 : Berline - Électrique (4 personnes)
- *         - 164 : Berline - Électrique (5 personnes)
- *         - 165 : Berline - Hybride non rechargeable
- *         - 166 : Berline - Hybride non rechargeable (2 personnes)
- *         - 167 : Berline - Hybride non rechargeable (3 personnes)
- *         - 168 : Berline - Hybride non rechargeable (4 personnes)
- *         - 169 : Berline - Hybride non rechargeable (5 personnes)
- *         - 170 : Berline - Hybride rechargeable
- *         - 171 : Berline - Hybride rechargeable (2 personnes)
- *         - 172 : Berline - Hybride rechargeable (3 personnes)
- *         - 173 : Berline - Hybride rechargeable (4 personnes)
- *         - 174 : Berline - Hybride rechargeable (5 personnes)
- *         - 175 : SUV - Essence
- *         - 176 : SUV - Essence (2 personnes)
- *         - 177 : SUV - Essence (3 personnes)
- *         - 178 : SUV - Essence (4 personnes)
- *         - 179 : SUV - Essence (5 personnes)
- *         - 180 : SUV - Diesel
- *         - 181 : SUV - Diesel (2 personnes)
- *         - 182 : SUV - Diesel (3 personnes)
- *         - 183 : SUV - Diesel (4 personnes)
- *         - 184 : SUV - Diesel (5 personnes)
- *         - 185 : SUV - Électrique
- *         - 186 : SUV - Électrique (2 personnes)
- *         - 187 : SUV - Électrique (3 personnes)
- *         - 188 : SUV - Électrique (4 personnes)
- *         - 189 : SUV - Électrique (5 personnes)
- *         - 190 : SUV - Hybride non rechargeable
- *         - 191 : SUV - Hybride non rechargeable (2 personnes)
- *         - 192 : SUV - Hybride non rechargeable (3 personnes)
- *         - 193 : SUV - Hybride non rechargeable (4 personnes)
- *         - 194 : SUV - Hybride non rechargeable (5 personnes)
- *         - 195 : SUV - Hybride rechargeable
- *         - 196 : SUV - Hybride rechargeable (2 personnes)
- *         - 197 : SUV - Hybride rechargeable (3 personnes)
- *         - 198 : SUV - Hybride rechargeable (4 personnes)
- *         - 199 : SUV - Hybride rechargeable (5 personnes)
+ *         - 100 : Voiture - Petite - Essence
+ *         - 101 : Voiture - Petite - Essence (2 personnes)
+ *         - 102 : Voiture - Petite - Essence (3 personnes)
+ *         - 103 : Voiture - Petite - Essence (4 personnes)
+ *         - 104 : Voiture - Petite - Essence (5 personnes)
+ *         - 105 : Voiture - Petite - Diesel
+ *         - 106 : Voiture - Petite - Diesel (2 personnes)
+ *         - 107 : Voiture - Petite - Diesel (3 personnes)
+ *         - 108 : Voiture - Petite - Diesel (4 personnes)
+ *         - 109 : Voiture - Petite - Diesel (5 personnes)
+ *         - 110 : Voiture - Petite - Électrique
+ *         - 111 : Voiture - Petite - Électrique (2 personnes)
+ *         - 112 : Voiture - Petite - Électrique (3 personnes)
+ *         - 113 : Voiture - Petite - Électrique (4 personnes)
+ *         - 114 : Voiture - Petite - Électrique (5 personnes)
+ *         - 115 : Voiture - Petite - Hybride non rechargeable
+ *         - 116 : Voiture - Petite - Hybride non rechargeable (2 personnes)
+ *         - 117 : Voiture - Petite - Hybride non rechargeable (3 personnes)
+ *         - 118 : Voiture - Petite - Hybride non rechargeable (4 personnes)
+ *         - 119 : Voiture - Petite - Hybride non rechargeable (5 personnes)
+ *         - 120 : Voiture - Petite - Hybride rechargeable
+ *         - 121 : Voiture - Petite - Hybride rechargeable (2 personnes)
+ *         - 122 : Voiture - Petite - Hybride rechargeable (3 personnes)
+ *         - 123 : Voiture - Petite - Hybride rechargeable (4 personnes)
+ *         - 124 : Voiture - Petite - Hybride rechargeable (5 personnes)
+ *         - 125 : Voiture - Moyenne - Essence
+ *         - 126 : Voiture - Moyenne - Essence (2 personnes)
+ *         - 127 : Voiture - Moyenne - Essence (3 personnes)
+ *         - 128 : Voiture - Moyenne - Essence (4 personnes)
+ *         - 129 : Voiture - Moyenne - Essence (5 personnes)
+ *         - 130 : Voiture - Moyenne - Diesel
+ *         - 131 : Voiture - Moyenne - Diesel (2 personnes)
+ *         - 132 : Voiture - Moyenne - Diesel (3 personnes)
+ *         - 133 : Voiture - Moyenne - Diesel (4 personnes)
+ *         - 134 : Voiture - Moyenne - Diesel (5 personnes)
+ *         - 135 : Voiture - Moyenne - Électrique
+ *         - 136 : Voiture - Moyenne - Électrique (2 personnes)
+ *         - 137 : Voiture - Moyenne - Électrique (3 personnes)
+ *         - 138 : Voiture - Moyenne - Électrique (4 personnes)
+ *         - 139 : Voiture - Moyenne - Électrique (5 personnes)
+ *         - 140 : Voiture - Moyenne - Hybride non rechargeable
+ *         - 141 : Voiture - Moyenne - Hybride non rechargeable (2 personnes)
+ *         - 142 : Voiture - Moyenne - Hybride non rechargeable (3 personnes)
+ *         - 143 : Voiture - Moyenne - Hybride non rechargeable (4 personnes)
+ *         - 144 : Voiture - Moyenne - Hybride non rechargeable (5 personnes)
+ *         - 145 : Voiture - Moyenne - Hybride rechargeable
+ *         - 146 : Voiture - Moyenne - Hybride rechargeable (2 personnes)
+ *         - 147 : Voiture - Moyenne - Hybride rechargeable (3 personnes)
+ *         - 148 : Voiture - Moyenne - Hybride rechargeable (4 personnes)
+ *         - 149 : Voiture - Moyenne - Hybride rechargeable (5 personnes)
+ *         - 150 : Voiture - Berline - Essence
+ *         - 151 : Voiture - Berline - Essence (2 personnes)
+ *         - 152 : Voiture - Berline - Essence (3 personnes)
+ *         - 153 : Voiture - Berline - Essence (4 personnes)
+ *         - 154 : Voiture - Berline - Essence (5 personnes)
+ *         - 155 : Voiture - Berline - Diesel
+ *         - 156 : Voiture - Berline - Diesel (2 personnes)
+ *         - 157 : Voiture - Berline - Diesel (3 personnes)
+ *         - 158 : Voiture - Berline - Diesel (4 personnes)
+ *         - 159 : Voiture - Berline - Diesel (5 personnes)
+ *         - 160 : Voiture - Berline - Électrique
+ *         - 161 : Voiture - Berline - Électrique (2 personnes)
+ *         - 162 : Voiture - Berline - Électrique (3 personnes)
+ *         - 163 : Voiture - Berline - Électrique (4 personnes)
+ *         - 164 : Voiture - Berline - Électrique (5 personnes)
+ *         - 165 : Voiture - Berline - Hybride non rechargeable
+ *         - 166 : Voiture - Berline - Hybride non rechargeable (2 personnes)
+ *         - 167 : Voiture - Berline - Hybride non rechargeable (3 personnes)
+ *         - 168 : Voiture - Berline - Hybride non rechargeable (4 personnes)
+ *         - 169 : Voiture - Berline - Hybride non rechargeable (5 personnes)
+ *         - 170 : Voiture - Berline - Hybride rechargeable
+ *         - 171 : Voiture - Berline - Hybride rechargeable (2 personnes)
+ *         - 172 : Voiture - Berline - Hybride rechargeable (3 personnes)
+ *         - 173 : Voiture - Berline - Hybride rechargeable (4 personnes)
+ *         - 174 : Voiture - Berline - Hybride rechargeable (5 personnes)
+ *         - 175 : Voiture - SUV - Essence
+ *         - 176 : Voiture - SUV - Essence (2 personnes)
+ *         - 177 : Voiture - SUV - Essence (3 personnes)
+ *         - 178 : Voiture - SUV - Essence (4 personnes)
+ *         - 179 : Voiture - SUV - Essence (5 personnes)
+ *         - 180 : Voiture - SUV - Diesel
+ *         - 181 : Voiture - SUV - Diesel (2 personnes)
+ *         - 182 : Voiture - SUV - Diesel (3 personnes)
+ *         - 183 : Voiture - SUV - Diesel (4 personnes)
+ *         - 184 : Voiture - SUV - Diesel (5 personnes)
+ *         - 185 : Voiture - SUV - Électrique
+ *         - 186 : Voiture - SUV - Électrique (2 personnes)
+ *         - 187 : Voiture - SUV - Électrique (3 personnes)
+ *         - 188 : Voiture - SUV - Électrique (4 personnes)
+ *         - 189 : Voiture - SUV - Électrique (5 personnes)
+ *         - 190 : Voiture - SUV - Hybride non rechargeable
+ *         - 191 : Voiture - SUV - Hybride non rechargeable (2 personnes)
+ *         - 192 : Voiture - SUV - Hybride non rechargeable (3 personnes)
+ *         - 193 : Voiture - SUV - Hybride non rechargeable (4 personnes)
+ *         - 194 : Voiture - SUV - Hybride non rechargeable (5 personnes)
+ *         - 195 : Voiture - SUV - Hybride rechargeable
+ *         - 196 : Voiture - SUV - Hybride rechargeable (2 personnes)
+ *         - 197 : Voiture - SUV - Hybride rechargeable (3 personnes)
+ *         - 198 : Voiture - SUV - Hybride rechargeable (4 personnes)
+ *         - 199 : Voiture - SUV - Hybride rechargeable (5 personnes)
  *         - 200 : Voiture hybride
  *         - 201 : Voiture hybride (2 personnes)
  *         - 202 : Voiture hybride (3 personnes)
@@ -336,7 +336,7 @@ export const computeTransportEmission = (
  *               properties:
  *                 warning:
  *                   type: string
- *                   example: La requete n'est pas authentifée.
+ *                   example: La requete n'est pas authentifiée.
  *                 data:
  *                   type: array
  *                   items:
@@ -375,7 +375,7 @@ export async function GET(req: NextRequest) {
         })),
       warning: hasAPIKey
         ? undefined
-        : `La requete n'est pas authentifée. Nous nous reservons le droit de couper cette API aux utilisateurs anonymes, veuillez nous contacter à ${process.env.NEXT_PUBLIC_CONTACT_EMAIL} pour obtenir une clé d'API gratuite.`,
+        : `La requete n'est pas authentifiée. Nous nous reservons le droit de couper cette API aux utilisateurs anonymes, veuillez nous contacter à ${process.env.NEXT_PUBLIC_CONTACT_EMAIL} pour obtenir une clé d'API gratuite.`,
     },
     { status: 200 }
   )

@@ -137,27 +137,27 @@ describe('transport', () => {
         },
         {
           id: 111,
-          name: 'Covoiturage électrique (Petite - Électrique - 2 personnes)',
+          name: 'Covoiturage électrique (Petite - 2 personnes)',
           value: 0.5752242527815156,
         },
         {
           id: 112,
-          name: 'Covoiturage électrique (Petite - Électrique - 3 personnes)',
+          name: 'Covoiturage électrique (Petite - 3 personnes)',
           value: 0.38348283518767706,
         },
         {
           id: 113,
-          name: 'Covoiturage électrique (Petite - Électrique - 4 personnes)',
+          name: 'Covoiturage électrique (Petite - 4 personnes)',
           value: 0.2876121263907578,
         },
         {
           id: 114,
-          name: 'Covoiturage électrique (Petite - Électrique - 5 personnes)',
+          name: 'Covoiturage électrique (Petite - 5 personnes)',
           value: 0.23008970111260624,
         },
         {
           id: 110,
-          name: 'Voiture électrique (Petite - Électrique)',
+          name: 'Voiture électrique (Petite)',
           value: 1.1504485055630311,
         },
         {
@@ -262,27 +262,27 @@ describe('transport', () => {
         },
         {
           id: 136,
-          name: 'Covoiturage électrique (Moyenne - Électrique - 2 personnes)',
+          name: 'Covoiturage électrique (Moyenne - 2 personnes)',
           value: 0.6044180027815155,
         },
         {
           id: 137,
-          name: 'Covoiturage électrique (Moyenne - Électrique - 3 personnes)',
+          name: 'Covoiturage électrique (Moyenne - 3 personnes)',
           value: 0.402945335187677,
         },
         {
           id: 138,
-          name: 'Covoiturage électrique (Moyenne - Électrique - 4 personnes)',
+          name: 'Covoiturage électrique (Moyenne - 4 personnes)',
           value: 0.30220900139075774,
         },
         {
           id: 139,
-          name: 'Covoiturage électrique (Moyenne - Électrique - 5 personnes)',
+          name: 'Covoiturage électrique (Moyenne - 5 personnes)',
           value: 0.2417672011126062,
         },
         {
           id: 135,
-          name: 'Compacte électrique (Moyenne - Électrique)',
+          name: 'Voiture électrique (Moyenne)',
           value: 1.208836005563031,
         },
         {
@@ -387,27 +387,27 @@ describe('transport', () => {
         },
         {
           id: 161,
-          name: 'Covoiturage électrique (Berline - Électrique - 2 personnes)',
+          name: 'Covoiturage électrique (Berline - 2 personnes)',
           value: 0.7367630027815156,
         },
         {
           id: 162,
-          name: 'Covoiturage électrique (Berline - Électrique - 3 personnes)',
+          name: 'Covoiturage électrique (Berline - 3 personnes)',
           value: 0.4911753351876771,
         },
         {
           id: 163,
-          name: 'Covoiturage électrique (Berline - Électrique - 4 personnes)',
+          name: 'Covoiturage électrique (Berline - 4 personnes)',
           value: 0.3683815013907578,
         },
         {
           id: 164,
-          name: 'Covoiturage électrique (Berline - Électrique - 5 personnes)',
+          name: 'Covoiturage électrique (Berline - 5 personnes)',
           value: 0.29470520111260623,
         },
         {
           id: 160,
-          name: 'Voiture électrique (Berline - Électrique)',
+          name: 'Voiture électrique (Berline)',
           value: 1.4735260055630313,
         },
         {
@@ -512,27 +512,27 @@ describe('transport', () => {
         },
         {
           id: 186,
-          name: 'Covoiturage électrique (SUV - Électrique - 2 personnes)',
+          name: 'Covoiturage électrique (SUV - 2 personnes)',
           value: 0.7056230027815156,
         },
         {
           id: 187,
-          name: 'Covoiturage électrique (SUV - Électrique - 3 personnes)',
+          name: 'Covoiturage électrique (SUV - 3 personnes)',
           value: 0.47041533518767703,
         },
         {
           id: 188,
-          name: 'Covoiturage électrique (SUV - Électrique - 4 personnes)',
+          name: 'Covoiturage électrique (SUV - 4 personnes)',
           value: 0.3528115013907578,
         },
         {
           id: 189,
-          name: 'Covoiturage électrique (SUV - Électrique - 5 personnes)',
+          name: 'Covoiturage électrique (SUV - 5 personnes)',
           value: 0.2822492011126062,
         },
         {
           id: 185,
-          name: 'Voiture électrique (SUV - Électrique)',
+          name: 'Voiture électrique (SUV)',
           value: 1.4112460055630311,
         },
         {
@@ -588,31 +588,31 @@ describe('transport', () => {
         {
           id: 201,
           name: 'Covoiturage hybride (2 personnes)',
-          value: 4.658406752781516,
+          value: 5.670971752781515,
         },
         {
           id: 202,
           name: 'Covoiturage hybride (3 personnes)',
-          value: 3.105604501854344,
+          value: 3.780647835187677,
         },
         {
           id: 203,
           name: 'Covoiturage hybride (4 personnes)',
-          value: 2.329203376390758,
+          value: 2.8354858763907576,
         },
         {
           id: 204,
           name: 'Covoiturage hybride (5 personnes)',
-          value: 1.8633627011126062,
+          value: 2.268388701112606,
         },
         {
           id: 200,
           name: 'Voiture hybride',
-          value: 9.316813505563031,
+          value: 11.34194350556303,
         },
       ],
       warning:
-        "La requete n'est pas authentifée. Nous nous reservons le droit de couper cette API aux utilisateurs anonymes, veuillez nous contacter à impactco2@ademe.fr pour obtenir une clé d'API gratuite.",
+        "La requete n'est pas authentifiée. Nous nous reservons le droit de couper cette API aux utilisateurs anonymes, veuillez nous contacter à impactco2@ademe.fr pour obtenir une clé d'API gratuite.",
     })
   })
 
@@ -750,27 +750,27 @@ describe('transport', () => {
         },
         {
           id: 111,
-          name: 'Carpooling electric (Small - Electric - 2 people)',
+          name: 'Carpooling electric (Small - 2 people)',
           value: 0.5752242527815156,
         },
         {
           id: 112,
-          name: 'Carpooling electric (Small - Electric - 3 people)',
+          name: 'Carpooling electric (Small - 3 people)',
           value: 0.38348283518767706,
         },
         {
           id: 113,
-          name: 'Carpooling electric (Small - Electric - 4 people)',
+          name: 'Carpooling electric (Small - 4 people)',
           value: 0.2876121263907578,
         },
         {
           id: 114,
-          name: 'Carpooling electric (Small - Electric - 5 people)',
+          name: 'Carpooling electric (Small - 5 people)',
           value: 0.23008970111260624,
         },
         {
           id: 110,
-          name: 'Electric car (Small - Electric)',
+          name: 'Electric car (Small)',
           value: 1.1504485055630311,
         },
         {
@@ -875,27 +875,27 @@ describe('transport', () => {
         },
         {
           id: 136,
-          name: 'Carpooling electric (Medium - Electric - 2 people)',
+          name: 'Carpooling electric (Medium - 2 people)',
           value: 0.6044180027815155,
         },
         {
           id: 137,
-          name: 'Carpooling electric (Medium - Electric - 3 people)',
+          name: 'Carpooling electric (Medium - 3 people)',
           value: 0.402945335187677,
         },
         {
           id: 138,
-          name: 'Carpooling electric (Medium - Electric - 4 people)',
+          name: 'Carpooling electric (Medium - 4 people)',
           value: 0.30220900139075774,
         },
         {
           id: 139,
-          name: 'Carpooling electric (Medium - Electric - 5 people)',
+          name: 'Carpooling electric (Medium - 5 people)',
           value: 0.2417672011126062,
         },
         {
           id: 135,
-          name: 'Electric compact car (Medium - Electric)',
+          name: 'Electric car (Medium)',
           value: 1.208836005563031,
         },
         {
@@ -1000,27 +1000,27 @@ describe('transport', () => {
         },
         {
           id: 161,
-          name: 'Carpooling electric (Sedan - Electric - 2 people)',
+          name: 'Carpooling electric (Sedan - 2 people)',
           value: 0.7367630027815156,
         },
         {
           id: 162,
-          name: 'Carpooling electric (Sedan - Electric - 3 people)',
+          name: 'Carpooling electric (Sedan - 3 people)',
           value: 0.4911753351876771,
         },
         {
           id: 163,
-          name: 'Carpooling electric (Sedan - Electric - 4 people)',
+          name: 'Carpooling electric (Sedan - 4 people)',
           value: 0.3683815013907578,
         },
         {
           id: 164,
-          name: 'Carpooling electric (Sedan - Electric - 5 people)',
+          name: 'Carpooling electric (Sedan - 5 people)',
           value: 0.29470520111260623,
         },
         {
           id: 160,
-          name: 'Electric car (Sedan - Electric)',
+          name: 'Electric car (Sedan)',
           value: 1.4735260055630313,
         },
         {
@@ -1125,27 +1125,27 @@ describe('transport', () => {
         },
         {
           id: 186,
-          name: 'Carpooling electric (SUV - Electric - 2 people)',
+          name: 'Carpooling electric (SUV - 2 people)',
           value: 0.7056230027815156,
         },
         {
           id: 187,
-          name: 'Carpooling electric (SUV - Electric - 3 people)',
+          name: 'Carpooling electric (SUV - 3 people)',
           value: 0.47041533518767703,
         },
         {
           id: 188,
-          name: 'Carpooling electric (SUV - Electric - 4 people)',
+          name: 'Carpooling electric (SUV - 4 people)',
           value: 0.3528115013907578,
         },
         {
           id: 189,
-          name: 'Carpooling electric (SUV - Electric - 5 people)',
+          name: 'Carpooling electric (SUV - 5 people)',
           value: 0.2822492011126062,
         },
         {
           id: 185,
-          name: 'Electric car (SUV - Electric)',
+          name: 'Electric car (SUV)',
           value: 1.4112460055630311,
         },
         {
@@ -1201,31 +1201,31 @@ describe('transport', () => {
         {
           id: 201,
           name: 'Carpooling hybrid (2 people)',
-          value: 4.658406752781516,
+          value: 5.670971752781515,
         },
         {
           id: 202,
           name: 'Carpooling hybrid (3 people)',
-          value: 3.105604501854344,
+          value: 3.780647835187677,
         },
         {
           id: 203,
           name: 'Carpooling hybrid (4 people)',
-          value: 2.329203376390758,
+          value: 2.8354858763907576,
         },
         {
           id: 204,
           name: 'Carpooling hybrid (5 people)',
-          value: 1.8633627011126062,
+          value: 2.268388701112606,
         },
         {
           id: 200,
           name: 'Hybrid car',
-          value: 9.316813505563031,
+          value: 11.34194350556303,
         },
       ],
       warning:
-        "La requete n'est pas authentifée. Nous nous reservons le droit de couper cette API aux utilisateurs anonymes, veuillez nous contacter à impactco2@ademe.fr pour obtenir une clé d'API gratuite.",
+        "La requete n'est pas authentifiée. Nous nous reservons le droit de couper cette API aux utilisateurs anonymes, veuillez nous contacter à impactco2@ademe.fr pour obtenir une clé d'API gratuite.",
     })
   })
 
@@ -1423,27 +1423,27 @@ describe('transport', () => {
         },
         {
           id: 111,
-          name: 'Covoiturage électrique (Petite - Électrique - 2 personnes)',
+          name: 'Covoiturage électrique (Petite - 2 personnes)',
           value: 0.5752242527815156,
         },
         {
           id: 112,
-          name: 'Covoiturage électrique (Petite - Électrique - 3 personnes)',
+          name: 'Covoiturage électrique (Petite - 3 personnes)',
           value: 0.38348283518767706,
         },
         {
           id: 113,
-          name: 'Covoiturage électrique (Petite - Électrique - 4 personnes)',
+          name: 'Covoiturage électrique (Petite - 4 personnes)',
           value: 0.2876121263907578,
         },
         {
           id: 114,
-          name: 'Covoiturage électrique (Petite - Électrique - 5 personnes)',
+          name: 'Covoiturage électrique (Petite - 5 personnes)',
           value: 0.23008970111260624,
         },
         {
           id: 110,
-          name: 'Voiture électrique (Petite - Électrique)',
+          name: 'Voiture électrique (Petite)',
           value: 1.1504485055630311,
         },
         {
@@ -1548,27 +1548,27 @@ describe('transport', () => {
         },
         {
           id: 136,
-          name: 'Covoiturage électrique (Moyenne - Électrique - 2 personnes)',
+          name: 'Covoiturage électrique (Moyenne - 2 personnes)',
           value: 0.6044180027815155,
         },
         {
           id: 137,
-          name: 'Covoiturage électrique (Moyenne - Électrique - 3 personnes)',
+          name: 'Covoiturage électrique (Moyenne - 3 personnes)',
           value: 0.402945335187677,
         },
         {
           id: 138,
-          name: 'Covoiturage électrique (Moyenne - Électrique - 4 personnes)',
+          name: 'Covoiturage électrique (Moyenne - 4 personnes)',
           value: 0.30220900139075774,
         },
         {
           id: 139,
-          name: 'Covoiturage électrique (Moyenne - Électrique - 5 personnes)',
+          name: 'Covoiturage électrique (Moyenne - 5 personnes)',
           value: 0.2417672011126062,
         },
         {
           id: 135,
-          name: 'Compacte électrique (Moyenne - Électrique)',
+          name: 'Voiture électrique (Moyenne)',
           value: 1.208836005563031,
         },
         {
@@ -1673,27 +1673,27 @@ describe('transport', () => {
         },
         {
           id: 161,
-          name: 'Covoiturage électrique (Berline - Électrique - 2 personnes)',
+          name: 'Covoiturage électrique (Berline - 2 personnes)',
           value: 0.7367630027815156,
         },
         {
           id: 162,
-          name: 'Covoiturage électrique (Berline - Électrique - 3 personnes)',
+          name: 'Covoiturage électrique (Berline - 3 personnes)',
           value: 0.4911753351876771,
         },
         {
           id: 163,
-          name: 'Covoiturage électrique (Berline - Électrique - 4 personnes)',
+          name: 'Covoiturage électrique (Berline - 4 personnes)',
           value: 0.3683815013907578,
         },
         {
           id: 164,
-          name: 'Covoiturage électrique (Berline - Électrique - 5 personnes)',
+          name: 'Covoiturage électrique (Berline - 5 personnes)',
           value: 0.29470520111260623,
         },
         {
           id: 160,
-          name: 'Voiture électrique (Berline - Électrique)',
+          name: 'Voiture électrique (Berline)',
           value: 1.4735260055630313,
         },
         {
@@ -1798,27 +1798,27 @@ describe('transport', () => {
         },
         {
           id: 186,
-          name: 'Covoiturage électrique (SUV - Électrique - 2 personnes)',
+          name: 'Covoiturage électrique (SUV - 2 personnes)',
           value: 0.7056230027815156,
         },
         {
           id: 187,
-          name: 'Covoiturage électrique (SUV - Électrique - 3 personnes)',
+          name: 'Covoiturage électrique (SUV - 3 personnes)',
           value: 0.47041533518767703,
         },
         {
           id: 188,
-          name: 'Covoiturage électrique (SUV - Électrique - 4 personnes)',
+          name: 'Covoiturage électrique (SUV - 4 personnes)',
           value: 0.3528115013907578,
         },
         {
           id: 189,
-          name: 'Covoiturage électrique (SUV - Électrique - 5 personnes)',
+          name: 'Covoiturage électrique (SUV - 5 personnes)',
           value: 0.2822492011126062,
         },
         {
           id: 185,
-          name: 'Voiture électrique (SUV - Électrique)',
+          name: 'Voiture électrique (SUV)',
           value: 1.4112460055630311,
         },
         {
@@ -1874,31 +1874,31 @@ describe('transport', () => {
         {
           id: 201,
           name: 'Covoiturage hybride (2 personnes)',
-          value: 4.658406752781516,
+          value: 5.670971752781515,
         },
         {
           id: 202,
           name: 'Covoiturage hybride (3 personnes)',
-          value: 3.105604501854344,
+          value: 3.780647835187677,
         },
         {
           id: 203,
           name: 'Covoiturage hybride (4 personnes)',
-          value: 2.329203376390758,
+          value: 2.8354858763907576,
         },
         {
           id: 204,
           name: 'Covoiturage hybride (5 personnes)',
-          value: 1.8633627011126062,
+          value: 2.268388701112606,
         },
         {
           id: 200,
           name: 'Voiture hybride',
-          value: 9.316813505563031,
+          value: 11.34194350556303,
         },
       ],
       warning:
-        "La requete n'est pas authentifée. Nous nous reservons le droit de couper cette API aux utilisateurs anonymes, veuillez nous contacter à impactco2@ademe.fr pour obtenir une clé d'API gratuite.",
+        "La requete n'est pas authentifiée. Nous nous reservons le droit de couper cette API aux utilisateurs anonymes, veuillez nous contacter à impactco2@ademe.fr pour obtenir une clé d'API gratuite.",
     })
   })
 
@@ -1926,7 +1926,7 @@ describe('transport', () => {
         },
       ],
       warning:
-        "La requete n'est pas authentifée. Nous nous reservons le droit de couper cette API aux utilisateurs anonymes, veuillez nous contacter à impactco2@ademe.fr pour obtenir une clé d'API gratuite.",
+        "La requete n'est pas authentifiée. Nous nous reservons le droit de couper cette API aux utilisateurs anonymes, veuillez nous contacter à impactco2@ademe.fr pour obtenir une clé d'API gratuite.",
     })
   })
 
@@ -1944,7 +1944,7 @@ describe('transport', () => {
         },
       ],
       warning:
-        "La requete n'est pas authentifée. Nous nous reservons le droit de couper cette API aux utilisateurs anonymes, veuillez nous contacter à impactco2@ademe.fr pour obtenir une clé d'API gratuite.",
+        "La requete n'est pas authentifiée. Nous nous reservons le droit de couper cette API aux utilisateurs anonymes, veuillez nous contacter à impactco2@ademe.fr pour obtenir une clé d'API gratuite.",
     })
   })
 
@@ -2002,7 +2002,7 @@ describe('transport', () => {
         },
         {
           id: 110,
-          name: 'Voiture électrique (Petite - Électrique)',
+          name: 'Voiture électrique (Petite)',
           value: 0.2876121263907578,
         },
         {
@@ -2027,7 +2027,7 @@ describe('transport', () => {
         },
         {
           id: 135,
-          name: 'Compacte électrique (Moyenne - Électrique)',
+          name: 'Voiture électrique (Moyenne)',
           value: 0.30220900139075774,
         },
         {
@@ -2052,7 +2052,7 @@ describe('transport', () => {
         },
         {
           id: 160,
-          name: 'Voiture électrique (Berline - Électrique)',
+          name: 'Voiture électrique (Berline)',
           value: 0.3683815013907578,
         },
         {
@@ -2077,7 +2077,7 @@ describe('transport', () => {
         },
         {
           id: 185,
-          name: 'Voiture électrique (SUV - Électrique)',
+          name: 'Voiture électrique (SUV)',
           value: 0.3528115013907578,
         },
         {
@@ -2093,11 +2093,11 @@ describe('transport', () => {
         {
           id: 200,
           name: 'Voiture hybride',
-          value: 2.329203376390758,
+          value: 2.8354858763907576,
         },
       ],
       warning:
-        "La requete n'est pas authentifée. Nous nous reservons le droit de couper cette API aux utilisateurs anonymes, veuillez nous contacter à impactco2@ademe.fr pour obtenir une clé d'API gratuite.",
+        "La requete n'est pas authentifiée. Nous nous reservons le droit de couper cette API aux utilisateurs anonymes, veuillez nous contacter à impactco2@ademe.fr pour obtenir une clé d'API gratuite.",
     })
   })
 
@@ -2155,7 +2155,7 @@ describe('transport', () => {
         },
         {
           id: 110,
-          name: 'Voiture électrique (Petite - Électrique)',
+          name: 'Voiture électrique (Petite)',
           value: 0.2876121263907578,
         },
         {
@@ -2180,7 +2180,7 @@ describe('transport', () => {
         },
         {
           id: 135,
-          name: 'Compacte électrique (Moyenne - Électrique)',
+          name: 'Voiture électrique (Moyenne)',
           value: 0.30220900139075774,
         },
         {
@@ -2205,7 +2205,7 @@ describe('transport', () => {
         },
         {
           id: 160,
-          name: 'Voiture électrique (Berline - Électrique)',
+          name: 'Voiture électrique (Berline)',
           value: 0.3683815013907578,
         },
         {
@@ -2230,7 +2230,7 @@ describe('transport', () => {
         },
         {
           id: 185,
-          name: 'Voiture électrique (SUV - Électrique)',
+          name: 'Voiture électrique (SUV)',
           value: 0.3528115013907578,
         },
         {
@@ -2246,11 +2246,11 @@ describe('transport', () => {
         {
           id: 200,
           name: 'Voiture hybride',
-          value: 2.329203376390758,
+          value: 2.8354858763907576,
         },
       ],
       warning:
-        "La requete n'est pas authentifée. Nous nous reservons le droit de couper cette API aux utilisateurs anonymes, veuillez nous contacter à impactco2@ademe.fr pour obtenir une clé d'API gratuite.",
+        "La requete n'est pas authentifiée. Nous nous reservons le droit de couper cette API aux utilisateurs anonymes, veuillez nous contacter à impactco2@ademe.fr pour obtenir une clé d'API gratuite.",
     })
   })
 
@@ -2388,27 +2388,27 @@ describe('transport', () => {
         },
         {
           id: 111,
-          name: 'Covoiturage électrique (Petite - Électrique - 2 personnes)',
+          name: 'Covoiturage électrique (Petite - 2 personnes)',
           value: 2.8796807745206467,
         },
         {
           id: 112,
-          name: 'Covoiturage électrique (Petite - Électrique - 3 personnes)',
+          name: 'Covoiturage électrique (Petite - 3 personnes)',
           value: 1.9197871830137645,
         },
         {
           id: 113,
-          name: 'Covoiturage électrique (Petite - Électrique - 4 personnes)',
+          name: 'Covoiturage électrique (Petite - 4 personnes)',
           value: 1.4398403872603234,
         },
         {
           id: 114,
-          name: 'Covoiturage électrique (Petite - Électrique - 5 personnes)',
+          name: 'Covoiturage électrique (Petite - 5 personnes)',
           value: 1.1518723098082586,
         },
         {
           id: 110,
-          name: 'Voiture électrique (Petite - Électrique)',
+          name: 'Voiture électrique (Petite)',
           value: 5.7593615490412935,
         },
         {
@@ -2513,27 +2513,27 @@ describe('transport', () => {
         },
         {
           id: 136,
-          name: 'Covoiturage électrique (Moyenne - Électrique - 2 personnes)',
+          name: 'Covoiturage électrique (Moyenne - 2 personnes)',
           value: 3.368263111477168,
         },
         {
           id: 137,
-          name: 'Covoiturage électrique (Moyenne - Électrique - 3 personnes)',
+          name: 'Covoiturage électrique (Moyenne - 3 personnes)',
           value: 2.245508740984779,
         },
         {
           id: 138,
-          name: 'Covoiturage électrique (Moyenne - Électrique - 4 personnes)',
+          name: 'Covoiturage électrique (Moyenne - 4 personnes)',
           value: 1.684131555738584,
         },
         {
           id: 139,
-          name: 'Covoiturage électrique (Moyenne - Électrique - 5 personnes)',
+          name: 'Covoiturage électrique (Moyenne - 5 personnes)',
           value: 1.3473052445908673,
         },
         {
           id: 135,
-          name: 'Compacte électrique (Moyenne - Électrique)',
+          name: 'Voiture électrique (Moyenne)',
           value: 6.736526222954336,
         },
         {
@@ -2638,27 +2638,27 @@ describe('transport', () => {
         },
         {
           id: 161,
-          name: 'Covoiturage électrique (Berline - Électrique - 2 personnes)',
+          name: 'Covoiturage électrique (Berline - 2 personnes)',
           value: 4.53571680712934,
         },
         {
           id: 162,
-          name: 'Covoiturage électrique (Berline - Électrique - 3 personnes)',
+          name: 'Covoiturage électrique (Berline - 3 personnes)',
           value: 3.0238112047528936,
         },
         {
           id: 163,
-          name: 'Covoiturage électrique (Berline - Électrique - 4 personnes)',
+          name: 'Covoiturage électrique (Berline - 4 personnes)',
           value: 2.26785840356467,
         },
         {
           id: 164,
-          name: 'Covoiturage électrique (Berline - Électrique - 5 personnes)',
+          name: 'Covoiturage électrique (Berline - 5 personnes)',
           value: 1.814286722851736,
         },
         {
           id: 160,
-          name: 'Voiture électrique (Berline - Électrique)',
+          name: 'Voiture électrique (Berline)',
           value: 9.07143361425868,
         },
         {
@@ -2763,27 +2763,27 @@ describe('transport', () => {
         },
         {
           id: 186,
-          name: 'Covoiturage électrique (SUV - Électrique - 2 personnes)',
+          name: 'Covoiturage électrique (SUV - 2 personnes)',
           value: 4.717851263651082,
         },
         {
           id: 187,
-          name: 'Covoiturage électrique (SUV - Électrique - 3 personnes)',
+          name: 'Covoiturage électrique (SUV - 3 personnes)',
           value: 3.145234175767388,
         },
         {
           id: 188,
-          name: 'Covoiturage électrique (SUV - Électrique - 4 personnes)',
+          name: 'Covoiturage électrique (SUV - 4 personnes)',
           value: 2.358925631825541,
         },
         {
           id: 189,
-          name: 'Covoiturage électrique (SUV - Électrique - 5 personnes)',
+          name: 'Covoiturage électrique (SUV - 5 personnes)',
           value: 1.8871405054604327,
         },
         {
           id: 185,
-          name: 'Voiture électrique (SUV - Électrique)',
+          name: 'Voiture électrique (SUV)',
           value: 9.435702527302164,
         },
         {
@@ -2839,31 +2839,31 @@ describe('transport', () => {
         {
           id: 201,
           name: 'Covoiturage hybride (2 personnes)',
-          value: 6.695018165824992,
+          value: 7.328967676694559,
         },
         {
           id: 202,
           name: 'Covoiturage hybride (3 personnes)',
-          value: 4.463345443883328,
+          value: 4.885978451129706,
         },
         {
           id: 203,
           name: 'Covoiturage hybride (4 personnes)',
-          value: 3.347509082912496,
+          value: 3.6644838383472793,
         },
         {
           id: 204,
           name: 'Covoiturage hybride (5 personnes)',
-          value: 2.6780072663299967,
+          value: 2.9315870706778235,
         },
         {
           id: 200,
           name: 'Voiture hybride',
-          value: 13.390036331649984,
+          value: 14.657935353389117,
         },
       ],
       warning:
-        "La requete n'est pas authentifée. Nous nous reservons le droit de couper cette API aux utilisateurs anonymes, veuillez nous contacter à impactco2@ademe.fr pour obtenir une clé d'API gratuite.",
+        "La requete n'est pas authentifiée. Nous nous reservons le droit de couper cette API aux utilisateurs anonymes, veuillez nous contacter à impactco2@ademe.fr pour obtenir une clé d'API gratuite.",
     })
   })
 })

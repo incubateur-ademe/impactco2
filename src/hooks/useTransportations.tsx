@@ -3,7 +3,7 @@ import useParamContext from 'src/providers/ParamProvider'
 import { DeplacementType } from 'types/equivalent'
 import { TransportSimulateur } from 'types/transport'
 import { deplacements } from 'data/categories/deplacement'
-import { getNameWithoutSuffix } from 'utils/Equivalent/equivalent'
+import { getComparisonSlug, getNameWithoutSuffix } from 'utils/Equivalent/equivalent'
 import { computeECV } from 'utils/computeECV'
 import formatNumber from 'utils/formatNumber'
 import formatUsage from 'utils/formatUsage'
@@ -28,8 +28,6 @@ export default function useTransportations(
     const allEquivalents =
       values || km
         ? deplacements
-            // Carpool is managed after expansion, avion needs to be managed here
-            .filter((equivalent) => equivalent.withCarpool || params.transport.modes.includes(equivalent.slug))
             .filter((equivalent) => (values && equivalent.type ? values[equivalent.type as DeplacementType] : km))
             .map((equivalent) => {
               if ('ecvs' in equivalent && equivalent.ecvs) {
@@ -75,15 +73,15 @@ export default function useTransportations(
                   equivalents.find((eq) => eq.slug === `voiture-${carpoolCarInfo.size}-${carpoolCarInfo.engine}`)) ||
                 equivalent
 
-              const carpoolValue = equivalent.withCarpool && carpool[equivalent.slug] ? carpool[equivalent.slug] : 1
-              return carpoolEquivalent.withCarpool &&
-                params.transport.modes.find((mode) => mode.startsWith(`${equivalent.slug}+`))
+              const carpoolSelected = equivalent.withCarpool && carpool[equivalent.slug] ? carpool[equivalent.slug] : 1
+              return carpoolEquivalent.withCarpool
                 ? [
-                    {
+                    ...Array.from({ length: 4 }, (_, i) => i + 1).map((carpoolValue) => ({
                       ...carpoolEquivalent,
+                      id: carpoolEquivalent.id + carpoolValue,
                       default: equivalent.default,
-                      ignore: equivalent.ignore,
-                      slug: equivalent.slug,
+                      ignore: equivalent.ignore || carpoolValue !== carpoolSelected,
+                      slug: `${equivalent.slug}+${carpoolValue}`,
                       carpool: carpoolValue,
                       name:
                         getNameWithoutSuffix(params.language, { ...equivalent, carpool: carpoolValue }) +
@@ -92,8 +90,8 @@ export default function useTransportations(
                       value: carpoolEquivalent.value / (carpoolValue + 1),
                       ecv: carpoolEquivalent.ecv.map((ecv) => ({ ...ecv, value: ecv.value / (carpoolValue + 1) })),
                       usage: carpoolEquivalent.usage / (carpoolValue + 1),
-                      link: `${carpoolEquivalent.link}+${carpoolValue}`,
-                    },
+                      link: `${realEquivalent.link}+${carpoolValue}`,
+                    })),
                     {
                       ...realEquivalent,
                       default: equivalent.default,
@@ -115,17 +113,23 @@ export default function useTransportations(
                   ]
             })
             .filter((equivalent) => {
-              if (equivalent.withCarpool) {
-                // Carpool case, check slug+1
-                if ('carpool' in equivalent && equivalent.carpool) {
-                  const [slug] = equivalent.slug.split('+')
-                  return params.transport.modes.includes(`${slug}+1`)
+              // Carpool case, check slug+1
+              const infos = equivalent.slug.split('+')
+              let slug = infos[0]
+              if (equivalent.slug.startsWith('voiture-')) {
+                if (equivalent.slug.includes('hybride')) {
+                  slug = `voiturehybride`
+                } else if (equivalent.slug.includes('electrique')) {
+                  slug = `voitureelectrique`
+                } else {
+                  slug = 'voiturethermique'
                 }
-                // Without carpool, check slug
-                return params.transport.modes.includes(equivalent.slug)
               }
-              // Manage on top
-              return true
+              if ('carpool' in equivalent && equivalent.carpool) {
+                return params.transport.modes.includes(`${slug}+1`)
+              }
+              // Without carpool, check slug
+              return params.transport.modes.includes(getComparisonSlug(slug))
             })
         : []
 

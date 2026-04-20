@@ -1,5 +1,7 @@
 import livraisonRules from '@incubateur-ademe/publicodes-impact-livraison'
 import Engine from 'publicodes'
+import { computedEquivalents } from 'src/providers/equivalents'
+import { ComputedEquivalent } from 'types/equivalent'
 import { livraison } from 'data/categories/livraison'
 import { livraisonData } from 'components/outils/livraison/LivraisonData'
 
@@ -109,6 +111,8 @@ const livraisonEquipmentMapping = {
   },
 }
 
+const voiture = computedEquivalents.find((equivalent) => equivalent.slug === 'voiturethermique') as ComputedEquivalent
+
 export const extractLivraisonValues = () => {
   const engine = new Engine(livraisonRules)
   for (const [poids, rules] of Object.entries(livraisonPoidsMapping)) {
@@ -134,6 +138,12 @@ export const extractLivraisonValues = () => {
         }
 
         data.ecv = Object.entries(values.rules).map(([id, ruleName]) => {
+          if (id === '56') {
+            return { id: 56, value: voiture.value * 7 }
+          }
+          if (id === '57') {
+            return { id: 57, value: voiture.value * 30 }
+          }
           const value = engine.evaluate(ruleName).nodeValue as number
           return { id: parseInt(id, 10), value: value / 1000 }
         })

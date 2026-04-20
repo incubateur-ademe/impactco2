@@ -19,36 +19,21 @@ import styles from './TransportComparisonEquivalent.module.css'
 const allEquivalents = computedEquivalents.flatMap(getEquivalentWithCarpool)
 
 const getEquivalent = (language: string, equivalents: ComputedEquivalent[], slug: string) => {
-  const [name, carpool] = slug.split('+')
-  const equivalent = equivalents.find(
-    (equivalent) => isEquivalentInMode(equivalent, name) && (carpool ? equivalent.carpool : !equivalent.carpool)
-  ) as (ComputedEquivalent & { found?: boolean }) | undefined
-  if (!equivalent) {
-    return allEquivalents.find((equivalent) => isEquivalentInMode(equivalent, slug)) as
-      | (ComputedEquivalent & { found?: boolean })
-      | undefined
+  let equivalent = equivalents.find((equivalent) => isEquivalentInMode(equivalent, slug)) as
+    | (ComputedEquivalent & { found?: boolean })
+    | undefined
+
+  if (equivalent) {
+    return { ...equivalent, name: getName(language, equivalent, false, 1, false, true), found: true }
   }
 
-  if (carpool) {
-    if (!equivalent) {
-      return undefined
-    }
+  equivalent = allEquivalents.find((equivalent) => isEquivalentInMode(equivalent, slug)) as
+    | (ComputedEquivalent & { found?: boolean })
+    | undefined
 
-    return {
-      ...equivalent,
-      name: getName(
-        language,
-        { ...equivalent, slug: carpool ? `${equivalent.slug}+${carpool}` : equivalent.slug, carpool: Number(carpool) },
-        false,
-        1,
-        false,
-        true
-      ),
-      found: true,
-    }
-  }
-
-  return equivalent ? { ...equivalent, found: true } : undefined
+  return equivalent
+    ? { ...equivalent, name: getName(language, equivalent, false, 1, false, true), found: false }
+    : undefined
 }
 
 const TransportComparisonEquivalent = ({
@@ -94,7 +79,7 @@ const TransportComparisonEquivalent = ({
           </Link>
           <div className={styles.top}>
             <EquivalentIcon equivalent={equivalent} height={4} />
-            <p>{equivalent.found ? equivalent.name : getName(language, equivalent)}</p>
+            <p>{equivalent.found ? equivalent.name : getName(language, equivalent, false, 1, false, true)}</p>
           </div>
           {equivalent.found ? (
             <div>

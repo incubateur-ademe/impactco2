@@ -294,11 +294,6 @@ const engines: Record<string, Record<string, string>> = {
     en: 'Diesel',
     es: 'Diésel',
   },
-  electrique: {
-    fr: 'Électrique',
-    en: 'Electric',
-    es: 'Eléctrico',
-  },
   hybride: {
     fr: 'Non rechargeable',
     en: 'Non rechargeable',
@@ -326,8 +321,8 @@ const getExtraInfo = (language: string, slug: string) => {
   if (slug.startsWith('voiture') || (slug.startsWith('voiture') && slug.includes('+'))) {
     const [info, carpool] = slug.split('+')
     const [car, size, engine] = info.split('-')
-    return size && sizes[size] && engine && engines[engine]
-      ? ` (${sizes[size][language]} - ${engines[engine][language]}${carpool ? ` - ${Number.parseInt(carpool) + 1} ${persons[language]}` : ''})`
+    return size && sizes[size] && engine
+      ? ` (${sizes[size][language]}${engines[engine] ? ` - ${engines[engine][language]}` : ''}${carpool ? ` - ${Number.parseInt(carpool) + 1} ${persons[language]}` : ''})`
       : carpool
         ? ` (${Number.parseInt(carpool) + 1} ${persons[language]})`
         : ''

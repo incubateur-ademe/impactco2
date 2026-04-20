@@ -154,7 +154,7 @@ describe('getEmissionPerDistance', () => {
       },
       {
         id: 110,
-        name: 'Voiture électrique (Petite - Électrique)',
+        name: 'Voiture électrique (Petite)',
         emissions: {
           gco2e: 11.504485055630312,
           kgco2e: 0.011504485055630311,
@@ -199,7 +199,7 @@ describe('getEmissionPerDistance', () => {
       },
       {
         id: 135,
-        name: 'Compacte électrique (Moyenne - Électrique)',
+        name: 'Voiture électrique (Moyenne)',
         emissions: {
           gco2e: 12.08836005563031,
           kgco2e: 0.01208836005563031,
@@ -244,7 +244,7 @@ describe('getEmissionPerDistance', () => {
       },
       {
         id: 160,
-        name: 'Voiture électrique (Berline - Électrique)',
+        name: 'Voiture électrique (Berline)',
         emissions: {
           gco2e: 14.735260055630313,
           kgco2e: 0.014735260055630313,
@@ -289,7 +289,7 @@ describe('getEmissionPerDistance', () => {
       },
       {
         id: 185,
-        name: 'Voiture électrique (SUV - Électrique)',
+        name: 'Voiture électrique (SUV)',
         emissions: {
           gco2e: 14.112460055630311,
           kgco2e: 0.014112460055630311,
@@ -318,9 +318,9 @@ describe('getEmissionPerDistance', () => {
         id: 200,
         name: 'Voiture hybride',
         emissions: {
-          gco2e: 93.1681350556303,
-          kgco2e: 0.0931681350556303,
-          tco2e: 0.00009316813505563031,
+          gco2e: 113.4194350556303,
+          kgco2e: 0.1134194350556303,
+          tco2e: 0.00011341943505563031,
         },
       },
     ])

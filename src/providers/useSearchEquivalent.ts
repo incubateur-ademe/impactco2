@@ -1,5 +1,5 @@
 import Fuse from 'fuse.js'
-import { useEffect, useState } from 'react'
+import { useMemo } from 'react'
 import { ComputedEquivalent } from 'types/equivalent'
 import { categories } from 'data/categories'
 import { getComparisonSlug, getName } from 'utils/Equivalent/equivalent'
@@ -26,7 +26,7 @@ const config = {
   ignoreLocation: true,
 }
 
-const equivalents = computedEquivalents
+const allEquivalents = computedEquivalents
   .map((equivalent) => {
     const category = categories.find((category) => equivalent.category === category.id)
     return category && category.synonyms
@@ -46,23 +46,32 @@ export const useSearchEquivalent = (
   search: string,
   excludeEmpty?: boolean,
   category?: number,
-  emptyResults?: boolean
+  emptyResults?: boolean,
+  equivalents?: ComputedEquivalent[]
 ) => {
-  const [results, setResults] = useState<ComputedEquivalent[]>([])
-  const [fuses, setFuses] = useState<{ fuse: Fuse<ComputedEquivalent>; nonEmptyFuse: Fuse<ComputedEquivalent> }>()
-
   const {
     language,
     transport: { modes },
   } = useParamContext()
 
-  useEffect(() => {
-    const translatedEquivalents = equivalents
+  const filteredEquivalents = useMemo(() => {
+    return (equivalents || allEquivalents)
       .filter((equivalent) => {
         if (equivalent.category === 4) {
-          if (equivalent.carpool) {
-            const [slug] = equivalent.slug.split('+')
-            return modes.includes(`${slug}+1`)
+          if (equivalent.withCarpool) {
+            const infos = equivalent.slug.split('+')
+            let slug = infos[0]
+            if (equivalent.slug.startsWith('voiture-')) {
+              if (equivalent.slug.includes('hybride')) {
+                slug = `voiturehybride`
+              } else if (equivalent.slug.includes('electrique')) {
+                slug = `voitureelectrique`
+              } else {
+                slug = 'voiturethermique'
+              }
+            }
+
+            return infos[1] ? modes.includes(`${slug}+1`) : modes.includes(slug)
           }
           return modes.includes(getComparisonSlug(equivalent.slug))
         }
@@ -71,33 +80,33 @@ export const useSearchEquivalent = (
       .filter((equivalent) => !category || equivalent.category === category)
       .map((equivalent) => ({
         ...equivalent,
-        name: getName(language, equivalent, false, 1, true),
+        name: getName(language, equivalent, false, 1, true, true),
       }))
-    setFuses({
-      fuse: new Fuse([...translatedEquivalents], config),
-      nonEmptyFuse: new Fuse([...translatedEquivalents.filter((equivalent) => equivalent.value)], config),
-    })
-  }, [language, category, modes])
+  }, [language, category, modes, equivalents])
 
-  useEffect(() => {
+  const fuses = useMemo(() => {
+    return {
+      fuse: new Fuse([...filteredEquivalents], config),
+      nonEmptyFuse: new Fuse([...filteredEquivalents.filter((equivalent) => equivalent.value)], config),
+    }
+  }, [filteredEquivalents])
+
+  const results = useMemo(() => {
     if (fuses) {
       if (emptyResults && search.length === 0) {
-        setResults([])
+        return []
       } else {
-        setResults(
-          excludeEmpty
-            ? search.length > 0
-              ? fuses.nonEmptyFuse
-                  .search(search.normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
-                  .map(({ item }) => item)
-              : equivalents.filter((equivalent) => equivalent.value).sort((a, b) => (a.slug > b.slug ? 1 : -1))
-            : search.length > 0
-              ? fuses.fuse.search(search.normalize('NFD').replace(/[\u0300-\u036f]/g, '')).map(({ item }) => item)
-              : equivalents.sort((a, b) => (a.slug > b.slug ? 1 : -1))
-        )
+        return excludeEmpty
+          ? search.length > 0
+            ? fuses.nonEmptyFuse.search(search.normalize('NFD').replace(/[\u0300-\u036f]/g, '')).map(({ item }) => item)
+            : filteredEquivalents.filter((equivalent) => equivalent.value).sort((a, b) => (a.slug > b.slug ? 1 : -1))
+          : search.length > 0
+            ? fuses.fuse.search(search.normalize('NFD').replace(/[\u0300-\u036f]/g, '')).map(({ item }) => item)
+            : filteredEquivalents.sort((a, b) => (a.slug > b.slug ? 1 : -1))
       }
     }
-  }, [search, fuses, emptyResults])
+    return []
+  }, [search, fuses, emptyResults, excludeEmpty, filteredEquivalents])
 
   return results
 }

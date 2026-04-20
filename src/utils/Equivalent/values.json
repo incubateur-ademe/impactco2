@@ -255,7 +255,7 @@
   },
   "voiturehybride": {
     "category": 4,
-    "value": 133.90036331649983,
+    "value": 146.57935353389118,
     "fr": "km en ;voiture hybride",
     "en": "km by ;hybrid car",
     "es": "km en ;coche híbrido"
@@ -312,9 +312,9 @@
   "voiture-compact-electrique": {
     "category": 4,
     "value": 67.36526222954337,
-    "fr": "km en ;compacte électrique",
-    "en": "km by ;electric compact car",
-    "es": "km en ;coche compacto eléctrico"
+    "fr": "km en ;voiture électrique",
+    "en": "km by ;electric car",
+    "es": "km en ;coche eléctrico"
   },
   "voiture-compact-hybride": {
     "category": 4,
@@ -1893,7 +1893,7 @@
   },
   "magasin": {
     "category": 12,
-    "value": 7084.846370637248,
+    "value": 4812.4487375235485,
     "fr": "achat[s] en magasin",
     "en": "purchase[s] in a store",
     "es": "compra[s] en una tienda"
@@ -1907,7 +1907,7 @@
   },
   "pointrelais": {
     "category": 12,
-    "value": 2182.1182973825644,
+    "value": 1651.8921829893677,
     "fr": "livraison[s] en point de retrait",
     "en": "delivery[s] in a relay point",
     "es": "entrega[s] en un punto de relevo"
@@ -1921,7 +1921,7 @@
   },
   "clickcollect": {
     "category": 12,
-    "value": 7437.555420670236,
+    "value": 5165.157787556536,
     "fr": "Click & Collect",
     "en": "Click & Collect",
     "es": "Click & Collect"
@@ -1942,7 +1942,7 @@
   },
   "magasin2kg": {
     "category": 12,
-    "value": 7370.402762386496,
+    "value": 5098.005129272797,
     "fr": "achat[s] en magasin",
     "en": "purchase[s] in a store",
     "es": "compra[s] en una tienda"
@@ -1956,7 +1956,7 @@
   },
   "pointrelais2kg": {
     "category": 12,
-    "value": 2467.674689131812,
+    "value": 1937.4485747386157,
     "fr": "livraison[s] en point de retrait",
     "en": "delivery[s] in a relay point",
     "es": "entrega[s] en un punto de relevo"
@@ -1970,7 +1970,7 @@
   },
   "clickcollect2kg": {
     "category": 12,
-    "value": 7723.111812419484,
+    "value": 5450.7141793057845,
     "fr": "Click & Collect",
     "en": "Click & Collect",
     "es": "Click & Collect"
@@ -1991,7 +1991,7 @@
   },
   "magasin15kg": {
     "category": 12,
-    "value": 13476.069454374716,
+    "value": 11203.671821261016,
     "fr": "achat[s] en magasin",
     "en": "purchase[s] in a store",
     "es": "compra[s] en una tienda"
@@ -2005,7 +2005,7 @@
   },
   "pointrelais15kg": {
     "category": 12,
-    "value": 7684.761596466583,
+    "value": 7154.535482073386,
     "fr": "livraison[s] en point de retrait",
     "en": "delivery[s] in a relay point",
     "es": "entrega[s] en un punto de relevo"
@@ -2019,7 +2019,7 @@
   },
   "clickcollect15kg": {
     "category": 12,
-    "value": 15113.132829343296,
+    "value": 12840.735196229596,
     "fr": "Click & Collect",
     "en": "Click & Collect",
     "es": "Click & Collect"
@@ -2040,7 +2040,7 @@
   },
   "magasin30kg": {
     "category": 12,
-    "value": 20406.70038245343,
+    "value": 18134.30274933973,
     "fr": "achat[s] en magasin",
     "en": "purchase[s] in a store",
     "es": "compra[s] en una tienda"
@@ -2054,7 +2054,7 @@
   },
   "pointrelais30kg": {
     "category": 12,
-    "value": 13162.609604379979,
+    "value": 12632.383489986783,
     "fr": "livraison[s] en point de retrait",
     "en": "delivery[s] in a relay point",
     "es": "entrega[s] en un punto de relevo"
@@ -2068,7 +2068,7 @@
   },
   "clickcollect30kg": {
     "category": 12,
-    "value": 23005.352070133406,
+    "value": 20732.954437019707,
     "fr": "Click & Collect",
     "en": "Click & Collect",
     "es": "Click & Collect"

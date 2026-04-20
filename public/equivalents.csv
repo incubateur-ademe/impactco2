@@ -274,31 +274,30 @@ Avion trajet moyen à long,0.166794,Transport,avion-moyenlongcourrier,https://im
 Bus (GNV),0.1217,Transport,busgnv,https://impactco2.fr/outils/transport/busgnv
 Bus électrique,0.0217,Transport,buselectrique,https://impactco2.fr/outils/transport/buselectrique
 Bus thermique,0.12242,Transport,busthermique,https://impactco2.fr/outils/transport/busthermique
-Compacte électrique (Moyenne - Électrique),0.06736526222954338,Transport,voiture-compact-electrique,https://impactco2.fr/outils/transport/voiture-compact-electrique
 Covoiturage électrique (2 personnes),33.68263111477168,Transport,voitureelectrique+1,https://impactco2.fr/outils/transport/voitureelectrique+1
 Covoiturage électrique (3 personnes),22.45508740984779,Transport,voitureelectrique+2,https://impactco2.fr/outils/transport/voitureelectrique+2
 Covoiturage électrique (4 personnes),16.84131555738584,Transport,voitureelectrique+3,https://impactco2.fr/outils/transport/voitureelectrique+3
 Covoiturage électrique (5 personnes),13.473052445908673,Transport,voitureelectrique+4,https://impactco2.fr/outils/transport/voitureelectrique+4
-Covoiturage électrique (Berline - Électrique - 2 personnes),45.35716807129341,Transport,voiture-berline-electrique+1,https://impactco2.fr/outils/transport/voiture-berline-electrique+1
-Covoiturage électrique (Berline - Électrique - 3 personnes),30.23811204752894,Transport,voiture-berline-electrique+2,https://impactco2.fr/outils/transport/voiture-berline-electrique+2
-Covoiturage électrique (Berline - Électrique - 4 personnes),22.678584035646704,Transport,voiture-berline-electrique+3,https://impactco2.fr/outils/transport/voiture-berline-electrique+3
-Covoiturage électrique (Berline - Électrique - 5 personnes),18.142867228517364,Transport,voiture-berline-electrique+4,https://impactco2.fr/outils/transport/voiture-berline-electrique+4
-Covoiturage électrique (Moyenne - Électrique - 2 personnes),33.68263111477169,Transport,voiture-compact-electrique+1,https://impactco2.fr/outils/transport/voiture-compact-electrique+1
-Covoiturage électrique (Moyenne - Électrique - 3 personnes),22.455087409847792,Transport,voiture-compact-electrique+2,https://impactco2.fr/outils/transport/voiture-compact-electrique+2
-Covoiturage électrique (Moyenne - Électrique - 4 personnes),16.841315557385844,Transport,voiture-compact-electrique+3,https://impactco2.fr/outils/transport/voiture-compact-electrique+3
-Covoiturage électrique (Moyenne - Électrique - 5 personnes),13.473052445908674,Transport,voiture-compact-electrique+4,https://impactco2.fr/outils/transport/voiture-compact-electrique+4
-Covoiturage électrique (Petite - Électrique - 2 personnes),28.79680774520647,Transport,voiture-citadine-electrique+1,https://impactco2.fr/outils/transport/voiture-citadine-electrique+1
-Covoiturage électrique (Petite - Électrique - 3 personnes),19.197871830137647,Transport,voiture-citadine-electrique+2,https://impactco2.fr/outils/transport/voiture-citadine-electrique+2
-Covoiturage électrique (Petite - Électrique - 4 personnes),14.398403872603234,Transport,voiture-citadine-electrique+3,https://impactco2.fr/outils/transport/voiture-citadine-electrique+3
-Covoiturage électrique (Petite - Électrique - 5 personnes),11.518723098082587,Transport,voiture-citadine-electrique+4,https://impactco2.fr/outils/transport/voiture-citadine-electrique+4
-Covoiturage électrique (SUV - Électrique - 2 personnes),47.17851263651082,Transport,voiture-grandeberline-electrique+1,https://impactco2.fr/outils/transport/voiture-grandeberline-electrique+1
-Covoiturage électrique (SUV - Électrique - 3 personnes),31.452341757673878,Transport,voiture-grandeberline-electrique+2,https://impactco2.fr/outils/transport/voiture-grandeberline-electrique+2
-Covoiturage électrique (SUV - Électrique - 4 personnes),23.58925631825541,Transport,voiture-grandeberline-electrique+3,https://impactco2.fr/outils/transport/voiture-grandeberline-electrique+3
-Covoiturage électrique (SUV - Électrique - 5 personnes),18.871405054604327,Transport,voiture-grandeberline-electrique+4,https://impactco2.fr/outils/transport/voiture-grandeberline-electrique+4
-Covoiturage hybride (2 personnes),66.95018165824992,Transport,voiturehybride+1,https://impactco2.fr/outils/transport/voiturehybride+1
-Covoiturage hybride (3 personnes),44.633454438833276,Transport,voiturehybride+2,https://impactco2.fr/outils/transport/voiturehybride+2
-Covoiturage hybride (4 personnes),33.47509082912496,Transport,voiturehybride+3,https://impactco2.fr/outils/transport/voiturehybride+3
-Covoiturage hybride (5 personnes),26.78007266329997,Transport,voiturehybride+4,https://impactco2.fr/outils/transport/voiturehybride+4
+Covoiturage électrique (Berline - 2 personnes),45.35716807129341,Transport,voiture-berline-electrique+1,https://impactco2.fr/outils/transport/voiture-berline-electrique+1
+Covoiturage électrique (Berline - 3 personnes),30.23811204752894,Transport,voiture-berline-electrique+2,https://impactco2.fr/outils/transport/voiture-berline-electrique+2
+Covoiturage électrique (Berline - 4 personnes),22.678584035646704,Transport,voiture-berline-electrique+3,https://impactco2.fr/outils/transport/voiture-berline-electrique+3
+Covoiturage électrique (Berline - 5 personnes),18.142867228517364,Transport,voiture-berline-electrique+4,https://impactco2.fr/outils/transport/voiture-berline-electrique+4
+Covoiturage électrique (Moyenne - 2 personnes),33.68263111477169,Transport,voiture-compact-electrique+1,https://impactco2.fr/outils/transport/voiture-compact-electrique+1
+Covoiturage électrique (Moyenne - 3 personnes),22.455087409847792,Transport,voiture-compact-electrique+2,https://impactco2.fr/outils/transport/voiture-compact-electrique+2
+Covoiturage électrique (Moyenne - 4 personnes),16.841315557385844,Transport,voiture-compact-electrique+3,https://impactco2.fr/outils/transport/voiture-compact-electrique+3
+Covoiturage électrique (Moyenne - 5 personnes),13.473052445908674,Transport,voiture-compact-electrique+4,https://impactco2.fr/outils/transport/voiture-compact-electrique+4
+Covoiturage électrique (Petite - 2 personnes),28.79680774520647,Transport,voiture-citadine-electrique+1,https://impactco2.fr/outils/transport/voiture-citadine-electrique+1
+Covoiturage électrique (Petite - 3 personnes),19.197871830137647,Transport,voiture-citadine-electrique+2,https://impactco2.fr/outils/transport/voiture-citadine-electrique+2
+Covoiturage électrique (Petite - 4 personnes),14.398403872603234,Transport,voiture-citadine-electrique+3,https://impactco2.fr/outils/transport/voiture-citadine-electrique+3
+Covoiturage électrique (Petite - 5 personnes),11.518723098082587,Transport,voiture-citadine-electrique+4,https://impactco2.fr/outils/transport/voiture-citadine-electrique+4
+Covoiturage électrique (SUV - 2 personnes),47.17851263651082,Transport,voiture-grandeberline-electrique+1,https://impactco2.fr/outils/transport/voiture-grandeberline-electrique+1
+Covoiturage électrique (SUV - 3 personnes),31.452341757673878,Transport,voiture-grandeberline-electrique+2,https://impactco2.fr/outils/transport/voiture-grandeberline-electrique+2
+Covoiturage électrique (SUV - 4 personnes),23.58925631825541,Transport,voiture-grandeberline-electrique+3,https://impactco2.fr/outils/transport/voiture-grandeberline-electrique+3
+Covoiturage électrique (SUV - 5 personnes),18.871405054604327,Transport,voiture-grandeberline-electrique+4,https://impactco2.fr/outils/transport/voiture-grandeberline-electrique+4
+Covoiturage hybride (2 personnes),73.28967676694559,Transport,voiturehybride+1,https://impactco2.fr/outils/transport/voiturehybride+1
+Covoiturage hybride (3 personnes),48.85978451129706,Transport,voiturehybride+2,https://impactco2.fr/outils/transport/voiturehybride+2
+Covoiturage hybride (4 personnes),36.644838383472795,Transport,voiturehybride+3,https://impactco2.fr/outils/transport/voiturehybride+3
+Covoiturage hybride (5 personnes),29.315870706778234,Transport,voiturehybride+4,https://impactco2.fr/outils/transport/voiturehybride+4
 Covoiturage hybride (Berline - Non rechargeable - 2 personnes),85.4255082886847,Transport,voiture-berline-hybride+1,https://impactco2.fr/outils/transport/voiture-berline-hybride+1
 Covoiturage hybride (Berline - Non rechargeable - 3 personnes),56.95033885912313,Transport,voiture-berline-hybride+2,https://impactco2.fr/outils/transport/voiture-berline-hybride+2
 Covoiturage hybride (Berline - Non rechargeable - 4 personnes),42.71275414434235,Transport,voiture-berline-hybride+3,https://impactco2.fr/outils/transport/voiture-berline-hybride+3
@@ -380,10 +379,11 @@ Trottinette à assistance électrique,0.0249,Transport,trottinette,https://impac
 Vélo à assistance électrique,0.010950000000000001,Transport,veloelectrique,https://impactco2.fr/outils/transport/veloelectrique
 Vélo mécanique,0.00017,Transport,velo,https://impactco2.fr/outils/transport/velo
 Voiture électrique,0.06736526222954337,Transport,voitureelectrique,https://impactco2.fr/outils/transport/voitureelectrique
-Voiture électrique (Berline - Électrique),0.09071433614258681,Transport,voiture-berline-electrique,https://impactco2.fr/outils/transport/voiture-berline-electrique
-Voiture électrique (Petite - Électrique),0.05759361549041293,Transport,voiture-citadine-electrique,https://impactco2.fr/outils/transport/voiture-citadine-electrique
-Voiture électrique (SUV - Électrique),0.09435702527302163,Transport,voiture-grandeberline-electrique,https://impactco2.fr/outils/transport/voiture-grandeberline-electrique
-Voiture hybride,0.13390036331649985,Transport,voiturehybride,https://impactco2.fr/outils/transport/voiturehybride
+Voiture électrique (Berline),0.09071433614258681,Transport,voiture-berline-electrique,https://impactco2.fr/outils/transport/voiture-berline-electrique
+Voiture électrique (Moyenne),0.06736526222954338,Transport,voiture-compact-electrique,https://impactco2.fr/outils/transport/voiture-compact-electrique
+Voiture électrique (Petite),0.05759361549041293,Transport,voiture-citadine-electrique,https://impactco2.fr/outils/transport/voiture-citadine-electrique
+Voiture électrique (SUV),0.09435702527302163,Transport,voiture-grandeberline-electrique,https://impactco2.fr/outils/transport/voiture-grandeberline-electrique
+Voiture hybride,0.14657935353389118,Transport,voiturehybride,https://impactco2.fr/outils/transport/voiturehybride
 Voiture hybride (Berline - Non rechargeable),0.1708510165773694,Transport,voiture-berline-hybride,https://impactco2.fr/outils/transport/voiture-berline-hybride
 Voiture hybride (Berline - Rechargeable),0.16446473260997813,Transport,voiture-berline-hybriderechargeable,https://impactco2.fr/outils/transport/voiture-berline-hybriderechargeable
 Voiture hybride (Moyenne - Non rechargeable),0.14657935353389115,Transport,voiture-compact-hybride,https://impactco2.fr/outils/transport/voiture-compact-hybride

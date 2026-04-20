@@ -22,8 +22,9 @@ const Carpool = ({
   const t = useTranslations('category-simulator')
   const tVoiture = useTranslations('voiture')
   const params = useParamContext()
-  const slug = carpoolValue ? `covoiturage${equivalent.slug.replace('voiture', '')}` : equivalent.slug
-  const carInfos = params.transport.carInfos[slug]
+  const [slug] = equivalent.slug.split('+')
+  const carInfos = params.transport.carInfos[carpoolValue ? `covoiturage${slug.replace('voiture', '')}` : slug]
+
   return (
     <div className={styles.carpool}>
       <div className={styles.triangle} />
@@ -93,10 +94,10 @@ const Carpool = ({
           setValue={(value) => {
             track(
               `Transport ${type === 'distance' ? 'distance' : 'itinéraire'}`,
-              `Covoiturage ${equivalent.slug}`,
+              `Covoiturage ${slug}`,
               value.toString()
             )
-            params[type].setCarpool({ ...params[type].carpool, [equivalent.slug]: value - 1 })
+            params[type].setCarpool({ ...params[type].carpool, [slug]: value - 1 })
           }}
           min={2}
           max={5}
