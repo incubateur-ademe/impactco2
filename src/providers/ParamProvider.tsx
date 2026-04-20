@@ -443,6 +443,12 @@ export function ParamProvider({ children }: { children: ReactNode }) {
     if (searchParams.get('modes')) {
       const modes = (searchParams.get('modes') as string).replace(/ /g, '+').split(',')
       if (modes.length > 0) {
+        if (modes.includes('voiturethermique') && modes.includes('voitureelectrique')) {
+          modes.push('voiturehybride')
+        }
+        if (modes.includes('voiturethermique+1') && modes.includes('voitureelectrique+1')) {
+          modes.push('voiturehybride+1')
+        }
         setModes(modes)
         if (!searchParams.get('comparison')) {
           if (modes.length === 2) {
