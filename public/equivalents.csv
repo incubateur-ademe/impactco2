@@ -43,12 +43,16 @@ Pois chiches,0.8985430000000001,Alimentation,poischiches,https://impactco2.fr/ou
 Pomme de terre nouvelle,0.7062605000000001,Alimentation,pommedeterre,https://impactco2.fr/outils/alimentation/pommedeterre
 Porc,6.671304949999999,Alimentation,porc,https://impactco2.fr/outils/alimentation/porc
 Poulet,4.56043,Alimentation,poulet,https://impactco2.fr/outils/alimentation/poulet
-Repas avec du boeuf,7.26,Alimentation,repasavecduboeuf,https://impactco2.fr/outils/alimentation/repasavecduboeuf
-Repas avec du poisson blanc,1.98,Alimentation,repasavecdupoissonblanc,https://impactco2.fr/outils/alimentation/repasavecdupoissonblanc
-Repas avec du poisson gras,1.11,Alimentation,repasavecdupoissongras,https://impactco2.fr/outils/alimentation/repasavecdupoissongras
-Repas avec du poulet,1.58,Alimentation,repasavecdupoulet,https://impactco2.fr/outils/alimentation/repasavecdupoulet
-Repas végétalien,0.39,Alimentation,repasvegetalien,https://impactco2.fr/outils/alimentation/repasvegetalien
-Repas végétarien,0.51,Alimentation,repasvegetarien,https://impactco2.fr/outils/alimentation/repasvegetarien
+Repas avec du boeuf,4.97,Alimentation,repasavecduboeuf,https://impactco2.fr/outils/alimentation/repasavecduboeuf
+Repas avec du cabillaud,2.43,Alimentation,repasavecdupoissonblanc,https://impactco2.fr/outils/alimentation/repasavecdupoissonblanc
+Repas avec du lieu noir,1.87,Alimentation,repasavecdulieunoir,https://impactco2.fr/outils/alimentation/repasavecdulieunoir
+Repas avec du porc,1.65,Alimentation,repasavecduporc,https://impactco2.fr/outils/alimentation/repasavecduporc
+Repas avec du poulet,1.46,Alimentation,repasavecdupoulet,https://impactco2.fr/outils/alimentation/repasavecdupoulet
+Repas avec du saumon,1.46,Alimentation,repasavecdupoissongras,https://impactco2.fr/outils/alimentation/repasavecdupoissongras
+Repas avec du thon à l'huile,1.6,Alimentation,repasavecduthon,https://impactco2.fr/outils/alimentation/repasavecduthon
+Repas avec du veau,4.12,Alimentation,repasavecduveau,https://impactco2.fr/outils/alimentation/repasavecduveau
+Repas végétalien,0.54,Alimentation,repasvegetalien,https://impactco2.fr/outils/alimentation/repasvegetalien
+Repas végétarien,0.85,Alimentation,repasvegetarien,https://impactco2.fr/outils/alimentation/repasvegetarien
 Riz,2.01458575,Alimentation,riz,https://impactco2.fr/outils/alimentation/riz
 Rocher au chocolat,10.521899999999999,Alimentation,boucheechocolat,https://impactco2.fr/outils/alimentation/boucheechocolat
 Sardines,2.2764877,Alimentation,sardines,https://impactco2.fr/outils/alimentation/sardines
@@ -101,14 +105,14 @@ Nuit dans une résidence secondaire,7,Cas pratiques,residencesecondaire,https://
 Objectif citoyen pour 2050,2000,Cas pratiques,2050,https://impactco2.fr/outils/caspratiques/2050
 Remplissage de piscine,7.54,Cas pratiques,piscine,https://impactco2.fr/outils/caspratiques/piscine
 Tour de la terre en voiture,8704,Cas pratiques,terre-voiture,https://impactco2.fr/outils/caspratiques/terre-voiture
-Chaudière à bûches,8.59152478057979,Chauffage,chaudiereabois,https://impactco2.fr/outils/chauffage/chaudiereabois
+Chaudière à bûches,5.699613154471493,Chauffage,chaudiereabois,https://impactco2.fr/outils/chauffage/chaudiereabois
 Chaudière à gaz,17.837078297821858,Chauffage,chauffagegaz,https://impactco2.fr/outils/chauffage/chauffagegaz
-Chaudière à granulés,5.976712890838114,Chauffage,chaudiereagranule,https://impactco2.fr/outils/chauffage/chaudiereagranule
+Chaudière à granulés,3.964948281371474,Chauffage,chaudiereagranule,https://impactco2.fr/outils/chauffage/chaudiereagranule
 Chaudière au fioul,34.97117557474335,Chauffage,chauffagefioul,https://impactco2.fr/outils/chauffage/chauffagefioul
-Chaudière ou convecteur électrique,2.40969157390629,Chauffage,chauffageelectrique,https://impactco2.fr/outils/chauffage/chauffageelectrique
+Chaudière ou convecteur électrique,2.144625500776598,Chauffage,chauffageelectrique,https://impactco2.fr/outils/chauffage/chauffageelectrique
 Poêle à bûches,8.505622429730291,Chauffage,poeleabois,https://impactco2.fr/outils/chauffage/poeleabois
 Poêle à granulés,5.91695473372542,Chauffage,poeleagranule,https://impactco2.fr/outils/chauffage/poeleagranule
-Pompe à chaleur,1.6333840880841795,Chauffage,pompeachaleur,https://impactco2.fr/outils/chauffage/pompeachaleur
+Pompe à chaleur,1.2087042251822928,Chauffage,pompeachaleur,https://impactco2.fr/outils/chauffage/pompeachaleur
 Réseau de chaleur,11.077353589467888,Chauffage,reseaudechaleur,https://impactco2.fr/outils/chauffage/reseaudechaleur
 Aspirateur,73.43,Électroménager,aspirateur,https://impactco2.fr/outils/electromenager/aspirateur
 Bouilloire,37.80339914,Électroménager,bouilloire,https://impactco2.fr/outils/electromenager/bouilloire
@@ -167,7 +171,7 @@ Laitue,0.868145,Fruits et légumes,laitue,https://impactco2.fr/outils/fruitsetle
 Mâche,0.868145,Fruits et légumes,mache,https://impactco2.fr/outils/fruitsetlegumes/mache
 Maïs,0.568793,Fruits et légumes,mais,https://impactco2.fr/outils/fruitsetlegumes/mais
 Mandarine,0.4684038,Fruits et légumes,mandarine,https://impactco2.fr/outils/fruitsetlegumes/mandarine
-Mangue (importée par avion),11.655508000000001,Fruits et légumes,mangue,https://impactco2.fr/outils/fruitsetlegumes/mangue
+Mangue (importée par avion),11.655508,Fruits et légumes,mangue,https://impactco2.fr/outils/fruitsetlegumes/mangue
 Mangue (importée par bateau),0.727508,Fruits et légumes,manguebateau,https://impactco2.fr/outils/fruitsetlegumes/manguebateau
 Melon,0.978343,Fruits et légumes,melon,https://impactco2.fr/outils/fruitsetlegumes/melon
 Mûre,1.2475079999999998,Fruits et légumes,mure,https://impactco2.fr/outils/fruitsetlegumes/mure
@@ -187,7 +191,7 @@ Petit pois,0.701761,Fruits et légumes,petitpois,https://impactco2.fr/outils/fru
 Poire,0.387319,Fruits et légumes,poire,https://impactco2.fr/outils/fruitsetlegumes/poire
 Poireau,0.6113778000000001,Fruits et légumes,poireau,https://impactco2.fr/outils/fruitsetlegumes/poireau
 Poivron,0.7154,Fruits et légumes,poivron,https://impactco2.fr/outils/fruitsetlegumes/poivron
-Pomme,0.40819489999999997,Fruits et légumes,pomme,https://impactco2.fr/outils/fruitsetlegumes/pomme
+Pomme,0.4081949,Fruits et légumes,pomme,https://impactco2.fr/outils/fruitsetlegumes/pomme
 Potiron,0.6382329999999999,Fruits et légumes,potiron,https://impactco2.fr/outils/fruitsetlegumes/potiron
 Prune,1.0345215,Fruits et légumes,prune,https://impactco2.fr/outils/fruitsetlegumes/prune
 Radis,0.3847324,Fruits et légumes,radis,https://impactco2.fr/outils/fruitsetlegumes/radis
@@ -216,34 +220,34 @@ T-shirt en coton,6.433790554863734,Habillement,tshirtencoton,https://impactco2.f
 T-shirt en polyester,6.211492878123854,Habillement,tshirtenpolyester,https://impactco2.fr/outils/habillement/tshirtenpolyester
 Veste imperméable,41.14715954637288,Habillement,vesteimpermeable,https://impactco2.fr/outils/habillement/vesteimpermeable
 Veste simili-cuir,26.825820363170223,Habillement,vestesimilicuir,https://impactco2.fr/outils/habillement/vestesimilicuir
-"Achat en magasin (15km en voiture, colis d'1kg)",6.84,Livraison,magasin,https://impactco2.fr/outils/livraison/magasin
-"Achat en magasin (15km en voiture, colis de 15kg)",13.47607,Livraison,magasin15kg,https://impactco2.fr/outils/livraison/magasin15kg
-"Achat en magasin (15km en voiture, colis de 2kg)",7.3704,Livraison,magasin2kg,https://impactco2.fr/outils/livraison/magasin2kg
-"Achat en magasin (15km en voiture, colis de 30kg)",20.4067,Livraison,magasin30kg,https://impactco2.fr/outils/livraison/magasin30kg
-"Achat en magasin (à pied, colis d'1kg)",0.31,Livraison,magasindouce,https://impactco2.fr/outils/livraison/magasindouce
-"Achat en magasin (à pied, colis de 15kg)",6.93607,Livraison,magasindouce15kg,https://impactco2.fr/outils/livraison/magasindouce15kg
-"Achat en magasin (à pied, colis de 2kg)",0.8304,Livraison,magasindouce2kg,https://impactco2.fr/outils/livraison/magasindouce2kg
-"Achat en magasin (à pied, colis de 30kg)",13.866700000000002,Livraison,magasindouce30kg,https://impactco2.fr/outils/livraison/magasindouce30kg
-"Click & Collect (15km en voiture, colis d'1kg)",7.047,Livraison,clickcollect,https://impactco2.fr/outils/livraison/clickcollect
-"Click & Collect (15km en voiture, colis de 15kg)",15.11313,Livraison,clickcollect15kg,https://impactco2.fr/outils/livraison/clickcollect15kg
-"Click & Collect (15km en voiture, colis de 2kg)",7.723109999999999,Livraison,clickcollect2kg,https://impactco2.fr/outils/livraison/clickcollect2kg
-"Click & Collect (15km en voiture, colis de 30kg)",23.00535,Livraison,clickcollect30kg,https://impactco2.fr/outils/livraison/clickcollect30kg
-"Click & Collect (à pied, colis d'1kg)",0.517,Livraison,clickcollectdouce,https://impactco2.fr/outils/livraison/clickcollectdouce
-"Click & Collect (à pied, colis de 15kg)",8.573129999999999,Livraison,clickcollectdouce15kg,https://impactco2.fr/outils/livraison/clickcollectdouce15kg
-"Click & Collect (à pied, colis de 2kg)",1.1831099999999999,Livraison,clickcollectdouce2kg,https://impactco2.fr/outils/livraison/clickcollectdouce2kg
-"Click & Collect (à pied, colis de 30kg)",16.465349999999997,Livraison,clickcollectdouce30kg,https://impactco2.fr/outils/livraison/clickcollectdouce30kg
-Livraison à domicile (colis d'1kg),0.576,Livraison,livraisondomicile,https://impactco2.fr/outils/livraison/livraisondomicile
-Livraison à domicile (colis de 15kg),7.15468,Livraison,livraisondomicile15kg,https://impactco2.fr/outils/livraison/livraisondomicile15kg
-Livraison à domicile (colis de 2kg),1.07498,Livraison,livraisondomicile2kg,https://impactco2.fr/outils/livraison/livraisondomicile2kg
-Livraison à domicile (colis de 30kg),13.62845,Livraison,livraisondomicile30kg,https://impactco2.fr/outils/livraison/livraisondomicile30kg
-"Livraison en point de retrait (3,5km en voiture, colis d'1kg)",2.03,Livraison,pointrelais,https://impactco2.fr/outils/livraison/pointrelais
-"Livraison en point de retrait (3,5km en voiture, colis de 15kg)",7.68476,Livraison,pointrelais15kg,https://impactco2.fr/outils/livraison/pointrelais15kg
-"Livraison en point de retrait (3,5km en voiture, colis de 2kg)",2.46767,Livraison,pointrelais2kg,https://impactco2.fr/outils/livraison/pointrelais2kg
-"Livraison en point de retrait (3,5km en voiture, colis de 30kg)",13.16261,Livraison,pointrelais30kg,https://impactco2.fr/outils/livraison/pointrelais30kg
-"Livraison en point de retrait (à pied, colis d'1kg)",0.51,Livraison,pointrelaisdouce,https://impactco2.fr/outils/livraison/pointrelaisdouce
-"Livraison en point de retrait (à pied, colis de 15kg)",6.15876,Livraison,pointrelaisdouce15kg,https://impactco2.fr/outils/livraison/pointrelaisdouce15kg
-"Livraison en point de retrait (à pied, colis de 2kg)",0.94167,Livraison,pointrelaisdouce2kg,https://impactco2.fr/outils/livraison/pointrelaisdouce2kg
-"Livraison en point de retrait (à pied, colis de 30kg)",11.636610000000001,Livraison,pointrelaisdouce30kg,https://impactco2.fr/outils/livraison/pointrelaisdouce30kg
+"Achat en magasin (15km en voiture, colis d'1kg)",7.084846370637248,Livraison,magasin,https://impactco2.fr/outils/livraison/magasin
+"Achat en magasin (15km en voiture, colis de 15kg)",13.476069454374716,Livraison,magasin15kg,https://impactco2.fr/outils/livraison/magasin15kg
+"Achat en magasin (15km en voiture, colis de 2kg)",7.370402762386496,Livraison,magasin2kg,https://impactco2.fr/outils/livraison/magasin2kg
+"Achat en magasin (15km en voiture, colis de 30kg)",20.40670038245343,Livraison,magasin30kg,https://impactco2.fr/outils/livraison/magasin30kg
+"Achat en magasin (à pied, colis d'1kg)",0.544846370637248,Livraison,magasindouce,https://impactco2.fr/outils/livraison/magasindouce
+"Achat en magasin (à pied, colis de 15kg)",6.9360694543747154,Livraison,magasindouce15kg,https://impactco2.fr/outils/livraison/magasindouce15kg
+"Achat en magasin (à pied, colis de 2kg)",0.8304027623864958,Livraison,magasindouce2kg,https://impactco2.fr/outils/livraison/magasindouce2kg
+"Achat en magasin (à pied, colis de 30kg)",13.86670038245343,Livraison,magasindouce30kg,https://impactco2.fr/outils/livraison/magasindouce30kg
+"Click & Collect (15km en voiture, colis d'1kg)",7.437555420670236,Livraison,clickcollect,https://impactco2.fr/outils/livraison/clickcollect
+"Click & Collect (15km en voiture, colis de 15kg)",15.113132829343296,Livraison,clickcollect15kg,https://impactco2.fr/outils/livraison/clickcollect15kg
+"Click & Collect (15km en voiture, colis de 2kg)",7.723111812419484,Livraison,clickcollect2kg,https://impactco2.fr/outils/livraison/clickcollect2kg
+"Click & Collect (15km en voiture, colis de 30kg)",23.005352070133405,Livraison,clickcollect30kg,https://impactco2.fr/outils/livraison/clickcollect30kg
+"Click & Collect (à pied, colis d'1kg)",0.8975554206702356,Livraison,clickcollectdouce,https://impactco2.fr/outils/livraison/clickcollectdouce
+"Click & Collect (à pied, colis de 15kg)",8.573132829343296,Livraison,clickcollectdouce15kg,https://impactco2.fr/outils/livraison/clickcollectdouce15kg
+"Click & Collect (à pied, colis de 2kg)",1.1831118124194835,Livraison,clickcollectdouce2kg,https://impactco2.fr/outils/livraison/clickcollectdouce2kg
+"Click & Collect (à pied, colis de 30kg)",16.465352070133406,Livraison,clickcollectdouce30kg,https://impactco2.fr/outils/livraison/clickcollectdouce30kg
+Livraison à domicile (colis d'1kg),0.7220005148152214,Livraison,livraisondomicile,https://impactco2.fr/outils/livraison/livraisondomicile
+Livraison à domicile (colis de 15kg),7.154681241518084,Livraison,livraisondomicile15kg,https://impactco2.fr/outils/livraison/livraisondomicile15kg
+Livraison à domicile (colis de 2kg),1.0749764007094549,Livraison,livraisondomicile2kg,https://impactco2.fr/outils/livraison/livraisondomicile2kg
+Livraison à domicile (colis de 30kg),13.628448894482979,Livraison,livraisondomicile30kg,https://impactco2.fr/outils/livraison/livraisondomicile30kg
+"Livraison en point de retrait (3,5km en voiture, colis d'1kg)",2.1821182973825644,Livraison,pointrelais,https://impactco2.fr/outils/livraison/pointrelais
+"Livraison en point de retrait (3,5km en voiture, colis de 15kg)",7.684761596466583,Livraison,pointrelais15kg,https://impactco2.fr/outils/livraison/pointrelais15kg
+"Livraison en point de retrait (3,5km en voiture, colis de 2kg)",2.467674689131812,Livraison,pointrelais2kg,https://impactco2.fr/outils/livraison/pointrelais2kg
+"Livraison en point de retrait (3,5km en voiture, colis de 30kg)",13.162609604379979,Livraison,pointrelais30kg,https://impactco2.fr/outils/livraison/pointrelais30kg
+"Livraison en point de retrait (à pied, colis d'1kg)",0.6561182973825643,Livraison,pointrelaisdouce,https://impactco2.fr/outils/livraison/pointrelaisdouce
+"Livraison en point de retrait (à pied, colis de 15kg)",6.158761596466583,Livraison,pointrelaisdouce15kg,https://impactco2.fr/outils/livraison/pointrelaisdouce15kg
+"Livraison en point de retrait (à pied, colis de 2kg)",0.9416746891318122,Livraison,pointrelaisdouce2kg,https://impactco2.fr/outils/livraison/pointrelaisdouce2kg
+"Livraison en point de retrait (à pied, colis de 30kg)",11.636609604379979,Livraison,pointrelaisdouce30kg,https://impactco2.fr/outils/livraison/pointrelaisdouce30kg
 Armoire,906.88,Mobilier,armoire,https://impactco2.fr/outils/mobilier/armoire
 Canapé convertible,197.5,Mobilier,canapeconvertible,https://impactco2.fr/outils/mobilier/canapeconvertible
 Canapé en textile,179.1,Mobilier,canapetextile,https://impactco2.fr/outils/mobilier/canapetextile
@@ -261,7 +265,7 @@ Enceinte connectée,26.183049999999998,Numérique,enceintebluetooth,https://impa
 Ordinateur fixe sans écran (particulier),300.37508,Numérique,ordinateurfixeparticulier,https://impactco2.fr/outils/numerique/ordinateurfixeparticulier
 Ordinateur fixe sans écran (professionnel),259.19762,Numérique,ordinateurfixeprofessionnel,https://impactco2.fr/outils/numerique/ordinateurfixeprofessionnel
 Ordinateur portable,192.62004125,Numérique,ordinateurportable,https://impactco2.fr/outils/numerique/ordinateurportable
-Smartphone,80.155643125,Numérique,smartphone,https://impactco2.fr/outils/numerique/smartphone
+Smartphone,80.155343125,Numérique,smartphone,https://impactco2.fr/outils/numerique/smartphone
 SSD externe,135.19041750000002,Numérique,ssd,https://impactco2.fr/outils/numerique/ssd
 Tablette,87.135525,Numérique,tabletteclassique,https://impactco2.fr/outils/numerique/tabletteclassique
 Téléphone basique,23.400000000000002,Numérique,telephonebasique,https://impactco2.fr/outils/numerique/telephonebasique
