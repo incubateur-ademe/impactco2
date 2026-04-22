@@ -249,7 +249,7 @@
       "header": "Calcular el impacto de carbono de tu viaje en <co2e>CO₂e</co2e> y <parpersonne>por persona</parpersonne>",
       "start": "Salida",
       "end": "Llegada",
-      "empty": "Por ejemplo, la cantidad de kg CO2e emitidos en un viaje de 100 km es..."
+      "empty": "Por ejemplo, la cantidad de kg CO₂e emitidos en un viaje de 100 km es..."
     },
     "teletravail": {
       "start": "Lugar de residencia",
@@ -481,7 +481,7 @@
         "camping": "Incluye la construcción y el consumo de energía de la infraestructura (duchas, instalaciones sanitarias e iluminación).",
         "location": "Incluye las emisiones relacionadas con el consumo de energía (calefacción, electricidad, agua caliente), la infraestructura (construcción) y los servicios de mantenimiento.",
         "residencesecondaire": "Incluye las emisiones relacionadas con el consumo de energía (calefacción, electricidad, agua caliente), la infraestructura (construcción) y los servicios de mantenimiento.",
-        "2050": "Un francés emite de media casi 9,3 toneladas de CO2 al año. Para limitar el cambio climático, es esencial reducir estas emisiones y alcanzar un objetivo máximo de 2 toneladas de CO2e por persona y año para 2050.",
+        "2050": "Un francés emite de media casi 9,3 toneladas de CO2 al año. Para limitar el cambio climático, es esencial reducir estas emisiones y alcanzar un objetivo máximo de 2 toneladas de CO₂e por persona y año para 2050.",
         "magasin": "Para un paquete de un kilo, viajes en coche.",
         "magasindouce": "Para un paquete de un kilo, caminando.",
         "pointrelais": "Para un paquete de un kilo, viajes en coche.",
@@ -519,12 +519,12 @@
         "aviationcivileenfrance": "Promedio de emisiones anuales de 2013 a 2024 en vuelos domésticos y vuelos internacionales con salida desde Francia.",
         "agricoleenfrancejour": "Emisiones anuales promedio de la agricultura de 2013 a 2024 (79 MT de CO₂e) reportadas diariamente. El uso del suelo, el cambio de uso del suelo y la silvicultura no se incluyen en el alcance.",
         "chauffageenfrancejour": "Promedio de emisiones anuales relacionadas con calefacción, agua caliente sanitaria y cocción de 2013 a 2024 (43,73 Mt CO2 e), reportado por día.",
-        "foretenfrancejour": "Absorción inventariada en 2024 (51,1 Mt CO2e), reportada por día.",
-        "climatisationenfrancejour": "Emisiones inventariadas en 2024 (1,196 Mt CO2e), reportadas por día.",
+        "foretenfrancejour": "Absorción inventariada en 2024 (51,1 Mt CO₂e), reportada por día.",
+        "climatisationenfrancejour": "Emisiones inventariadas en 2024 (1,196 Mt CO₂e), reportadas por día.",
         "voiturefrancaiseheure": "Promedio de emisiones anuales de automóviles particulares térmicos de 2013 a 2024 (70,7 Mt CO2 e) reportado por hora.",
         "numeriqueenfrancejour": "Emisiones anuales en 2022 relacionadas con la fabricación, distribución, uso y fin de vida útil de dispositivos, reportadas por día.",
         "traitementdechetsjour": "Promedio de emisiones anuales relacionadas con residuos y quema doméstica y aguas residuales de 2013 a 2024 (1,89 Mt CO2 e), reportado por día.",
-        "trainenfrancejour": "Promedio de emisiones anuales de trenes de 2013 a 2024 para transportar personas y mercancías (0,43 MT CO2e) reportado por día",
+        "trainenfrancejour": "Promedio de emisiones anuales de trenes de 2013 a 2024 para transportar personas y mercancías (0,43 MT CO₂e) reportado por día",
         "datacenterjour": "Campus PAR1 en Nozay, que agrupa 23 centros de datos, se extiende por 110 hectáreas y tiene una potencia de 250 MW. Consumo eléctrico de 1,3 TWh/año, reportado según el mix eléctrico de 2024.",
         "avion-johannesburg-paris-rugby": "Para el Mundial de 2023, viaje de una delegación de 45 personas (33 jugadores y 12 miembros del personal) en avión de larga distancia, sobre una distancia total recorrida de 17.462 kilómetros.",
         "maisonneuve": "Construcción de una casa nueva convencional de 130 m² habitables - caso de viviendas en San Pedro y Miquelón",
@@ -550,7 +550,17 @@
         "voiture-grandeberline-hybriderechargeable": "SUV - Enchufable",
         "voiturethermique": "Mediana - Diésel",
         "voitureelectrique": "Mediana",
-        "voiturehybride": "Mediana - No recargable"
+        "voiturehybride": "Mediana - No recargable",
+        "repasavecduboeuf": "Bistec de res (4,34 kg CO₂e), verduras variadas (0,24 kg CO₂e), aceite de oliva virgen extra (0,01 kg CO₂e), postre medio (0,34 kg CO₂e), pan (0,04 kg CO₂e).",
+        "repasvegetarien": "120g de proteína animal sin carne (0,23 kg CO₂e), 300g de verduras variadas (0,24 kg CO₂e), 7g de aceite de oliva (0,01 kg CO₂e), 200g de postre medio (0,34 kg CO₂e), 50g de pan (0,04 kg CO₂e).",
+        "repasvegetalien": "100g de proteína vegetal (0,10 kg CO₂e), 300g de verduras variadas (0,24 kg CO₂e), 7g de aceite de oliva (0,01 kg CO₂e), 200g de frutas (0,15 kg CO₂e), 50g de pan (0,04 kg CO₂e).",
+        "repasavecdupoissonblanc": "Bacalao (1,81 kg CO₂e), verduras variadas (0,24 kg CO₂e), aceite de oliva virgen extra (0,01 kg CO₂e), postre medio (0,34 kg CO₂e), pan (0,04 kg CO₂e).",
+        "repasavecdupoissongras": "Salmón (0,83 kg CO₂e), verduras variadas (0,24 kg CO₂e), aceite de oliva virgen extra (0,01 kg CO₂e), postre medio (0,34 kg CO₂e), pan (0,04 kg CO₂e).",
+        "repasavecdupoulet": "Pollo (0,84 kg CO₂e), verduras variadas (0,24 kg CO₂e), aceite de oliva virgen extra (0,01 kg CO₂e), postre medio (0,34 kg CO₂e), pan (0,04 kg CO₂e).",
+        "repasavecduporc": "Carne de cerdo (1,02 kg CO₂e), verduras variadas (0,24 kg CO₂e), aceite de oliva virgen extra (0,01 kg CO₂e), postre medio (0,34 kg CO₂e), pan (0,04 kg CO₂e).",
+        "repasavecduveau": "Costilla de ternera (3,5 kg CO₂e), verduras variadas (0,24 kg CO₂e), aceite de oliva virgen extra (0,01 kg CO₂e), postre medio (0,34 kg CO₂e), pan (0,04 kg CO₂e).",
+        "repasavecdulieunoir": "Pez negro (1,24 kg CO₂e), verduras variadas (0,24 kg CO₂e), aceite de oliva virgen extra (0,01 kg CO₂e), postre medio (0,34 kg CO₂e), pan (0,04 kg CO₂e).",
+        "repasavecduthon": "Atún en aceite (0,97 kg CO₂e), verduras variadas (0,24 kg CO₂e), aceite de oliva virgen extra (0,01 kg CO₂e), postre medio (0,34 kg CO₂e), pan (0,04 kg CO₂e)."
       },
       "post": {
         "ski": "Incluye: el impacto de carbono del transporte (52%), alojamiento (4%), alimentos (8%), la estación de esquí (3%), infraestructura, equipo y servicios (17%), y equipo (16%).",
@@ -564,7 +574,7 @@
         "tgv-paris-berlin": "Se incluyen las emisiones directas, la construcción de vehículos (fabricación, mantenimiento y fin de vida), y la producción y distribución de combustible y electricidad. La construcción de infraestructuras (carreteras, vías férreas, aeropuertos...) no está incluida.",
         "tgv-paris-marseille": "Se incluyen las emisiones directas, la construcción de vehículos (fabricación, mantenimiento y fin de vida), y la producción y distribución de combustible y electricidad. La construcción de infraestructuras (carreteras, vías férreas, aeropuertos...) no está incluida.",
         "voiture-lille-nimes": "Se incluyen las emisiones directas, la construcción de vehículos (fabricación, mantenimiento y fin de vida), y la producción y distribución de combustible y electricidad. La construcción de infraestructuras (carreteras, vías férreas, aeropuertos...) no está incluida.",
-        "francais": "Los franceses emiten un promedio de 9,1 toneladas de CO2e al año. Este promedio varía mucho según el estilo de vida: el uso o no del automóvil, las compras y el consumo, vivir en casa o en apartamento, el modo de calefacción y la alimentación.",
+        "francais": "Los franceses emiten un promedio de 9,1 toneladas de CO₂e al año. Este promedio varía mucho según el estilo de vida: el uso o no del automóvil, las compras y el consumo, vivir en casa o en apartamento, el modo de calefacción y la alimentación.",
         "game-of-thrones": "Un episodio de Game of Thrones dura en promedio 1 hora. El dato se calcula en base a una hora de transmisión en alta definición en un televisor usando Wi-Fi.",
         "friends": "La serie completa de Friends consta de 236 episodios de unos 20 minutos cada uno. El dato se calcula en base a una hora de transmisión en alta definición en un televisor usando Wi-Fi."
       }

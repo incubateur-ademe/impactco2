@@ -46,6 +46,7 @@ const eslintConfig = [
       'next.config.js',
       'playwright.config.js',
       'public/**',
+      'integrabook/**',
     ],
   },
 ]

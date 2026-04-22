@@ -20,7 +20,7 @@ export const checks = [
       await expect(iframe.getByTestId('header-share-button')).toBeInViewport()
       await expect(iframe.getByLabel('Arrivée')).toHaveAttribute(
         'value',
-        'Bioparc - Zoo de Doué La Fontaine 103 Rue de Cholet Doué La Fontaine 49700 France',
+        'Bioparc - Zoo de Doué La Fontaine 103 Rue de Cholet Doué-en-Anjou 49700 France',
         { timeout: 10000 }
       )
       await iframe.getByLabel('Arrivée').clear()
