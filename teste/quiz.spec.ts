@@ -21,7 +21,7 @@ test('Test quiz', async ({ page }) => {
   await expect(page.getByTestId('quiz-badge-critical-B')).not.toBeVisible()
   await expect(page.getByTestId('quiz-badge-success-B')).not.toBeVisible()
   await expect(page.getByTestId('quiz-answer-value-A')).toBeVisible()
-  await expect(page.getByTestId('quiz-answer-value-A')).toContainText('7.26 kg CO₂e')
+  await expect(page.getByTestId('quiz-answer-value-A')).toContainText('4.97 kg CO₂e')
   await expect(page.getByTestId('quiz-answer-value-A')).toBeVisible()
   await expect(page.getByTestId('quiz-answer-value-B')).toBeVisible()
   await expect(page.getByTestId('quiz-answer-value-B')).toContainText('4.4 kg CO₂e')
@@ -31,14 +31,14 @@ test('Test quiz', async ({ page }) => {
   await expect(page.getByTestId('quiz-more-info-button')).toHaveText('Lire la suite')
   await expect(page.getByTestId('quiz-more-info-button')).toBeVisible()
   await expect(
-    page.getByText('repas avec du boeuf5 repas avec du poulet14 repas végétariensComparaison basée')
+    page.getByText('repas avec du boeuf3 repas avec du poulet6 repas végétariensComparaison basée')
   ).not.toBeInViewport()
 
   await page.getByTestId('quiz-more-info-button').click()
 
   await expect(page.getByTestId('quiz-more-info-button')).toHaveText('Réduire')
   await expect(
-    page.getByText('repas avec du boeuf5 repas avec du poulet14 repas végétariensComparaison basée')
+    page.getByText('repas avec du boeuf3 repas avec du poulet6 repas végétariensComparaison basée')
   ).toBeInViewport()
 
   await page.getByTestId('quiz-next-question').click()
@@ -97,7 +97,7 @@ test('Test quiz', async ({ page }) => {
   await expect(page.getByTestId('quiz-more-info-button')).toHaveText('Lire la suite')
   await expect(page.getByTestId('quiz-next-question')).toHaveText('Question suivante')
   await expect(
-    page.getByText('repas avec du boeuf5 repas avec du poulet14 repas végétariensComparaison basée')
+    page.getByText('repas avec du boeuf3 repas avec du poulet6 repas végétariensComparaison basée')
   ).not.toBeInViewport()
 
   await page.getByTestId('quiz-next-question').click()

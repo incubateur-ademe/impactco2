@@ -997,42 +997,70 @@
   },
   "repasavecduboeuf": {
     "category": 2,
-    "value": 7260,
+    "value": 4970,
     "fr": "repas avec du boeuf",
     "en": "meal[s] with beef",
     "es": "Comida con carne de vacuno"
   },
   "repasvegetarien": {
     "category": 2,
-    "value": 510,
+    "value": 850,
     "fr": "repas végétarien[s]",
     "en": "vegetarian meal[s]",
     "es": "Comida vegetariana"
   },
   "repasvegetalien": {
     "category": 2,
-    "value": 390,
+    "value": 540,
     "fr": "repas végétalien[s]",
     "en": "vegan meal[s]",
     "es": "Comida vegana"
   },
-  "repasavecdupoissonblanc": {
-    "category": 2,
-    "value": 1980,
-    "fr": "repas avec du poisson blanc",
-    "en": "meal[s] with white fish",
-    "es": "Comida con pescado blanco"
-  },
   "repasavecdupoissongras": {
     "category": 2,
-    "value": 1110,
-    "fr": "repas avec du poisson gras",
-    "en": "meal[s] with fatty fish",
-    "es": "Comida con pescado graso"
+    "value": 1460,
+    "fr": "repas avec du saumon",
+    "en": "meal[s] with salmon",
+    "es": "Comida con salmón"
+  },
+  "repasavecdupoissonblanc": {
+    "category": 2,
+    "value": 2430,
+    "fr": "repas avec du cabillaud",
+    "en": "meal[s] with cod",
+    "es": "Comida con bacalao"
+  },
+  "repasavecduporc": {
+    "category": 2,
+    "value": 1650,
+    "fr": "repas avec du porc",
+    "en": "meal[s] with pork",
+    "es": "Comida con cerdo"
+  },
+  "repasavecduveau": {
+    "category": 2,
+    "value": 4120,
+    "fr": "repas avec du veau",
+    "en": "meal[s] with veal",
+    "es": "Comida con ternera"
+  },
+  "repasavecdulieunoir": {
+    "category": 2,
+    "value": 1870,
+    "fr": "repas avec du lieu noir",
+    "en": "meal[s] with pollock",
+    "es": "Comida con abadejo"
+  },
+  "repasavecduthon": {
+    "category": 2,
+    "value": 1600,
+    "fr": "repas avec du thon à l'huile",
+    "en": "meal[s] with tuna in oil",
+    "es": "Comida con atún en aceite"
   },
   "repasavecdupoulet": {
     "category": 2,
-    "value": 1580,
+    "value": 1460,
     "fr": "repas avec du poulet",
     "en": "meal[s] with chicken",
     "es": "Comida con pollo"
