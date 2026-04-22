@@ -82,7 +82,7 @@ const Equivalents = () => {
       </Button>
       <p className={styles.link}>
         Vous souhaitez parcourir l’ensemble des équivalents ?{' '}
-        <Link href='/equivalents.csv'>Télécharger la liste des équivalents (.csv | 33KB)</Link>
+        <Link href='/equivalents.csv'>Télécharger la liste des équivalents (.csv | 34,8KB)</Link>
       </p>
     </Block>
   )
