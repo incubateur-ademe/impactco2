@@ -90,7 +90,7 @@ export default function useTransportations(
                       value: carpoolEquivalent.value / (carpoolValue + 1),
                       ecv: carpoolEquivalent.ecv.map((ecv) => ({ ...ecv, value: ecv.value / (carpoolValue + 1) })),
                       usage: carpoolEquivalent.usage / (carpoolValue + 1),
-                      link: `${realEquivalent.link}+${carpoolValue}`,
+                      link: `${carpoolEquivalent.link}+${carpoolValue}`,
                     })),
                     {
                       ...realEquivalent,

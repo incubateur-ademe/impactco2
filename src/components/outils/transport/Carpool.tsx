@@ -23,7 +23,8 @@ const Carpool = ({
   const tVoiture = useTranslations('voiture')
   const params = useParamContext()
   const [slug] = equivalent.slug.split('+')
-  const carInfos = params.transport.carInfos[carpoolValue ? `covoiturage${slug.replace('voiture', '')}` : slug]
+  const carpoolSlug = carpoolValue ? `covoiturage${slug.replace('voiture', '')}` : slug
+  const carInfos = params.transport.carInfos[carpoolSlug]
 
   return (
     <div className={styles.carpool}>
@@ -31,20 +32,20 @@ const Carpool = ({
       {carInfos && (
         <>
           <div className={styles.transport}>
-            <HiddenLabel htmlFor={`text-select-car-size-${slug}`}>{t('transportSizeSelect')}</HiddenLabel>
+            <HiddenLabel htmlFor={`text-select-car-size-${carpoolSlug}`}>{t('transportSizeSelect')}</HiddenLabel>
             <Select
-              id={`car-size-${slug}`}
+              id={`car-size-${carpoolSlug}`}
               className={styles.select}
               value={carInfos.size}
               onChange={(event) => {
                 track(
                   `Transport ${type === 'distance' ? 'distance' : 'itinéraire'}`,
-                  `Car size ${slug}`,
+                  `Car size ${carpoolSlug}`,
                   event.target.value
                 )
                 params.transport.setCarInfos({
                   ...params.transport.carInfos,
-                  [slug]: { ...carInfos, size: event.target.value },
+                  [carpoolSlug]: { ...carInfos, size: event.target.value },
                 })
               }}>
               <option value='citadine'>{tVoiture('citadine')}</option>
@@ -53,31 +54,31 @@ const Carpool = ({
               <option value='grandeberline'>{tVoiture('grandeberline')}</option>
             </Select>
           </div>
-          {!slug.endsWith('electrique') && (
+          {!carpoolSlug.endsWith('electrique') && (
             <div className={styles.transport}>
-              <HiddenLabel htmlFor={`text-select-car-engine-${slug}`}>{t('transportEngineSelect')}</HiddenLabel>
+              <HiddenLabel htmlFor={`text-select-car-engine-${carpoolSlug}`}>{t('transportEngineSelect')}</HiddenLabel>
               <Select
-                id={`car-engine-${slug}`}
+                id={`car-engine-${carpoolSlug}`}
                 className={styles.select}
                 value={carInfos.engine}
                 onChange={(event) => {
                   track(
                     `Transport ${type === 'distance' ? 'distance' : 'itinéraire'}`,
-                    `Car engine ${slug}`,
+                    `Car engine ${carpoolSlug}`,
                     event.target.value
                   )
                   params.transport.setCarInfos({
                     ...params.transport.carInfos,
-                    [slug]: { ...carInfos, engine: event.target.value },
+                    [carpoolSlug]: { ...carInfos, engine: event.target.value },
                   })
                 }}>
-                {slug.endsWith('thermique') && (
+                {carpoolSlug.endsWith('thermique') && (
                   <>
                     <option value='diesel'>{tVoiture('diesel')}</option>
                     <option value='essence'>{tVoiture('essence')}</option>
                   </>
                 )}
-                {slug.endsWith('hybride') && (
+                {carpoolSlug.endsWith('hybride') && (
                   <>
                     <option value='hybride'>{tVoiture('hybride')}</option>
                     <option value='hybriderechargeable'>{tVoiture('hybriderechargeable')}</option>
