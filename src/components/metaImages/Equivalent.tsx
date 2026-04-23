@@ -1,9 +1,8 @@
 import en from 'src/providers/locales/en.json'
 import es from 'src/providers/locales/es.json'
 import fr from 'src/providers/locales/fr.json'
-import { getComparisonSlug } from 'utils/Equivalent/equivalent'
+import { getEquivalentIcon } from 'utils/Equivalent/icons'
 import { getNumberPrecision } from 'utils/formatNumberPrecision'
-import { buildCurrentUrlFor } from 'utils/urls'
 import { getUnit } from 'components/base/CO2Quantity'
 import { Logos } from './Logos'
 
@@ -30,7 +29,6 @@ const Equivalent = ({
 }) => {
   const { value, unit: quantityUnit } = getNumberPrecision(quantity)
   const translatedUnit = ((language === 'en' ? en : language === 'es' ? es : fr).unit as Record<string, string>)[unit]
-  const [ref] = slug.split('+')
   const color = colors[quantityUnit] || { padding: 0 }
 
   return (
@@ -111,11 +109,7 @@ const Equivalent = ({
           width: '50%',
           backgroundColor: '#E0F4F3',
         }}>
-        <img
-          style={{ width: '27.5rem', height: '27.5rem' }}
-          src={buildCurrentUrlFor(`/icons/${carpool ? 'covoiturage' : ''}${getComparisonSlug(ref)}.svg`)}
-          alt=''
-        />
+        <img style={{ width: '27.5rem', height: '27.5rem' }} src={getEquivalentIcon(slug, carpool)} alt='' />
       </div>
     </div>
   )

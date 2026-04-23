@@ -1,15 +1,15 @@
 import { FrameLocator, Page, expect } from '@playwright/test'
 
 export const distanceComparisonTest = async (page: Page | FrameLocator, prod?: boolean) => {
-  await expect(page.getByTestId('comparison-tile-0')).toHaveText('Voiture thermique2.18 kg CO₂e Modifier')
+  await expect(page.getByTestId('comparison-tile-0')).toHaveText('Voiture thermique1.42 kg CO₂e Modifier')
   await expect(page.getByTestId('comparison-tile-1')).toHaveText(
-    'TGV0.03 kg CO₂eMoyen le plus écologique2.15Kg CO₂eévités Modifier'
+    'TGV0.03 kg CO₂eMoyen le plus écologique1.39Kg CO₂eévités Modifier'
   )
 
   await page.getByRole('button', { name: 'Voir une autre comparaison' }).click()
-  await expect(page.getByTestId('comparison-tile-0')).toHaveText('Voiture électrique1.03 kg CO₂e Modifier')
+  await expect(page.getByTestId('comparison-tile-0')).toHaveText('Voiture électrique0.67 kg CO₂e Modifier')
   await expect(page.getByTestId('comparison-tile-1')).toHaveText(
-    'Métro0.04 kg CO₂eMoyen le plus écologique0.99Kg CO₂eévités Modifier'
+    'Métro0.04 kg CO₂eMoyen le plus écologique0.63Kg CO₂eévités Modifier'
   )
 
   await page.getByTestId('header-integrate-button').click()
@@ -18,26 +18,22 @@ export const distanceComparisonTest = async (page: Page | FrameLocator, prod?: b
 
   await page.getByTestId('cancel-button').click()
 
-  await expect(page.getByTestId('comparison-tile-0')).toHaveText('Voiture électrique1.03 kg CO₂e Modifier')
+  await expect(page.getByTestId('comparison-tile-0')).toHaveText('Voiture électrique0.67 kg CO₂e Modifier')
   await expect(page.getByTestId('comparison-tile-1')).toHaveText(
-    'Métro0.04 kg CO₂eMoyen le plus écologique0.99Kg CO₂eévités Modifier'
+    'Métro0.04 kg CO₂eMoyen le plus écologique0.63Kg CO₂eévités Modifier'
   )
 
   await page.getByTestId('comparison-tile-0').getByRole('button', { name: 'Modifier' }).click()
   await page.getByRole('button', { name: 'TGV' }).click()
   await page.getByTestId('comparison-tile-1').getByRole('button', { name: 'Modifier' }).click()
-  await page.getByRole('button', { name: 'Covoiturage thermique (2 passagers)' }).click()
+  await page.getByRole('button', { name: 'Covoiturage thermique (3 personnes)' }).click()
 
   await expect(page.getByTestId('comparison-tile-1')).toHaveText(
-    'Covoiturage thermique (2 passagers)0.73 kg CO₂e Modifier'
+    'Covoiturage thermique (3 personnes)0.47 kg CO₂e Modifier'
   )
   await expect(page.getByTestId('comparison-tile-0')).toHaveText(
-    'TGV0.03 kg CO₂eMoyen le plus écologique0.7Kg CO₂eévités Modifier'
+    'TGV0.03 kg CO₂eMoyen le plus écologique0.44Kg CO₂eévités Modifier'
   )
-  await expect(page.getByTestId('comparison-tile-1')).toHaveText(
-    'Covoiturage thermique (2 passagers)0.73 kg CO₂e Modifier'
-  )
-
   await page.getByTestId('comparison-tile-1').getByRole('button', { name: 'Modifier' }).click()
   await page.getByRole('button', { name: 'Avion', exact: true }).click()
   await expect(page.getByTestId('comparison-tile-0')).toHaveText(
@@ -50,12 +46,49 @@ export const distanceComparisonTest = async (page: Page | FrameLocator, prod?: b
     'TGV29.3 kg CO₂eMoyen le plus écologique1,750Kg CO₂eévités Modifier'
   )
   await expect(page.getByTestId('comparison-tile-1')).toHaveText('Avion trajet long1,779 kg CO₂e Modifier')
+
+  await page.getByTestId('comparison-tile-0').getByRole('button', { name: 'Modifier' }).click()
+  await page.getByRole('button', { name: 'Covoiturage thermique (Berline - Diesel - 5 personnes)' }).click()
+  await page.getByTestId('comparison-tile-1').getByRole('button', { name: 'Modifier' }).click()
+  await page.getByRole('button', { name: 'Voiture électrique (Petite)' }).click()
+  await expect(page.getByTestId('comparison-tile-1')).toHaveText('Voiture électrique (Petite)576 kg CO₂e Modifier')
+  await expect(page.getByTestId('comparison-tile-0')).toHaveText(
+    'Covoiturage thermique (Berline - Diesel - 5 personnes)367 kg CO₂eMoyen le plus écologique209Kg CO₂eévités Modifier'
+  )
 }
 
 export const distanceTest = async (page: Page | FrameLocator, prod?: boolean) => {
   await expect(page.getByTestId('category-metro-value')).toHaveText('0.04')
   await expect(page.getByTestId('category-rer-value')).not.toBeVisible()
   await expect(page.getByTestId('category-tgv-value')).not.toBeVisible()
+
+  await expect(page.getByLabel('Covoiturage électrique (2')).toContainText(
+    'Covoiturage électrique0.34 kg CO₂eusage : 18%, construction : 82%'
+  )
+  await expect(page.getByLabel('Voiture électrique 0.67 kg CO')).toContainText(
+    'Voiture électrique0.67 kg CO₂eusage : 18%, construction : 82%'
+  )
+  await page.getByTestId('text-select-car-size-covoiturageelectrique').selectOption('berline')
+  await expect(page.getByLabel('Covoiturage électrique (2')).toContainText(
+    'Covoiturage électrique0.45 kg CO₂eusage : 16%, construction : 84%'
+  )
+  await expect(page.getByLabel('Voiture électrique 0.67 kg CO')).toContainText(
+    'Voiture électrique0.67 kg CO₂eusage : 18%, construction : 82%'
+  )
+  await page.getByRole('button', { name: 'Augmenter le nombre de' }).first().click()
+  await expect(page.getByLabel('Covoiturage électrique (3')).toContainText(
+    'Covoiturage électrique0.3 kg CO₂eusage : 16%, construction : 84%'
+  )
+  await expect(page.getByLabel('Voiture électrique 0.67 kg CO')).toContainText(
+    'Voiture électrique0.67 kg CO₂eusage : 18%, construction : 82%'
+  )
+  await page.getByTestId('text-select-car-size-voitureelectrique').selectOption('citadine')
+  await expect(page.getByLabel('Covoiturage électrique (3')).toContainText(
+    'Covoiturage électrique0.3 kg CO₂eusage : 16%, construction : 84%'
+  )
+  await expect(page.getByLabel('Voiture électrique 0.58 kg CO')).toContainText(
+    'Voiture électrique0.58 kg CO₂eusage : 20%, construction : 80%'
+  )
 
   await page.getByTestId('input-km-value').fill('100')
   await expect(page.getByTestId('category-metro-value')).not.toBeVisible()
@@ -94,12 +127,12 @@ export const distanceTest = async (page: Page | FrameLocator, prod?: boolean) =>
   await page.locator('span').filter({ hasText: /^TER$/ }).nth(2).click()
   await page.getByLabel('Intégrer').getByText('Covoiturage thermique', { exact: true }).click()
   await expect(page.getByTestId('clipboard-box')).toHaveText(
-    `<script data-name="impact-co2" src="${prod ? 'https://impactco2.fr' : 'http://localhost:3000'}/iframe.js" data-type="transport" data-search="?theme=default&language=fr&tabs=distance&km=1000&defaultMode=comparison&comparison=voiturethermique,autocar&modes=avion,intercites,voiturethermique,voitureelectrique+1,voitureelectrique,autocar,marche,velo,veloelectrique,busthermique,tramway,metro,scooter,moto,rer,buselectrique,trottinette,busgnv"></script>`
+    `<script data-name="impact-co2" src="${prod ? 'https://impactco2.fr' : 'http://localhost:3000'}/iframe.js" data-type="transport" data-search="?theme=default&language=fr&tabs=distance&km=1000&defaultMode=comparison&comparison=voiturethermique,autocar&modes=avion,intercites,voiturethermique,voitureelectrique+1,voitureelectrique,autocar,marche,velo,veloelectrique,busthermique,tramway,metro,scooter,moto,rer,buselectrique,trottinette,busgnv,voiturehybride+1,voiturehybride"></script>`
   )
   await page.getByTestId('text-select-comparison-1').selectOption('velo')
   await page.getByTestId('text-select-comparison-2').selectOption('moto')
   await expect(page.getByTestId('clipboard-box')).toHaveText(
-    `<script data-name="impact-co2" src="${prod ? 'https://impactco2.fr' : 'http://localhost:3000'}/iframe.js" data-type="transport" data-search="?theme=default&language=fr&tabs=distance&km=1000&defaultMode=comparison&comparison=velo,moto&modes=avion,intercites,voiturethermique,voitureelectrique+1,voitureelectrique,autocar,marche,velo,veloelectrique,busthermique,tramway,metro,scooter,moto,rer,buselectrique,trottinette,busgnv"></script>`
+    `<script data-name="impact-co2" src="${prod ? 'https://impactco2.fr' : 'http://localhost:3000'}/iframe.js" data-type="transport" data-search="?theme=default&language=fr&tabs=distance&km=1000&defaultMode=comparison&comparison=velo,moto&modes=avion,intercites,voiturethermique,voitureelectrique+1,voitureelectrique,autocar,marche,velo,veloelectrique,busthermique,tramway,metro,scooter,moto,rer,buselectrique,trottinette,busgnv,voiturehybride+1,voiturehybride"></script>`
   )
 
   await page.getByTestId('cancel-button').click()

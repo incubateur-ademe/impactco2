@@ -76,7 +76,7 @@ const Outils = () => {
                 </div>
               </>
             ),
-            linkLabel: 'Télécharger (.CSV | 34,8KB)',
+            linkLabel: 'Télécharger (.CSV | 53KB)',
             link: '/equivalents.csv',
           },
         ]}

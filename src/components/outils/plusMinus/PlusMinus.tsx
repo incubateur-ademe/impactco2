@@ -8,8 +8,10 @@ import styles from './PlusMinus.module.css'
 const PlusMinus = ({
   value,
   setValue,
+  min,
   max,
   label,
+  smallLabel,
   hiddenLabel,
   icon,
   step,
@@ -17,8 +19,10 @@ const PlusMinus = ({
 }: {
   value: number
   setValue: (value: number) => void
+  min?: number
   max?: number
   label: string
+  smallLabel?: string
   hiddenLabel?: string
   icon?: string
   step?: number
@@ -33,14 +37,15 @@ const PlusMinus = ({
           e.preventDefault()
           setValue(value - stepValue)
         }}
-        disabled={value === stepValue}
+        disabled={value === stepValue || (!!min && value === min)}
         title={`Diminuer le nombre de ${formatName(label, 1)}`}>
         <MinusIcon />
       </button>
       <div className={styles.main}>
         {icon && <Image src={icon} alt='' width={18} height={24} />}
         <p aria-live='polite' aria-atomic={false}>
-          {value} {formatName(label, value)}
+          {value} <span className={smallLabel ? styles.bigLabel : ''}>{formatName(label, value)}</span>
+          {smallLabel && <span className={styles.smallLabel}>{formatName(smallLabel, value)}</span>}
           {hiddenLabel && <span className='ico2-hidden'> {hiddenLabel}</span>}
         </p>
       </div>

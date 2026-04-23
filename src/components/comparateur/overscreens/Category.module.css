@@ -45,6 +45,17 @@
   border-radius: 8px;
   border: 2px solid var(--neutral-20);
   height: calc(4rem + 4px);
+
+  @media screen and (max-width: 29.875rem) {
+    padding: 0.5rem;
+    height: calc(2.5rem + 4px);
+    width: calc(2.5rem + 4px);
+
+    img {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
 }
 
 .names {

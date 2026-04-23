@@ -24,7 +24,7 @@ const FriendsVoiture = () => {
       </div>
       <Etiquette
         ref={ref}
-        baseValue={4990}
+        baseValue={7860}
         comparisons={['streamingvideo', 'voiturethermique']}
         language={language}
         className={styles.center}

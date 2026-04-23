@@ -14,12 +14,8 @@ test('Transport distance comparison', async ({ page }) => {
 test('Transport distance default values', async ({ page }) => {
   await page.goto('http://localhost:3000/outils/transport?km=15', { timeout: 60000 })
 
-  await expect(
-    page.getByRole('link', { name: 'Covoiturage électrique un conducteur plus 1 passager 0.78 kg CO₂e' })
-  ).toBeVisible()
-  await expect(
-    page.getByRole('link', { name: 'Covoiturage thermique un conducteur plus 1 passager 1.63 kg CO₂e' })
-  ).toBeVisible()
+  await expect(page.getByRole('link', { name: 'Covoiturage électrique (2 personnes) 0.51 kg CO₂e' })).toBeVisible()
+  await expect(page.getByRole('link', { name: 'Covoiturage thermique (2 personnes) 1.07 kg CO₂e' })).toBeVisible()
   await expect(page.getByRole('link', { name: 'Bus électrique 0.33 kg CO₂e' })).not.toBeVisible()
   await page.getByRole('button', { name: 'Voir tous les modes de' }).click()
   await expect(page.getByRole('link', { name: 'Bus électrique 0.33 kg CO₂e' })).toBeVisible()
@@ -42,12 +38,8 @@ test('Transport distance default values', async ({ page }) => {
   await page.getByText('Liste', { exact: true }).click()
   await expect(page.getByRole('link', { name: 'Bus thermique 1.84 kg CO₂e' })).toBeVisible()
   await expect(page.getByRole('link', { name: 'Bus électrique 0.33 kg CO₂e' })).not.toBeVisible()
-  await expect(
-    page.getByRole('link', { name: 'Covoiturage électrique un conducteur plus 1 passager 0.78 kg CO₂e' })
-  ).toBeVisible()
-  await expect(
-    page.getByRole('link', { name: 'Covoiturage thermique un conducteur plus 1 passager 1.63 kg CO₂e' })
-  ).not.toBeVisible()
+  await expect(page.getByRole('link', { name: 'Covoiturage électrique (2 personnes) 0.51 kg CO₂e' })).toBeVisible()
+  await expect(page.getByRole('link', { name: 'Covoiturage thermique (2 personnes) 1.07 kg CO₂e' })).not.toBeVisible()
 
   await page.getByRole('button', { name: 'Voir tous les modes de' }).click()
   await expect(page.getByRole('link', { name: 'Bus thermique 1.84 kg CO₂e' })).toBeVisible()
@@ -57,17 +49,17 @@ test('Transport distance default values', async ({ page }) => {
     timeout: 60000,
   })
   await expect(page.getByTestId('comparison-tile-0')).toHaveText(
-    'Vélo mécanique0 kg CO₂eMoyen le plus écologique2.17Kg CO₂eévités'
+    'Vélo mécanique0 kg CO₂eMoyen le plus écologique1.42Kg CO₂eévités'
   )
-  await expect(page.getByTestId('comparison-tile-1')).toHaveText('Voiture thermique2.18 kg CO₂e')
+  await expect(page.getByTestId('comparison-tile-1')).toHaveText('Voiture thermique1.42 kg CO₂e')
 
   await page.goto(
     'http://localhost:3000/outils/transport?modes=velo,voiturethermique,voiturethermique+1&defaultMode=comparison',
     { timeout: 60000 }
   )
-  await expect(page.getByTestId('comparison-tile-0')).toHaveText('Voiture thermique2.18 kg CO₂e Modifier')
+  await expect(page.getByTestId('comparison-tile-0')).toHaveText('Voiture thermique1.42 kg CO₂e Modifier')
   await expect(page.getByTestId('comparison-tile-1')).toHaveText(
-    'Covoiturage thermique (1 passager)1.09 kg CO₂eMoyen le plus écologique1.09Kg CO₂eévités Modifier'
+    'Covoiturage thermique (2 personnes)0.71 kg CO₂eMoyen le plus écologique0.71Kg CO₂eévités Modifier'
   )
   await expect(page.getByRole('button', { name: 'Voir une autre comparaison' })).not.toBeVisible()
 
@@ -90,10 +82,10 @@ test('Transport distance default values', async ({ page }) => {
     }
   )
   await expect(page.getByTestId('comparison-tile-0')).toHaveText(
-    'Covoiturage thermique (1 passager)1.09 kg CO₂e Modifier'
+    'Covoiturage thermique (2 personnes)0.71 kg CO₂e Modifier'
   )
   await expect(page.getByTestId('comparison-tile-1')).toHaveText(
-    'Covoiturage électrique (2 passagers)0.34 kg CO₂eMoyen le plus écologique0.74Kg CO₂eévités Modifier'
+    'Covoiturage électrique (3 personnes)0.22 kg CO₂eMoyen le plus écologique0.49Kg CO₂eévités Modifier'
   )
 
   await page.goto(
