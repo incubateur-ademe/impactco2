@@ -184,7 +184,7 @@
   top: 0.25rem;
   right: 0.25rem;
   display: flex;
-  gap: 0.5rem;
+  gap: 0.25rem;
 
   @media screen and (max-width: 48rem) {
     position: relative;
@@ -194,23 +194,6 @@
     padding: 0.5rem 1.5rem;
     top: 0;
     right: 0;
-  }
-}
-
-.conducteur {
-  border-radius: 0.25rem;
-  background-color: var(--primary-10);
-  border: 2px solid var(--primary-30);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 2rem;
-  width: 2rem;
-  line-height: 1;
-
-  @media screen and (max-width: 48rem) {
-    height: 2.5rem;
-    width: 2.5rem;
   }
 }
 
@@ -234,17 +217,17 @@
   align-items: center;
 }
 
+.pictoSelect,
 .select {
   select {
+    min-width: max-content;
     height: 2rem;
-    min-width: 3.5rem;
-    max-width: 3.5rem;
-    padding: 0 1rem 0 0.75rem;
-    background-repeat: no-repeat;
-    background-position: left 0.5rem top 0.5rem;
-    color: transparent;
+    padding: 0 1.25rem 0 0.75rem;
     border-radius: 0.25rem;
     border: 2px solid var(--primary-30);
+    color: var(--primary-60);
+    font-weight: 500;
+    font-size: 0.75rem;
   }
 
   &::before {
@@ -253,12 +236,27 @@
     color: var(--primary-50);
   }
 
-  @media screen and (max-width: 29.875rem) {
+  @media screen and (max-width: 48rem) {
     select {
       height: 2.5rem;
     }
     &::before {
       top: 0.5rem !important;
+    }
+  }
+}
+
+.pictoSelect {
+  select {
+    min-width: 3.5rem;
+    max-width: 3.5rem;
+    background-repeat: no-repeat;
+    background-position: left 0.5rem top 0.5rem;
+    color: transparent;
+  }
+  @media screen and (max-width: 48rem) {
+    select {
+      background-position: left 0.5rem top 0.75rem;
     }
   }
 }

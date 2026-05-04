@@ -23,7 +23,6 @@ describe('formatUsage', () => {
       },
     ],
     default: true,
-    tile: false,
     display: {
       max: 50,
     },

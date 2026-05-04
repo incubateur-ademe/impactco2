@@ -21,7 +21,12 @@ const getEquivalentsImage = async () => {
     })
     response.data.pipe(fs.createWriteStream(`./public/meta/${slug}-en.png`))
 
-    if (slug === 'voiturethermique' || slug === 'voitureelectrique') {
+    if (
+      slug === 'voiturethermique' ||
+      slug === 'voitureelectrique' ||
+      slug === 'voiturehybride' ||
+      (slug.startsWith('voiture-') && slug !== 'voiture-lille-nimes')
+    ) {
       for (let i = 1; i < 5; i++) {
         let response = await axios.get(`http://localhost:3000/api/dynamics/equivalents/${slug}+${i}?language=fr`, {
           responseType: 'stream',

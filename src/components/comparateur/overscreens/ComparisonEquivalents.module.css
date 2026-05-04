@@ -11,6 +11,7 @@
   border-radius: 0.5rem;
   color: var(--neutral-50);
   font-weight: 500;
+  text-align: left;
 
   &:hover {
     background-color: var(--primary-10);

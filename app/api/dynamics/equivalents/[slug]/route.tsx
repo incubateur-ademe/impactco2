@@ -21,7 +21,8 @@ export async function GET(req: NextRequest, context: { params: Promise<{ slug: s
     return NextResponse.json(`Please use ${process.env.NEXT_PUBLIC_IMAGE_URL}`, { status: 400 })
   }
 
-  const [slug, carpool] = decodeURIComponent((await context.params).slug).split('+')
+  const slugParam = decodeURIComponent((await context.params).slug)
+  const [slug, carpool] = slugParam.split('+')
   if (!slug) {
     return NextResponse.json('No slug specified', { status: 400 })
   }
@@ -52,9 +53,9 @@ export async function GET(req: NextRequest, context: { params: Promise<{ slug: s
 
   return new ImageResponse(
     <Equivalent
-      slug={equivalent.slug}
+      slug={slug}
       carpool={!!carpool}
-      name={getName(language, { ...equivalent, category: 0, carpool: Number(carpool) })}
+      name={getName(language, { ...equivalent, slug: slugParam, carpool: Number(carpool) }, false, 1, false, true)}
       quantity={equivalent.value / ((Number(carpool) || 0) + 1)}
       unit={equivalent.unit || category.unit}
       language={language}

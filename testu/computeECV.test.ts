@@ -5,7 +5,6 @@ const equivalent = {
   slug: 'test',
   category: 1,
   default: false,
-  tile: false,
   meta: {
     title: 'Test',
     description: 'Test ',

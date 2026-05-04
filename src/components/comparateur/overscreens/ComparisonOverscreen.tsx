@@ -1,47 +1,28 @@
 'use client'
-
 import { useTranslations } from 'next-intl'
-import React, { useMemo, useState } from 'react'
+import { useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { useSearchEquivalent } from 'src/providers/useSearchEquivalent'
+import { computedEquivalents } from 'data/categories/computedEquivalents'
 import { deplacements } from 'data/categories/deplacement'
+import { getEquivalentWithCarpool } from 'utils/carpool'
 import Button from 'components/base/buttons/Button'
 import HiddenLabel from 'components/form/HiddenLabel'
 import Input from 'components/form/Input'
 import ComparisonEquivalents from './ComparisonEquivalents'
 import styles from './EquivalentsOverscreen.module.css'
 
-const allEquivalents = deplacements
-  .filter((equivalent) => equivalent.category === 4)
-  .flatMap((deplacement) =>
-    deplacement.withCarpool
-      ? [
-          ...Array.from({ length: 4 }).map((_, index) => ({
-            ...deplacement,
-            carpool: index + 1,
-            slug: `${deplacement.slug}+${index + 1}`,
-          })),
-          deplacement,
-        ]
-      : [deplacement]
-  )
-
 const ComparisonOverscreen = ({ index }: { index: 0 | 1 }) => {
-  const {
-    setOverscreen,
-    transport: { modes },
-  } = useParamContext()
+  const { setOverscreen } = useParamContext()
   const [search, setSearch] = useState('')
-  const results = useSearchEquivalent(search, true, 4)
-
-  const equivalents = useMemo(
-    () =>
-      allEquivalents.filter((equivalent) => {
-        const [slug, carpool] = equivalent.slug.split('+')
-        return carpool ? modes.includes(`${slug}+1`) : modes.includes(slug)
-      }),
-    [modes]
+  const results = useSearchEquivalent(
+    search,
+    false,
+    4,
+    false,
+    computedEquivalents('transport', deplacements).flatMap(getEquivalentWithCarpool)
   )
+
   const tSearch = useTranslations('comparateur.overscreen')
   const t = useTranslations('overscreen.transport')
   const tModal = useTranslations('modal')
@@ -87,7 +68,7 @@ const ComparisonOverscreen = ({ index }: { index: 0 | 1 }) => {
             </div>
           )
         ) : (
-          <ComparisonEquivalents onClose={onClose} equivalents={equivalents} index={index} />
+          <ComparisonEquivalents onClose={onClose} equivalents={results} index={index} />
         )}
       </ul>
       <div className={styles.footerCenter}>

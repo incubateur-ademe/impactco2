@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import { Category as CategoryType } from 'types/category'
 import { categories } from 'data/categories'
 import Category from 'components/outils/CategoryPage'
-import TransportSimulator from 'components/outils/TransportSimulator'
+import TransportSimulator from 'components/outils/transport/TransportSimulator'
 import { metaDescriptions, metaTitles } from 'utils/meta'
 import Suggestion from 'components/layout/Suggestion'
 

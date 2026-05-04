@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { z } from 'zod'
 import { deplacements } from 'data/categories/deplacement'
-import { getName, getNameWithoutSuffix } from 'utils/Equivalent/equivalent'
+import { getName } from 'utils/Equivalent/equivalent'
 import { trackAPIRequest } from 'utils/middleware'
 import { filterByDistance } from 'utils/transport'
 
@@ -36,7 +36,12 @@ export const computeTransportEmission = (
               ...transportation,
               carpool: index + 1,
               slug: `${transportation.slug}+${index + 1}`,
-              id: transportation.id === 4 ? 22 + index : 26 + index,
+              id:
+                transportation.id === 4
+                  ? 22 + index
+                  : transportation.id === 5
+                    ? 26 + index
+                    : transportation.id + index + 1,
             })),
             transportation,
           ]
@@ -45,15 +50,22 @@ export const computeTransportEmission = (
     .filter((transportation) => (activeTransportations ? activeTransportations.includes(transportation.id) : true))
     .map((transportation) => {
       let values = [{ id: 6, value: transportation.total || 0 }]
-      let name = getName(language || 'fr', transportation)
+      let name = getName(language || 'fr', transportation, false, 1, false, true)
       if ('ecvs' in transportation && transportation.ecvs) {
         const currentECV = transportation.ecvs.find((value) => (value.display.max ? value.display.max >= km : true))
         if (currentECV) {
           values = currentECV.ecv
-          name = getNameWithoutSuffix(language || 'fr', {
-            ...transportation,
-            slug: `${transportation.slug}-${currentECV.subtitle}`,
-          })
+          name = getName(
+            language || 'fr',
+            {
+              ...transportation,
+              slug: `${transportation.slug}-${currentECV.subtitle}`,
+            },
+            false,
+            1,
+            false,
+            true
+          )
         }
       } else if (transportation.ecv) {
         values = transportation.ecv
@@ -158,15 +170,120 @@ export const computeTransportEmission = (
  *         - 16 : Bus électrique
  *         - 17 : Trottinette à assistance électrique
  *         - 21 : Bus (GNV)
- *         - 22 : Covoiturage thermique (1 passager)
- *         - 23 : Covoiturage thermique (2 passagers)
- *         - 24 : Covoiturage thermique (3 passagers)
- *         - 25 : Covoiturage thermique (4 passagers)
- *         - 26 : Covoiturage électrique (1 passager)
- *         - 27 : Covoiturage électrique (2 passagers)
- *         - 28 : Covoiturage électrique (3 passagers)
- *         - 29 : Covoiturage électrique (4 passagers)
+ *         - 22 : Covoiturage thermique (2 personnes)
+ *         - 23 : Covoiturage thermique (3 personnes)
+ *         - 24 : Covoiturage thermique (4 personnes)
+ *         - 25 : Covoiturage thermique (5 personnes)
+ *         - 26 : Covoiturage électrique (2 personnes)
+ *         - 27 : Covoiturage électrique (3 personnes)
+ *         - 28 : Covoiturage électrique (4 personnes)
+ *         - 29 : Covoiturage électrique (5 personnes)
  *         - 30 : Marche
+ *         - 100 : Voiture - Petite - Essence
+ *         - 101 : Voiture - Petite - Essence (2 personnes)
+ *         - 102 : Voiture - Petite - Essence (3 personnes)
+ *         - 103 : Voiture - Petite - Essence (4 personnes)
+ *         - 104 : Voiture - Petite - Essence (5 personnes)
+ *         - 105 : Voiture - Petite - Diesel
+ *         - 106 : Voiture - Petite - Diesel (2 personnes)
+ *         - 107 : Voiture - Petite - Diesel (3 personnes)
+ *         - 108 : Voiture - Petite - Diesel (4 personnes)
+ *         - 109 : Voiture - Petite - Diesel (5 personnes)
+ *         - 110 : Voiture - Petite - Électrique
+ *         - 111 : Voiture - Petite - Électrique (2 personnes)
+ *         - 112 : Voiture - Petite - Électrique (3 personnes)
+ *         - 113 : Voiture - Petite - Électrique (4 personnes)
+ *         - 114 : Voiture - Petite - Électrique (5 personnes)
+ *         - 115 : Voiture - Petite - Hybride non rechargeable
+ *         - 116 : Voiture - Petite - Hybride non rechargeable (2 personnes)
+ *         - 117 : Voiture - Petite - Hybride non rechargeable (3 personnes)
+ *         - 118 : Voiture - Petite - Hybride non rechargeable (4 personnes)
+ *         - 119 : Voiture - Petite - Hybride non rechargeable (5 personnes)
+ *         - 120 : Voiture - Petite - Hybride rechargeable
+ *         - 121 : Voiture - Petite - Hybride rechargeable (2 personnes)
+ *         - 122 : Voiture - Petite - Hybride rechargeable (3 personnes)
+ *         - 123 : Voiture - Petite - Hybride rechargeable (4 personnes)
+ *         - 124 : Voiture - Petite - Hybride rechargeable (5 personnes)
+ *         - 125 : Voiture - Moyenne - Essence
+ *         - 126 : Voiture - Moyenne - Essence (2 personnes)
+ *         - 127 : Voiture - Moyenne - Essence (3 personnes)
+ *         - 128 : Voiture - Moyenne - Essence (4 personnes)
+ *         - 129 : Voiture - Moyenne - Essence (5 personnes)
+ *         - 130 : Voiture - Moyenne - Diesel
+ *         - 131 : Voiture - Moyenne - Diesel (2 personnes)
+ *         - 132 : Voiture - Moyenne - Diesel (3 personnes)
+ *         - 133 : Voiture - Moyenne - Diesel (4 personnes)
+ *         - 134 : Voiture - Moyenne - Diesel (5 personnes)
+ *         - 135 : Voiture - Moyenne - Électrique
+ *         - 136 : Voiture - Moyenne - Électrique (2 personnes)
+ *         - 137 : Voiture - Moyenne - Électrique (3 personnes)
+ *         - 138 : Voiture - Moyenne - Électrique (4 personnes)
+ *         - 139 : Voiture - Moyenne - Électrique (5 personnes)
+ *         - 140 : Voiture - Moyenne - Hybride non rechargeable
+ *         - 141 : Voiture - Moyenne - Hybride non rechargeable (2 personnes)
+ *         - 142 : Voiture - Moyenne - Hybride non rechargeable (3 personnes)
+ *         - 143 : Voiture - Moyenne - Hybride non rechargeable (4 personnes)
+ *         - 144 : Voiture - Moyenne - Hybride non rechargeable (5 personnes)
+ *         - 145 : Voiture - Moyenne - Hybride rechargeable
+ *         - 146 : Voiture - Moyenne - Hybride rechargeable (2 personnes)
+ *         - 147 : Voiture - Moyenne - Hybride rechargeable (3 personnes)
+ *         - 148 : Voiture - Moyenne - Hybride rechargeable (4 personnes)
+ *         - 149 : Voiture - Moyenne - Hybride rechargeable (5 personnes)
+ *         - 150 : Voiture - Berline - Essence
+ *         - 151 : Voiture - Berline - Essence (2 personnes)
+ *         - 152 : Voiture - Berline - Essence (3 personnes)
+ *         - 153 : Voiture - Berline - Essence (4 personnes)
+ *         - 154 : Voiture - Berline - Essence (5 personnes)
+ *         - 155 : Voiture - Berline - Diesel
+ *         - 156 : Voiture - Berline - Diesel (2 personnes)
+ *         - 157 : Voiture - Berline - Diesel (3 personnes)
+ *         - 158 : Voiture - Berline - Diesel (4 personnes)
+ *         - 159 : Voiture - Berline - Diesel (5 personnes)
+ *         - 160 : Voiture - Berline - Électrique
+ *         - 161 : Voiture - Berline - Électrique (2 personnes)
+ *         - 162 : Voiture - Berline - Électrique (3 personnes)
+ *         - 163 : Voiture - Berline - Électrique (4 personnes)
+ *         - 164 : Voiture - Berline - Électrique (5 personnes)
+ *         - 165 : Voiture - Berline - Hybride non rechargeable
+ *         - 166 : Voiture - Berline - Hybride non rechargeable (2 personnes)
+ *         - 167 : Voiture - Berline - Hybride non rechargeable (3 personnes)
+ *         - 168 : Voiture - Berline - Hybride non rechargeable (4 personnes)
+ *         - 169 : Voiture - Berline - Hybride non rechargeable (5 personnes)
+ *         - 170 : Voiture - Berline - Hybride rechargeable
+ *         - 171 : Voiture - Berline - Hybride rechargeable (2 personnes)
+ *         - 172 : Voiture - Berline - Hybride rechargeable (3 personnes)
+ *         - 173 : Voiture - Berline - Hybride rechargeable (4 personnes)
+ *         - 174 : Voiture - Berline - Hybride rechargeable (5 personnes)
+ *         - 175 : Voiture - SUV - Essence
+ *         - 176 : Voiture - SUV - Essence (2 personnes)
+ *         - 177 : Voiture - SUV - Essence (3 personnes)
+ *         - 178 : Voiture - SUV - Essence (4 personnes)
+ *         - 179 : Voiture - SUV - Essence (5 personnes)
+ *         - 180 : Voiture - SUV - Diesel
+ *         - 181 : Voiture - SUV - Diesel (2 personnes)
+ *         - 182 : Voiture - SUV - Diesel (3 personnes)
+ *         - 183 : Voiture - SUV - Diesel (4 personnes)
+ *         - 184 : Voiture - SUV - Diesel (5 personnes)
+ *         - 185 : Voiture - SUV - Électrique
+ *         - 186 : Voiture - SUV - Électrique (2 personnes)
+ *         - 187 : Voiture - SUV - Électrique (3 personnes)
+ *         - 188 : Voiture - SUV - Électrique (4 personnes)
+ *         - 189 : Voiture - SUV - Électrique (5 personnes)
+ *         - 190 : Voiture - SUV - Hybride non rechargeable
+ *         - 191 : Voiture - SUV - Hybride non rechargeable (2 personnes)
+ *         - 192 : Voiture - SUV - Hybride non rechargeable (3 personnes)
+ *         - 193 : Voiture - SUV - Hybride non rechargeable (4 personnes)
+ *         - 194 : Voiture - SUV - Hybride non rechargeable (5 personnes)
+ *         - 195 : Voiture - SUV - Hybride rechargeable
+ *         - 196 : Voiture - SUV - Hybride rechargeable (2 personnes)
+ *         - 197 : Voiture - SUV - Hybride rechargeable (3 personnes)
+ *         - 198 : Voiture - SUV - Hybride rechargeable (4 personnes)
+ *         - 199 : Voiture - SUV - Hybride rechargeable (5 personnes)
+ *         - 200 : Voiture hybride
+ *         - 201 : Voiture hybride (2 personnes)
+ *         - 202 : Voiture hybride (3 personnes)
+ *         - 203 : Voiture hybride (4 personnes)
+ *         - 204 : Voiture hybride (5 personnes)
  *     - in: query
  *       name: ignoreRadiativeForcing
  *       default: 0
@@ -219,7 +336,7 @@ export const computeTransportEmission = (
  *               properties:
  *                 warning:
  *                   type: string
- *                   example: La requete n'est pas authentifée.
+ *                   example: La requete n'est pas authentifiée.
  *                 data:
  *                   type: array
  *                   items:
@@ -258,7 +375,7 @@ export async function GET(req: NextRequest) {
         })),
       warning: hasAPIKey
         ? undefined
-        : `La requete n'est pas authentifée. Nous nous reservons le droit de couper cette API aux utilisateurs anonymes, veuillez nous contacter à ${process.env.NEXT_PUBLIC_CONTACT_EMAIL} pour obtenir une clé d'API gratuite.`,
+        : `La requete n'est pas authentifiée. Nous nous reservons le droit de couper cette API aux utilisateurs anonymes, veuillez nous contacter à ${process.env.NEXT_PUBLIC_CONTACT_EMAIL} pour obtenir une clé d'API gratuite.`,
     },
     { status: 200 }
   )

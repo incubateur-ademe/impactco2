@@ -118,7 +118,7 @@ const Input = (
           data-testid={`input-${id}`}
           style={{
             height: unitDim ? `calc(${unitDim.height}px + 1rem)` : undefined,
-            paddingRight: unitDim ? `calc(${unitDim.width}px + 1.5rem)` : '1rem',
+            paddingRight: unitDim ? `calc(${unitDim.width}px + 1.5rem)` : undefined,
           }}
         />
         {icon && (

@@ -22,7 +22,7 @@ const SelectEquivalent = ({ equivalents, ...rest }: Omit<SelectProps, 'children'
       <Select className={styles.select} {...rest}>
         {equivalents.map((equivalent) => (
           <option key={equivalent.slug} value={equivalent.slug}>
-            {getName(language, equivalent)}
+            {getName(language, equivalent, false, 1, false, true)}
           </option>
         ))}
       </Select>

@@ -1,8 +1,8 @@
 import { SimpleEquivalent } from 'types/equivalent'
-import { getComparisonSlug, getName } from 'utils/Equivalent/equivalent'
+import { getName } from 'utils/Equivalent/equivalent'
+import { getEquivalentIcon } from 'utils/Equivalent/icons'
 import values from 'utils/Equivalent/values.json'
 import formatNumber from 'utils/formatNumber'
-import { buildCurrentUrlFor } from 'utils/urls'
 import InfinityIcon from 'components/base/icons/infinity'
 
 const equivalents = values as Record<string, SimpleEquivalent>
@@ -62,11 +62,7 @@ const Round = ({
             display: 'flex',
             marginBottom: '0.25rem',
           }}>
-          <img
-            style={{ width: '3rem', height: '3rem' }}
-            src={buildCurrentUrlFor(`/icons/${carpool ? 'covoiturage' : ''}${getComparisonSlug(slug)}.svg`)}
-            alt=''
-          />
+          <img style={{ width: '3rem', height: '3rem' }} src={getEquivalentIcon(slug, carpool)} alt='' />
         </div>
       )}
       {value && (
