@@ -10,24 +10,22 @@ function generateCSV() {
     ...Object.entries(values)
       .flatMap(([slug, data]) => {
         const category = categories.find((category) => category.id === data.category)
-        const name = getName('fr', { slug, ...data }, false, 1, false, category?.id === 12)
+        const name = getName('fr', { slug, ...data }, false, 1, false, true)
         const kgCO2e = data.value / 1000
         const thematique = category?.name || ''
         const id = slug
         const url = `https://impactco2.fr/outils/${category?.slug}/${slug}`
 
-        if (slug === 'voiturethermique' || slug === 'voitureelectrique') {
+        if (
+          slug === 'voiturethermique' ||
+          slug === 'voitureelectrique' ||
+          slug === 'voiturehybride' ||
+          (slug.startsWith('voiture-') && slug !== 'voiture-lille-nimes')
+        ) {
           return [
             [name, kgCO2e.toString(), thematique, id, url],
             ...Array.from({ length: 4 }).map((_, i) => [
-              getName(
-                'fr',
-                { slug: `${slug}+${i + 1}`, carpool: i + 1, ...data },
-                false,
-                1,
-                false,
-                category?.id === 12
-              ),
+              getName('fr', { slug: `${slug}+${i + 1}`, carpool: i + 1, ...data }, false, 1, false, true),
               (data.value / (i + 2)).toString(),
               thematique,
               `${id}+${i + 1}`,

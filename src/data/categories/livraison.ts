@@ -14,7 +14,7 @@ export const livraison = [
       },
       {
         id: 57,
-        value: 6.54,
+        value: 4.267602366886301,
       },
     ],
   },
@@ -52,7 +52,7 @@ export const livraison = [
       },
       {
         id: 56,
-        value: 1.526,
+        value: 0.9957738856068035,
       },
     ],
   },
@@ -94,7 +94,7 @@ export const livraison = [
       },
       {
         id: 57,
-        value: 6.54,
+        value: 4.267602366886301,
       },
     ],
   },
@@ -151,7 +151,7 @@ export const livraison = [
       },
       {
         id: 57,
-        value: 6.54,
+        value: 4.267602366886301,
       },
     ],
   },
@@ -189,7 +189,7 @@ export const livraison = [
       },
       {
         id: 56,
-        value: 1.526,
+        value: 0.9957738856068035,
       },
     ],
   },
@@ -231,7 +231,7 @@ export const livraison = [
       },
       {
         id: 57,
-        value: 6.54,
+        value: 4.267602366886301,
       },
     ],
   },
@@ -288,7 +288,7 @@ export const livraison = [
       },
       {
         id: 57,
-        value: 6.54,
+        value: 4.267602366886301,
       },
     ],
   },
@@ -326,7 +326,7 @@ export const livraison = [
       },
       {
         id: 56,
-        value: 1.526,
+        value: 0.9957738856068035,
       },
     ],
   },
@@ -368,7 +368,7 @@ export const livraison = [
       },
       {
         id: 57,
-        value: 6.54,
+        value: 4.267602366886301,
       },
     ],
   },
@@ -425,7 +425,7 @@ export const livraison = [
       },
       {
         id: 57,
-        value: 6.54,
+        value: 4.267602366886301,
       },
     ],
   },
@@ -463,7 +463,7 @@ export const livraison = [
       },
       {
         id: 56,
-        value: 1.526,
+        value: 0.9957738856068035,
       },
     ],
   },
@@ -505,7 +505,7 @@ export const livraison = [
       },
       {
         id: 57,
-        value: 6.54,
+        value: 4.267602366886301,
       },
     ],
   },

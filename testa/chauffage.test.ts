@@ -37,7 +37,7 @@ const expectCloseTo = (
     expect(item.ecv).toBeCloseTo(expectedItem.ecv, 6)
   })
   expect(actual.warning).toBe(
-    "La requete n'est pas authentifée. Nous nous reservons le droit de couper cette API aux utilisateurs anonymes, veuillez nous contacter à impactco2@ademe.fr pour obtenir une clé d'API gratuite."
+    "La requete n'est pas authentifiée. Nous nous reservons le droit de couper cette API aux utilisateurs anonymes, veuillez nous contacter à impactco2@ademe.fr pour obtenir une clé d'API gratuite."
   )
 }
 

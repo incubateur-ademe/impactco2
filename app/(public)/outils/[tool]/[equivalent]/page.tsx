@@ -6,32 +6,7 @@ import { equivalentsSimulators } from 'components/outils/equivalents/simulators/
 import { getName } from 'utils/Equivalent/equivalent'
 import Suggestion from 'components/layout/Suggestion'
 
-export async function generateStaticParams() {
-  return categories.flatMap((category) =>
-    category.equivalents
-      ? category.equivalents.flatMap((equivalent) =>
-          equivalent.withCarpool
-            ? [
-                {
-                  tool: category.slug,
-                  equivalent: equivalent.slug,
-                },
-                ...Array.from({ length: 4 }).map((value, index) => ({
-                  tool: category.slug,
-                  equivalent: `${equivalent.slug}+${index + 1}`,
-                  carpool: index + 1,
-                })),
-              ]
-            : [
-                {
-                  tool: category.slug,
-                  equivalent: equivalent.slug,
-                },
-              ]
-        )
-      : []
-  )
-}
+export const dynamic = 'force-dynamic'
 
 type Props = {
   params: Promise<{ tool: string; equivalent: string }>

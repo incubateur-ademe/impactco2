@@ -104,7 +104,10 @@ const TransportIntegrate = () => {
 
     if (
       modes.length !== 0 &&
-      modes.length !== deplacements.reduce((acc, current) => acc + (current.withCarpool ? 2 : 1), 0)
+      modes.length !==
+        deplacements
+          .filter((deplacement) => !deplacement.ignore)
+          .reduce((acc, current) => acc + (current.withCarpool ? 2 : 1), 0)
     ) {
       result += `&modes=${modes.join(',')}`
     }

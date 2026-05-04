@@ -1,6 +1,5 @@
 import { ComputedEquivalent } from 'types/equivalent'
-import { getComparisonSlug } from 'utils/Equivalent/equivalent'
-import { buildCurrentUrlFor } from 'utils/urls'
+import { getEquivalentIcon } from 'utils/Equivalent/icons'
 
 const EquivalentIcon = ({
   equivalent,
@@ -17,9 +16,7 @@ const EquivalentIcon = ({
 
   return (
     <img
-      src={buildCurrentUrlFor(
-        `/icons/${equivalent.carpool ? 'covoiturage' : ''}${getComparisonSlug(slug)}${customTheme ? `-${customTheme}` : ''}.svg`
-      )}
+      src={getEquivalentIcon(slug, equivalent.carpool, customTheme)}
       width={(height || 1) * 16}
       height={(height || 1) * 16}
       alt={alt || ''}

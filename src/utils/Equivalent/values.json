@@ -30,7 +30,7 @@
   },
   "voiture-lille-nimes": {
     "category": 13,
-    "value": 410000,
+    "value": 267720.9218160006,
     "fr": "A/R Lille - Nîmes en voiture",
     "en": "Roundtrip[s] Lille - Nîmes by car",
     "es": "Viaje de ida y vuelta Lille - Nîmes en coche"
@@ -73,7 +73,7 @@
   },
   "terre-voiture": {
     "category": 13,
-    "value": 8704000,
+    "value": 7570825.010920865,
     "fr": "Tour[s] de la terre en voiture",
     "en": "Tour[s] of the earth by car",
     "es": "Recorrido[s] por la tierra en coche"
@@ -241,17 +241,164 @@
   },
   "voiturethermique": {
     "category": 4,
-    "value": 217.60000000000002,
+    "value": 142.25341222954336,
     "fr": "km en ;voiture thermique",
     "en": "km by ;combustion car",
     "es": "km en ;coche termico"
   },
   "voitureelectrique": {
     "category": 4,
-    "value": 103.39999999999999,
+    "value": 67.36526222954336,
     "fr": "km en ;voiture électrique",
     "en": "km by ;electric car",
     "es": "km en ;coche eléctrico"
+  },
+  "voiturehybride": {
+    "category": 4,
+    "value": 146.57935353389118,
+    "fr": "km en ;voiture hybride",
+    "en": "km by ;hybrid car",
+    "es": "km en ;coche híbrido"
+  },
+  "voiture-citadine-essence": {
+    "category": 4,
+    "value": 144.71475570780424,
+    "fr": "km en ;voiture thermique",
+    "en": "km by ;combustion car",
+    "es": "km en ;coche termico"
+  },
+  "voiture-citadine-diesel": {
+    "category": 4,
+    "value": 121.90341195780425,
+    "fr": "km en ;voiture thermique",
+    "en": "km by ;combustion car",
+    "es": "km en ;coche termico"
+  },
+  "voiture-citadine-electrique": {
+    "category": 4,
+    "value": 57.59361549041294,
+    "fr": "km en ;voiture électrique",
+    "en": "km by ;electric car",
+    "es": "km en ;coche eléctrico"
+  },
+  "voiture-citadine-hybride": {
+    "category": 4,
+    "value": 135.24939701215205,
+    "fr": "km en ;voiture hybride",
+    "en": "km by ;hybrid car",
+    "es": "km en ;coche híbrido"
+  },
+  "voiture-citadine-hybriderechargeable": {
+    "category": 4,
+    "value": 128.88743179476074,
+    "fr": "km en ;voiture hybride",
+    "en": "km by ;hybrid car",
+    "es": "km en ;coche híbrido"
+  },
+  "voiture-compact-essence": {
+    "category": 4,
+    "value": 169.70802472954335,
+    "fr": "km en ;voiture thermique",
+    "en": "km by ;combustion compact car",
+    "es": "km en ;coche termico"
+  },
+  "voiture-compact-diesel": {
+    "category": 4,
+    "value": 142.25341222954335,
+    "fr": "km en ;voiture thermique",
+    "en": "km by ;diesel compact car",
+    "es": "km en ;coche compacto diésel"
+  },
+  "voiture-compact-electrique": {
+    "category": 4,
+    "value": 67.36526222954337,
+    "fr": "km en ;voiture électrique",
+    "en": "km by ;electric car",
+    "es": "km en ;coche eléctrico"
+  },
+  "voiture-compact-hybride": {
+    "category": 4,
+    "value": 146.57935353389116,
+    "fr": "km en ;voiture hybride",
+    "en": "km by ;hybrid car",
+    "es": "km en ;coche híbrido"
+  },
+  "voiture-compact-hybriderechargeable": {
+    "category": 4,
+    "value": 133.90036331649985,
+    "fr": "km en ;voiture hybride",
+    "en": "km by ;hybrid car",
+    "es": "km en ;coche híbrido"
+  },
+  "voiture-berline-essence": {
+    "category": 4,
+    "value": 189.27062527302162,
+    "fr": "km en ;voiture thermique",
+    "en": "km by ;combustionn",
+    "es": "km en ;berlintermico"
+  },
+  "voiture-berline-diesel": {
+    "category": 4,
+    "value": 183.4024002730216,
+    "fr": "km en ;voiture thermique",
+    "en": "km by ;combustion car",
+    "es": "km en ;coche termico"
+  },
+  "voiture-berline-electrique": {
+    "category": 4,
+    "value": 90.71433614258682,
+    "fr": "km en ;voiture électrique",
+    "en": "km by ;electric car",
+    "es": "km en ;coche eléctrico"
+  },
+  "voiture-berline-hybride": {
+    "category": 4,
+    "value": 170.8510165773694,
+    "fr": "km en ;voiture hybride",
+    "en": "km by ;hybrid car",
+    "es": "km en ;coche híbrido"
+  },
+  "voiture-berline-hybriderechargeable": {
+    "category": 4,
+    "value": 164.46473260997812,
+    "fr": "km en ;voiture hybride",
+    "en": "km by ;hybrid car",
+    "es": "km en ;coche híbrido"
+  },
+  "voiture-grandeberline-essence": {
+    "category": 4,
+    "value": 246.23893777302162,
+    "fr": "km en ;voiture thermique",
+    "en": "km by ;combustion car",
+    "es": "km en ;coche termico"
+  },
+  "voiture-grandeberline-diesel": {
+    "category": 4,
+    "value": 169.70828152302162,
+    "fr": "km en ;voiture thermique",
+    "en": "km by ;combustion car",
+    "es": "km en ;coche termico"
+  },
+  "voiture-grandeberline-electrique": {
+    "category": 4,
+    "value": 94.35702527302163,
+    "fr": "km en ;voiture électrique",
+    "en": "km by ;electric car",
+    "es": "km en ;coche eléctrico"
+  },
+  "voiture-grandeberline-hybride": {
+    "category": 4,
+    "value": 181.90301657736943,
+    "fr": "km en ;voiture hybride",
+    "en": "km by ;hybrid car",
+    "es": "km en ;coche híbrido"
+  },
+  "voiture-grandeberline-hybriderechargeable": {
+    "category": 4,
+    "value": 185.9802763599781,
+    "fr": "km en ;voiture hybride",
+    "en": "km by ;hybrid car",
+    "es": "km en ;coche híbrido"
   },
   "autocar": {
     "category": 4,
@@ -1774,7 +1921,7 @@
   },
   "magasin": {
     "category": 12,
-    "value": 7084.846370637248,
+    "value": 4812.4487375235485,
     "fr": "achat[s] en magasin",
     "en": "purchase[s] in a store",
     "es": "compra[s] en una tienda"
@@ -1788,7 +1935,7 @@
   },
   "pointrelais": {
     "category": 12,
-    "value": 2182.1182973825644,
+    "value": 1651.8921829893677,
     "fr": "livraison[s] en point de retrait",
     "en": "delivery[s] in a relay point",
     "es": "entrega[s] en un punto de relevo"
@@ -1802,7 +1949,7 @@
   },
   "clickcollect": {
     "category": 12,
-    "value": 7437.555420670236,
+    "value": 5165.157787556536,
     "fr": "Click & Collect",
     "en": "Click & Collect",
     "es": "Click & Collect"
@@ -1823,7 +1970,7 @@
   },
   "magasin2kg": {
     "category": 12,
-    "value": 7370.402762386496,
+    "value": 5098.005129272797,
     "fr": "achat[s] en magasin",
     "en": "purchase[s] in a store",
     "es": "compra[s] en una tienda"
@@ -1837,7 +1984,7 @@
   },
   "pointrelais2kg": {
     "category": 12,
-    "value": 2467.674689131812,
+    "value": 1937.4485747386157,
     "fr": "livraison[s] en point de retrait",
     "en": "delivery[s] in a relay point",
     "es": "entrega[s] en un punto de relevo"
@@ -1851,7 +1998,7 @@
   },
   "clickcollect2kg": {
     "category": 12,
-    "value": 7723.111812419484,
+    "value": 5450.7141793057845,
     "fr": "Click & Collect",
     "en": "Click & Collect",
     "es": "Click & Collect"
@@ -1872,7 +2019,7 @@
   },
   "magasin15kg": {
     "category": 12,
-    "value": 13476.069454374716,
+    "value": 11203.671821261016,
     "fr": "achat[s] en magasin",
     "en": "purchase[s] in a store",
     "es": "compra[s] en una tienda"
@@ -1886,7 +2033,7 @@
   },
   "pointrelais15kg": {
     "category": 12,
-    "value": 7684.761596466583,
+    "value": 7154.535482073386,
     "fr": "livraison[s] en point de retrait",
     "en": "delivery[s] in a relay point",
     "es": "entrega[s] en un punto de relevo"
@@ -1900,7 +2047,7 @@
   },
   "clickcollect15kg": {
     "category": 12,
-    "value": 15113.132829343296,
+    "value": 12840.735196229596,
     "fr": "Click & Collect",
     "en": "Click & Collect",
     "es": "Click & Collect"
@@ -1921,7 +2068,7 @@
   },
   "magasin30kg": {
     "category": 12,
-    "value": 20406.70038245343,
+    "value": 18134.30274933973,
     "fr": "achat[s] en magasin",
     "en": "purchase[s] in a store",
     "es": "compra[s] en una tienda"
@@ -1935,7 +2082,7 @@
   },
   "pointrelais30kg": {
     "category": 12,
-    "value": 13162.609604379979,
+    "value": 12632.383489986783,
     "fr": "livraison[s] en point de retrait",
     "en": "delivery[s] in a relay point",
     "es": "entrega[s] en un punto de relevo"
@@ -1949,7 +2096,7 @@
   },
   "clickcollect30kg": {
     "category": 12,
-    "value": 23005.352070133406,
+    "value": 20732.954437019707,
     "fr": "Click & Collect",
     "en": "Click & Collect",
     "es": "Click & Collect"

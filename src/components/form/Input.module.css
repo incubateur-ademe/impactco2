@@ -229,6 +229,15 @@
   border: 2px solid var(--primary-30);
   background: var(--primary-10);
   color: var(--primary-60);
+  max-width: 500px;
+
+  @media screen and (max-width: 875px) {
+    max-width: 400px;
+  }
+
+  @media screen and (max-width: 750px) {
+    max-width: 300px;
+  }
 
   @media screen and (max-width: 700px) {
     max-width: 200px;
@@ -236,6 +245,10 @@
 
   @media screen and (max-width: 400px) {
     max-width: 150px;
+  }
+
+  @media screen and (max-width: 350px) {
+    max-width: 125px;
   }
 }
 

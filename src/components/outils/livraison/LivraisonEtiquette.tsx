@@ -23,7 +23,7 @@ const livraisonEquivalents = computedEquivalents
 
 const LivraisonEtiquette = ({ animated, id }: { animated?: boolean; id: string }) => {
   const params = useSearchParams()
-  const customTheme = params.get('customTheme')
+  const customTheme = params.get('customTheme') || params.get('customtheme')
   const mode = params.get('mode')
 
   const { trackOnce } = useTrackingContext()

@@ -22,6 +22,8 @@ const internalPages: Record<string, string> = {
 }
 
 const iframeToSimulateur: Record<string, string> = {
+  '/iframes/transport/velo': 'Vélo',
+  '/iframes/equivalent': '',
   '/iframes/comparateur/bandeau': '',
   '/iframes/transport/itinerai': '',
   '/iframes/transport/itiner': '',

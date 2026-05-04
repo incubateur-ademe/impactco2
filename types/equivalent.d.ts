@@ -94,7 +94,13 @@ export type Equivalent =
   | UsageNumeriqueEquivalent
   | FruitsEtLegumesEquivalent
 
-export type ComputedEquivalent = Equivalent & { value: number; initialValue?: number; link: string; name?: ReactNode }
+export type ComputedEquivalent = Equivalent & {
+  value: number
+  initialValue?: number
+  link: string
+  name?: ReactNode
+  ignore?: boolean
+}
 
 export type Language = 'en' | 'fr' | 'es'
 export type SimpleEquivalent = {

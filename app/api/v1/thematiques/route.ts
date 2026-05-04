@@ -51,7 +51,7 @@ import { trackAPIRequest } from 'utils/middleware'
  *               properties:
  *                 warning:
  *                   type: string
- *                   example: La requete n'est pas authentifée.
+ *                   example: La requete n'est pas authentifiée.
  *                 data:
  *                   type: array
  *                   items:
@@ -71,7 +71,7 @@ export async function GET(req: NextRequest) {
         .sort((a, b) => a.id - b.id),
       warning: hasAPIKey
         ? undefined
-        : `La requete n'est pas authentifée. Nous nous reservons le droit de couper cette API aux utilisateurs anonymes, veuillez nous contacter à ${process.env.NEXT_PUBLIC_CONTACT_EMAIL} pour obtenir une clé d'API gratuite.`,
+        : `La requete n'est pas authentifiée. Nous nous reservons le droit de couper cette API aux utilisateurs anonymes, veuillez nous contacter à ${process.env.NEXT_PUBLIC_CONTACT_EMAIL} pour obtenir une clé d'API gratuite.`,
     },
     { status: 200 }
   )

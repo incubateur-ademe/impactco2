@@ -46,8 +46,8 @@ test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
     await angers.click()
   })
 
-  await expect(page.getByTestId('teletravail-generated-value')).toHaveText('7,289')
-  await expect(page.getByTestId('etiquette-value').first()).toHaveText('1.37 t CO₂e')
+  await expect(page.getByTestId('teletravail-generated-value')).toHaveText('4,765')
+  await expect(page.getByTestId('etiquette-value').first()).toHaveText('893 kg CO₂e')
 
   await page.getByTestId('text-select-mode').selectOption('tramway')
   await expect(page.getByTestId('teletravail-generated-value')).toHaveText('144')

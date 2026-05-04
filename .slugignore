@@ -1,2 +1,6 @@
-/.git
-/.next/cache
+.git
+.gitignore
+.next/cache
+coverage
+*.log
+.env*
