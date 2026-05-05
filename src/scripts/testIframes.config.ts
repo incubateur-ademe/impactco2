@@ -183,6 +183,9 @@ export const checks = [
   {
     slug: 'bondici',
     url: 'https://www.bondici.fr/actualite/quand-manger-les-fruits-et-legumes-de-saison/',
+    before: async (page: Page) => {
+      await page.getByRole('button', { name: 'Refuser' }).click()
+    },
     checkIframe: async (iframe: FrameLocator) => {
       await expect(iframe.getByTestId('text-select-month')).toHaveValue('5')
       await expect(iframe.getByTestId('category-abricot-value')).toBeVisible()

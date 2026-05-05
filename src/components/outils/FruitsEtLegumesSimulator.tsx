@@ -24,6 +24,7 @@ const FruitsEtLegumesSimulator = () => {
 
   const t = useTranslations('flds')
   const tMonth = useTranslations('overscreen.month')
+
   return (
     <>
       <div className={styles.simulator}>
@@ -36,9 +37,9 @@ const FruitsEtLegumesSimulator = () => {
             trackOnce('Mois')
             setMonth(Number(e.target.value))
           }}>
-          {monthsOptions.map((month) => (
-            <option key={month.value} value={month.value}>
-              {tMonth(month.label)}
+          {monthsOptions.map(({ value, label }) => (
+            <option key={value} value={value}>
+              {tMonth(label)}
             </option>
           ))}
         </Select>

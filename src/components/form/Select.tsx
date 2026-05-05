@@ -38,16 +38,15 @@ const Select = ({
         <select
           className={classNames(styles.select, { [styles.small]: padding === 'sm' })}
           data-testid={`text-select-${id}`}
+          aria-selected={selectProps.value}
           {...selectProps}
           id={`text-select-${id}`}>
-          <>
-            {selectProps.required && (
-              <option value='' disabled hidden>
-                Choisir une option
-              </option>
-            )}
-            {children}
-          </>
+          {selectProps.required && (
+            <option value='' disabled hidden>
+              Choisir une option
+            </option>
+          )}
+          {children}
         </select>
       </div>
     </div>
