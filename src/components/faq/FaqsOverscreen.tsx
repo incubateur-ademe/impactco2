@@ -17,20 +17,10 @@ import styles from './FAQsList.module.css'
 
 const faqCategoriesOrder: Record<FAQCategory, number> = {
   [FAQCategory.QuestionsGenerales]: 1,
-  [FAQCategory.GeneralQuestions]: 1,
-  [FAQCategory.PreguntasGenerales]: 1,
   [FAQCategory.ComprendreLeCalcul]: 2,
-  [FAQCategory.AboutTheCalculation]: 2,
-  [FAQCategory.EntenderElCálculo]: 2,
   [FAQCategory.CestÉtonnant]: 3,
-  [FAQCategory.ItsSurprising]: 3,
-  [FAQCategory.EsSorprendente]: 3,
   [FAQCategory.IdéesPourAgir]: 4,
-  [FAQCategory.IdeasForAction]: 4,
-  [FAQCategory.IdeasParaActuar]: 4,
   [FAQCategory.ÀProposDesOutils]: 5,
-  [FAQCategory.AboutTheTools]: 5,
-  [FAQCategory.AcercaDeLasHerramientas]: 5,
 }
 
 const FaqsOverscreen = ({ filter, page, slug }: { filter: string; slug: string } & Omit<FAQSListProps, 'faqs'>) => {
@@ -115,7 +105,7 @@ const FaqsOverscreen = ({ filter, page, slug }: { filter: string; slug: string }
             <ul className={styles.categories}>
               {faqsByCategory.map(([category, faqs]) => (
                 <li key={category} className={styles.category}>
-                  <h2 className={styles.categoryTitle}>{category}</h2>
+                  <h2 className={styles.categoryTitle}>{t(category)}</h2>
                   <ul>
                     {faqs.map((faq) => (
                       <FAQ key={faq.title} faq={faq} page={page} loadingText={t('loading')} withAnchor />

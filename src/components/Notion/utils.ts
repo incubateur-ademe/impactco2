@@ -8,7 +8,8 @@ export const getNotionContentProps = unstable_cache(
     try {
       const result = await notion.getPage(id)
       return result
-    } catch {
+    } catch (e) {
+      console.error('Unable to get content from Notion', e)
       return undefined
     }
   },
