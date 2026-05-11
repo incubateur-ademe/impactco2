@@ -36,7 +36,7 @@ Madeleine,2.2434,Alimentation,madeleine,https://impactco2.fr/outils/alimentation
 Matière grasse végétale,2.58463,Alimentation,matieregrasse,https://impactco2.fr/outils/alimentation/matieregrasse
 Moules,5.328231000000001,Alimentation,moules,https://impactco2.fr/outils/alimentation/moules
 Mozarella,4.714629999999999,Alimentation,mozarella,https://impactco2.fr/outils/alimentation/mozarella
-Nuggets végétaux,1.7695,Alimentation,nuggetsvegetaux,https://impactco2.fr/outils/alimentation/nuggetsvegetaux
+Nuggets végétaux,1.7705,Alimentation,nuggetsvegetaux,https://impactco2.fr/outils/alimentation/nuggetsvegetaux
 Oeufs,1.8780103000000001,Alimentation,oeuf,https://impactco2.fr/outils/alimentation/oeuf
 Pain au chocolat ou chocolatine,5.7291,Alimentation,painauchocolat,https://impactco2.fr/outils/alimentation/painauchocolat
 Pain aux raisins,2.5641,Alimentation,painauxraisins,https://impactco2.fr/outils/alimentation/painauxraisins
@@ -61,7 +61,7 @@ Repas végétarien,0.85,Alimentation,repasvegetarien,https://impactco2.fr/outils
 Riz,2.01458575,Alimentation,riz,https://impactco2.fr/outils/alimentation/riz
 Rocher au chocolat,10.521899999999999,Alimentation,boucheechocolat,https://impactco2.fr/outils/alimentation/boucheechocolat
 Sardines,2.2764877,Alimentation,sardines,https://impactco2.fr/outils/alimentation/sardines
-Saucisse végétale,2.1973999999999996,Alimentation,saucissevegetale,https://impactco2.fr/outils/alimentation/saucissevegetale
+Saucisse végétale,2.2134,Alimentation,saucissevegetale,https://impactco2.fr/outils/alimentation/saucissevegetale
 Saumon ou truite d'élevage (cru),5.55693,Alimentation,saumon,https://impactco2.fr/outils/alimentation/saumon
 Sushis ou makis,2.6689999999999996,Alimentation,sushis,https://impactco2.fr/outils/alimentation/sushis
 Thon (cru),4.98343,Alimentation,thon,https://impactco2.fr/outils/alimentation/thon
@@ -284,6 +284,7 @@ Avion trajet moyen à long,0.166794,Transport,avion-moyenlongcourrier,https://im
 Bus (GNV),0.1217,Transport,busgnv,https://impactco2.fr/outils/transport/busgnv
 Bus électrique,0.0217,Transport,buselectrique,https://impactco2.fr/outils/transport/buselectrique
 Bus thermique,0.12242,Transport,busthermique,https://impactco2.fr/outils/transport/busthermique
+Camping-car,0.49383327166930846,Transport,campingcar,https://impactco2.fr/outils/transport/campingcar
 Covoiturage électrique (2 personnes),33.68263111477168,Transport,voitureelectrique+1,https://impactco2.fr/outils/transport/voitureelectrique+1
 Covoiturage électrique (3 personnes),22.45508740984779,Transport,voitureelectrique+2,https://impactco2.fr/outils/transport/voitureelectrique+2
 Covoiturage électrique (4 personnes),16.84131555738584,Transport,voitureelectrique+3,https://impactco2.fr/outils/transport/voitureelectrique+3
@@ -379,14 +380,18 @@ Covoiturage thermique (SUV - Essence - 5 personnes),49.24778755460433,Transport,
 Intercités,0.00898,Transport,intercites,https://impactco2.fr/outils/transport/intercites
 Marche,0,Transport,marche,https://impactco2.fr/outils/transport/marche
 Métro,0.0044399999999999995,Transport,metro,https://impactco2.fr/outils/transport/metro
-Moto thermique,0.21669999999999998,Transport,moto,https://impactco2.fr/outils/transport/moto
+Moto thermique (<= 250 cm³),0.0872,Transport,moto-petite,https://impactco2.fr/outils/transport/moto-petite
+Moto thermique (> 250 cm³),0.2147,Transport,moto,https://impactco2.fr/outils/transport/moto
 RER ou Transilien,0.00978,Transport,rer,https://impactco2.fr/outils/transport/rer
-Scooter ou moto légère thermique,0.0763,Transport,scooter,https://impactco2.fr/outils/transport/scooter
+Scooter électrique,0.059300000000000005,Transport,scooterelectrique,https://impactco2.fr/outils/transport/scooterelectrique
+Scooter thermique,0.0763,Transport,scooter,https://impactco2.fr/outils/transport/scooter
 TER,0.02769,Transport,ter,https://impactco2.fr/outils/transport/ter
 TGV,0.00293,Transport,tgv,https://impactco2.fr/outils/transport/tgv
 Tramway,0.00428,Transport,tramway,https://impactco2.fr/outils/transport/tramway
 Trottinette à assistance électrique,0.0249,Transport,trottinette,https://impactco2.fr/outils/transport/trottinette
+Van,0.3246260116693085,Transport,van,https://impactco2.fr/outils/transport/van
 Vélo à assistance électrique,0.010950000000000001,Transport,veloelectrique,https://impactco2.fr/outils/transport/veloelectrique
+Vélo cargo triporteur,0.014827,Transport,triporteurelectrique,https://impactco2.fr/outils/transport/triporteurelectrique
 Vélo mécanique,0.00017,Transport,velo,https://impactco2.fr/outils/transport/velo
 Voiture électrique,0.06736526222954337,Transport,voitureelectrique,https://impactco2.fr/outils/transport/voitureelectrique
 Voiture électrique (Berline),0.09071433614258681,Transport,voiture-berline-electrique,https://impactco2.fr/outils/transport/voiture-berline-electrique

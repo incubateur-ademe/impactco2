@@ -20,7 +20,6 @@ const Carpool = ({
   equivalent: ComputedEquivalent
 }) => {
   const t = useTranslations('category-simulator')
-  const tVoiture = useTranslations('voiture')
   const params = useParamContext()
   const [slug] = equivalent.slug.split('+')
   const carpoolSlug = carpoolValue ? `covoiturage${slug.replace('voiture', '')}` : slug
@@ -48,13 +47,22 @@ const Carpool = ({
                   [carpoolSlug]: { ...carInfos, size: event.target.value },
                 })
               }}>
-              <option value='citadine'>{tVoiture('citadine')}</option>
-              <option value='compact'>{tVoiture('compact')}</option>
-              <option value='berline'>{tVoiture('berline')}</option>
-              <option value='grandeberline'>{tVoiture('grandeberline')}</option>
+              {slug.startsWith('voiture') ? (
+                <>
+                  <option value='citadine'>{t('voiture.citadine')}</option>
+                  <option value='compact'>{t('voiture.compact')}</option>
+                  <option value='berline'>{t('voiture.berline')}</option>
+                  <option value='grandeberline'>{t('voiture.grandeberline')}</option>
+                </>
+              ) : (
+                <>
+                  <option value='petite'>{t('moto.small')}</option>
+                  <option value='moyenne'>{t('moto.medium')}</option>
+                </>
+              )}
             </Select>
           </div>
-          {!carpoolSlug.endsWith('electrique') && (
+          {slug.startsWith('voiture') && !carpoolSlug.endsWith('electrique') && (
             <div className={styles.transport}>
               <HiddenLabel htmlFor={`text-select-car-engine-${carpoolSlug}`}>{t('transportEngineSelect')}</HiddenLabel>
               <Select
@@ -74,14 +82,14 @@ const Carpool = ({
                 }}>
                 {carpoolSlug.endsWith('thermique') && (
                   <>
-                    <option value='diesel'>{tVoiture('diesel')}</option>
-                    <option value='essence'>{tVoiture('essence')}</option>
+                    <option value='diesel'>{t('voiture.diesel')}</option>
+                    <option value='essence'>{t('voiture.essence')}</option>
                   </>
                 )}
                 {carpoolSlug.endsWith('hybride') && (
                   <>
-                    <option value='hybride'>{tVoiture('hybride')}</option>
-                    <option value='hybriderechargeable'>{tVoiture('hybriderechargeable')}</option>
+                    <option value='hybride'>{t('voiture.hybride')}</option>
+                    <option value='hybriderechargeable'>{t('voiture.hybriderechargeable')}</option>
                   </>
                 )}
               </Select>

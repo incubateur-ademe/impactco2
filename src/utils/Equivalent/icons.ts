@@ -21,6 +21,10 @@ const resolveIconSlug = (slug: string) => {
     }
   }
 
+  if (slug === 'moto-petite') {
+    return 'moto'
+  }
+
   const livraisonMatch = slug.match(livraisonIconPattern)
   if (livraisonMatch) {
     const [, mode, douce] = livraisonMatch

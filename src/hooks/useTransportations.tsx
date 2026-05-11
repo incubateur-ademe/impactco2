@@ -65,8 +65,12 @@ export default function useTransportations(
 
               const carInfo = carInfos[equivalent.slug]
               const realEquivalent =
-                (carInfo && equivalents.find((eq) => eq.slug === `voiture-${carInfo.size}-${carInfo.engine}`)) ||
+                (carInfo &&
+                  (equivalent.slug.startsWith('voiture')
+                    ? equivalents.find((eq) => eq.slug === `voiture-${carInfo.size}-${carInfo.engine}`)
+                    : equivalents.find((eq) => eq.slug === `moto-${carInfo.size}`))) ||
                 equivalent
+
               const carpoolCarInfo = carInfos[`covoiturage${equivalent.slug.replace('voiture', '')}`]
               const carpoolEquivalent =
                 (carpoolCarInfo &&

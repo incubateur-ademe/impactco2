@@ -217,7 +217,7 @@ const CategorySimulator = ({
                       {legends && <p className='ico2-hidden'>{barExplanation}</p>}
                     </div>
                   </IframeableLink>
-                  {equivalent.slug.startsWith('voiture') && type && (
+                  {(equivalent.slug.startsWith('voiture') || equivalent.slug.startsWith('moto')) && type && (
                     <Carpool carpoolValue={equivalent.carpool} type={type} equivalent={equivalent} />
                   )}
                   {!!equivalent.livraison && <LivraisonType equivalent={equivalent} />}

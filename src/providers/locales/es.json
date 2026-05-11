@@ -322,6 +322,21 @@
     "transport": {
       "display": "Ver todos los modos de transporte",
       "hide": "Mostrar menos modos de transporte"
+    },
+    "voiture": {
+      "diesel": "Diésel",
+      "essence": "Gasolina",
+      "hybride": "No recargable",
+      "hybriderechargeable": "Recargable",
+      "electrique": "Eléctrico",
+      "citadine": "Pequeña",
+      "compact": "Mediana",
+      "berline": "Sedán",
+      "grandeberline": "SUV"
+    },
+    "moto": {
+      "small": "<= 250 cm³",
+      "medium": "> 250 cm³"
     }
   },
   "comparateur": {
@@ -556,6 +571,11 @@
         "voiturethermique": "Mediana - Diésel",
         "voitureelectrique": "Mediana",
         "voiturehybride": "Mediana - No recargable",
+        "moto": "moto de cilindrada superior a 250 cm³",
+        "moto-petite": "moto de cilindrada inferior o igual a 250 cm³",
+        "veli": "Velocidad 100% eléctrico con una batería de 6,1 kWh, con un consumo de electricidad de 55 Wh/km y una vida útil de 70000 km",
+        "veliassistance": "Velocidad con asistencia eléctrica con un consumo de 10 Wh/km, de los cuales 8 Wh/km son de electricidad, y una vida útil de 70000 km",
+        "triporteurelectrique": "Bicicleta de carga eléctrica con una batería de 562 Wh y una vida útil de 30000 km",
         "repasavecduboeuf": "Bistec de res (4,34 kg CO₂e), verduras variadas (0,24 kg CO₂e), aceite de oliva virgen extra (0,01 kg CO₂e), postre medio (0,34 kg CO₂e), pan (0,04 kg CO₂e).",
         "repasvegetarien": "120g de proteína animal sin carne (0,23 kg CO₂e), 300g de verduras variadas (0,24 kg CO₂e), 7g de aceite de oliva (0,01 kg CO₂e), 200g de postre medio (0,34 kg CO₂e), 50g de pan (0,04 kg CO₂e).",
         "repasvegetalien": "100g de proteína vegetal (0,10 kg CO₂e), 300g de verduras variadas (0,24 kg CO₂e), 7g de aceite de oliva (0,01 kg CO₂e), 200g de frutas (0,15 kg CO₂e), 50g de pan (0,04 kg CO₂e).",
@@ -754,16 +774,5 @@
       "exemple-4": "8 giga toneladas co2e",
       "exemple-5": "7 mil kg CO₂"
     }
-  },
-  "voiture": {
-    "diesel": "Diésel",
-    "essence": "Gasolina",
-    "hybride": "No recargable",
-    "hybriderechargeable": "Recargable",
-    "electrique": "Eléctrico",
-    "citadine": "Pequeña",
-    "compact": "Mediana",
-    "berline": "Sedán",
-    "grandeberline": "SUV"
   }
 }

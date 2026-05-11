@@ -346,16 +346,16 @@ export const deplacements = [
     ecv: [
       {
         id: 5,
-        value: 0.0292,
+        value: 0.0747,
       },
       {
         id: 6,
-        value: 0.1875,
+        value: 0.14,
       },
     ],
     default: true,
     display: {
-      min: 51,
+      min: 11,
     },
   },
   {
@@ -461,6 +461,159 @@ export const deplacements = [
       max: 15,
     },
   },
+  {
+    id: 31,
+    slug: 'campingcar',
+    type: 'car',
+    category: 4,
+    default: false,
+    ecv: [
+      {
+        id: 6,
+        value: 0.3771932716693085,
+      },
+      {
+        id: 5,
+        value: 0.11664,
+      },
+    ],
+  },
+  {
+    id: 32,
+    slug: 'moto-petite',
+    type: 'car',
+    category: 4,
+    default: true,
+    ignore: true,
+    display: {
+      min: 11,
+    },
+    ecv: [
+      {
+        id: 5,
+        value: 0.0705,
+      },
+      {
+        id: 6,
+        value: 0.0167,
+      },
+    ],
+  },
+  {
+    id: 33,
+    slug: 'scooterelectrique',
+    type: 'car',
+    category: 4,
+    default: true,
+    display: {
+      max: 50,
+    },
+    ecv: [
+      {
+        id: 6,
+        value: 0.0207,
+      },
+      {
+        id: 5,
+        value: 0.0386,
+      },
+    ],
+  },
+  {
+    id: 34,
+    slug: 'triporteurelectrique',
+    type: 'car',
+    category: 4,
+    default: false,
+    display: {
+      max: 30,
+    },
+    ecv: [
+      {
+        id: 5,
+        value: 0.01183,
+      },
+      {
+        id: 6,
+        value: 0.002997,
+      },
+    ],
+    sources: [
+      {
+        label: 'XD Mobilités ADEME',
+        href: 'https://xd.ademe.fr/',
+      },
+    ],
+  },
+  {
+    id: 35,
+    slug: 'van',
+    type: 'car',
+    category: 4,
+    default: false,
+    ecv: [
+      {
+        id: 6,
+        value: 0.2371460116693085,
+      },
+      {
+        id: 5,
+        value: 0.08748,
+      },
+    ],
+  },
+  /*{
+    id: 36,
+    slug: 'veli',
+    type: 'car',
+    category: 4,
+    default: false,
+    display: {
+      max: 30,
+    },
+    ecv: [
+      {
+        id: 5,
+        value: 0.0371,
+      },
+      {
+        id: 6,
+        value: 0.00285,
+      },
+    ],
+    sources: [
+      {
+        label: 'XD Mobilités ADEME',
+        href: 'https://xd.ademe.fr/',
+      },
+    ],
+  },
+  {
+    id: 37,
+    slug: 'veliassistance',
+    type: 'car',
+    category: 4,
+    default: false,
+    display: {
+      max: 30,
+    },
+    ecv: [
+      {
+        id: 5,
+        value: 0.03,
+      },
+      {
+        id: 6,
+        value: 0.000415,
+      },
+    ],
+    sources: [
+      {
+        label: 'XD Mobilités ADEME',
+        href: 'https://xd.ademe.fr/',
+      },
+    ],
+  },*/
   {
     id: 100,
     synonyms: ['conduire'],
