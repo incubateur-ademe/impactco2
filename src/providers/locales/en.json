@@ -727,7 +727,8 @@
     "boulangerie": "Bakery",
     "epiceriesalee": "Savory groceries",
     "epiceriesucree": "Sweet groceries",
-    "select": "select all"
+    "select": "select all",
+    "vegetariens": "Plant-based and vegetarian alternatives"
   },
   "detecteur": {
     "description": "<important>The Carbon Detector provides a selection of equivalents adapted to the detected carbon quantity.</important> You can click on the quantities below to see the equivalents that the Detector automatically suggests, with the chosen parameters.",

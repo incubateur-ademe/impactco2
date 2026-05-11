@@ -3,7 +3,6 @@ export const alimentation = [
     synonyms: ['viande'],
     slug: 'boeuf',
     category: 2,
-    Code_CIQUALs: [6001, 6103, 40202, 6212, 6002, 6140],
     ecv: [
       {
         id: 30,
@@ -35,7 +34,6 @@ export const alimentation = [
     synonyms: ['viande'],
     slug: 'veau',
     category: 2,
-    Code_CIQUALs: [40304, 6560, 6521, 6510, 6540, 6522],
     ecv: [
       {
         id: 30,
@@ -67,7 +65,6 @@ export const alimentation = [
     synonyms: ['viande'],
     slug: 'porc',
     category: 2,
-    Code_CIQUALs: [28100, 28001, 28302, 28002],
     ecv: [
       {
         id: 30,
@@ -99,7 +96,6 @@ export const alimentation = [
     synonyms: ['viande'],
     slug: 'canard',
     category: 2,
-    Code_CIQUAL: 36201,
     ecv: [
       {
         id: 30,
@@ -131,7 +127,6 @@ export const alimentation = [
     synonyms: ['viande'],
     slug: 'lapin',
     category: 2,
-    Code_CIQUAL: 34001,
     ecv: [
       {
         id: 30,
@@ -163,7 +158,6 @@ export const alimentation = [
     synonyms: ['viande'],
     slug: 'poulet',
     category: 2,
-    Code_CIQUAL: 36003,
     ecv: [
       {
         id: 30,
@@ -195,7 +189,6 @@ export const alimentation = [
     synonyms: ['fruit de mer'],
     slug: 'crevettes',
     category: 2,
-    Code_CIQUAL: 10021,
     ecv: [
       {
         id: 30,
@@ -227,7 +220,6 @@ export const alimentation = [
     synonyms: ['fruit de mer'],
     slug: 'moules',
     category: 2,
-    Code_CIQUAL: 10026,
     ecv: [
       {
         id: 30,
@@ -259,7 +251,6 @@ export const alimentation = [
     synonyms: ['fruit de mer'],
     slug: 'huitres',
     category: 2,
-    Code_CIQUAL: 10035,
     ecv: [
       {
         id: 30,
@@ -291,7 +282,6 @@ export const alimentation = [
     synonyms: ['poisson'],
     slug: 'cabillaud',
     category: 2,
-    Code_CIQUAL: 26043,
     ecv: [
       {
         id: 30,
@@ -323,7 +313,6 @@ export const alimentation = [
     synonyms: ['poisson'],
     slug: 'lieu',
     category: 2,
-    Code_CIQUAL: 26129,
     ecv: [
       {
         id: 30,
@@ -355,7 +344,6 @@ export const alimentation = [
     synonyms: ['poisson'],
     slug: 'dorade',
     category: 2,
-    Code_CIQUALs: [26080, 26088],
     ecv: [
       {
         id: 30,
@@ -387,7 +375,6 @@ export const alimentation = [
     synonyms: ['poisson'],
     slug: 'saumon',
     category: 2,
-    Code_CIQUAL: 26036,
     ecv: [
       {
         id: 30,
@@ -419,7 +406,6 @@ export const alimentation = [
     synonyms: ['poisson'],
     slug: 'thon',
     category: 2,
-    Code_CIQUAL: 26053,
     ecv: [
       {
         id: 30,
@@ -447,7 +433,6 @@ export const alimentation = [
     synonyms: ['poisson'],
     slug: 'sardines',
     category: 2,
-    Code_CIQUAL: 26065,
     ecv: [
       {
         id: 30,
@@ -479,7 +464,6 @@ export const alimentation = [
     synonyms: ['produit laitier'],
     slug: 'beurre',
     category: 2,
-    Code_CIQUALs: [16400, 16402],
     ecv: [
       {
         id: 30,
@@ -511,7 +495,6 @@ export const alimentation = [
     synonyms: ['produit laitier'],
     slug: 'fromagedure',
     category: 2,
-    Code_CIQUALs: [12115, 12114, 12110, 12736],
     ecv: [
       {
         id: 30,
@@ -543,7 +526,6 @@ export const alimentation = [
     synonyms: ['produit laitier', 'fromage'],
     slug: 'feta',
     category: 2,
-    Code_CIQUAL: 12061,
     ecv: [
       {
         id: 30,
@@ -575,7 +557,6 @@ export const alimentation = [
     synonyms: ['produit laitier'],
     slug: 'fromagemolle',
     category: 2,
-    Code_CIQUALs: [12001, 12021, 12030, 12051],
     ecv: [
       {
         id: 30,
@@ -607,7 +588,6 @@ export const alimentation = [
     synonyms: ['produit laitier', 'fromage'],
     slug: 'mozarella',
     category: 2,
-    Code_CIQUAL: 19590,
     ecv: [
       {
         id: 30,
@@ -639,7 +619,6 @@ export const alimentation = [
     synonyms: ['produit laitier'],
     slug: 'fromagebleu',
     category: 2,
-    Code_CIQUALs: [12500, 12521, 12524],
     ecv: [
       {
         id: 30,
@@ -670,7 +649,6 @@ export const alimentation = [
   {
     slug: 'oeuf',
     category: 2,
-    Code_CIQUAL: 22000,
     ecv: [
       {
         id: 30,
@@ -702,7 +680,6 @@ export const alimentation = [
     synonyms: ['margarine'],
     slug: 'matieregrasse',
     category: 2,
-    Code_CIQUAL: 16080,
     ecv: [
       {
         id: 30,
@@ -734,7 +711,6 @@ export const alimentation = [
     synonyms: ['produit laitier'],
     slug: 'yaourt',
     category: 2,
-    Code_CIQUAL: 19860,
     ecv: [
       {
         id: 30,
@@ -766,7 +742,6 @@ export const alimentation = [
     synonyms: ['produit laitier'],
     slug: 'fromageblanc',
     category: 2,
-    Code_CIQUAL: 19644,
     ecv: [
       {
         id: 30,
@@ -798,7 +773,6 @@ export const alimentation = [
     synonyms: ['céréales'],
     slug: 'riz',
     category: 2,
-    Code_CIQUALs: [9100, 9102, 9109, 9108],
     ecv: [
       {
         id: 30,
@@ -826,7 +800,6 @@ export const alimentation = [
     synonyms: ['céréales'],
     slug: 'pates',
     category: 2,
-    Code_CIQUAL: 9810,
     ecv: [
       {
         id: 30,
@@ -854,7 +827,6 @@ export const alimentation = [
     synonyms: ['céréales'],
     slug: 'ble',
     category: 2,
-    Code_CIQUALs: [9060, 9080, 9010, 9610],
     ecv: [
       {
         id: 30,
@@ -882,7 +854,6 @@ export const alimentation = [
     synonyms: ['céréales'],
     slug: 'boulgour',
     category: 2,
-    Code_CIQUAL: 9690,
     ecv: [
       {
         id: 30,
@@ -905,7 +876,6 @@ export const alimentation = [
   {
     slug: 'poischiches',
     category: 2,
-    Code_CIQUAL: 20516,
     ecv: [
       {
         id: 30,
@@ -932,7 +902,6 @@ export const alimentation = [
   {
     slug: 'haricotsrouges',
     category: 2,
-    Code_CIQUAL: 20525,
     ecv: [
       {
         id: 30,
@@ -959,7 +928,6 @@ export const alimentation = [
   {
     slug: 'lentilles',
     category: 2,
-    Code_CIQUAL: 20521,
     ecv: [
       {
         id: 30,
@@ -986,7 +954,6 @@ export const alimentation = [
   {
     slug: 'cheeseburger',
     category: 2,
-    Code_CIQUAL: 25414,
     ecv: [
       {
         id: 30,
@@ -1017,7 +984,6 @@ export const alimentation = [
   {
     slug: 'kebab',
     category: 2,
-    Code_CIQUAL: 25429,
     ecv: [
       {
         id: 30,
@@ -1048,7 +1014,6 @@ export const alimentation = [
   {
     slug: 'burgerpoulet',
     category: 2,
-    Code_CIQUAL: 25502,
     ecv: [
       {
         id: 30,
@@ -1079,7 +1044,6 @@ export const alimentation = [
   {
     slug: 'pizza',
     category: 2,
-    Code_CIQUAL: 25478,
     ecv: [
       {
         id: 30,
@@ -1110,7 +1074,6 @@ export const alimentation = [
   {
     slug: 'sushis',
     category: 2,
-    Code_CIQUAL: 25456,
     ecv: [
       {
         id: 30,
@@ -1141,8 +1104,6 @@ export const alimentation = [
   {
     slug: 'burgervegetarien',
     category: 2,
-    Code_CIQUAL: 25415,
-    Code_AGB: '25415_2',
     ecv: [
       {
         id: 30,
@@ -1173,7 +1134,6 @@ export const alimentation = [
   {
     slug: 'frites',
     category: 2,
-    Code_CIQUAL: 4032,
     ecv: [
       {
         id: 30,
@@ -1204,7 +1164,6 @@ export const alimentation = [
   {
     slug: 'tofu',
     category: 2,
-    Code_CIQUAL: 20904,
     ecv: [
       {
         id: 30,
@@ -1235,7 +1194,6 @@ export const alimentation = [
   {
     slug: 'boucheechocolat',
     category: 2,
-    Code_CIQUAL: 31066,
     ecv: [
       {
         id: 30,
@@ -1262,7 +1220,6 @@ export const alimentation = [
   {
     slug: 'pateatartiner',
     category: 2,
-    Code_CIQUAL: 31032,
     ecv: [
       {
         id: 30,
@@ -1289,7 +1246,6 @@ export const alimentation = [
   {
     slug: 'brownie',
     category: 2,
-    Code_CIQUAL: 23032,
     ecv: [
       {
         id: 30,
@@ -1317,7 +1273,6 @@ export const alimentation = [
     synonyms: ['patisserie', 'chocolatine'],
     slug: 'painauchocolat',
     category: 2,
-    Code_CIQUAL: 7730,
     ecv: [
       {
         id: 30,
@@ -1344,7 +1299,6 @@ export const alimentation = [
   {
     slug: 'cookie',
     category: 2,
-    Code_CIQUAL: 24684,
     ecv: [
       {
         id: 30,
@@ -1371,7 +1325,6 @@ export const alimentation = [
   {
     slug: 'madeleine',
     category: 2,
-    Code_CIQUALs: [24632, 24630],
     ecv: [
       {
         id: 30,
@@ -1399,7 +1352,6 @@ export const alimentation = [
     synonyms: ['patisserie'],
     slug: 'painauxraisins',
     category: 2,
-    Code_CIQUAL: 7720,
     ecv: [
       {
         id: 30,
@@ -1427,7 +1379,6 @@ export const alimentation = [
     synonyms: ['patisserie'],
     slug: 'chaussonauxpommes',
     category: 2,
-    Code_CIQUAL: 23480,
     ecv: [
       {
         id: 30,
@@ -1455,7 +1406,6 @@ export const alimentation = [
     synonyms: ['patisserie'],
     slug: 'croissant',
     category: 2,
-    Code_CIQUAL: 7620,
     ecv: [
       {
         id: 30,
@@ -1482,7 +1432,6 @@ export const alimentation = [
   {
     slug: 'paindemie',
     category: 2,
-    Code_CIQUAL: 7200,
     ecv: [
       {
         id: 30,
@@ -1509,7 +1458,6 @@ export const alimentation = [
   {
     slug: 'bonbons',
     category: 2,
-    Code_CIQUAL: 31060,
     ecv: [
       {
         id: 30,
@@ -1536,7 +1484,6 @@ export const alimentation = [
   {
     slug: 'baguette',
     category: 2,
-    Code_CIQUAL: 7001,
     ecv: [
       {
         id: 30,
@@ -1563,7 +1510,6 @@ export const alimentation = [
   {
     slug: 'pommedeterre',
     category: 2,
-    Code_CIQUAL: 4023,
     ecv: [
       {
         id: 30,
@@ -1584,6 +1530,186 @@ export const alimentation = [
       {
         id: 34,
         value: 0.0172,
+      },
+    ],
+  },
+  {
+    slug: 'boulettesvegetales',
+    category: 2,
+    ecv: [
+      {
+        id: 30,
+        value: 1.09,
+      },
+      {
+        id: 31,
+        value: 0.468,
+      },
+      {
+        id: 32,
+        value: 0.223,
+      },
+      {
+        id: 33,
+        value: 0.334,
+      },
+      {
+        id: 34,
+        value: 0.0513,
+      },
+      {
+        id: 35,
+        value: 0.112,
+      },
+    ],
+  },
+  {
+    slug: 'galettefromage',
+    category: 2,
+    ecv: [
+      {
+        id: 30,
+        value: 0.621,
+      },
+      {
+        id: 31,
+        value: 0.757,
+      },
+      {
+        id: 32,
+        value: 0.505,
+      },
+      {
+        id: 33,
+        value: 0.17,
+      },
+      {
+        id: 34,
+        value: 0.0362,
+      },
+      {
+        id: 35,
+        value: 0.0821,
+      },
+    ],
+  },
+  {
+    slug: 'galettevegetale',
+    category: 2,
+    ecv: [
+      {
+        id: 30,
+        value: 0.507,
+      },
+      {
+        id: 31,
+        value: 0.337,
+      },
+      {
+        id: 32,
+        value: 0.505,
+      },
+      {
+        id: 33,
+        value: 0.192,
+      },
+      {
+        id: 34,
+        value: 0.0362,
+      },
+      {
+        id: 35,
+        value: 0.0821,
+      },
+    ],
+  },
+  {
+    slug: 'hachevegetal',
+    category: 2,
+    ecv: [
+      {
+        id: 30,
+        value: 0.405,
+      },
+      {
+        id: 31,
+        value: 0.638,
+      },
+      {
+        id: 32,
+        value: 0.507,
+      },
+      {
+        id: 33,
+        value: 0.36,
+      },
+      {
+        id: 34,
+        value: 0.0513,
+      },
+      {
+        id: 35,
+        value: 0.0907,
+      },
+    ],
+  },
+  {
+    slug: 'nuggetsvegetaux',
+    category: 2,
+    ecv: [
+      {
+        id: 30,
+        value: 0.555,
+      },
+      {
+        id: 31,
+        value: 0.399,
+      },
+      {
+        id: 32,
+        value: 0.401,
+      },
+      {
+        id: 33,
+        value: 0.286,
+      },
+      {
+        id: 34,
+        value: 0.0406,
+      },
+      {
+        id: 35,
+        value: 0.0889,
+      },
+    ],
+  },
+  {
+    slug: 'saucissevegetale',
+    category: 2,
+    ecv: [
+      {
+        id: 30,
+        value: 1.05,
+      },
+      {
+        id: 31,
+        value: 0.365,
+      },
+      {
+        id: 32,
+        value: 0.401,
+      },
+      {
+        id: 33,
+        value: 0.268,
+      },
+      {
+        id: 34,
+        value: 0.0406,
+      },
+      {
+        id: 35,
+        value: 0.0888,
       },
     ],
   },
