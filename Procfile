@@ -1,1 +1,1 @@
-postdeploy: pnpm prisma migrate deploy 
+postdeploy: ./node_modules/.bin/prisma migrate deploy
