@@ -16,14 +16,15 @@ test('Display transport iframe by script', async ({ page }) => {
   )
 })
 
-checks.forEach(({ slug, before, url, check, checkIframe, scroll, iframeContent }) => {
+checks.forEach(({ slug, before, url, check, checkIframe, scroll, iframeContent, skipWait }) => {
   test(slug, async ({ page }) => {
     test.skip(process.env.TEST_IFRAME !== 'true', 'Disbaled because TEST_IFRAME is not true')
     await mockRoutesItinerary(page)
 
     await page.goto(url)
-    await page.waitForLoadState('networkidle', { timeout: 60000 })
-
+    if (!skipWait) {
+      await page.waitForLoadState('networkidle', { timeout: 60000 })
+    }
     if (before) {
       await before(page)
     }

@@ -37,20 +37,21 @@ export const checks = [
     url: 'https://www.operadeparis.fr/infos-pratiques/preparer-votre-venue/palais-garnier',
     scroll: true,
     before: async (page: Page) => {
-      await page.getByLabel('Accepter les cookies').click()
       await page.getByRole('button', { name: "Calculez l'empreinte carbone" }).click()
+      await page.getByLabel('Fermer sans accepter les cookies').click()
     },
     checkIframe: async (iframe: FrameLocator) => {
       await expect(iframe.getByTestId('header-share-button')).toBeInViewport()
       await expect(iframe.getByLabel('Arrivée')).toHaveAttribute(
         'value',
-        "Palais Garnier Place de l'Opéra Paris 75009 France",
+        "L'Opéra Restaurant Place Jacques Rouché Paris 75009 France",
         { timeout: 10000 }
       )
       await iframe.getByLabel('Arrivée').clear()
 
       await itineraireTest(iframe, true)
     },
+    skipWait: true,
   },
   /*{
     slug: 'aquarium-larochelle',
@@ -149,9 +150,6 @@ export const checks = [
     slug: 'homeexchange',
     skipWait: true,
     url: 'https://www.homeexchange.fr/blog/bilan-carbone-2022/',
-    before: async (page: Page) => {
-      await page.getByRole('button', { name: 'OK' }).last().click()
-    },
     check: async (page: Page) => {
       await detecteurCO2Test(page, 384134000, '384 134 tCO2e')
     },
@@ -185,6 +183,9 @@ export const checks = [
   {
     slug: 'bondici',
     url: 'https://www.bondici.fr/actualite/quand-manger-les-fruits-et-legumes-de-saison/',
+    before: async (page: Page) => {
+      await page.getByRole('button', { name: 'Refuser' }).click()
+    },
     checkIframe: async (iframe: FrameLocator) => {
       await expect(iframe.getByTestId('text-select-month')).toHaveValue('5')
       await expect(iframe.getByTestId('category-abricot-value')).toBeVisible()

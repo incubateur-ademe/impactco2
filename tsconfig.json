@@ -16,7 +16,6 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "incremental": true,
-    "baseUrl": ".",
     "types": [
       "jest"
     ],
@@ -25,20 +24,23 @@
       "./types"
     ],
     "paths": {
+      "*": [
+        "./*"
+      ],
       "components/*": [
-        "src/components/*"
+        "./src/components/*"
       ],
       "data/*": [
-        "src/data/*"
+        "./src/data/*"
       ],
       "utils/*": [
-        "src/utils/*"
+        "./src/utils/*"
       ],
       "hooks/*": [
-        "src/hooks/*"
+        "./src/hooks/*"
       ],
       "@prisma/*": [
-        "prisma/generated/prisma/*"
+        "./prisma/generated/prisma/*"
       ]
     },
     "module": "esnext",

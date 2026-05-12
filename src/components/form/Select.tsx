@@ -40,14 +40,12 @@ const Select = ({
           data-testid={`text-select-${id}`}
           {...selectProps}
           id={`text-select-${id}`}>
-          <>
-            {selectProps.required && (
-              <option value='' disabled hidden>
-                Choisir une option
-              </option>
-            )}
-            {children}
-          </>
+          {selectProps.required && (
+            <option value='' disabled hidden>
+              Choisir une option
+            </option>
+          )}
+          {children}
         </select>
       </div>
     </div>

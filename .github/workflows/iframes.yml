@@ -15,6 +15,9 @@ jobs:
       - name: Enable Corepack
         shell: bash
         run: corepack enable
+      - name: Pin pnpm 10
+        shell: bash
+        run: corepack prepare pnpm@10 --activate
       - uses: actions/setup-node@v6
         with:
           node-version: 22
