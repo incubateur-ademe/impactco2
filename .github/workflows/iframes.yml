@@ -15,12 +15,12 @@ jobs:
       - name: Enable Corepack
         shell: bash
         run: corepack enable
-      - name: Pin pnpm 10
+      - name: Pin pnpm 11
         shell: bash
-        run: corepack prepare pnpm@10 --activate
+        run: corepack prepare pnpm@11 --activate
       - uses: actions/setup-node@v6
         with:
-          node-version: 22
+          node-version: 24
           cache: 'pnpm'
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
