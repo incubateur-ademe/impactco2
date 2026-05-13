@@ -3,11 +3,29 @@ import { NotionAPI } from 'notion-client'
 import { getRevalidate } from 'utils/revalidate'
 
 const notion = new NotionAPI()
+
+const getNotionPageWithRetry = async (id: string, retries = 3) => {
+  try {
+    return await notion.getPage(id)
+  } catch (e) {
+    if (retries > 0) {
+      const error = e as { response?: { status?: number; headers?: Headers } }
+      const status = error.response?.status
+      if (status === 429) {
+        const retryAfterHeader = error.response?.headers?.get('retry-after')
+        const delay = retryAfterHeader ? parseFloat(retryAfterHeader) * 1000 : 5000
+        await new Promise((resolve) => setTimeout(resolve, delay))
+        return getNotionPageWithRetry(id, retries - 1)
+      }
+    }
+    throw e
+  }
+}
+
 export const getNotionContentProps = unstable_cache(
   async (id: string) => {
     try {
-      const result = await notion.getPage(id)
-      return result
+      return await getNotionPageWithRetry(id)
     } catch (e) {
       console.error('Unable to get content from Notion', e)
       return undefined
