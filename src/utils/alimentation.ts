@@ -21,6 +21,19 @@ const slugByCategory: Record<AlimentationCategories, { name: string; equivalents
       equivalents: ['boeuf', 'veau', 'porc', 'lapin', 'canard', 'poulet'],
     },
     {
+      name: 'vegetariens',
+      logos: ['tofu', 'saucissevegetale'],
+      equivalents: [
+        'tofu',
+        'boulettesvegetales',
+        'galettefromage',
+        'galettevegetale',
+        'hachevegetal',
+        'nuggetsvegetaux',
+        'saucissevegetale',
+      ],
+    },
+    {
       name: 'laitier',
       logos: ['oeuf', 'fromagedure'],
       equivalents: [
@@ -45,7 +58,7 @@ const slugByCategory: Record<AlimentationCategories, { name: string; equivalents
     {
       name: 'plats',
       logos: ['cheeseburger', 'sushis'],
-      equivalents: ['cheeseburger', 'kebab', 'burgerpoulet', 'pizza', 'sushis', 'burgervegetarien', 'frites', 'tofu'],
+      equivalents: ['cheeseburger', 'kebab', 'burgerpoulet', 'pizza', 'sushis', 'burgervegetarien', 'frites'],
     },
     {
       name: 'encas',
@@ -137,6 +150,12 @@ const slugByCategory: Record<AlimentationCategories, { name: string; equivalents
         'frites',
         'tofu',
         'matieregrasse',
+        'boulettesvegetales',
+        'galettefromage',
+        'galettevegetale',
+        'hachevegetal',
+        'nuggetsvegetaux',
+        'saucissevegetale',
       ],
     },
     {

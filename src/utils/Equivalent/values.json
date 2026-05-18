@@ -1891,6 +1891,48 @@
     "en": "kg of ;new potato",
     "es": "kg de ;papa nueva"
   },
+  "boulettesvegetales": {
+    "category": 2,
+    "value": 2278.3,
+    "fr": "kg de ;boulettes végétales",
+    "en": "kg of ;vegetable balls",
+    "es": "kg de ;albóndigas vegetales"
+  },
+  "galettefromage": {
+    "category": 2,
+    "value": 2171.2999999999997,
+    "fr": "kg de ;galette au fromage",
+    "en": "kg of ;cheese patty",
+    "es": "kg de ;tortita de queso"
+  },
+  "galettevegetale": {
+    "category": 2,
+    "value": 1659.3,
+    "fr": "kg de ;galette végétale",
+    "en": "kg of ;vegetable patty",
+    "es": "kg de ;tortita vegetal"
+  },
+  "hachevegetal": {
+    "category": 2,
+    "value": 2052,
+    "fr": "kg de ;haché végétal",
+    "en": "kg of ;vegetable mince",
+    "es": "kg de ;picado vegetal"
+  },
+  "nuggetsvegetaux": {
+    "category": 2,
+    "value": 1770.5,
+    "fr": "kg de ;nuggets végétaux",
+    "en": "kg of ;vegetable nuggets",
+    "es": "kg de ;nuggets vegetales"
+  },
+  "saucissevegetale": {
+    "category": 2,
+    "value": 2213.4,
+    "fr": "kg de ;saucisse végétale",
+    "en": "kg of ;vegetable sausage",
+    "es": "kg de ;salchicha vegetal"
+  },
   "hotel": {
     "category": 13,
     "value": 4300,

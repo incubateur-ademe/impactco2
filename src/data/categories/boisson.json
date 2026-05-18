@@ -3,7 +3,9 @@
     "id": 24283,
     "name": "Eau du robinet",
     "prefix": "Litre[s] d'",
-    "synonyms": ["boire"],
+    "synonyms": [
+      "boire"
+    ],
     "slug": "eaudurobinet",
     "category": 3,
     "total": 0.000132,
@@ -20,7 +22,9 @@
     "Code_CIQUAL": 18430,
     "name": "Eau en bouteille",
     "prefix": "Litre[s] d'",
-    "synonyms": ["boire"],
+    "synonyms": [
+      "boire"
+    ],
     "slug": "eauenbouteille",
     "category": 3,
     "ecv": [
@@ -58,7 +62,9 @@
     "Code_CIQUAL": 18026,
     "name": "Soda",
     "prefix": "Litre[s] de ",
-    "synonyms": ["boire"],
+    "synonyms": [
+      "boire"
+    ],
     "slug": "soda",
     "category": 3,
     "ecv": [
@@ -100,7 +106,9 @@
     "Code_CIQUAL": 5001,
     "name": "Bière",
     "prefix": "Litre[s] de ",
-    "synonyms": ["boire"],
+    "synonyms": [
+      "boire"
+    ],
     "slug": "biere",
     "category": 3,
     "ecv": [
@@ -142,7 +150,9 @@
     "Code_CIQUAL": 5214,
     "name": "Vin",
     "prefix": "Litre[s] de ",
-    "synonyms": ["boire"],
+    "synonyms": [
+      "boire"
+    ],
     "slug": "vin",
     "category": 3,
     "ecv": [
@@ -185,7 +195,9 @@
     "name": "Lait",
     "subtitle": "De vache",
     "prefix": "Litre[s] de ",
-    "synonyms": ["boire"],
+    "synonyms": [
+      "boire"
+    ],
     "slug": "laitdevache",
     "category": 3,
     "ecv": [
@@ -223,7 +235,9 @@
     "Code_CIQUAL": 18900,
     "subtitle": "De soja",
     "prefix": "Litre[s] de ",
-    "synonyms": ["boire"],
+    "synonyms": [
+      "boire"
+    ],
     "slug": "laitdesoja",
     "category": 3,
     "ecv": [
