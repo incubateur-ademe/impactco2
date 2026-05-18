@@ -1814,6 +1814,20 @@
     "en": "kg of ;hazelnut spread",
     "es": "kg de ;crema de avellanas"
   },
+  "chocolataulait": {
+    "category": 2,
+    "value": 12598.9,
+    "fr": "kg de ;chocolat au lait",
+    "en": "kg of ;milk chocolate",
+    "es": "kg de ;chocolate con leche"
+  },
+  "chocolatnoir": {
+    "category": 2,
+    "value": 19027.9,
+    "fr": "kg de ;chocolat noir",
+    "en": "kg of ;dark chocolate",
+    "es": "kg de ;chocolate negro"
+  },
   "brownie": {
     "category": 2,
     "value": 8356.9,

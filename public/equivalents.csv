@@ -13,6 +13,8 @@ Cabillaud (cru),12.0864877,Alimentation,cabillaud,https://impactco2.fr/outils/al
 Canard,8.0609,Alimentation,canard,https://impactco2.fr/outils/alimentation/canard
 Chausson aux pommes,2.0441000000000003,Alimentation,chaussonauxpommes,https://impactco2.fr/outils/alimentation/chaussonauxpommes
 Cheeseburger,18.833399999999997,Alimentation,cheeseburger,https://impactco2.fr/outils/alimentation/cheeseburger
+Chocolat au lait,12.5989,Alimentation,chocolataulait,https://impactco2.fr/outils/alimentation/chocolataulait
+Chocolat noir,19.027900000000002,Alimentation,chocolatnoir,https://impactco2.fr/outils/alimentation/chocolatnoir
 Cookie au pépites de chocolat,6.272900000000001,Alimentation,cookie,https://impactco2.fr/outils/alimentation/cookie
 Crevettes,20.345228,Alimentation,crevettes,https://impactco2.fr/outils/alimentation/crevettes
 Croissant au beurre,2.9431000000000003,Alimentation,croissant,https://impactco2.fr/outils/alimentation/croissant
@@ -36,7 +38,7 @@ Madeleine,2.2434,Alimentation,madeleine,https://impactco2.fr/outils/alimentation
 Matière grasse végétale,2.58463,Alimentation,matieregrasse,https://impactco2.fr/outils/alimentation/matieregrasse
 Moules,5.328231000000001,Alimentation,moules,https://impactco2.fr/outils/alimentation/moules
 Mozarella,4.714629999999999,Alimentation,mozarella,https://impactco2.fr/outils/alimentation/mozarella
-Nuggets végétaux,1.7695,Alimentation,nuggetsvegetaux,https://impactco2.fr/outils/alimentation/nuggetsvegetaux
+Nuggets végétaux,1.7705,Alimentation,nuggetsvegetaux,https://impactco2.fr/outils/alimentation/nuggetsvegetaux
 Oeufs,1.8780103000000001,Alimentation,oeuf,https://impactco2.fr/outils/alimentation/oeuf
 Pain au chocolat ou chocolatine,5.7291,Alimentation,painauchocolat,https://impactco2.fr/outils/alimentation/painauchocolat
 Pain aux raisins,2.5641,Alimentation,painauxraisins,https://impactco2.fr/outils/alimentation/painauxraisins
@@ -61,7 +63,7 @@ Repas végétarien,0.85,Alimentation,repasvegetarien,https://impactco2.fr/outils
 Riz,2.01458575,Alimentation,riz,https://impactco2.fr/outils/alimentation/riz
 Rocher au chocolat,10.521899999999999,Alimentation,boucheechocolat,https://impactco2.fr/outils/alimentation/boucheechocolat
 Sardines,2.2764877,Alimentation,sardines,https://impactco2.fr/outils/alimentation/sardines
-Saucisse végétale,2.1973999999999996,Alimentation,saucissevegetale,https://impactco2.fr/outils/alimentation/saucissevegetale
+Saucisse végétale,2.2134,Alimentation,saucissevegetale,https://impactco2.fr/outils/alimentation/saucissevegetale
 Saumon ou truite d'élevage (cru),5.55693,Alimentation,saumon,https://impactco2.fr/outils/alimentation/saumon
 Sushis ou makis,2.6689999999999996,Alimentation,sushis,https://impactco2.fr/outils/alimentation/sushis
 Thon (cru),4.98343,Alimentation,thon,https://impactco2.fr/outils/alimentation/thon

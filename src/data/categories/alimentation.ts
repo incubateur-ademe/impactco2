@@ -1713,4 +1713,56 @@ export const alimentation = [
       },
     ],
   },
+  {
+    slug: 'chocolataulait',
+    category: 2,
+    ecv: [
+      {
+        id: 30,
+        value: 11.5,
+      },
+      {
+        id: 31,
+        value: 0.137,
+      },
+      {
+        id: 32,
+        value: 0.705,
+      },
+      {
+        id: 33,
+        value: 0.236,
+      },
+      {
+        id: 34,
+        value: 0.0209,
+      },
+    ],
+  },
+  {
+    slug: 'chocolatnoir',
+    category: 2,
+    ecv: [
+      {
+        id: 30,
+        value: 17.8,
+      },
+      {
+        id: 31,
+        value: 0.194,
+      },
+      {
+        id: 32,
+        value: 0.705,
+      },
+      {
+        id: 33,
+        value: 0.308,
+      },
+      {
+        id: 34,
+        value: 0.0209,
+      },
+    ],
+  },
 ]

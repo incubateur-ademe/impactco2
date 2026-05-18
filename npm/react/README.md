@@ -175,6 +175,14 @@ Liste des équivalents à comparer parmis la liste suivante :
   - bonbons : kg de bonbons gélifiés
   - baguette : kg de baguette tradition
   - pommedeterre : kg de pomme de terre nouvelle
+  - boulettesvegetales : kg de boulette végétale
+  - galettefromage : kg de galette au fromage
+  - galettevegetale : kg de galette végétale
+  - hachevegetal : kg de haché végétal
+  - nuggetsvegetaux : kg de nuggets végétaux
+  - saucissevegetale : kg de saucisse végétale
+  - chocolataulait : kg de chocolat au lait
+  - chocolatnoir : kg de chocolat noir
 - Fruits et légumes
   - fraise : kg de fraise
   - pomme : kg de pomme

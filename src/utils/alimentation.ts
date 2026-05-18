@@ -76,6 +76,8 @@ const slugByCategory: Record<AlimentationCategories, { name: string; equivalents
         'paindemie',
         'bonbons',
         'baguette',
+        'chocolataulait',
+        'chocolatnoir',
       ],
     },
     {
