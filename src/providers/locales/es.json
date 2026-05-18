@@ -774,5 +774,17 @@
       "exemple-4": "8 giga toneladas co2e",
       "exemple-5": "7 mil kg CO₂"
     }
+  },
+  "nps": {
+    "question": "¿Recomendarías esta calculadora a alguien cercano?",
+    "amelioration": "¿Qué sugerencias de mejora tienes?",
+    "ameliorationPlaceholder": "Comparte tus ideas...",
+    "thanksTitle": "¡Gracias por tu opinión!",
+    "thanks": "Tu opinión nos ayudará a mejorar nuestra calculadora.",
+    "error": "Se produjo un error. Inténtalo de nuevo en unos instantes.",
+    "positive": "la recomiendo",
+    "negative": "no la recomiendo",
+    "send": "Enviar",
+    "close": "Cerrar"
   }
 }
