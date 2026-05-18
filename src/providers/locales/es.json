@@ -727,7 +727,8 @@
     "boulangerie": "Panadería",
     "epiceriesalee": "Comestibles salados",
     "epiceriesucree": "Comestibles dulces",
-    "select": "seleccionar todo"
+    "select": "seleccionar todo",
+    "vegetariens": "Alternativas vegetales y vegetarianas"
   },
   "detecteur": {
     "description": "<important>El Detector de Carbono propone una selección de equivalentes adaptados a la cantidad de carbono detectada.</important> Puedes hacer clic en las cantidades de abajo para ver los equivalentes que propone automáticamente el Detector, con los parámetros elegidos.",

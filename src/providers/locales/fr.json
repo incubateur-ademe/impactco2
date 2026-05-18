@@ -727,7 +727,8 @@
     "boulangerie": "Boulangerie",
     "epiceriesalee": "Épicerie salée",
     "epiceriesucree": "Épicerie sucrée",
-    "select": "tout sélectionner"
+    "select": "tout sélectionner",
+    "vegetariens": "Alternatives végétales et végétariennes"
   },
   "detecteur": {
     "description": "<important>Le Détecteur carbone propose une sélection d’équivalents adaptés à la quantité carbone détectée.</important> Vous pouvez cliquer sur les quantités ci-dessous pour voir les équivalents que propose automatiquement le Détecteur, avec les paramètres choisis.",
