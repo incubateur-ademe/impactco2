@@ -60,6 +60,7 @@ const activities = [
     description: "Les exemples d'utilisation de nos outils dans le secteur de l'éducation",
   },
   { title: 'Institution', label: 'Institutions', description: 'Les mises en avant de nos outils par les institutions' },
+  { title: 'Santé', label: 'Santé', description: 'Ces établissements de santé ont adopté nos outils' },
 ]
 
 const AllExamples = ({ examples, communications }: { examples: Example[]; communications: Example[] }) => {
