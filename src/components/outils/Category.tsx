@@ -30,8 +30,7 @@ const Category = ({
       slug={category.slug}
       tracking={category.name}
       overScreens={overScreens}
-      noBottomBorders={noBottomBorders}
-      withNPS={category.withNPS}>
+      noBottomBorders={noBottomBorders}>
       {simulator ||
         (category.equivalents && (
           <CategorySimulator

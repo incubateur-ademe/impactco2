@@ -765,17 +765,5 @@
     "compact": "Moyenne",
     "berline": "Berline",
     "grandeberline": "SUV"
-  },
-  "nps": {
-    "question": "Recommanderiez-vous ce calculateur à un proche ?",
-    "amelioration": "Quelles sont vos suggestions d'amélioration ?",
-    "ameliorationPlaceholder": "Indiquer vos idées...",
-    "thanksTitle": "Merci pour votre retour !",
-    "thanks": "Votre avis va nous aider à améliorer notre calculateur.",
-    "error": "Une erreur est survenue. Merci de reessayer dans quelques instants.",
-    "positive": "je recommande",
-    "negative": "je ne recommande pas",
-    "send": "Envoyer",
-    "close": "Fermer"
   }
 }

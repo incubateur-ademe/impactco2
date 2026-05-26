@@ -17,7 +17,7 @@
   border-radius: 12.5rem 12.5rem 0 0;
   background-color: var(--neutral-00);
   border: 2px solid var(--primary-30);
-  width: min(19.25rem, 100%);
+  width: 19.25rem;
   height: 5rem;
   top: 0;
   left: 50%;

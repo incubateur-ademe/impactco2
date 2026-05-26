@@ -90,7 +90,6 @@ export const categories: Category[] = [
     unit: 'km',
     equivalents: computedEquivalents('transport', flattenEquivalents(deplacements)),
     examples: 'Leur utilisation du simulateur transports est exemplaire.',
-    withNPS: true,
   },
   {
     id: 9,
