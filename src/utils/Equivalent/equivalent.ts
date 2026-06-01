@@ -328,6 +328,11 @@ const getExtraInfo = (language: string, slug: string) => {
         : ''
   }
 
+  if (slug.startsWith('moto')) {
+    const [moto, size] = slug.split('-')
+    return size ? ' (<= 250 cm³)' : ' (> 250 cm³)'
+  }
+
   return ''
 }
 

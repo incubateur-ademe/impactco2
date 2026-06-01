@@ -163,8 +163,8 @@ export const computeTransportEmission = (
  *         - 9 : Bus thermique
  *         - 10 : Tramway
  *         - 11 : Métro
- *         - 12 : Scooter ou moto légère thermique
- *         - 13 : Moto thermique
+ *         - 12 : Scooter thermique
+ *         - 13 : Moto thermique (> 250 cm³)
  *         - 14 : RER ou Transilien
  *         - 15 : TER
  *         - 16 : Bus électrique
@@ -179,6 +179,11 @@ export const computeTransportEmission = (
  *         - 28 : Covoiturage électrique (4 personnes)
  *         - 29 : Covoiturage électrique (5 personnes)
  *         - 30 : Marche
+ *         - 31 : Camping-car
+ *         - 32 : Moto thermique (<= 250 cm³)
+ *         - 33 : Scooter électrique
+ *         - 34 : Vélo cargo triporteur
+ *         - 35 : Van
  *         - 100 : Voiture - Petite - Essence
  *         - 101 : Voiture - Petite - Essence (2 personnes)
  *         - 102 : Voiture - Petite - Essence (3 personnes)

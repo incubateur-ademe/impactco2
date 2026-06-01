@@ -22,6 +22,7 @@ const internalPages: Record<string, string> = {
 }
 
 const iframeToSimulateur: Record<string, string> = {
+  '/iframes/image-infographie/boeuf/0': 'Infographie',
   '/iframes/transport/velo': 'Vélo',
   '/iframes/equivalent': '',
   '/iframes/comparateur/bandeau': '',

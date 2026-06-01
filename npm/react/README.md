@@ -99,7 +99,7 @@ Liste des équivalents à comparer parmis la liste suivante :
   - busthermique : km en bus thermique
   - tramway : km en tramway
   - metro : km en métro
-  - scooter : km en scooter ou moto légère thermique
+  - scooter : km en scooter thermique
   - moto : km en moto thermique
   - rer : km en RER ou Transilien
   - ter : km en TER
