@@ -322,6 +322,21 @@
     "transport": {
       "display": "See all transport modes",
       "hide": "Show fewer transport modes"
+    },
+    "voiture": {
+      "diesel": "Diesel",
+      "essence": "Gasoline",
+      "hybride": "Non rechargeable",
+      "hybriderechargeable": "Plug-in",
+      "electrique": "Electric",
+      "citadine": "Small",
+      "compact": "Medium",
+      "berline": "Sedan",
+      "grandeberline": "SUV"
+    },
+    "moto": {
+      "small": "<= 250 cm³",
+      "medium": "> 250 cm³"
     }
   },
   "comparateur": {
@@ -556,6 +571,11 @@
         "voiturethermique": "Medium - Diesel",
         "voitureelectrique": "Medium",
         "voiturehybride": "Medium - Non rechargeable",
+        "moto": "Motorcycle with engine capacity over 250 cm³",
+        "moto-petite": "Motorcycle with engine capacity 250 cm³ or less",
+        "veli": "Vel 100% electric with a 6.1 kWh battery, consuming 55 Wh/km and a lifespan of 70,000 km",
+        "veliassistance": "Vel with electric assistance consuming 10 Wh/km, of which 8 Wh/km is electricity, and a lifespan of 70,000 km",
+        "triporteurelectrique": "Electric cargo tricycle with a 562 Wh battery and a lifespan of 30,000 km",
         "repasavecduboeuf": "150g beef rib steak (4,34 kg CO₂e), 300g mixed vegetables (0,24 kg CO₂e), 7g extra virgin olive oil (0,01 kg CO₂e), 200g average dessert (0,34 kg CO₂e), 50g bread (0,04 kg CO₂e).",
         "repasvegetarien": "120g non-meat animal protein (0,23 kg CO₂e), 300g mixed vegetables (0,24 kg CO₂e), 7g olive oil (0,01 kg CO₂e), 200g average dessert (0,34 kg CO₂e), 50g bread (0,04 kg CO₂e).",
         "repasvegetalien": "100g plant-based protein (0,10 kg CO₂e), 300g mixed vegetables (0,24 kg CO₂e), 7g olive oil (0,01 kg CO₂e), 200g fruit (0,15 kg CO₂e), 50g bread (0,04 kg CO₂e).",
@@ -754,16 +774,5 @@
       "exemple-4": "8 gigatons CO2e",
       "exemple-5": "7 thousand kg CO₂"
     }
-  },
-  "voiture": {
-    "diesel": "Diesel",
-    "essence": "Gasoline",
-    "hybride": "Non rechargeable",
-    "hybriderechargeable": "Plug-in",
-    "electrique": "Electric",
-    "citadine": "Small",
-    "compact": "Medium",
-    "berline": "Sedan",
-    "grandeberline": "SUV"
   }
 }

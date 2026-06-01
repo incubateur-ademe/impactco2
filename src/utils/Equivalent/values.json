@@ -452,13 +452,20 @@
   "scooter": {
     "category": 4,
     "value": 76.30000000000001,
-    "fr": "km en ;scooter ou moto légère thermique",
-    "en": "km by ;combustion scooter or lightweight combustion motorcycle",
-    "es": "km en ;scooter o motocicleta ligera termico"
+    "fr": "km en ;scooter thermique",
+    "en": "km by ;combustion scooter",
+    "es": "km en ;scooter termico"
   },
   "moto": {
     "category": 4,
-    "value": 216.7,
+    "value": 214.7,
+    "fr": "km en ;moto thermique",
+    "en": "km by ;combustion motorcycle",
+    "es": "km en ;moto termico"
+  },
+  "moto-petite": {
+    "category": 4,
+    "value": 87.2,
     "fr": "km en ;moto thermique",
     "en": "km by ;combustion motorcycle",
     "es": "km en ;moto termico"
@@ -497,6 +504,34 @@
     "fr": "km en ;bus (GNV)",
     "en": "km by ;bus (natural gas vehicle)",
     "es": "km en ;autobús (GNV)"
+  },
+  "campingcar": {
+    "category": 4,
+    "value": 493.8332716693085,
+    "fr": "km en ;camping-car",
+    "en": "km by ;camper van",
+    "es": "km en ;autocaravana"
+  },
+  "scooterelectrique": {
+    "category": 4,
+    "value": 59.300000000000004,
+    "fr": "km en ;scooter électrique",
+    "en": "km by ;electric scooter",
+    "es": "km en ;scooter eléctrico"
+  },
+  "triporteurelectrique": {
+    "category": 4,
+    "value": 14.827,
+    "fr": "km en ;vélo cargo triporteur",
+    "en": "km by ;electric cargo tricycle",
+    "es": "km en ;triciclo de carga eléctrico"
+  },
+  "van": {
+    "category": 4,
+    "value": 324.62601166930847,
+    "fr": "km en ;van",
+    "en": "km by ;van",
+    "es": "km en ;furgoneta"
   },
   "fraise": {
     "category": 9,

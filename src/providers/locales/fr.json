@@ -322,6 +322,21 @@
     "transport": {
       "display": "Voir tous les modes de transport",
       "hide": "Afficher moins de modes de transport"
+    },
+    "voiture": {
+      "diesel": "Diesel",
+      "essence": "Essence",
+      "hybride": "Non rechargeable",
+      "hybriderechargeable": "Rechargeable",
+      "electrique": "Électrique",
+      "citadine": "Petite",
+      "compact": "Moyenne",
+      "berline": "Berline",
+      "grandeberline": "SUV"
+    },
+    "moto": {
+      "small": "<= 250 cm³",
+      "medium": "> 250 cm³"
     }
   },
   "comparateur": {
@@ -556,6 +571,11 @@
         "voiturethermique": "Moyenne - Diesel",
         "voitureelectrique": "Moyenne",
         "voiturehybride": "Moyenne - Non rechargeable",
+        "moto": "moto de cylindrée supérieure à 250 cm³",
+        "moto-petite": "moto de cylindrée inférieure ou égale à 250 cm³",
+        "veli": "Véli 100% électrique muni d’une batterie de 6,1 kWh, dont une consommation d’électricité de 55 Wh/km et d’une durée de vie de 70000 km",
+        "veliassistance": "Véli avec assistance électrique avec une consommation de 10 Wh/km dont 8 Wh/km d’électricité et durée de vie de 70 000 km",
+        "triporteurelectrique": "Vélo cargo triporteur équipé d’une batterie de 562 Wh et d’une durée de vie de 30000 km",
         "repasavecduboeuf": "150g de bavette de boeuf (4,34 kg CO₂e), 300g légumes variés (0,24 kg CO₂e), 7g huile d'olive vierge extra (0,01 kg CO₂e), 200g dessert moyen (0,34 kg CO₂e), 50g de pain (0,04 kg CO₂e).",
         "repasvegetarien": "120g de protéine animale hors viande (0,23 kg CO₂e), 300g de légumes variés (0,24 kg CO₂e), 7g d’huile d’olive (0,01 kg CO₂e), 200g dessert moyen (0,34 kg CO₂e), 50g de pain (0,04 kg CO₂e).",
         "repasvegetalien": "100g de protéine végétale (0,10 kg CO₂e), 300g de légumes variés (0,24 kg CO₂e), 7g d’huile d’olive (0,01 kg CO₂e), 200g de fruits (0,15 kg CO₂e), 50g de pain (0,04 kg CO₂e).",
@@ -754,16 +774,5 @@
       "exemple-4": "8 giga tonnes co2e",
       "exemple-5": "7 mille kg CO₂"
     }
-  },
-  "voiture": {
-    "diesel": "Diesel",
-    "essence": "Essence",
-    "hybride": "Non rechargeable",
-    "hybriderechargeable": "Rechargeable",
-    "electrique": "Électrique",
-    "citadine": "Petite",
-    "compact": "Moyenne",
-    "berline": "Berline",
-    "grandeberline": "SUV"
   }
 }

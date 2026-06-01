@@ -43,7 +43,7 @@
   "dependencies": {
     "@iframe-resizer/child": "^5.5.9",
     "@iframe-resizer/parent": "^5.5.9",
-    "@incubateur-ademe/publicodes-acv-numerique": "^2.1.0",
+    "@incubateur-ademe/publicodes-acv-numerique": "^2.1.1",
     "@prisma/adapter-pg": "^7.8.0",
     "@prisma/client": "^7.8.0",
     "@publicodes/react-ui": "^1.10.0",
@@ -98,7 +98,7 @@
     "@babel/preset-typescript": "^7.28.5",
     "@babel/runtime": "^7.29.2",
     "@eslint/eslintrc": "^3.3.5",
-    "@incubateur-ademe/nosgestesclimat": "^4.10.5",
+    "@incubateur-ademe/nosgestesclimat": "^4.12.3",
     "@incubateur-ademe/publicodes-empreinte-carbone-chauffage": "^1.1.1",
     "@incubateur-ademe/publicodes-impact-livraison": "^0.7.0",
     "@keyv/etcd": "^2.1.1",

@@ -100,18 +100,18 @@ describe('getEmissionPerDistance', () => {
       { id: 11, name: 'Métro', emissions: { gco2e: 4.2, kgco2e: 0.0042, tco2e: 0.0000042 } },
       {
         id: 12,
-        name: 'Scooter ou moto légère thermique',
+        name: 'Scooter thermique',
         emissions: { gco2e: 60.400000000000006, kgco2e: 0.0604, tco2e: 0.000060400000000000004 },
       },
 
       {
         emissions: {
-          gco2e: 187.5,
-          kgco2e: 0.1875,
-          tco2e: 0.0001875,
+          gco2e: 140,
+          kgco2e: 0.14,
+          tco2e: 0.00014000000000000001,
         },
         id: 13,
-        name: 'Moto thermique',
+        name: 'Moto thermique (> 250 cm³)',
       },
       {
         emissions: {
@@ -134,6 +134,51 @@ describe('getEmissionPerDistance', () => {
         name: 'Trottinette à assistance électrique',
       },
       { id: 21, name: 'Bus (GNV)', emissions: { gco2e: 112.8, kgco2e: 0.1128, tco2e: 0.0001128 } },
+      {
+        emissions: {
+          gco2e: 377.1932716693085,
+          kgco2e: 0.3771932716693085,
+          tco2e: 0.0003771932716693085,
+        },
+        id: 31,
+        name: 'Camping-car',
+      },
+      {
+        emissions: {
+          gco2e: 16.7,
+          kgco2e: 0.0167,
+          tco2e: 0.0000167,
+        },
+        id: 32,
+        name: 'Moto thermique (<= 250 cm³)',
+      },
+      {
+        emissions: {
+          gco2e: 20.7,
+          kgco2e: 0.0207,
+          tco2e: 0.0000207,
+        },
+        id: 33,
+        name: 'Scooter électrique',
+      },
+      {
+        emissions: {
+          gco2e: 2.997,
+          kgco2e: 0.002997,
+          tco2e: 0.0000029970000000000003,
+        },
+        id: 34,
+        name: 'Vélo cargo triporteur',
+      },
+      {
+        emissions: {
+          gco2e: 237.14601166930848,
+          kgco2e: 0.2371460116693085,
+          tco2e: 0.0002371460116693085,
+        },
+        id: 35,
+        name: 'Van',
+      },
       {
         id: 100,
         name: 'Voiture thermique (Petite - Essence)',
@@ -325,6 +370,6 @@ describe('getEmissionPerDistance', () => {
       },
     ])
 
-    expect(data.length).toBe(40)
+    expect(data.length).toBe(45)
   })
 })
