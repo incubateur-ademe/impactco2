@@ -354,6 +354,7 @@ export const deplacements = [
       },
     ],
     default: true,
+    ignore: true,
     display: {
       min: 11,
     },
@@ -484,7 +485,6 @@ export const deplacements = [
     type: 'car',
     category: 4,
     default: true,
-    ignore: true,
     display: {
       min: 11,
     },
