@@ -98,7 +98,12 @@ const nextConfig = {
     return [
       {
         source: '/detecteur-co2',
-        destination: '/contenu/detecteur-co2',
+        destination: '/outils/detecteur',
+        permanent: true,
+      },
+      {
+        source: '/contenu/detecteur-co2',
+        destination: '/outils/detecteur',
         permanent: true,
       },
       {

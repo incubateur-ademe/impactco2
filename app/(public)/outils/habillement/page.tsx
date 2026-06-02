@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import HabillementPage from 'src/views/HabillementPage'
+import { toolsJsonLd } from 'utils/jsonLd'
 import { metaDescriptions, metaTitles } from 'utils/meta'
 import Suggestion from 'components/layout/Suggestion'
 
@@ -33,6 +34,10 @@ export async function generateMetadata(props: {
 const Habillement = async () => {
   return (
     <>
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(toolsJsonLd.habillement) }}
+      />
       <HabillementPage />
       <Suggestion fromLabel='Habillement' simulatorName='de la thématique Habillement' />
     </>

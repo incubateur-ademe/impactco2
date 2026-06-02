@@ -6,6 +6,14 @@ import FooterBanner from 'components/layout/FooterBanner'
 export const metadata: Metadata = {
   title: 'Faire une suggestion | Impact CO₂',
   description: "Partager une idée, un bug ou un avis avec l'équipe Impact CO2",
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
+  },
 }
 
 const SuggestionPage = () => {
