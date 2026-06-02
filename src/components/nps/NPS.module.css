@@ -1,0 +1,115 @@
+.parent {
+  position: absolute;
+  height: 100%;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  @media screen and (max-width: 40rem) {
+    right: 0;
+    bottom: 0;
+    width: 100%;
+  }
+}
+
+.container {
+  background-color: var(--neutral-00);
+  border: 2px solid var(--primary-30);
+  border-radius: 0.5rem;
+  position: sticky;
+  bottom: 1.5rem;
+  width: 27.25rem;
+  min-height: 14.75rem;
+  z-index: 1000;
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  @media screen and (max-width: 40rem) {
+    width: 100%;
+    border: none;
+    border-radius: 0 0 1rem 1rem;
+    border-top: 2px solid var(--primary-40);
+    align-items: center;
+    text-align: center;
+    bottom: 0;
+    padding: 1.5rem 0.75rem;
+  }
+}
+
+.closeButton {
+  position: absolute;
+  top: -1rem;
+  right: -1rem;
+  height: 2.5rem;
+  width: 2.5rem;
+  svg {
+    width: 1.25rem;
+    height: auto;
+  }
+
+  border: 2px solid var(--primary-30);
+  background-color: var(--neutral-00);
+  border-radius: 50%;
+  color: var(--primary-50);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    color: var(--primary-60);
+    background-color: var(--primary-10);
+  }
+
+  &:active {
+    color: var(--primary-70);
+    background-color: var(--primary-20);
+  }
+
+  @media screen and (max-width: 40rem) {
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+}
+
+.question {
+  color: var(--neutral-80);
+  font-weight: 500;
+  @media screen and (max-width: 40rem) {
+    padding: 0 2.75rem;
+  }
+}
+
+.input {
+  width: 100%;
+}
+
+.buttonContainer {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.button {
+  width: 100%;
+}
+
+.thanks {
+  text-align: center;
+}
+
+.subtitle {
+  color: var(--neutral-50);
+  margin-top: 0.75rem;
+}
+
+.errorAlert {
+  width: 100%;
+  color: var(--critical-50);
+  font-size: 0.75rem;
+}
