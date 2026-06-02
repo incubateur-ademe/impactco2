@@ -18,6 +18,7 @@ import CloseIcon from 'components/base/icons/close'
 import LanguageIcon from 'components/base/icons/language'
 import HiddenLabel from 'components/form/HiddenLabel'
 import Select from 'components/form/Select'
+import NPS from '../nps/NPS'
 import Actions from './Actions'
 import Feature from './Feature'
 import styles from './Shareable.module.css'
@@ -32,7 +33,9 @@ type ShareableProps = {
   noBottomBorders?: boolean
   small?: boolean
   smallPadding?: boolean
+  withNPS?: boolean
 }
+
 const Shareable = ({
   children,
   slug,
@@ -43,6 +46,7 @@ const Shareable = ({
   noBottomBorders,
   small,
   smallPadding,
+  withNPS,
 }: ShareableProps) => {
   const overscreenRef = useRef<HTMLDialogElement>(null)
   const t = useTranslations('overscreen')
@@ -102,6 +106,7 @@ const Shareable = ({
         night: theme === 'night',
         [styles.smallCard]: small,
       })}>
+      {withNPS && <NPS tracking={tracking} />}
       <div ref={secondary !== undefined ? undefined : ref}>
         {overScreenToDisplay && (
           <>

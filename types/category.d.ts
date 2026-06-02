@@ -12,4 +12,5 @@ export type Category = {
   examples?: string
   synonyms?: string[]
   tool?: string
+  withNPS?: boolean
 }
