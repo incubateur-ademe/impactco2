@@ -335,4 +335,30 @@ export const numeriques = [
     },
     end: 1.63,
   },
+  {
+    slug: 'videoprojecteur',
+    category: 1,
+    ecv: [
+      {
+        id: 4,
+        value: 1.32115,
+      },
+      {
+        id: 5,
+        value: 39.2,
+      },
+    ],
+    usage: {
+      peryear: 1.89435,
+      defaultyears: 8,
+    },
+    end: 3.26,
+    sources: [
+      {
+        label: 'Étude ADEME/ARCEP - mise à jour 2025',
+        href: 'https://librairie.ademe.fr/changement-climatique/7880-evaluation-de-l-impact-environnemental-du-numerique-en-france.html',
+      },
+    ],
+    default: true,
+  },
 ]
