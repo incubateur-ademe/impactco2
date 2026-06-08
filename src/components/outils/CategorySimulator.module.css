@@ -185,6 +185,7 @@
   right: 0.25rem;
   display: flex;
   gap: 0.25rem;
+  flex-wrap: wrap;
 
   @media screen and (max-width: 48rem) {
     position: relative;
