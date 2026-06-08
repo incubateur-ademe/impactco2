@@ -49,6 +49,7 @@ const getTimeout = (
 
   return 45000
 }
+const exceptions = ['https://nosgestesclimat.fr', 'https://jagis.beta.gouv.fr']
 
 const NPS = ({ tracking }: { tracking: string }) => {
   const t = useTranslations('nps')
@@ -60,7 +61,7 @@ const NPS = ({ tracking }: { tracking: string }) => {
   } = useParamContext()
 
   const [display, setDisplay] = useState(false)
-  const [blockedBySeen, setBlockedBySeen] = useState(false)
+  const [blocked, setBlocked] = useState(false)
   const timeoutRef = useRef<NodeJS.Timeout | null>(null)
 
   const [selected, setSelected] = useState<number | null>(null)
@@ -70,7 +71,6 @@ const NPS = ({ tracking }: { tracking: string }) => {
   const [closed, setClosed] = useState(false)
   const [sending, setSending] = useState(false)
   const [error, setError] = useState(false)
-
   const send = async () => {
     if (sending) {
       return
@@ -126,6 +126,12 @@ const NPS = ({ tracking }: { tracking: string }) => {
   }
 
   useEffect(() => {
+    const source = getSource()
+    if (exceptions.some((exception) => source.startsWith(exception))) {
+      setBlocked(true)
+      return
+    }
+
     const seenAtRaw = localStorage.getItem(NPS_SEEN_STORAGE_KEY)
     if (!seenAtRaw) {
       return
@@ -138,7 +144,7 @@ const NPS = ({ tracking }: { tracking: string }) => {
     }
 
     if (Date.now() - seenAt < NPS_SEEN_TTL) {
-      setBlockedBySeen(true)
+      setBlocked(true)
       return
     }
 
@@ -150,7 +156,7 @@ const NPS = ({ tracking }: { tracking: string }) => {
       clearTimeout(timeoutRef.current)
     }
 
-    if (blockedBySeen) {
+    if (blocked) {
       return
     }
 
@@ -159,7 +165,6 @@ const NPS = ({ tracking }: { tracking: string }) => {
     }
 
     const timeout = getTimeout(window.location.pathname, searchParams, { km, start, end })
-    console.log('NPS timeout set to', timeout)
     timeoutRef.current = setTimeout(() => {
       localStorage.setItem(NPS_SEEN_STORAGE_KEY, Date.now().toString())
       setDisplay(true)
@@ -170,13 +175,13 @@ const NPS = ({ tracking }: { tracking: string }) => {
         clearTimeout(timeoutRef.current)
       }
     }
-  }, [display, tracking, searchParams, km, start, end, blockedBySeen])
+  }, [display, tracking, searchParams, km, start, end, blocked])
 
   if (closed) {
     return null
   }
 
-  if (blockedBySeen) {
+  if (blocked) {
     return null
   }
 
