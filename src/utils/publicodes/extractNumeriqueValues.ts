@@ -19,6 +19,7 @@ const numeriqueEquipmentMapping = {
   television: 'TV',
   ordinateurfixeprofessionnel: 'ordinateur fixe pro',
   ordinateurfixeparticulier: 'ordinateur fixe',
+  videoprojecteur: 'videoprojecteur',
 }
 
 const ecvMapping = {
