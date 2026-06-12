@@ -26,7 +26,7 @@ function generateCSV() {
             [name, kgCO2e.toString(), thematique, id, url],
             ...Array.from({ length: 4 }).map((_, i) => [
               getName('fr', { slug: `${slug}+${i + 1}`, carpool: i + 1, ...data }, false, 1, false, true),
-              (data.value / (i + 2)).toString(),
+              (kgCO2e / (i + 2)).toString(),
               thematique,
               `${id}+${i + 1}`,
               `${url}+${i + 1}`,
