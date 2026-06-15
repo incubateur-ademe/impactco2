@@ -35,6 +35,7 @@ export const addNpsNote = async ({
   }
 
   if (!dbId || !process.env.NOTION_API_KEY) {
+    console.log('Fake NPS note creation', { note, source, tracking, params })
     return null
   }
 
@@ -92,6 +93,7 @@ export const updateNpsRetour = async (id: string, text: string) => {
   }
 
   if (!id || !process.env.NOTION_API_KEY) {
+    console.log('Fake NPS retour update', { id, text })
     return false
   }
 
