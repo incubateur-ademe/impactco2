@@ -1,7 +1,7 @@
 import DetectorInformation from 'components/outils/DetectorInformation'
 import DetectorScript from 'components/outils/DetectorScript'
 
-export const tools = [
+export const sensibilisationTools = [
   {
     slug: 'rse',
     title: 'Kit RSE',
@@ -9,6 +9,15 @@ export const tools = [
     linkLabel: 'Obtenir',
     link: 'https://tally.so/r/XxLGeY',
   },
+  {
+    slug: 'quiz',
+    title: 'Quiz carbone',
+    description: 'Un format interactif pour sensibiliser et apprendre de façon ludique',
+    linkLabel: 'Jouer',
+  },
+]
+
+export const tools = [
   {
     slug: 'livraison',
     title: 'Livraison',
@@ -96,18 +105,11 @@ export const tools = [
   },
 ]
 
-export const quiz = {
-  slug: 'quiz',
-  title: 'Quiz carbone',
-  description: 'Un format interactif pour sensibiliser et apprendre de façon ludique.',
-  linkLabel: 'Jouer',
-}
-
 export const smallTools = [
   {
     slug: 'etiquettes',
     title: 'Étiquettes',
-    description: 'Le petit format pour communiquer les bons ordres de grandeur.',
+    description: 'Le petit format pour communiquer les bons ordres de grandeur',
     meta: "Découvrir l'étiquette CO2, le petit format pour communiquer les bons ordres de grandeur",
     linkLabel: 'Découvrir',
     content: (
@@ -137,7 +139,7 @@ export const smallTools = [
   {
     slug: 'detecteur',
     title: 'Détecteur CO₂',
-    description: 'L’outil innovant pour mettre en lumière vos données carbone.',
+    description: 'L’outil innovant pour mettre en lumière vos données carbone',
     meta: 'Valoriser et mieux faire comprendre les données carbones grâce au détecteur CO2 qui communique les bons ordres de grandeur',
     linkLabel: 'Découvrir',
     content: <DetectorInformation />,
@@ -149,7 +151,7 @@ export const devTools = [
   {
     slug: 'api',
     title: 'API',
-    description: 'Accéder facilement et gratuitement à des données carbone fiables.',
+    description: 'Accéder facilement et gratuitement à des données carbone fiables',
     linkLabel: 'Découvrir',
     content: (
       <>
@@ -175,7 +177,7 @@ export const devTools = [
   {
     slug: 'npm',
     title: 'Package NPM',
-    description: "Pour faciliter l'intégration de l’étiquette carbone.",
+    description: "Pour faciliter l'intégration de l’étiquette carbone",
     meta: 'Intégrer facilement l’étiquette carbone d’Impact CO2 dans son contenu grâce au package npm, un format destiné aux développeurs',
     linkLabel: 'Découvrir',
     content: (
