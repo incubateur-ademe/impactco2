@@ -73,6 +73,11 @@ export default function useTransportations(
                       ))) ||
                 equivalent
 
+              const initialValue =
+                equivalent.slug === 'moto'
+                  ? (equivalents.find((eq) => eq.slug === 'moto-petite')?.value ?? equivalent.value)
+                  : equivalent.value
+
               const carpoolCarInfo = carInfos[`covoiturage${equivalent.slug.replace('voiture', '')}`]
               const carpoolEquivalent =
                 (carpoolCarInfo &&
@@ -92,7 +97,7 @@ export default function useTransportations(
                       name:
                         getNameWithoutSuffix(params.language, { ...equivalent, carpool: carpoolValue }) +
                         (values ? ` - ${formatNumber(distance).toLocaleString()} km` : ''),
-                      initialValue: equivalent.value / 2,
+                      initialValue: initialValue / 2,
                       value: carpoolEquivalent.value / (carpoolValue + 1),
                       ecv: carpoolEquivalent.ecv.map((ecv) => ({ ...ecv, value: ecv.value / (carpoolValue + 1) })),
                       usage: carpoolEquivalent.usage / (carpoolValue + 1),
@@ -104,7 +109,7 @@ export default function useTransportations(
                       ignore: equivalent.ignore,
                       name: equivalent.name,
                       slug: equivalent.slug,
-                      initialValue: equivalent.value,
+                      initialValue: initialValue,
                     },
                   ]
                 : [
@@ -114,7 +119,7 @@ export default function useTransportations(
                       ignore: equivalent.ignore,
                       name: equivalent.name,
                       slug: equivalent.slug,
-                      initialValue: equivalent.value,
+                      initialValue: initialValue,
                     },
                   ]
             })

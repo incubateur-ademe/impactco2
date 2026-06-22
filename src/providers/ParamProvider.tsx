@@ -280,7 +280,7 @@ export function ParamProvider({ children }: { children: ReactNode }) {
     covoiturageelectrique: { size: 'compact', engine: 'electrique' },
     voiturehybride: { size: 'compact', engine: 'hybride' },
     covoituragehybride: { size: 'compact', engine: 'hybride' },
-    moto: { size: 'moyenne', engine: 'thermique' },
+    moto: { size: 'petite', engine: 'thermique' },
   })
 
   const [modes, setModes] = useState<string[]>(
