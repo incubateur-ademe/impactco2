@@ -5,6 +5,7 @@ import Category from 'components/outils/CategoryPage'
 import Outil from 'components/outils/Outil'
 import { simulators } from 'components/outils/simulators'
 import { getCategory } from 'utils/category'
+import { toolsJsonLd } from 'utils/jsonLd'
 import { metaDescriptions, metaTitles } from 'utils/meta'
 import { devTools, smallTools } from 'components/cards/tools'
 import Suggestion from 'components/layout/Suggestion'
@@ -17,7 +18,7 @@ export async function generateStaticParams() {
       tool: tool.slug,
     })),
     ...categories.map((category) => ({ tool: category.slug })),
-  ]
+  ].filter(({ tool }) => tool !== 'caspratiques')
 }
 
 type Props = {
@@ -29,6 +30,10 @@ export async function generateMetadata(props: Props, parent: ResolvingMetadata):
   const searchParams = await props.searchParams
   const params = await props.params
   const tool = tools.find((tool) => tool.slug === params.tool)
+  if (params.tool === 'caspratiques') {
+    return parent as Metadata
+  }
+
   if (tool) {
     return {
       title: `${tool.title} | Impact CO₂`,
@@ -60,9 +65,15 @@ const OutilPage = async (props: Props) => {
   const params = await props.params
   const tool = tools.find((tool) => tool.slug === params.tool)
 
+  if (params.tool === 'caspratiques') {
+    return notFound()
+  }
+
+  const jsonLd = toolsJsonLd[params.tool]
   if (tool) {
     return (
       <>
+        {jsonLd && <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />}
         <Outil tool={tool} />
         <Suggestion fromLabel={tool.title} simulatorName={`de l'outil ${tool.title}`} />
       </>
@@ -72,6 +83,7 @@ const OutilPage = async (props: Props) => {
   if (category) {
     return (
       <>
+        {jsonLd && <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />}
         <Category
           category={category}
           simulator={simulators[params.tool]}
