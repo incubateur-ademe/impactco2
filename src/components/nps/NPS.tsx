@@ -38,13 +38,13 @@ const getTimeout = (
   // L'utilisateur n'a pas encore engagé avec l'outil, timeout en fonction de l'outil
   const tabs = params.get('tabs')
   if (tabs === 'itineraire') {
-    return 15000
+    return null
   } else if (tabs === 'distance') {
     return 45000
   }
 
   if (pathname.includes('itineraire')) {
-    return 15000
+    return null
   }
 
   return 45000
@@ -165,10 +165,12 @@ const NPS = ({ tracking }: { tracking: string }) => {
     }
 
     const timeout = getTimeout(window.location.pathname, searchParams, { km, start, end })
-    timeoutRef.current = setTimeout(() => {
-      localStorage.setItem(NPS_SEEN_STORAGE_KEY, Date.now().toString())
-      setDisplay(true)
-    }, timeout)
+    if (timeout !== null) {
+      timeoutRef.current = setTimeout(() => {
+        localStorage.setItem(NPS_SEEN_STORAGE_KEY, Date.now().toString())
+        setDisplay(true)
+      }, timeout)
+    }
 
     return () => {
       if (timeoutRef.current) {
