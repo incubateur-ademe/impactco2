@@ -13,6 +13,12 @@ type Props = {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>
 }
 
+const prefixes: Record<string, string> = {
+  fr: 'Empreinte carbone',
+  en: 'Carbon footprint',
+  es: 'Huella de carbono',
+}
+
 export async function generateMetadata(props: Props, parent: ResolvingMetadata): Promise<Metadata> {
   const searchParams = await props.searchParams
   const params = await props.params
@@ -30,7 +36,7 @@ export async function generateMetadata(props: Props, parent: ResolvingMetadata):
 
   const language = (searchParams.language as string) || 'fr'
   return {
-    title: `${getName(language, equivalent)} | Impact CO₂`,
+    title: `${prefixes[language]} ${getName(language, equivalent)} | Impact CO₂`,
     description:
       language === 'en'
         ? `Discover the carbon impact of a ${getName(language, equivalent, true, 1, true)} thanks to CO2 Impact and ADEME data`

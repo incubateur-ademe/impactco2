@@ -7,6 +7,14 @@ export const metadata: Metadata = {
   title: 'Prendre rendez-vous | Impact CO₂',
   description:
     "Besoin d'aide ou d'accompagnement dans vos projets de sensibilisation ? Prendre rendez-vous avec l'équipe Impact CO2",
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
+  },
 }
 
 const RDVPage = () => {

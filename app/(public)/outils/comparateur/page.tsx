@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import ComparateurPage from 'components/outils/comparateur/ComparateurPage'
+import { toolsJsonLd } from 'utils/jsonLd'
 import { metaDescriptions, metaTitles } from 'utils/meta'
 import Suggestion from 'components/layout/Suggestion'
 
@@ -39,6 +40,10 @@ export async function generateMetadata(props: {
 const page = () => {
   return (
     <>
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(toolsJsonLd.comparateur) }}
+      />
       <ComparateurPage />
       <Suggestion fromLabel='Comparateur' simulatorName='du comparateur carbone' />
     </>
