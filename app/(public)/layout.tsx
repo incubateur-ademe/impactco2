@@ -1,3 +1,4 @@
+import { Metadata } from 'next'
 import { Suspense } from 'react'
 import { ParamProvider } from 'src/providers/ParamProvider'
 import ScrollProvider from 'src/providers/ScrollProvider'
@@ -5,6 +6,12 @@ import Footer from 'components/layout/Footer'
 import Header from 'components/layout/Header'
 
 export const dynamic = 'force-static'
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: './',
+  },
+}
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
