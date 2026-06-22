@@ -29,6 +29,10 @@
   }
 }
 
+.simpleEquivalent {
+  border-radius: 0;
+}
+
 .equivalentLabel {
   display: flex;
   width: 100%;

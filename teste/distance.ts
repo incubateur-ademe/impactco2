@@ -26,6 +26,7 @@ export const distanceComparisonTest = async (page: Page | FrameLocator, prod?: b
   await page.getByTestId('comparison-tile-0').getByRole('button', { name: 'Modifier' }).click()
   await page.getByRole('button', { name: 'TGV' }).click()
   await page.getByTestId('comparison-tile-1').getByRole('button', { name: 'Modifier' }).click()
+  await page.getByRole('button', { name: 'Covoiturage thermique' }).click()
   await page.getByRole('button', { name: 'Covoiturage thermique (3 personnes)' }).click()
 
   await expect(page.getByTestId('comparison-tile-1')).toHaveText(
@@ -48,8 +49,10 @@ export const distanceComparisonTest = async (page: Page | FrameLocator, prod?: b
   await expect(page.getByTestId('comparison-tile-1')).toHaveText('Avion trajet long1,779 kg CO₂e Modifier')
 
   await page.getByTestId('comparison-tile-0').getByRole('button', { name: 'Modifier' }).click()
+  await page.getByRole('button', { name: 'Covoiturage thermique' }).click()
   await page.getByRole('button', { name: 'Covoiturage thermique (Berline - Diesel - 5 personnes)' }).click()
   await page.getByTestId('comparison-tile-1').getByRole('button', { name: 'Modifier' }).click()
+  await page.getByRole('button', { name: 'Voiture électrique', exact: true }).click()
   await page.getByRole('button', { name: 'Voiture électrique (Petite)' }).click()
   await expect(page.getByTestId('comparison-tile-1')).toHaveText('Voiture électrique (Petite)576 kg CO₂e Modifier')
   await expect(page.getByTestId('comparison-tile-0')).toHaveText(
