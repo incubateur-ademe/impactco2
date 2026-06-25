@@ -1,0 +1,65 @@
+.header {
+  cursor: pointer;
+  display: flex;
+  padding: 0.75rem;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  background-color: transparent;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  color: var(--neutral-50);
+
+  &:hover {
+    color: var(--neutral-80);
+    background-color: var(--primary-10);
+  }
+}
+
+.coloredNumber {
+  color: var(--primary-60);
+  font-weight: 700;
+}
+
+.title {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.button {
+  padding: 0.5rem;
+  border-radius: 50%;
+  border: solid 2px var(--primary-30);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--primary-50);
+
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+.subCategories {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  padding: 0.5rem 0 1.5rem 0.75rem;
+}
+
+.subCategory {
+  color: var(--neutral-50);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  text-transform: uppercase;
+}
+
+.checkbox {
+  &:not(:last-child) {
+    border-bottom: 2px solid var(--neutral-20);
+  }
+}

@@ -1,3 +1,4 @@
+import classNames from 'node_modules/classnames'
 import useParamContext from 'src/providers/ParamProvider'
 import { Equivalent } from 'types/equivalent'
 import { getName } from 'utils/Equivalent/equivalent'
@@ -9,38 +10,46 @@ const ComparisonEquivalents = ({
   onClose,
   equivalents,
   index,
+  simple,
 }: {
   onClose: () => void
   equivalents: Equivalent[]
   index: 0 | 1
+  simple?: boolean
 }) => {
   const {
     language,
     transport: { comparison, setComparison, selected },
   } = useParamContext()
 
-  return equivalents.map((equivalent) => (
-    <li key={equivalent.slug}>
-      <button
-        className={styles.button}
-        onClick={() => {
-          if (index === 0) {
-            setComparison([equivalent.slug, comparison[1]])
-          } else {
-            setComparison([comparison[0], equivalent.slug])
-          }
-          track(
-            `Transport ${selected === 'distance' ? 'distance' : 'itinéraire'}`,
-            'Nouvelle comparaison',
-            equivalent.slug
-          )
-          onClose()
-        }}>
-        <span>{getName(language, equivalent, false, 1, false, true)}</span>
-        <EquivalentIcon height={2} equivalent={equivalent} />
-      </button>
-    </li>
-  ))
+  return (
+    <ul>
+      {equivalents.map((equivalent) => (
+        <li key={equivalent.slug}>
+          <button
+            className={classNames(styles.button, {
+              [styles.simpleButton]: simple,
+            })}
+            onClick={() => {
+              if (index === 0) {
+                setComparison([equivalent.slug, comparison[1]])
+              } else {
+                setComparison([comparison[0], equivalent.slug])
+              }
+              track(
+                `Transport ${selected === 'distance' ? 'distance' : 'itinéraire'}`,
+                'Nouvelle comparaison',
+                equivalent.slug
+              )
+              onClose()
+            }}>
+            <span>{getName(language, equivalent, false, 1, false, true)}</span>
+            {!simple && <EquivalentIcon height={2} equivalent={equivalent} />}
+          </button>
+        </li>
+      ))}
+    </ul>
+  )
 }
 
 export default ComparisonEquivalents

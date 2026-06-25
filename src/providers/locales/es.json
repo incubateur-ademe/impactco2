@@ -363,7 +363,16 @@
       "compare": "Comparar solo con esta categoría",
       "compare-button": "Ver la comparación",
       "max": "equivalentes ya seleccionados",
-      "equivalents-group": "Equivalentes de la categoría"
+      "equivalents-group": "Equivalentes de la categoría",
+      "subCategory": {
+        "1person": "1 persona en el coche",
+        "2persons": "2 personas en el coche",
+        "3persons": "3 personas en el coche",
+        "4persons": "4 personas en el coche",
+        "5persons": "5 personas en el coche",
+        "foot": "A pie",
+        "car": "En coche"
+      }
     }
   },
   "livraison": {

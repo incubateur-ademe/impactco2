@@ -60,7 +60,10 @@ export const comparateurTest = async (page: Page | FrameLocator, prod?: boolean,
 
   await page.getByRole('button', { name: 'Ajouter un équivalent' }).click()
   await page.getByRole('button', { name: 'Transport 0 /' }).click()
+  await page.getByRole('button', { name: 'Covoiturage électrique 0 /' }).click()
   await page.getByText('Covoiturage électrique (3').click()
+  await expect(page.getByTestId('selected-equivalents-voitureelectrique+1-number')).toHaveText('1')
+  await expect(page.getByTestId('selected-equivalents-transport-number')).toHaveText('1')
   await page.getByRole('button', { name: 'Revenir au comparateur' }).click()
 
   await expect(page.getByTestId('comparateur-voitureelectrique+2-value')).toHaveText('323')
