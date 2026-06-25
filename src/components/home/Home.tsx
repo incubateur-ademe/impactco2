@@ -4,7 +4,7 @@ import { Suspense } from 'react'
 import Link from 'components/base/buttons/Link'
 import FullArrowRightIcon from 'components/base/icons/full-arrow-right'
 import ToolCards from 'components/cards/ToolCards'
-import { tools } from 'components/cards/tools'
+import { sensibilisationTools, tools } from 'components/cards/tools'
 import FAQs from 'components/faq/FAQs'
 import Block from 'components/layout/Block'
 import Equivalents from './Equivalents'
@@ -42,7 +42,7 @@ const Home = () => {
         </div>
         <ToolCards
           tools={[
-            tools.find((tool) => tool.slug === 'rse'),
+            sensibilisationTools.find((tool) => tool.slug === 'rse'),
             tools.find((tool) => tool.slug === 'livraison'),
             tools.find((tool) => tool.slug === 'transport'),
           ]}

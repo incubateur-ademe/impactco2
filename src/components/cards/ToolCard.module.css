@@ -94,14 +94,14 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   gap: 0.5rem;
 }
 
 .title {
   font-weight: 700;
   color: var(--neutral-80);
-  font-size: 1.5rem;
+  font-size: 1.475rem;
   line-height: 2rem;
   margin-bottom: 0.5rem;
   display: flex;
