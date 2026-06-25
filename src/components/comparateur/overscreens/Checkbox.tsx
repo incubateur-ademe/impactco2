@@ -1,3 +1,4 @@
+import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
 import { ForwardedRef, forwardRef, useEffect, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
@@ -13,10 +14,12 @@ const Checkbox = (
     equivalent,
     equivalents,
     setEquivalents,
+    simple,
   }: {
     equivalent: ComputedEquivalent
     equivalents: string[]
     setEquivalents: (value: string[]) => void
+    simple?: boolean
   },
   ref: ForwardedRef<HTMLInputElement>
 ) => {
@@ -44,7 +47,9 @@ const Checkbox = (
       ref={ref}
       key={equivalent.slug}
       id={equivalent.slug}
-      className={interacted && equivalents.length > 7 ? styles.warningEquivalent : styles.equivalent}
+      className={classNames(interacted && equivalents.length > 7 ? styles.warningEquivalent : styles.equivalent, {
+        [styles.simpleEquivalent]: simple,
+      })}
       checked={equivalents.includes(equivalent.slug)}
       setChecked={(checked) => {
         if (equivalents.length > 7) {
@@ -66,7 +71,7 @@ const Checkbox = (
               </div>
             )}
           </div>
-          <EquivalentIcon height={2} equivalent={equivalent} />
+          {!simple && <EquivalentIcon height={2} equivalent={equivalent} />}
         </>
       }
     />
