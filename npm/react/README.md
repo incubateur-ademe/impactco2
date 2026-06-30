@@ -104,7 +104,6 @@ Liste des équivalents à comparer parmis la liste suivante :
   - rer : km en RER ou Transilien
   - ter : km en TER
   - buselectrique : km en bus électrique
-  - busgnv : km en bus (GNV)
 - Boisson
   - eaudurobinet : Litre d'eau du robinet
   - eauenbouteille : Litre d'eau en bouteille

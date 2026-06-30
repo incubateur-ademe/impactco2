@@ -75,7 +75,7 @@ export const deplacements = [
       {
         subtitle: 'longcourrier',
         display: {
-          min: 2001,
+          min: 5001,
         },
         ecv: [
           {
@@ -272,7 +272,7 @@ export const deplacements = [
         value: 0.1135,
       },
     ],
-    default: true,
+    default: false,
     display: {
       max: 15,
     },
@@ -416,7 +416,7 @@ export const deplacements = [
         value: 0.0095,
       },
     ],
-    default: false,
+    default: true,
     display: {
       max: 15,
     },
@@ -439,26 +439,6 @@ export const deplacements = [
     default: true,
     display: {
       max: 30,
-    },
-  },
-  {
-    id: 21,
-    slug: 'busgnv',
-    type: 'car',
-    category: 4,
-    ecv: [
-      {
-        id: 5,
-        value: 0.0089,
-      },
-      {
-        id: 6,
-        value: 0.1128,
-      },
-    ],
-    default: false,
-    display: {
-      max: 15,
     },
   },
   {

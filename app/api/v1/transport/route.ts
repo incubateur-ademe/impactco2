@@ -169,7 +169,6 @@ export const computeTransportEmission = (
  *         - 15 : TER
  *         - 16 : Bus électrique
  *         - 17 : Trottinette à assistance électrique
- *         - 21 : Bus (GNV)
  *         - 22 : Covoiturage thermique (2 personnes)
  *         - 23 : Covoiturage thermique (3 personnes)
  *         - 24 : Covoiturage thermique (4 personnes)

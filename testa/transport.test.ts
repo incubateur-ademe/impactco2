@@ -1397,11 +1397,6 @@ describe('transport', () => {
           value: 0.2,
         },
         {
-          id: 21,
-          name: 'Bus (GNV)',
-          value: 11.28,
-        },
-        {
           id: 31,
           name: 'Camping-car',
           value: 37.71932716693085,

@@ -480,10 +480,6 @@
     "label": "km en ;avion moyen courrier"
   },
   {
-    "value": "busgnv",
-    "label": "km en ;bus (GNV)"
-  },
-  {
     "value": "buselectrique",
     "label": "km en ;bus électrique"
   },

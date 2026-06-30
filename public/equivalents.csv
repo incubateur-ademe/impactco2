@@ -282,7 +282,6 @@ Avion trajet court,0.224572,Transport,avion-courtcourrier,https://impactco2.fr/o
 Avion trajet long,0.177894,Transport,avion-longcourrier,https://impactco2.fr/outils/transport/avion-longcourrier
 Avion trajet moyen,0.184661,Transport,avion-moyencourrier,https://impactco2.fr/outils/transport/avion-moyencourrier
 Avion trajet moyen à long,0.166794,Transport,avion-moyenlongcourrier,https://impactco2.fr/outils/transport/avion-moyenlongcourrier
-Bus (GNV),0.1217,Transport,busgnv,https://impactco2.fr/outils/transport/busgnv
 Bus électrique,0.0217,Transport,buselectrique,https://impactco2.fr/outils/transport/buselectrique
 Bus thermique,0.12242,Transport,busthermique,https://impactco2.fr/outils/transport/busthermique
 Camping-car,0.49383327166930846,Transport,campingcar,https://impactco2.fr/outils/transport/campingcar

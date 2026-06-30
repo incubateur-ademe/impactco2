@@ -498,13 +498,6 @@
     "en": "km by ;electrically assisted scooter",
     "es": "km en ;patinete eléctrica asistida"
   },
-  "busgnv": {
-    "category": 4,
-    "value": 121.7,
-    "fr": "km en ;bus (GNV)",
-    "en": "km by ;bus (natural gas vehicle)",
-    "es": "km en ;autobús (GNV)"
-  },
   "campingcar": {
     "category": 4,
     "value": 493.8332716693085,

@@ -154,12 +154,12 @@ export const distanceTest = async (page: Page | FrameLocator, prod?: boolean) =>
   await page.locator('span').filter({ hasText: /^TER$/ }).nth(2).click()
   await page.getByLabel('Intégrer').getByText('Covoiturage thermique', { exact: true }).click()
   await expect(page.getByTestId('clipboard-box')).toHaveText(
-    `<script data-name="impact-co2" src="${prod ? 'https://impactco2.fr' : 'http://localhost:3000'}/iframe.js" data-type="transport" data-search="?theme=default&language=fr&tabs=distance&km=1000&defaultMode=comparison&comparison=voiturethermique,autocar&modes=avion,intercites,voiturethermique,voitureelectrique+1,voitureelectrique,autocar,marche,velo,veloelectrique,busthermique,tramway,metro,scooter,moto,rer,buselectrique,trottinette,busgnv,campingcar,scooterelectrique,triporteurelectrique,van,voiturehybride+1,voiturehybride"></script>`
+    `<script data-name="impact-co2" src="${prod ? 'https://impactco2.fr' : 'http://localhost:3000'}/iframe.js" data-type="transport" data-search="?theme=default&language=fr&tabs=distance&km=1000&defaultMode=comparison&comparison=voiturethermique,autocar&modes=avion,intercites,voiturethermique,voitureelectrique+1,voitureelectrique,autocar,marche,velo,veloelectrique,busthermique,tramway,metro,scooter,moto,rer,buselectrique,trottinette,campingcar,scooterelectrique,triporteurelectrique,van,voiturehybride+1,voiturehybride"></script>`
   )
   await page.getByTestId('text-select-comparison-1').selectOption('velo')
   await page.getByTestId('text-select-comparison-2').selectOption('moto')
   await expect(page.getByTestId('clipboard-box')).toHaveText(
-    `<script data-name="impact-co2" src="${prod ? 'https://impactco2.fr' : 'http://localhost:3000'}/iframe.js" data-type="transport" data-search="?theme=default&language=fr&tabs=distance&km=1000&defaultMode=comparison&comparison=velo,moto&modes=avion,intercites,voiturethermique,voitureelectrique+1,voitureelectrique,autocar,marche,velo,veloelectrique,busthermique,tramway,metro,scooter,moto,rer,buselectrique,trottinette,busgnv,campingcar,scooterelectrique,triporteurelectrique,van,voiturehybride+1,voiturehybride"></script>`
+    `<script data-name="impact-co2" src="${prod ? 'https://impactco2.fr' : 'http://localhost:3000'}/iframe.js" data-type="transport" data-search="?theme=default&language=fr&tabs=distance&km=1000&defaultMode=comparison&comparison=velo,moto&modes=avion,intercites,voiturethermique,voitureelectrique+1,voitureelectrique,autocar,marche,velo,veloelectrique,busthermique,tramway,metro,scooter,moto,rer,buselectrique,trottinette,campingcar,scooterelectrique,triporteurelectrique,van,voiturehybride+1,voiturehybride"></script>`
   )
 
   await page.getByTestId('cancel-button').click()
