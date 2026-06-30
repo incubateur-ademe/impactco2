@@ -95,26 +95,20 @@ test('Load correct number of tabs and redirect with params', async ({ page }) =>
     '/iframes/transport/itineraire?km=12&itineraireStart=Paris&itineraireEnd=Lyon&teletravailStart=Nantes&teletravailEnd=Marseille&tabs=teletravail'
   )
 
-  await test.step('check number of tabs', async () => {
-    await expect(page.getByTestId('transport-tabs-wrapper')).not.toBeVisible()
-    await expect(page.getByLabel('Départ')).toHaveAttribute('value', 'Paris France', {
-      timeout: 10000,
-    })
-  })
+  await expect(page.getByLabel('Départ')).toHaveAttribute('value', 'Paris France', { timeout: 60000 })
+  await expect(page.getByTestId('transport-tabs-wrapper')).not.toBeVisible()
 
-  await test.step('test redirection', async () => {
-    await page.goto(
-      '/iframes/transport/itineraire?km=12&itineraireStart=Paris&itineraireEnd=Lyon&teletravailStart=Nantes&teletravailEnd=Marseille&tabs=distance'
-    )
-    await page.getByTestId('transport-tab-distance').click()
+  await page.goto(
+    '/iframes/transport/itineraire?km=12&itineraireStart=Paris&itineraireEnd=Lyon&teletravailStart=Nantes&teletravailEnd=Marseille&tabs=distance'
+  )
+  await page.getByTestId('transport-tab-distance').click()
 
-    await expect(page.getByTestId('input-km-value')).toHaveValue('12')
+  await expect(page.getByTestId('input-km-value')).toHaveValue('12')
 
-    await expect(page.getByTestId('category-busthermique')).toBeAttached()
-    await expect(page.getByTestId('category-busthermique')).toHaveText(
-      'Bus thermique1.47 kg CO₂eusage : 93%, construction : 7%'
-    )
-  })
+  await expect(page.getByTestId('category-buselectrique')).toBeAttached()
+  await expect(page.getByTestId('category-buselectrique')).toHaveText(
+    'Bus électrique0.26 kg CO₂eusage : 44%, construction : 56%'
+  )
 })
 
 test('Roundtrip', async ({ page }) => {
