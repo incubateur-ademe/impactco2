@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
-import { FacebookShareButton, LinkedinShareButton, TwitterShareButton, WhatsappShareButton } from 'react-share'
+import { FacebookShareButton, LinkedinShareButton, WhatsappShareButton, XShareButton } from 'react-share'
 import useParamContext from 'src/providers/ParamProvider'
 import { Category } from 'types/category'
 import { track } from 'utils/matomo'
@@ -47,14 +47,14 @@ const ShareUrl = ({
           onClick={() => track(trackingValue, 'Share Facebook', `${trackingSlug}_facebook`)}>
           <FacebookIcon />
         </FacebookShareButton>
-        <TwitterShareButton
+        <XShareButton
           className={buttonStyles.roundButton}
           url={url}
           title='Partager sur twitter'
           aria-label='Partager sur twitter'
           onClick={() => track(trackingValue, 'Share Twitter', `${trackingSlug}_twitter`)}>
           <TwitterIcon />
-        </TwitterShareButton>
+        </XShareButton>
         <WhatsappShareButton
           className={buttonStyles.roundButton}
           url={url}

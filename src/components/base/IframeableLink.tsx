@@ -1,17 +1,15 @@
 'use client'
 
 import Link, { LinkProps } from 'next/link'
-import React, { AnchorHTMLAttributes, ForwardedRef, forwardRef, useEffect, useState } from 'react'
+import { usePathname } from 'next/navigation'
+import { AnchorHTMLAttributes, ForwardedRef, forwardRef } from 'react'
 
 const IframeableLink = (
   props: LinkProps & AnchorHTMLAttributes<HTMLAnchorElement>,
   ref: ForwardedRef<HTMLAnchorElement>
 ) => {
-  const [isIFramed, setIsIframed] = useState(false)
-
-  useEffect(() => {
-    setIsIframed(window.location.pathname.includes('iframes'))
-  }, [])
+  const pathname = usePathname()
+  const isIFramed = pathname?.includes('iframes') ?? false
 
   return (
     <Link

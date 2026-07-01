@@ -2,7 +2,7 @@
 
 import classNames from 'classnames'
 import { track } from 'utils/matomo'
-import Link from 'components/base/buttons/Link'
+import IframeableLink from './IframeableLink'
 import styles from './Sources.module.css'
 
 const Sources = ({
@@ -19,9 +19,9 @@ const Sources = ({
       Source{sources.length > 1 ? 's' : ''} :{' '}
       {sources
         .flatMap((source) => [
-          <Link key={source.label} href={source.href} onClick={() => track(tracking, 'Source', source.href)}>
+          <IframeableLink key={source.label} href={source.href} onClick={() => track(tracking, 'Source', source.href)}>
             {source.label}
-          </Link>,
+          </IframeableLink>,
           <span key={`${source.label}-separator`}> • </span>,
         ])
         .slice(0, sources.length * 2 - 1)}
