@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import { ReactNode } from 'react'
-import Link from 'components/base/buttons/Link'
+import IframeableLink from 'components/base/IframeableLink'
 import styles from './Block.module.css'
 
 const getTitle = (title?: string, as?: 'h1') => {
@@ -34,7 +34,7 @@ const Block = ({ children, title, description, link, linkLabel, as, id }: BlockP
               <p className={classNames(styles.description, { [styles.mainDescription]: as === 'h1' })}>{description}</p>
             )}
           </div>
-          {link && <Link href={link}>{linkLabel}</Link>}
+          {link && <IframeableLink href={link}>{linkLabel}</IframeableLink>}
         </div>
       )}
       {children && <div className={classNames(styles.children, { [styles.withMargin]: title })}>{children}</div>}

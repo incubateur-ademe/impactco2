@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import { FAQ as FAQType } from 'types/faq'
-import Link from 'components/base/buttons/Link'
+import IframeableLink from 'components/base/IframeableLink'
 import Block, { BlockProps } from 'components/layout/Block'
 import FAQ from './FAQ'
 import styles from './FAQsList.module.css'
@@ -23,11 +23,11 @@ const FAQsList = ({ faqs, page, ...blockProps }: FAQSListProps) => {
           <p>Vous ne trouvez pas de réponse à vos questions ?</p>
           <ul className={styles.footer}>
             <li className={styles.footer}>
-              <Link href={`/rendez-vous?fromLabel=${page}`}>Contactez-nous</Link>
+              <IframeableLink href={`/rendez-vous?fromLabel=${page}`}>Contactez-nous</IframeableLink>
               <div className={styles.separator} />
             </li>
             <li>
-              <Link href='/doc/questions-frequentes'>Toutes les questions</Link>
+              <IframeableLink href='/doc/questions-frequentes'>Toutes les questions</IframeableLink>
             </li>
           </ul>
         </div>

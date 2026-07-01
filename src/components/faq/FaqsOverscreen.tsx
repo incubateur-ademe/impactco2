@@ -1,11 +1,11 @@
 'use client'
 import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
-import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { fetchFaqsByTool } from 'src/serverFunctions/faqs'
 import { FAQCategory, FAQ as FAQType } from 'types/faq'
+import IframeableLink from 'components/base/IframeableLink'
 import Button from 'components/base/buttons/Button'
 import HiddenLabel from 'components/form/HiddenLabel'
 import Input from 'components/form/Input'
@@ -118,10 +118,10 @@ const FaqsOverscreen = ({ filter, page, slug }: { filter: string; slug: string }
               <p>{t('notFound')}</p>
               <ul className={styles.footer}>
                 <li className={styles.footer}>
-                  <Link href={`/suggestion?fromLabel=${page}`}>{t('contact')}</Link>
+                  <IframeableLink href={`/suggestion?fromLabel=${page}`}>{t('contact')}</IframeableLink>
                 </li>
               </ul>
-            </div>{' '}
+            </div>
           </>
         ) : (
           <div>
@@ -136,7 +136,7 @@ const FaqsOverscreen = ({ filter, page, slug }: { filter: string; slug: string }
             <br />
             <p className={styles.noResultAdditionalInfo}>
               {t.rich('noResultAdditionalInfo', {
-                contact: (chunk) => <Link href={`/suggestion?fromLabel=${page}`}>{chunk}</Link>,
+                contact: (chunk) => <IframeableLink href={`/suggestion?fromLabel=${page}`}>{chunk}</IframeableLink>,
               })}
             </p>
           </div>
