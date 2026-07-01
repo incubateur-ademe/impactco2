@@ -5,9 +5,9 @@ import { LinkProps } from 'next/link'
 import { ExtendedRecordMap } from 'notion-types'
 import { ReactNode, useEffect, useRef } from 'react'
 import { Collection } from 'react-notion-x/build/third-party/collection'
-import Link from 'components/base/buttons/Link'
 import Breadcrumbs from 'components/breadcrumbs/Breadcrumbs'
 import Block from 'components/layout/Block'
+import IframeableLink from '../base/IframeableLink'
 import NotionErrorBoundary from './NotionErrorBoundary'
 import { improveAccessibility } from './utils'
 import styles from './Notion.module.css'
@@ -67,9 +67,9 @@ const Notion = ({
                     }
                     return (
                       // @ts-expect-error: notion type error
-                      <Link href={href} {...props} target='_blank' rel='noopener noreferrer'>
+                      <IframeableLink href={href} {...props} target='_blank' rel='noopener noreferrer'>
                         {children}
-                      </Link>
+                      </IframeableLink>
                     )
                   },
                   Collection,

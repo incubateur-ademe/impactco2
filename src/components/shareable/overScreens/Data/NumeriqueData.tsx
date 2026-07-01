@@ -1,6 +1,6 @@
 import useParamContext from 'src/providers/ParamProvider'
+import IframeableLink from 'components/base/IframeableLink'
 import NewTabIcon from 'components/base/NewTabIcon'
-import Link from 'components/base/buttons/Link'
 import styles from './Data.module.css'
 
 const FRNumeriqueData = () => {
@@ -9,9 +9,9 @@ const FRNumeriqueData = () => {
       <div className={styles.content}>
         <p>
           L'ensemble des calculs est issu d'une{' '}
-          <Link href='https://librairie.ademe.fr/changement-climatique/7880-evaluation-de-l-impact-environnemental-du-numerique-en-france.html'>
+          <IframeableLink href='https://librairie.ademe.fr/changement-climatique/7880-evaluation-de-l-impact-environnemental-du-numerique-en-france.html'>
             étude réalisée et mise à jour en 2025 par ADEME/ARCEP
-          </Link>
+          </IframeableLink>
         </p>
       </div>
       <h2 className={styles.title}>Hypothèses</h2>
@@ -30,10 +30,13 @@ const FRNumeriqueData = () => {
       <div className={styles.content}>
         <p>
           Pour plus de détails et mieux comprendre les données, consultez{' '}
-          <Link href='/doc/usage-numerique/acv' title='Lien externe : documentation détaillée' target='_blank'>
+          <IframeableLink
+            href='/doc/usage-numerique/acv'
+            title='Lien externe : documentation détaillée'
+            target='_blank'>
             la documentation détaillée
             <NewTabIcon />
-          </Link>
+          </IframeableLink>
         </p>
       </div>
     </>
@@ -46,9 +49,9 @@ const ESNumeriqueData = () => {
       <div className={styles.content}>
         <p>
           Todos los cálculos provienen de un{' '}
-          <Link href='https://librairie.ademe.fr/changement-climatique/7880-evaluation-de-l-impact-environnemental-du-numerique-en-france.html'>
+          <IframeableLink href='https://librairie.ademe.fr/changement-climatique/7880-evaluation-de-l-impact-environnemental-du-numerique-en-france.html'>
             estudio realizado y actualizado en 2025 por ADEME/ARCEP
-          </Link>
+          </IframeableLink>
         </p>
       </div>
       <h2 className={styles.title}>Hipótesis</h2>
@@ -67,10 +70,13 @@ const ESNumeriqueData = () => {
       <div className={styles.content}>
         <p>
           Para más detalles y comprender mejor los datos, consulte{' '}
-          <Link href='/doc/usage-numerique/acv' title='Enlace externo: documentación detallada' target='_blank'>
+          <IframeableLink
+            href='/doc/usage-numerique/acv'
+            title='Enlace externo: documentación detallada'
+            target='_blank'>
             la documentación detallada
             <NewTabIcon />
-          </Link>
+          </IframeableLink>
         </p>
       </div>
     </>
@@ -83,9 +89,9 @@ const ENNumeriqueData = () => {
       <div className={styles.content}>
         <p>
           All calculations come from a{' '}
-          <Link href='https://librairie.ademe.fr/changement-climatique/7880-evaluation-de-l-impact-environnemental-du-numerique-en-france.html'>
+          <IframeableLink href='https://librairie.ademe.fr/changement-climatique/7880-evaluation-de-l-impact-environnemental-du-numerique-en-france.html'>
             study conducted and updated in 2025 by ADEME/ARCEP
-          </Link>
+          </IframeableLink>
         </p>
       </div>
       <h2 className={styles.title}>Assumptions</h2>
@@ -104,10 +110,10 @@ const ENNumeriqueData = () => {
       <div className={styles.content}>
         <p>
           For more details and to better understand the data, see{' '}
-          <Link href='/doc/usage-numerique/acv' title='External link: detailed documentation' target='_blank'>
+          <IframeableLink href='/doc/usage-numerique/acv' title='External link: detailed documentation' target='_blank'>
             the detailed documentation
             <NewTabIcon />
-          </Link>
+          </IframeableLink>
         </p>
       </div>
     </>

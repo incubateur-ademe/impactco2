@@ -1,5 +1,5 @@
 import useParamContext from 'src/providers/ParamProvider'
-import Link from 'components/base/buttons/Link'
+import IframeableLink from 'components/base/IframeableLink'
 import styles from './Data.module.css'
 
 const FRFruitsEtLegumesData = () => {
@@ -8,7 +8,7 @@ const FRFruitsEtLegumesData = () => {
       <div className={styles.content}>
         <p>
           L'ensemble des calculs est issu de la base de données{' '}
-          <Link href='https://agribalyse.ademe.fr/'>Agrybalise</Link>
+          <IframeableLink href='https://agribalyse.ademe.fr/'>Agrybalise</IframeableLink>
         </p>
       </div>
       <h2 className={styles.title}>Consommer des fruits de saison</h2>
@@ -36,7 +36,8 @@ const ESFruitsEtLegumesData = () => {
     <>
       <div className={styles.content}>
         <p>
-          Todos los cálculos proceden de la base de datos <Link href='https://agribalyse.ademe.fr/'>Agrybalise</Link>
+          Todos los cálculos proceden de la base de datos{' '}
+          <IframeableLink href='https://agribalyse.ademe.fr/'>Agrybalise</IframeableLink>
         </p>
       </div>
       <h2 className={styles.title}>Comer fruta de temporada</h2>
@@ -65,7 +66,8 @@ const ENFruitsEtLegumesData = () => {
     <>
       <div className={styles.content}>
         <p>
-          All calculations come from the <Link href='https://agribalyse.ademe.fr/'>Agrybalise</Link> database
+          All calculations come from the <IframeableLink href='https://agribalyse.ademe.fr/'>Agrybalise</IframeableLink>{' '}
+          database
         </p>
       </div>
       <h2 className={styles.title}>Eat seasonal fruits</h2>

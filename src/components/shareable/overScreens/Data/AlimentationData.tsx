@@ -1,5 +1,5 @@
 import useParamContext from 'src/providers/ParamProvider'
-import Link from 'components/base/buttons/Link'
+import IframeableLink from 'components/base/IframeableLink'
 import styles from './Data.module.css'
 
 const FRAlimentationData = () => {
@@ -9,8 +9,8 @@ const FRAlimentationData = () => {
       <div className={styles.content}>
         <p>
           L’ensemble des données et des calculs est issu de la base de données de l’ADEME{' '}
-          <Link href='https://agribalyse.ademe.fr/'>Agribalyse</Link>. Pour une majorité des aliments nous avons repris
-          les données affichées telles quelles dans la base de données.
+          <IframeableLink href='https://agribalyse.ademe.fr/'>Agribalyse</IframeableLink>. Pour une majorité des
+          aliments nous avons repris les données affichées telles quelles dans la base de données.
         </p>
         <p>
           Toutefois pour certains aliments spécifiques, nous avons réalisé une moyenne de plusieurs facteurs d’émission
@@ -80,7 +80,7 @@ const FRAlimentationData = () => {
         </ul>
         <p>
           Vous pouvez retrouver chaque facteur d’émission individuel dans la base{' '}
-          <Link href='https://agribalyse.ademe.fr/'>Agribalyse</Link>.
+          <IframeableLink href='https://agribalyse.ademe.fr/'>Agribalyse</IframeableLink>.
         </p>
         <p>
           Concernant l’unité, nous avons choisi d’afficher l’impact carbone <b>pour 1 kg d’aliment</b> afin de pouvoir
@@ -99,8 +99,8 @@ const ESAlimentationData = () => {
       <div className={styles.content}>
         <p>
           Todos los datos y cálculos provienen de la base de datos de ADEME{' '}
-          <Link href='https://agribalyse.ademe.fr/'>Agribalyse</Link>. Para la mayoría de los alimentos, hemos utilizado
-          los datos tal como se muestran en la base de datos.
+          <IframeableLink href='https://agribalyse.ademe.fr/'>Agribalyse</IframeableLink>. Para la mayoría de los
+          alimentos, hemos utilizado los datos tal como se muestran en la base de datos.
         </p>
         <p>Sin embargo, para algunos alimentos específicos, hemos promediado varios factores de emisión:</p>
         <ul className={styles.list}>
@@ -165,7 +165,7 @@ const ESAlimentationData = () => {
         </ul>
         <p>
           Puede encontrar cada factor de emisión individual en la base de datos{' '}
-          <Link href='https://agribalyse.ademe.fr/'>Agribalyse</Link>.
+          <IframeableLink href='https://agribalyse.ademe.fr/'>Agribalyse</IframeableLink>.
         </p>
         <p>
           En cuanto a la unidad, hemos elegido mostrar el impacto de carbono <b>por 1 kg de alimento</b> para poder
@@ -184,8 +184,8 @@ const ENAlimentationData = () => {
       <div className={styles.content}>
         <p>
           All data and calculations are sourced from the ADEME database{' '}
-          <Link href='https://agribalyse.ademe.fr/'>Agribalyse</Link>. For most foods, we have used the data as
-          displayed in the database.
+          <IframeableLink href='https://agribalyse.ademe.fr/'>Agribalyse</IframeableLink>. For most foods, we have used
+          the data as displayed in the database.
         </p>
         <p>However, for some specific foods, we have averaged several emission factors:</p>
         <ul className={styles.list}>
@@ -249,7 +249,7 @@ const ENAlimentationData = () => {
         </ul>
         <p>
           You can find each individual emission factor in the{' '}
-          <Link href='https://agribalyse.ademe.fr/'>Agribalyse</Link> database.
+          <IframeableLink href='https://agribalyse.ademe.fr/'>Agribalyse</IframeableLink> database.
         </p>
         <p>
           Regarding the unit, we have chosen to display the carbon impact <b>per 1 kg of food</b> in order to compare
