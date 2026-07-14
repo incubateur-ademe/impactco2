@@ -794,6 +794,18 @@
     "positive": "je recommande",
     "negative": "je ne recommande pas",
     "send": "Envoyer",
-    "close": "Fermer"
+    "close": "Fermer",
+    "learned": "Avez-vous appris quelque chose ?",
+    "yes": "Oui",
+    "no": "Non",
+    "choice": "Pouvez-vous préciser votre réponse ?",
+    "Étonnement": "J'ai été surpris par les résultats",
+    "Impact CO₂ découvert": "J’ai découvert ce qui émet le moins de CO2",
+    "Idées d’actions": "J’ai trouvé des idées pour réduire mon impact",
+    "Compréhension des ODG": "Je comprends mieux les ordres de grandeur",
+    "Connaissance existante": "Je connaissais déjà bien les résultats",
+    "Manque de clarté": "Les informations ne sont pas claires",
+    "Echec de recherche": "Je n’ai pas trouvé ce que je cherchais",
+    "Désintérêt": "Ça ne m’intéresse pas"
   }
 }

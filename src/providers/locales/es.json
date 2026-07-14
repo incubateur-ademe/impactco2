@@ -794,6 +794,18 @@
     "positive": "la recomiendo",
     "negative": "no la recomiendo",
     "send": "Enviar",
-    "close": "Cerrar"
+    "close": "Cerrar",
+    "learned": "¿Aprendiste algo?",
+    "yes": "Sí",
+    "no": "No",
+    "choice": "¿Puedes especificar tu respuesta?",
+    "Étonnement": "Me sorprendieron los resultados",
+    "Impact CO₂ découvert": "Descubrí qué emite menos CO2",
+    "Idées d’actions": "Encontré ideas para reducir mi impacto",
+    "Compréhension des ODG": "Entiendo mejor los órdenes de magnitud",
+    "Connaissance existante": "Ya conocía bien los resultados",
+    "Manque de clarté": "La información no es clara",
+    "Echec de recherche": "No encontré lo que buscaba",
+    "Désintérêt": "No me interesa"
   }
 }

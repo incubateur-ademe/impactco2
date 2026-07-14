@@ -18,7 +18,7 @@ import CloseIcon from 'components/base/icons/close'
 import LanguageIcon from 'components/base/icons/language'
 import HiddenLabel from 'components/form/HiddenLabel'
 import Select from 'components/form/Select'
-import NPS from '../nps/NPS'
+import UserFeedback from '../nps/UserFeedback'
 import Actions from './Actions'
 import Feature from './Feature'
 import styles from './Shareable.module.css'
@@ -106,7 +106,7 @@ const Shareable = ({
         night: theme === 'night',
         [styles.smallCard]: small,
       })}>
-      {withNPS && <NPS tracking={tracking} />}
+      {withNPS && <UserFeedback tracking={tracking} />}
       <div ref={secondary !== undefined ? undefined : ref}>
         {overScreenToDisplay && (
           <>
