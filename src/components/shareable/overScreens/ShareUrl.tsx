@@ -40,6 +40,7 @@ const ShareUrl = ({
       </ClipboardBox>
       <div className={styles.buttons}>
         <FacebookShareButton
+          resetButtonStyle={false}
           className={buttonStyles.roundButton}
           url={url}
           title='Partager sur facebook'
@@ -48,6 +49,7 @@ const ShareUrl = ({
           <FacebookIcon />
         </FacebookShareButton>
         <XShareButton
+          resetButtonStyle={false}
           className={buttonStyles.roundButton}
           url={url}
           title='Partager sur twitter'
@@ -56,6 +58,7 @@ const ShareUrl = ({
           <TwitterIcon />
         </XShareButton>
         <WhatsappShareButton
+          resetButtonStyle={false}
           className={buttonStyles.roundButton}
           url={url}
           title='Partager sur whatsapp'
@@ -64,6 +67,7 @@ const ShareUrl = ({
           <WhatsappIcon />
         </WhatsappShareButton>
         <LinkedinShareButton
+          resetButtonStyle={false}
           className={buttonStyles.roundButton}
           url={url}
           title='Partager sur linkedin'
