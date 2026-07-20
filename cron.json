@@ -3,6 +3,10 @@
     {
       "command": "0 5 * * * tsx src/scripts/importAPIKeys.ts",
       "size": "S"
+    },
+    {
+      "command": "0 3 * * * tsx src/scripts/importFAQs.ts",
+      "size": "S"
     }
   ]
 }

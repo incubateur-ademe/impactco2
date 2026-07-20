@@ -29,3 +29,17 @@ model GMapsCache {
 
   @@map("gmaps_cache")
 }
+
+model Faq {
+  id        String   @id
+  title     String
+  pages     String[]
+  categorie String
+  ancre     String?
+  outils    String[]
+  content   String
+  language  String
+  createdAt DateTime
+
+  @@map("faqs")
+}

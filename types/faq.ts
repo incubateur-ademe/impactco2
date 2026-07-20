@@ -1,4 +1,4 @@
-import type { ExtendedRecordMap } from 'notion-types'
+import { ExtendedRecordMap } from 'notion-types'
 
 export enum FAQCategory {
   QuestionsGenerales = 'Questions générales',
@@ -14,5 +14,5 @@ export type FAQ = {
   categorie: FAQCategory
   ancre?: string
   outils: string[]
-  content?: ExtendedRecordMap
+  content?: string | ExtendedRecordMap
 }

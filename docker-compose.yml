@@ -1,6 +1,6 @@
 services:
   db:
-    image: postgres:16
+    image: postgres:17
     environment:
       POSTGRES_USER: impactco2
       POSTGRES_PASSWORD: impactco2
