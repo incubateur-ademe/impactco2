@@ -37,7 +37,11 @@ const FAQ = ({
       onClick={(display) => {
         setDisplay(display)
       }}>
-      {DynamicNotion ? <DynamicNotion recordMap={faq.content} /> : <p>{loadingText || 'Chargement en cours...'}</p>}
+      {DynamicNotion ? (
+        <DynamicNotion recordMap={typeof faq.content === 'string' ? JSON.parse(faq.content) : faq.content} />
+      ) : (
+        <p>{loadingText || 'Chargement en cours...'}</p>
+      )}
     </Dropdown>
   ) : null
 }

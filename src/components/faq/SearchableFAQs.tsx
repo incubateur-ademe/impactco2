@@ -22,11 +22,15 @@ const extractPlainText = (value: unknown): string[] => {
 }
 
 const extractTextFromRecordMap = (recordMap: FAQ['content']) => {
-  if (!recordMap?.block) {
+  const content =
+    typeof recordMap === 'string'
+      ? (JSON.parse(recordMap) as { block: Record<string, { value?: unknown }> })
+      : recordMap
+  if (!content?.block) {
     return ''
   }
 
-  return Object.values(recordMap.block)
+  return Object.values(content.block)
     .map((block) => {
       const value = 'value' in block ? block.value : block
       return extractPlainText((value as { properties?: unknown }).properties).join(' ')
