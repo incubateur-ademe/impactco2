@@ -16,12 +16,12 @@ test('Transport distance default values', async ({ page }) => {
 
   await expect(page.getByRole('link', { name: 'Covoiturage électrique (2 personnes) 0.51 kg CO₂e' })).toBeVisible()
   await expect(page.getByRole('link', { name: 'Covoiturage thermique (2 personnes) 1.07 kg CO₂e' })).toBeVisible()
-  await expect(page.getByRole('link', { name: 'Bus électrique 0.33 kg CO₂e' })).not.toBeVisible()
+  await expect(page.getByRole('link', { name: 'Bus thermique 1.84 kg CO₂e' })).not.toBeVisible()
   await page.getByRole('button', { name: 'Voir tous les modes de' }).click()
-  await expect(page.getByRole('link', { name: 'Bus électrique 0.33 kg CO₂e' })).toBeVisible()
+  await expect(page.getByRole('link', { name: 'Bus thermique 1.84 kg CO₂e' })).toBeVisible()
 
   await page.goto(
-    'http://localhost:3000/outils/transport?comparison=scooter,avion&km=15&itineraireStart=Lyon%20France&itineraireEnd=Paris%20France&defaultMode=comparison&modes=intercites,voiturethermique,voitureelectrique,velo,veloelectrique,busthermique,tramway,metro,scooter,moto,rer,ter,trottinette,busgnv,voitureelectrique+1',
+    'http://localhost:3000/outils/transport?comparison=scooter,avion&km=15&itineraireStart=Lyon%20France&itineraireEnd=Paris%20France&defaultMode=comparison&modes=intercites,voiturethermique,voitureelectrique,velo,veloelectrique,busthermique,tramway,metro,scooter,moto,rer,ter,trottinette,voitureelectrique+1',
     { waitUntil: 'commit', timeout: 60000 }
   )
 
@@ -34,7 +34,7 @@ test('Transport distance default values', async ({ page }) => {
   )
 
   await page.getByText('Liste', { exact: true }).click()
-  await expect(page.getByRole('link', { name: 'Bus thermique 1.84 kg CO₂e' })).toBeVisible()
+  await expect(page.getByRole('link', { name: 'Bus thermique 1.84 kg CO₂e' })).not.toBeVisible()
   await expect(page.getByRole('link', { name: 'Bus électrique 0.33 kg CO₂e' })).not.toBeVisible()
   await expect(page.getByRole('link', { name: 'Covoiturage électrique (2 personnes) 0.51 kg CO₂e' })).toBeVisible()
   await expect(page.getByRole('link', { name: 'Covoiturage thermique (2 personnes) 1.07 kg CO₂e' })).not.toBeVisible()

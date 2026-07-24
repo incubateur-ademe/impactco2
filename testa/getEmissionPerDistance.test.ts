@@ -133,7 +133,6 @@ describe('getEmissionPerDistance', () => {
         id: 17,
         name: 'Trottinette à assistance électrique',
       },
-      { id: 21, name: 'Bus (GNV)', emissions: { gco2e: 112.8, kgco2e: 0.1128, tco2e: 0.0001128 } },
       {
         emissions: {
           gco2e: 377.1932716693085,
@@ -145,9 +144,9 @@ describe('getEmissionPerDistance', () => {
       },
       {
         emissions: {
-          gco2e: 16.7,
-          kgco2e: 0.0167,
-          tco2e: 0.0000167,
+          gco2e: 53,
+          kgco2e: 0.053,
+          tco2e: 0.000053,
         },
         id: 32,
         name: 'Moto thermique (<= 250 cm³)',
@@ -370,6 +369,6 @@ describe('getEmissionPerDistance', () => {
       },
     ])
 
-    expect(data.length).toBe(45)
+    expect(data.length).toBe(44)
   })
 })

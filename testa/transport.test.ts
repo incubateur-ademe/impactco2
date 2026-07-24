@@ -93,7 +93,7 @@ describe('transport', () => {
         {
           id: 32,
           name: 'Moto thermique (<= 250 cm³)',
-          value: 1.67,
+          value: 5.3,
         },
         {
           id: 35,
@@ -721,7 +721,7 @@ describe('transport', () => {
         {
           id: 32,
           name: 'Combustion motorcycle (<= 250 cm³)',
-          value: 1.67,
+          value: 5.3,
         },
         {
           id: 35,
@@ -1397,11 +1397,6 @@ describe('transport', () => {
           value: 0.2,
         },
         {
-          id: 21,
-          name: 'Bus (GNV)',
-          value: 11.28,
-        },
-        {
           id: 31,
           name: 'Camping-car',
           value: 37.71932716693085,
@@ -1409,7 +1404,7 @@ describe('transport', () => {
         {
           id: 32,
           name: 'Moto thermique (<= 250 cm³)',
-          value: 1.67,
+          value: 5.3,
         },
         {
           id: 33,
@@ -2053,7 +2048,7 @@ describe('transport', () => {
         {
           id: 32,
           name: 'Moto thermique (<= 250 cm³)',
-          value: 1.67,
+          value: 5.3,
         },
         {
           id: 35,
@@ -2222,7 +2217,7 @@ describe('transport', () => {
         {
           id: 32,
           name: 'Moto thermique (<= 250 cm³)',
-          value: 1.67,
+          value: 5.3,
         },
         {
           id: 35,
