@@ -86,8 +86,28 @@ describe('transport', () => {
           value: 2.29,
         },
         {
+          id: 205,
+          name: 'Camping-car thermique (2 personnes)',
+          value: 18.859663583465426,
+        },
+        {
+          id: 206,
+          name: 'Camping-car thermique (3 personnes)',
+          value: 12.573109055643618,
+        },
+        {
+          id: 207,
+          name: 'Camping-car thermique (4 personnes)',
+          value: 9.429831791732713,
+        },
+        {
+          id: 208,
+          name: 'Camping-car thermique (5 personnes)',
+          value: 7.543865433386171,
+        },
+        {
           id: 31,
-          name: 'Camping-car',
+          name: 'Camping-car thermique (1 personne)',
           value: 37.71932716693085,
         },
         {
@@ -96,8 +116,28 @@ describe('transport', () => {
           value: 5.3,
         },
         {
+          id: 209,
+          name: 'Van thermique (2 personnes)',
+          value: 11.857300583465424,
+        },
+        {
+          id: 210,
+          name: 'Van thermique (3 personnes)',
+          value: 7.904867055643616,
+        },
+        {
+          id: 211,
+          name: 'Van thermique (4 personnes)',
+          value: 5.928650291732712,
+        },
+        {
+          id: 212,
+          name: 'Van thermique (5 personnes)',
+          value: 4.74292023338617,
+        },
+        {
           id: 35,
-          name: 'Van',
+          name: 'Van thermique (1 personne)',
           value: 23.714601166930848,
         },
         {
@@ -714,8 +754,28 @@ describe('transport', () => {
           value: 2.29,
         },
         {
+          id: 205,
+          name: 'Combustion camper van (2 people)',
+          value: 18.859663583465426,
+        },
+        {
+          id: 206,
+          name: 'Combustion camper van (3 people)',
+          value: 12.573109055643618,
+        },
+        {
+          id: 207,
+          name: 'Combustion camper van (4 people)',
+          value: 9.429831791732713,
+        },
+        {
+          id: 208,
+          name: 'Combustion camper van (5 people)',
+          value: 7.543865433386171,
+        },
+        {
           id: 31,
-          name: 'Camper van',
+          name: 'Combustion camper van (1 people)',
           value: 37.71932716693085,
         },
         {
@@ -724,8 +784,28 @@ describe('transport', () => {
           value: 5.3,
         },
         {
+          id: 209,
+          name: 'Combustion van (2 people)',
+          value: 11.857300583465424,
+        },
+        {
+          id: 210,
+          name: 'Combustion van (3 people)',
+          value: 7.904867055643616,
+        },
+        {
+          id: 211,
+          name: 'Combustion van (4 people)',
+          value: 5.928650291732712,
+        },
+        {
+          id: 212,
+          name: 'Combustion van (5 people)',
+          value: 4.74292023338617,
+        },
+        {
           id: 35,
-          name: 'Van',
+          name: 'Combustion van (1 people)',
           value: 23.714601166930848,
         },
         {
@@ -1397,8 +1477,28 @@ describe('transport', () => {
           value: 0.2,
         },
         {
+          id: 205,
+          name: 'Camping-car thermique (2 personnes)',
+          value: 18.859663583465426,
+        },
+        {
+          id: 206,
+          name: 'Camping-car thermique (3 personnes)',
+          value: 12.573109055643618,
+        },
+        {
+          id: 207,
+          name: 'Camping-car thermique (4 personnes)',
+          value: 9.429831791732713,
+        },
+        {
+          id: 208,
+          name: 'Camping-car thermique (5 personnes)',
+          value: 7.543865433386171,
+        },
+        {
           id: 31,
-          name: 'Camping-car',
+          name: 'Camping-car thermique (1 personne)',
           value: 37.71932716693085,
         },
         {
@@ -1417,8 +1517,28 @@ describe('transport', () => {
           value: 0.2997,
         },
         {
+          id: 209,
+          name: 'Van thermique (2 personnes)',
+          value: 11.857300583465424,
+        },
+        {
+          id: 210,
+          name: 'Van thermique (3 personnes)',
+          value: 7.904867055643616,
+        },
+        {
+          id: 211,
+          name: 'Van thermique (4 personnes)',
+          value: 5.928650291732712,
+        },
+        {
+          id: 212,
+          name: 'Van thermique (5 personnes)',
+          value: 4.74292023338617,
+        },
+        {
           id: 35,
-          name: 'Van',
+          name: 'Van thermique (1 personne)',
           value: 23.714601166930848,
         },
         {
@@ -2042,8 +2162,8 @@ describe('transport', () => {
         },
         {
           id: 31,
-          name: 'Camping-car',
-          value: 37.71932716693085,
+          name: 'Camping-car thermique',
+          value: 9.429831791732713,
         },
         {
           id: 32,
@@ -2052,8 +2172,8 @@ describe('transport', () => {
         },
         {
           id: 35,
-          name: 'Van',
-          value: 23.714601166930848,
+          name: 'Van thermique',
+          value: 5.928650291732712,
         },
         {
           id: 100,
@@ -2211,8 +2331,8 @@ describe('transport', () => {
         },
         {
           id: 31,
-          name: 'Camping-car',
-          value: 37.71932716693085,
+          name: 'Camping-car thermique',
+          value: 9.429831791732713,
         },
         {
           id: 32,
@@ -2221,8 +2341,8 @@ describe('transport', () => {
         },
         {
           id: 35,
-          name: 'Van',
-          value: 23.714601166930848,
+          name: 'Van thermique',
+          value: 5.928650291732712,
         },
         {
           id: 100,
@@ -2418,8 +2538,28 @@ describe('transport', () => {
           value: 2.769,
         },
         {
+          id: 205,
+          name: 'Camping-car thermique (2 personnes)',
+          value: 24.691663583465424,
+        },
+        {
+          id: 206,
+          name: 'Camping-car thermique (3 personnes)',
+          value: 16.461109055643615,
+        },
+        {
+          id: 207,
+          name: 'Camping-car thermique (4 personnes)',
+          value: 12.345831791732712,
+        },
+        {
+          id: 208,
+          name: 'Camping-car thermique (5 personnes)',
+          value: 9.876665433386169,
+        },
+        {
           id: 31,
-          name: 'Camping-car',
+          name: 'Camping-car thermique (1 personne)',
           value: 49.38332716693085,
         },
         {
@@ -2428,8 +2568,28 @@ describe('transport', () => {
           value: 8.72,
         },
         {
+          id: 209,
+          name: 'Van thermique (2 personnes)',
+          value: 16.231300583465426,
+        },
+        {
+          id: 210,
+          name: 'Van thermique (3 personnes)',
+          value: 10.820867055643618,
+        },
+        {
+          id: 211,
+          name: 'Van thermique (4 personnes)',
+          value: 8.115650291732713,
+        },
+        {
+          id: 212,
+          name: 'Van thermique (5 personnes)',
+          value: 6.492520233386171,
+        },
+        {
           id: 35,
-          name: 'Van',
+          name: 'Van thermique (1 personne)',
           value: 32.46260116693085,
         },
         {

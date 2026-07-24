@@ -377,6 +377,8 @@
       "max": "équivalents déjà sélectionnés",
       "equivalents-group": "Équivalents de la catégorie",
       "subCategory": {
+        "van": "Nombre de personnes dans le van",
+        "campingcar": "Nombre de personnes dans le camping-car",
         "1person": "1 personne dans la voiture",
         "2persons": "2 personnes dans la voiture",
         "3persons": "3 personnes dans la voiture",
