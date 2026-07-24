@@ -284,7 +284,11 @@ Avion trajet moyen,0.184661,Transport,avion-moyencourrier,https://impactco2.fr/o
 Avion trajet moyen à long,0.166794,Transport,avion-moyenlongcourrier,https://impactco2.fr/outils/transport/avion-moyenlongcourrier
 Bus électrique,0.0217,Transport,buselectrique,https://impactco2.fr/outils/transport/buselectrique
 Bus thermique,0.12242,Transport,busthermique,https://impactco2.fr/outils/transport/busthermique
-Camping-car,0.49383327166930846,Transport,campingcar,https://impactco2.fr/outils/transport/campingcar
+Camping-car thermique (1 personne),0.49383327166930846,Transport,campingcar,https://impactco2.fr/outils/transport/campingcar
+Camping-car thermique (2 personnes),0.24691663583465423,Transport,campingcar+1,https://impactco2.fr/outils/transport/campingcar+1
+Camping-car thermique (3 personnes),0.16461109055643616,Transport,campingcar+2,https://impactco2.fr/outils/transport/campingcar+2
+Camping-car thermique (4 personnes),0.12345831791732712,Transport,campingcar+3,https://impactco2.fr/outils/transport/campingcar+3
+Camping-car thermique (5 personnes),0.0987666543338617,Transport,campingcar+4,https://impactco2.fr/outils/transport/campingcar+4
 Covoiturage électrique (2 personnes),0.03368263111477168,Transport,voitureelectrique+1,https://impactco2.fr/outils/transport/voitureelectrique+1
 Covoiturage électrique (3 personnes),0.02245508740984779,Transport,voitureelectrique+2,https://impactco2.fr/outils/transport/voitureelectrique+2
 Covoiturage électrique (4 personnes),0.01684131555738584,Transport,voitureelectrique+3,https://impactco2.fr/outils/transport/voitureelectrique+3
@@ -389,7 +393,11 @@ TER,0.02769,Transport,ter,https://impactco2.fr/outils/transport/ter
 TGV,0.00293,Transport,tgv,https://impactco2.fr/outils/transport/tgv
 Tramway,0.00428,Transport,tramway,https://impactco2.fr/outils/transport/tramway
 Trottinette à assistance électrique,0.0249,Transport,trottinette,https://impactco2.fr/outils/transport/trottinette
-Van,0.3246260116693085,Transport,van,https://impactco2.fr/outils/transport/van
+Van thermique (1 personne),0.3246260116693085,Transport,van,https://impactco2.fr/outils/transport/van
+Van thermique (2 personnes),0.16231300583465424,Transport,van+1,https://impactco2.fr/outils/transport/van+1
+Van thermique (3 personnes),0.10820867055643617,Transport,van+2,https://impactco2.fr/outils/transport/van+2
+Van thermique (4 personnes),0.08115650291732712,Transport,van+3,https://impactco2.fr/outils/transport/van+3
+Van thermique (5 personnes),0.0649252023338617,Transport,van+4,https://impactco2.fr/outils/transport/van+4
 Vélo à assistance électrique,0.010950000000000001,Transport,veloelectrique,https://impactco2.fr/outils/transport/veloelectrique
 Vélo cargo triporteur,0.014827,Transport,triporteurelectrique,https://impactco2.fr/outils/transport/triporteurelectrique
 Vélo mécanique,0.00017,Transport,velo,https://impactco2.fr/outils/transport/velo

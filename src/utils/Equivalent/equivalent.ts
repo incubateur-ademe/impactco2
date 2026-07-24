@@ -180,7 +180,7 @@ const allValues: Record<string, Record<Language, string>> = {
 
 const getValues = (
   language: Language,
-  equivalent: Pick<Equivalent, 'category' | 'slug' | 'carpool'>
+  equivalent: Pick<Equivalent, 'category' | 'slug' | 'carpool' | 'onlyCarpool'>
 ): { prefix: string; name: string } => {
   const [ref] = equivalent.slug.split('+')
   const value = allValues[ref]
@@ -190,7 +190,7 @@ const getValues = (
   }
 
   const translation = value[language]
-  if (equivalent.carpool) {
+  if (equivalent.carpool && !equivalent.onlyCarpool) {
     const carpool = carpooling[language]
     const [prefix, name] = translation.split(';')
     if (carpoolingBasis[ref]) {
@@ -239,7 +239,7 @@ export const getPrefix = (language: Language, equivalent: Pick<Equivalent, 'cate
 
 const getNameWithoutExtraInfo = (
   language: Language,
-  equivalent: Pick<Equivalent, 'category' | 'slug' | 'carpool'>,
+  equivalent: Pick<Equivalent, 'category' | 'slug' | 'carpool' | 'onlyCarpool'>,
   withPrefix?: boolean,
   value?: number,
   lowerCase?: boolean
@@ -327,6 +327,11 @@ const getExtraInfo = (language: Language, slug: string) => {
         : ''
   }
 
+  if (slug.includes('van') || slug.includes('campingcar')) {
+    const [info, carpool] = slug.split('+')
+    return carpool ? ` (${Number.parseInt(carpool) + 1} ${persons[language]})` : ` (1 ${person[language]})`
+  }
+
   if (slug.startsWith('moto')) {
     const [moto, size] = slug.split('-')
     return size ? ' (<= 250 cm³)' : ' (> 250 cm³)'
@@ -337,7 +342,7 @@ const getExtraInfo = (language: Language, slug: string) => {
 
 export const getName = (
   language: Language,
-  equivalent: Pick<Equivalent, 'category' | 'slug' | 'carpool'>,
+  equivalent: Pick<Equivalent, 'category' | 'slug' | 'carpool' | 'onlyCarpool'>,
   withPrefix?: boolean,
   value?: number,
   lowerCase?: boolean,

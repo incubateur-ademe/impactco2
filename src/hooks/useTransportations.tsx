@@ -84,7 +84,9 @@ export default function useTransportations(
                   equivalents.find((eq) => eq.slug === `voiture-${carpoolCarInfo.size}-${carpoolCarInfo.engine}`)) ||
                 equivalent
 
-              const carpoolSelected = equivalent.withCarpool && carpool[equivalent.slug] ? carpool[equivalent.slug] : 1
+              const carpoolSelected =
+                equivalent.withCarpool && carpool[equivalent.slug] !== undefined ? carpool[equivalent.slug] : 1
+
               return carpoolEquivalent.withCarpool
                 ? [
                     ...Array.from({ length: 4 }, (_, i) => i + 1).map((carpoolValue) => ({
@@ -103,14 +105,24 @@ export default function useTransportations(
                       usage: carpoolEquivalent.usage / (carpoolValue + 1),
                       link: `${carpoolEquivalent.link}+${carpoolValue}`,
                     })),
-                    {
-                      ...realEquivalent,
-                      default: equivalent.default,
-                      ignore: equivalent.ignore,
-                      name: equivalent.name,
-                      slug: equivalent.slug,
-                      initialValue: initialValue,
-                    },
+                    equivalent.onlyCarpool
+                      ? {
+                          ...realEquivalent,
+                          default: equivalent.default,
+                          ignore: equivalent.ignore || carpoolSelected !== 0,
+                          carpool: 0,
+                          name: equivalent.name,
+                          slug: equivalent.slug,
+                          initialValue: initialValue / 2,
+                        }
+                      : {
+                          ...realEquivalent,
+                          default: equivalent.default,
+                          ignore: equivalent.ignore,
+                          name: equivalent.name,
+                          slug: equivalent.slug,
+                          initialValue: initialValue,
+                        },
                   ]
                 : [
                     {
@@ -136,7 +148,7 @@ export default function useTransportations(
                   slug = 'voiturethermique'
                 }
               }
-              if ('carpool' in equivalent && equivalent.carpool) {
+              if ('carpool' in equivalent && equivalent.carpool && !equivalent.onlyCarpool) {
                 return params.transport.modes.includes(`${slug}+1`)
               }
               // Without carpool, check slug

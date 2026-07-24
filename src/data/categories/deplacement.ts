@@ -459,6 +459,8 @@ export const deplacements = [
         value: 0.11664,
       },
     ],
+    withCarpool: true,
+    onlyCarpool: true,
   },
   {
     id: 32,
@@ -543,6 +545,8 @@ export const deplacements = [
         value: 0.08748,
       },
     ],
+    withCarpool: true,
+    onlyCarpool: true,
   },
   /*{
     id: 36,
