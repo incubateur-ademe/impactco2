@@ -501,9 +501,9 @@
   "campingcar": {
     "category": 4,
     "value": 493.8332716693085,
-    "fr": "km en ;camping-car",
-    "en": "km by ;camper van",
-    "es": "km en ;autocaravana"
+    "fr": "km en ;camping-car thermique",
+    "en": "km by ;combustion camper van",
+    "es": "km en ;autocaravana térmica"
   },
   "scooterelectrique": {
     "category": 4,
@@ -522,9 +522,9 @@
   "van": {
     "category": 4,
     "value": 324.62601166930847,
-    "fr": "km en ;van",
-    "en": "km by ;van",
-    "es": "km en ;furgoneta"
+    "fr": "km en ;van thermique",
+    "en": "km by ;combustion van",
+    "es": "km en ;furgoneta termico"
   },
   "fraise": {
     "category": 9,

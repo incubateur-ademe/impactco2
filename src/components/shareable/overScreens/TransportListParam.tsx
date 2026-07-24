@@ -31,8 +31,8 @@ const transportCategories = {
 const transports = deplacements
   .filter((transport) => !transport.ignore)
   .flatMap((transport) =>
-    transport.withCarpool
-      ? ([{ ...transport, slug: `${transport.slug}+1`, carpool: 1 }, transport] as Equivalent[])
+    transport.withCarpool && !transport.onlyCarpool
+      ? [{ ...transport, slug: `${transport.slug}+1`, carpool: 1 } as Equivalent, transport]
       : [transport]
   )
 
