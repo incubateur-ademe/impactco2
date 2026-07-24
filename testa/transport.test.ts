@@ -93,7 +93,7 @@ describe('transport', () => {
         {
           id: 32,
           name: 'Moto thermique (<= 250 cm³)',
-          value: 1.67,
+          value: 5.3,
         },
         {
           id: 35,
@@ -721,7 +721,7 @@ describe('transport', () => {
         {
           id: 32,
           name: 'Combustion motorcycle (<= 250 cm³)',
-          value: 1.67,
+          value: 5.3,
         },
         {
           id: 35,
@@ -1404,7 +1404,7 @@ describe('transport', () => {
         {
           id: 32,
           name: 'Moto thermique (<= 250 cm³)',
-          value: 1.67,
+          value: 5.3,
         },
         {
           id: 33,
@@ -2048,7 +2048,7 @@ describe('transport', () => {
         {
           id: 32,
           name: 'Moto thermique (<= 250 cm³)',
-          value: 1.67,
+          value: 5.3,
         },
         {
           id: 35,
@@ -2217,7 +2217,7 @@ describe('transport', () => {
         {
           id: 32,
           name: 'Moto thermique (<= 250 cm³)',
-          value: 1.67,
+          value: 5.3,
         },
         {
           id: 35,
