@@ -471,11 +471,11 @@ export const deplacements = [
     ecv: [
       {
         id: 5,
-        value: 0.0705,
+        value: 0.0342,
       },
       {
         id: 6,
-        value: 0.0167,
+        value: 0.053,
       },
     ],
   },
