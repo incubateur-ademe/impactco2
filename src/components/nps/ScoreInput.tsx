@@ -17,7 +17,7 @@ const ScoreInput = ({
     <>
       <ul className={styles.buttons}>
         {Array.from({ length: 11 }, (_, i) => (
-          <li key={i}>
+          <li key={i} className={styles.list}>
             <button
               type='button'
               className={classNames(styles.button, {

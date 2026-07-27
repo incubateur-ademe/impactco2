@@ -164,3 +164,38 @@
     outline-offset: 0px;
   }
 }
+
+.small {
+  right: 0.5rem;
+  bottom: 0.5rem;
+
+  .container {
+    padding: 0.75rem 0.5rem;
+    width: 20.5rem;
+    min-height: unset;
+    bottom: 0.5rem;
+  }
+
+  .question {
+    margin: 0 2.5rem;
+    text-align: center;
+  }
+
+  .closeButton {
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 2rem;
+    height: 2rem;
+  }
+
+  @media screen and (max-width: 40rem) {
+    right: 0;
+    bottom: 0;
+
+    .container {
+      width: 100%;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}

@@ -61,7 +61,7 @@ export const addNpsNote = async ({
 
   if (!dbId || !process.env.NOTION_API_KEY) {
     console.log('Fake NPS note creation', { note, source, tracking, params })
-    return null
+    return 'random id'
   }
 
   try {
@@ -107,15 +107,16 @@ export const addNpsNote = async ({
 }
 
 export const updateNpsRetour = async (id: string, text: string) => {
+  const dbId = process.env.NOTION_API_DB_NPS
   const parsed = UpdateNpsRetourValidation.safeParse({ id, text })
 
   if (!parsed.success) {
     return false
   }
 
-  if (!id || !process.env.NOTION_API_KEY) {
+  if (!dbId || !process.env.NOTION_API_KEY) {
     console.log('Fake NPS retour update', { id, text })
-    return false
+    return true
   }
 
   try {

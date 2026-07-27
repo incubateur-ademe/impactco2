@@ -4,9 +4,8 @@ import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
 import { useSearchParams } from 'next/navigation'
 import { useEffect, useMemo, useRef, useState } from 'react'
-import useParamContext from 'src/providers/ParamProvider'
+import useParamContext, { Params } from 'src/providers/ParamProvider'
 import { getSource } from 'src/utils/matomo'
-import { Point } from 'src/hooks/useItineraries'
 import CloseIcon from '../base/icons/close'
 import Learn from './Learn'
 import NPS from './NPS'
@@ -18,48 +17,96 @@ const NPS_SEEN_TTL =
     ? parseInt(process.env.NEXT_PUBLIC_NPS_RESET_TIME_SECONDS, 10)
     : 30 * 24 * 60 * 60) * 1000
 
-const getTimeout = (
-  pathname: string,
-  params: URLSearchParams,
-  { km, start, end }: { km: number; start?: Point; end?: Point }
-) => {
-  const initialKm = params.get('km') ? parseInt(params.get('km') || '0', 10) : 10
-  if (km && initialKm !== km) {
-    // L'utilisateur a rempli une distance
-    return 20000
-  }
+const getTimeout = (tracking: string, pathname: string, searchParams: URLSearchParams, params: Params) => {
+  switch (tracking) {
+    case 'Transport':
+      const initialKm = searchParams.get('km') ? parseInt(searchParams.get('km') || '0', 10) : 10
+      if (params.distance.km && initialKm !== params.distance.km) {
+        // L'utilisateur a rempli une distance
+        return 20000
+      }
 
-  if (start && end) {
-    // L'utilisateur a rempli un itinéraire
-    return 20000
-  }
+      if (params.itineraire.start && params.itineraire.end) {
+        // L'utilisateur a rempli un itinéraire
+        return 20000
+      }
 
-  // L'utilisateur n'a pas encore engagé avec l'outil, timeout en fonction de l'outil
-  const tabs = params.get('tabs')
-  if (tabs === 'itineraire') {
-    return null
-  } else if (tabs === 'distance') {
-    return 45000
-  }
+      // L'utilisateur n'a pas encore engagé avec l'outil, timeout en fonction de l'outil
+      const tabs = searchParams.get('tabs')
+      if (tabs === 'itineraire') {
+        return null
+      } else if (tabs === 'distance') {
+        return 45000
+      }
 
-  if (pathname.includes('itineraire')) {
-    return null
+      if (pathname.includes('itineraire')) {
+        return null
+      }
+      break
+    case 'Fruits et légumes':
+      const initialFruitsLegumes = searchParams.get('fruitsLegumes')
+        ? parseInt(searchParams.get('fruitsLegumes') || '0', 10)
+        : new Date().getMonth()
+      if (initialFruitsLegumes !== params.fruitsetlegumes.month) {
+        return 20000
+      }
+      break
+    case 'Livraison':
+      const types = searchParams.get('types')
+      const initialType = types ? (types.split(',')[0] as string) : 'courses'
+      const initialFabrication = searchParams.get('withFabrication') === 'true'
+      if (initialType !== params.livraison.type || initialFabrication !== params.livraison.withFabrication) {
+        return 20000
+      }
+      break
+    case 'Chauffage':
+      const initialChauffage = searchParams.get('m2') ? parseInt(searchParams.get('m2') || '0', 10) : 63
+      if (initialChauffage !== params.chauffage.m2) {
+        return 20000
+      }
+      break
+    case 'Usage numérique':
+      if (params.usageNumerique.modified) {
+        return 20000
+      }
+      break
+    case 'Comparateur':
+      if (params.comparateur.modified) {
+        return 20000
+      }
+      const initialValue = searchParams.get('value') ? parseInt(searchParams.get('value') || '0', 10) : 100
+      if (initialValue !== params.comparateur.baseValue) {
+        return 20000
+      }
+      const initialEquivalent = searchParams.get('equivalent') || ''
+      if (initialEquivalent !== (params.comparateur.comparedEquivalent?.slug || '')) {
+        return 20000
+      }
+      break
+    case 'Télétravail':
+      if (params.teletravail.start && params.teletravail.end) {
+        return 20000
+      }
+      break
+    case 'Quiz':
+      if (params.quiz.done) {
+        return 20000
+      }
+      return null
+    case 'Livraison etiquette':
+      return 20000
   }
 
   return 45000
 }
 const exceptions = ['https://nosgestesclimat.fr', 'https://jagis.beta.gouv.fr']
 
-const UserFeedback = ({ tracking }: { tracking: string }) => {
+const UserFeedback = ({ tracking, small }: { tracking: string; small?: boolean }) => {
   // eslint-disable-next-line react-hooks/purity
-  const type = useMemo(() => (Math.random() < 0.5 ? 'nps' : 'learn'), [])
+  const type = useMemo(() => (tracking === 'Transport' && Math.random() < 0.5 ? 'learn' : 'nps'), [])
   const t = useTranslations('nps')
   const searchParams = useSearchParams()
-  const {
-    distance: { km },
-    itineraire: { start, end },
-    transport: { selected: transportTabSelected },
-  } = useParamContext()
+  const params = useParamContext()
 
   const [display, setDisplay] = useState(false)
   const [blocked, setBlocked] = useState(false)
@@ -107,7 +154,8 @@ const UserFeedback = ({ tracking }: { tracking: string }) => {
       return
     }
 
-    const timeout = getTimeout(window.location.pathname, searchParams, { km, start, end })
+    const timeout = getTimeout(tracking, window.location.pathname, searchParams, params)
+    console.log(timeout)
     if (timeout !== null) {
       timeoutRef.current = setTimeout(() => {
         localStorage.setItem(NPS_SEEN_STORAGE_KEY, Date.now().toString())
@@ -120,7 +168,7 @@ const UserFeedback = ({ tracking }: { tracking: string }) => {
         clearTimeout(timeoutRef.current)
       }
     }
-  }, [display, tracking, searchParams, km, start, end, blocked])
+  }, [display, tracking, searchParams, params, blocked])
 
   if (closed) {
     return null
@@ -135,7 +183,7 @@ const UserFeedback = ({ tracking }: { tracking: string }) => {
   }
 
   return (
-    <div className={styles.parent}>
+    <div className={classNames(styles.parent, { [styles.small]: small })}>
       <div
         className={classNames(styles.container, {
           [styles.npsContainer]: type === 'nps',
@@ -145,12 +193,12 @@ const UserFeedback = ({ tracking }: { tracking: string }) => {
           <CloseIcon />
         </button>
         {type === 'nps' && (
-          <NPS tracking={tracking} transportTabSelected={transportTabSelected} setClosed={setClosed} />
+          <NPS tracking={tracking} transportTabSelected={params.transport.selected} setClosed={setClosed} />
         )}
         {type === 'learn' && (
           <Learn
             tracking={tracking}
-            transportTabSelected={transportTabSelected}
+            transportTabSelected={params.transport.selected}
             setClosed={setClosed}
             setLarge={setLarge}
           />

@@ -4,7 +4,7 @@ import ComparateurSimulator from './ComparateurSimulator'
 
 const Comparateur = () => {
   return (
-    <Shareable slug='comparateur' tracking='Comparateur' overScreens={overScreenComparateurValues}>
+    <Shareable slug='comparateur' tracking='Comparateur' overScreens={overScreenComparateurValues} withNPS>
       <ComparateurSimulator />
     </Shareable>
   )
