@@ -17,7 +17,7 @@ const Tiles = () => {
   const t = useTranslations('comparateur')
   const {
     setOverscreen,
-    comparateur: { comparedEquivalent, equivalents, setEquivalents, baseValue, weight },
+    comparateur: { comparedEquivalent, equivalents, setEquivalents, baseValue, weight, setModified },
   } = useParamContext()
 
   const [generation, setGeneration] = useState<number | boolean>(false)
@@ -54,6 +54,7 @@ const Tiles = () => {
             <Tile
               onAdd={() => {
                 setOverscreen('comparateur', 'equivalents')
+                setModified(true)
                 trackOnce('Ajouter')
               }}
             />
@@ -66,6 +67,7 @@ const Tiles = () => {
           onClick={() => {
             track('Comparateur', 'Générer d’autres équivalents', 'generate_equivalent')
             setGeneration(0)
+            setModified(true)
             setTimeout(() => {
               trackOnce('Générer')
               setEquivalents(getRandomEquivalents(baseValue * weight, comparedEquivalent?.slug, equivalents.length))

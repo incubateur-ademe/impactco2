@@ -38,6 +38,7 @@ export const categories: Category[] = [
     description: 'Évaluer l’impact carbone de vos usages numériques',
     unit: 'unité',
     equivalents: computedEquivalents('usagenumerique', usageNumeriques),
+    withNPS: true,
   },
   {
     id: 12,
@@ -53,6 +54,7 @@ export const categories: Category[] = [
       },
     ],
     equivalents: computedEquivalents('livraison', livraison),
+    withNPS: true,
   },
   {
     id: 8,
@@ -73,6 +75,7 @@ export const categories: Category[] = [
     unit: 'm²',
     equivalents: computedEquivalents('chauffage', chauffage),
     examples: 'Leur utilisation du simulateur chauffage est exemplaire.',
+    withNPS: true,
   },
   {
     id: 4,
@@ -107,6 +110,7 @@ export const categories: Category[] = [
         href: 'https://agribalyse.ademe.fr/app',
       },
     ],
+    withNPS: true,
   },
   {
     id: 1,
@@ -127,6 +131,7 @@ export const categories: Category[] = [
     unit: 'unité',
     equivalents: computedEquivalents('numerique', numeriques),
     more: 'appareils',
+    withNPS: true,
   },
   {
     id: 2,
@@ -143,6 +148,7 @@ export const categories: Category[] = [
     description: 'Communiquer sur l’impact carbone de l’alimentation',
     unit: 'kg',
     equivalents: [...computedEquivalents('alimentation', alimentation), ...computedEquivalents('alimentation', repas)],
+    withNPS: true,
   },
   {
     id: 5,
@@ -164,6 +170,7 @@ export const categories: Category[] = [
     unit: 'unité',
     more: 'vetement',
     equivalents: computedEquivalents('habillement', habillements),
+    withNPS: true,
   },
   {
     id: 7,
@@ -183,6 +190,7 @@ export const categories: Category[] = [
     description: 'Découvrir l’impact carbone des meubles',
     unit: 'unité',
     equivalents: computedEquivalents('mobilier', mobiliers),
+    withNPS: true,
   },
   {
     id: 6,
@@ -202,6 +210,7 @@ export const categories: Category[] = [
     description: 'Comparer l’impact carbone des appareils ménagers',
     unit: 'unité',
     equivalents: computedEquivalents('electromenager', electromenager),
+    withNPS: true,
   },
   {
     id: 3,
@@ -218,5 +227,6 @@ export const categories: Category[] = [
       },
     ],
     equivalents: computedEquivalents('boisson', boissons),
+    withNPS: true,
   },
 ]

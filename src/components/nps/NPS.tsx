@@ -44,7 +44,7 @@ const NPS = ({
 
           const createdId = await addNpsNote({
             note: selected,
-            tracking: `${tracking} ${transportTabSelected}`,
+            tracking: tracking === 'Transport' ? `${tracking} ${transportTabSelected}` : tracking,
             source: getSource(),
             params: searchParams.toString(),
           })

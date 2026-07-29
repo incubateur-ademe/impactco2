@@ -12,6 +12,7 @@ import { buildCurrentUrlFor } from 'utils/urls'
 import CloseIcon from 'components/base/icons/close'
 import InformationIcon from 'components/base/icons/information'
 import Logo from 'components/externalModules/Logo'
+import UserFeedback from 'src/components/nps/UserFeedback'
 import Disclaimer from './Disclaimer'
 import LivraisonEquivalent from './LivraisonEquivalent'
 import Progress from './Progress'
@@ -52,6 +53,7 @@ const LivraisonEtiquette = ({ animated, id }: { animated?: boolean; id: string }
   const shouldAnimate = animated && equivalents.length > 1
   return (
     <div className={customTheme === 'grey' ? styles.greyContainer : styles.container}>
+      {!animated && <UserFeedback tracking='Livraison etiquette' small />}
       <div className={styles.header}>
         <div className={styles.title}>
           <p>

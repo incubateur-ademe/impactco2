@@ -7,7 +7,7 @@ const Quiz = () => {
   const overScreens = useMemo(() => overScreenQuizValues(), [])
 
   return (
-    <Shareable slug='quiz' tracking='Quiz' noBottomBorders overScreens={overScreens}>
+    <Shareable slug='quiz' tracking='Quiz' noBottomBorders overScreens={overScreens} withNPS>
       <QuizSimulator />
     </Shareable>
   )
