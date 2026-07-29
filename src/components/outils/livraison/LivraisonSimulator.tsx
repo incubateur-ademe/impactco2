@@ -2,7 +2,7 @@
 
 import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
-import { ReactNode, useEffect, useMemo, useState } from 'react'
+import { ReactNode, useMemo } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import useTrackingContext from 'src/providers/TrackingProvider'
 import { computedEquivalents } from 'src/providers/equivalents'
@@ -30,16 +30,8 @@ const LivraisonSimulator = () => {
   const t = useTranslations('livraison')
   const { livraison, language } = useParamContext()
 
-  const [type, setType] = useState(LivraisonType.Courses)
-
-  useEffect(() => {
-    if (livraison.types && !livraison.types.includes(type)) {
-      setType(livraison.types[0])
-    }
-  }, [livraison.types])
-
   const equivalents = useMemo(() => {
-    const data = livraisonData[type]
+    const data = livraisonData[livraison.type]
     return livraisonEquivalents
       .filter((equivalent) => !equivalent.slug.endsWith('kg'))
       .filter((equivalent) => {
@@ -85,7 +77,7 @@ const LivraisonSimulator = () => {
           ),
         }
       })
-  }, [type, livraison.modes, livraison.withFabrication, livraison.transport, livraison.distance, language])
+  }, [livraison.type, livraison.modes, livraison.withFabrication, livraison.transport, livraison.distance, language, t])
 
   return (
     <>
@@ -94,11 +86,11 @@ const LivraisonSimulator = () => {
         <Select
           className={livraisonStyles.select}
           id='type'
-          value={type}
+          value={livraison.type}
           onChange={(e) => {
             track('Livraison', 'Type', e.target.value)
             trackOnce('Type')
-            setType(e.target.value as LivraisonType)
+            livraison.setType(e.target.value as LivraisonType)
           }}>
           {livraison.types.map((type) => (
             <option key={type} value={type}>

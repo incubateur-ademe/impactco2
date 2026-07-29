@@ -93,6 +93,8 @@ export type Params = {
     setDistance: Dispatch<SetStateAction<Record<string, number>>>
     transport: Record<string, string>
     setTransport: Dispatch<SetStateAction<Record<string, string>>>
+    type: LivraisonType
+    setType: Dispatch<SetStateAction<LivraisonType>>
     types: LivraisonType[]
     modes: LivraisonMode[]
   }
@@ -106,6 +108,8 @@ export type Params = {
     setTiles: Dispatch<SetStateAction<Equivalent[]>>
     comparedEquivalent: ComputedEquivalent | undefined
     setComparedEquivalent: (equivalent: ComputedEquivalent | undefined) => void
+    modified: boolean
+    setModified: Dispatch<SetStateAction<boolean>>
   }
   transport: {
     comparisonMode: 'list' | 'comparison'
@@ -196,9 +200,12 @@ export type Params = {
     setSituation: Dispatch<SetStateAction<Partial<Record<string, PublicodesExpression | ASTNode>>>>
     equivalents: string[]
     setEquivalents: Dispatch<SetStateAction<string[]>>
+    modified: boolean
+    setModified: Dispatch<SetStateAction<boolean>>
   }
   numerique: { displayAll: boolean; setDisplayAll: Dispatch<SetStateAction<boolean>> }
   habillement: { displayAll: boolean; setDisplayAll: Dispatch<SetStateAction<boolean>> }
+  quiz: { done: boolean; setDone: Dispatch<SetStateAction<boolean>> }
 }
 
 const ParamContext = React.createContext<Params | null>(null)
@@ -233,6 +240,7 @@ export function ParamProvider({ children }: { children: ReactNode }) {
 
   // Livraison
   const [types, setTypes] = useState(Object.values(LivraisonType))
+  const [type, setType] = useState(LivraisonType.Courses)
   const [livraisonModes, setLivraisonModes] = useState(Object.values(LivraisonMode))
   const [withFabrication, setWithFabrication] = useState(false)
   const [distance, setDistance] = useState<Record<string, number>>({
@@ -247,6 +255,7 @@ export function ParamProvider({ children }: { children: ReactNode }) {
   })
 
   // Comparateur
+  const [comparateurModified, setComparateurModified] = useState(false)
   const [baseValue, setBaseValue] = useState(100)
   const [equivalents, setEquivalents] = useState<string[]>([])
   const [tiles, setTiles] = useState<Equivalent[]>([])
@@ -338,12 +347,16 @@ export function ParamProvider({ children }: { children: ReactNode }) {
   const [numberEmails, setNumberEmails] = useState<number>(50)
   const [usageNumeriqueSituation, setUsageNumeriqueSituation] =
     useState<Partial<Record<string, PublicodesExpression | ASTNode>>>(usageNumeriqueDefaultValues)
+  const [usageNumeriqueModified, setUsageNumeriqueModified] = useState(false)
 
   // Numérique
   const [numeriqueDisplayAll, setNumeriqueDisplayAll] = useState(false)
 
   // Habillement
   const [habillementDisplayAll, setHabillementDisplayAll] = useState(false)
+
+  // Quiz
+  const [quizDone, setQuizDone] = useState(false)
 
   const searchParams = useSearchParams()
   useEffect(() => {
@@ -552,7 +565,9 @@ export function ParamProvider({ children }: { children: ReactNode }) {
       setWithFabrication(searchParams.get('withFabrication') === 'true')
     }
     if (searchParams.get('types')) {
-      setTypes((searchParams.get('types') as string).split(',') as LivraisonType[])
+      const allTypes = (searchParams.get('types') as string).split(',') as LivraisonType[]
+      setTypes(allTypes)
+      setType(allTypes[0])
     }
     if (searchParams.get('modes')) {
       setLivraisonModes((searchParams.get('modes') as string).split(',') as LivraisonMode[])
@@ -587,6 +602,8 @@ export function ParamProvider({ children }: { children: ReactNode }) {
           setDistance,
           transport,
           setTransport,
+          type,
+          setType,
           types,
           modes: livraisonModes,
         },
@@ -600,6 +617,8 @@ export function ParamProvider({ children }: { children: ReactNode }) {
           setTiles,
           comparedEquivalent,
           setComparedEquivalent: internalComparedEquivalentSetter,
+          modified: comparateurModified,
+          setModified: setComparateurModified,
         },
         transport: {
           comparisonMode,
@@ -672,6 +691,8 @@ export function ParamProvider({ children }: { children: ReactNode }) {
           setSituation: setUsageNumeriqueSituation,
           equivalents: usageNumeriqueEquivalents,
           setEquivalents: setUsageNumeriqueEquivalents,
+          modified: usageNumeriqueModified,
+          setModified: setUsageNumeriqueModified,
         },
         visio: {
           situation: visioConferenceSituation,
@@ -698,6 +719,10 @@ export function ParamProvider({ children }: { children: ReactNode }) {
         habillement: {
           displayAll: habillementDisplayAll,
           setDisplayAll: setHabillementDisplayAll,
+        },
+        quiz: {
+          done: quizDone,
+          setDone: setQuizDone,
         },
       }}>
       {children}

@@ -25,7 +25,7 @@ const UsageForm = ({
 }) => {
   const { trackOnce } = useTrackingContext()
   const {
-    usageNumerique: { situation, setSituation },
+    usageNumerique: { situation, setSituation, setModified },
   } = useParamContext()
 
   const t = useTranslations('usage-numerique')
@@ -43,6 +43,7 @@ const UsageForm = ({
             unit={`${t(values.unit)}${(engineValue ? (situation[engineValue] as number) / 60 : (value as number) > 1) ? 's' : ''}`}
             value={engineValue ? (situation[engineValue] as number) / 60 : (value as number)}
             setValue={(newValue) => {
+              setModified(true)
               track('Usage numérique', `Input ${slug} value`, newValue.toString())
               trackOnce(`Input ${slug} value`)
               if (engineValue) {
@@ -60,6 +61,7 @@ const UsageForm = ({
             title={`Appareil utilisé pour ${tEquivalent(`${slug}-title`)}`}
             value={situation[values.device] as string}
             onChange={(event) => {
+              setModified(true)
               track('Usage numérique', `Select ${slug} appareil`, event.target.value)
               trackOnce(`Select ${slug} appareil`)
               setSituation({ ...situation, [values.device]: event.target.value })
@@ -78,6 +80,7 @@ const UsageForm = ({
             title={`Type d'${tEquivalent(`${slug}-title`)}`}
             value={situation[values.type] as string}
             onChange={(event) => {
+              setModified(true)
               track('Usage numérique', `Select ${slug} type`, event.target.value)
               trackOnce(`Select ${slug} type`)
               setSituation({ ...situation, [values.type]: event.target.value })
@@ -96,6 +99,7 @@ const UsageForm = ({
             title={`Réseaux utilisé pour ${tEquivalent(`${slug}-title`)}`}
             value={situation[values.network] as string}
             onChange={(event) => {
+              setModified(true)
               track('Usage numérique', `Select ${slug} réseau`, event.target.value)
               trackOnce(`Select ${slug} réseau`)
               setSituation({ ...situation, [values.network]: event.target.value })

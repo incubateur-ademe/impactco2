@@ -20,8 +20,7 @@
   border-radius: 0.5rem;
   position: sticky;
   bottom: 1.5rem;
-  width: 27.25rem;
-  min-height: 14.75rem;
+  width: 26.25rem;
   z-index: 1000;
   padding: 1.5rem 2rem;
   display: flex;
@@ -37,6 +36,18 @@
     text-align: center;
     bottom: 0;
     padding: 1.5rem 0.75rem;
+  }
+}
+
+.npsContainer {
+  min-height: 14.75rem;
+}
+
+.largeContainer {
+  width: 28.75rem;
+
+  @media screen and (max-width: 40rem) {
+    width: 100%;
   }
 }
 
@@ -112,4 +123,79 @@
   width: 100%;
   color: var(--critical-50);
   font-size: 0.75rem;
+}
+
+.learnButtons {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: space-between;
+}
+
+.learnButtonIcon {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: var(--primary-10);
+}
+
+.learnButton {
+  flex: 1;
+  cursor: pointer;
+  display: flex;
+  padding: 0.75rem 1.25rem;
+  align-items: center;
+  gap: 0.75rem;
+  border-radius: 0.5rem;
+  border: 2px solid var(--primary-30);
+  background: var(--neutral-00);
+  box-shadow: 0 3px 1px 0 rgba(0, 0, 0, 0.04);
+  color: var(--neutral-80, #110d10);
+  font-weight: 500;
+
+  &:hover {
+    border: 2px solid var(--primary-60);
+    background: var(--primary-10);
+
+    .learnButtonIcon {
+      color: var(--primary-20);
+    }
+  }
+
+  &:focus {
+    outline-offset: 0px;
+  }
+}
+
+.small {
+  right: 0.5rem;
+  bottom: 0.5rem;
+
+  .container {
+    padding: 0.75rem 0.5rem;
+    width: 20.5rem;
+    min-height: unset;
+    bottom: 0.5rem;
+  }
+
+  .question {
+    margin: 0 2.5rem;
+    text-align: center;
+  }
+
+  .closeButton {
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 2rem;
+    height: 2rem;
+  }
+
+  @media screen and (max-width: 40rem) {
+    right: 0;
+    bottom: 0;
+
+    .container {
+      width: 100%;
+      right: 0;
+      bottom: 0;
+    }
+  }
 }

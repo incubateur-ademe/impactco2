@@ -63,7 +63,7 @@
       },
       {
         "empreinteId": 43747,
-        "subtitle": "Long courrier",
+        "subtitle": "Moyen Long courrier",
         "display": {
           "min": 2001
         },
@@ -79,6 +79,27 @@
           {
             "id": 7,
             "value": 0.075
+          }
+        ]
+      },
+      {
+        "empreinteId": 43749,
+        "subtitle": "Long courrier",
+        "display": {
+          "min": 2001
+        },
+        "ecv": [
+          {
+            "id": 5,
+            "value": 0.000294
+          },
+          {
+            "id": 6,
+            "value": 0.0976
+          },
+          {
+            "id": 7,
+            "value": 0.08
           }
         ]
       }

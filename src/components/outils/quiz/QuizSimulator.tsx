@@ -4,6 +4,7 @@ import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import { useEffect, useMemo, useRef, useState } from 'react'
+import useParamContext from 'src/providers/ParamProvider'
 import useTrackingContext from 'src/providers/TrackingProvider'
 import { track } from 'utils/matomo'
 import Resource from 'components/base/Resource'
@@ -21,6 +22,9 @@ const QuizSimulator = () => {
   const { trackOnce } = useTrackingContext()
   const ref = useRef<HTMLDivElement>(null)
   const nextRef = useRef<HTMLButtonElement>(null)
+  const {
+    quiz: { setDone },
+  } = useParamContext()
 
   const [navigated, setNavigated] = useState(false)
   const [question, setQuestion] = useState(0)
@@ -53,8 +57,9 @@ const QuizSimulator = () => {
   useEffect(() => {
     if (!config) {
       track('Quiz', 'Finished', `score_${score.current.reduce((acc, current) => acc + current, 0)}`)
+      setDone(true)
     }
-  }, [config])
+  }, [config, setDone])
 
   const Header = (
     <div className={styles.header} ref={ref} tabIndex={-1}>
