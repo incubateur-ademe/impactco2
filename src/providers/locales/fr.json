@@ -266,7 +266,8 @@
       "header": "Calculer l’impact carbone de votre trajet en <co2e>CO₂e</co2e> et <parpersonne>par personne</parpersonne>",
       "start": "Départ",
       "end": "Arrivée",
-      "empty": "À titre d’exemple, la quantité de kg CO₂e émise pour un trajet de 100km est de..."
+      "empty": "À titre d’exemple, la quantité de kg CO₂e émise pour un trajet de 100km est de...",
+      "test": "Tester avec votre adresse"
     },
     "teletravail": {
       "start": "Lieu de domicile",

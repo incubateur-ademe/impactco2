@@ -83,7 +83,13 @@ export const categories: Category[] = [
     tool: 'Impact Transport',
     slug: 'transport',
     synonyms: ['transport', 'déplacement', 'déplacer', 'voyager'],
-    description: 'Calculer l’impact carbone des moyens de transport',
+    description: (
+      <>
+        Sensibiliser vos visiteurs à l’impact carbone de leur déplacement,
+        <br />
+        directement sur votre site
+      </>
+    ),
     sources: [
       {
         label: 'Base Empreinte ADEME',

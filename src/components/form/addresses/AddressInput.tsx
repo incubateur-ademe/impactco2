@@ -80,8 +80,9 @@ const AddressInput = ({
           setOpen(true)
           setValue(event.target.value)
         }}
-        onFocus={() => {
+        onFocus={(e) => {
           setOpen(true)
+          inputProps.onFocus?.(e)
         }}
         id={`input-${id}`}
       />

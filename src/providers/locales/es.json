@@ -266,7 +266,8 @@
       "header": "Calcular el impacto de carbono de tu viaje en <co2e>CO₂e</co2e> y <parpersonne>por persona</parpersonne>",
       "start": "Salida",
       "end": "Llegada",
-      "empty": "Por ejemplo, la cantidad de kg CO₂e emitidos en un viaje de 100 km es..."
+      "empty": "Por ejemplo, la cantidad de kg CO₂e emitidos en un viaje de 100 km es...",
+      "test": "Probar con tu dirección"
     },
     "teletravail": {
       "start": "Lugar de residencia",

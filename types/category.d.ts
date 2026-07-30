@@ -1,3 +1,4 @@
+import { ReactNode } from 'react'
 import { ComputedEquivalent } from './equivalent'
 
 export type Category = {
@@ -5,7 +6,7 @@ export type Category = {
   slug: string
   name: string
   sources?: { label: string; href: string }[]
-  description?: string
+  description?: ReactNode
   unit: string
   equivalents?: ComputedEquivalent[]
   more?: string

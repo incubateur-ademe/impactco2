@@ -1,0 +1,29 @@
+.list {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  margin-top: 2.5rem;
+}
+
+.listItem {
+  color: var(--neutral-50);
+  text-align: center;
+  width: calc(100% / 3);
+
+  svg {
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 50%;
+    padding: 0.5rem;
+    background-color: var(--success-20);
+    color: var(--primary-60);
+  }
+}
+
+.listItemTitle {
+  color: var(--neutral-80);
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  margin: 0.5rem 0 0.25rem 0;
+}
