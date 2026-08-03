@@ -121,6 +121,7 @@ const TransportIntegrate = () => {
         <CustomParams
           integration
           title={tTransport('distance')}
+          hint={tTransport('distance-hint')}
           tracking={tracking}
           trackingType='Intégrer'
           params={{ km: params.km }}

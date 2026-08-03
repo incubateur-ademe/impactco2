@@ -8,11 +8,11 @@
 }
 
 .button {
-  background-color: transparent;
-  color: var(--primary-70);
+  background-color: transparent !important;
+  color: var(--primary-70) !important;
 
   &:hover {
-    background-color: transparent;
-    color: var(--primary-80);
+    background-color: transparent !important;
+    color: var(--primary-80) !important;
   }
 }

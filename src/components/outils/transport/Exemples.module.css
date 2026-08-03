@@ -8,11 +8,16 @@
 
 .images {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.75rem;
-  justify-content: space-between;
+  justify-content: center;
+
+  img {
+    min-width: 10rem;
+  }
 }
 
 .link {
   text-align: center;
-  display: block;
+  display: block !important;
 }

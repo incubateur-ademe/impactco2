@@ -318,6 +318,7 @@
     },
     "mode-selector": {
       "distance": "Distance",
+      "distance-hint": "Indiquer la distance présentée par défaut sur votre site",
       "itineraire": "Itinéraire",
       "teletravail": "Télétravail",
       "list": "Liste",

@@ -2,7 +2,7 @@ import Ademe from 'components/base/Logo/Ademe'
 import Logo from 'components/base/Logo/ImpactCO2'
 import Marianne from 'components/base/Logo/Marianne'
 import Link from 'components/base/buttons/Link'
-import RandomEtiquette from 'components/comparateur/RandomEtiquette'
+import RandomEtiquette from 'src/components/comparateur/RandomEtiquette'
 import styles from './Footer.module.css'
 
 export default function Footer() {

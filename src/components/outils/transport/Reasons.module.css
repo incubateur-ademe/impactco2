@@ -3,6 +3,10 @@
   align-items: flex-start;
   gap: 4.5rem;
   overflow: visible;
+
+  @media screen and (max-width: 48rem) {
+    flex-direction: column-reverse;
+  }
 }
 
 .title {
@@ -55,6 +59,12 @@
   top: 6rem;
   align-self: flex-start;
   flex: 0 0 15rem;
+
+  @media screen and (max-width: 48rem) {
+    position: relative;
+    flex: unset;
+    top: 0;
+  }
 }
 
 .stickyPanel {
@@ -75,6 +85,35 @@
   flex-direction: column;
   gap: 1.25rem;
   margin-bottom: 2rem;
+
+  @media screen and (max-width: 48rem) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem 1.25rem;
+    width: 100%;
+  }
+
+  @media screen and (max-width: 29.875rem) {
+    flex-direction: column;
+  }
+}
+
+.featureItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  color: var(--neutral-50);
+  flex: 0 0 calc(50% - 0.625rem);
+
+  @media screen and (max-width: 29.875rem) {
+    flex-basis: 100%;
+  }
+
+  svg {
+    color: var(--success-40);
+    width: 1.25rem;
+    height: 1.25rem;
+  }
 }
 
 .featureItem {
@@ -109,5 +148,16 @@
       color: var(--neutral-80);
       font-weight: 500;
     }
+  }
+}
+
+.addButtonContainer {
+  @media screen and (max-width: 48rem) {
+    border-radius: 0.75rem;
+    background: var(--primary-10);
+    display: flex;
+    padding: 1.5rem 2rem;
+    justify-content: center;
+    align-items: center;
   }
 }

@@ -252,7 +252,6 @@ const CustomParam = ({
               id={slug}
               unit={formatName(t(`${slug}.unit`), param.value as number)}
               secondaryUnitStyle
-              padding='sm'
               disabled={!visible}
               type={config.type}
               value={param.value as string | number}
@@ -298,7 +297,7 @@ const CustomParam = ({
             <AddressInput
               id={`custom-${slug}-start`}
               label={t(`${slug}.start`)}
-              disabled={visible}
+              disabled={!visible}
               place={param.start.value}
               setPlace={(place) => {
                 track(tracking, `Custom value ${slug}`, typeof place === 'object' ? place.address : '')
@@ -310,7 +309,7 @@ const CustomParam = ({
             id={`custom-${slug}-end`}
             label={t(`${slug}.end`)}
             hint={integration ? t(`${slug}.end-hint`) : undefined}
-            disabled={visible}
+            disabled={!visible}
             place={param.end.value}
             setPlace={(place) => {
               track(tracking, `Custom value ${slug}`, typeof place === 'object' ? place.address : '')

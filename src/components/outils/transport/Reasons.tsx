@@ -102,7 +102,9 @@ const Reasons = () => {
               </li>
             ))}
           </ul>
-          <TransportAddButton />
+          <div className={styles.addButtonContainer}>
+            <TransportAddButton />
+          </div>
         </div>
       </aside>
     </section>
