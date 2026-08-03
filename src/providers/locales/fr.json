@@ -126,6 +126,7 @@
     "livraisonKitDescription": "Afin de vous faciliter la tâche, nous avons concocté des visuels prêts à l’emploi pour communiquer autour d’Impact Livraison.",
     "extraKitLink": "Télécharger",
     "integrate": "Intégrer",
+    "integrate-transport": "Ajouter à votre site",
     "preview": "Aperçu de l'intégration",
     "next-actions": "Aller plus loin",
     "comparison": "Changer le mode de transport comparé",
@@ -197,9 +198,10 @@
       "sombre": "Sombre"
     },
     "itineraire": {
-      "label": "Personnaliser l'itinéraire",
+      "label": "Adresse d’arrivée",
       "start": "Départ",
-      "end": "Arrivée"
+      "end": "Adresse d’arrivée",
+      "end-hint": "Indiquer l’adresse de votre structure, afin que le champs dédié soit pré-rempli sur votre site"
     },
     "teletravail": {
       "label": "Personnaliser les adresses",
@@ -220,13 +222,37 @@
       "back": "Revenir au simulateur",
       "mode-share": "Modes d’affichage à partager",
       "mode-integrate": "Modes d’affichage à intégrer",
+      "mode-integrate-hint": "Sélectionner le mode de présentation affiché par défaut sur votre site",
       "comparison": "Comparaison affichée par défaut",
-      "modes": "Modes de transport à intégrer",
-      "modes-hint": "Il n’est pas possible d’intégrer moins de 2 modes de transport dans le simulateur.",
+      "modes": "Modes de transport",
+      "modes-hint": "Retirer les modes de transport les moins adaptés à votre situation",
+      "unselectAll": "Tout désélectionner",
       "onglet": "Onglet à partager",
       "onglet-hint": "Sélectionnez l’onglet que vous souhaitez voir affiché lors du partage",
-      "onglets": "Onglet à intégrer",
-      "onglets-hint": "Sélectionnez les onglets que vous souhaitez intégrer à l'iframe"
+      "onglets": "Onglet",
+      "onglets-hint": "Sélectionner l’onglet affiché par défaut sur votre site",
+      "advanced": "Voir les options avancées",
+      "advanced-open": "Masquer les options avancées",
+      "integrate-perso": "Personnaliser votre outil",
+      "integrate-copy": "Copier ce bout de code",
+      "integrate-paste": "Coller ce bout de code sur votre site",
+      "integrate-difficulty": "Vous rencontrez des difficultés ?",
+      "integrate-difficulty-text": "N’hésitez pas à <link>nous écrire</link> pour signaler le problème. En attendant, vous pouvez ajouter un simple lien sur votre site, avec les mêmes options de personnalisation :",
+      "comparison-title": "Comparaison affichée par défaut",
+      "comparison-hint": "Modifier les modes de transports affichés par défaut en mode comparaison",
+      "paste": {
+        "details-1": "<b>Vous n’avez plus qu’à ajouter ce bout de code dans votre interface d’édition de site web</b>, sur la page où vous souhaitez qu’il apparaisse (ex: la page Infos Pratiques, Comment  Venir, Nous Contacter, Accès, Un article sur le thème de l’impact carbone des transports...)",
+        "details-2": "Si vous n’avez pas accès à l’interface d’édition de votre site, ou si vous rencontrez des difficultés, nous vous conseillons d’envoyer le bout de code aux personnes en charge de l’administration de votre site web.",
+        "thanks-title": "Une fois l’outil intégré, écrivez-vous ! ",
+        "thanks": "Nous pourrons ainsi ajouter votre logo et un lien vers votre site dans notre <link>galerie des exemples</link>.",
+        "write": "nous écrire"
+      },
+      "category": {
+        "actives": "Mobilités actives",
+        "twoWheels": "2 roues",
+        "cars": "Véhicules particuliers",
+        "common": "Transports en commun"
+      }
     },
     "month": {
       "title": "Personnaliser le mois à afficher",
@@ -296,7 +322,8 @@
       "teletravail": "Télétravail",
       "list": "Liste",
       "comparison": "Comparaison",
-      "comparisonMode": "Mode d'affichage :"
+      "comparisonMode": "Mode de présentation",
+      "comparisonMode-hint": "Sélectionner le mode de présentation par défaut sur votre site"
     }
   },
   "chauffage": {

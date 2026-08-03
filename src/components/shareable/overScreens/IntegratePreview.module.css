@@ -6,3 +6,13 @@
   display: flex;
   justify-content: center;
 }
+
+.button {
+  background-color: transparent;
+  color: var(--primary-70);
+
+  &:hover {
+    background-color: transparent;
+    color: var(--primary-80);
+  }
+}

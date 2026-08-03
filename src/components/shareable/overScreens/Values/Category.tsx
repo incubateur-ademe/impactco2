@@ -133,7 +133,7 @@ export const overScreenCategoryValues: (category: Category) => Record<string, Ov
     return {
       ...values,
       integrer: {
-        title: 'integrate',
+        title: 'integrate-transport',
         children: <TransportIntegrate />,
       },
       faq: {

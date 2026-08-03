@@ -132,6 +132,9 @@ export type CustomParamValue =
       start: { value: string; setter: Dispatch<SetStateAction<Point | undefined>> }
       end: { value: string; setter: Dispatch<SetStateAction<Point | undefined>> }
     }
+  | {
+      end: { value: string; setter: Dispatch<SetStateAction<Point | undefined>> }
+    }
   | { value: { emoji: string; label: string }[]; params: string }
 
 const CustomParam = ({
@@ -284,27 +287,30 @@ const CustomParam = ({
     )
   }
 
-  if ('start' in param) {
+  if ('end' in param) {
     return (
       <div className={styles.container}>
         {setVisible && (
           <CheckboxInput checked={visible} setChecked={setVisible} label={t(`${slug}.label`)} id={`${slug}.label`} />
         )}
         <div className={styles.inputs}>
-          <AddressInput
-            id={`custom-${slug}-start`}
-            label={t(`${slug}.start`)}
-            disabled={!visible}
-            place={param.start.value}
-            setPlace={(place) => {
-              track(tracking, `Custom value ${slug}`, typeof place === 'object' ? place.address : '')
-              param.start.setter(place)
-            }}
-          />
+          {'start' in param && (
+            <AddressInput
+              id={`custom-${slug}-start`}
+              label={t(`${slug}.start`)}
+              disabled={visible}
+              place={param.start.value}
+              setPlace={(place) => {
+                track(tracking, `Custom value ${slug}`, typeof place === 'object' ? place.address : '')
+                param.start.setter(place)
+              }}
+            />
+          )}
           <AddressInput
             id={`custom-${slug}-end`}
             label={t(`${slug}.end`)}
-            disabled={!visible}
+            hint={integration ? t(`${slug}.end-hint`) : undefined}
+            disabled={visible}
             place={param.end.value}
             setPlace={(place) => {
               track(tracking, `Custom value ${slug}`, typeof place === 'object' ? place.address : '')

@@ -5,16 +5,19 @@ import { useEffect, useMemo, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { deplacements } from 'data/categories/deplacement'
 import ClipboardBox from 'components/base/ClipboardBox'
-import DefaultButton from 'components/base/buttons/DefaultButton'
-import Checkbox from 'components/form/Checkbox'
-import CheckboxInput from 'components/form/CheckboxInput'
+import TransportClipboardBox from 'src/components/base/TransportClipboardBox'
+import Link from 'src/components/base/buttons/Link'
+import Radio from 'src/components/form/Radio'
+import RadioInput from 'src/components/form/RadioInput'
 import CustomParam, { CustomParamValue } from './CustomParam'
 import CustomParams from './CustomParams'
-import IntegratePreview from './IntegratePreview'
 import TransportComparison from './TransportComparison'
+import TransportIntegrateAdvanced from './TransportIntegrateAdvanced'
+import TransportIntegratePaste from './TransportIntegratePaste'
 import TransportListParam from './TransportListParam'
 import { getTracking } from './TransportShare'
-import styles from './Share.module.css'
+import shareStyles from './Share.module.css'
+import styles from './TransportIntegrate.module.css'
 
 const DISTANCE = 'distance'
 const ITINERAIRE = 'itineraire'
@@ -24,18 +27,11 @@ const TransportIntegrate = () => {
   const tTransport = useTranslations('transport.mode-selector')
   const allParams = useParamContext()
 
-  const [visibility, setVisibility] = useState<Record<string, boolean>>({
-    km: true,
-    itineraire: true,
-  })
-
   const [theme, setTheme] = useState(allParams.theme)
   const [language, setLanguage] = useState(allParams.language)
 
   const [defaultTab, setDefaultTab] = useState(allParams.transport.selected)
-  const [tabs, setTabs] = useState([DISTANCE, ITINERAIRE])
 
-  const [comparisonModes, setComparisonModes] = useState(['list', 'comparison'])
   const [defaultMode, setDefaultMode] = useState(allParams.transport.comparisonMode)
 
   const [modes, setModes] = useState(allParams.transport.modes)
@@ -46,15 +42,6 @@ const TransportIntegrate = () => {
     setKm(allParams.distance.km)
   }, [allParams.distance.km])
 
-  const [roundTrip, setRoundTrip] = useState(allParams.itineraire.roundTrip)
-  useEffect(() => {
-    setRoundTrip(allParams.itineraire.roundTrip)
-  }, [allParams.itineraire.roundTrip])
-
-  const [start, setStart] = useState(allParams.itineraire.start)
-  useEffect(() => {
-    setStart(allParams.itineraire.start)
-  }, [allParams.itineraire.start])
   const [end, setEnd] = useState(allParams.itineraire.end)
   useEffect(() => {
     setEnd(allParams.itineraire.end)
@@ -62,41 +49,19 @@ const TransportIntegrate = () => {
 
   const tracking = useMemo(() => getTracking(allParams.transport.selected), [allParams.transport.selected])
   const type = useMemo(() => {
-    if (tabs.length === 1) {
-      return tabs[0] === DISTANCE ? 'transport' : 'transport/itineraire'
-    }
-
     if (defaultTab === 'itineraire') {
       return 'transport/itineraire'
     }
     return 'transport'
-  }, [defaultTab, tabs])
+  }, [defaultTab])
 
   const search = useMemo(() => {
     let result = `theme=${theme}&language=${language}`
-
-    if (tabs.length !== 2) {
-      result += `&tabs=${tabs.join(',')}`
+    result += `&km=${km}`
+    if (end) {
+      result += `&itineraireEnd=${end.address}`
     }
-
-    if (tabs.includes(DISTANCE) && visibility.km) {
-      result += `&km=${km}`
-    }
-
-    if (tabs.includes(ITINERAIRE) && visibility.itineraire) {
-      if (start) {
-        result += `&itineraireStart=${start.address}`
-      }
-      if (end) {
-        result += `&itineraireEnd=${end.address}`
-      }
-    }
-
-    if (comparisonModes.length !== 2) {
-      result += `&mode=${comparisonModes[0]}`
-    } else {
-      result += `&defaultMode=${defaultMode}`
-    }
+    result += `&defaultMode=${defaultMode}`
 
     if (comparison[0] !== 'voiturethermique' || comparison[1] !== 'tgv') {
       result += `&comparison=${comparison[0]},${comparison[1]}`
@@ -112,141 +77,64 @@ const TransportIntegrate = () => {
       result += `&modes=${modes.join(',')}`
     }
 
-    if (roundTrip) {
-      result += '&roundTrip=true'
-    }
-
     return result
-  }, [visibility, tabs, km, theme, start, end, language, modes, defaultMode, comparisonModes, comparison, roundTrip])
+  }, [km, theme, end, language, modes, defaultMode, comparison])
 
   const params = useMemo(() => {
     return {
       km: { value: km, setter: setKm } as CustomParamValue,
       itineraire: {
-        start: { value: start?.address || '', setter: setStart },
         end: { value: end?.address || '', setter: setEnd },
       },
-      roundTrip: { value: roundTrip, setter: setRoundTrip } as CustomParamValue,
     }
-  }, [km, start, end, roundTrip])
+  }, [km, end])
 
   return (
     <>
-      <form id='transport-integrate'>
-        <Checkbox id='tabs' label={t('onglets')} hint={t('onglets-hint')}>
-          <CheckboxInput
-            checked={tabs.includes(DISTANCE)}
-            setChecked={(checked) => {
-              if (checked) {
-                setTabs([...tabs, DISTANCE])
-              } else {
-                setTabs(tabs.filter((tab) => tab !== DISTANCE))
-              }
+      <h2 className={styles.sectionTitle}>
+        <span className={styles.sectionId}>1</span>
+        {t('integrate-perso')}
+      </h2>
+      <form id='transport-integrate' className={styles.options}>
+        <Radio id='tab' label={t('onglets')} hint={t('onglets-hint')}>
+          <RadioInput
+            value='distance'
+            selected={defaultTab}
+            setSelected={() => {
+              setDefaultTab('distance')
             }}
             label={tTransport('distance')}
             data-testid='transport-integration-distance-checkbox'
-            id='transport-integration-distance-checkbox'>
-            <DefaultButton
-              name='tab'
-              main={tabs.length === 1 ? tabs[0] === 'distance' : defaultTab === 'distance'}
-              setMain={() => setDefaultTab('distance')}
-              disabled={tabs.length === 1}
-            />
-          </CheckboxInput>
-          <CheckboxInput
+            id='transport-integration-distance-checkbox'
+          />
+          <RadioInput
             id='transport-integration-itineraire-checkbox'
-            checked={tabs.includes(ITINERAIRE)}
-            setChecked={(checked) => {
-              if (checked) {
-                setTabs([...tabs, ITINERAIRE])
-              } else {
-                setTabs(tabs.filter((tab) => tab !== ITINERAIRE))
-              }
+            value='itineraire'
+            selected={defaultTab}
+            setSelected={() => {
+              setDefaultTab('itineraire')
             }}
-            label={tTransport('itineraire')}>
-            <DefaultButton
-              name='tab'
-              main={tabs.length === 1 ? tabs[0] === 'itineraire' : defaultTab === 'itineraire'}
-              setMain={() => setDefaultTab('itineraire')}
-              disabled={tabs.length === 1}
-            />
-          </CheckboxInput>
-        </Checkbox>
-        <div className={styles.separator} />
-        {tabs.length === 0 ||
-          (tabs.includes(DISTANCE) && (
-            <>
-              <CustomParams
-                integration
-                title={tTransport('distance')}
-                tracking={tracking}
-                trackingType='Intégrer'
-                params={{ km: params.km }}
-                visibility={visibility}
-                setVisibility={setVisibility}
-              />
-              <div className={styles.separator} />
-            </>
-          ))}
-        {tabs.length === 0 ||
-          (tabs.includes(ITINERAIRE) && (
-            <>
-              <CustomParams
-                integration
-                title={tTransport('itineraire')}
-                tracking={tracking}
-                trackingType='Intégrer'
-                params={{ itineraire: params.itineraire, roundTrip: params.roundTrip }}
-                visibility={visibility}
-                setVisibility={setVisibility}
-              />
-              <div className={styles.separator} />
-            </>
-          ))}
-        <Checkbox id='comparisonModes' label={t('mode-integrate')}>
-          <CheckboxInput
-            checked={comparisonModes.includes('list')}
-            setChecked={(checked) => {
-              if (checked) {
-                setComparisonModes([...comparisonModes, 'list'])
-              } else {
-                setComparisonModes(comparisonModes.filter((tab) => tab !== 'list'))
-              }
-            }}
-            label={tTransport('list')}
-            data-testid='transport-integration-list-checkbox'
-            id='transport-integration-list-checkbox'>
-            <DefaultButton
-              name='mode'
-              main={comparisonModes.length === 1 ? comparisonModes[0] === 'list' : defaultMode === 'list'}
-              setMain={() => setDefaultMode('list')}
-              disabled={comparisonModes.length === 1}
-            />
-          </CheckboxInput>
-          <CheckboxInput
-            id='transport-integration-comparison-checkbox'
-            checked={comparisonModes.includes('comparison')}
-            setChecked={(checked) => {
-              if (checked) {
-                setComparisonModes([...comparisonModes, 'comparison'])
-              } else {
-                setComparisonModes(comparisonModes.filter((tab) => tab !== 'comparison'))
-              }
-            }}
-            label={tTransport('comparison')}>
-            <DefaultButton
-              name='mode'
-              main={comparisonModes.length === 1 ? comparisonModes[0] === 'comparison' : defaultMode === 'comparison'}
-              setMain={() => setDefaultMode('comparison')}
-              disabled={comparisonModes.length === 1}
-            />
-          </CheckboxInput>
-        </Checkbox>
-        <div className={styles.separator} />
+            label={tTransport('itineraire')}
+          />
+        </Radio>
+        <div className={shareStyles.separator} />
+        <CustomParams
+          integration
+          title={tTransport('distance')}
+          tracking={tracking}
+          trackingType='Intégrer'
+          params={{ km: params.km }}
+        />
+        <div className={shareStyles.separator} />
+        <CustomParams
+          integration
+          tracking={tracking}
+          trackingType='Intégrer'
+          params={{ itineraire: { end: params.itineraire.end } }}
+        />
+        <div className={shareStyles.separator} />
         <TransportListParam modes={modes} setModes={setModes} />
-        <div className={styles.separator} />
-        <TransportComparison comparison={comparison} setComparison={setComparison} modes={modes} />
-        <div className={styles.separator} />
+        <div className={shareStyles.separator} />
         <CustomParam
           tracking={tracking}
           slug='theme'
@@ -260,13 +148,55 @@ const TransportIntegrate = () => {
           param={{ value: language, setter: setLanguage } as CustomParamValue}
           visible
         />
+        <div className={shareStyles.separator} />
+        <TransportIntegrateAdvanced>
+          <Radio id='comparisonModes' label={t('mode-integrate')} hint={t('mode-integrate-hint')}>
+            <RadioInput
+              value='list'
+              selected={defaultMode}
+              setSelected={() => {
+                setDefaultMode('list')
+              }}
+              label={tTransport('list')}
+              data-testid='transport-integration-list-checkbox'
+              id='transport-integration-list-checkbox'></RadioInput>
+            <RadioInput
+              value='comparison'
+              id='transport-integration-comparison-checkbox'
+              selected={defaultMode}
+              setSelected={() => {
+                setDefaultMode('comparison')
+              }}
+              label={tTransport('comparison')}></RadioInput>
+          </Radio>
+          <div className={shareStyles.separator} />
+          <TransportComparison comparison={comparison} setComparison={setComparison} modes={modes} />
+        </TransportIntegrateAdvanced>
       </form>
-      <ClipboardBox
-        form='transport-integrate'
-        tracking={
-          tracking
-        }>{`<script data-name="impact-co2" src="${process.env.NEXT_PUBLIC_URL}/iframe.js" data-type="${type}" data-search="?${search}"></script>`}</ClipboardBox>
-      <IntegratePreview path={type} urlParams={search} />
+      <h2 className={styles.sectionTitle}>
+        <span className={styles.sectionId}>2</span>
+        {t('integrate-copy')}
+      </h2>
+      <TransportClipboardBox form='transport-integrate' path={type} urlParams={search} tracking={tracking}>
+        {`<script data-name="impact-co2" src="${process.env.NEXT_PUBLIC_URL}/iframe.js" data-type="${type}" data-search="?${search}"></script>`}
+      </TransportClipboardBox>
+      <div className={shareStyles.separator} />
+      <h2 className={styles.sectionTitle}>
+        <span className={styles.sectionId}>3</span>
+        {t('integrate-paste')}
+      </h2>
+      <TransportIntegratePaste />
+      <div className={shareStyles.separator} />
+      <h2 className={styles.sectionTitle}>
+        <span className={styles.sectionIdBis}>?</span>
+        {t('integrate-difficulty')}
+      </h2>
+      <p className={styles.text}>
+        {t.rich('integrate-difficulty-text', { link: (children) => <Link href='/doc/exemples'>{children}</Link> })}
+      </p>
+      <ClipboardBox tracking={`${tracking} aide`}>
+        https://impactco2.fr/outils/transport?km=10&defaultMode=list&language=fr
+      </ClipboardBox>
     </>
   )
 }
