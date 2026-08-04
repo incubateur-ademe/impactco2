@@ -78,6 +78,29 @@
     border-right: 0.5rem solid transparent;
     border-bottom: 0.5rem solid var(--primary-50);
   }
+
+  @media screen and (max-width: 48rem) {
+    left: auto;
+    right: 0;
+    bottom: auto;
+    top: 2rem;
+    transform: translateY(calc(-100% - 0.5rem));
+
+    &::before {
+      top: auto;
+      bottom: -0.5rem;
+      right: auto;
+      left: 50%;
+      transform: translateX(-50%);
+      border-bottom: none;
+      border-top: 0.5rem solid var(--primary-50);
+    }
+  }
+
+  @media screen and (max-width: 29.875rem) {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
 }
 
 .empty {

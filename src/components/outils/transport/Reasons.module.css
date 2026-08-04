@@ -149,6 +149,14 @@
       font-weight: 500;
     }
   }
+
+  a {
+    color: var(--primary-60);
+
+    &:hover {
+      color: var(--primary-70);
+    }
+  }
 }
 
 .addButtonContainer {

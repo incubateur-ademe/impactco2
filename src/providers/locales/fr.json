@@ -199,8 +199,10 @@
     },
     "itineraire": {
       "label": "Adresse d’arrivée",
+      "label-share": "Personnaliser l'itinéraire",
       "start": "Départ",
       "end": "Adresse d’arrivée",
+      "end-share": "Arrivée",
       "end-hint": "Indiquer l’adresse de votre structure, afin que le champs dédié soit pré-rempli sur votre site"
     },
     "teletravail": {
@@ -324,6 +326,7 @@
       "list": "Liste",
       "comparison": "Comparaison",
       "comparisonMode": "Mode de présentation",
+      "comparisonMode-display": "Mode d'affichage :",
       "comparisonMode-hint": "Sélectionner le mode de présentation par défaut sur votre site"
     }
   },

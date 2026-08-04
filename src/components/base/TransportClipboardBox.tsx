@@ -28,21 +28,20 @@ const TransportClipboardBox = ({
   const Result = form ? 'output' : 'div'
   return (
     <>
-      <div
-        className={styles.box}
-        onClick={() => {
-          setCopied(true)
-          setTimeout(() => setCopied(false), 500)
-          navigator.clipboard.writeText(children)
-          track(tracking, 'Copy', children)
-        }}
-        aria-label="Copier le code d'integration">
+      <div className={styles.box} aria-label="Copier le code d'integration">
         <Result className={styles.content} data-testid='clipboard-box' form={form}>
           <code>{children}</code>
         </Result>
         <div className={styles.buttons}>
           <IntegratePreview path={path} urlParams={urlParams} secondary />
-          <Button className={styles.copy}>
+          <Button
+            className={styles.copy}
+            onClick={() => {
+              setCopied(true)
+              setTimeout(() => setCopied(false), 500)
+              navigator.clipboard.writeText(children)
+              track(tracking, 'Copy', children)
+            }}>
             {copied ? t('copie') : t('copier')}
             {copied ? <CheckRoundIcon /> : <CopyIcon />}
           </Button>

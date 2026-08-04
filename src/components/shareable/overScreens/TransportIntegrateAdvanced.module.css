@@ -3,6 +3,10 @@
   margin-top: -1rem;
 }
 
+.open {
+  margin-top: 0;
+}
+
 .advancedButton {
   cursor: pointer;
   background-color: transparent;

@@ -127,6 +127,7 @@
     "livraisonKitDescription": "Para facilitarte la tarea, hemos preparado recursos visuales listos para usar para comunicar sobre Impact Livraison.",
     "extraKitLink": "Descargar",
     "preview": "Vista previa de la integración",
+    "integrate-transport": "Añadir a tu sitio web",
     "next-actions": "Siguientes acciones",
     "comparison": "Cambiar el modo de transporte comparado",
     "understand": "Entender los datos",
@@ -198,8 +199,11 @@
     },
     "itineraire": {
       "label": "Personalizar el itinerario",
+      "label-share": "Personalizar el itinerario",
       "start": "Salida",
-      "end": "Llegada"
+      "end": "Llegada",
+      "end-share": "Llegada",
+      "end-hint": "Indica la dirección de tu organización para que el campo correspondiente se rellene automáticamente en tu sitio"
     },
     "teletravail": {
       "label": "Personalizar las direcciones",
@@ -220,13 +224,37 @@
       "back": "Volver al simulador",
       "mode-share": "Modos de visualización para compartir",
       "mode-integrate": "Modos de visualización para integrar",
+      "mode-integrate-hint": "Selecciona el modo de presentación que se mostrará por defecto en tu sitio",
       "comparison": "Comparación mostrada por defecto",
       "modes": "Modos de transporte para integrar",
       "modes-hint": "No es posible integrar menos de 2 modos de transporte en el simulador.",
+      "unselectAll": "Deseleccionar todo",
       "onglet": "Pestaña para compartir",
       "onglet-hint": "Seleccione la pestaña que desea mostrar al compartir",
       "onglets": "Pestaña para integrar",
-      "onglets-hint": "Seleccione las pestañas que desea integrar en el iframe"
+      "onglets-hint": "Seleccione las pestañas que desea integrar en el iframe",
+      "advanced": "Ver opciones avanzadas",
+      "advanced-open": "Ocultar opciones avanzadas",
+      "integrate-perso": "Personaliza tu herramienta",
+      "integrate-copy": "Copiar este fragmento de código",
+      "integrate-paste": "Pegar este fragmento de código en tu sitio web",
+      "integrate-difficulty": "¿Tienes dificultades?",
+      "integrate-difficulty-text": "No dudes en <link>escribirnos</link> para informar del problema. Mientras tanto, puedes añadir un enlace simple en tu sitio con las mismas opciones de personalización:",
+      "comparison-title": "Comparación mostrada por defecto",
+      "comparison-hint": "Modifica los modos de transporte mostrados por defecto en modo comparación",
+      "paste": {
+        "details-1": "<b>Solo tienes que añadir este fragmento de código en el editor de tu sitio web</b>, en la página donde quieras que aparezca (por ejemplo: Información práctica, Cómo llegar, Contacto, Acceso, un artículo sobre el impacto de carbono del transporte, etc.)",
+        "details-2": "Si no tienes acceso al editor de tu sitio web o si tienes dificultades, te recomendamos enviar este fragmento de código a las personas responsables de la administración de tu sitio.",
+        "thanks-title": "Una vez integrada la herramienta, ¡escríbenos!",
+        "thanks": "Así podremos añadir tu logo y un enlace a tu sitio en nuestra <link>galería de ejemplos</link>.",
+        "write": "escribirnos"
+      },
+      "category": {
+        "actives": "Movilidad activa",
+        "twoWheels": "Dos ruedas",
+        "cars": "Vehículos particulares",
+        "common": "Transporte público"
+      }
     },
     "month": {
       "title": "Personalizar el mes a mostrar",
@@ -292,11 +320,14 @@
     },
     "mode-selector": {
       "distance": "Distancia",
+      "distance-hint": "Indica la distancia mostrada por defecto en tu sitio",
       "itineraire": "Itinerario",
       "teletravail": "Teletrabajo",
       "list": "Lista",
       "comparison": "Comparación",
-      "comparisonMode": "Modo de visualización:"
+      "comparisonMode": "Modo de visualización",
+      "comparisonMode-display": "Modo de visualización:",
+      "comparisonMode-hint": "Selecciona el modo de presentación por defecto en tu sitio"
     }
   },
   "chauffage": {

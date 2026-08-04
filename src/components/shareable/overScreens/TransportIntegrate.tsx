@@ -19,9 +19,6 @@ import { getTracking } from './TransportShare'
 import shareStyles from './Share.module.css'
 import styles from './TransportIntegrate.module.css'
 
-const DISTANCE = 'distance'
-const ITINERAIRE = 'itineraire'
-
 const TransportIntegrate = () => {
   const t = useTranslations('overscreen.transport')
   const tTransport = useTranslations('transport.mode-selector')
@@ -59,7 +56,7 @@ const TransportIntegrate = () => {
     let result = `theme=${theme}&language=${language}`
     result += `&km=${km}`
     if (end) {
-      result += `&itineraireEnd=${end.address}`
+      result += `&itineraireEnd=${encodeURIComponent(end.address)}`
     }
     result += `&defaultMode=${defaultMode}`
 

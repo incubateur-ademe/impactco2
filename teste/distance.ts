@@ -13,6 +13,7 @@ export const distanceComparisonTest = async (page: Page | FrameLocator, prod?: b
   )
 
   await page.getByTestId('header-integrate-button').click()
+  await page.getByRole('button', { name: 'Voir les options avancées' }).click()
   await page.getByTestId('text-select-comparison-1').selectOption('voiturethermique+2')
   await page.getByTestId('text-select-comparison-2').selectOption('avion')
 
@@ -129,54 +130,43 @@ export const distanceTest = async (page: Page | FrameLocator, prod?: boolean) =>
   await page.getByTestId('header-integrate-button').click()
   await page.getByRole('combobox', { name: 'Arrivée' }).clear({ force: true })
 
-  await expect(page.getByTestId('clipboard-box')).toHaveText(
+  await expect(page.getByTestId('clipboard-box').first()).toHaveText(
     `<script data-name="impact-co2" src="${prod ? 'https://impactco2.fr' : 'http://localhost:3000'}/iframe.js" data-type="transport" data-search="?theme=default&language=fr&km=1000&defaultMode=list"></script>`
   )
-  await page.getByText('Afficher par défaut').first().click()
-  await expect(page.getByTestId('clipboard-box')).toHaveText(
-    `<script data-name="impact-co2" src="${prod ? 'https://impactco2.fr' : 'http://localhost:3000'}/iframe.js" data-type="transport/itineraire" data-search="?theme=default&language=fr&km=1000&defaultMode=list"></script>`
-  )
-  await page
-    .locator('label')
-    .filter({ hasText: /^Itinéraire$/ })
-    .locator('span')
-    .nth(1)
-    .click()
-  await expect(page.getByTestId('clipboard-box')).toHaveText(
-    `<script data-name="impact-co2" src="${prod ? 'https://impactco2.fr' : 'http://localhost:3000'}/iframe.js" data-type="transport" data-search="?theme=default&language=fr&tabs=distance&km=1000&defaultMode=list"></script>`
-  )
-  await page.getByText('Afficher par défaut').nth(1).click()
-  await expect(page.getByTestId('clipboard-box')).toHaveText(
-    `<script data-name="impact-co2" src="${prod ? 'https://impactco2.fr' : 'http://localhost:3000'}/iframe.js" data-type="transport" data-search="?theme=default&language=fr&tabs=distance&km=1000&defaultMode=comparison"></script>`
+
+  await page.getByRole('button', { name: 'Voir les options avancées' }).click()
+  await page.getByLabel('Ajouter à votre site').locator('label').filter({ hasText: 'Comparaison' }).click()
+  await expect(page.getByTestId('clipboard-box').first()).toHaveText(
+    `<script data-name="impact-co2" src="${prod ? 'https://impactco2.fr' : 'http://localhost:3000'}/iframe.js" data-type="transport" data-search="?theme=default&language=fr&km=1000&defaultMode=comparison"></script>`
   )
 
   await page.locator('span').filter({ hasText: /^TGV$/ }).nth(2).click()
   await page.locator('span').filter({ hasText: /^TER$/ }).nth(2).click()
-  await page.getByLabel('Intégrer').getByText('Covoiturage thermique', { exact: true }).click()
-  await expect(page.getByTestId('clipboard-box')).toHaveText(
-    `<script data-name="impact-co2" src="${prod ? 'https://impactco2.fr' : 'http://localhost:3000'}/iframe.js" data-type="transport" data-search="?theme=default&language=fr&tabs=distance&km=1000&defaultMode=comparison&comparison=voiturethermique,autocar&modes=avion,intercites,voiturethermique,voitureelectrique+1,voitureelectrique,autocar,marche,velo,veloelectrique,busthermique,tramway,metro,scooter,moto,rer,buselectrique,trottinette,campingcar,scooterelectrique,triporteurelectrique,van,voiturehybride+1,voiturehybride"></script>`
+  await page.getByLabel('Ajouter à votre site').getByText('Covoiturage thermique', { exact: true }).click()
+  await expect(page.getByTestId('clipboard-box').first()).toHaveText(
+    `<script data-name="impact-co2" src="${prod ? 'https://impactco2.fr' : 'http://localhost:3000'}/iframe.js" data-type="transport" data-search="?theme=default&language=fr&km=1000&defaultMode=comparison&comparison=voiturethermique,autocar&modes=avion,intercites,voiturethermique,voitureelectrique+1,voitureelectrique,autocar,marche,velo,veloelectrique,busthermique,tramway,metro,scooter,moto,rer,buselectrique,trottinette,campingcar,scooterelectrique,triporteurelectrique,van,voiturehybride+1,voiturehybride"></script>`
   )
   await page.getByTestId('text-select-comparison-1').selectOption('velo')
   await page.getByTestId('text-select-comparison-2').selectOption('moto')
-  await expect(page.getByTestId('clipboard-box')).toHaveText(
-    `<script data-name="impact-co2" src="${prod ? 'https://impactco2.fr' : 'http://localhost:3000'}/iframe.js" data-type="transport" data-search="?theme=default&language=fr&tabs=distance&km=1000&defaultMode=comparison&comparison=velo,moto&modes=avion,intercites,voiturethermique,voitureelectrique+1,voitureelectrique,autocar,marche,velo,veloelectrique,busthermique,tramway,metro,scooter,moto,rer,buselectrique,trottinette,campingcar,scooterelectrique,triporteurelectrique,van,voiturehybride+1,voiturehybride"></script>`
+  await expect(page.getByTestId('clipboard-box').first()).toHaveText(
+    `<script data-name="impact-co2" src="${prod ? 'https://impactco2.fr' : 'http://localhost:3000'}/iframe.js" data-type="transport" data-search="?theme=default&language=fr&km=1000&defaultMode=comparison&comparison=velo,moto&modes=avion,intercites,voiturethermique,voitureelectrique+1,voitureelectrique,autocar,marche,velo,veloelectrique,busthermique,tramway,metro,scooter,moto,rer,buselectrique,trottinette,campingcar,scooterelectrique,triporteurelectrique,van,voiturehybride+1,voiturehybride"></script>`
   )
 
   await page.getByTestId('cancel-button').click()
 
   await page.getByTestId('header-share-button').click()
-  await expect(page.getByTestId('clipboard-box')).toHaveText(
+  await expect(page.getByTestId('clipboard-box').first()).toHaveText(
     `${prod ? 'https://impactco2.fr' : 'http://localhost:3000'}/outils/transport?km=1000&defaultMode=list&language=fr`
   )
   await page.getByTestId('custom-param-km-checkbox').locator('span').nth(1).click()
-  await expect(page.getByTestId('clipboard-box')).toHaveText(
+  await expect(page.getByTestId('clipboard-box').first()).toHaveText(
     `${prod ? 'https://impactco2.fr' : 'http://localhost:3000'}/outils/transport?defaultMode=list&language=fr`
   )
 
   await expect(page.locator('label').filter({ hasText: "Personnaliser l'itinéraire" })).not.toBeVisible()
   await page.getByRole('radio', { name: 'Itinéraire' }).check()
   await page.getByRole('combobox', { name: 'Arrivée' }).first().clear({ force: true })
-  await expect(page.getByTestId('clipboard-box')).toHaveText(
+  await expect(page.getByTestId('clipboard-box').first()).toHaveText(
     `${prod ? 'https://impactco2.fr' : 'http://localhost:3000'}/outils/transport/itineraire?defaultMode=list&language=fr`
   )
   await expect(page.locator('label').filter({ hasText: "Personnaliser l'itinéraire" })).toBeVisible()

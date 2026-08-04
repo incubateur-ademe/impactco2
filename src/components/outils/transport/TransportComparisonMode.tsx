@@ -16,7 +16,7 @@ const TransportComparisonMode = ({ tracking }: { tracking: string }) => {
   const t = useTranslations('transport.mode-selector')
   return (
     <div className={classNames(styles.container, { [styles.withBorder]: comparisonMode === 'list' })}>
-      <p className={styles.text}>{t('comparisonMode')}</p>
+      <p className={styles.text}>{t('comparisonMode-display')}</p>
       <div className={styles.modes}>
         <label className={styles.leftButton} htmlFor='comparison-mode-list'>
           <input

@@ -1,5 +1,6 @@
 'use client'
 
+import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
 import { ReactNode, useState } from 'react'
 import DropdownArrowDownIcon from 'src/components/base/icons/dropdown-arrow-down'
@@ -12,7 +13,7 @@ const TransportIntegrateAdvanced = ({ children }: { children?: ReactNode }) => {
   const [open, setOpen] = useState(false)
 
   return (
-    <div className={styles.advancedContainer}>
+    <div className={classNames(styles.advancedContainer, { [styles.open]: open })}>
       <button
         type='button'
         className={styles.advancedButton}

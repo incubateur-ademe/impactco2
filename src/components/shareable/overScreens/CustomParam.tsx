@@ -290,7 +290,12 @@ const CustomParam = ({
     return (
       <div className={styles.container}>
         {setVisible && (
-          <CheckboxInput checked={visible} setChecked={setVisible} label={t(`${slug}.label`)} id={`${slug}.label`} />
+          <CheckboxInput
+            checked={visible}
+            setChecked={setVisible}
+            label={t(`${slug}.label${integration ? '' : '-share'}`)}
+            id={`${slug}.label`}
+          />
         )}
         <div className={styles.inputs}>
           {'start' in param && (
@@ -307,7 +312,7 @@ const CustomParam = ({
           )}
           <AddressInput
             id={`custom-${slug}-end`}
-            label={t(`${slug}.end`)}
+            label={t(`${slug}.end${integration ? '' : '-share'}`)}
             hint={integration ? t(`${slug}.end-hint`) : undefined}
             disabled={!visible}
             place={param.end.value}

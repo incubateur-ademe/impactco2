@@ -50,10 +50,10 @@ const TransportShare = () => {
       result += `km=${distance.km}&`
     } else if (selected === 'itineraire' && visibility.itineraire) {
       if (itineraire.start) {
-        result += `itineraireStart=${itineraire.start.address}&`
+        result += `itineraireStart=${encodeURIComponent(itineraire.start.address)}&`
       }
       if (itineraire.end) {
-        result += `itineraireEnd=${itineraire.end.address}&`
+        result += `itineraireEnd=${encodeURIComponent(itineraire.end.address)}&`
       }
     }
 
@@ -111,7 +111,6 @@ const TransportShare = () => {
         <div className={styles.separator} />
         {selected === 'distance' && (
           <CustomParams
-            integration
             title='Distance'
             tracking={tracking}
             trackingType='Intégrer'
@@ -122,7 +121,6 @@ const TransportShare = () => {
         )}
         {selected === 'itineraire' && (
           <CustomParams
-            integration
             title='Itinéraire'
             tracking={tracking}
             trackingType='Intégrer'
@@ -150,7 +148,6 @@ const TransportShare = () => {
         <CustomParam
           tracking={tracking}
           slug='language'
-          integration
           param={{ value: language, setter: setLanguage } as CustomParamValue}
           visible
         />

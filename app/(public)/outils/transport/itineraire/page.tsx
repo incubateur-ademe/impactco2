@@ -1,8 +1,7 @@
 import { Metadata } from 'next'
 import { Category as CategoryType } from 'types/category'
 import { categories } from 'data/categories'
-import Category from 'components/outils/CategoryPage'
-import TransportSimulator from 'components/outils/transport/TransportSimulator'
+import Transport from 'src/components/outils/transport/Transport'
 import { metaDescriptions, metaTitles } from 'utils/meta'
 import Suggestion from 'components/layout/Suggestion'
 
@@ -26,7 +25,7 @@ export async function generateMetadata(props: {
 const page = () => {
   return (
     <>
-      <Category category={category} simulator={<TransportSimulator />} noBottomBorders />
+      <Transport category={category} />
       <Suggestion fromLabel={category.name} simulatorName={`de la thématique ${category.name}`} />
     </>
   )
