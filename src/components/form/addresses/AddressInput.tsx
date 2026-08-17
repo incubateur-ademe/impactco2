@@ -67,7 +67,7 @@ const AddressInput = ({
         {...inputProps}
         autoComplete='off'
         ref={input}
-        value={place ?? value}
+        value={place || value}
         onChange={(event) => {
           setPlace(undefined)
           setOpen(true)

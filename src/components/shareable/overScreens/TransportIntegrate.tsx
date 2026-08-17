@@ -92,7 +92,12 @@ const TransportIntegrate = () => {
         <span className={styles.sectionId}>1</span>
         {t('integrate-perso')}
       </h2>
-      <form id='transport-integrate' className={styles.options}>
+      <form
+        id='transport-integrate'
+        className={styles.options}
+        onSubmit={(event) => {
+          event.preventDefault()
+        }}>
         <Radio id='tab' label={t('onglets')} hint={t('onglets-hint')}>
           <RadioInput
             value='distance'
@@ -117,18 +122,9 @@ const TransportIntegrate = () => {
         <div className={shareStyles.separator} />
         <CustomParams
           integration
-          title={tTransport('distance')}
-          hint={tTransport('distance-hint')}
           tracking={tracking}
           trackingType='Intégrer'
-          params={{ km: params.km }}
-        />
-        <div className={shareStyles.separator} />
-        <CustomParams
-          integration
-          tracking={tracking}
-          trackingType='Intégrer'
-          params={{ itineraire: { end: params.itineraire.end } }}
+          params={{ itineraire: params.itineraire }}
         />
         <div className={shareStyles.separator} />
         <TransportListParam modes={modes} setModes={setModes} />
@@ -148,6 +144,15 @@ const TransportIntegrate = () => {
         />
         <div className={shareStyles.separator} />
         <TransportIntegrateAdvanced>
+          <CustomParams
+            integration
+            title={tTransport('distance')}
+            hint={tTransport('distance-hint')}
+            tracking={tracking}
+            trackingType='Intégrer'
+            params={{ km: params.km }}
+          />
+          <div className={shareStyles.separator} />
           <Radio id='comparisonModes' label={t('mode-integrate')} hint={t('mode-integrate-hint')}>
             <RadioInput
               value='list'
@@ -190,7 +195,9 @@ const TransportIntegrate = () => {
         {t('integrate-difficulty')}
       </h2>
       <p className={styles.text}>
-        {t.rich('integrate-difficulty-text', { link: (children) => <Link href='/doc/exemples'>{children}</Link> })}
+        {t.rich('integrate-difficulty-text', {
+          link: (children) => <Link href='/rendez-vous?$fromLabel=Transport intégration'>{children}</Link>,
+        })}
       </p>
       <ClipboardBox tracking={`${tracking} aide`}>
         https://impactco2.fr/outils/transport?km=10&defaultMode=list&language=fr

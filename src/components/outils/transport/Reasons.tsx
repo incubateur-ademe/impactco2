@@ -69,7 +69,6 @@ const Reasons = () => {
         <h2 className={styles.title}>
           Pourquoi ajouter <b>Impact Transport</b> sur votre site ?
         </h2>
-
         {reasons.map((reason, index) => (
           <article key={reason.slug} className={styles.reasonCard}>
             <h3 className={styles.reasonTitle}>
@@ -80,7 +79,6 @@ const Reasons = () => {
             <p>{reason.description}</p>
           </article>
         ))}
-
         <blockquote className={styles.quote}>
           <p>“ Un très bon outil pédagogique pour d'abord faire prendre conscience et ensuite orienter. “</p>
           <footer>
@@ -89,6 +87,9 @@ const Reasons = () => {
             <Link href='https://www.terrabotanica.fr/acces'>Impact Transport sur le site de Terra Botanica</Link>
           </footer>
         </blockquote>
+        <div className={styles.addQuoteButtonContainer}>
+          <TransportAddButton />
+        </div>
       </div>
 
       <aside className={styles.rightColumn}>

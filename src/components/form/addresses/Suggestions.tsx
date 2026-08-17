@@ -43,6 +43,7 @@ const Suggestions = ({
         }
       }
       if (e.code === 'Enter') {
+        e.preventDefault()
         const result = results[current]
         if (result) {
           handleSuggestionClick({
@@ -54,6 +55,7 @@ const Suggestions = ({
         }
       }
       if (e.code === 'Escape') {
+        e.preventDefault()
         handleSuggestionClick(undefined)
       }
     },

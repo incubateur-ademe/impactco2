@@ -3,12 +3,20 @@
   gap: 2rem;
   justify-content: space-between;
   margin-top: 2.5rem;
+
+  @media screen and (max-width: 29.875rem) {
+    flex-direction: column;
+  }
 }
 
 .listItem {
   color: var(--neutral-50);
   text-align: center;
   width: calc(100% / 3);
+
+  @media screen and (max-width: 29.875rem) {
+    width: 100%;
+  }
 
   svg {
     width: 1.75rem;

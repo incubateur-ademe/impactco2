@@ -61,6 +61,7 @@
   flex: 0 0 15rem;
 
   @media screen and (max-width: 48rem) {
+    width: 100%;
     position: relative;
     flex: unset;
     top: 0;
@@ -69,6 +70,9 @@
 
 .stickyPanel {
   position: static;
+  @media screen and (max-width: 48rem) {
+    width: 100%;
+  }
 }
 
 .featuresTitle {
@@ -159,6 +163,12 @@
   }
 }
 
+.addQuoteButtonContainer {
+  display: none;
+  margin-top: -1rem;
+}
+
+.addQuoteButtonContainer,
 .addButtonContainer {
   @media screen and (max-width: 48rem) {
     border-radius: 0.75rem;
@@ -167,5 +177,6 @@
     padding: 1.5rem 2rem;
     justify-content: center;
     align-items: center;
+    width: 100%;
   }
 }

@@ -21,7 +21,7 @@ const TransportIntegratePaste = () => {
           <p className={styles.title}>{t('thanks-title')}</p>
           <p>{t.rich('thanks', { link: (children) => <Link href='/doc/exemples'>{children}</Link> })}</p>
         </div>
-        <Link asButton size='sm' href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}>
+        <Link asButton size='sm' href='/rendez-vous?$fromLabel=Transport intégration'>
           {t('write')} <FullArrowRightIcon />
         </Link>
       </div>
