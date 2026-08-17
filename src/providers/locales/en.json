@@ -23,6 +23,18 @@
       "exemple-3": "invoices",
       "exemple-4": "wood boiler"
     },
+    "Alimentation": {
+      "exemple-1": "vegetarian",
+      "exemple-2": "meat",
+      "exemple-3": "organic",
+      "exemple-4": "serving"
+    },
+    "Repas": {
+      "exemple-1": "vegetarian",
+      "exemple-2": "meat",
+      "exemple-3": "organic",
+      "exemple-4": "serving"
+    },
     "or": "or",
     "noResult": "No results for",
     "clear": "Clear search",

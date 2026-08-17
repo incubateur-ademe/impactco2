@@ -5,7 +5,6 @@ import Resource from 'components/base/Resource'
 import ComparisonOverscreen from 'components/comparateur/overscreens/ComparisonOverscreen'
 import FaqsOverscreen from 'components/faq/FaqsOverscreen'
 import AlimentationIntegrate from '../AlimentationIntegrate'
-import AlimentationData from '../Data/AlimentationData'
 import Integrate from '../Integrate'
 import LivraisonIntegrate from '../LivraisonIntegrate'
 import Share from '../Share'
@@ -276,89 +275,24 @@ export const overScreenCategoryValues: (category: Category) => Record<string, Ov
         title: 'integrate',
         children: <AlimentationIntegrate />,
       },
-      hypothesis: {
-        image: '/images/icn-next-actions.svg',
-        title: 'next-actions',
-        children: (
-          <div className={styles.ressourceContainer}>
-            <Resource
-              image='/images/agir-alimentation.png'
-              text='agir-alimentation'
-              href='https://librairie.ademe.fr/agriculture-alimentation-foret-bioeconomie/7617-tout-comprendre-une-alimentation-plus-durable.html'
-              withLink='ADEME'
-              tracking='Alimentation'
-            />
-            <Resource
-              image='/images/tools-fruitsetlegumes.svg'
-              text='ico2-fruitsetlegumes'
-              href='https://impactco2.fr/outils/fruitsetlegumes'
-              withLink='Fruits et légumes de saison'
-              tracking='Alimentation'
-            />
-            <Resource
-              image='/images/tools-repas.svg'
-              text='ico2-repas'
-              href='https://impactco2.fr/outils/alimentation#repas'
-              withLink='Repas'
-              tracking='Alimentation'
-            />
-            <Resource
-              image='/images/tools-alimentation.png'
-              text='ico2-fiches-alimentation'
-              href='https://impactco2.fr/kit/fiches-alimentation.zip'
-              withLink='Télécharger les 65 fiches'
-              tracking='Alimentation'
-            />
-            <Resource
-              image='/images/agir.png'
-              text='alimentation-responsable'
-              href='https://agirpourlatransition.ademe.fr/particuliers/conso/alimentation'
-              withLink='Agir pour la transition'
-              tracking='Alimentation'
-            />
-            <Resource
-              image='/images/ngc.png'
-              text='ngc'
-              href='https://nosgestesclimat.fr/'
-              withLink='Nos Gestes Climat'
-              tracking='Alimentation'
-              imgSize='4.5rem'
-            />
-          </div>
-        ),
-      },
-      data: {
+      faq: {
         image: '/images/icn-understand.svg',
-        title: 'understand',
-        children: <AlimentationData />,
+        title: 'faq',
+        children: <FaqsOverscreen filter={category.name} page={category.name} slug={category.slug} />,
+        fullHeight: true,
+        hideTitle: true,
       },
     }
   }
   if (category.slug === 'repas') {
     return {
       ...values,
-      hypothesis: {
-        image: '/images/icn-next-actions.svg',
-        title: 'next-actions',
-        children: (
-          <div className={styles.ressourceContainer}>
-            <Resource
-              image='/images/agir.png'
-              text='alimentation-responsable'
-              href='https://agirpourlatransition.ademe.fr/particuliers/conso/alimentation'
-              withLink='Agir pour la transition'
-              tracking='Repas'
-            />
-            <Resource
-              image='/images/ngc.png'
-              text='ngc'
-              href='https://nosgestesclimat.fr/'
-              withLink='Nos Gestes Climat'
-              tracking='Repas'
-              imgSize='4.5rem'
-            />
-          </div>
-        ),
+      faq: {
+        image: '/images/icn-understand.svg',
+        title: 'faq',
+        children: <FaqsOverscreen filter={category.name} page={category.name} slug={category.slug} />,
+        fullHeight: true,
+        hideTitle: true,
       },
     }
   }
