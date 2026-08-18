@@ -135,14 +135,14 @@ export const distanceTest = async (page: Page | FrameLocator, prod?: boolean) =>
   )
 
   await page.getByRole('button', { name: 'Voir les options avancées' }).click()
-  await page.getByLabel('Ajouter à votre site').locator('label').filter({ hasText: 'Comparaison' }).click()
+  await page.getByLabel('Ajouter sur votre site').locator('label').filter({ hasText: 'Comparaison' }).click()
   await expect(page.getByTestId('clipboard-box').first()).toHaveText(
     `<script data-name="impact-co2" src="${prod ? 'https://impactco2.fr' : 'http://localhost:3000'}/iframe.js" data-type="transport" data-search="?theme=default&language=fr&km=1000&defaultMode=comparison"></script>`
   )
 
   await page.locator('span').filter({ hasText: /^TGV$/ }).nth(2).click()
   await page.locator('span').filter({ hasText: /^TER$/ }).nth(2).click()
-  await page.getByLabel('Ajouter à votre site').getByText('Covoiturage thermique', { exact: true }).click()
+  await page.getByLabel('Ajouter sur votre site').getByText('Covoiturage thermique', { exact: true }).click()
   await expect(page.getByTestId('clipboard-box').first()).toHaveText(
     `<script data-name="impact-co2" src="${prod ? 'https://impactco2.fr' : 'http://localhost:3000'}/iframe.js" data-type="transport" data-search="?theme=default&language=fr&km=1000&defaultMode=comparison&comparison=voiturethermique,autocar&modes=avion,intercites,voiturethermique,voitureelectrique+1,voitureelectrique,autocar,marche,velo,veloelectrique,busthermique,tramway,metro,scooter,moto,rer,buselectrique,trottinette,campingcar,scooterelectrique,triporteurelectrique,van,voiturehybride+1,voiturehybride"></script>`
   )

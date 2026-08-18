@@ -34,6 +34,7 @@ type ShareableProps = {
   small?: boolean
   smallPadding?: boolean
   withNPS?: boolean
+  withNewIntegration?: boolean
 }
 
 const Shareable = ({
@@ -41,6 +42,7 @@ const Shareable = ({
   slug,
   tracking,
   withoutIntegration,
+  withNewIntegration,
   overScreens,
   secondary,
   noBottomBorders,
@@ -100,7 +102,7 @@ const Shareable = ({
     } else if (overScreenToDisplay === undefined) {
       window.scrollTo({ top: 0, behavior: 'smooth' })
     }
-  }, [overscreenRef, overScreenToDisplay, onClose])
+  }, [overscreenRef, overScreenToDisplay, onClose, overscreen])
 
   return (
     <div
@@ -260,6 +262,7 @@ const Shareable = ({
             }}
             tracking={tracking}
             withoutIntegration={withoutIntegration}
+            withNewIntegration={withNewIntegration}
           />
         </div>
       )}

@@ -100,6 +100,7 @@ export const categories: Category[] = [
     equivalents: computedEquivalents('transport', flattenEquivalents(deplacements)),
     examples: 'Leur utilisation du simulateur transports est exemplaire.',
     withNPS: true,
+    withNewIntegration: true,
   },
   {
     id: 9,

@@ -14,4 +14,5 @@ export type Category = {
   synonyms?: string[]
   tool?: string
   withNPS?: boolean
+  withNewIntegration?: boolean
 }

@@ -31,7 +31,8 @@ const Category = ({
       tracking={category.name}
       overScreens={overScreens}
       noBottomBorders={noBottomBorders}
-      withNPS={category.withNPS}>
+      withNPS={category.withNPS}
+      withNewIntegration={category.withNewIntegration}>
       {simulator ||
         (category.equivalents && (
           <CategorySimulator

@@ -137,7 +137,7 @@ test('Roundtrip', async ({ page }) => {
 
   await page.getByTestId('header-share-button').click()
   await expect(page.getByTestId('clipboard-box').first()).toHaveText(
-    'http://localhost:3000/outils/transport/itineraire?itineraireStart=Nantes%2044000%20France&itineraireEnd=Angers%20France&roundTrip=true&defaultMode=list&language=fr'
+    'http://localhost:3000/outils/transport/itineraire?itineraireStart=Nantes%20France&itineraireEnd=Angers%20France&roundTrip=true&defaultMode=list&language=fr'
   )
   await page.getByTestId('cancel-button').click()
   await page.getByTestId('header-integrate-button').click()
@@ -150,7 +150,7 @@ test('Roundtrip', async ({ page }) => {
   )
 
   await page.goto(
-    'http://localhost:3000/outils/transport/itineraire?itineraireStart=Nantes%2044000%20France&itineraireEnd=Angers%20France&roundTrip=true&defaultMode=list&language=fr'
+    'http://localhost:3000/outils/transport/itineraire?itineraireStart=Nantes%20France&itineraireEnd=Angers%20France&roundTrip=true&defaultMode=list&language=fr'
   )
   await expect(page.getByTestId('category-intercites')).toHaveText(
     'Intercités  - 182 km1.64 kg CO₂eusage : 65%, construction : 35%',
