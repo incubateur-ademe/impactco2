@@ -18,7 +18,22 @@ import useTheme from 'components/layout/UseTheme'
 import { computedEquivalents } from './equivalents'
 import { usageNumeriqueDefaultValues } from './usageNumeriqueDefaultValues'
 
-const completeAddress = (setter: Dispatch<SetStateAction<Point | undefined>>, value?: string) => {
+const defaultAddresses: [Point, Point][] = [
+  [
+    { latitude: 47.4739884, longitude: -0.5515588, city: 'Angers', address: 'Angers France' },
+    { latitude: 47.2186371, longitude: -1.5541362, city: 'Nantes', address: 'Nantes France' },
+  ],
+  [
+    { latitude: 44.841225, longitude: -0.5800364, city: 'Bordeaux', address: 'Bordeaux France' },
+    { latitude: 43.6044638, longitude: 1.4442433, city: 'Toulouse', address: 'Toulouse France' },
+  ],
+  [
+    { latitude: 50.6365654, longitude: 3.0635282, city: 'Lille', address: 'Lille France' },
+    { latitude: 47.9960325, longitude: -4.1024782, city: 'Quimper', address: 'Quimper 29000 France' },
+  ],
+]
+
+const completeAddress = (setter: Dispatch<SetStateAction<Point | undefined>>, value: string) => {
   if (value) {
     searchAddress(value, 1).then((result) => {
       if (result.length > 0) {
@@ -193,7 +208,7 @@ export type Params = {
 
 const ParamContext = React.createContext<Params | null>(null)
 
-export function ParamProvider({ children }: { children: ReactNode }) {
+export function ParamProvider({ children, onWebsite }: { children: ReactNode; onWebsite?: boolean }) {
   const initialTheme = useTheme()
   const [theme, setTheme] = useState(initialTheme.theme)
   const [language, setLanguage] = useState<Language>('fr')
@@ -282,7 +297,7 @@ export function ParamProvider({ children }: { children: ReactNode }) {
   )
   const [comparisonMode, setComparisonMode] = useState<'list' | 'comparison'>('list')
   const [comparison, setComparison] = useState<string[]>(['voiturethermique', 'tgv'])
-  const [selected, setSelected] = useState<TransportSimulateur>('distance')
+  const [selected, setSelected] = useState<TransportSimulateur>(onWebsite ? 'itineraire' : 'distance')
 
   const [teletravailStart, setTeletravailStart] = useState<Point>()
   const [teletravailEnd, setTeletravailEnd] = useState<Point>()
@@ -474,8 +489,17 @@ export function ParamProvider({ children }: { children: ReactNode }) {
       setHomeOffice(Number(searchParams.get('homeOffice')))
     }
 
-    completeAddress(setItineraireStart, (searchParams.get('start') || searchParams.get('itineraireStart')) as string)
-    completeAddress(setItineraireEnd, (searchParams.get('end') || searchParams.get('itineraireEnd')) as string)
+    const itineraireStart = (searchParams.get('itineraireStart') || searchParams.get('start')) as string
+    const itineraireEnd = (searchParams.get('itineraireEnd') || searchParams.get('end')) as string
+
+    if (onWebsite && !itineraireStart && !itineraireEnd) {
+      const defautAddresses = defaultAddresses[Math.floor(Math.random() * defaultAddresses.length)]
+      setItineraireStart(defautAddresses[0])
+      setItineraireEnd(defautAddresses[1])
+    } else {
+      completeAddress(setItineraireStart, itineraireStart)
+      completeAddress(setItineraireEnd, itineraireEnd)
+    }
     completeAddress(setTeletravailStart, (searchParams.get('start') || searchParams.get('teletravailStart')) as string)
     completeAddress(setTeletravailEnd, (searchParams.get('end') || searchParams.get('teletravailEnd')) as string)
 
@@ -555,7 +579,7 @@ export function ParamProvider({ children }: { children: ReactNode }) {
     if (searchParams.get('modes')) {
       setLivraisonModes((searchParams.get('modes') as string).split(',') as LivraisonMode[])
     }
-  }, [searchParams])
+  }, [searchParams, onWebsite])
 
   return (
     <ParamContext.Provider

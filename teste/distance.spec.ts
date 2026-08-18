@@ -2,14 +2,14 @@ import { expect, test } from '@playwright/test'
 import { distanceComparisonTest, distanceTest } from './distance'
 
 test('Transport distance list', async ({ page }) => {
-  await page.goto('http://localhost:3000/outils/transport')
+  await page.goto('http://localhost:3000/iframes/transport')
   await page.getByTestId('transport-tab-distance').click()
 
   await distanceTest(page)
 })
 
 test('Transport distance comparison', async ({ page }) => {
-  await page.goto('http://localhost:3000/outils/transport?defaultMode=comparison')
+  await page.goto('http://localhost:3000/iframes/transport?defaultMode=comparison')
   await page.getByTestId('transport-tab-distance').click()
 
   await distanceComparisonTest(page)
@@ -17,6 +17,7 @@ test('Transport distance comparison', async ({ page }) => {
 
 test('Transport distance default values', async ({ page }) => {
   await page.goto('http://localhost:3000/iframes/transport?km=15', { timeout: 60000 })
+  await page.getByTestId('transport-tab-distance').click()
 
   await expect(page.getByRole('link', { name: 'Covoiturage électrique (2 personnes) 0.51 kg CO₂e' })).toBeVisible()
   await expect(page.getByRole('link', { name: 'Covoiturage thermique (2 personnes) 1.07 kg CO₂e' })).toBeVisible()
@@ -28,10 +29,10 @@ test('Transport distance default values', async ({ page }) => {
     'http://localhost:3000/iframes/transport?comparison=scooter,avion&km=15&itineraireStart=Lyon%20France&itineraireEnd=Paris%20France&defaultMode=comparison&modes=intercites,voiturethermique,voitureelectrique,velo,veloelectrique,busthermique,tramway,metro,scooter,moto,rer,ter,trottinette,voitureelectrique+1',
     { waitUntil: 'commit', timeout: 60000 }
   )
-
   await expect(page.getByTestId('transport-tab-itineraire')).toBeVisible()
+  await page.getByTestId('transport-tab-distance').click()
 
-  await expect(page.getByText("Mode d'affichage :ListeComparaison")).toBeVisible()
+  await expect(page.locator('#tabpanel-distance').getByText("Mode d'affichage :ListeComparaison")).toBeVisible()
   await expect(page.getByTestId('comparison-tile-0')).toHaveText('Scooter thermique1.14 kg CO₂e Modifier')
   await expect(page.getByTestId('comparison-tile-1')).toHaveText(
     'Avion trajet courtDésolé !L’itinéraire demandé n’est pas compatible avec ce mode de transport Modifier'
@@ -50,6 +51,8 @@ test('Transport distance default values', async ({ page }) => {
   await page.goto('http://localhost:3000/iframes/transport?modes=velo,voiturethermique&defaultMode=comparison', {
     timeout: 60000,
   })
+  await page.getByTestId('transport-tab-distance').click()
+
   await expect(page.getByTestId('comparison-tile-0')).toHaveText(
     'Vélo mécanique0 kg CO₂eMoyen le plus écologique1.42Kg CO₂eévités'
   )
@@ -59,6 +62,7 @@ test('Transport distance default values', async ({ page }) => {
     'http://localhost:3000/iframes/transport?modes=velo,voiturethermique,voiturethermique+1&defaultMode=comparison',
     { timeout: 60000 }
   )
+  await page.getByTestId('transport-tab-distance').click()
   await expect(page.getByTestId('comparison-tile-0')).toHaveText('Voiture thermique1.42 kg CO₂e Modifier')
   await expect(page.getByTestId('comparison-tile-1')).toHaveText(
     'Covoiturage thermique (2 personnes)0.71 kg CO₂eMoyen le plus écologique0.71Kg CO₂eévités Modifier'

@@ -18,10 +18,10 @@ import styles from './ItineraireSimulator.module.css'
 const tracking = 'Transport itinéraire'
 const ItineraireSimulator = ({
   withComparisonMode,
-  withInfoBulle,
+  onWebsite,
 }: {
   withComparisonMode: boolean
-  withInfoBulle?: boolean
+  onWebsite?: boolean
 }) => {
   const [hasFocusedEndField, setHasFocusedEndField] = useState(false)
   const { trackOnce } = useTrackingContext()
@@ -76,7 +76,7 @@ const ItineraireSimulator = ({
               setPlace={setEnd}
               onFocus={() => setHasFocusedEndField(true)}
             />
-            {withInfoBulle && !hasFocusedEndField && <div className={styles.infoBulle}>{t('test')}</div>}
+            {onWebsite && !hasFocusedEndField && <div className={styles.infoBulle}>{t('test')}</div>}
           </div>
         </div>
         <div className={styles.roundTrip}>

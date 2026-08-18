@@ -66,66 +66,72 @@ export const distanceTest = async (page: Page | FrameLocator, prod?: boolean) =>
   await expect(page.getByTestId('category-rer-value')).not.toBeVisible()
   await expect(page.getByTestId('category-tgv-value')).not.toBeVisible()
 
-  await expect(page.getByLabel('Covoiturage électrique (2')).toContainText(
+  await expect(page.locator('#tabpanel-distance').getByLabel('Covoiturage électrique (2')).toContainText(
     'Covoiturage électrique0.34 kg CO₂eusage : 18%, construction : 82%'
   )
-  await expect(page.getByLabel('Voiture électrique 0.67 kg CO')).toContainText(
+  await expect(page.locator('#tabpanel-distance').getByLabel('Voiture électrique 0.67 kg CO')).toContainText(
     'Voiture électrique0.67 kg CO₂eusage : 18%, construction : 82%'
   )
-  await page.getByTestId('text-select-car-size-covoiturageelectrique').selectOption('berline')
-  await expect(page.getByLabel('Covoiturage électrique (2')).toContainText(
+  await page
+    .locator('#tabpanel-distance')
+    .getByTestId('text-select-car-size-covoiturageelectrique')
+    .selectOption('berline')
+  await expect(page.locator('#tabpanel-distance').getByLabel('Covoiturage électrique (2')).toContainText(
     'Covoiturage électrique0.45 kg CO₂eusage : 16%, construction : 84%'
   )
-  await expect(page.getByLabel('Covoiturage électrique (2')).toHaveAttribute(
+  await expect(page.locator('#tabpanel-distance').getByLabel('Covoiturage électrique (2')).toHaveAttribute(
     'href',
     '/outils/transport/voiture-berline-electrique+1'
   )
-  await expect(page.getByLabel('Voiture électrique')).toContainText(
+  await expect(page.locator('#tabpanel-distance').getByLabel('Voiture électrique')).toContainText(
     'Voiture électrique0.67 kg CO₂eusage : 18%, construction : 82%'
   )
-  await expect(page.getByLabel('Voiture électrique')).toHaveAttribute(
+  await expect(page.locator('#tabpanel-distance').getByLabel('Voiture électrique')).toHaveAttribute(
     'href',
     '/outils/transport/voiture-compact-electrique'
   )
   await page.getByRole('button', { name: 'Augmenter le nombre de' }).first().click()
-  await expect(page.getByLabel('Covoiturage électrique (3')).toContainText(
+  await expect(page.locator('#tabpanel-distance').getByLabel('Covoiturage électrique (3')).toContainText(
     'Covoiturage électrique0.3 kg CO₂eusage : 16%, construction : 84%'
   )
-  await expect(page.getByLabel('Covoiturage électrique (3')).toHaveAttribute(
+  await expect(page.locator('#tabpanel-distance').getByLabel('Covoiturage électrique (3')).toHaveAttribute(
     'href',
     '/outils/transport/voiture-berline-electrique+2'
   )
-  await expect(page.getByLabel('Voiture électrique')).toContainText(
+  await expect(page.locator('#tabpanel-distance').getByLabel('Voiture électrique')).toContainText(
     'Voiture électrique0.67 kg CO₂eusage : 18%, construction : 82%'
   )
-  await expect(page.getByLabel('Voiture électrique')).toHaveAttribute(
+  await expect(page.locator('#tabpanel-distance').getByLabel('Voiture électrique')).toHaveAttribute(
     'href',
     '/outils/transport/voiture-compact-electrique'
   )
-  await page.getByTestId('text-select-car-size-voitureelectrique').selectOption('citadine')
-  await expect(page.getByLabel('Covoiturage électrique (3')).toContainText(
+  await page
+    .locator('#tabpanel-distance')
+    .getByTestId('text-select-car-size-voitureelectrique')
+    .selectOption('citadine')
+  await expect(page.locator('#tabpanel-distance').getByLabel('Covoiturage électrique (3')).toContainText(
     'Covoiturage électrique0.3 kg CO₂eusage : 16%, construction : 84%'
   )
-  await expect(page.getByLabel('Covoiturage électrique (3')).toHaveAttribute(
+  await expect(page.locator('#tabpanel-distance').getByLabel('Covoiturage électrique (3')).toHaveAttribute(
     'href',
     '/outils/transport/voiture-berline-electrique+2'
   )
-  await expect(page.getByLabel('Voiture électrique')).toContainText(
+  await expect(page.locator('#tabpanel-distance').getByLabel('Voiture électrique')).toContainText(
     'Voiture électrique0.58 kg CO₂eusage : 20%, construction : 80%'
   )
-  await expect(page.getByLabel('Voiture électrique')).toHaveAttribute(
+  await expect(page.locator('#tabpanel-distance').getByLabel('Voiture électrique')).toHaveAttribute(
     'href',
     '/outils/transport/voiture-citadine-electrique'
   )
 
   await page.getByTestId('input-km-value').fill('100')
-  await expect(page.getByTestId('category-metro-value')).not.toBeVisible()
-  await expect(page.getByTestId('category-rer-value')).toHaveText('0.98')
-  await expect(page.getByTestId('category-tgv-value')).not.toBeVisible()
-  await page.getByTestId('input-km-value').fill('1000')
-  await expect(page.getByTestId('category-metro-value')).not.toBeVisible()
-  await expect(page.getByTestId('category-rer-value')).not.toBeVisible()
-  await expect(page.getByTestId('category-tgv-value')).toHaveText('2.93')
+  await expect(page.locator('#tabpanel-distance').getByTestId('category-metro-value')).not.toBeVisible()
+  await expect(page.locator('#tabpanel-distance').getByTestId('category-rer-value')).toHaveText('0.98')
+  await expect(page.locator('#tabpanel-distance').getByTestId('category-tgv-value')).not.toBeVisible()
+  await page.locator('#tabpanel-distance').getByTestId('input-km-value').fill('1000')
+  await expect(page.locator('#tabpanel-distance').getByTestId('category-metro-value')).not.toBeVisible()
+  await expect(page.locator('#tabpanel-distance').getByTestId('category-rer-value')).not.toBeVisible()
+  await expect(page.locator('#tabpanel-distance').getByTestId('category-tgv-value')).toHaveText('2.93')
 
   await page.getByTestId('header-integrate-button').click()
   await page.getByRole('combobox', { name: 'Arrivée' }).clear({ force: true })

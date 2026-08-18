@@ -174,7 +174,7 @@ const TransportSimulator = ({ onWebsite }: { onWebsite?: boolean }) => {
         role='tabpanel'
         aria-labelledby='tab-itineraire'
         className={selected === 'distance' ? styles.hidden : undefined}>
-        <ItineraireSimulator withComparisonMode={!mode} withInfoBulle={onWebsite} />
+        <ItineraireSimulator withComparisonMode={!mode} onWebsite={onWebsite} />
       </div>
     </>
   )
