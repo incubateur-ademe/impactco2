@@ -23,6 +23,18 @@
       "exemple-3": "factures",
       "exemple-4": "chaudière à bois"
     },
+    "Alimentation": {
+      "exemple-1": "végétarien",
+      "exemple-2": "viande",
+      "exemple-3": "bio",
+      "exemple-4": "portion"
+    },
+    "Repas": {
+      "exemple-1": "végétarien",
+      "exemple-2": "viande",
+      "exemple-3": "bio",
+      "exemple-4": "portion"
+    },
     "or": "ou",
     "noResult": "Aucun résultat pour",
     "clear": "Supprimer la recherche",
