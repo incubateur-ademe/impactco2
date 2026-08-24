@@ -1,3 +1,5 @@
+import { Equivalent } from 'types/equivalent'
+
 export const livraison = [
   {
     id: 1,
@@ -547,4 +549,4 @@ export const livraison = [
       },
     ],
   },
-]
+] satisfies Equivalent[]

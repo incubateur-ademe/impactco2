@@ -1,3 +1,5 @@
+import { Equivalent } from 'types/equivalent'
+
 export const alimentation = [
   {
     synonyms: ['viande'],
@@ -1713,4 +1715,4 @@ export const alimentation = [
       },
     ],
   },
-]
+] satisfies Equivalent[]

@@ -1,3 +1,5 @@
+import { Equivalent } from 'types/equivalent'
+
 export const numeriques = [
   {
     synonyms: [
@@ -228,7 +230,6 @@ export const numeriques = [
     end: 1.675,
   },
   {
-    subtitle: 'laptop',
     slug: 'alimentationordinateur',
     category: 1,
     ecv: [
@@ -244,7 +245,6 @@ export const numeriques = [
     end: 0.542,
   },
   {
-    subtitle: 'smartphone',
     slug: 'alimentationsmartphone',
     category: 1,
     ecv: [
@@ -361,4 +361,4 @@ export const numeriques = [
     ],
     default: true,
   },
-]
+] satisfies Equivalent[]

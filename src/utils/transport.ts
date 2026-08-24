@@ -1,6 +1,6 @@
-import { DeplacementEquivalent } from 'types/equivalent'
+import { Equivalent } from 'types/equivalent'
 
-export const filterByDistance = (display: DeplacementEquivalent['display'], value: number) => {
+export const filterByDistance = (display: Equivalent['display'], value: number) => {
   if (!display || (!display.min && !display.max)) {
     return true
   }

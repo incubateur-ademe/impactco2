@@ -13,11 +13,11 @@ export const computeFootprint = (equivalent: Equivalent) => {
 export const computeECV = (equivalent: Equivalent, yearsOfUsage?: number) => {
   let total = computeFootprint(equivalent)
 
-  if ('usage' in equivalent && equivalent.usage) {
+  if (equivalent.usage && typeof equivalent.usage !== 'number') {
     total += (yearsOfUsage || equivalent.usage.defaultyears) * equivalent.usage.peryear
   }
 
-  if ('end' in equivalent && equivalent.end) {
+  if (equivalent.end) {
     total += equivalent.end
   }
 

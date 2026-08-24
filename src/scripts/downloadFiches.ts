@@ -1,7 +1,7 @@
 import { Page, chromium } from '@playwright/test'
 import fs from 'fs'
 import pdftk from 'node-pdftk'
-import alimentation from '../data/categories/alimentation.json'
+import { alimentation } from '../data/categories/alimentation'
 import { livraison } from '../data/categories/livraison'
 
 const quizEquivalents = [

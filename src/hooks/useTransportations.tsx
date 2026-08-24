@@ -33,7 +33,7 @@ export default function useTransportations(
               if ('ecvs' in equivalent && equivalent.ecvs) {
                 const distance = values && equivalent.type ? values[equivalent.type as DeplacementType] : km
                 const currentECV = equivalent.ecvs.find((value) =>
-                  value.display.max ? value.display.max >= distance : true
+                  value.display?.max ? value.display.max >= distance : true
                 )
                 if (currentECV) {
                   return {
@@ -89,7 +89,7 @@ export default function useTransportations(
                 ? [
                     ...Array.from({ length: 4 }, (_, i) => i + 1).map((carpoolValue) => ({
                       ...carpoolEquivalent,
-                      id: carpoolEquivalent.id + carpoolValue,
+                      id: (carpoolEquivalent.id || 0) + carpoolValue,
                       default: equivalent.default,
                       ignore: equivalent.ignore || carpoolValue !== carpoolSelected,
                       slug: `${equivalent.slug}+${carpoolValue}`,
@@ -99,7 +99,7 @@ export default function useTransportations(
                         (values ? ` - ${formatNumber(distance).toLocaleString()} km` : ''),
                       initialValue: initialValue / 2,
                       value: carpoolEquivalent.value / (carpoolValue + 1),
-                      ecv: carpoolEquivalent.ecv.map((ecv) => ({ ...ecv, value: ecv.value / (carpoolValue + 1) })),
+                      ecv: carpoolEquivalent.ecv?.map((ecv) => ({ ...ecv, value: ecv.value / (carpoolValue + 1) })),
                       usage: carpoolEquivalent.usage / (carpoolValue + 1),
                       link: `${carpoolEquivalent.link}+${carpoolValue}`,
                     })),
