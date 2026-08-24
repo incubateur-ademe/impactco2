@@ -23,6 +23,18 @@
       "exemple-3": "facturas",
       "exemple-4": "caldera de leña"
     },
+    "Alimentation": {
+      "exemple-1": "vegetariano",
+      "exemple-2": "carne",
+      "exemple-3": "orgánico",
+      "exemple-4": "ración"
+    },
+    "Repas": {
+      "exemple-1": "vegetariano",
+      "exemple-2": "carne",
+      "exemple-3": "orgánico",
+      "exemple-4": "ración"
+    },
     "or": "o",
     "noResult": "Ningún resultado para",
     "clear": "Borrar búsqueda",
