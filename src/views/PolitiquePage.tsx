@@ -1,6 +1,6 @@
 import classNames from 'classnames'
-import IframeableLink from 'components/base/IframeableLink'
 import InformationIcon from 'components/base/icons/information'
+import Link from 'src/components/base/buttons/Link'
 import styles from './Page.module.css'
 
 const PolitiquePage = () => {
@@ -424,9 +424,9 @@ const PolitiquePage = () => {
             <td>France</td>
             <td>Hébergement</td>
             <td>
-              <IframeableLink href='https://scalingo.com/data-processing-agreement'>
+              <Link href='https://scalingo.com/data-processing-agreement'>
                 https://scalingo.com/data-processing-agreement
-              </IframeableLink>
+              </Link>
             </td>
           </tr>
         </tbody>
@@ -459,14 +459,14 @@ const PolitiquePage = () => {
       des Libertés (CNIL) :
       <ul>
         <li>
-          <IframeableLink href='https://www.cnil.fr/fr/cookies-et-traceurs-que-dit-la-loi'>
+          <Link href='https://www.cnil.fr/fr/cookies-et-traceurs-que-dit-la-loi'>
             Cookies et traceurs : que dit la loi ?
-          </IframeableLink>
+          </Link>
         </li>
         <li>
-          <IframeableLink href='https://www.cnil.fr/fr/cookies-les-outils-pour-les-maitriser'>
+          <Link href='https://www.cnil.fr/fr/cookies-les-outils-pour-les-maitriser'>
             Cookies : les outils pour les maîtriser
-          </IframeableLink>
+          </Link>
         </li>
       </ul>
       <h3>8. Comment sont exercés les droits reconnus aux Personnes concernées ?</h3>
@@ -519,7 +519,7 @@ const PolitiquePage = () => {
       <br />
       49004 Angers Cedex 01
       <br />
-      ou par Email à l’adresse suivante : <IframeableLink href='mailto:rgpd@ademe.fr'>rgpd@ademe.fr</IframeableLink>
+      ou par Email à l’adresse suivante : <Link href='mailto:rgpd@ademe.fr'>rgpd@ademe.fr</Link>
       <br />
       <br />
       Vous êtes également en droit de saisir la Commission Nationale de l’Informatique et des Libertés pour toute
@@ -549,9 +549,9 @@ const PolitiquePage = () => {
       tél. : 01 53 73 22 22
       <br />
       ou à{' '}
-      <IframeableLink href='https://www.cnil.fr/fr/cnil-direct/question/adresser-une-reclamation-plainte-la-cnil-quelles-conditions-et-comment'>
+      <Link href='https://www.cnil.fr/fr/cnil-direct/question/adresser-une-reclamation-plainte-la-cnil-quelles-conditions-et-comment'>
         l’adresse suivante
-      </IframeableLink>
+      </Link>
       , et ce sans préjudice de tout autre recours administratif ou juridictionnel.
       <h2>9. Sécurité information / sécurisation des transactions</h2>
       L’ADEME met en œuvre toutes les mesures techniques et organisationnelles utiles, au regard de la nature, de la

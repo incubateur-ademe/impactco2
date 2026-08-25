@@ -5,8 +5,8 @@ import { useEffect, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { fetchFaqsByTool } from 'src/serverFunctions/faqs'
 import { FAQCategory, FAQ as FAQType } from 'types/faq'
-import IframeableLink from 'components/base/IframeableLink'
 import Button from 'components/base/buttons/Button'
+import Link from 'components/base/buttons/Link'
 import HiddenLabel from 'components/form/HiddenLabel'
 import Input from 'components/form/Input'
 import FAQ from './FAQ'
@@ -118,7 +118,7 @@ const FaqsOverscreen = ({ filter, page, slug }: { filter: string; slug: string }
               <p>{t('notFound')}</p>
               <ul className={styles.footer}>
                 <li className={styles.footer}>
-                  <IframeableLink href={`/suggestion?fromLabel=${page}`}>{t('contact')}</IframeableLink>
+                  <Link href={`/suggestion?fromLabel=${page}`}>{t('contact')}</Link>
                 </li>
               </ul>
             </div>
@@ -136,7 +136,7 @@ const FaqsOverscreen = ({ filter, page, slug }: { filter: string; slug: string }
             <br />
             <p className={styles.noResultAdditionalInfo}>
               {t.rich('noResultAdditionalInfo', {
-                contact: (chunk) => <IframeableLink href={`/suggestion?fromLabel=${page}`}>{chunk}</IframeableLink>,
+                contact: (chunk) => <Link href={`/suggestion?fromLabel=${page}`}>{chunk}</Link>,
               })}
             </p>
           </div>

@@ -1,9 +1,9 @@
-import React, { ForwardedRef, forwardRef } from 'react'
+import { ForwardedRef, forwardRef } from 'react'
 import TranslationProvider from 'src/providers/TranslationProvider'
 import { ComputedEquivalent } from 'types/equivalent'
 import { categories } from 'data/categories'
 import EquivalentCardContent from '../outils/equivalents/EquivalentCardContent'
-import IframeableLink from 'components/base/IframeableLink'
+import Link from 'components/base/buttons/Link'
 import styles from './EquivalentCard.module.css'
 
 const EquivalentCard = ({ equivalent }: { equivalent?: ComputedEquivalent }, ref: ForwardedRef<HTMLAnchorElement>) => {
@@ -12,7 +12,7 @@ const EquivalentCard = ({ equivalent }: { equivalent?: ComputedEquivalent }, ref
   return (
     <li className={styles.list}>
       {equivalent && category ? (
-        <IframeableLink
+        <Link
           ref={ref}
           href={equivalent.link}
           className={styles.equivalent}
@@ -20,7 +20,7 @@ const EquivalentCard = ({ equivalent }: { equivalent?: ComputedEquivalent }, ref
           <TranslationProvider>
             <EquivalentCardContent equivalent={equivalent} category={category} />
           </TranslationProvider>
-        </IframeableLink>
+        </Link>
       ) : (
         <div className={styles.empty} data-testid='equivalent-search-empty' />
       )}

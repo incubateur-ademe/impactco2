@@ -6,11 +6,11 @@ import { useMemo } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import useTrackingContext from 'src/providers/TrackingProvider'
 import { ComputedEquivalent } from 'types/equivalent'
-import { getName } from 'utils/Equivalent/equivalent'
+import { getName } from 'src/utils/Equivalent/equivalent'
 import formatNumber from 'utils/formatNumber'
 import EquivalentIcon from 'components/base/EquivalentIcon'
-import IframeableLink from 'components/base/IframeableLink'
 import LocalNumber from 'components/base/LocalNumber'
+import Link from 'src/components/base/buttons/Link'
 import styles from './LivraisonEquivalent.module.css'
 
 const deplacementECVs = [56, 57]
@@ -39,7 +39,7 @@ const LivraisonEquivalent = ({
   const transport =
     'ecv' in equivalent && equivalent.ecv && equivalent.ecv.find((ecv) => deplacementECVs.includes(ecv.id))
   return (
-    <IframeableLink
+    <Link
       className={classNames(customTheme === 'grey' ? styles.greyContainer : styles.container, {
         [styles.static]: !animated,
       })}
@@ -66,7 +66,7 @@ const LivraisonEquivalent = ({
           </p>
         </div>
       </div>
-    </IframeableLink>
+    </Link>
   )
 }
 

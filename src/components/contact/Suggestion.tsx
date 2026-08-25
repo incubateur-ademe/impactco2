@@ -5,8 +5,8 @@ import { FormEvent, useMemo, useState } from 'react'
 import { saveFeedback } from 'src/serverFunctions/forms'
 import { ZodError } from 'zod'
 import { NotionCommandValidation } from 'utils/notion'
-import IframeableLink from 'components/base/IframeableLink'
 import Button from 'components/base/buttons/Button'
+import Link from 'components/base/buttons/Link'
 import CheckboxInput from 'components/form/CheckboxInput'
 import FormResult from 'components/form/FormResult'
 import Input from 'components/form/Input'
@@ -225,9 +225,9 @@ const Suggestion = () => {
                     <>
                       J'accepte que l'ADEME collecte mes données afin de garantir la bonne utilisation des services
                       offerts et reconnais avoir pris connaissance de{' '}
-                      <IframeableLink href='/politique-de-confidentialite' target='_blank' rel='noopener noreferrer'>
+                      <Link href='/politique-de-confidentialite' target='_blank' rel='noopener noreferrer'>
                         sa politique de protection des données personnelles
-                      </IframeableLink>
+                      </Link>
                       . *
                     </>
                   }

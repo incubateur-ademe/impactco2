@@ -2,7 +2,7 @@
 
 import classNames from 'classnames'
 import { useEffect, useRef, useState } from 'react'
-import IframeableLink from 'components/base/IframeableLink'
+import Link from 'components/base/buttons/Link'
 import DocIcon from 'components/base/icons/doc'
 import MenuIcon from 'components/base/icons/menu'
 import ToolsIcon from 'components/base/icons/tools'
@@ -40,16 +40,16 @@ const Menu = () => {
       </button>
       <ul className={classNames(styles.menu, { [styles.open]: open })} id='mobile-menu'>
         <li>
-          <IframeableLink href='/outils' className={headerStyles.link}>
+          <Link href='/outils' className={headerStyles.link}>
             <ToolsIcon />
             Les outils
-          </IframeableLink>
+          </Link>
         </li>
         <li>
-          <IframeableLink href='/doc' className={headerStyles.link}>
+          <Link href='/doc' className={headerStyles.link}>
             <DocIcon />
             La doc
-          </IframeableLink>
+          </Link>
         </li>
         <RDV className={styles.button}>Prendre rendez-vous</RDV>
       </ul>
