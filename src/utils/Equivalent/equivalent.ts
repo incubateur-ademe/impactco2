@@ -238,7 +238,7 @@ export const getPrefix = (language: string, equivalent: Pick<Equivalent, 'catego
   return prefix ? formatName(prefix, value || 1) : ''
 }
 
-export const getNameWithoutSuffix = (
+const getNameWithoutExtraInfo = (
   language: string,
   equivalent: Pick<Equivalent, 'category' | 'slug' | 'carpool'>,
   withPrefix?: boolean,
@@ -344,7 +344,7 @@ export const getName = (
   lowerCase?: boolean,
   extraInfo?: boolean
 ) => {
-  const name = getNameWithoutSuffix(language, equivalent, withPrefix, value, lowerCase)
+  const name = getNameWithoutExtraInfo(language, equivalent, withPrefix, value, lowerCase)
   return `${name}${extraInfo ? getExtraInfo(language, equivalent.slug) : ''}`
 }
 

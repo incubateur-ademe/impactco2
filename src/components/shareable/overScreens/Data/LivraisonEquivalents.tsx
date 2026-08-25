@@ -7,7 +7,7 @@ import useParamContext from 'src/providers/ParamProvider'
 import { computedEquivalents } from 'src/providers/equivalents'
 import { livraisonData } from 'components/outils/livraison/LivraisonData'
 import { LivraisonType } from 'components/outils/livraison/Type'
-import { getNameWithoutSuffix } from 'utils/Equivalent/equivalent'
+import { getName } from 'utils/Equivalent/equivalent'
 import formatNumber from 'utils/formatNumber'
 import EquivalentIcon from 'components/base/EquivalentIcon'
 import DropdownArrowDownIcon from 'components/base/icons/dropdown-arrow-down'
@@ -49,7 +49,7 @@ const LivraisonEquivalents = ({ slug }: { slug: LivraisonType }) => {
                 <EquivalentIcon equivalent={equivalent} height={3} />
                 <div>
                   <p>
-                    <span>{getNameWithoutSuffix(language, equivalent)}</span>
+                    <span>{getName(language, equivalent)}</span>
                     {transport && <span className={styles.gray}> - {t('car')}</span>}
                     {equivalent.slug.includes('douce') && <span className={styles.green}> - {t('foot')}</span>}
                   </p>

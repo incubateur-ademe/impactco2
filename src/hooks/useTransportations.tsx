@@ -3,7 +3,7 @@ import useParamContext from 'src/providers/ParamProvider'
 import { DeplacementType } from 'types/equivalent'
 import { TransportSimulateur } from 'types/transport'
 import { deplacements } from 'data/categories/deplacement'
-import { getComparisonSlug, getNameWithoutSuffix } from 'utils/Equivalent/equivalent'
+import { getComparisonSlug, getName } from 'utils/Equivalent/equivalent'
 import { computeECV } from 'utils/computeECV'
 import formatNumber from 'utils/formatNumber'
 import formatUsage from 'utils/formatUsage'
@@ -52,7 +52,7 @@ export default function useTransportations(
                 ...equivalent,
                 link: `/outils/transport/${equivalent.slug}`,
                 name:
-                  getNameWithoutSuffix(params.language, { ...equivalent, carpool: 0 }) +
+                  getName(params.language, { ...equivalent, carpool: 0 }) +
                   (values ? ` - ${formatNumber(distance).toLocaleString()} km` : ''),
                 value: computeECV(equivalent) * distance,
                 usage: formatUsage(equivalent) * distance,
@@ -95,7 +95,7 @@ export default function useTransportations(
                       slug: `${equivalent.slug}+${carpoolValue}`,
                       carpool: carpoolValue,
                       name:
-                        getNameWithoutSuffix(params.language, { ...equivalent, carpool: carpoolValue }) +
+                        getName(params.language, { ...equivalent, carpool: carpoolValue }) +
                         (values ? ` - ${formatNumber(distance).toLocaleString()} km` : ''),
                       initialValue: initialValue / 2,
                       value: carpoolEquivalent.value / (carpoolValue + 1),
