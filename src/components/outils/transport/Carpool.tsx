@@ -2,7 +2,7 @@ import { useTranslations } from 'next-intl'
 import useParamContext from 'src/providers/ParamProvider'
 import { ComputedEquivalent } from 'types/equivalent'
 import { TransportSimulateur } from 'types/transport'
-import { getNameWithoutSuffix } from 'utils/Equivalent/equivalent'
+import { getName } from 'utils/Equivalent/equivalent'
 import formatName from 'utils/formatName'
 import { track } from 'utils/matomo'
 import HiddenLabel from 'components/form/HiddenLabel'
@@ -112,7 +112,7 @@ const Carpool = ({
           max={5}
           label={formatName(t('person'), carpoolValue + 1)}
           smallLabel={formatName(t('personShort'), carpoolValue + 1)}
-          hiddenLabel={`${t('in')} ${getNameWithoutSuffix(params.language, equivalent)}`}
+          hiddenLabel={`${t('in')} ${getName(params.language, equivalent)}`}
         />
       )}
     </div>

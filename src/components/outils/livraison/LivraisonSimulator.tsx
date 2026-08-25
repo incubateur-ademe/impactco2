@@ -7,7 +7,7 @@ import useParamContext from 'src/providers/ParamProvider'
 import useTrackingContext from 'src/providers/TrackingProvider'
 import { computedEquivalents } from 'src/providers/equivalents'
 import { ComputedEquivalent } from 'types/equivalent'
-import { getNameWithoutSuffix } from 'utils/Equivalent/equivalent'
+import { getName } from 'utils/Equivalent/equivalent'
 import { track } from 'utils/matomo'
 import CheckboxInput from 'components/form/CheckboxInput'
 import Select from 'components/form/Select'
@@ -71,7 +71,7 @@ const LivraisonSimulator = () => {
           livraison: !!(distance && transport),
           name: (
             <>
-              <span>{getNameWithoutSuffix(language, equivalent)}</span>
+              <span>{getName(language, equivalent)}</span>
               {detail}
             </>
           ),

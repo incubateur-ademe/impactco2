@@ -5,7 +5,7 @@ import { Dispatch } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { Equivalent } from 'types/equivalent'
 import { deplacements } from 'data/categories/deplacement'
-import { getNameWithoutSuffix } from 'utils/Equivalent/equivalent'
+import { getName } from 'utils/Equivalent/equivalent'
 import EquivalentIcon from 'components/base/EquivalentIcon'
 import InformationFillIcon from 'components/base/icons/information-fill'
 import CheckboxInput from 'components/form/CheckboxInput'
@@ -54,7 +54,7 @@ const TransportListParam = ({ modes, setModes }: { modes: string[]; setModes: Di
               label={
                 <span className={styles.left}>
                   <EquivalentIcon equivalent={transport} height={2.5} />
-                  <span className={styles.name}>{getNameWithoutSuffix(language, transport)}</span>
+                  <span className={styles.name}>{getName(language, transport)}</span>
                 </span>
               }
             />

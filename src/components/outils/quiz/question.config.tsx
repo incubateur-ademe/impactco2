@@ -1,7 +1,7 @@
 import { computedEquivalents } from 'src/providers/equivalents'
 import { ComputedEquivalent, Language } from 'types/equivalent'
 import { Question } from 'types/question'
-import { getNameWithoutSuffix } from 'utils/Equivalent/equivalent'
+import { getName } from 'utils/Equivalent/equivalent'
 import AvocatPoisson from './infos/AvocatPoisson'
 import BoeufTGV from './infos/BoeufTGV'
 import EauThe from './infos/EauThe'
@@ -42,7 +42,7 @@ export const getQuizEquivalents = (language: Language) =>
       return equivalent.number
         ? {
             ...equivalent,
-            name: `${equivalent.number} ${getNameWithoutSuffix(language, equivalent, true, equivalent.number, true)}`,
+            name: `${equivalent.number} ${getName(language, equivalent, true, equivalent.number, true)}`,
             value: equivalent.value * equivalent.number,
             number: undefined,
           }

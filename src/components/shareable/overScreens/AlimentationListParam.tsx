@@ -3,7 +3,7 @@ import { useTranslations } from 'next-intl'
 import { SetStateAction } from 'preact/compat'
 import { Dispatch } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
-import { getNameWithoutSuffix } from 'utils/Equivalent/equivalent'
+import { getName } from 'utils/Equivalent/equivalent'
 import { AlimentationCategories, equivalentsByCategory } from 'utils/alimentation'
 import EquivalentIcon from 'components/base/EquivalentIcon'
 import Button from 'components/base/buttons/Button'
@@ -59,7 +59,7 @@ const AlimentationListParam = ({
                   label={
                     <span className={listStyles.left}>
                       <EquivalentIcon equivalent={equivalent} height={2.5} />
-                      <span className={listStyles.name}>{getNameWithoutSuffix(language, equivalent)}</span>
+                      <span className={listStyles.name}>{getName(language, equivalent)}</span>
                     </span>
                   }
                 />

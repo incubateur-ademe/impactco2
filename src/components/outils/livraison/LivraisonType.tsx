@@ -1,7 +1,7 @@
 import { useTranslations } from 'next-intl'
 import useParamContext from 'src/providers/ParamProvider'
 import { ComputedEquivalent } from 'types/equivalent'
-import { getNameWithoutSuffix } from 'utils/Equivalent/equivalent'
+import { getName } from 'utils/Equivalent/equivalent'
 import { track } from 'utils/matomo'
 import HiddenLabel from 'components/form/HiddenLabel'
 import Select from 'components/form/Select'
@@ -44,7 +44,7 @@ const LivraisonType = ({ equivalent }: { equivalent: ComputedEquivalent }) => {
         step={0.5}
         max={100}
         label={'km'}
-        hiddenLabel={`${t('distance')} ${getNameWithoutSuffix(language, equivalent)}`}
+        hiddenLabel={`${t('distance')} ${getName(language, equivalent)}`}
       />
     </div>
   )
