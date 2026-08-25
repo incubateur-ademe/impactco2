@@ -1,6 +1,7 @@
 import { FontStyle, FontWeight } from 'next/dist/compiled/@vercel/og/satori'
 import { ImageResponse } from 'next/og'
 import { NextRequest, NextResponse } from 'next/server'
+import { Language } from 'types/equivalent'
 import Comparateur from 'components/metaImages/Comparateur'
 
 export const runtime = 'edge'
@@ -40,7 +41,7 @@ export async function GET(req: NextRequest) {
       comparisons={(searchParams.get('comparisons') || 'ananas,voiturethermique,tgv,smartphone,pomme')
         .replace(/ /g, '+')
         .split(',')}
-      language={searchParams.get('language') || 'fr'}
+      language={(searchParams.get('language') as Language) || 'fr'}
     />,
     {
       width: 1200,

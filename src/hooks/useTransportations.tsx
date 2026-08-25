@@ -3,7 +3,7 @@ import useParamContext from 'src/providers/ParamProvider'
 import { DeplacementType } from 'types/equivalent'
 import { TransportSimulateur } from 'types/transport'
 import { deplacements } from 'data/categories/deplacement'
-import { getComparisonSlug, getNameWithoutSuffix } from 'utils/Equivalent/equivalent'
+import { getComparisonSlug, getName } from 'utils/Equivalent/equivalent'
 import { computeECV } from 'utils/computeECV'
 import formatNumber from 'utils/formatNumber'
 import formatUsage from 'utils/formatUsage'
@@ -33,7 +33,7 @@ export default function useTransportations(
               if ('ecvs' in equivalent && equivalent.ecvs) {
                 const distance = values && equivalent.type ? values[equivalent.type as DeplacementType] : km
                 const currentECV = equivalent.ecvs.find((value) =>
-                  value.display.max ? value.display.max >= distance : true
+                  value.display?.max ? value.display.max >= distance : true
                 )
                 if (currentECV) {
                   return {
@@ -52,7 +52,7 @@ export default function useTransportations(
                 ...equivalent,
                 link: `/outils/transport/${equivalent.slug}`,
                 name:
-                  getNameWithoutSuffix(params.language, { ...equivalent, carpool: 0 }) +
+                  getName(params.language, { ...equivalent, carpool: 0 }) +
                   (values ? ` - ${formatNumber(distance).toLocaleString()} km` : ''),
                 value: computeECV(equivalent) * distance,
                 usage: formatUsage(equivalent) * distance,
@@ -89,17 +89,17 @@ export default function useTransportations(
                 ? [
                     ...Array.from({ length: 4 }, (_, i) => i + 1).map((carpoolValue) => ({
                       ...carpoolEquivalent,
-                      id: carpoolEquivalent.id + carpoolValue,
+                      id: (carpoolEquivalent.id || 0) + carpoolValue,
                       default: equivalent.default,
                       ignore: equivalent.ignore || carpoolValue !== carpoolSelected,
                       slug: `${equivalent.slug}+${carpoolValue}`,
                       carpool: carpoolValue,
                       name:
-                        getNameWithoutSuffix(params.language, { ...equivalent, carpool: carpoolValue }) +
+                        getName(params.language, { ...equivalent, carpool: carpoolValue }) +
                         (values ? ` - ${formatNumber(distance).toLocaleString()} km` : ''),
                       initialValue: initialValue / 2,
                       value: carpoolEquivalent.value / (carpoolValue + 1),
-                      ecv: carpoolEquivalent.ecv.map((ecv) => ({ ...ecv, value: ecv.value / (carpoolValue + 1) })),
+                      ecv: carpoolEquivalent.ecv?.map((ecv) => ({ ...ecv, value: ecv.value / (carpoolValue + 1) })),
                       usage: carpoolEquivalent.usage / (carpoolValue + 1),
                       link: `${carpoolEquivalent.link}+${carpoolValue}`,
                     })),

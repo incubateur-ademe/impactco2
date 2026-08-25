@@ -30,7 +30,6 @@ export async function GET(req: NextRequest) {
     respObj
       ? // Set response according to field parameter
         respObj
-          // @ts-expect-error Expected carpool
           .filter((transportation) => !transportation.carpool)
           .map((transportation) => {
             let response = {

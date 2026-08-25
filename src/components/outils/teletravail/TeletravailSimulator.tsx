@@ -6,7 +6,7 @@ import { useEffect, useMemo, useRef } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import useTrackingContext from 'src/providers/TrackingProvider'
 import { Category } from 'types/category'
-import { ComputedEquivalent, DeplacementEquivalent, DeplacementType } from 'types/equivalent'
+import { ComputedEquivalent, DeplacementType } from 'types/equivalent'
 import { categories } from 'data/categories'
 import { deplacements } from 'data/categories/deplacement'
 import formatNumber from 'utils/formatNumber'
@@ -50,7 +50,7 @@ const TeletravailSimulator = () => {
   const { data: itineraries } = useItineraries(start, end, 'télétravail')
   const deplacement = useMemo(() => {
     if (transport === 'avion') {
-      const avions = transports.filter((x) => x.slug.startsWith('avion')) as DeplacementEquivalent[]
+      const avions = transports.filter((x) => x.slug.startsWith('avion'))
       const distance = itineraries?.plane || 0
       return (avions.find((avion) => filterByDistance(avion.display, distance)) || avions[0]) as ComputedEquivalent & {
         type: DeplacementType

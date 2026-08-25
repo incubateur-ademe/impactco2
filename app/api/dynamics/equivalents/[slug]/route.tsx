@@ -3,6 +3,7 @@ import { ImageResponse } from 'next/og'
 import { NextRequest, NextResponse } from 'next/server'
 import { computedEquivalents } from 'src/providers/equivalents'
 import { Category } from 'types/category'
+import { Language } from 'types/equivalent'
 import { categories } from 'data/categories'
 import { getName } from 'utils/Equivalent/equivalent'
 import Equivalent from 'components/metaImages/Equivalent'
@@ -49,7 +50,7 @@ export async function GET(req: NextRequest, context: { params: Promise<{ slug: s
   }
 
   const { searchParams } = new URL(req.url)
-  const language = searchParams.get('language') || 'fr'
+  const language = (searchParams.get('language') as Language) || 'fr'
 
   return new ImageResponse(
     <Equivalent

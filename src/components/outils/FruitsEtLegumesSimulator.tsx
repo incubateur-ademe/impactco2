@@ -4,7 +4,6 @@ import { useTranslations } from 'next-intl'
 import useParamContext from 'src/providers/ParamProvider'
 import useTrackingContext from 'src/providers/TrackingProvider'
 import { Category } from 'types/category'
-import { FruitsEtLegumesEquivalent } from 'types/equivalent'
 import { categories } from 'data/categories'
 import { track } from 'utils/matomo'
 import { monthsOptions } from 'utils/months'
@@ -49,9 +48,7 @@ const FruitsEtLegumesSimulator = () => {
       {flds.equivalents && (
         <CategorySimulator
           tracking='Fruits et légumes'
-          equivalents={flds.equivalents.filter((equivalent) =>
-            (equivalent as FruitsEtLegumesEquivalent).months.includes(month)
-          )}
+          equivalents={flds.equivalents.filter((equivalent) => equivalent.months?.includes(month))}
           withSimulator
         />
       )}

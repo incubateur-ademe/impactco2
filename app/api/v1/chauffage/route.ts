@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { z } from 'zod'
 import { chauffage } from 'data/categories/chauffage'
-import { getNameWithoutSuffix } from 'utils/Equivalent/equivalent'
+import { getName } from 'utils/Equivalent/equivalent'
 import { trackAPIRequest } from 'utils/middleware'
 
 const chauffageValidation = z.object({
@@ -109,7 +109,7 @@ export async function GET(req: NextRequest) {
         .filter((chauffage) => (inputs.data.chauffages ? inputs.data.chauffages.includes(chauffage.id) : true))
         .map((chauffage) => {
           return {
-            name: getNameWithoutSuffix(inputs.data.language || 'fr', chauffage),
+            name: getName(inputs.data.language || 'fr', chauffage),
             slug: chauffage.slug,
             ecv: chauffage.total * (inputs.data.m2 || 63),
           }

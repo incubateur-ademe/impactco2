@@ -4,7 +4,7 @@ import { useMemo } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import useTrackingContext from 'src/providers/TrackingProvider'
 import { computedEquivalents } from 'src/providers/equivalents'
-import { ComputedEquivalent } from 'types/equivalent'
+import { ComputedEquivalent, Language } from 'types/equivalent'
 import { getName, isEquivalentInMode } from 'utils/Equivalent/equivalent'
 import { getEquivalentWithCarpool } from 'utils/carpool'
 import formatNumber from 'utils/formatNumber'
@@ -18,7 +18,7 @@ import styles from './TransportComparisonEquivalent.module.css'
 
 const allEquivalents = computedEquivalents.flatMap(getEquivalentWithCarpool)
 
-const getEquivalent = (language: string, equivalents: ComputedEquivalent[], slug: string) => {
+const getEquivalent = (language: Language, equivalents: ComputedEquivalent[], slug: string) => {
   let equivalent = equivalents.find((equivalent) => isEquivalentInMode(equivalent, slug)) as
     | (ComputedEquivalent & { found?: boolean })
     | undefined

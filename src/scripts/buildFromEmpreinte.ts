@@ -1,20 +1,78 @@
 import axios from 'axios'
 import fs from 'fs'
-import deplacement from '../data/categories/deplacement.json'
-import electromenager from '../data/categories/electromenager.json'
-import habillement from '../data/categories/habillement.json'
-import mobilier from '../data/categories/mobilier.json'
-import numerique from '../data/categories/numerique.json'
-import repas from '../data/categories/repas.json'
-import { UsableEquivalent } from '../../types/equivalent'
+import { deplacements } from '../data/categories/deplacement'
+import { electromenager } from '../data/categories/electromenager'
+import { habillements } from '../data/categories/habillement'
+import { mobiliers } from '../data/categories/mobilier'
+import { numeriques } from '../data/categories/numerique'
+import { repas } from '../data/categories/repas'
+import { Equivalent } from '../../types/equivalent'
 
-const existingEquivalentsByCategory: Record<string, { file: string; values: UsableEquivalent[] }> = {
-  electromenager: { file: 'electromenager.json', values: electromenager },
-  habillement: { file: 'habillement.json', values: habillement },
-  mobilier: { file: 'mobilier.json', values: mobilier },
-  repas: { file: 'repas.json', values: repas },
-  numerique: { file: 'numerique.json', values: numerique },
+type TransportSubEquivalent = {
+  display?: { min?: number; max?: number }
+  subtitle: string
+  ecv?: { id: number; value: number }[]
 }
+
+type TransportEquivalent = Equivalent & {
+  ecvs?: TransportSubEquivalent[]
+}
+
+type TransportEmpreinteId = number | Record<string, number>
+
+const transportEmpreinteIds: Record<string, TransportEmpreinteId> = {
+  avion: {
+    courtcourrier: 43743,
+    moyencourrier: 43741,
+    moyenlongcourrier: 43747,
+    longcourrier: 43749,
+  },
+  tgv: 43256,
+  intercites: 43272,
+  autocar: 43740,
+  veloelectrique: {
+    'Vélo à assistance électrique': 28331,
+    'Trottinette à assistance électrique': 28329,
+  },
+  busthermique: 43739,
+  tramway: 43257,
+  metro: 43253,
+  scooter: 27992,
+  moto: 43782,
+  rer: 43254,
+  ter: 43255,
+  buselectrique: 28003,
+  busgnv: 28005,
+}
+
+const getTransportEmpreinteId = (slug: string, subtitle?: string) => {
+  const entry = transportEmpreinteIds[slug]
+  if (typeof entry === 'number') {
+    return entry
+  }
+  if (!subtitle) {
+    return undefined
+  }
+  return entry[subtitle]
+}
+
+const existingEquivalentsByCategory: Record<string, { file: string; exportName: string; values: Equivalent[] }> = {
+  electromenager: { file: 'electromenager.ts', exportName: 'electromenager', values: electromenager },
+  habillement: { file: 'habillement.ts', exportName: 'habillements', values: habillements },
+  mobilier: { file: 'mobilier.ts', exportName: 'mobiliers', values: mobiliers },
+  repas: { file: 'repas.ts', exportName: 'repas', values: repas },
+  numerique: { file: 'numerique.ts', exportName: 'numeriques', values: numeriques },
+}
+
+const writeCategoryTs = (file: string, exportName: string, values: Equivalent[]) => {
+  const content =
+    "import { Equivalent } from 'types/equivalent'\n\n" +
+    `export const ${exportName} = ${JSON.stringify(values, null, 2)} as Equivalent[]\n`
+
+  fs.writeFileSync(`src/data/categories/${file}`, content)
+}
+
+const transportEquivalents = deplacements as TransportEquivalent[]
 
 const empreinteValues = [
   "Identifiant_de_l'élément",
@@ -38,7 +96,7 @@ const ecvs = [
 ]
 
 const updateEquivalents = (
-  equivalents: UsableEquivalent[],
+  equivalents: Equivalent[],
   values: { "Identifiant_de_l'élément": string; Total_poste_non_décomposé: number; Nom_poste_français: string }[]
 ) => {
   return equivalents.map((equivalent) => {
@@ -95,14 +153,17 @@ const getEquivalents = async (
 }
 
 const buildTransportFromEmpreinte = async () => {
-  const ids = deplacement.flatMap((equivalent) => {
-    if ('empreinteId' in equivalent && equivalent.empreinteId) {
-      return [equivalent.empreinteId]
+  const ids = transportEquivalents.flatMap((equivalent) => {
+    const topLevelId = getTransportEmpreinteId(equivalent.slug)
+    if (typeof topLevelId === 'number') {
+      return [topLevelId]
     }
-    if ('ecvs' in equivalent && equivalent.ecvs) {
-      return equivalent.ecvs.map((ecv) => ecv.empreinteId)
+    if (equivalent.ecvs) {
+      return (equivalent.ecvs as TransportSubEquivalent[])
+        .map((ecv) => getTransportEmpreinteId(equivalent.slug, ecv.subtitle))
+        .filter((id): id is number => typeof id === 'number')
     }
-    return 0
+    return []
   })
 
   const newEquivalents = await getEquivalents(ids)
@@ -117,10 +178,11 @@ const buildTransportFromEmpreinte = async () => {
         )
     )
   )
-  const finalResult = deplacement.map((equivalent) => {
-    if ('empreinteId' in equivalent && equivalent.empreinteId) {
+  const finalResult = transportEquivalents.map((equivalent) => {
+    const topLevelId = getTransportEmpreinteId(equivalent.slug)
+    if (typeof topLevelId === 'number') {
       const elementValues = newEquivalents.filter(
-        (value) => Number.parseInt(value["Identifiant_de_l'élément"]) === equivalent.empreinteId
+        (value) => Number.parseInt(value["Identifiant_de_l'élément"]) === topLevelId
       )
       if (elementValues) {
         const ecv = ecvs
@@ -142,9 +204,10 @@ const buildTransportFromEmpreinte = async () => {
       }
     }
     if ('ecvs' in equivalent && equivalent.ecvs) {
-      const newEcvs = equivalent.ecvs.map((subEquivalent) => {
+      const newEcvs = (equivalent.ecvs as TransportSubEquivalent[]).map((subEquivalent) => {
+        const subEquivalentId = getTransportEmpreinteId(equivalent.slug, subEquivalent.subtitle)
         const elementValues = newEquivalents.filter(
-          (value) => Number.parseInt(value["Identifiant_de_l'élément"]) === subEquivalent.empreinteId
+          (value) => Number.parseInt(value["Identifiant_de_l'élément"]) === subEquivalentId
         )
         if (elementValues) {
           const ecv = ecvs
@@ -172,7 +235,7 @@ const buildTransportFromEmpreinte = async () => {
     }
     return equivalent
   })
-  fs.writeFileSync(`src/data/categories/deplacement.json`, JSON.stringify(finalResult, null, 2))
+  writeCategoryTs('deplacement.ts', 'deplacements', finalResult as Equivalent[])
 }
 
 const buildFromEmpreinte = async (key: string) => {
@@ -208,7 +271,7 @@ const buildFromEmpreinte = async (key: string) => {
     )
   )
   const finalResult = updateEquivalents(existingEquivalents.values, newEquivalents)
-  fs.writeFileSync(`src/data/categories/${existingEquivalents.file}`, JSON.stringify(finalResult, null, 2))
+  writeCategoryTs(existingEquivalents.file, existingEquivalents.exportName, finalResult)
 }
 
 if (process.argv[2]) {

@@ -2,7 +2,7 @@
  * @jest-environment node
  */
 import equivalentValues from '../src/utils/Equivalent/values.json'
-import { getNameWithoutSuffix } from 'utils/Equivalent/equivalent'
+import { getName } from 'utils/Equivalent/equivalent'
 
 const chauffageSlugs = [
   'chauffagegaz',
@@ -20,7 +20,7 @@ const getExpectedData = (m2: number, language: 'fr' | 'en') => {
   return chauffageSlugs.map((slug) => {
     const value = equivalentValues[slug as keyof typeof equivalentValues] as any
     const ecv = (value.value * m2) / 1000
-    const name = getNameWithoutSuffix(language, { category: value.category, slug })
+    const name = getName(language, { category: value.category, slug })
     return { ecv, name, slug }
   })
 }

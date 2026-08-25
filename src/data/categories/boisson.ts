@@ -1,3 +1,5 @@
+import { Equivalent } from 'types/equivalent'
+
 export const boissons = [
   {
     id: 24283,
@@ -236,4 +238,4 @@ export const boissons = [
       },
     ],
   },
-]
+] satisfies Equivalent[]

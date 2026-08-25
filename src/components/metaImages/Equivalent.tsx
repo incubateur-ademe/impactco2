@@ -1,6 +1,7 @@
 import en from 'src/providers/locales/en.json'
 import es from 'src/providers/locales/es.json'
 import fr from 'src/providers/locales/fr.json'
+import { Language } from 'types/equivalent'
 import { getEquivalentIcon } from 'utils/Equivalent/icons'
 import { getNumberPrecision } from 'utils/formatNumberPrecision'
 import { getUnit } from 'components/base/CO2Quantity'
@@ -20,7 +21,7 @@ const Equivalent = ({
   unit,
   carpool,
 }: {
-  language: string
+  language: Language
   slug: string
   name: string
   quantity: number

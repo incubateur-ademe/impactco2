@@ -3,8 +3,7 @@
 import { ReadonlyURLSearchParams, useSearchParams } from 'next/navigation'
 import { ASTNode, PublicodesExpression } from 'publicodes'
 import React, { Dispatch, ReactNode, SetStateAction, useContext, useEffect, useRef, useState } from 'react'
-import { ComputedEquivalent, Equivalent } from 'types/equivalent'
-import { SiteLanguage } from 'types/languages'
+import { ComputedEquivalent, Equivalent, Language } from 'types/equivalent'
 import { TransportSimulateur } from 'types/transport'
 import { deplacements } from 'data/categories/deplacement'
 import { LivraisonMode, LivraisonType } from 'components/outils/livraison/Type'
@@ -76,8 +75,8 @@ export type Params = {
   setOverscreen: (slug: string, value: string) => void
   theme: string
   setTheme: Dispatch<SetStateAction<string>>
-  language: SiteLanguage
-  setLanguage: Dispatch<SetStateAction<SiteLanguage>>
+  language: Language
+  setLanguage: Dispatch<SetStateAction<Language>>
   alimentation: {
     category: AlimentationCategories
     setCategory: Dispatch<SetStateAction<AlimentationCategories>>
@@ -213,7 +212,7 @@ const ParamContext = React.createContext<Params | null>(null)
 export function ParamProvider({ children }: { children: ReactNode }) {
   const initialTheme = useTheme()
   const [theme, setTheme] = useState(initialTheme.theme)
-  const [language, setLanguage] = useState<SiteLanguage>('fr')
+  const [language, setLanguage] = useState<Language>('fr')
 
   const [faqAnchor, setFaqAnchor] = useState<string | undefined>(undefined)
 

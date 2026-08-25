@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { Equivalent, Language } from 'types/equivalent'
 import { z } from 'zod'
 import { deplacements } from 'data/categories/deplacement'
 import { getName } from 'utils/Equivalent/equivalent'
@@ -25,13 +26,13 @@ export const computeTransportEmission = (
   ignoreRadiativeForcing?: boolean,
   filter?: boolean,
   includeConstruction?: boolean,
-  language?: string
+  language?: Language
 ) =>
   deplacements
     .filter((transportation) => filter || filterByDistance(transportation.display, km))
     .flatMap((transportation) =>
       transportation.withCarpool
-        ? [
+        ? ([
             ...Array.from({ length: 4 }).map((_, index) => ({
               ...transportation,
               carpool: index + 1,
@@ -41,18 +42,22 @@ export const computeTransportEmission = (
                   ? 22 + index
                   : transportation.id === 5
                     ? 26 + index
-                    : transportation.id + index + 1,
+                    : (transportation.id || 0) + index + 1,
             })),
             transportation,
-          ]
+          ] as Equivalent[])
         : [transportation]
     )
-    .filter((transportation) => (activeTransportations ? activeTransportations.includes(transportation.id) : true))
+    .filter((transportation) =>
+      activeTransportations && transportation.id !== undefined
+        ? activeTransportations.includes(transportation.id)
+        : true
+    )
     .map((transportation) => {
       let values = [{ id: 6, value: transportation.total || 0 }]
       let name = getName(language || 'fr', transportation, false, 1, false, true)
       if ('ecvs' in transportation && transportation.ecvs) {
-        const currentECV = transportation.ecvs.find((value) => (value.display.max ? value.display.max >= km : true))
+        const currentECV = transportation.ecvs.find((value) => (value.display?.max ? value.display.max >= km : true))
         if (currentECV) {
           values = currentECV.ecv
           name = getName(
@@ -85,7 +90,6 @@ export const computeTransportEmission = (
         })
         .reduce((sum, current) => sum + current.value, 0)
 
-      // @ts-expect-error expected carpool
       const divider = transportation.carpool ? transportation.carpool + 1 : 1
       return {
         ...transportation,
@@ -370,7 +374,6 @@ export async function GET(req: NextRequest) {
   return NextResponse.json(
     {
       data: emissions
-        // @ts-expect-error carpool expected
         .filter((emission) => !numberOfPassenger || !emission.carpool)
         .map((emission) => ({
           id: emission.id,

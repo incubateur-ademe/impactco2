@@ -110,15 +110,17 @@ export default function Detail({
 }) {
   const { setOverscreen } = useParamContext()
   const t = useTranslations('equivalent')
-  const [years, setYears] = useState('usage' in equivalent && equivalent.usage ? equivalent.usage.defaultyears : 0)
+  const [years, setYears] = useState(
+    equivalent.usage && typeof equivalent.usage !== 'number' ? equivalent.usage.defaultyears : 0
+  )
 
-  if (!('ecv' in equivalent) || !equivalent.ecv || equivalent.ecv.length === 0) {
+  if (!equivalent.ecv || equivalent.ecv.length === 0) {
     return null
   }
 
   const fabricationTotal = equivalent.ecv.reduce((acc, current) => acc + current.value, 0)
-  const usage = 'usage' in equivalent && equivalent.usage ? years * equivalent.usage.peryear : null
-  const end = 'end' in equivalent && equivalent.end ? equivalent.end : null
+  const usage = equivalent.usage && typeof equivalent.usage !== 'number' ? years * equivalent.usage.peryear : null
+  const end = equivalent.end ? equivalent.end : null
 
   const total = fabricationTotal + (usage || 0) + (end || 0)
   const unit = total > 1 ? 'kg' : 'g'

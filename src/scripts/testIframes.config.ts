@@ -44,7 +44,7 @@ export const checks = [
       await expect(iframe.getByTestId('header-share-button')).toBeInViewport()
       await expect(iframe.getByLabel('Arrivée')).toHaveAttribute(
         'value',
-        "L'Opéra Restaurant Place Jacques Rouché Paris 75009 France",
+        "Palais Garnier Place de l'Opéra Paris 75009 France",
         { timeout: 10000 }
       )
       await iframe.getByLabel('Arrivée').clear()
@@ -92,6 +92,9 @@ export const checks = [
     slug: 'terrabotanica',
     url: 'https://www.terrabotanica.fr/en/acces/',
     skipAutoCheck: true,
+    before: async (page: Page) => {
+      await page.getByRole('button', { name: 'Continue without agreeing' }).click()
+    },
     checkIframe: async (iframe: FrameLocator) => {
       await expect(iframe.getByLabel('Arrivée')).toHaveAttribute(
         'value',
@@ -103,7 +106,7 @@ export const checks = [
       await itineraireTest(
         iframe,
         true,
-        '&modes=avion,tgv,intercites,voiturethermique+1,voiturethermique,voitureelectrique+1,voitureelectrique,autocar,velo,veloelectrique,busthermique,tramway,scooter,moto,rer,ter,buselectrique,trottinette'
+        '&modes=avion,tgv,intercites,voiturethermique+1,voiturethermique,voitureelectrique+1,voitureelectrique,autocar,velo,veloelectrique,busthermique,tramway,scooter,moto,rer,ter,buselectrique,trottinette,busgnv'
       )
     },
   },
@@ -115,7 +118,7 @@ export const checks = [
       await page.getByRole('button', { name: 'Accept all' }).click({ timeout: 60000 })
     },
     check: async (page: Page) => {
-      await detecteurCO2Test(page, 10, '10 kg de CO2e', 1)
+      await detecteurCO2Test(page, 0.006, '6 g de CO2e', 0)
     },
   },
   {
@@ -159,12 +162,14 @@ export const checks = [
     url: 'https://www.gaite-lyrique.net/infos-pratiques#acces',
 
     checkIframe: async (iframe: FrameLocator) => {
+      await iframe.getByTestId('transport-tab-itineraire').click()
       await expect(iframe.getByLabel('Arrivée')).toHaveAttribute(
         'value',
         'La Gaîté lyrique 3 bis Rue Papin Paris 75012 France',
         { timeout: 10000 }
       )
       await iframe.getByLabel('Arrivée').clear({ force: true })
+      await iframe.getByTestId('transport-tab-distance').click()
       await distanceTest(iframe, true)
     },
   },
@@ -194,13 +199,14 @@ export const checks = [
   {
     slug: '2050today',
     skipAutoCheck: true,
+    skipWait: true,
     url: 'https://2050today.org/empreinte-climat/?lang=fr',
-    iframeContent: (page: Page) => page.locator('#iFrameResizer01'),
+    iframeContent: (page: Page) => page.locator('#iFrameResizer01').first(),
     checkIframe: async (iframe: FrameLocator) => {
       await expect(await iframe.getByTestId('input-base-value')).toHaveValue('100')
       await iframe.getByRole('button', { name: 'Ajouter un équivalent' }).click()
-      await iframe.getByRole('button', { name: 'Cas pratiques 0 /' }).click()
-      await iframe.getByLabel('A/R Paris - Berlin en TGV').check()
+      await iframe.getByRole('button', { name: 'Cas pratiques 1 /' }).click()
+      await iframe.getByLabel("Empreinte carbone d'un citoyen français").uncheck()
       await iframe.getByRole('button', { name: 'Revenir au comparateur' }).click()
 
       await comparateurTest(iframe, true, true)

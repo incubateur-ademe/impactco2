@@ -6,7 +6,7 @@ import { useMemo } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import useTrackingContext from 'src/providers/TrackingProvider'
 import { ComputedEquivalent } from 'types/equivalent'
-import { getNameWithoutSuffix } from 'utils/Equivalent/equivalent'
+import { getName } from 'utils/Equivalent/equivalent'
 import formatNumber from 'utils/formatNumber'
 import EquivalentIcon from 'components/base/EquivalentIcon'
 import IframeableLink from 'components/base/IframeableLink'
@@ -48,7 +48,7 @@ const LivraisonEquivalent = ({
       <EquivalentIcon equivalent={equivalent} height={2.5} customTheme={customTheme} />
       <div className={styles.info}>
         <p>
-          {getNameWithoutSuffix(language, equivalent)}
+          {getName(language, equivalent)}
           {extraName ? extraName : ''}
           {transport && <span className={styles.gray}> - {t('car')}</span>}
           {equivalent.slug.includes('douce') && <span className={styles.green}> - {t('foot')}</span>}

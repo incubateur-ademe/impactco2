@@ -1,3 +1,5 @@
+import { Equivalent } from 'types/equivalent'
+
 export const electromenager = [
   {
     id: 28306,
@@ -29,7 +31,6 @@ export const electromenager = [
   },
   {
     id: 28304,
-    subtitle: 'pods',
     synonyms: ['nespresso'],
     slug: 'cafetieredosette',
     category: 6,
@@ -59,7 +60,6 @@ export const electromenager = [
   },
   {
     id: 28303,
-    subtitle: 'Filtre',
     slug: 'cafetierefiltre',
     category: 6,
     ecv: [
@@ -88,7 +88,6 @@ export const electromenager = [
   },
   {
     id: 28305,
-    subtitle: 'Expresso',
     synonyms: ['espresso'],
     slug: 'cafetiereexpresso',
     category: 6,
@@ -118,7 +117,6 @@ export const electromenager = [
   },
   {
     id: 26986,
-    subtitle: 'Électrique',
     slug: 'fourelectrique',
     category: 6,
     ecv: [
@@ -314,4 +312,4 @@ export const electromenager = [
     },
     end: -6.39,
   },
-]
+] satisfies Equivalent[]

@@ -1,3 +1,5 @@
+import { Equivalent } from 'types/equivalent'
+
 export const chauffage = [
   {
     id: 1,
@@ -53,4 +55,4 @@ export const chauffage = [
     category: 8,
     total: 5.699613154471493,
   },
-]
+] satisfies Equivalent[]

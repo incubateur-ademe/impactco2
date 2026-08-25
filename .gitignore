@@ -78,3 +78,5 @@ public/pdf/
 prisma/generated/prisma/
 
 stats.csv
+
+next-env.d.ts

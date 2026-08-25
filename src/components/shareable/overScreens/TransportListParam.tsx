@@ -3,8 +3,9 @@ import { useTranslations } from 'next-intl'
 import { SetStateAction } from 'preact/compat'
 import { Dispatch } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
+import { Equivalent } from 'types/equivalent'
 import { deplacements } from 'data/categories/deplacement'
-import { getNameWithoutSuffix } from 'utils/Equivalent/equivalent'
+import { getName } from 'utils/Equivalent/equivalent'
 import EquivalentIcon from 'components/base/EquivalentIcon'
 import InformationFillIcon from 'components/base/icons/information-fill'
 import CheckboxInput from 'components/form/CheckboxInput'
@@ -14,7 +15,9 @@ import styles from './TransportListParam.module.css'
 const transports = deplacements
   .filter((transport) => !transport.ignore)
   .flatMap((transport) =>
-    transport.withCarpool ? [{ ...transport, slug: `${transport.slug}+1`, carpool: 1 }, transport] : [transport]
+    transport.withCarpool
+      ? ([{ ...transport, slug: `${transport.slug}+1`, carpool: 1 }, transport] as Equivalent[])
+      : [transport]
   )
   .sort((a, b) => a.slug.localeCompare(b.slug))
 
@@ -51,7 +54,7 @@ const TransportListParam = ({ modes, setModes }: { modes: string[]; setModes: Di
               label={
                 <span className={styles.left}>
                   <EquivalentIcon equivalent={transport} height={2.5} />
-                  <span className={styles.name}>{getNameWithoutSuffix(language, transport)}</span>
+                  <span className={styles.name}>{getName(language, transport)}</span>
                 </span>
               }
             />

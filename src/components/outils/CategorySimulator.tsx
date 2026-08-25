@@ -6,7 +6,7 @@ import useParamContext, { Params } from 'src/providers/ParamProvider'
 import useTrackingContext from 'src/providers/TrackingProvider'
 import { ComputedEquivalent } from 'types/equivalent'
 import { TransportSimulateur } from 'types/transport'
-import { getName, getNameWithoutSuffix } from 'utils/Equivalent/equivalent'
+import { getName } from 'utils/Equivalent/equivalent'
 import formatNumber from 'utils/formatNumber'
 import formatUsage from 'utils/formatUsage'
 import EquivalentIcon from 'components/base/EquivalentIcon'
@@ -187,9 +187,7 @@ const CategorySimulator = ({
                     onClick={() => trackOnce('ClickEquivalent')}>
                     <EquivalentIcon equivalent={equivalent} height={3} />
                     <div className={styles.content} data-testid={`category-${equivalent.slug}`}>
-                      <p className={styles.name}>
-                        {equivalent.name || getNameWithoutSuffix(params.language, equivalent)}
-                      </p>
+                      <p className={styles.name}>{equivalent.name || getName(params.language, equivalent)}</p>
                       <div className={styles.data}>
                         {equivalent.value !== 0 && (
                           <div

@@ -1,4 +1,4 @@
-import { ComputedEquivalent, Equivalent } from 'types/equivalent'
+import { ComputedEquivalent, Equivalent, Language } from 'types/equivalent'
 import formatName from 'utils/formatName'
 import values from './values.json'
 
@@ -169,7 +169,7 @@ const carpoolingBasis: Record<string, Record<string, string>> = {
   },
 }
 
-const allValues: Record<string, { fr: string; en: string; es: string }> = {
+const allValues: Record<string, Record<Language, string>> = {
   ...values,
   avion: {
     fr: 'avion',
@@ -179,7 +179,7 @@ const allValues: Record<string, { fr: string; en: string; es: string }> = {
 }
 
 const getValues = (
-  language: string,
+  language: Language,
   equivalent: Pick<Equivalent, 'category' | 'slug' | 'carpool'>
 ): { prefix: string; name: string } => {
   const [ref] = equivalent.slug.split('+')
@@ -189,8 +189,7 @@ const getValues = (
     return { prefix: '', name: '' }
   }
 
-  //@ts-expect-error: expect translation
-  const translation = value[language] as string
+  const translation = value[language]
   if (equivalent.carpool) {
     const carpool = carpooling[language]
     const [prefix, name] = translation.split(';')
@@ -233,13 +232,13 @@ const getValues = (
   }
 }
 
-export const getPrefix = (language: string, equivalent: Pick<Equivalent, 'category' | 'slug'>, value?: number) => {
+export const getPrefix = (language: Language, equivalent: Pick<Equivalent, 'category' | 'slug'>, value?: number) => {
   const { prefix } = getValues(language, equivalent)
   return prefix ? formatName(prefix, value || 1) : ''
 }
 
-export const getNameWithoutSuffix = (
-  language: string,
+const getNameWithoutExtraInfo = (
+  language: Language,
   equivalent: Pick<Equivalent, 'category' | 'slug' | 'carpool'>,
   withPrefix?: boolean,
   value?: number,
@@ -312,7 +311,7 @@ const persons: Record<string, string> = {
   es: 'personas',
 }
 
-const getExtraInfo = (language: string, slug: string) => {
+const getExtraInfo = (language: Language, slug: string) => {
   const infos = livraison[slug]
   if (infos) {
     return ` (${infos[language]})`
@@ -337,14 +336,14 @@ const getExtraInfo = (language: string, slug: string) => {
 }
 
 export const getName = (
-  language: string,
+  language: Language,
   equivalent: Pick<Equivalent, 'category' | 'slug' | 'carpool'>,
   withPrefix?: boolean,
   value?: number,
   lowerCase?: boolean,
   extraInfo?: boolean
 ) => {
-  const name = getNameWithoutSuffix(language, equivalent, withPrefix, value, lowerCase)
+  const name = getNameWithoutExtraInfo(language, equivalent, withPrefix, value, lowerCase)
   return `${name}${extraInfo ? getExtraInfo(language, equivalent.slug) : ''}`
 }
 

@@ -2,6 +2,7 @@
 
 import classNames from 'classnames'
 import { useEffect, useState } from 'react'
+import { Language } from 'types/equivalent'
 import { getName } from 'utils/Equivalent/equivalent'
 import formatNumber from 'utils/formatNumber'
 import { getNumberPrecision } from 'utils/formatNumberPrecision'
@@ -10,7 +11,7 @@ import InformationIcon from 'components/base/icons/information'
 import { getValues } from '../SimpleValue'
 import styles from './Disclaimer.module.css'
 
-const getDisclaimer = (language: string, comparisons: string[], factor: number) => {
+const getDisclaimer = (language: Language, comparisons: string[], factor: number) => {
   const equivalent = comparisons.length === 1 && comparisons[0] !== 'random' ? getValues(comparisons[0], 1) : ''
 
   if (language === 'en') {
@@ -40,13 +41,13 @@ const basis = {
   fr: 'L’ADEME garantit exclusivement',
   en: 'ADEME exclusively guarantees',
   es: 'ADEME garantiza exclusivamente',
-} as Record<string, string>
+} as Record<Language, string>
 
 const ques = {
   fr: 'que ',
   en: 'that ',
   es: 'que ',
-} as Record<string, string>
+} as Record<Language, string>
 
 const Disclaimer = ({
   id,
@@ -57,7 +58,7 @@ const Disclaimer = ({
 }: {
   id: string
   comparisons: string[]
-  language: string
+  language: Language
   baseValue: number
   column?: boolean
 }) => {

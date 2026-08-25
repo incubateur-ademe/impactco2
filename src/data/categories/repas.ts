@@ -1,3 +1,5 @@
+import { Equivalent } from 'types/equivalent'
+
 export const repas = [
   {
     synonyms: ['viande'],
@@ -168,4 +170,4 @@ export const repas = [
       },
     ],
   },
-]
+] satisfies Equivalent[]

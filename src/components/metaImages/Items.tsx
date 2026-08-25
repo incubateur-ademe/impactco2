@@ -1,6 +1,7 @@
+import { Language } from 'types/equivalent'
 import Round from './Round'
 
-const Items = ({ value, comparisons, language }: { value: number; comparisons: string[]; language: string }) => {
+const Items = ({ value, comparisons, language }: { value: number; comparisons: string[]; language: Language }) => {
   return (
     <>
       <div

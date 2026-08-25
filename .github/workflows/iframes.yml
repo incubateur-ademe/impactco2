@@ -4,7 +4,7 @@ permissions:
 name: Check iframes
 on:
   schedule:
-    - cron: '0 4,12,16 * * 1-5'
+    - cron: '0 16 * * 4'
   workflow_dispatch:
 jobs:
   test:
