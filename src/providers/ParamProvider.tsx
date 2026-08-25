@@ -16,23 +16,7 @@ import { Point } from 'hooks/useItineraries'
 import { getRandomEquivalents } from 'components/comparateur/random'
 import useTheme from 'components/layout/UseTheme'
 import { computedEquivalents } from './equivalents'
-
-const usageNumeriqueDefaultValues = {
-  ['email . appareil']: "'smartphone'",
-  ['email . transmission . émetteur . réseau']: "'fixe FR'",
-  ['email . taille']: 0.075,
-  ['email . terminaux . temps écriture']: 3,
-  ['email . destinataires']: 1,
-  ['streaming . durée']: 420,
-  ['streaming . appareil']: "'TV'",
-  ['streaming . transmission . réseau']: "'fixe FR'",
-  ['streaming . qualité']: "'HD'",
-  ['visio . durée']: 180,
-  ['visio . appareil']: "'ordinateur portable'",
-  ['visio . emplacements']: 2,
-  ['visio . transmission . réseau']: "'fixe FR'",
-  ['visio . qualité']: "'SD'",
-}
+import { usageNumeriqueDefaultValues } from './usageNumeriqueDefaultValues'
 
 const completeAddress = (setter: Dispatch<SetStateAction<Point | undefined>>, value?: string) => {
   if (value) {
