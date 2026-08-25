@@ -3,6 +3,7 @@ import { useTranslations } from 'next-intl'
 import { SetStateAction } from 'preact/compat'
 import { Dispatch } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
+import { Equivalent } from 'types/equivalent'
 import { deplacements } from 'data/categories/deplacement'
 import { getNameWithoutSuffix } from 'utils/Equivalent/equivalent'
 import EquivalentIcon from 'components/base/EquivalentIcon'
@@ -14,7 +15,9 @@ import styles from './TransportListParam.module.css'
 const transports = deplacements
   .filter((transport) => !transport.ignore)
   .flatMap((transport) =>
-    transport.withCarpool ? [{ ...transport, slug: `${transport.slug}+1`, carpool: 1 }, transport] : [transport]
+    transport.withCarpool
+      ? ([{ ...transport, slug: `${transport.slug}+1`, carpool: 1 }, transport] as Equivalent[])
+      : [transport]
   )
   .sort((a, b) => a.slug.localeCompare(b.slug))
 

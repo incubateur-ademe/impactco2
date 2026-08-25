@@ -1,3 +1,5 @@
+import { Equivalent } from 'types/equivalent'
+
 export const usageNumeriques = [
   {
     slug: 'email',
@@ -165,4 +167,4 @@ export const usageNumeriques = [
       },
     ],
   },
-]
+] satisfies Equivalent[]

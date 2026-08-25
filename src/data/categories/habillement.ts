@@ -1,3 +1,5 @@
+import { Equivalent } from 'types/equivalent'
+
 export const habillements = [
   {
     id: 27043,
@@ -61,9 +63,7 @@ export const habillements = [
   },
   {
     id: 27044,
-    subtitle: 'En coton',
     slug: 'tshirtencoton',
-
     category: 5,
     ecv: [
       {
@@ -93,9 +93,7 @@ export const habillements = [
   },
   {
     id: 27045,
-    subtitle: 'En polyester',
     slug: 'tshirtenpolyester',
-
     category: 5,
     ecv: [
       {
@@ -124,9 +122,7 @@ export const habillements = [
   },
   {
     id: 27049,
-    subtitle: 'En coton',
     slug: 'sweatencoton',
-
     category: 5,
     ecv: [
       {
@@ -155,9 +151,7 @@ export const habillements = [
   },
   {
     id: 27041,
-    subtitle: 'En coton',
     slug: 'chemiseencoton',
-
     category: 5,
     ecv: [
       {
@@ -187,9 +181,7 @@ export const habillements = [
   },
   {
     id: 27042,
-    subtitle: 'En viscose',
     slug: 'chemiseenviscose',
-
     category: 5,
     ecv: [
       {
@@ -218,9 +210,7 @@ export const habillements = [
   },
   {
     id: 27058,
-    subtitle: 'En cuir',
     slug: 'chaussuresencuir',
-
     category: 5,
     ecv: [
       {
@@ -250,9 +240,7 @@ export const habillements = [
   },
   {
     id: 27059,
-    subtitle: 'En tissu',
     slug: 'chaussuresentissu',
-
     category: 5,
     ecv: [
       {
@@ -281,9 +269,7 @@ export const habillements = [
   },
   {
     id: 27060,
-    subtitle: 'De sport',
     slug: 'chaussuresdesport',
-
     category: 5,
     ecv: [
       {
@@ -312,9 +298,7 @@ export const habillements = [
   },
   {
     id: 27056,
-    subtitle: 'En coton',
     slug: 'robeencoton',
-
     category: 5,
     ecv: [
       {
@@ -343,9 +327,7 @@ export const habillements = [
   },
   {
     id: 27055,
-    subtitle: 'En polyester',
     slug: 'robeenpolyester',
-
     category: 5,
     ecv: [
       {
@@ -374,9 +356,7 @@ export const habillements = [
   },
   {
     id: 27057,
-    subtitle: 'En viscose',
     slug: 'robeenviscose',
-
     category: 5,
     ecv: [
       {
@@ -405,9 +385,7 @@ export const habillements = [
   },
   {
     id: 27050,
-    subtitle: 'En laine',
     slug: 'pullenlaine',
-
     category: 5,
     ecv: [
       {
@@ -437,9 +415,7 @@ export const habillements = [
   },
   {
     id: 27047,
-    subtitle: 'En acrylique',
     slug: 'pullenacrylique',
-
     category: 5,
     ecv: [
       {
@@ -468,9 +444,7 @@ export const habillements = [
   },
   {
     id: 27051,
-    subtitle: 'En coton recyclé',
     slug: 'pullencotonrecycle',
-
     category: 5,
     ecv: [
       {
@@ -588,4 +562,4 @@ export const habillements = [
     end: 0.881444738170221,
     total: 24,
   },
-]
+] satisfies Equivalent[]

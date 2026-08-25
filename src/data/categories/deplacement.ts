@@ -1,3 +1,5 @@
+import { Equivalent } from 'types/equivalent'
+
 export const deplacements = [
   {
     id: 1,
@@ -1139,4 +1141,4 @@ export const deplacements = [
     ],
     default: false,
   },
-]
+] satisfies Equivalent[]

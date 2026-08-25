@@ -1,3 +1,5 @@
+import { Equivalent } from 'types/equivalent'
+
 export const fruitsEtLegumes = [
   {
     slug: 'fraise',
@@ -2023,4 +2025,4 @@ export const fruitsEtLegumes = [
     ],
     months: [5, 6, 7, 8],
   },
-]
+] satisfies Equivalent[]

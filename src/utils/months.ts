@@ -49,8 +49,8 @@ const getFullYear = (language: string) => {
   return "toute l'année"
 }
 
-export const getMonthsLabel = (months: number[], language: string) => {
-  const sortedMonths = months.sort((a, b) => a - b)
+export const getMonthsLabel = (months: number[] | undefined, language: string) => {
+  const sortedMonths = (months || []).sort((a, b) => a - b)
   const starts = sortedMonths.filter(
     (month) => !(month === 0 ? sortedMonths.includes(11) : sortedMonths.includes(month - 1))
   )
