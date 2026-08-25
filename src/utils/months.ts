@@ -1,3 +1,5 @@
+import { Language } from 'types/equivalent'
+
 export const slugs = [
   'janvier',
   'fevrier',
@@ -20,7 +22,7 @@ export const monthsOptions = slugs.map((slug, index) => ({
   label: getMonthLabel(index),
 }))
 
-const getSingleMonth = (month: number, language: string) => {
+const getSingleMonth = (month: number, language: Language) => {
   if (language === 'en') {
     return `in ${new Date(2000, month).toLocaleString('en', { month: 'long' })}`
   }
@@ -29,7 +31,7 @@ const getSingleMonth = (month: number, language: string) => {
   }
   return `en ${new Date(2000, month).toLocaleString('fr', { month: 'long' })}`
 }
-const getBothMonths = (start: number, end: number, language: string) => {
+const getBothMonths = (start: number, end: number, language: Language) => {
   if (language === 'en') {
     return `from ${new Date(2000, start).toLocaleString('en', { month: 'long' })} to ${new Date(2000, end).toLocaleString('en', { month: 'long' })}`
   }
@@ -39,7 +41,7 @@ const getBothMonths = (start: number, end: number, language: string) => {
   return `de ${new Date(2000, start).toLocaleString('fr', { month: 'long' })} à ${new Date(2000, end).toLocaleString('fr', { month: 'long' })}`
 }
 
-const getFullYear = (language: string) => {
+const getFullYear = (language: Language) => {
   if (language === 'en') {
     return 'all year long'
   }
@@ -49,7 +51,7 @@ const getFullYear = (language: string) => {
   return "toute l'année"
 }
 
-export const getMonthsLabel = (months: number[] | undefined, language: string) => {
+export const getMonthsLabel = (months: number[] | undefined, language: Language) => {
   const sortedMonths = (months || []).sort((a, b) => a - b)
   const starts = sortedMonths.filter(
     (month) => !(month === 0 ? sortedMonths.includes(11) : sortedMonths.includes(month - 1))

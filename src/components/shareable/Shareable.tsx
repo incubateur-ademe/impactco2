@@ -7,7 +7,7 @@ import { ReactNode, useCallback, useEffect, useMemo, useRef, useState } from 're
 import useParamContext from 'src/providers/ParamProvider'
 import { TrackingProvider } from 'src/providers/TrackingProvider'
 import TranslationProvider from 'src/providers/TranslationProvider'
-import { SiteLanguage } from 'types/languages'
+import { Language } from 'types/equivalent'
 import { OverScreenInfo } from 'types/overscreen'
 import { track } from 'utils/matomo'
 import useScreenshot from 'hooks/useScreenshot'
@@ -226,7 +226,7 @@ const Shareable = ({
                     value={language}
                     onChange={(event) => {
                       track(tracking, 'Language', event.target.value)
-                      setLanguage(event.target.value as SiteLanguage)
+                      setLanguage(event.target.value as Language)
                     }}>
                     <option value='fr' lang='fr'>
                       FR

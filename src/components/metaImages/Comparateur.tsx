@@ -1,3 +1,4 @@
+import { Language } from 'types/equivalent'
 import EquivalentItems from './EquivalentItems'
 import Items from './Items'
 import { Logos } from './Logos'
@@ -11,7 +12,7 @@ const Comparateur = ({
   value: number
   comparisons: string[]
   equivalent: string | null
-  language: string
+  language: Language
 }) => {
   const content = () => {
     if (equivalent) {

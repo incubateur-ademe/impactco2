@@ -2,12 +2,12 @@
 import { useTranslations } from 'next-intl'
 import useParamContext from 'src/providers/ParamProvider'
 import { Category } from 'types/category'
-import { ComputedEquivalent } from 'types/equivalent'
+import { ComputedEquivalent, Language } from 'types/equivalent'
 import { getMonthsLabel } from 'utils/months'
 import EquivalentCardContent from '../EquivalentCardContent'
 import styles from './EquivalentSimulator.module.css'
 
-const getCarpool = (language: string, carpool: number) => {
+const getCarpool = (language: Language, carpool: number) => {
   if (language === 'en') {
     return `${carpool + 1} people`
   }

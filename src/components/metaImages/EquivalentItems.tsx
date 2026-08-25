@@ -1,4 +1,4 @@
-import { SimpleEquivalent } from 'types/equivalent'
+import { Language, SimpleEquivalent } from 'types/equivalent'
 import values from 'utils/Equivalent/values.json'
 import Round from './Round'
 
@@ -13,7 +13,7 @@ const EquivalentItems = ({
   value: number
   comparisons: string[]
   equivalent: string
-  language: string
+  language: Language
 }) => {
   const equivalentValue = equivalents[equivalent]
   const baseValue = (value * equivalentValue.value) / (1000 * (equivalentValue.percentage ? 100 : 1))

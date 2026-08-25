@@ -1,8 +1,9 @@
+import { Language } from 'types/equivalent'
 import { getNumberPrecision } from 'utils/formatNumberPrecision'
 import LocalNumber from './LocalNumber'
 import styles from './CO2Quantity.module.css'
 
-export const getUnit = (value: number, unit: string, language: string) => {
+export const getUnit = (value: number, unit: string, language: Language) => {
   if (unit === 'mt') {
     if (language === 'en') {
       return value >= 2 ? 'Millions t' : 'Million t'
@@ -27,7 +28,7 @@ const CO2Quantity = ({
   className?: string
   valueClassName?: string
   secondary?: boolean
-  language: string
+  language: Language
   ['data-testid']?: string
 }) => {
   const { value, unit } = getNumberPrecision(quantity)

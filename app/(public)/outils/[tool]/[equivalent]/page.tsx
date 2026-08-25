@@ -1,5 +1,6 @@
 import { Metadata, ResolvingMetadata } from 'next'
 import { notFound } from 'next/navigation'
+import { Language } from 'types/equivalent'
 import { categories } from 'data/categories'
 import Equivalent from 'components/outils/equivalents/EquivalentPage'
 import { equivalentsSimulators } from 'components/outils/equivalents/simulators/equivalentsSimulators'
@@ -34,7 +35,7 @@ export async function generateMetadata(props: Props, parent: ResolvingMetadata):
     return parent as Metadata
   }
 
-  const language = (searchParams.language as string) || 'fr'
+  const language = (searchParams.language as Language) || 'fr'
   return {
     title: `${prefixes[language]} ${getName(language, equivalent)} | Impact CO₂`,
     description:
