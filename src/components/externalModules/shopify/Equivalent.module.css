@@ -1,5 +1,6 @@
 .animatedContainer,
 .container {
+  margin: auto !important;
   position: relative;
   font-size: initial !important;
   border-radius: 8px !important;
