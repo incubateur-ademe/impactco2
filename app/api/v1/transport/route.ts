@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { Equivalent } from 'types/equivalent'
+import { Equivalent, Language } from 'types/equivalent'
 import { z } from 'zod'
 import { deplacements } from 'data/categories/deplacement'
 import { getName } from 'utils/Equivalent/equivalent'
@@ -26,7 +26,7 @@ export const computeTransportEmission = (
   ignoreRadiativeForcing?: boolean,
   filter?: boolean,
   includeConstruction?: boolean,
-  language?: string
+  language?: Language
 ) =>
   deplacements
     .filter((transportation) => filter || filterByDistance(transportation.display, km))

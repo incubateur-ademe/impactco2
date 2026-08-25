@@ -1,4 +1,4 @@
-import { SimpleEquivalent } from 'types/equivalent'
+import { Language, SimpleEquivalent } from 'types/equivalent'
 import { getName } from 'utils/Equivalent/equivalent'
 import { getEquivalentIcon } from 'utils/Equivalent/icons'
 import values from 'utils/Equivalent/values.json'
@@ -25,7 +25,7 @@ const Round = ({
   value?: number
   comparison?: string
   main?: boolean
-  language: string
+  language: Language
 }) => {
   const { equivalent, slug, carpool } = getEquivalent(comparison)
   const comparisonValue = value ? value / (equivalent ? equivalent.value / (equivalent.percentage ? 100 : 1) : 1000) : 0
