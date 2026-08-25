@@ -12,12 +12,12 @@ import { OverScreenInfo } from 'types/overscreen'
 import { track } from 'utils/matomo'
 import useScreenshot from 'hooks/useScreenshot'
 import GhostButton from 'components/base/GhostButton'
-import IframeableLink from 'components/base/IframeableLink'
 import Logos from 'components/base/Logo/Logos'
 import CloseIcon from 'components/base/icons/close'
 import LanguageIcon from 'components/base/icons/language'
 import HiddenLabel from 'components/form/HiddenLabel'
 import Select from 'components/form/Select'
+import Link from '../base/buttons/Link'
 import UserFeedback from '../nps/UserFeedback'
 import Actions from './Actions'
 import Feature from './Feature'
@@ -211,8 +211,7 @@ const Shareable = ({
             )}
             {language !== 'fr' && (
               <p className={styles.disclaimer}>
-                {t('disclaimer')}{' '}
-                <IframeableLink href='https://base-empreinte.ademe.fr/donnees/jeu-donnees'>ADEME</IframeableLink>
+                {t('disclaimer')} <Link href='https://base-empreinte.ademe.fr/donnees/jeu-donnees'>ADEME</Link>
               </p>
             )}
             <div className={styles.logos}>

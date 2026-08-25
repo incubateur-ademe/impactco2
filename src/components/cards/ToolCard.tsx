@@ -4,7 +4,7 @@ import classNames from 'classnames'
 import Image from 'next/image'
 import { ReactNode, useMemo } from 'react'
 import { track } from 'utils/matomo'
-import IframeableLink from 'components/base/IframeableLink'
+import Link from 'components/base/buttons/Link'
 import FullArrowRightIcon from 'components/base/icons/full-arrow-right'
 import styles from './ToolCard.module.css'
 
@@ -49,7 +49,7 @@ const ToolCard = ({ slug, title, description, linkLabel, horizontal, link, image
       {slug === populaire && (
         <div className={classNames(styles.paleTag, { [styles.horizontalTag]: horizontal })}>Le + Populaire</div>
       )}
-      <IframeableLink
+      <Link
         href={link || `/outils/${slug}`}
         target={link && (link.startsWith('http://') || link.startsWith('https://')) ? '_blank' : undefined}
         rel={link && (link.startsWith('http://') || link.startsWith('https://')) ? 'noreferrer noopener' : undefined}
@@ -70,7 +70,7 @@ const ToolCard = ({ slug, title, description, linkLabel, horizontal, link, image
             <FullArrowRightIcon />
           </div>
         </div>
-      </IframeableLink>
+      </Link>
     </li>
   )
 }

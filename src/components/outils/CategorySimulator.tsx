@@ -10,8 +10,8 @@ import { getName } from 'utils/Equivalent/equivalent'
 import formatNumber from 'utils/formatNumber'
 import formatUsage from 'utils/formatUsage'
 import EquivalentIcon from 'components/base/EquivalentIcon'
-import IframeableLink from 'components/base/IframeableLink'
 import LocalNumber from 'components/base/LocalNumber'
+import Link from 'components/base/buttons/Link'
 import HelpIcon from 'components/base/icons/help'
 import CategoryDisplayAll from './CategoryDisplayAll'
 import LivraisonType from './livraison/LivraisonType'
@@ -177,7 +177,7 @@ const CategorySimulator = ({
                 <li
                   key={equivalent.carpool ? `${equivalent.slug}-carpool` : equivalent.slug}
                   className={classNames(styles.equivalent, { [styles.noFirst]: withSimulator })}>
-                  <IframeableLink
+                  <Link
                     ref={index === 0 ? firstElementRef : undefined}
                     data-testid='category-link'
                     href={equivalent.link}
@@ -214,7 +214,7 @@ const CategorySimulator = ({
                       </div>
                       {legends && <p className='ico2-hidden'>{barExplanation}</p>}
                     </div>
-                  </IframeableLink>
+                  </Link>
                   {(equivalent.slug.startsWith('voiture') || equivalent.slug.startsWith('moto')) && type && (
                     <Carpool carpoolValue={equivalent.carpool} type={type} equivalent={equivalent} />
                   )}

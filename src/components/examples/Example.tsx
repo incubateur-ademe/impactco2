@@ -2,7 +2,7 @@
 
 import { Example as ExampleType } from 'types/example'
 import { track } from 'utils/matomo'
-import IframeableLink from 'components/base/IframeableLink'
+import Link from 'components/base/buttons/Link'
 import Tag from './Tag'
 import styles from './Example.module.css'
 
@@ -23,7 +23,7 @@ const Example = ({ example, withTags }: { example: ExampleType; withTags?: boole
           </ul>
         </div>
       ) : (
-        <IframeableLink
+        <Link
           href={example.links[0].href}
           target='_blank'
           rel='noopener noreferrer'
@@ -31,7 +31,7 @@ const Example = ({ example, withTags }: { example: ExampleType; withTags?: boole
           title={`Lien externe : Aller voir l'exemple d'utilisation sur ${example.name}`}
           onClick={() => track('Exemple', example.name, example.links[0].href)}>
           {image}
-        </IframeableLink>
+        </Link>
       )}
     </li>
   )

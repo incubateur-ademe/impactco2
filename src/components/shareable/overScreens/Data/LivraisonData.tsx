@@ -1,7 +1,7 @@
 import useParamContext from 'src/providers/ParamProvider'
 import { LivraisonType } from 'components/outils/livraison/Type'
 import Dropdown from 'components/base/Dropdown'
-import IframeableLink from 'src/components/base/IframeableLink'
+import Link from 'src/components/base/buttons/Link'
 import LivraisonEquivalents from './LivraisonEquivalents'
 import styles from './Data.module.css'
 
@@ -11,12 +11,11 @@ const FRLivraisonData = () => {
       <div className={styles.content}>
         <p>
           Nos calculs et hypothèses s’appuient sur les données{' '}
-          <IframeableLink href='https://librairie.ademe.fr/mobilite-et-transports/6261-commerce-en-ligne-impacts-environnementaux-de-la-logistique-des-transports-et-des-deplacements.html'>
+          <Link href='https://librairie.ademe.fr/mobilite-et-transports/6261-commerce-en-ligne-impacts-environnementaux-de-la-logistique-des-transports-et-des-deplacements.html'>
             de l’étude de l’ADEME
-          </IframeableLink>{' '}
+          </Link>{' '}
           sur les impacts environnementaux du commerce en ligne . Nous utilisons les facteurs d’émission issus de la{' '}
-          <IframeableLink href='https://base-empreinte.ademe.fr/donnees/jeu-donnees'>Base Empreinte</IframeableLink>{' '}
-          dans nos analyses.
+          <Link href='https://base-empreinte.ademe.fr/donnees/jeu-donnees'>Base Empreinte</Link> dans nos analyses.
         </p>
       </div>
       <h2 className={styles.title}>Détail des scénarios par objet</h2>
@@ -187,12 +186,11 @@ const ESLivraisonData = () => {
       <div className={styles.content}>
         <p>
           Nuestros cálculos y suposiciones se basan en los datos de{' '}
-          <IframeableLink href='https://librairie.ademe.fr/mobilite-et-transports/6261-commerce-en-ligne-impacts-environnementaux-de-la-logistique-des-transports-et-des-deplacements.html'>
+          <Link href='https://librairie.ademe.fr/mobilite-et-transports/6261-commerce-en-ligne-impacts-environnementaux-de-la-logistique-des-transports-et-des-deplacements.html'>
             el estudio de ADEME
-          </IframeableLink>{' '}
+          </Link>{' '}
           sobre los impactos ambientales del comercio en línea . Utilizamos los factores de emisión de la{' '}
-          <IframeableLink href='https://base-empreinte.ademe.fr/donnees/jeu-donnees'>Base Empreinte</IframeableLink> en
-          nuestros análisis.
+          <Link href='https://base-empreinte.ademe.fr/donnees/jeu-donnees'>Base Empreinte</Link> en nuestros análisis.
         </p>
       </div>
       <h2 className={styles.title}>Detalle de los escenarios por objeto</h2>
@@ -365,12 +363,11 @@ const ENLivraisonData = () => {
       <div className={styles.content}>
         <p>
           Our calculations and assumptions are based on data from{' '}
-          <IframeableLink href='https://librairie.ademe.fr/mobilite-et-transports/6261-commerce-en-ligne-impacts-environnementaux-de-la-logistique-des-transports-et-des-deplacements.html'>
+          <Link href='https://librairie.ademe.fr/mobilite-et-transports/6261-commerce-en-ligne-impacts-environnementaux-de-la-logistique-des-transports-et-des-deplacements.html'>
             the ADEME study
-          </IframeableLink>{' '}
+          </Link>{' '}
           on the environmental impacts of online commerce . We use emission factors from the{' '}
-          <IframeableLink href='https://base-empreinte.ademe.fr/donnees/jeu-donnees'>Base Empreinte</IframeableLink> in
-          our analyses.
+          <Link href='https://base-empreinte.ademe.fr/donnees/jeu-donnees'>Base Empreinte</Link> in our analyses.
         </p>
       </div>
       <h2 className={styles.title}>Scenario details by object</h2>
