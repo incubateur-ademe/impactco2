@@ -31,7 +31,7 @@ export const trackAPIRequest = async (request: NextRequest, api: string) => {
       }
     }
 
-    const param = `e_c=API&e_a=${name}&e_n=${api}`
+    const param = `e_c=ICO2_API&e_a=${name}&e_n=${api}`
 
     await fetch(
       `${process.env.NEXT_PUBLIC_MATOMO_SITE_URL}/matomo.php?idsite=${process.env.NEXT_PUBLIC_MATOMO_SITE_ID}&rec=1&${param}`,
