@@ -48,7 +48,7 @@ function updateDataFile(category: string) {
         break
       case 'voiture':
         extractVoitureValues()
-        const backupDeplacementContent = `export const deplacements = ${JSON.stringify(deplacements, null, 2)}`
+        const backupDeplacementContent = `import { Equivalent } from 'types/equivalent'\nexport const deplacements = ${JSON.stringify(deplacements, null, 2)} as Equivalent[]`
         const backupDeplacementPath = path.join(__dirname, '../data/categories/deplacement.ts')
         fs.writeFileSync(backupDeplacementPath, backupDeplacementContent, 'utf8')
         console.log(`\nValeurs sauvegardées dans: ${backupDeplacementPath}`)
@@ -59,7 +59,7 @@ function updateDataFile(category: string) {
         break
       case 'transport':
         extractTransportValues()
-        const backupDeplacementContent2 = `export const deplacements = ${JSON.stringify(deplacements, null, 2)}`
+        const backupDeplacementContent2 = `import { Equivalent } from 'types/equivalent'\nexport const deplacements = ${JSON.stringify(deplacements, null, 2)} as Equivalent[]`
         const backupDeplacementPath2 = path.join(__dirname, '../data/categories/deplacement.ts')
         fs.writeFileSync(backupDeplacementPath2, backupDeplacementContent2, 'utf8')
         console.log(`\nValeurs sauvegardées dans: ${backupDeplacementPath2}`)

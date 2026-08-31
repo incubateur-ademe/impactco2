@@ -1,5 +1,3 @@
-import { Equivalent } from 'types/equivalent'
-
 export const casPratiques = [
   {
     slug: 'avion-pny',
@@ -19,7 +17,7 @@ export const casPratiques = [
   {
     slug: 'voiture-lille-nimes',
     category: 13,
-    total: 267.7209218160006,
+    total: 428.35681654772566,
   },
   {
     unit: 'an',
@@ -80,7 +78,7 @@ export const casPratiques = [
     synonyms: ['voyage', 'parcourir'],
     slug: 'terre-voiture',
     category: 13,
-    total: 7570.825010920866,
+    total: 12113.391040685385,
     sources: [
       {
         label: 'Base Empreinte ADEME',
@@ -393,4 +391,4 @@ export const casPratiques = [
       },
     ],
   },
-] satisfies Equivalent[]
+]
