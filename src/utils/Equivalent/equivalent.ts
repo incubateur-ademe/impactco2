@@ -329,7 +329,7 @@ const getExtraInfo = (language: Language, slug: string) => {
 
   if (slug.includes('van') || slug.includes('campingcar')) {
     const [info, carpool] = slug.split('+')
-    return carpool ? ` (${Number.parseInt(carpool) + 1} ${persons[language]})` : ` (1 ${person[language]})`
+    return carpool ? ` (${Number.parseInt(carpool) + 1} ${persons[language]})` : ` (1 ${persons[language]})`
   }
 
   if (slug.startsWith('moto')) {

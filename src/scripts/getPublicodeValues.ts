@@ -64,7 +64,7 @@ function updateDataFile(category: string) {
       }
       case 'voiture': {
         extractVoitureValues()
-        const backupDeplacementContent = `import { Equivalent } from 'types/equivalent'\nexport const deplacements = ${JSON.stringify(deplacements, null, 2)} satisfies Equivalent[]`
+        const backupDeplacementContent = `import { Equivalent } from 'types/equivalent'\nexport const deplacements = ${JSON.stringify(deplacements, null, 2)} as Equivalent[]`
         const backupDeplacementPath = path.join(__dirname, '../data/categories/deplacement.ts')
         fs.writeFileSync(backupDeplacementPath, backupDeplacementContent, 'utf8')
         console.log(`\nValeurs sauvegardées dans: ${backupDeplacementPath}`)
@@ -76,10 +76,10 @@ function updateDataFile(category: string) {
       }
       case 'transport':
         extractTransportValues()
-        const backupContent = `import { Equivalent } from 'types/equivalent'\nexport const deplacements = ${JSON.stringify(deplacements, null, 2)} satisfies Equivalent[]`
-        const backupPath = path.join(__dirname, '../data/categories/deplacement.ts')
-        fs.writeFileSync(backupPath, backupContent, 'utf8')
-        console.log(`\nValeurs sauvegardées dans: ${backupPath}`)
+        const backupDeplacementContent2 = `import { Equivalent } from 'types/equivalent'\nexport const deplacements = ${JSON.stringify(deplacements, null, 2)} as Equivalent[]`
+        const backupDeplacementPath2 = path.join(__dirname, '../data/categories/deplacement.ts')
+        fs.writeFileSync(backupDeplacementPath2, backupDeplacementContent2, 'utf8')
+        console.log(`\nValeurs sauvegardées dans: ${backupDeplacementPath2}`)
         break
     }
   } catch (error) {
