@@ -21,7 +21,7 @@ const SkiPage = async () => {
 
   return (
     <>
-      <Notion title={title} recordMap={recordMap} />
+      <Notion title={title} recordMap={recordMap} noTitle />
       <Suggestion fromLabel={title} simulatorName='de ce contenu' />
     </>
   )

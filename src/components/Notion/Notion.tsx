@@ -22,18 +22,20 @@ const Notion = ({
   description,
   recordMap,
   previous,
+  noTitle,
 }: {
   title: string
   description?: string
   recordMap: ExtendedRecordMap | undefined
   previous?: { link: string; label: string }
+  noTitle?: boolean
 }) => {
   const ref = useRef<HTMLDivElement>(null)
   useEffect(() => {
     if (ref.current) {
-      improveAccessibility(ref.current)
+      improveAccessibility(ref.current, noTitle)
     }
-  }, [ref])
+  }, [ref, noTitle])
 
   return (
     <>
