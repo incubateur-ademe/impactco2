@@ -7,7 +7,7 @@ import { ReactNode, useEffect, useRef } from 'react'
 import { Collection } from 'react-notion-x/build/third-party/collection'
 import Breadcrumbs from 'components/breadcrumbs/Breadcrumbs'
 import Block from 'components/layout/Block'
-import IframeableLink from '../base/IframeableLink'
+import Link from '../base/buttons/Link'
 import NotionErrorBoundary from './NotionErrorBoundary'
 import { improveAccessibility } from './utils'
 import styles from './Notion.module.css'
@@ -22,18 +22,20 @@ const Notion = ({
   description,
   recordMap,
   previous,
+  noTitle,
 }: {
   title: string
   description?: string
   recordMap: ExtendedRecordMap | undefined
   previous?: { link: string; label: string }
+  noTitle?: boolean
 }) => {
   const ref = useRef<HTMLDivElement>(null)
   useEffect(() => {
     if (ref.current) {
-      improveAccessibility(ref.current)
+      improveAccessibility(ref.current, noTitle)
     }
-  }, [ref])
+  }, [ref, noTitle])
 
   return (
     <>
@@ -67,9 +69,9 @@ const Notion = ({
                     }
                     return (
                       // @ts-expect-error: notion type error
-                      <IframeableLink href={href} {...props} target='_blank' rel='noopener noreferrer'>
+                      <Link href={href} {...props} target='_blank' rel='noopener noreferrer'>
                         {children}
-                      </IframeableLink>
+                      </Link>
                     )
                   },
                   Collection,

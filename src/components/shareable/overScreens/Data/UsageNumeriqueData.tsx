@@ -1,6 +1,6 @@
 import useParamContext from 'src/providers/ParamProvider'
 import NewTabIcon from 'components/base/NewTabIcon'
-import IframeableLink from 'src/components/base/IframeableLink'
+import Link from 'src/components/base/buttons/Link'
 import styles from './Data.module.css'
 
 const FRUsageNumeriqueData = () => {
@@ -33,13 +33,10 @@ const FRUsageNumeriqueData = () => {
       <div className={styles.content}>
         <p>
           Pour plus de détails, consultez{' '}
-          <IframeableLink
-            href='/doc/usage-numerique/acv'
-            title='Lien externe : documentation détaillée'
-            target='_blank'>
+          <Link href='/doc/usage-numerique/acv' title='Lien externe : documentation détaillée' target='_blank'>
             la documentation détaillée
             <NewTabIcon />
-          </IframeableLink>
+          </Link>
         </p>
       </div>
     </>
@@ -77,12 +74,9 @@ const ESUsageNumeriqueData = () => {
       <div className={styles.content}>
         <p>
           Para más detalles, consulte{' '}
-          <IframeableLink
-            href='/doc/usage-numerique/acv'
-            title='Lien externe : documentation détaillée'
-            target='_blank'>
+          <Link href='/doc/usage-numerique/acv' title='Lien externe : documentation détaillée' target='_blank'>
             la documentación detallada <NewTabIcon />
-          </IframeableLink>
+          </Link>
         </p>
       </div>
     </>
@@ -119,13 +113,10 @@ const ENUsageNumeriqueData = () => {
       <div className={styles.content}>
         <p>
           For more details, see{' '}
-          <IframeableLink
-            href='/doc/usage-numerique/acv'
-            title='Lien externe : documentation détaillée'
-            target='_blank'>
+          <Link href='/doc/usage-numerique/acv' title='Lien externe : documentation détaillée' target='_blank'>
             the detailed documentation
             <NewTabIcon />
-          </IframeableLink>
+          </Link>
         </p>
       </div>
     </>

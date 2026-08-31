@@ -3,8 +3,8 @@
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import { track } from 'utils/matomo'
-import IframeableLink from './IframeableLink'
 import NewTabIcon from './NewTabIcon'
+import Link from './buttons/Link'
 import styles from './Resource.module.css'
 
 const Resource = ({
@@ -24,7 +24,7 @@ const Resource = ({
 }) => {
   const t = useTranslations('ressources')
   return (
-    <IframeableLink
+    <Link
       className={styles.linkContainer}
       href={href}
       target='_blank'
@@ -50,7 +50,7 @@ const Resource = ({
           </p>
         )}
       </div>
-    </IframeableLink>
+    </Link>
   )
 }
 

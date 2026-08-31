@@ -10,12 +10,12 @@ import { getNumberPrecision } from 'utils/formatNumberPrecision'
 import { metaTitles } from 'utils/meta'
 import { getUnit } from 'components/base/CO2Quantity'
 import EquivalentIcon from 'components/base/EquivalentIcon'
-import IframeableLink from 'components/base/IframeableLink'
 import LocalNumber from 'components/base/LocalNumber'
 import CloseThickIcon from 'components/base/icons/close-thick'
 import LinkIcon from 'components/base/icons/link'
 import Tiles from 'components/comparateur/Tiles'
 import NumberInput from 'components/form/NumberInput'
+import Link from 'src/components/base/buttons/Link'
 import simulatorStyles from '../Simulator.module.css'
 import styles from './ComparateurSimulator.module.css'
 
@@ -91,7 +91,7 @@ const ComparateurSimulator = () => {
         )}
         {comparedEquivalent && (
           <>
-            <IframeableLink
+            <Link
               href={comparedEquivalent.link}
               className={styles.equivalent}
               target='_blank'
@@ -104,15 +104,15 @@ const ComparateurSimulator = () => {
                 alt={getName(language, comparedEquivalent, true, baseValue)}
               />
               <LinkIcon />
-            </IframeableLink>
-            <IframeableLink
+            </Link>
+            <Link
               target='_blank'
               rel='noopener noreferrer'
               href={comparedEquivalent.link}
               className={styles.equivalentLink}>
               {t('detail')}
               <LinkIcon />
-            </IframeableLink>
+            </Link>
           </>
         )}
       </div>

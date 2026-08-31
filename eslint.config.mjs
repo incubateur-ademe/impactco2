@@ -47,6 +47,7 @@ const eslintConfig = [
       'playwright.config.js',
       'public/**',
       'integrabook/**',
+      'prisma/generated/**',
     ],
   },
 ]

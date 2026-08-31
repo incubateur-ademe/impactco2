@@ -1,8 +1,8 @@
 import { RulePage } from '@publicodes/react-ui'
 import { Children, ReactNode } from 'react'
 import useUsageNumeriqueContext from 'src/providers/UsageNumeriqueProvider'
-import IframeableLink from '../IframeableLink'
 import Markdown from '../Markdown'
+import Link from '../buttons/Link'
 import styles from './Documentation.module.css'
 
 export default function DocumentationUsageNumerique({ slug }: { slug: string }) {
@@ -27,9 +27,9 @@ export default function DocumentationUsageNumerique({ slug }: { slug: string }) 
             return null
           },
           Link: ({ to, children }) => (
-            <IframeableLink href={to || '/'} prefetch={false}>
+            <Link href={to || '/'} prefetch={false}>
               {children}
-            </IframeableLink>
+            </Link>
           ),
           Text: ({ children }) => <Markdown>{children}</Markdown>,
         }}

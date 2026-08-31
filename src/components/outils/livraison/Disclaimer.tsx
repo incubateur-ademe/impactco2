@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import IframeableLink from 'components/base/IframeableLink'
+import Link from 'src/components/base/buttons/Link'
 import styles from './Disclaimer.module.css'
 
 const weights: Record<string, string> = {
@@ -26,9 +26,9 @@ const Disclaimer = ({
         {animated ? (
           <div>
             <p>Scénarios moyens, basés sur la livraison d’un colis de 1 kg emballé dans un carton de 468 g.</p>
-            <IframeableLink className={styles.link} href='/outils/livraison'>
+            <Link className={styles.link} href='/outils/livraison'>
               Accéder au simulateur Impact Livraison{' '}
-            </IframeableLink>
+            </Link>
           </div>
         ) : (
           <div>
