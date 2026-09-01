@@ -31,11 +31,44 @@ const Notion = ({
   noTitle?: boolean
 }) => {
   const ref = useRef<HTMLDivElement>(null)
+
   useEffect(() => {
-    if (ref.current) {
-      improveAccessibility(ref.current, noTitle)
+    const container = ref.current
+
+    if (!container) {
+      return
     }
-  }, [ref, noTitle])
+
+    const applyAccessibility = () => {
+      improveAccessibility(container, noTitle)
+    }
+
+    applyAccessibility()
+
+    const observeConfig: MutationObserverInit = {
+      childList: true,
+      subtree: true,
+    }
+
+    let disposed = false
+    const observer = new MutationObserver(() => {
+      if (disposed) {
+        return
+      }
+      observer.disconnect()
+      applyAccessibility()
+      if (!disposed) {
+        observer.observe(container, observeConfig)
+      }
+    })
+
+    observer.observe(container, observeConfig)
+
+    return () => {
+      disposed = true
+      observer.disconnect()
+    }
+  }, [recordMap, noTitle])
 
   return (
     <>
