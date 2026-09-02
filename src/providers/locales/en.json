@@ -377,6 +377,8 @@
       "max": "equivalents already selected",
       "equivalents-group": "Equivalents in this category",
       "subCategory": {
+        "van": "Number of people in the van",
+        "campingcar": "Number of people in the camper van",
         "1person": "1 person in the car",
         "2persons": "2 people in the car",
         "3persons": "3 people in the car",

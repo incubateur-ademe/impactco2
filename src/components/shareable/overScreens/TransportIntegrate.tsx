@@ -107,7 +107,7 @@ const TransportIntegrate = () => {
       modes.length !==
         deplacements
           .filter((deplacement) => !deplacement.ignore)
-          .reduce((acc, current) => acc + (current.withCarpool ? 2 : 1), 0)
+          .reduce((acc, current) => acc + (current.withCarpool && !current.onlyCarpool ? 2 : 1), 0)
     ) {
       result += `&modes=${modes.join(',')}`
     }
