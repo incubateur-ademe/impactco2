@@ -39,6 +39,9 @@
       "hooks/*": [
         "./src/hooks/*"
       ],
+      "providers/*": [
+        "./src/providers/*"
+      ],
       "@prisma/*": [
         "./prisma/generated/prisma/*"
       ]

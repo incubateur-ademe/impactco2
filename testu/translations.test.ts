@@ -1,4 +1,3 @@
-import { expect } from '@jest/globals'
 import en from '../src/providers/locales/en.json'
 import es from '../src/providers/locales/es.json'
 import fr from '../src/providers/locales/fr.json'
