@@ -1,5 +1,5 @@
-import classNames from 'node_modules/classnames'
-import useParamContext from 'src/providers/ParamProvider'
+import classNames from 'classnames'
+import useParamContext from 'providers/ParamProvider'
 import { Equivalent } from 'types/equivalent'
 import { getName } from 'utils/Equivalent/equivalent'
 import { track } from 'utils/matomo'

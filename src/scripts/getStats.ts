@@ -42,34 +42,34 @@ export const getMatomoStats = async (date: string) => {
     allEventsOnDev,
   ] = await Promise.all([
     await axios
-      .post<
-        { label: string; nb_visits: number; url: string }[]
-      >(`${process.env.NEXT_PUBLIC_MATOMO_SITE_URL}?idSite=${process.env.NEXT_PUBLIC_MATOMO_SITE_ID}&method=Actions.getPageUrls&format=JSON&module=API&period=week&date=${date}&showColumns=nb_visits&filter_limit=-1&flat=1`)
+      .post<{ label: string; nb_visits: number; url: string }[]>(
+        `${process.env.NEXT_PUBLIC_MATOMO_SITE_URL}?idSite=${process.env.NEXT_PUBLIC_MATOMO_SITE_ID}&method=Actions.getPageUrls&format=JSON&module=API&period=week&date=${date}&showColumns=nb_visits&filter_limit=-1&flat=1`
+      )
       .then((response) => response.data),
     await axios
-      .post<
-        { label: string; nb_visits: number; nb_events: number }[]
-      >(`${process.env.NEXT_PUBLIC_MATOMO_SITE_URL}?idSite=${process.env.NEXT_PUBLIC_MATOMO_SITE_ID}&method=Events.getCategory&format=JSON&module=API&period=week&date=${date}&showColumns=nb_visits,nb_events&filter_limit=-1`)
+      .post<{ label: string; nb_visits: number; nb_events: number }[]>(
+        `${process.env.NEXT_PUBLIC_MATOMO_SITE_URL}?idSite=${process.env.NEXT_PUBLIC_MATOMO_SITE_ID}&method=Events.getCategory&format=JSON&module=API&period=week&date=${date}&showColumns=nb_visits,nb_events&filter_limit=-1`
+      )
       .then((response) => response.data),
     await axios
-      .post<
-        { label: string; nb_visits: number }[]
-      >(`${process.env.NEXT_PUBLIC_MATOMO_SITE_URL}?idSite=${process.env.NEXT_PUBLIC_MATOMO_SITE_ID}&method=Events.getAction&format=JSON&module=API&period=week&date=${date}&showColumns=nb_visits&filter_limit=-1`)
+      .post<{ label: string; nb_visits: number }[]>(
+        `${process.env.NEXT_PUBLIC_MATOMO_SITE_URL}?idSite=${process.env.NEXT_PUBLIC_MATOMO_SITE_ID}&method=Events.getAction&format=JSON&module=API&period=week&date=${date}&showColumns=nb_visits&filter_limit=-1`
+      )
       .then((response) => response.data),
     await axios
-      .post<
-        { label: string; nb_visits: number; nb_events: number }[]
-      >(`${process.env.NEXT_PUBLIC_MATOMO_SITE_URL}?idSite=${process.env.NEXT_PUBLIC_MATOMO_SITE_ID}&method=Events.getCategory&format=JSON&module=API&period=week&date=${lastWeek.toISOString().split('T')[0]}&showColumns=nb_visits,nb_events&filter_limit=-1`)
+      .post<{ label: string; nb_visits: number; nb_events: number }[]>(
+        `${process.env.NEXT_PUBLIC_MATOMO_SITE_URL}?idSite=${process.env.NEXT_PUBLIC_MATOMO_SITE_ID}&method=Events.getCategory&format=JSON&module=API&period=week&date=${lastWeek.toISOString().split('T')[0]}&showColumns=nb_visits,nb_events&filter_limit=-1`
+      )
       .then((response) => response.data),
     await axios
-      .post<
-        { label: string; nb_visits: number; nb_events: number; Events_EventAction: string }[]
-      >(`${process.env.NEXT_PUBLIC_MATOMO_SITE_URL}?idSite=156&method=Events.getCategory&secondaryDimension=eventAction&flat=1&format=JSON&module=API&period=week&date=${date}&showColumns=nb_visits,nb_events&filter_limit=-1`)
+      .post<{ label: string; nb_visits: number; nb_events: number; Events_EventAction: string }[]>(
+        `${process.env.NEXT_PUBLIC_MATOMO_SITE_URL}?idSite=156&method=Events.getCategory&secondaryDimension=eventAction&flat=1&format=JSON&module=API&period=week&date=${date}&showColumns=nb_visits,nb_events&filter_limit=-1`
+      )
       .then((response) => response.data),
     await axios
-      .post<
-        { label: string; nb_visits: number }[]
-      >(`${process.env.NEXT_PUBLIC_MATOMO_SITE_URL}?idSite=156&method=Events.getCategory&format=JSON&module=API&period=week&date=${date}&showColumns=nb_visits,nb_events&filter_limit=-1`)
+      .post<{ label: string; nb_visits: number }[]>(
+        `${process.env.NEXT_PUBLIC_MATOMO_SITE_URL}?idSite=156&method=Events.getCategory&format=JSON&module=API&period=week&date=${date}&showColumns=nb_visits,nb_events&filter_limit=-1`
+      )
       .then((response) => response.data),
   ])
 
