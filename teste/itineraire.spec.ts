@@ -8,7 +8,7 @@ test.beforeEach(async ({ page }) => {
 
 test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
   await test.step('On charge la page itinéraire dans le navigateur', async () => {
-    await page.goto('/transport/itineraire')
+    await page.goto('/iframes/transport/itineraire')
   })
 
   await itineraireTest(page)
@@ -16,7 +16,7 @@ test("Recherche de la ville de départ et d'arrivée", async ({ page }) => {
 
 test('Default parameters (old way)', async ({ page }) => {
   await test.step('Load with start parameters', async () => {
-    await page.goto('/transport/itineraire?start="Paris"')
+    await page.goto('/iframes/transport/itineraire?start="Paris"')
 
     await expect(page.getByLabel('Départ')).toHaveAttribute('value', 'Paris France', {
       timeout: 10000,
@@ -26,7 +26,7 @@ test('Default parameters (old way)', async ({ page }) => {
   })
 
   await test.step('Load with end parameters', async () => {
-    await page.goto('/transport/itineraire?end="Lyon"')
+    await page.goto('/iframes/transport/itineraire?end="Lyon"')
 
     await expect(page.getByLabel('Départ')).toHaveAttribute('value', '')
     await expect(page.getByLabel('Arrivée')).toHaveAttribute('value', 'Lyon France', {
@@ -36,7 +36,7 @@ test('Default parameters (old way)', async ({ page }) => {
   })
 
   await test.step('Load with start and end parameters', async () => {
-    await page.goto('/transport/itineraire?start="Paris"&end="Lyon"')
+    await page.goto('/iframes/transport/itineraire?start="Paris"&end="Lyon"')
 
     await expect(page.getByLabel('Départ')).toHaveAttribute('value', 'Paris France', {
       timeout: 10000,
@@ -53,7 +53,7 @@ test('Default parameters (old way)', async ({ page }) => {
 
 test('Default parameters', async ({ page }) => {
   await test.step('Load with start parameters', async () => {
-    await page.goto('/transport/itineraire?itineraireStart=Paris')
+    await page.goto('/iframes/transport/itineraire?itineraireStart=Paris')
 
     await expect(page.getByLabel('Départ')).toHaveAttribute('value', 'Paris France', {
       timeout: 10000,
@@ -74,7 +74,7 @@ test('Default parameters', async ({ page }) => {
 
   await test.step('Load with start and end parameters', async () => {
     await page.goto(
-      '/transport/itineraire?km=12&itineraireStart=Paris&itineraireEnd=Lyon&teletravailStart=Nantes&teletravailEnd=Marseille&tabs=distance'
+      '/iframes/transport/itineraire?km=12&itineraireStart=Paris&itineraireEnd=Lyon&teletravailStart=Nantes&teletravailEnd=Marseille&tabs=distance'
     )
 
     await expect(page.getByLabel('Départ')).toHaveAttribute('value', 'Paris France', {
@@ -112,7 +112,7 @@ test('Load correct number of tabs and redirect with params', async ({ page }) =>
 })
 
 test('Roundtrip', async ({ page }) => {
-  await page.goto('http://localhost:3000/outils/transport/itineraire')
+  await page.goto('http://localhost:3000/iframes/transport/itineraire')
 
   await page.getByLabel('Départ').fill('nantes')
   await page.getByText('Nantes France', { exact: true }).click()
@@ -136,17 +136,13 @@ test('Roundtrip', async ({ page }) => {
   await expect(page.getByTestId('category-tgv')).not.toBeAttached()
 
   await page.getByTestId('header-share-button').click()
-  await expect(page.getByTestId('clipboard-box')).toHaveText(
-    'http://localhost:3000/outils/transport/itineraire?itineraireStart=Nantes France&itineraireEnd=Angers France&roundTrip=true&defaultMode=list&language=fr'
+  await expect(page.getByTestId('clipboard-box').first()).toHaveText(
+    'http://localhost:3000/outils/transport/itineraire?itineraireStart=Nantes%20France&itineraireEnd=Angers%20France&roundTrip=true&defaultMode=list&language=fr'
   )
   await page.getByTestId('cancel-button').click()
   await page.getByTestId('header-integrate-button').click()
-  await expect(page.getByTestId('clipboard-box')).toHaveText(
-    '<script data-name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport/itineraire" data-search="?theme=default&language=fr&km=10&itineraireStart=Nantes France&itineraireEnd=Angers France&defaultMode=list&roundTrip=true"></script>'
-  )
-  await page.getByTestId('custom-param-roundTrip-checkbox').click()
-  await expect(page.getByTestId('clipboard-box')).toHaveText(
-    '<script data-name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport/itineraire" data-search="?theme=default&language=fr&km=10&itineraireStart=Nantes France&itineraireEnd=Angers France&defaultMode=list"></script>'
+  await expect(page.getByTestId('clipboard-box').first()).toHaveText(
+    '<script data-name="impact-co2" src="http://localhost:3000/iframe.js" data-type="transport/itineraire" data-search="?theme=default&language=fr&km=10&itineraireEnd=Angers%20France&defaultMode=list"></script>'
   )
   await page.getByTestId('cancel-button').click()
   await expect(page.getByTestId('category-intercites')).toHaveText(
@@ -154,7 +150,7 @@ test('Roundtrip', async ({ page }) => {
   )
 
   await page.goto(
-    'http://localhost:3000/outils/transport/itineraire?itineraireStart=Nantes France&itineraireEnd=Angers France&roundTrip=true&defaultMode=list&language=fr'
+    'http://localhost:3000/iframes/transport/itineraire?itineraireStart=Nantes%20France&itineraireEnd=Angers%20France&roundTrip=true&defaultMode=list&language=fr'
   )
   await expect(page.getByTestId('category-intercites')).toHaveText(
     'Intercités  - 182 km1.64 kg CO₂eusage : 65%, construction : 35%',

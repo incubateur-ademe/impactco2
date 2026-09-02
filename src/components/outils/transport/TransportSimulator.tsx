@@ -20,7 +20,7 @@ const itineraire = {
   value: 'itineraire',
 }
 
-const TransportSimulator = () => {
+const TransportSimulator = ({ onWebsite }: { onWebsite?: boolean }) => {
   const {
     setHideActions,
     transport: { selected, setSelected },
@@ -44,9 +44,13 @@ const TransportSimulator = () => {
     } else {
       setHideActions(!start || !end ? 'transport' : '')
     }
-  }, [selected, start, end])
+  }, [selected, start, end, setHideActions])
 
   useEffect(() => {
+    if (onWebsite) {
+      setSelected('itineraire')
+    }
+
     if (pathName.includes(itineraire.value)) {
       setSelected('itineraire')
     } else {
@@ -57,7 +61,7 @@ const TransportSimulator = () => {
         setSelected('itineraire')
       }
     }
-  }, [pathName, setSelected, searchParams])
+  }, [onWebsite, pathName, setSelected, searchParams])
 
   const tabs = useMemo(() => {
     const tabsParam = searchParams.get('tabs')
@@ -170,7 +174,7 @@ const TransportSimulator = () => {
         role='tabpanel'
         aria-labelledby='tab-itineraire'
         className={selected === 'distance' ? styles.hidden : undefined}>
-        <ItineraireSimulator withComparisonMode={!mode} />
+        <ItineraireSimulator withComparisonMode={!mode} onWebsite={onWebsite} />
       </div>
     </>
   )

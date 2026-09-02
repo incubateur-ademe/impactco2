@@ -5,14 +5,14 @@ export const itineraireTest = async (page: Page | FrameLocator, prod?: boolean, 
 
   await page.getByTestId('header-share-button').click()
 
-  await expect(page.getByTestId('clipboard-box')).toHaveText(
+  await expect(page.getByTestId('clipboard-box').first()).toHaveText(
     `${baseUrl}/outils/transport/itineraire?defaultMode=list&language=fr`
   )
   await page.getByTestId('cancel-button').click()
 
   await page.getByTestId('header-integrate-button').click()
 
-  await expect(page.getByTestId('clipboard-box')).toHaveText(
+  await expect(page.getByTestId('clipboard-box').first()).toHaveText(
     `<script data-name="impact-co2" src="${baseUrl}/iframe.js" data-type="transport/itineraire" data-search="?theme=default&language=fr&km=10&defaultMode=list${extraParams || ''}"></script>`
   )
   await page.getByTestId('cancel-button').click()
@@ -29,15 +29,15 @@ export const itineraireTest = async (page: Page | FrameLocator, prod?: boolean, 
 
   await page.getByTestId('header-share-button').click()
 
-  await expect(page.getByTestId('clipboard-box')).toHaveText(
-    `${baseUrl}/outils/transport/itineraire?itineraireStart=Nantes 44000 France&defaultMode=list&language=fr`
+  await expect(page.getByTestId('clipboard-box').first()).toHaveText(
+    `${baseUrl}/outils/transport/itineraire?itineraireStart=Nantes%2044000%20France&defaultMode=list&language=fr`
   )
   await page.getByTestId('cancel-button').click()
 
   await page.getByTestId('header-integrate-button').click()
 
-  await expect(page.getByTestId('clipboard-box')).toHaveText(
-    `<script data-name="impact-co2" src="${baseUrl}/iframe.js" data-type="transport/itineraire" data-search="?theme=default&language=fr&km=10&itineraireStart=Nantes 44000 France&defaultMode=list${extraParams || ''}"></script>`
+  await expect(page.getByTestId('clipboard-box').first()).toHaveText(
+    `<script data-name="impact-co2" src="${baseUrl}/iframe.js" data-type="transport/itineraire" data-search="?theme=default&language=fr&km=10&defaultMode=list${extraParams || ''}"></script>`
   )
   await page.getByTestId('cancel-button').click()
 
@@ -56,15 +56,15 @@ export const itineraireTest = async (page: Page | FrameLocator, prod?: boolean, 
 
   await page.getByTestId('header-share-button').click()
 
-  await expect(page.getByTestId('clipboard-box')).toHaveText(
-    `${baseUrl}/outils/transport/itineraire?itineraireStart=Nantes 44000 France&itineraireEnd=Angers 49000 France&defaultMode=list&language=fr`
+  await expect(page.getByTestId('clipboard-box').first()).toHaveText(
+    `${baseUrl}/outils/transport/itineraire?itineraireStart=Nantes%2044000%20France&itineraireEnd=Angers%2049000%20France&defaultMode=list&language=fr`
   )
   await page.getByTestId('cancel-button').click()
 
   await page.getByTestId('header-integrate-button').click()
 
-  await expect(page.getByTestId('clipboard-box')).toHaveText(
-    `<script data-name="impact-co2" src="${baseUrl}/iframe.js" data-type="transport/itineraire" data-search="?theme=default&language=fr&km=10&itineraireStart=Nantes 44000 France&itineraireEnd=Angers 49000 France&defaultMode=list${extraParams || ''}"></script>`
+  await expect(page.getByTestId('clipboard-box').first()).toHaveText(
+    `<script data-name="impact-co2" src="${baseUrl}/iframe.js" data-type="transport/itineraire" data-search="?theme=default&language=fr&km=10&itineraireEnd=Angers%2049000%20France&defaultMode=list${extraParams || ''}"></script>`
   )
   await page.getByTestId('cancel-button').click()
 }

@@ -51,6 +51,58 @@
   }
 }
 
+.endFieldWrapper {
+  position: relative;
+}
+
+.infoBulle {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%) translateY(calc(100% + 0.5rem));
+  z-index: 1;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+  background-color: var(--primary-50);
+  color: var(--neutral-00);
+  font-weight: 700;
+  width: max-content;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 0.5rem solid transparent;
+    border-right: 0.5rem solid transparent;
+    border-bottom: 0.5rem solid var(--primary-50);
+  }
+
+  @media screen and (max-width: 48rem) {
+    left: auto;
+    right: 0;
+    bottom: auto;
+    top: 2rem;
+    transform: translateY(calc(-100% - 0.5rem));
+
+    &::before {
+      top: auto;
+      bottom: -0.5rem;
+      right: auto;
+      left: 50%;
+      transform: translateX(-50%);
+      border-bottom: none;
+      border-top: 0.5rem solid var(--primary-50);
+    }
+  }
+
+  @media screen and (max-width: 29.875rem) {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+}
+
 .empty {
   padding: 1.5rem;
   background-color: var(--primary-10);

@@ -15,6 +15,7 @@ const ToolCards = ({ tools }: { tools: (ToolCardProps | undefined)[] }) => {
             linkLabel={tool.linkLabel}
             image={tool.image}
             link={tool.link}
+            horizontal={tool.horizontal}
           />
         ))}
     </ul>

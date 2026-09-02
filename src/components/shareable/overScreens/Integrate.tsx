@@ -144,7 +144,7 @@ const Integrate = ({
       <ClipboardBox form={`${category?.slug}-integrate`} tracking={tracking}>{`<script data-name="impact-co2" src="${
         process.env.NEXT_PUBLIC_URL
       }/iframe.js" data-type="${path}" data-search="?${urlParams}"></script>`}</ClipboardBox>
-      <IntegratePreview path={path} urlParams={urlParams} />
+      <IntegratePreview tracking={tracking} path={path} urlParams={urlParams} />
     </>
   ) : null
 }

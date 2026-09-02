@@ -155,7 +155,6 @@ const UserFeedback = ({ tracking, small }: { tracking: string; small?: boolean }
     }
 
     const timeout = getTimeout(tracking, window.location.pathname, searchParams, params)
-    console.log(timeout)
     if (timeout !== null) {
       timeoutRef.current = setTimeout(() => {
         localStorage.setItem(NPS_SEEN_STORAGE_KEY, Date.now().toString())

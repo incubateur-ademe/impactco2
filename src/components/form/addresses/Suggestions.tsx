@@ -1,18 +1,20 @@
 'use client'
 
 import classNames from 'classnames'
-import React, { Dispatch, SetStateAction, useCallback, useEffect, useRef } from 'react'
+import { Dispatch, SetStateAction, useCallback, useEffect, useRef } from 'react'
 import { Address } from 'types/address'
 import { displayAddress } from 'utils/address'
 import { Point } from 'hooks/useItineraries'
 import styles from './Suggestions.module.css'
 
 const Suggestions = ({
+  id,
   current,
   setCurrent,
   results,
   handleSuggestionClick,
 }: {
+  id: string
   current: number
   setCurrent: Dispatch<SetStateAction<number>>
   isFetching: boolean
@@ -41,6 +43,7 @@ const Suggestions = ({
         }
       }
       if (e.code === 'Enter') {
+        e.preventDefault()
         const result = results[current]
         if (result) {
           handleSuggestionClick({
@@ -52,6 +55,7 @@ const Suggestions = ({
         }
       }
       if (e.code === 'Escape') {
+        e.preventDefault()
         handleSuggestionClick(undefined)
       }
     },
@@ -75,7 +79,9 @@ const Suggestions = ({
           return (
             index < maxSuggestions && (
               <li
+                id={`suggestion-${id}-${index}`}
                 role='option'
+                aria-selected={index === current}
                 className={classNames(styles.suggestion, { [styles.current]: index === current })}
                 key={result.properties.osm_id}
                 onClick={() =>

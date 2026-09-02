@@ -1,9 +1,8 @@
 'use client'
 
 import classNames from 'classnames'
-import { Dispatch, InputHTMLAttributes, SetStateAction, useEffect, useRef, useState } from 'react'
+import { Dispatch, InputHTMLAttributes, SetStateAction, useRef, useState } from 'react'
 import { ZodError } from 'zod'
-import { displayAddress } from 'utils/address'
 import { useSuggestions } from 'hooks/useAddress'
 import useDebounce from 'hooks/useDebounce'
 import { Point } from 'hooks/useItineraries'
@@ -39,16 +38,9 @@ const AddressInput = ({
   const { data, isFetching } = useSuggestions(debouncedSearch, place)
   const [current, setCurrent] = useState(0)
 
-  useEffect(() => {
-    if (place) {
-      setValue(place)
-    } else {
-      setValue('')
-    }
-  }, [place])
-
-  const navigateToPlace = (place?: Point) => {
-    setPlace(place)
+  const navigateToPlace = (nextPlace?: Point) => {
+    setPlace(nextPlace)
+    setValue(nextPlace?.address || '')
     setOpen(false)
   }
 
@@ -64,8 +56,9 @@ const AddressInput = ({
       <input
         role='combobox'
         aria-controls={`suggestions-${id}`}
-        aria-expanded={data && open}
-        aria-activedescendant={data ? displayAddress(data[current]) : undefined}
+        aria-expanded={!!data?.length && open}
+        aria-haspopup='listbox'
+        aria-activedescendant={data?.length && open ? `suggestion-${id}-${current}` : undefined}
         aria-autocomplete='list'
         className={classNames(inputStyles.input, {
           [inputStyles.withIcon]: isFetching,
@@ -74,14 +67,15 @@ const AddressInput = ({
         {...inputProps}
         autoComplete='off'
         ref={input}
-        value={value}
+        value={place || value}
         onChange={(event) => {
           setPlace(undefined)
           setOpen(true)
           setValue(event.target.value)
         }}
-        onFocus={() => {
+        onFocus={(e) => {
           setOpen(true)
+          inputProps.onFocus?.(e)
         }}
         id={`input-${id}`}
       />
@@ -93,17 +87,21 @@ const AddressInput = ({
           <LoadingIcon />
         </div>
       )}
-      <div id={`suggestions-${id}`} aria-label={isFetching ? 'chargement en cours' : `${data?.length} resultats`}>
-        {data && data.length > 0 && open && (
+      {data && data.length > 0 && open && (
+        <div
+          id={`suggestions-${id}`}
+          role='listbox'
+          aria-label={isFetching ? 'chargement en cours' : `${data?.length} resultats`}>
           <Suggestions
+            id={id}
             isFetching={isFetching}
             results={data}
             current={current}
             setCurrent={setCurrent}
             handleSuggestionClick={navigateToPlace}
           />
-        )}
-      </div>
+        </div>
+      )}
       {error && (
         <div className={classNames(inputStyles.error, 'text-xs')}>
           <ErrorIcon />

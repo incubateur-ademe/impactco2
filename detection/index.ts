@@ -1,4 +1,4 @@
-import { RandomCategory } from 'components/comparateur/randomEtiquette'
+import { RandomCategory } from 'src/components/comparateur/randomEtiquette.config'
 import { initMatomo, start } from './start'
 
 initMatomo()
