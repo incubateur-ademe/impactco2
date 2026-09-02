@@ -1,7 +1,7 @@
 import React, { render } from 'preact/compat'
 import 'utils/variables.css'
-import { RandomCategory } from 'components/comparateur/randomEtiquette'
 import Detector, { regexs } from 'components/externalModules/detection/Detector'
+import { RandomCategory } from 'src/components/comparateur/randomEtiquette.config'
 import './style.css'
 
 const className = 'impactCO2-container'

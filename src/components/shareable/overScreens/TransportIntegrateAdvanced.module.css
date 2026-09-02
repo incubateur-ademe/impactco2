@@ -1,0 +1,44 @@
+.advancedContainer {
+  width: 100%;
+  margin-top: -1rem;
+}
+
+.open {
+  margin-top: 0;
+  margin-bottom: 5rem;
+}
+
+.advancedButton {
+  cursor: pointer;
+  background-color: transparent;
+  color: var(--primary-60);
+  display: flex;
+  gap: 0.5rem;
+  font-weight: 500;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0.5rem 0;
+  border: 0;
+}
+
+.advancedButton:hover,
+.advancedButton:focus-visible {
+  color: var(--primary-80);
+}
+
+.advancedIcon {
+  display: inline-flex;
+  transition: transform 0.2s ease;
+}
+
+.advancedIconOpen {
+  transform: rotate(180deg);
+}
+
+.advancedContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-top: 0.75rem;
+}

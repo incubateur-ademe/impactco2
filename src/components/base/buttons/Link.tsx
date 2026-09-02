@@ -24,6 +24,7 @@ const Link = (
   ref: ForwardedRef<HTMLAnchorElement>
 ) => {
   const external = !internal && (rest.href.includes(':') || rest.href.includes('.') || rest.href.includes('#'))
+
   return (
     <IframeableLink
       ref={ref}

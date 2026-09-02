@@ -61,17 +61,21 @@ const TransportComparison = ({
   )
 
   const equivalent1 = useMemo(
-    () => filteredEquivalents.find((deplacement) => deplacement.slug === comparison[0]),
+    () =>
+      comparison.length > 0 ? filteredEquivalents.find((deplacement) => deplacement.slug === comparison[0]) : null,
     [comparison, filteredEquivalents]
   )
   const equivalent2 = useMemo(
-    () => filteredEquivalents.find((deplacement) => deplacement.slug === comparison[1]),
+    () =>
+      comparison.length > 1 ? filteredEquivalents.find((deplacement) => deplacement.slug === comparison[1]) : null,
     [comparison, filteredEquivalents]
   )
 
   useEffect(() => {
     if (!equivalent1 && !equivalent2) {
-      setComparison([filteredEquivalents[0].slug, filteredEquivalents[1].slug])
+      if (filteredEquivalents.length >= 2) {
+        setComparison([filteredEquivalents[0].slug, filteredEquivalents[1].slug])
+      }
     } else if (!equivalent1) {
       setComparison([findNextEquivalent(filteredEquivalents, comparison[1]), comparison[1]])
     } else if (!equivalent2) {
@@ -81,7 +85,10 @@ const TransportComparison = ({
 
   return (
     <fieldset>
-      <legend className={customStyles.title}>{t('comparison')}</legend>
+      <legend className={customStyles.title}>
+        {t('comparison-title')}
+        <p className={customStyles.hint}>{t('comparison-hint')}</p>
+      </legend>
       <div className={styles.modes}>
         <div className={styles.select}>
           {equivalent1 && (

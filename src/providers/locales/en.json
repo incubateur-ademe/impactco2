@@ -126,6 +126,7 @@
     "livraisonKitDescription": "To make things easier for you, we have put together ready-to-use visuals to communicate about Impact Livraison",
     "extraKitLink": "Download",
     "integrate": "Integrate",
+    "integrate-new": "Add to your website",
     "preview": "Preview the integration",
     "next-actions": "Explore further",
     "comparison": "Change the compared mode of transport",
@@ -213,13 +214,18 @@
     },
     "itineraire": {
       "label": "Customize route",
+      "label-share": "Customize route",
       "start": "From",
-      "end": "To"
+      "end": "To",
+      "end-share": "To",
+      "end-hint": "Specify your organization address so the dedicated field is pre-filled on your website"
     },
     "teletravail": {
       "label": "Customize route",
+      "label-share": "Customize route",
       "start": "Home",
-      "end": "Office"
+      "end": "Office",
+      "end-share": "Office"
     },
     "presentiel": {
       "title": "On-site",
@@ -235,13 +241,37 @@
       "back": "Back to the simulator",
       "mode-share": "Display modes to share",
       "mode-integrate": "Display modes to integrate",
+      "mode-integrate-hint": "Select the default presentation mode displayed on your website",
       "comparison": "Comparison displayed by default",
       "modes": "Transport modes to integrate",
       "modes-hint": "You cannot integrate less than 2 modes in the simulator.",
+      "unselectAll": "Unselect all",
       "onglet": "Tab to share",
       "onglet-hint": "Select the tab you want to display when shared",
       "onglets": "Tabs to integrate",
-      "onglets-hint": "Select tabs you want to see in your iframe"
+      "onglets-hint": "Select tabs you want to see in your iframe",
+      "advanced": "Show advanced options",
+      "advanced-open": "Hide advanced options",
+      "integrate-perso": "Customize your tool",
+      "integrate-copy": "Copy this code snippet",
+      "integrate-paste": "Paste this code snippet on your website",
+      "integrate-difficulty": "Having trouble?",
+      "integrate-difficulty-text": "Feel free to <link>contact us</link> to report the issue. In the meantime, you can add a simple link to your website, with the same customization options:",
+      "comparison-title": "Default comparison displayed",
+      "comparison-hint": "Change the transport modes displayed by default in comparison mode",
+      "paste": {
+        "details-1": "<b>All you have to do is add this code snippet to your website editor</b>, on the page where you want it to appear (e.g. Practical Info page, How to Get Here, Contact Us, Access, an article about transport carbon impact, etc.)",
+        "details-2": "If you do not have access to your website editor, or if you encounter difficulties, we recommend sending this code snippet to the people in charge of your website administration.",
+        "thanks-title": "Once the tool is integrated, write to us!",
+        "thanks": "We can then add your logo and a link to your website in our <link>examples gallery</link>.",
+        "write": "contact us"
+      },
+      "category": {
+        "actives": "Active mobility",
+        "twoWheels": "Two-wheelers",
+        "cars": "Private vehicles",
+        "common": "Public transport"
+      }
     },
     "category": {
       "title": "Choose the theme of equivalents suggested by the Detector",
@@ -266,7 +296,8 @@
       "header": "Calculate the carbon impact of your trip in <co2e>CO₂e</co2e> and <parpersonne>per person</parpersonne>",
       "start": "From",
       "end": "To",
-      "empty": "For example, the quantity of kg CO₂e emitted for a 100km journey is..."
+      "empty": "For example, the quantity of kg CO₂e emitted for a 100km journey is...",
+      "test": "Test with your address"
     },
     "teletravail": {
       "start": "Home",
@@ -291,11 +322,14 @@
     },
     "mode-selector": {
       "distance": "Distance",
+      "distance-hint": "Set the default displayed distance on your website",
       "itineraire": "Route",
       "teletravail": "Telecommuting",
       "list": "List",
       "comparison": "Comparison",
-      "comparisonMode": "Display mode:"
+      "comparisonMode": "Display mode",
+      "comparisonMode-display": "Display mode:",
+      "comparisonMode-hint": "Select the default presentation mode on your website"
     }
   },
   "chauffage": {

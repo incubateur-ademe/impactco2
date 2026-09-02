@@ -1,7 +1,13 @@
 .title {
   color: var(--neutral-80);
-  font-weight: 500;
+  font-weight: 700;
   margin-bottom: 0.5rem;
+}
+
+.hint {
+  color: var(--neutral-60);
+  font-weight: 400;
+  display: block;
 }
 
 .container {

@@ -19,7 +19,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       <Header />
       <Suspense fallback={<div className='blank' />}>
         <ScrollProvider />
-        <ParamProvider>
+        <ParamProvider onWebsite>
           <main id='contenu' role='main' tabIndex={-1}>
             {children}
           </main>

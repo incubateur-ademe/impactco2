@@ -5,7 +5,7 @@ import { ReactNode } from 'react'
 import Link from 'components/base/buttons/Link'
 import styles from './RDV.module.css'
 
-const ignore = ['/', '/rendez-vous']
+const ignore = ['/', '/rendez-vous', '/outils/transport', '/outils/transport/itineraire']
 
 const RDV = ({ children, className }: { children: ReactNode; className?: string }) => {
   const pathName = usePathname()

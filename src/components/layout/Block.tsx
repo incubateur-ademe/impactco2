@@ -20,15 +20,16 @@ export type BlockProps = {
   link?: string
   linkLabel?: string
   as?: 'h1'
+  center?: boolean
   id?: string
 }
 
-const Block = ({ children, title, description, link, linkLabel, as, id }: BlockProps) => {
+const Block = ({ children, title, description, link, linkLabel, as, id, center }: BlockProps) => {
   return (
     <div className={classNames('main-container', styles.block)} id={id} tabIndex={id ? -1 : undefined}>
       {title && (
         <div className={styles.header}>
-          <div>
+          <div className={classNames({ [styles.center]: center })}>
             {getTitle(title, as)}
             {description && (
               <p className={classNames(styles.description, { [styles.mainDescription]: as === 'h1' })}>{description}</p>

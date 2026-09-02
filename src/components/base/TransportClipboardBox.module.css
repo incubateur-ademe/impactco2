@@ -1,0 +1,54 @@
+.box {
+  margin-top: 2rem;
+  border-radius: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: space-between;
+  padding: 0.625rem 0.75rem 0.625rem 1rem;
+  position: relative;
+  text-align: left;
+  width: 100%;
+  border: 1px solid var(--neutral-10);
+  background-color: var(--neutral-10);
+  color: var(--neutral-60);
+}
+
+.content {
+  display: inline-block;
+  width: fit-content;
+  word-break: break-word;
+}
+
+.copy {
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+
+  svg {
+    margin-left: 0.25rem;
+  }
+}
+
+.information {
+  align-items: center;
+  color: var(--neutral-50);
+  display: flex;
+  font-size: 0.75rem;
+  font-weight: 400;
+  gap: 0.5rem;
+  line-height: 1rem;
+  margin-top: 0.5rem;
+
+  svg {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}

@@ -45,3 +45,8 @@
 .withMargin {
   margin-top: 2rem;
 }
+
+.center {
+  width: 100%;
+  text-align: center;
+}

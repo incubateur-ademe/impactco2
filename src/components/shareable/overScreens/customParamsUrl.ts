@@ -23,7 +23,9 @@ export const buildCustomParamsUrl = (
         if (param.start && param.start.value) {
           return `${key}Start=${param.start.value}`
         }
+      }
 
+      if ('end' in param) {
         if (param.end && param.end.value) {
           return `${key}End=${param.end.value}`
         }

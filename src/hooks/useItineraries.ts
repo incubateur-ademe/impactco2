@@ -7,6 +7,7 @@ export type Point = {
   longitude: number
   city: string
   address: string
+  auto?: boolean
 }
 
 export default function useItineraries(
@@ -22,7 +23,7 @@ export default function useItineraries(
         return null
       }
 
-      if (start.city && end.city) {
+      if (start.city && end.city && (!start.auto || !end.auto)) {
         track(`Transport ${tracking}`, 'Recherche', `${start.city}-${end.city}`)
         if (trackOnce) {
           trackOnce('Recherche')

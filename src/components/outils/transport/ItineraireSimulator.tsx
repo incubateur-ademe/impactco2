@@ -1,6 +1,7 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
+import { useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import useTrackingContext from 'src/providers/TrackingProvider'
 import useItineraries from 'hooks/useItineraries'
@@ -15,7 +16,14 @@ import TransportComparisonSimulator from './TransportComparisonSimulator'
 import styles from './ItineraireSimulator.module.css'
 
 const tracking = 'Transport itinéraire'
-const ItineraireSimulator = ({ withComparisonMode }: { withComparisonMode: boolean }) => {
+const ItineraireSimulator = ({
+  withComparisonMode,
+  onWebsite,
+}: {
+  withComparisonMode: boolean
+  onWebsite?: boolean
+}) => {
+  const [hasFocusedEndField, setHasFocusedEndField] = useState(false)
   const { trackOnce } = useTrackingContext()
 
   const {
@@ -59,7 +67,17 @@ const ItineraireSimulator = ({ withComparisonMode }: { withComparisonMode: boole
         </p>
         <div className={styles.addresses}>
           <AddressInput large id='itineraire-start' label={t('start')} place={start?.address} setPlace={setStart} />
-          <AddressInput large id='itineraire-end' label={t('end')} place={end?.address} setPlace={setEnd} />
+          <div className={styles.endFieldWrapper}>
+            <AddressInput
+              large
+              id='itineraire-end'
+              label={t('end')}
+              place={end?.address}
+              setPlace={setEnd}
+              onFocus={() => setHasFocusedEndField(true)}
+            />
+            {onWebsite && !hasFocusedEndField && <div className={styles.infoBulle}>{t('test')}</div>}
+          </div>
         </div>
         <div className={styles.roundTrip}>
           <CheckboxInput id='roundTrip' label={t('roundTrip')} checked={roundTrip} setChecked={setRoundTrip} />

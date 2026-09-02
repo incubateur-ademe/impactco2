@@ -1,12 +1,15 @@
+.legendHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
 .equivalents,
 .modes {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-}
-
-.modes {
-  margin-top: 1.25rem;
 }
 
 .list {
@@ -93,4 +96,19 @@
   font-size: 0.875rem;
   font-weight: 500;
   line-height: 1.25rem;
+}
+
+.category {
+  color: var(--neutral-50);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  text-transform: uppercase;
+  margin: 0.25rem 0 0.5rem 0;
+}
+
+.categoryList {
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+  }
 }

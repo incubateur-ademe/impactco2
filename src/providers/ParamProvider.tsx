@@ -18,7 +18,98 @@ import useTheme from 'components/layout/UseTheme'
 import { computedEquivalents } from './equivalents'
 import { usageNumeriqueDefaultValues } from './usageNumeriqueDefaultValues'
 
-const completeAddress = (setter: Dispatch<SetStateAction<Point | undefined>>, value?: string) => {
+const defaultAddresses: [Point, Point][] = [
+  [
+    { auto: true, latitude: 47.4739884, longitude: -0.5515588, city: 'Angers', address: 'Angers France' },
+    { auto: true, latitude: 47.2186371, longitude: -1.5541362, city: 'Nantes', address: 'Nantes France' },
+  ],
+  [
+    {
+      auto: true,
+      latitude: 48.8400624,
+      longitude: 2.3191085,
+      city: 'Paris',
+      address: 'Gare Montparnasse Allée de la deuxième D.B. Paris 75015 France',
+    },
+    {
+      auto: true,
+      latitude: 48.9244726,
+      longitude: 2.3601325,
+      city: 'Saint-Denis',
+      address: 'Stade de France Avenue du Stade de France Saint-Denis 93200 France',
+    },
+  ],
+  [
+    { auto: true, latitude: 45.9366592, longitude: -0.9616399, city: 'Rochefort', address: 'Rochefort 17300 France' },
+    {
+      auto: true,
+      latitude: 46.153276,
+      longitude: -1.150621,
+      city: 'La Rochelle',
+      address: 'Aquarium de La Rochelle Quai Louis Prunier La Rochelle 17000 France',
+    },
+  ],
+  [
+    { auto: true, latitude: 47.4739884, longitude: -0.5515588, city: 'Angers', address: 'Angers France' },
+    {
+      auto: true,
+      latitude: 47.5004787,
+      longitude: -0.5698605,
+      city: 'Angers',
+      address: "Terra Botanica Route d'Epinard Angers 49100 France",
+    },
+  ],
+  [
+    { auto: true, latitude: 43.2775332, longitude: -1.2087111, city: 'Bayonne', address: 'Bayonne France' },
+    { auto: true, latitude: 43.4832523, longitude: -1.5592776, city: 'Biarritz', address: 'Biarritz 64200 France' },
+  ],
+  [
+    { auto: true, latitude: 44.841225, longitude: -0.5800364, city: 'Bordeaux', address: 'Bordeaux France' },
+    { auto: true, latitude: 43.6044638, longitude: 1.4442433, city: 'Toulouse', address: 'Toulouse France' },
+  ],
+  [
+    { auto: true, latitude: 48.8534951, longitude: 2.3483915, city: 'Paris', address: 'Paris France' },
+    {
+      auto: true,
+      latitude: 45.7774551,
+      longitude: 3.0819427,
+      city: 'Clermont-Ferrand',
+      address: 'Clermont-Ferrand France',
+    },
+  ],
+  [
+    { auto: true, latitude: 50.6365654, longitude: 3.0635282, city: 'Lille', address: 'Lille France' },
+    {
+      auto: true,
+      latitude: 49.1357591,
+      longitude: 2.5647133,
+      city: 'Plailly',
+      address: 'Parc Astérix Autoroute du Nord Plailly 60128 France',
+    },
+  ],
+  [
+    { auto: true, latitude: 43.2963986, longitude: 5.3777888, city: 'Marseille', address: 'Marseille France' },
+    { auto: true, latitude: 43.7009358, longitude: 7.2683912, city: 'Nice', address: 'Nice France' },
+  ],
+  [
+    { auto: true, latitude: 50.6365654, longitude: 3.0635282, city: 'Lille', address: 'Lille France' },
+    { auto: true, latitude: 47.9960325, longitude: -4.1024782, city: 'Quimper', address: 'Quimper 29000 France' },
+  ],
+  [
+    { auto: true, latitude: 48.584614, longitude: 7.7507127, city: 'Strasbourg', address: 'Strasbourg France' },
+    { auto: true, latitude: 45.7578137, longitude: 4.8320114, city: 'Lyon', address: 'Lyon France' },
+  ],
+  [
+    { auto: true, latitude: 48.8534951, longitude: 2.3483915, city: 'Paris', address: 'Paris France' },
+    { auto: true, latitude: 43.6112422, longitude: 3.8767337, city: 'Montpellier', address: 'Montpellier France' },
+  ],
+  [
+    { auto: true, latitude: 48.3905283, longitude: -4.4860088, city: 'Brest', address: 'Brest 29200 France' },
+    { auto: true, latitude: 47.9027336, longitude: 1.9086066, city: 'Orléans', address: 'Orléans 45000 France' },
+  ],
+]
+
+const completeAddress = (setter: Dispatch<SetStateAction<Point | undefined>>, value: string) => {
   if (value) {
     searchAddress(value, 1).then((result) => {
       if (result.length > 0) {
@@ -193,7 +284,7 @@ export type Params = {
 
 const ParamContext = React.createContext<Params | null>(null)
 
-export function ParamProvider({ children }: { children: ReactNode }) {
+export function ParamProvider({ children, onWebsite }: { children: ReactNode; onWebsite?: boolean }) {
   const initialTheme = useTheme()
   const [theme, setTheme] = useState(initialTheme.theme)
   const [language, setLanguage] = useState<Language>('fr')
@@ -282,7 +373,7 @@ export function ParamProvider({ children }: { children: ReactNode }) {
   )
   const [comparisonMode, setComparisonMode] = useState<'list' | 'comparison'>('list')
   const [comparison, setComparison] = useState<string[]>(['voiturethermique', 'tgv'])
-  const [selected, setSelected] = useState<TransportSimulateur>('distance')
+  const [selected, setSelected] = useState<TransportSimulateur>(onWebsite ? 'itineraire' : 'distance')
 
   const [teletravailStart, setTeletravailStart] = useState<Point>()
   const [teletravailEnd, setTeletravailEnd] = useState<Point>()
@@ -474,8 +565,17 @@ export function ParamProvider({ children }: { children: ReactNode }) {
       setHomeOffice(Number(searchParams.get('homeOffice')))
     }
 
-    completeAddress(setItineraireStart, (searchParams.get('start') || searchParams.get('itineraireStart')) as string)
-    completeAddress(setItineraireEnd, (searchParams.get('end') || searchParams.get('itineraireEnd')) as string)
+    const itineraireStart = (searchParams.get('itineraireStart') || searchParams.get('start')) as string
+    const itineraireEnd = (searchParams.get('itineraireEnd') || searchParams.get('end')) as string
+
+    if (onWebsite && !itineraireStart && !itineraireEnd) {
+      const defautAddresses = defaultAddresses[Math.floor(Math.random() * defaultAddresses.length)]
+      setItineraireStart(defautAddresses[0])
+      setItineraireEnd(defautAddresses[1])
+    } else {
+      completeAddress(setItineraireStart, itineraireStart)
+      completeAddress(setItineraireEnd, itineraireEnd)
+    }
     completeAddress(setTeletravailStart, (searchParams.get('start') || searchParams.get('teletravailStart')) as string)
     completeAddress(setTeletravailEnd, (searchParams.get('end') || searchParams.get('teletravailEnd')) as string)
 
@@ -555,7 +655,7 @@ export function ParamProvider({ children }: { children: ReactNode }) {
     if (searchParams.get('modes')) {
       setLivraisonModes((searchParams.get('modes') as string).split(',') as LivraisonMode[])
     }
-  }, [searchParams])
+  }, [searchParams, onWebsite])
 
   return (
     <ParamContext.Provider

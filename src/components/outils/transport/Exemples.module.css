@@ -1,0 +1,23 @@
+.title {
+  color: var(--neutral-50);
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.75rem;
+  text-align: center;
+}
+
+.images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+
+  img {
+    min-width: 10rem;
+  }
+}
+
+.link {
+  text-align: center;
+  display: block !important;
+}

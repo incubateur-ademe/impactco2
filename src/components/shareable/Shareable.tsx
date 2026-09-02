@@ -34,6 +34,7 @@ type ShareableProps = {
   small?: boolean
   smallPadding?: boolean
   withNPS?: boolean
+  withNewIntegration?: boolean
 }
 
 const Shareable = ({
@@ -41,6 +42,7 @@ const Shareable = ({
   slug,
   tracking,
   withoutIntegration,
+  withNewIntegration,
   overScreens,
   secondary,
   noBottomBorders,
@@ -72,6 +74,8 @@ const Shareable = ({
     if (overScreenToDisplay && overscreenRef.current) {
       const modalElement = overscreenRef.current
       modalElement.focus()
+      const modalTop = modalElement.getBoundingClientRect().top + window.scrollY
+      window.scrollTo({ top: Math.max(modalTop - 24, 0), behavior: 'smooth' })
 
       //add any focusable HTML element you want to include to this string
       const focusableElements = modalElement.querySelectorAll(
@@ -95,8 +99,10 @@ const Shareable = ({
       }
       modalElement.addEventListener('keydown', handleTabKeyPress)
       return () => modalElement.removeEventListener('keydown', handleTabKeyPress)
+    } else if (overScreenToDisplay === undefined) {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
     }
-  }, [overscreenRef, overScreenToDisplay, onClose])
+  }, [overscreenRef, overScreenToDisplay, onClose, overscreen])
 
   return (
     <div
@@ -256,6 +262,7 @@ const Shareable = ({
             }}
             tracking={tracking}
             withoutIntegration={withoutIntegration}
+            withNewIntegration={withNewIntegration}
           />
         </div>
       )}
