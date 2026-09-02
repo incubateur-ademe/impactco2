@@ -199,7 +199,7 @@ const TransportIntegrate = () => {
           link: (children) => <Link href='/rendez-vous?$fromLabel=Transport intégration'>{children}</Link>,
         })}
       </p>
-      <ClipboardBox tracking={`${tracking} aide`}>{`https://impactco2.fr/outils/transport?${search}`}</ClipboardBox>
+      <ClipboardBox tracking={tracking}>{`https://impactco2.fr/outils/transport?${search}`}</ClipboardBox>
     </>
   )
 }

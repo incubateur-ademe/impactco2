@@ -94,7 +94,7 @@ const Reasons = () => {
 
       <aside className={styles.rightColumn}>
         <div className={styles.stickyPanel}>
-          <h3 className={styles.featuresTitle}>Fonctionnalites</h3>
+          <h3 className={styles.featuresTitle}>Fonctionnalités</h3>
           <ul className={styles.featuresList}>
             {features.map((feature) => (
               <li key={feature} className={styles.featureItem}>

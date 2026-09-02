@@ -222,8 +222,10 @@
     },
     "teletravail": {
       "label": "Customize route",
+      "label-share": "Customize route",
       "start": "Home",
-      "end": "Office"
+      "end": "Office",
+      "end-share": "Office"
     },
     "presentiel": {
       "title": "On-site",

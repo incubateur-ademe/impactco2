@@ -33,14 +33,18 @@ const TransportClipboardBox = ({
           <code>{children}</code>
         </Result>
         <div className={styles.buttons}>
-          <IntegratePreview path={path} urlParams={urlParams} secondary />
+          <IntegratePreview tracking={tracking} path={path} urlParams={urlParams} secondary />
           <Button
             className={styles.copy}
             onClick={() => {
               setCopied(true)
               setTimeout(() => setCopied(false), 500)
               navigator.clipboard.writeText(children)
-              track(tracking, 'Copy', children)
+              track(
+                tracking,
+                `Copy ${children.startsWith('<script') ? 'script' : children.startsWith('http') ? 'url' : 'autre'}`,
+                children
+              )
             }}>
             {copied ? t('copie') : t('copier')}
             {copied ? <CheckRoundIcon /> : <CopyIcon />}

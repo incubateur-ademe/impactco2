@@ -313,7 +313,7 @@ const CustomParam = ({
           <AddressInput
             id={`custom-${slug}-end`}
             label={t(`${slug}.end${integration ? '' : '-share'}`)}
-            hint={integration ? t(`${slug}.end-hint`) : undefined}
+            hint={!('start' in param) && integration ? t(`${slug}.end-hint`) : undefined}
             disabled={!visible}
             place={param.end.value}
             setPlace={(place) => {

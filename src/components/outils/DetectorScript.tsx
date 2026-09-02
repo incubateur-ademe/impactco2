@@ -46,7 +46,7 @@ const DetectorScript = () => {
       </fieldset>
       <div lang={language}>
         <ClipboardBox tracking='Detecteur carbone'>{`<script id="script-detecteur-impact-co2" src="https://impactco2.fr/scripts/detection.js" data-search="?${search}"></script>`}</ClipboardBox>
-        <IntegratePreview path='detecteur' urlParams={search} />
+        <IntegratePreview tracking='Detecteur carbone' path='detecteur' urlParams={search} />
       </div>
     </>
   )

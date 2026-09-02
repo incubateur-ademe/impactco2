@@ -21,7 +21,11 @@ const ClipboardBox = ({ children, tracking, form }: { children: string; tracking
           setCopied(true)
           setTimeout(() => setCopied(false), 500)
           navigator.clipboard.writeText(children)
-          track(tracking, 'Copy', children)
+          track(
+            tracking,
+            `Copy ${children.startsWith('<script') ? 'script' : children.startsWith('http') ? 'url' : 'autre'}`,
+            children
+          )
         }}
         aria-label="Copier le code d'integration">
         <Result className={styles.content} data-testid='clipboard-box' form={form}>

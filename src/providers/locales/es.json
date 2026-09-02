@@ -207,8 +207,10 @@
     },
     "teletravail": {
       "label": "Personalizar las direcciones",
+      "label-share": "Personalizar las direcciones",
       "start": "Lugar de residencia",
-      "end": "Lugar de trabajo"
+      "end": "Lugar de trabajo",
+      "end-share": "Lugar de trabajo"
     },
     "presentiel": {
       "title": "Presencial",
