@@ -191,6 +191,12 @@ export const toolsJsonLd: Record<string, object> = {
     'Comparateur carbone des moyens de transport',
     "Un outil digital gratuit de l'ADEME pour comparer l'empreinte carbone des différents modes de transports"
   ),
+  transportItineraire: buildCollectionPageJsonLd(
+    'https://impactco2.fr/outils/transport/itineraire#webpage',
+    'https://impactco2.fr/outils/transport/itineraire',
+    'Comparateur carbone des moyens de transport',
+    "Un outil digital gratuit de l'ADEME pour comparer l'empreinte carbone des différents modes de transports"
+  ),
   alimentation: buildCollectionPageJsonLd(
     'https://impactco2.fr/outils/alimentation#webpage',
     'https://impactco2.fr/outils/alimentation',
