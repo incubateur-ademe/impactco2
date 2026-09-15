@@ -97,6 +97,11 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: '/outils/kit-rse',
+        destination: 'https://tally.so/r/XxLGeY',
+        permanent: false,
+      },
+      {
         source: '/detecteur-co2',
         destination: '/outils/detecteur',
         permanent: true,
