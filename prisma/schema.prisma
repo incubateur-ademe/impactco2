@@ -43,3 +43,16 @@ model Faq {
 
   @@map("faqs")
 }
+
+model CalendarEvent {
+  id          String    @id @default(cuid())
+  title       String
+  image       String
+  description String?
+  metaImage   String?   @map("meta_image")
+  startDate   DateTime  @map("start_date")
+  endDate     DateTime? @map("end_date")
+  content     String
+
+  @@map("calendar_events")
+}
