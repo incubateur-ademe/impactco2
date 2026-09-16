@@ -115,6 +115,14 @@
   }
 }
 
+.subTitle {
+  color: var(--neutral-50);
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.25rem;
+  margin-top: 0.5rem;
+}
+
 .link {
   margin-top: 0.5rem;
   color: var(--primary-50);

@@ -179,6 +179,12 @@ export const outilsJsonLd = {
 }
 
 export const toolsJsonLd: Record<string, object> = {
+  'kit-rse': buildCollectionPageJsonLd(
+    'https://impactco2.fr/outils/kit-rse#webpage',
+    'https://impactco2.fr/outils/kit-rse',
+    'Kit RSE',
+    "Un outil digital gratuit de l'ADEME pour sensibiliser et communiquer sur l'impact carbone"
+  ),
   livraison: buildCollectionPageJsonLd(
     'https://impactco2.fr/outils/livraison#webpage',
     'https://impactco2.fr/outils/livraison',
