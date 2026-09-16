@@ -13,7 +13,13 @@ import styles from './Outil.module.css'
 const Outil = ({
   tool,
 }: {
-  tool: ToolCardProps & { content: ReactNode; toolLink?: string; toolLinkLabel?: string; script?: ReactNode }
+  tool: ToolCardProps & {
+    content: ReactNode
+    toolLink?: string
+    toolLinkLabel?: string
+    script?: ReactNode
+    noBanner?: boolean
+  }
 }) => {
   return (
     <>
@@ -27,9 +33,11 @@ const Outil = ({
       <TranslationProvider>
         <Block title={tool.title} as='h1' description={tool.description}>
           <Card className={styles.card}>
-            <div className={styles.image}>
-              <Image src={tool.image || `/images/banner-${tool.slug}.png`} width={736} height={180} alt='' />
-            </div>
+            {!tool.noBanner && (
+              <div className={styles.image}>
+                <Image src={tool.image || `/images/banner-${tool.slug}.png`} width={736} height={180} alt='' />
+              </div>
+            )}
             <div className={styles.content}>{tool.content}</div>
             {tool.toolLink && tool.toolLinkLabel && (
               <div className={styles.link}>

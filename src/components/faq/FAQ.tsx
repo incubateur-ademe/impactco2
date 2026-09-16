@@ -4,7 +4,7 @@ import { FAQ as FAQType } from 'types/faq'
 import { track } from 'utils/matomo'
 import Dropdown from 'components/base/Dropdown'
 import { DynamicNotionProps } from '../Notion/DynamicNotion'
-import styles from './FAQ.module.css'
+import styles from '../Notion/Notion.module.css'
 
 const FAQ = ({
   faq,
@@ -32,7 +32,7 @@ const FAQ = ({
   return faq.content ? (
     <Dropdown
       anchor={withAnchor ? faq.ancre || undefined : undefined}
-      className={styles.faq}
+      className={styles.container}
       title={faq.title}
       onClick={(display) => {
         setDisplay(display)

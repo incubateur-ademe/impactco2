@@ -1,0 +1,14 @@
+.title {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  color: var(--neutral-50);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 2.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.description {
+  color: var(--neutral-50);
+}
