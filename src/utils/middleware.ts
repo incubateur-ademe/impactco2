@@ -1,4 +1,5 @@
 import * as Sentry from '@sentry/nextjs'
+import { randomBytes } from 'crypto'
 import { NextRequest } from 'next/server'
 import { prismaClient } from 'utils/prismaClient'
 
@@ -31,7 +32,8 @@ export const trackAPIRequest = async (request: NextRequest, api: string) => {
       }
     }
 
-    const param = `e_c=ICO2_API&e_a=${name}&e_n=${api}`
+    const cid = randomBytes(8).toString('hex')
+    const param = `e_c=API&e_a=${name}&e_n=${api}&cid=${cid}`
 
     await fetch(
       `${process.env.NEXT_PUBLIC_MATOMO_SITE_URL}/matomo.php?idsite=${process.env.NEXT_PUBLIC_MATOMO_SITE_ID}&rec=1&${param}`,
