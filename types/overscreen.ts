@@ -1,3 +1,5 @@
+import { ReactNode } from 'react'
+
 export type OverScreenInfo = {
   title: string
   hideTitle?: boolean

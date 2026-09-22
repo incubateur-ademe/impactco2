@@ -2,7 +2,7 @@ import { ReactNode } from 'react'
 
 export type EquivalentValue = { value: number; id: number }
 
-type EquivalentRange = {
+export type EquivalentRange = {
   min?: number
   max?: number
 }

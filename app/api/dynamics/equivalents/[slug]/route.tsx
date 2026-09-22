@@ -8,8 +8,6 @@ import { categories } from 'data/categories'
 import { getName } from 'utils/Equivalent/equivalent'
 import Equivalent from 'components/metaImages/Equivalent'
 
-export const runtime = 'edge'
-
 const getFont = async (url: URL) => {
   const res = await fetch(url)
   return await res.arrayBuffer()
