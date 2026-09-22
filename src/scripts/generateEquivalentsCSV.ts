@@ -20,12 +20,26 @@ function generateCSV() {
           slug === 'voiturethermique' ||
           slug === 'voitureelectrique' ||
           slug === 'voiturehybride' ||
+          slug === 'campingcar' ||
+          slug === 'van' ||
           (slug.startsWith('voiture-') && slug !== 'voiture-lille-nimes')
         ) {
           return [
             [name, kgCO2e.toString(), thematique, id, url],
             ...Array.from({ length: 4 }).map((_, i) => [
-              getName('fr', { slug: `${slug}+${i + 1}`, carpool: i + 1, ...data }, false, 1, false, true),
+              getName(
+                'fr',
+                {
+                  slug: `${slug}+${i + 1}`,
+                  carpool: i + 1,
+                  onlyCarpool: slug === 'van' || slug === 'campingcar',
+                  ...data,
+                },
+                false,
+                1,
+                false,
+                true
+              ),
               (kgCO2e / (i + 2)).toString(),
               thematique,
               `${id}+${i + 1}`,

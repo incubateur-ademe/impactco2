@@ -155,11 +155,11 @@ export const deplacements = [
     ecv: [
       {
         id: 6,
-        value: 0.1105577600556303,
+        value: 0.1768941916693085,
       },
       {
         id: 5,
-        value: 0.03169565217391306,
+        value: 0.0507130434782609,
       },
     ],
     default: true,
@@ -180,11 +180,11 @@ export const deplacements = [
     ecv: [
       {
         id: 6,
-        value: 0.01208836005563031,
+        value: 0.0193431516693085,
       },
       {
         id: 5,
-        value: 0.05527690217391306,
+        value: 0.0884430434782609,
       },
     ],
     default: true,
@@ -459,6 +459,8 @@ export const deplacements = [
         value: 0.11664,
       },
     ],
+    withCarpool: true,
+    onlyCarpool: true,
   },
   {
     id: 32,
@@ -543,59 +545,9 @@ export const deplacements = [
         value: 0.08748,
       },
     ],
+    withCarpool: true,
+    onlyCarpool: true,
   },
-  /*{
-    id: 36,
-    slug: 'veli',
-    type: 'car',
-    category: 4,
-    default: false,
-    display: {
-      max: 30,
-    },
-    ecv: [
-      {
-        id: 5,
-        value: 0.0371,
-      },
-      {
-        id: 6,
-        value: 0.00285,
-      },
-    ],
-    sources: [
-      {
-        label: 'XD Mobilités ADEME',
-        href: 'https://xd.ademe.fr/',
-      },
-    ],
-  },
-  {
-    id: 37,
-    slug: 'veliassistance',
-    type: 'car',
-    category: 4,
-    default: false,
-    display: {
-      max: 30,
-    },
-    ecv: [
-      {
-        id: 5,
-        value: 0.03,
-      },
-      {
-        id: 6,
-        value: 0.000415,
-      },
-    ],
-    sources: [
-      {
-        label: 'XD Mobilités ADEME',
-        href: 'https://xd.ademe.fr/',
-      },
-    ],
-  },*/
   {
     id: 100,
     synonyms: ['conduire'],
@@ -613,11 +565,11 @@ export const deplacements = [
     ecv: [
       {
         id: 6,
-        value: 0.1169810600556303,
+        value: 0.1871714716693085,
       },
       {
         id: 5,
-        value: 0.027733695652173936,
+        value: 0.0443739130434783,
       },
     ],
     default: true,
@@ -639,11 +591,11 @@ export const deplacements = [
     ecv: [
       {
         id: 6,
-        value: 0.09416971630563031,
+        value: 0.1506733216693085,
       },
       {
         id: 5,
-        value: 0.027733695652173936,
+        value: 0.0443739130434783,
       },
     ],
     default: true,
@@ -665,11 +617,11 @@ export const deplacements = [
     ecv: [
       {
         id: 6,
-        value: 0.011504485055630311,
+        value: 0.0184089516693085,
       },
       {
         id: 5,
-        value: 0.046089130434782626,
+        value: 0.0737426086956522,
       },
     ],
     default: true,
@@ -691,11 +643,11 @@ export const deplacements = [
     ecv: [
       {
         id: 6,
-        value: 0.1060514350556303,
+        value: 0.1696840716693085,
       },
       {
         id: 5,
-        value: 0.02919796195652175,
+        value: 0.0467167391304348,
       },
     ],
     default: true,
@@ -717,11 +669,11 @@ export const deplacements = [
     ecv: [
       {
         id: 6,
-        value: 0.09211716005563031,
+        value: 0.1473892316693085,
       },
       {
         id: 5,
-        value: 0.03677027173913044,
+        value: 0.0588324347826087,
       },
     ],
     default: true,
@@ -743,11 +695,11 @@ export const deplacements = [
     ecv: [
       {
         id: 6,
-        value: 0.1380123725556303,
+        value: 0.2208215716693085,
       },
       {
         id: 5,
-        value: 0.03169565217391306,
+        value: 0.0507130434782609,
       },
     ],
     default: true,
@@ -769,11 +721,11 @@ export const deplacements = [
     ecv: [
       {
         id: 6,
-        value: 0.1105577600556303,
+        value: 0.1768941916693085,
       },
       {
         id: 5,
-        value: 0.03169565217391306,
+        value: 0.0507130434782609,
       },
     ],
     default: true,
@@ -795,11 +747,11 @@ export const deplacements = [
     ecv: [
       {
         id: 6,
-        value: 0.01208836005563031,
+        value: 0.0193431516693085,
       },
       {
         id: 5,
-        value: 0.05527690217391306,
+        value: 0.0884430434782609,
       },
     ],
     default: true,
@@ -821,11 +773,11 @@ export const deplacements = [
     ecv: [
       {
         id: 6,
-        value: 0.1134194350556303,
+        value: 0.1814728716693085,
       },
       {
         id: 5,
-        value: 0.03315991847826087,
+        value: 0.0530558695652174,
       },
     ],
     default: true,
@@ -847,11 +799,11 @@ export const deplacements = [
     ecv: [
       {
         id: 6,
-        value: 0.0931681350556303,
+        value: 0.1490707916693085,
       },
       {
         id: 5,
-        value: 0.04073222826086956,
+        value: 0.0651715652173913,
       },
     ],
     default: true,
@@ -873,11 +825,11 @@ export const deplacements = [
     ecv: [
       {
         id: 6,
-        value: 0.1496510600556303,
+        value: 0.2394434716693085,
       },
       {
         id: 5,
-        value: 0.03961956521739131,
+        value: 0.0633913043478261,
       },
     ],
     default: true,
@@ -899,11 +851,11 @@ export const deplacements = [
     ecv: [
       {
         id: 6,
-        value: 0.1437828350556303,
+        value: 0.2300543116693085,
       },
       {
         id: 5,
-        value: 0.03961956521739131,
+        value: 0.0633913043478261,
       },
     ],
     default: true,
@@ -925,11 +877,11 @@ export const deplacements = [
     ecv: [
       {
         id: 6,
-        value: 0.014735260055630313,
+        value: 0.0235781916693085,
       },
       {
         id: 5,
-        value: 0.0759790760869565,
+        value: 0.1215665217391304,
       },
     ],
     default: true,
@@ -951,11 +903,11 @@ export const deplacements = [
     ecv: [
       {
         id: 6,
-        value: 0.12976718505563029,
+        value: 0.2076292716693085,
       },
       {
         id: 5,
-        value: 0.041083831521739125,
+        value: 0.0657341304347826,
       },
     ],
     default: true,
@@ -977,11 +929,11 @@ export const deplacements = [
     ecv: [
       {
         id: 6,
-        value: 0.11580859130563032,
+        value: 0.1852955216693085,
       },
       {
         id: 5,
-        value: 0.048656141304347804,
+        value: 0.0778498260869565,
       },
     ],
     default: true,
@@ -1003,11 +955,11 @@ export const deplacements = [
     ecv: [
       {
         id: 6,
-        value: 0.2066193725556303,
+        value: 0.3305927716693085,
       },
       {
         id: 5,
-        value: 0.03961956521739131,
+        value: 0.0633913043478261,
       },
     ],
     default: true,
@@ -1029,11 +981,11 @@ export const deplacements = [
     ecv: [
       {
         id: 6,
-        value: 0.1300887163056303,
+        value: 0.2081437216693085,
       },
       {
         id: 5,
-        value: 0.03961956521739131,
+        value: 0.0633913043478261,
       },
     ],
     default: true,
@@ -1055,11 +1007,11 @@ export const deplacements = [
     ecv: [
       {
         id: 6,
-        value: 0.014112460055630311,
+        value: 0.0225817116693085,
       },
       {
         id: 5,
-        value: 0.08024456521739132,
+        value: 0.1283913043478261,
       },
     ],
     default: true,
@@ -1081,11 +1033,11 @@ export const deplacements = [
     ecv: [
       {
         id: 6,
-        value: 0.1408191850556303,
+        value: 0.2253124716693085,
       },
       {
         id: 5,
-        value: 0.041083831521739125,
+        value: 0.0657341304347826,
       },
     ],
     default: true,
@@ -1107,11 +1059,11 @@ export const deplacements = [
     ecv: [
       {
         id: 6,
-        value: 0.1373241350556303,
+        value: 0.2197203916693085,
       },
       {
         id: 5,
-        value: 0.048656141304347804,
+        value: 0.0778498260869565,
       },
     ],
     default: true,
@@ -1132,13 +1084,13 @@ export const deplacements = [
     ecv: [
       {
         id: 6,
-        value: 0.1134194350556303,
+        value: 0.1814728716693085,
       },
       {
         id: 5,
-        value: 0.03315991847826087,
+        value: 0.0530558695652174,
       },
     ],
     default: false,
   },
-] satisfies Equivalent[]
+] as Equivalent[]

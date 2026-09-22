@@ -140,7 +140,7 @@ describe('getEmissionPerDistance', () => {
           tco2e: 0.0003771932716693085,
         },
         id: 31,
-        name: 'Camping-car',
+        name: 'Camping-car thermique (1 personne)',
       },
       {
         emissions: {
@@ -176,7 +176,7 @@ describe('getEmissionPerDistance', () => {
           tco2e: 0.0002371460116693085,
         },
         id: 35,
-        name: 'Van',
+        name: 'Van thermique (1 personne)',
       },
       {
         id: 100,

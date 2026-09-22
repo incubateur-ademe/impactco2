@@ -156,6 +156,12 @@ export const subCategories = {
       'voiture-grandeberline-hybriderechargeable+4',
     ],
   },
+  van: {
+    van: ['van', 'van+1', 'van+2', 'van+3', 'van+4'],
+  },
+  campingcar: {
+    campingcar: ['campingcar', 'campingcar+1', 'campingcar+2', 'campingcar+3', 'campingcar+4'],
+  },
   magasin: {
     foot: ['magasindouce', 'magasindouce2kg', 'magasindouce15kg', 'magasindouce30kg'],
     car: ['magasin', 'magasin2kg', 'magasin15kg', 'magasin30kg'],
