@@ -1,5 +1,7 @@
 import axios, { AxiosResponse } from 'axios'
 import { unstable_cache } from 'next/cache'
+import { NotionAPI } from 'notion-client'
+import { ExtendedRecordMap } from 'notion-types'
 import { z } from 'zod'
 import { getRevalidate } from './revalidate'
 
@@ -84,4 +86,72 @@ export const getAllNotionDBUncached = async <T>(url: string) => {
   }
 
   return results
+}
+
+const DEFAULT_MAX_RETRIES = 4
+
+export const getNotionRetryMetadata = (error: unknown) => {
+  const genericError = error as {
+    status: number
+    response: {
+      headers: {
+        get: (headerName: string) => string
+      }
+    }
+  }
+
+  return {
+    status: genericError.status,
+    retryAfter: parseInt(genericError.response.headers.get('retry-after'), 10) * 1000 || 60000,
+  }
+}
+
+export const runWithNotionRetry = async <T>(operation: () => Promise<T>) => {
+  let attempt = 0
+
+  while (true) {
+    try {
+      return await operation()
+    } catch (error) {
+      const metadata = getNotionRetryMetadata(error)
+      if (!metadata || (metadata.status !== 429 && metadata.status !== 529) || attempt >= DEFAULT_MAX_RETRIES) {
+        throw error
+      }
+
+      await new Promise((resolve) => setTimeout(resolve, metadata.retryAfter + 1000))
+      attempt += 1
+    }
+  }
+}
+
+type BlockWithRole = ExtendedRecordMap['block'][string] & { value?: { role?: string; content?: string[] } }
+
+export const sanitizeRecordMap = (recordMap: ExtendedRecordMap) => {
+  if (!recordMap.block) {
+    return recordMap
+  }
+
+  const sanitized = { ...recordMap }
+  sanitized.block = Object.fromEntries(
+    Object.entries(recordMap.block).filter(([, block]) => (block as BlockWithRole)?.value?.role !== 'none')
+  )
+
+  const ids = Object.keys(sanitized.block)
+  Object.values(sanitized.block).forEach((block: BlockWithRole) => {
+    if (block?.value?.content) {
+      block.value.content = block.value.content.filter((id) => ids.includes(id))
+    }
+  })
+
+  return sanitized
+}
+
+export const getNotionContent = async (notion: NotionAPI, id: string) => {
+  try {
+    const content = await runWithNotionRetry(() => notion.getPage(id, { fetchCustomEmojis: true }))
+    return content ? sanitizeRecordMap(content) : undefined
+  } catch (error) {
+    console.error('Unable to get content from Notion', error)
+    return undefined
+  }
 }

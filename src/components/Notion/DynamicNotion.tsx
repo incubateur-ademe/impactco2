@@ -1,15 +1,17 @@
+'use client'
+
 import { LinkProps } from 'next/link'
 import { ExtendedRecordMap } from 'notion-types'
 import { ReactNode, useEffect, useRef } from 'react'
-import { NotionRenderer } from 'react-notion-x'
+import { MapImageUrlFn, NotionRenderer } from 'react-notion-x'
 import { Collection } from 'react-notion-x/build/third-party/collection'
 import Link from '../base/buttons/Link'
 import NotionErrorBoundary from './NotionErrorBoundary'
 import { improveAccessibility } from './utils'
 import 'react-notion-x/src/styles.css'
 
-export type DynamicNotionProps = { recordMap: ExtendedRecordMap }
-const DynamicNotion = ({ recordMap }: DynamicNotionProps) => {
+export type DynamicNotionProps = { recordMap: ExtendedRecordMap; mapImageUrl?: MapImageUrlFn }
+const DynamicNotion = ({ recordMap, mapImageUrl }: DynamicNotionProps) => {
   const ref = useRef<HTMLDivElement>(null)
   useEffect(() => {
     if (ref.current) {
@@ -32,6 +34,7 @@ const DynamicNotion = ({ recordMap }: DynamicNotionProps) => {
               )
             },
           }}
+          mapImageUrl={mapImageUrl}
         />
       </NotionErrorBoundary>
     </div>

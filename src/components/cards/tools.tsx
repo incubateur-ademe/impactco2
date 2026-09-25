@@ -1,13 +1,17 @@
+import KitRSE from '../outils/kitRse/KitRSE'
 import DetectorInformation from 'components/outils/DetectorInformation'
 import DetectorScript from 'components/outils/DetectorScript'
 
 export const sensibilisationTools = [
   {
-    slug: 'rse',
+    slug: 'kit-rse',
     title: 'Kit RSE',
-    description: 'La ressource clé en main pour sensibiliser à la transition écologique',
+    description: '9 temps forts pour agir',
     linkLabel: 'Obtenir',
-    link: 'https://tally.so/r/XxLGeY',
+    content: <KitRSE />,
+    noBanner: true,
+    toolLink: '/outils/kit-rse/calendrier',
+    toolLinkLabel: 'Obtenir le Kit RSE',
   },
   {
     slug: 'quiz',

@@ -76,7 +76,7 @@ const nextConfig = {
   transpilePackages: ['@tanstack/react-query', '@tanstack/query-core'],
   reactStrictMode: true,
   images: {
-    remotePatterns: [images],
+    remotePatterns: [images, new URL(`https://${process.env.NEXT_PUBLIC_S3_BUCKET_NAME}.s3.fr-par.scw.cloud/**`)],
   },
   async headers() {
     return [
@@ -96,11 +96,6 @@ const nextConfig = {
   },
   async redirects() {
     return [
-      {
-        source: '/outils/kit-rse',
-        destination: 'https://tally.so/r/XxLGeY',
-        permanent: false,
-      },
       {
         source: '/detecteur-co2',
         destination: '/outils/detecteur',
