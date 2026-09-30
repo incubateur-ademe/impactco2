@@ -24,6 +24,7 @@ const csp = {
     "'unsafe-inline'",
     `${process.env.NEXT_PUBLIC_MATOMO_SITE_URL}/matomo.js`,
     `${process.env.NEXT_PUBLIC_MATOMO_SITE_URL}/plugins/HeatmaSessionRecording/configs.php`,
+    'https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js',
   ],
 }
 
@@ -96,6 +97,16 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      {
+        source: '/etude-figaro',
+        destination: '/etude-figaro/index.html',
+        permanent: true,
+      },
+      {
+        source: '/etude-laredoute',
+        destination: '/etude-laredoute/index.html',
+        permanent: true,
+      },
       {
         source: '/outils/kit-rse',
         destination: 'https://tally.so/r/XxLGeY',
