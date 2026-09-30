@@ -1,0 +1,134 @@
+.main {
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+}
+
+.container-desktop {
+  position: relative;
+}
+
+.embed-desktop {
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  height: 720px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  display: flex;
+  overflow: scroll;
+}
+
+.div-block {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.container-mob {
+  display: none;
+}
+
+.embed-mob {
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  display: flex;
+}
+
+.hit-zone-dekstop {
+  z-index: 100;
+  cursor: pointer;
+  width: 23.4%;
+  height: 1%;
+  position: absolute;
+  inset: 13.3% auto auto 28.9%;
+}
+
+@media screen and (min-width: 1280px) {
+  .hit-zone-dekstop {
+    width: 296px;
+    height: 64px;
+    top: 1100px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .main {
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .container-desktop {
+    display: none;
+  }
+
+  .container-mob {
+    outline-offset: 0px;
+    border-radius: 8px;
+    outline: 8px solid #eee;
+    flex-flow: column;
+    width: 100%;
+    max-width: 360px;
+    display: flex;
+    overflow: visible;
+  }
+
+  .embed-mob {
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow: scroll;
+  }
+
+  .mob-content {
+    flex-flow: column;
+    display: flex;
+    position: relative;
+  }
+
+  .mob-hit-zone {
+    width: 100%;
+    height: .7%;
+    position: absolute;
+    inset: 8.4% auto auto 0%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .mob-hit-zone {
+    z-index: 100;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .main {
+    height: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .container-mob {
+    max-width: 100%;
+    max-height: 100%;
+    overflow: visible;
+  }
+
+  .embed-mob {
+    min-height: 800px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    overflow: visible;
+  }
+
+  .mob-hit-zone {
+    height: .7%;
+    top: 8.2%;
+  }
+}
+
+
