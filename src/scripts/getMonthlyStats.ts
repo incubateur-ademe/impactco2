@@ -132,14 +132,14 @@ const getStatsForMonth = async (month: string) => {
 
   const [pageVisits, events, devEvents] = await Promise.all([
     await axios
-      .post<
-        { label: string; nb_visits: number; url: string }[]
-      >(`${process.env.NEXT_PUBLIC_MATOMO_SITE_URL}?idSite=${process.env.NEXT_PUBLIC_MATOMO_SITE_ID}&method=Actions.getPageUrls&format=JSON&module=API&period=month&date=${startDate}&showColumns=nb_visits&filter_limit=-1&flat=1`)
+      .post<{ label: string; nb_visits: number; url: string }[]>(
+        `${process.env.NEXT_PUBLIC_MATOMO_SITE_URL}?idSite=${process.env.NEXT_PUBLIC_MATOMO_SITE_ID}&method=Actions.getPageUrls&format=JSON&module=API&period=month&date=${startDate}&showColumns=nb_visits&filter_limit=-1&flat=1`
+      )
       .then((response) => response.data),
     axios
-      .post<
-        Row[]
-      >(`${process.env.NEXT_PUBLIC_MATOMO_SITE_URL}?idSite=${process.env.NEXT_PUBLIC_MATOMO_SITE_ID}&method=Events.getCategory&secondaryDimension=eventName&format=JSON&module=API&period=month&date=${startDate}&showColumns=nb_visits,nb_events&filter_limit=-1&flat=1`)
+      .post<Row[]>(
+        `${process.env.NEXT_PUBLIC_MATOMO_SITE_URL}?idSite=${process.env.NEXT_PUBLIC_MATOMO_SITE_ID}&method=Events.getCategory&secondaryDimension=eventName&format=JSON&module=API&period=month&date=${startDate}&showColumns=nb_visits,nb_events&filter_limit=-1&flat=1`
+      )
       .then((r) => r.data),
     await axios
       .post<

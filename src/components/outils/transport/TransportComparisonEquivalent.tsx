@@ -20,16 +20,14 @@ const allEquivalents = computedEquivalents.flatMap(getEquivalentWithCarpool)
 
 const getEquivalent = (language: Language, equivalents: ComputedEquivalent[], slug: string) => {
   let equivalent = equivalents.find((equivalent) => isEquivalentInMode(equivalent, slug)) as
-    | (ComputedEquivalent & { found?: boolean })
-    | undefined
+    (ComputedEquivalent & { found?: boolean }) | undefined
 
   if (equivalent) {
     return { ...equivalent, name: getName(language, equivalent, false, 1, false, true), found: true }
   }
 
   equivalent = allEquivalents.find((equivalent) => isEquivalentInMode(equivalent, slug)) as
-    | (ComputedEquivalent & { found?: boolean })
-    | undefined
+    (ComputedEquivalent & { found?: boolean }) | undefined
 
   return equivalent
     ? { ...equivalent, name: getName(language, equivalent, false, 1, false, true), found: false }
