@@ -80,3 +80,5 @@ prisma/generated/prisma/
 stats.csv
 
 next-env.d.ts
+
+public/imported/
