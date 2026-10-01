@@ -369,7 +369,9 @@ export function ParamProvider({ children, onWebsite }: { children: ReactNode; on
   const [modes, setModes] = useState<string[]>(
     deplacements
       .filter((deplacement) => !deplacement.ignore)
-      .flatMap((transport) => (transport.withCarpool ? [`${transport.slug}+1`, transport.slug] : [transport.slug]))
+      .flatMap((transport) =>
+        transport.withCarpool && !transport.onlyCarpool ? [`${transport.slug}+1`, transport.slug] : [transport.slug]
+      )
   )
   const [comparisonMode, setComparisonMode] = useState<'list' | 'comparison'>('list')
   const [comparison, setComparison] = useState<string[]>(['voiturethermique', 'tgv'])

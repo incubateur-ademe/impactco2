@@ -215,9 +215,11 @@ const CategorySimulator = ({
                       {legends && <p className='ico2-hidden'>{barExplanation}</p>}
                     </div>
                   </Link>
-                  {(equivalent.slug.startsWith('voiture') || equivalent.slug.startsWith('moto')) && type && (
-                    <Carpool carpoolValue={equivalent.carpool} type={type} equivalent={equivalent} />
-                  )}
+                  {(equivalent.slug.startsWith('voiture') ||
+                    equivalent.slug.startsWith('moto') ||
+                    equivalent.slug.startsWith('van') ||
+                    equivalent.slug.startsWith('campingcar')) &&
+                    type && <Carpool carpoolValue={equivalent.carpool} type={type} equivalent={equivalent} />}
                   {!!equivalent.livraison && <LivraisonType equivalent={equivalent} />}
                 </li>
               )

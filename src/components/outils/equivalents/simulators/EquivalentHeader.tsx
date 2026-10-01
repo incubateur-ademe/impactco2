@@ -25,6 +25,7 @@ const EquivalentHeader = ({ category, equivalent }: { category: Category; equiva
 
   const hasPre = pre !== `equivalent.hypothesis.pre.${equivalent.slug}`
   const hasPost = post !== `equivalent.hypothesis.post.${equivalent.slug}`
+
   return (
     <>
       <EquivalentCardContent equivalent={equivalent} category={category} />
@@ -33,7 +34,12 @@ const EquivalentHeader = ({ category, equivalent }: { category: Category; equiva
           <span className={styles.hypothesisTitle}>{t('hypotheses')}</span>
           {'months' in equivalent && <span>{getMonthsLabel(equivalent.months, language)} </span>}
           {hasPre && <span>{pre}</span>}
-          {equivalent.carpool && <span> - {getCarpool(language, equivalent.carpool)}</span>}
+          {equivalent.carpool && (
+            <span>
+              {hasPre ? ' - ' : ''}
+              {getCarpool(language, equivalent.carpool)}
+            </span>
+          )}
           {hasPost && (
             <span>
               {hasPre ? ' ' : ''}
