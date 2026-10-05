@@ -25,7 +25,9 @@ const csp = {
     `${process.env.NEXT_PUBLIC_MATOMO_SITE_URL}/matomo.js`,
     `${process.env.NEXT_PUBLIC_MATOMO_SITE_URL}/plugins/HeatmaSessionRecording/configs.php`,
     'https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js',
+    'https://preimpactco2.osc-fr1.scalingo.io',
   ],
+  'frame-src': ["'self'", 'https://preimpactco2.osc-fr1.scalingo.io'],
 }
 
 if (process.env.UNSAFE_EVAL === 'true') {
