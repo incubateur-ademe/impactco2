@@ -24,15 +24,7 @@ const configs: Record<
   string,
   {
     type:
-      | 'number'
-      | 'text'
-      | 'select'
-      | 'select-number'
-      | 'select-equivalent'
-      | 'boolean'
-      | 'checkbox'
-      | 'radio'
-      | 'hidden'
+      'number' | 'text' | 'select' | 'select-number' | 'select-equivalent' | 'boolean' | 'checkbox' | 'radio' | 'hidden'
     equivalents?: Equivalent[]
     unit?: string
     min?: number

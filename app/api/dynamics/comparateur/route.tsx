@@ -4,8 +4,6 @@ import { NextRequest, NextResponse } from 'next/server'
 import { Language } from 'types/equivalent'
 import Comparateur from 'components/metaImages/Comparateur'
 
-export const runtime = 'edge'
-
 const getFont = async (url: URL) => {
   const res = await fetch(url)
   return await res.arrayBuffer()
