@@ -40,7 +40,7 @@ const Notion = ({
     }
 
     const applyAccessibility = () => {
-      improveAccessibility(container, noTitle)
+      improveAccessibility(container, noTitle || false)
     }
 
     applyAccessibility()

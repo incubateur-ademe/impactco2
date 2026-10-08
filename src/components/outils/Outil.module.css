@@ -22,6 +22,7 @@
 }
 
 .content {
+  position: relative;
   margin: 1.25rem 0;
   display: flex;
   flex-direction: column;

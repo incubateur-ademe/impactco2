@@ -1,86 +1,17 @@
-import CheckRoundIcon from 'components/base/icons/check-round'
-import SimpleStarShapeIcon from 'components/base/icons/simple-star-shape'
 import Breadcrumbs from 'components/breadcrumbs/Breadcrumbs'
 import News from 'components/cards/News'
-import { ToolCardProps } from 'components/cards/ToolCard'
 import ToolCards from 'components/cards/ToolCards'
 import { devTools, sensibilisationTools, smallTools, tools } from 'components/cards/tools'
 import FAQs from 'components/faq/FAQs'
 import Equivalents from 'components/home/Equivalents'
 import Block from 'components/layout/Block'
-import styles from './Outils.module.css'
 
 const Outils = () => {
   return (
     <>
       <Breadcrumbs current='Les outils' links={[{ label: 'Accueil', link: '/' }]} />
       <Block title='Les outils' as='h1' description='Trouver l’outil adapté à votre prochaine publication.' />
-      <News
-        tools={[
-          {
-            ...(sensibilisationTools.find((tool) => tool.slug === 'rse') as ToolCardProps),
-            title: 'Découvrez le Kit RSE !',
-            description: (
-              <>
-                <div className={styles.descriptionLine}>
-                  <div className={styles.icons}>
-                    <div className={styles.shape}>
-                      <SimpleStarShapeIcon />
-                    </div>
-                    <div className={styles.check}>
-                      <CheckRoundIcon />
-                    </div>
-                  </div>
-                  <p>8 événements en lien avec la transition écologique</p>
-                </div>
-                <div className={styles.descriptionLine}>
-                  <div className={styles.icons}>
-                    <div className={styles.shape}>
-                      <SimpleStarShapeIcon />
-                    </div>
-                    <div className={styles.check}>
-                      <CheckRoundIcon />
-                    </div>
-                  </div>
-                  <p>Des contenus prêts à l’emploi (mails, visuels, défis…)</p>
-                </div>
-              </>
-            ),
-          },
-          {
-            slug: 'csv',
-            title: 'Télécharger la liste des équivalents',
-            description: (
-              <>
-                <div className={styles.descriptionLine}>
-                  <div className={styles.icons}>
-                    <div className={styles.shape}>
-                      <SimpleStarShapeIcon />
-                    </div>
-                    <div className={styles.check}>
-                      <CheckRoundIcon />
-                    </div>
-                  </div>
-                  <p>+ de 300 équivalents avec leurs facteurs d’émission</p>
-                </div>
-                <div className={styles.descriptionLine}>
-                  <div className={styles.icons}>
-                    <div className={styles.shape}>
-                      <SimpleStarShapeIcon />
-                    </div>
-                    <div className={styles.check}>
-                      <CheckRoundIcon />
-                    </div>
-                  </div>
-                  <p>Un simple tableau au format CSV</p>
-                </div>
-              </>
-            ),
-            linkLabel: 'Télécharger (.CSV | 53KB)',
-            link: '/equivalents.csv',
-          },
-        ]}
-      />
+      <News tools={[]} />
       <Block title='Pour animer votre communauté' description='Les outils pour créer des campagnes de sensibilisation'>
         <ToolCards
           tools={[
