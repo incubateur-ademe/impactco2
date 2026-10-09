@@ -97,7 +97,7 @@ const Carpool = ({
           )}
         </>
       )}
-      {carpoolValue && (
+      {carpoolValue !== undefined && (
         <PlusMinus
           value={carpoolValue + 1}
           setValue={(value) => {
@@ -108,7 +108,7 @@ const Carpool = ({
             )
             params[type].setCarpool({ ...params[type].carpool, [slug]: value - 1 })
           }}
-          min={2}
+          min={equivalent.onlyCarpool ? 1 : 2}
           max={5}
           label={formatName(t('person'), carpoolValue + 1)}
           smallLabel={formatName(t('personShort'), carpoolValue + 1)}
