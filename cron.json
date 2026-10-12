@@ -7,6 +7,10 @@
     {
       "command": "0 3 * * * tsx src/scripts/importFAQs.ts",
       "size": "S"
+    },
+    {
+      "command": "0 1 * * * tsx src/scripts/importKitRSE.ts",
+      "size": "S"
     }
   ]
 }
