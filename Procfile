@@ -1,1 +1,1 @@
-postdeploy: ./node_modules/.bin/prisma migrate deploy
+postdeploy: ./scripts/postdeploy.sh
