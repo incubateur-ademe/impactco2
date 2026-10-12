@@ -126,7 +126,7 @@ const Shareable = ({
               className={classNames(styles.overScreen, { [styles.fullHeight]: overScreenToDisplay.fullHeight })}>
               {!overScreenToDisplay.hideTitle ? (
                 <div>
-                  <div className={styles.header}>
+                  <div className={overScreenToDisplay.noHeaderSeparator ? styles.headerWithBorder : styles.header}>
                     <h1 className='text-lg'>{t(overScreenToDisplay.title)}</h1>
                     <GhostButton
                       icon={<CloseIcon />}
@@ -136,7 +136,7 @@ const Shareable = ({
                       {tModal('close')}
                     </GhostButton>
                   </div>
-                  <div className={styles.separatorBothBorders} />
+                  {!overScreenToDisplay.noHeaderSeparator && <div className={styles.separatorBothBorders} />}
                 </div>
               ) : (
                 <h1 className='ico2-hidden'>{t(overScreenToDisplay.title)}</h1>
@@ -157,7 +157,7 @@ const Shareable = ({
                       onClick={onClose}
                       title={tModal('close-title')}
                       data-testid='cancel-button'>
-                      {tModal('close')}
+                      {tModal(overScreenToDisplay.bottomButtonLabel || 'close')}
                     </GhostButton>
                   </div>
                 </div>

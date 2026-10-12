@@ -13,7 +13,8 @@ import FAQ from './FAQ'
 import { FAQSListProps } from './FAQsList'
 import useSearchableFAQs from './SearchableFAQs'
 import headerStyles from '../comparateur/overscreens/EquivalentsOverscreen.module.css'
-import styles from './FAQsList.module.css'
+import faqStyles from './FAQsList.module.css'
+import styles from './FaqsOverscreen.module.css'
 
 const faqCategoriesOrder: Record<FAQCategory, number> = {
   [FAQCategory.QuestionsGenerales]: 1,
@@ -23,17 +24,13 @@ const faqCategoriesOrder: Record<FAQCategory, number> = {
   [FAQCategory.ÀProposDesOutils]: 5,
 }
 
-const FaqsOverscreen = ({ filter, page, slug }: { filter: string; slug: string } & Omit<FAQSListProps, 'faqs'>) => {
-  const { setOverscreen, language } = useParamContext()
+const FaqsOverscreen = ({ filter, page }: { filter: string } & Omit<FAQSListProps, 'faqs'>) => {
+  const { language } = useParamContext()
   const t = useTranslations('faq')
-  const tModal = useTranslations('modal')
   const [search, setSearch] = useState('')
   const [faqs, setFaqs] = useState<FAQType[]>([])
   const { faqsByCategory } = useSearchableFAQs({ faqs, search, categoryOrder: faqCategoriesOrder, tracking: filter })
 
-  const onClose = () => {
-    setOverscreen(slug, '')
-  }
   useEffect(() => {
     let cancelled = false
 
@@ -64,8 +61,8 @@ const FaqsOverscreen = ({ filter, page, slug }: { filter: string; slug: string }
 
   return (
     <>
-      <div className={headerStyles.header}>
-        <p className={styles.searchExemples}>
+      <div className={classNames(headerStyles.header, styles.header)}>
+        <p className={faqStyles.searchExemples}>
           {t('exemple')}{' '}
           <Button onClick={() => setSearch(t(`${filter}.exemple-1`))} asLink>
             {t(`${filter}.exemple-1`)}
@@ -91,21 +88,14 @@ const FaqsOverscreen = ({ filter, page, slug }: { filter: string; slug: string }
           padding='lg'
           onChange={(e) => setSearch(e.target.value)}
         />
-        <Button
-          size='sm'
-          onClick={() => {
-            onClose()
-          }}>
-          {tModal('close')}
-        </Button>
       </div>
       <div className={headerStyles.scrollable}>
         {faqsByCategory.length > 0 ? (
           <>
-            <ul className={styles.categories}>
+            <ul className={faqStyles.categories}>
               {faqsByCategory.map(([category, faqs]) => (
-                <li key={category} className={styles.category}>
-                  <h2 className={styles.categoryTitle}>{t(category)}</h2>
+                <li key={category} className={faqStyles.category}>
+                  <h2 className={faqStyles.categoryTitle}>{t(category)}</h2>
                   <ul>
                     {faqs.map((faq) => (
                       <FAQ key={faq.title} faq={faq} page={page} loadingText={t('loading')} withAnchor />
@@ -114,27 +104,24 @@ const FaqsOverscreen = ({ filter, page, slug }: { filter: string; slug: string }
                 </li>
               ))}
             </ul>
-            <div className={classNames(styles.footer, styles.footerTop)}>
-              <p>{t('notFound')}</p>
-              <ul className={styles.footer}>
-                <li className={styles.footer}>
-                  <Link href={`/suggestion?fromLabel=${page}`}>{t('contact')}</Link>
-                </li>
-              </ul>
+            <div className={faqStyles.footer}>
+              <p>
+                {t('notFound')} <Link href={`/suggestion?fromLabel=${page}`}>{t('contact')}</Link>
+              </p>
             </div>
           </>
         ) : (
           <div>
-            <p className={styles.noResult}>
+            <p className={faqStyles.noResult}>
               {t('noResult')} <b>"{search}"</b> <em>-</em>{' '}
               <Button asLink onClick={() => setSearch('')}>
                 {t('clear')}
               </Button>
             </p>
 
-            <p className={styles.noResultExplanation}>{t('noResultExplanation')}</p>
+            <p className={faqStyles.noResultExplanation}>{t('noResultExplanation')}</p>
             <br />
-            <p className={styles.noResultAdditionalInfo}>
+            <p className={faqStyles.noResultAdditionalInfo}>
               {t.rich('noResultAdditionalInfo', {
                 contact: (chunk) => <Link href={`/suggestion?fromLabel=${page}`}>{chunk}</Link>,
               })}
