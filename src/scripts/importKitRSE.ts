@@ -143,7 +143,7 @@ const downloadImages = async (recordMap: ExtendedRecordMap) => {
   return { mainImage, metaImage }
 }
 
-export const importKitRSEFromNotion = async () => {
+const importFromNotion = async () => {
   if (process.env.AUTO_IMPORT_KIT_RSE !== 'true') {
     return
   }
@@ -202,6 +202,4 @@ export const importKitRSEFromNotion = async () => {
   console.log(`Successfully imported ${calendarEventsData.length} calendar events`)
 }
 
-if (require.main === module) {
-  importKitRSEFromNotion()
-}
+importFromNotion()

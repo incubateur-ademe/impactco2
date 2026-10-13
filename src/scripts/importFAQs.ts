@@ -6,7 +6,7 @@ import { prismaClient } from '../utils/prismaClient'
 
 const notion = new NotionAPI({ authToken: process.env.NOTION_API_KEY })
 
-export const importFAQsFromNotion = async () => {
+const importFromNotion = async () => {
   if (process.env.AUTO_IMPORT_FAQS !== 'true') {
     return
   }
@@ -57,6 +57,4 @@ export const importFAQsFromNotion = async () => {
   await prismaClient.$transaction([prismaClient.faq.deleteMany(), prismaClient.faq.createMany({ data: faqsData })])
 }
 
-if (require.main === module) {
-  importFAQsFromNotion()
-}
+importFromNotion()
