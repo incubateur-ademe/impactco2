@@ -18,11 +18,23 @@ export type ToolCardProps = {
   link?: string
   image?: string
   now?: boolean
+  asDiv?: boolean
 }
 
 const populaire = 'transport'
 
-const ToolCard = ({ slug, title, subTitle, description, linkLabel, horizontal, link, image, now }: ToolCardProps) => {
+const ToolCard = ({
+  slug,
+  title,
+  subTitle,
+  description,
+  linkLabel,
+  horizontal,
+  link,
+  image,
+  now,
+  asDiv,
+}: ToolCardProps) => {
   const isNew = useMemo(() => {
     const news = process.env.NEXT_PUBLIC_NEWS
     if (news) {
@@ -36,9 +48,9 @@ const ToolCard = ({ slug, title, subTitle, description, linkLabel, horizontal, l
     }
     return false
   }, [slug])
-
+  const Container = asDiv ? 'div' : 'li'
   return (
-    <li
+    <Container
       className={classNames(styles.list, {
         [styles.horizontalList]: horizontal,
         [styles.withTag]: isNew || slug === populaire || now,
@@ -76,7 +88,7 @@ const ToolCard = ({ slug, title, subTitle, description, linkLabel, horizontal, l
           </div>
         </div>
       </Link>
-    </li>
+    </Container>
   )
 }
 

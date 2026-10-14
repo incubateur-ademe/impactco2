@@ -61,3 +61,7 @@
     background-color: var(--primary-20);
   }
 }
+
+.toolCard {
+  margin-bottom: 2rem;
+}
