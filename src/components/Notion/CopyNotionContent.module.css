@@ -10,4 +10,8 @@
   &:focus {
     outline: 3px solid var(--primary-50) !important;
   }
+
+  &:focus:not(:focus-visible) {
+    outline: none !important;
+  }
 }

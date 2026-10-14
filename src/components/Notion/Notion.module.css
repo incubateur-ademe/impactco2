@@ -19,6 +19,8 @@
     }
   }
 
+  :global(.notion-asset-wrapper-pdf),
+  :global(.notion-asset-wrapper-image),
   :global(.notion-file-icon),
   :global(.notion-hash-link),
   :global(.notion-asset-caption),
@@ -165,21 +167,21 @@
   }
 
   :global(.notion-h1) {
-    margin-bottom: 1.5rem;
+    margin: 1.5rem 0 2rem 0;
     font-size: 2rem;
     font-weight: 700;
     line-height: 2.75rem;
   }
 
   :global(.notion-h2) {
-    margin-bottom: 1.5rem;
+    margin: 1.5rem 0;
     font-size: 1.5rem;
     font-weight: 700;
     line-height: 2rem;
   }
 
   :global(.notion-h3) {
-    margin-bottom: 0.5rem;
+    margin: 0.5rem 0;
     font-size: 1.25rem;
     font-weight: 700;
     line-height: 1.75rem;

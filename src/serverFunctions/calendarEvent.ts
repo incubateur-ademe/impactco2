@@ -11,15 +11,16 @@ export const getCalendarEvents = async () => {
         image: true,
         startDate: true,
         endDate: true,
+        content: true,
       },
       orderBy: { startDate: 'desc' },
     })
-
+    const allEvents = events.map((event) => ({ ...event, hasContent: !!event.content, content: undefined }))
     const now = new Date()
-    const upcoming: typeof events = []
-    const past: typeof events = []
+    const upcoming: typeof allEvents = []
+    const past: typeof allEvents = []
 
-    events.forEach((event) => {
+    allEvents.forEach((event) => {
       const date = event.endDate ? new Date(event.endDate) : new Date(event.startDate)
 
       const dateUTC = new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(), 23, 59, 59, 999))
