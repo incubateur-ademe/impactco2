@@ -7,6 +7,7 @@ import LocalNumber from 'components/base/LocalNumber'
 import Link from 'components/base/buttons/Link'
 import HiddenLabel from 'components/form/HiddenLabel'
 import Select from 'components/form/Select'
+import ToolCard from '../cards/ToolCard'
 import styles from './Statistics.module.css'
 
 const Statistics = ({ defaultStats, defaultYear }: { defaultStats: Stats; defaultYear: string }) => {
@@ -128,7 +129,17 @@ const Statistics = ({ defaultStats, defaultYear }: { defaultStats: Stats; defaul
           </tbody>
         </table>
       </div>
-
+      <div className={styles.toolCard}>
+        <ToolCard
+          slug='matriceimpact'
+          title="Matrice d'impact"
+          description="Consulter les indicateurs d'usage, les métriques clés sur lesquels repose la stratégie d'Impact CO₂"
+          linkLabel='CONSULTER'
+          link='/stats/matriceimpact'
+          horizontal
+          asDiv
+        />
+      </div>
       <Link
         href={`${process.env.NEXT_PUBLIC_MATOMO_SITE_URL}/index.php?module=CoreHome&action=index&date=yesterday&period=week&idSite=${process.env.NEXT_PUBLIC_MATOMO_SITE_ID}#?idSite=${process.env.NEXT_PUBLIC_MATOMO_SITE_ID}&period=week&date=yesterday&category=Dashboard_Dashboard&subcategory=6`}>
         Découvrez toutes les statistiques du site Impact CO₂ sur le tableau de bord de notre outil de suivi Matomo
