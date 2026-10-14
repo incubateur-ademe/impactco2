@@ -15,7 +15,7 @@
       "exemple-1": "construction",
       "exemple-2": "occupancy rate",
       "exemple-3": "plane",
-      "exemple-4": "vehicle"
+      "exemple-4": "car"
     },
     "Chauffage": {
       "exemple-1": "temperature",
@@ -24,16 +24,16 @@
       "exemple-4": "wood boiler"
     },
     "Alimentation": {
-      "exemple-1": "vegetarian",
-      "exemple-2": "meat",
-      "exemple-3": "organic",
-      "exemple-4": "serving"
+      "exemple-1": "meat",
+      "exemple-2": "organic",
+      "exemple-3": "health",
+      "exemple-4": "local"
     },
     "Repas": {
       "exemple-1": "vegetarian",
-      "exemple-2": "meat",
-      "exemple-3": "organic",
-      "exemple-4": "serving"
+      "exemple-2": "portion",
+      "exemple-3": "meal",
+      "exemple-4": "health"
     },
     "or": "or",
     "noResult": "No results for",
@@ -283,7 +283,8 @@
   },
   "modal": {
     "close": "Close",
-    "close-title": "Close and go back to the simulator"
+    "close-title": "Close and go back to the simulator",
+    "backToResults": "Back to results"
   },
   "transport": {
     "sorry": "Sorry !",

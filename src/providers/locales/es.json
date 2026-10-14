@@ -19,21 +19,21 @@
     },
     "Chauffage": {
       "exemple-1": "temperatura",
-      "exemple-2": "consumo de energía",
+      "exemple-2": "consumo energético",
       "exemple-3": "facturas",
       "exemple-4": "caldera de leña"
     },
     "Alimentation": {
-      "exemple-1": "vegetariano",
-      "exemple-2": "carne",
-      "exemple-3": "orgánico",
-      "exemple-4": "ración"
+      "exemple-1": "carne",
+      "exemple-2": "orgánico",
+      "exemple-3": "salud",
+      "exemple-4": "local"
     },
     "Repas": {
       "exemple-1": "vegetariano",
-      "exemple-2": "carne",
-      "exemple-3": "orgánico",
-      "exemple-4": "ración"
+      "exemple-2": "porción",
+      "exemple-3": "plato",
+      "exemple-4": "salud"
     },
     "or": "o",
     "noResult": "Ningún resultado para",
@@ -283,7 +283,8 @@
   },
   "modal": {
     "close": "Cerrar",
-    "close-title": "Cerrar y volver al simulador"
+    "close-title": "Cerrar y volver al simulador",
+    "backToResults": "Volver a los resultados"
   },
   "transport": {
     "sorry": "¡Lo siento!",

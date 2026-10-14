@@ -13,7 +13,7 @@
     "À propos des outils": "À propos des outils",
     "Transport": {
       "exemple-1": "construction",
-      "exemple-2": "taux de remplissage",
+      "exemple-2": "taux d'occupation",
       "exemple-3": "avion",
       "exemple-4": "voiture"
     },
@@ -24,16 +24,16 @@
       "exemple-4": "chaudière à bois"
     },
     "Alimentation": {
-      "exemple-1": "végétarien",
-      "exemple-2": "viande",
-      "exemple-3": "bio",
-      "exemple-4": "portion"
+      "exemple-1": "viande",
+      "exemple-2": "bio",
+      "exemple-3": "santé",
+      "exemple-4": "local"
     },
     "Repas": {
       "exemple-1": "végétarien",
-      "exemple-2": "viande",
-      "exemple-3": "bio",
-      "exemple-4": "portion"
+      "exemple-4": "portion",
+      "exemple-2": "assiette",
+      "exemple-3": "santé"
     },
     "or": "ou",
     "noResult": "Aucun résultat pour",
@@ -283,7 +283,8 @@
   },
   "modal": {
     "close": "Fermer",
-    "close-title": "Fermer et retourner au simulateur"
+    "close-title": "Fermer et retourner au simulateur",
+    "backToResults": "Revenir aux résultats"
   },
   "transport": {
     "sorry": "Désolé !",
