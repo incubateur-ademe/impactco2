@@ -21,6 +21,7 @@ export type ToolCardProps = {
   imageBorder?: boolean
   blurImage?: boolean
   smallTitle?: boolean
+  asDiv?: boolean
 }
 
 const populaire = 'transport'
@@ -38,6 +39,7 @@ const ToolCard = ({
   imageBorder,
   blurImage,
   smallTitle,
+  asDiv,
 }: ToolCardProps) => {
   const isNew = useMemo(() => {
     const news = process.env.NEXT_PUBLIC_NEWS
@@ -52,9 +54,9 @@ const ToolCard = ({
     }
     return false
   }, [slug])
-
+  const Container = asDiv ? 'div' : 'li'
   return (
-    <li
+    <Container
       className={classNames(styles.list, {
         [styles.horizontalList]: horizontal,
         [styles.withTag]: isNew || slug === populaire || now,
@@ -98,7 +100,7 @@ const ToolCard = ({
           </div>
         </div>
       </Link>
-    </li>
+    </Container>
   )
 }
 
