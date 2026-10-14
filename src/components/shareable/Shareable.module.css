@@ -121,7 +121,8 @@
   max-height: 100%;
 }
 
-.header {
+.header,
+.headerWithBorder {
   align-items: center;
   display: flex;
   justify-content: space-between;
@@ -132,9 +133,13 @@
   }
 }
 
+.headerWithBorder {
+  border-bottom: 2px solid var(--primary-30);
+}
+
 .overScreenChildren {
   padding: 2rem 1.5rem;
-  flex-shrink: 1;
+  flex-grow: 1;
   overflow: auto;
 
   @media screen and (max-width: 29.875rem) {

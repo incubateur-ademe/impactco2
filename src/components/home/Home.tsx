@@ -42,7 +42,7 @@ const Home = () => {
         </div>
         <ToolCards
           tools={[
-            sensibilisationTools.find((tool) => tool.slug === 'rse'),
+            sensibilisationTools.find((tool) => tool.slug === 'kit-rse'),
             tools.find((tool) => tool.slug === 'livraison'),
             tools.find((tool) => tool.slug === 'transport'),
           ]}

@@ -17,7 +17,11 @@ export const getNotionContentProps = unstable_cache(
   { revalidate: getRevalidate(process.env.NOTION_TABLE_REVALIDATE) }
 )
 
-export const improveAccessibility = (ref: HTMLDivElement, noTitle?: boolean) => {
+export const improveAccessibility = (
+  ref: HTMLDivElement,
+  noTitle: boolean,
+  extraHTML?: (ref: HTMLDivElement) => void
+) => {
   const elements = ref.getElementsByTagName('svg')
   for (const element of elements) {
     element.setAttribute('alt', '')
@@ -60,5 +64,9 @@ export const improveAccessibility = (ref: HTMLDivElement, noTitle?: boolean) => 
     for (const header of headers) {
       header.remove()
     }
+  }
+
+  if (extraHTML) {
+    extraHTML(ref)
   }
 }

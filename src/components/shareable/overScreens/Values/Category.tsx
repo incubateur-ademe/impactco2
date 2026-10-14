@@ -41,9 +41,10 @@ export const overScreenCategoryValues: (category: Category) => Record<string, Ov
       faq: {
         image: '/images/icn-understand.svg',
         title: 'faq',
-        children: <FaqsOverscreen filter={category.name} page={category.name} slug={category.slug} />,
-        hideTitle: true,
+        children: <FaqsOverscreen filter={category.name} page={category.name} />,
         fullHeight: true,
+        noHeaderSeparator: true,
+        bottomButtonLabel: 'backToResults',
       },
     }
   }
@@ -139,9 +140,10 @@ export const overScreenCategoryValues: (category: Category) => Record<string, Ov
       faq: {
         image: '/images/icn-understand.svg',
         title: 'faq',
-        children: <FaqsOverscreen filter={category.name} page={category.name} slug={category.slug} />,
+        children: <FaqsOverscreen filter={category.name} page={category.name} />,
         fullHeight: true,
-        hideTitle: true,
+        noHeaderSeparator: true,
+        bottomButtonLabel: 'backToResults',
       },
       comparison0: {
         title: 'comparison',
@@ -278,9 +280,10 @@ export const overScreenCategoryValues: (category: Category) => Record<string, Ov
       faq: {
         image: '/images/icn-understand.svg',
         title: 'faq',
-        children: <FaqsOverscreen filter={category.name} page={category.name} slug={category.slug} />,
+        children: <FaqsOverscreen filter={category.name} page={category.name} />,
         fullHeight: true,
-        hideTitle: true,
+        noHeaderSeparator: true,
+        bottomButtonLabel: 'backToResults',
       },
     }
   }
@@ -290,9 +293,10 @@ export const overScreenCategoryValues: (category: Category) => Record<string, Ov
       faq: {
         image: '/images/icn-understand.svg',
         title: 'faq',
-        children: <FaqsOverscreen filter={category.name} page={category.name} slug={category.slug} />,
+        children: <FaqsOverscreen filter={category.name} page={category.name} />,
         fullHeight: true,
-        hideTitle: true,
+        noHeaderSeparator: true,
+        bottomButtonLabel: 'backToResults',
       },
     }
   }

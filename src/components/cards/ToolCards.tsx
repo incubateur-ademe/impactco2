@@ -7,16 +7,7 @@ const ToolCards = ({ tools }: { tools: (ToolCardProps | undefined)[] }) => {
       {tools
         .filter((tool) => tool !== undefined)
         .map((tool) => (
-          <ToolCard
-            key={tool.slug}
-            slug={tool.slug}
-            title={tool.title}
-            description={tool.description}
-            linkLabel={tool.linkLabel}
-            image={tool.image}
-            link={tool.link}
-            horizontal={tool.horizontal}
-          />
+          <ToolCard key={tool.slug} {...tool} />
         ))}
     </ul>
   )

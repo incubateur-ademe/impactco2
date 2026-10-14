@@ -11,16 +11,18 @@ import styles from './ToolCard.module.css'
 export type ToolCardProps = {
   slug: string
   title: string
-  description: ReactNode
+  subTitle?: string
+  description?: ReactNode
   linkLabel: string
   horizontal?: boolean
   link?: string
   image?: string
+  now?: boolean
 }
 
 const populaire = 'transport'
 
-const ToolCard = ({ slug, title, description, linkLabel, horizontal, link, image }: ToolCardProps) => {
+const ToolCard = ({ slug, title, subTitle, description, linkLabel, horizontal, link, image, now }: ToolCardProps) => {
   const isNew = useMemo(() => {
     const news = process.env.NEXT_PUBLIC_NEWS
     if (news) {
@@ -39,13 +41,14 @@ const ToolCard = ({ slug, title, description, linkLabel, horizontal, link, image
     <li
       className={classNames(styles.list, {
         [styles.horizontalList]: horizontal,
-        [styles.withTag]: isNew || slug === populaire,
+        [styles.withTag]: isNew || slug === populaire || now,
       })}>
       {isNew && (
         <div className={classNames(styles.tag, { [styles.horizontalTag]: horizontal })}>
           {horizontal ? 'Nouveau !' : 'Nouvel outil !'}
         </div>
       )}
+      {now && <div className={classNames(styles.tag, { [styles.horizontalTag]: horizontal })}>En cours</div>}
       {slug === populaire && (
         <div className={classNames(styles.paleTag, { [styles.horizontalTag]: horizontal })}>Le + Populaire</div>
       )}
@@ -58,12 +61,14 @@ const ToolCard = ({ slug, title, description, linkLabel, horizontal, link, image
         })}
         onClick={() => {
           track('Outils', link || `/outils/${slug}`, 'click')
-        }}>
+        }}
+        noIcon>
         <Image src={image || `/images/tools-${slug}.svg`} width={220} height={180} alt='' />
         <div className={styles.content}>
           <div>
+            {subTitle && <p className={styles.subTitle}>{subTitle}</p>}
             <p className={styles.title}>{title}</p>
-            {typeof description === 'string' ? <p>{description}</p> : <div>{description}</div>}
+            {description && (typeof description === 'string' ? <p>{description}</p> : <div>{description}</div>)}
           </div>
           <div className={styles.link}>
             {linkLabel}

@@ -3,22 +3,32 @@ import Link from 'components/base/buttons/Link'
 import FullArrowRightIcon from 'components/base/icons/full-arrow-right'
 import styles from './Suggestion.module.css'
 
-const Suggestion = ({ fromLabel, simulatorName }: { fromLabel: string; simulatorName: string }) => {
+const Suggestion = ({
+  fromLabel,
+  simulatorName,
+  noRDV,
+}: {
+  fromLabel: string
+  simulatorName: string
+  noRDV?: boolean
+}) => {
   return (
     <>
-      <div className={styles.banner}>
-        <div className={styles.content}>
-          <h2>Sensibilisez votre communauté à l'impact carbone</h2>
-          <p className={styles.description}>
-            Tirez le meilleur parti des outils d’Impact CO2 dès maintenant grâce aux conseils de notre équipe !
-          </p>
-          <Link asButton href={`/rendez-vous?fromLabel=${fromLabel}`}>
-            Prendre rendez-vous
-            <FullArrowRightIcon />
-          </Link>
+      {!noRDV && (
+        <div className={styles.banner}>
+          <div className={styles.content}>
+            <h2>Sensibilisez votre communauté à l'impact carbone</h2>
+            <p className={styles.description}>
+              Tirez le meilleur parti des outils d’Impact CO2 dès maintenant grâce aux conseils de notre équipe !
+            </p>
+            <Link asButton href={`/rendez-vous?fromLabel=${fromLabel}`}>
+              Prendre rendez-vous
+              <FullArrowRightIcon />
+            </Link>
+          </div>
+          <Image src='/images/banner-home-footer.jpg' width={422} height={354} alt='' className={styles.image} />
         </div>
-        <Image src='/images/banner-home-footer.jpg' width={422} height={354} alt='' className={styles.image} />
-      </div>
+      )}
       <div className={styles.container}>
         <div className='main-container'>
           <div className={styles.card}>

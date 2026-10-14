@@ -16,7 +16,7 @@ import styles from './Transport.module.css'
 
 const apiTool = devTools.find((tool) => tool.slug === 'api') as ToolCardProps
 const teletravailTool = tools.find((tool) => tool.slug === 'teletravail') as ToolCardProps
-const rseTool = sensibilisationTools.find((tool) => tool.slug === 'rse') as ToolCardProps
+const rseTool = sensibilisationTools.find((tool) => tool.slug === 'kit-rse') as ToolCardProps
 const quizTool = sensibilisationTools.find((tool) => tool.slug === 'quiz') as ToolCardProps
 
 const Transport = ({ category }: { category: CategoryType }) => {

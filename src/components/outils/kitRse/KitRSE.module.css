@@ -1,0 +1,134 @@
+.image {
+  border: none !important;
+  margin-top: -1.25rem !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  height: 20rem !important;
+  width: auto !important;
+  object-fit: none;
+}
+
+.header {
+  position: absolute;
+  top: -2.5rem;
+  left: 50%;
+  transform: translate(-50%, 50%);
+
+  text-align: center;
+  color: var(--neutral-60);
+  font-weight: 700;
+
+  h2 {
+    color: var(--neutral-80);
+    font-size: 1.5rem;
+    line-height: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  b {
+    color: var(--primary-60);
+    font-size: inherit !important;
+    line-height: inherit !important;
+  }
+}
+
+.button {
+  margin-top: 2.5rem;
+  width: max-content;
+}
+
+.list {
+  list-style-type: disc;
+  padding: 0 2rem;
+}
+
+.advantages,
+.exemples {
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+
+  @media screen and (max-width: 29.875rem) {
+    flex-direction: column;
+  }
+}
+
+.advantage {
+  display: flex;
+  flex-direction: column;
+  color: var(--neutral-60);
+  font-weight: 700;
+  gap: 0.75rem;
+
+  img {
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+  }
+
+  svg {
+    background-color: var(--success-20);
+    padding: 0.5rem;
+    border-radius: 50%;
+    min-width: 1.75rem;
+    min-height: 1.75rem;
+    color: var(--primary-60);
+  }
+
+  p {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    gap: 0.75rem;
+    font-size: 1rem;
+    line-height: 1.25rem;
+  }
+
+  @media screen and (max-width: 29.875rem) {
+    flex-direction: row;
+
+    img {
+      max-width: 6rem;
+    }
+  }
+}
+
+.exemples {
+  @media screen and (max-width: 48rem) {
+    gap: 0.5rem;
+  }
+
+  @media screen and (max-width: 29.875rem) {
+    gap: 2rem;
+    flex-direction: column;
+  }
+}
+
+.exemple {
+  color: var(--neutral-50);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  width: calc((100% - 4rem) / 3);
+
+  img {
+    height: 11.25rem !important;
+    width: 100% !important;
+    padding: 0 !important;
+    object-fit: cover;
+    margin-bottom: 0.75rem;
+  }
+
+  b {
+    color: var(--neutral-50);
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  @media screen and (max-width: 48rem) {
+    width: calc((100% - 1rem) / 3);
+  }
+  @media screen and (max-width: 29.875rem) {
+    width: 100%;
+  }
+}
