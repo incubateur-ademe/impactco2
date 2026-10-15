@@ -31,6 +31,7 @@ const formatEventToTool = (event: CalendarEvents[number]) => {
     now: isNow,
     blurImage: !event.hasContent,
     smallTitle: true,
+    imageBorder: true,
   }
 }
 

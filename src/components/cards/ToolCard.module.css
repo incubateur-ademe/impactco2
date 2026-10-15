@@ -45,6 +45,7 @@
   img {
     max-width: 100%;
     height: auto;
+    display: block;
   }
 
   @media screen and (max-width: 48rem) {
@@ -192,13 +193,9 @@
   }
 }
 
-.imageContainer {
+.imageBorder {
   border-radius: 0.25rem;
   border: 2px solid var(--primary-10);
-
-  img {
-    display: block;
-  }
 }
 
 .blurImage {

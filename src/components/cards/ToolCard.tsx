@@ -18,6 +18,7 @@ export type ToolCardProps = {
   link?: string
   image?: string
   now?: boolean
+  imageBorder?: boolean
   blurImage?: boolean
   smallTitle?: boolean
 }
@@ -34,6 +35,7 @@ const ToolCard = ({
   link,
   image,
   now,
+  imageBorder,
   blurImage,
   smallTitle,
 }: ToolCardProps) => {
@@ -77,7 +79,11 @@ const ToolCard = ({
           track('Outils', link || `/outils/${slug}`, 'click')
         }}
         noIcon>
-        <div className={classNames(styles.imageContainer, { [styles.blurImage]: blurImage })}>
+        <div
+          className={classNames({
+            [styles.blurImage]: blurImage,
+            [styles.imageBorder]: imageBorder,
+          })}>
           <Image src={image || `/images/tools-${slug}.svg`} width={220} height={180} alt='' />
         </div>
         <div className={styles.content}>
