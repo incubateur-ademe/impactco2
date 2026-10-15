@@ -31,9 +31,21 @@
     },
     "Repas": {
       "exemple-1": "végétarien",
-      "exemple-4": "portion",
-      "exemple-2": "assiette",
-      "exemple-3": "santé"
+      "exemple-2": "portion",
+      "exemple-3": "assiette",
+      "exemple-4": "santé"
+    },
+    "Numérique": {
+      "exemple-1": "fabrication",
+      "exemple-2": "usage",
+      "exemple-3": "environnement",
+      "exemple-4": "réemploi"
+    },
+    "Usage numérique": {
+      "exemple-1": "IA",
+      "exemple-2": "data centers",
+      "exemple-3": "usages",
+      "exemple-4": "impacts environnementaux"
     },
     "or": "ou",
     "noResult": "Aucun résultat pour",

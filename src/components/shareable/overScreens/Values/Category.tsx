@@ -14,8 +14,6 @@ import styles from './Values.module.css'
 
 const FruitsEtLegumesData = dynamic(() => import('../Data/FruitsEtLegumesData'))
 const LivraisonData = dynamic(() => import('../Data/LivraisonData'))
-const UsageNumeriqueData = dynamic(() => import('../Data/UsageNumeriqueData'))
-const NumeriqueData = dynamic(() => import('../Data/NumeriqueData'))
 
 export const overScreenCategoryValues: (category: Category) => Record<string, OverScreenInfo> = (category) => {
   const values = {
@@ -162,40 +160,13 @@ export const overScreenCategoryValues: (category: Category) => Record<string, Ov
   if (category.slug === 'usagenumerique') {
     return {
       ...values,
-      hypothesis: {
-        image: '/images/icn-next-actions.svg',
-        title: 'next-actions',
-        children: (
-          <div className={styles.ressourceContainer}>
-            <Resource
-              image='/images/agir.png'
-              text='numerique-responsable'
-              href='https://agirpourlatransition.ademe.fr/particuliers/maison/numerique'
-              withLink='Agir pour la transition'
-              tracking='Usage numérique'
-            />
-            <Resource
-              image='/images/sobriete.png'
-              text='sobriete'
-              href='https://librairie.ademe.fr/consommer-autrement/7575-9196-comment-adopter-la-sobriete-numerique--9791029724237.html#/43-type_de_produit-format_imprime'
-              withLink='ADEME'
-              tracking='Usage numérique'
-            />
-            <Resource
-              image='/images/ngc.png'
-              text='ngc'
-              href='https://nosgestesclimat.fr/'
-              withLink='Nos Gestes Climat'
-              tracking='Usage numérique'
-              imgSize='4.5rem'
-            />
-          </div>
-        ),
-      },
-      data: {
+      faq: {
         image: '/images/icn-understand.svg',
-        title: 'understand',
-        children: <UsageNumeriqueData />,
+        title: 'faq',
+        children: <FaqsOverscreen filter={category.name} page={category.name} />,
+        fullHeight: true,
+        noHeaderSeparator: true,
+        bottomButtonLabel: 'backToResults',
       },
     }
   }
@@ -429,40 +400,13 @@ export const overScreenCategoryValues: (category: Category) => Record<string, Ov
   if (category.slug === 'numerique') {
     return {
       ...values,
-      data: {
+      faq: {
         image: '/images/icn-understand.svg',
-        title: 'understand',
-        children: <NumeriqueData />,
-      },
-      hypothesis: {
-        image: '/images/icn-next-actions.svg',
-        title: 'next-actions',
-        children: (
-          <div className={styles.ressourceContainer}>
-            <Resource
-              image='/images/agir.png'
-              text='numerique-responsable'
-              href='https://agirpourlatransition.ademe.fr/particuliers/maison/numerique'
-              withLink='Agir pour la transition'
-              tracking='Numérique'
-            />
-            <Resource
-              image='/images/sobriete.png'
-              text='sobriete'
-              href='https://librairie.ademe.fr/consommer-autrement/7575-9196-comment-adopter-la-sobriete-numerique--9791029724237.html#/43-type_de_produit-format_imprime'
-              withLink='ADEME'
-              tracking='Numérique'
-            />
-            <Resource
-              image='/images/ngc.png'
-              text='ngc'
-              href='https://nosgestesclimat.fr/'
-              withLink='Nos Gestes Climat'
-              tracking='Numérique'
-              imgSize='4.5rem'
-            />
-          </div>
-        ),
+        title: 'faq',
+        children: <FaqsOverscreen filter={category.name} page={category.name} />,
+        fullHeight: true,
+        noHeaderSeparator: true,
+        bottomButtonLabel: 'backToResults',
       },
     }
   }
