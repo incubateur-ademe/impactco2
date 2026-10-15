@@ -35,6 +35,18 @@
       "exemple-3": "plato",
       "exemple-4": "salud"
     },
+    "Numérique": {
+      "exemple-1": "fabricación",
+      "exemple-2": "uso",
+      "exemple-3": "ambiente",
+      "exemple-4": "reempleo"
+    },
+    "Usage numérique": {
+      "exemple-1": "IA",
+      "exemple-2": "centros de datos",
+      "exemple-3": "usos",
+      "exemple-4": "impactos ambientales"
+    },
     "or": "o",
     "noResult": "Ningún resultado para",
     "clear": "Borrar búsqueda",
