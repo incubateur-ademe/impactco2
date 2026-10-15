@@ -36,7 +36,7 @@ export const checkFileExistsOnS3 = async (name: string): Promise<boolean> => {
   }
 }
 
-export const uploadFileToS3 = async (name: string, file: PutObjectCommandInput['Body']) => {
+export const uploadFileToS3 = async (name: string, file: PutObjectCommandInput['Body'], contentType?: string) => {
   if (process.env.LOCAL_STORAGE === 'true') {
     const dir = path.resolve(process.cwd(), 'public', 'imported')
     if (!fs.existsSync(dir)) {
@@ -64,7 +64,7 @@ export const uploadFileToS3 = async (name: string, file: PutObjectCommandInput['
       Bucket: process.env.NEXT_PUBLIC_S3_BUCKET_NAME!,
       Key: name,
       Body: file,
-      ContentType: 'image/png',
+      ContentType: contentType ?? 'image/png',
       ACL: 'public-read',
     })
   )
