@@ -38,11 +38,19 @@ export const computeTransportEmission = (
               carpool: index + 1,
               slug: `${transportation.slug}+${index + 1}`,
               id:
+                // voiture thermique
                 transportation.id === 4
                   ? 22 + index
-                  : transportation.id === 5
+                  : // voiture électrique
+                    transportation.id === 5
                     ? 26 + index
-                    : (transportation.id || 0) + index + 1,
+                    : // camping car
+                      transportation.id === 31
+                      ? 205 + index
+                      : // van
+                        transportation.id === 35
+                        ? 209 + index
+                        : (transportation.id || 0) + index + 1,
             })),
             transportation,
           ] as Equivalent[])
@@ -182,11 +190,11 @@ export const computeTransportEmission = (
  *         - 28 : Covoiturage électrique (4 personnes)
  *         - 29 : Covoiturage électrique (5 personnes)
  *         - 30 : Marche
- *         - 31 : Camping-car
+ *         - 31 : Camping-car (1 personne)
  *         - 32 : Moto thermique (<= 250 cm³)
  *         - 33 : Scooter électrique
  *         - 34 : Vélo cargo triporteur
- *         - 35 : Van
+ *         - 35 : Van (1 personne)
  *         - 100 : Voiture - Petite - Essence
  *         - 101 : Voiture - Petite - Essence (2 personnes)
  *         - 102 : Voiture - Petite - Essence (3 personnes)
@@ -292,6 +300,14 @@ export const computeTransportEmission = (
  *         - 202 : Voiture hybride (3 personnes)
  *         - 203 : Voiture hybride (4 personnes)
  *         - 204 : Voiture hybride (5 personnes)
+ *         - 205 : Camping-car (2 personnes)
+ *         - 206 : Camping-car (3 personnes)
+ *         - 207 : Camping-car (4 personnes)
+ *         - 208 : Camping-car (5 personnes)
+ *         - 209 : Van (2 personnes)
+ *         - 210 : Van (3 personnes)
+ *         - 211 : Van (4 personnes)
+ *         - 212 : Van (5 personnes)
  *     - in: query
  *       name: ignoreRadiativeForcing
  *       default: 0
@@ -377,7 +393,9 @@ export async function GET(req: NextRequest) {
         .filter((emission) => !numberOfPassenger || !emission.carpool)
         .map((emission) => ({
           id: emission.id,
-          name: emission.name,
+          name: numberOfPassenger
+            ? emission.name.replace(' (1 personne)', '').replace(' (1 people)', '').replace(' (1 persona)', '')
+            : emission.name,
           value: emission.emissions.kgco2e / (((emission.withCarpool && numberOfPassenger) || 0) + 1),
         })),
       warning: hasAPIKey

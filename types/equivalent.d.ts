@@ -16,6 +16,7 @@ export type Equivalent = {
   default?: boolean
   synonyms?: string[]
   withCarpool?: boolean
+  onlyCarpool?: boolean
   carpool?: number
   livraison?: boolean
   percentage?: boolean
