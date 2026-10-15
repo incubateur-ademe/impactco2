@@ -45,6 +45,7 @@
   img {
     max-width: 100%;
     height: auto;
+    display: block;
   }
 
   @media screen and (max-width: 48rem) {
@@ -99,6 +100,7 @@
   gap: 0.5rem;
 }
 
+.smallTitle,
 .title {
   font-weight: 700;
   color: var(--neutral-80);
@@ -114,6 +116,11 @@
     line-height: 1.75rem;
     margin-bottom: 0;
   }
+}
+
+.smallTitle {
+  font-size: 1.125rem;
+  line-height: 1.5rem;
 }
 
 .subTitle {
@@ -183,5 +190,18 @@
 .withTag {
   @media screen and (max-width: 48rem) {
     margin-top: 0.5rem;
+  }
+}
+
+.imageBorder {
+  border-radius: 0.25rem;
+  border: 2px solid var(--primary-10);
+}
+
+.blurImage {
+  background-color: var(--primary-10);
+
+  img {
+    opacity: 0.5;
   }
 }

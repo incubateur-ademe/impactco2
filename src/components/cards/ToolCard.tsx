@@ -18,11 +18,27 @@ export type ToolCardProps = {
   link?: string
   image?: string
   now?: boolean
+  imageBorder?: boolean
+  blurImage?: boolean
+  smallTitle?: boolean
 }
 
 const populaire = 'transport'
 
-const ToolCard = ({ slug, title, subTitle, description, linkLabel, horizontal, link, image, now }: ToolCardProps) => {
+const ToolCard = ({
+  slug,
+  title,
+  subTitle,
+  description,
+  linkLabel,
+  horizontal,
+  link,
+  image,
+  now,
+  imageBorder,
+  blurImage,
+  smallTitle,
+}: ToolCardProps) => {
   const isNew = useMemo(() => {
     const news = process.env.NEXT_PUBLIC_NEWS
     if (news) {
@@ -63,11 +79,17 @@ const ToolCard = ({ slug, title, subTitle, description, linkLabel, horizontal, l
           track('Outils', link || `/outils/${slug}`, 'click')
         }}
         noIcon>
-        <Image src={image || `/images/tools-${slug}.svg`} width={220} height={180} alt='' />
+        <div
+          className={classNames({
+            [styles.blurImage]: blurImage,
+            [styles.imageBorder]: imageBorder,
+          })}>
+          <Image src={image || `/images/tools-${slug}.svg`} width={220} height={180} alt='' />
+        </div>
         <div className={styles.content}>
           <div>
             {subTitle && <p className={styles.subTitle}>{subTitle}</p>}
-            <p className={styles.title}>{title}</p>
+            <p className={smallTitle ? styles.smallTitle : styles.title}>{title}</p>
             {description && (typeof description === 'string' ? <p>{description}</p> : <div>{description}</div>)}
           </div>
           <div className={styles.link}>

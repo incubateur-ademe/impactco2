@@ -29,6 +29,9 @@ const formatEventToTool = (event: CalendarEvents[number]) => {
     image: `https://${process.env.NEXT_PUBLIC_S3_BUCKET_NAME}.s3.fr-par.scw.cloud/${event.image}.png`,
     link: `/outils/kit-rse/calendrier/${event.id}`,
     now: isNow,
+    blurImage: !event.hasContent,
+    smallTitle: true,
+    imageBorder: true,
   }
 }
 
