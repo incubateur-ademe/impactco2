@@ -4,20 +4,19 @@ import { useTranslations } from 'next-intl'
 import { useEffect, useMemo, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { deplacements } from 'data/categories/deplacement'
-import ClipboardBox from 'components/base/ClipboardBox'
 import TransportClipboardBox from 'src/components/base/TransportClipboardBox'
-import Link from 'src/components/base/buttons/Link'
 import Radio from 'src/components/form/Radio'
 import RadioInput from 'src/components/form/RadioInput'
 import CustomParam, { CustomParamValue } from './CustomParam'
 import CustomParams from './CustomParams'
+import IntegrateFooter from './IntegrateFooter'
 import TransportComparison from './TransportComparison'
 import TransportIntegrateAdvanced from './TransportIntegrateAdvanced'
 import TransportIntegratePaste from './TransportIntegratePaste'
 import TransportListParam from './TransportListParam'
 import { getTracking } from './TransportShare'
+import styles from './Integrate.module.css'
 import shareStyles from './Share.module.css'
-import styles from './TransportIntegrate.module.css'
 
 const TransportIntegrate = () => {
   const t = useTranslations('overscreen.transport')
@@ -189,17 +188,7 @@ const TransportIntegrate = () => {
         {t('integrate-paste')}
       </h2>
       <TransportIntegratePaste />
-      <div className={shareStyles.separator} />
-      <h2 className={styles.sectionTitle}>
-        <span className={styles.sectionIdBis}>?</span>
-        {t('integrate-difficulty')}
-      </h2>
-      <p className={styles.text}>
-        {t.rich('integrate-difficulty-text', {
-          link: (children) => <Link href='/rendez-vous?$fromLabel=Transport intégration'>{children}</Link>,
-        })}
-      </p>
-      <ClipboardBox tracking={tracking}>{`https://impactco2.fr/outils/transport?${search}`}</ClipboardBox>
+      <IntegrateFooter search={search} tracking={tracking} />
     </>
   )
 }
