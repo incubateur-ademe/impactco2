@@ -10,7 +10,7 @@ export const sensibilisationTools = [
     linkLabel: 'Obtenir',
     content: <KitRSE />,
     noBanner: true,
-    toolLink: 'https://tally.so/r/XxLGeY',
+    toolLink: '/outils/kit-rse/connect',
     toolLinkLabel: 'Obtenir le Kit RSE',
   },
   {

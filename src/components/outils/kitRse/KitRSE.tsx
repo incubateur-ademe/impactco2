@@ -17,7 +17,7 @@ const KitRSE = () => {
         <p>
           EDITION <b>2026</b>
         </p>
-        <Link asButton href='https://tally.so/r/XxLGeY' className={styles.button}>
+        <Link asButton href='/outils/kit-rse/connect' className={styles.button}>
           Obtenir le Kit RSE <FullArrowRightIcon />
         </Link>
       </div>

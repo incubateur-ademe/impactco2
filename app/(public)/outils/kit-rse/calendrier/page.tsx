@@ -1,4 +1,3 @@
-import { redirect } from 'next/navigation'
 import { getCalendarEvents } from 'src/serverFunctions/calendarEvent'
 import Calendar from 'src/components/outils/kitRse/Calendar'
 import ViewCalendar from 'src/components/outils/kitRse/ViewCalendar'
@@ -21,8 +20,6 @@ export async function generateMetadata() {
 
 const CalendrierPage = async () => {
   const { upcoming, past } = await getCalendarEvents()
-
-  redirect('https://tally.so/r/XxLGeY')
 
   return (
     <>
