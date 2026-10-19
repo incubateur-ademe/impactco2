@@ -43,7 +43,7 @@ const reasons = [
         <br />
         <br />
         Si vous cherchez des idées de campagne sur le sujet de l’impact des transports, n’hésitez pas à consulter le{' '}
-        <Link href='https://tally.so/r/XxLGeY'>Kit RSE</Link>.
+        <Link href='/outils/kit-rse'>Kit RSE</Link>.
       </>
     ),
   },
