@@ -15,7 +15,16 @@ const sanitizePathPart = (value: string) => value.replace(/[^a-zA-Z0-9._-]/g, '_
 
 const resolveSignedSource = ({ signedUrls, id }: { signedUrls: ExtendedRecordMap['signed_urls']; id: string }) => {
   const signedUrl = signedUrls[id]
-  return signedUrl ? `https://www.notion.so/image/${encodeURIComponent(signedUrl)}?table=block&cache=v2&id=${id}` : null
+
+  if (signedUrl) {
+    if (signedUrl.includes('.pdf?')) {
+      const [, key, name] = id.split(':')
+      const [, params] = signedUrl.split('?')
+      return `https://app.notion.com/signed/attachment${encodeURIComponent(`:${key}:${name}`)}?${params}&download=true&imgBuildSrc=downloadUrlActions`
+    }
+    return `https://www.notion.so/image/${encodeURIComponent(signedUrl)}?table=block&cache=v2&id=${id}`
+  }
+  return null
 }
 
 const downloadFileWithRetries = async (url: string, maxRetries = 3): Promise<Buffer> => {
@@ -98,21 +107,21 @@ const getMutableBlockFromEntry = (entry: unknown): MutableImageBlock | undefined
   return undefined
 }
 
-const downloadImage = async (recordMap: ExtendedRecordMap, id: string, name?: string) => {
+const downloadImage = async (recordMap: ExtendedRecordMap, id: string, source: string) => {
   const resolvedSource = resolveSignedSource({
     signedUrls: recordMap.signed_urls,
-    id: name || id,
+    id: source || id,
   })
 
   if (resolvedSource) {
-    const localFilename = `${sanitizePathPart(id)}.png`
+    const localFilename = source || `${sanitizePathPart(id)}.png`
     const fileExists = await checkFileExistsOnS3(localFilename)
 
     if (fileExists) {
       console.log(`Skipped Notion image ${id} (already exists on S3)`)
     } else {
       const fileBuffer = await downloadFileWithRetries(resolvedSource)
-      await uploadFileToS3(localFilename, fileBuffer)
+      await uploadFileToS3(localFilename, fileBuffer, source && source.includes('.pdf') ? 'application/pdf' : undefined)
       console.log(`Saved Notion image ${id}`)
     }
   }
@@ -127,18 +136,20 @@ const downloadImages = async (recordMap: ExtendedRecordMap) => {
   let metaImage = ''
   for (const [, blockWithRole] of Object.entries(recordMap.block)) {
     const block = getMutableBlockFromEntry(blockWithRole)
-    if (!block || (block.type !== 'image' && block.type !== 'page')) {
+    if (!block || (block.type !== 'image' && block.type !== 'page' && block.type !== 'file')) {
       continue
     }
 
+    const source = (block.properties?.source?.[0]?.[0] || '') as string
+
     if (block.type === 'page' && block.parent_table === 'collection') {
       mainImage = block.id
-      const metaImageInfos = block.properties?.['r=Em']?.[0][1][0][1]
+      const metaImageInfos = block.properties?.['r=Em']?.[0][1][0][1] as string
       metaImage = metaImageInfos?.split(':')[1] || ''
       await downloadImage(recordMap, metaImage, metaImageInfos)
     }
 
-    await downloadImage(recordMap, block.id)
+    await downloadImage(recordMap, block.id, source)
   }
   return { mainImage, metaImage }
 }
