@@ -7,6 +7,8 @@ import Suggestion from 'components/layout/Suggestion'
 
 type Props = { params: Promise<{ id: string }> }
 
+export const revalidate = 3600
+
 export async function generateStaticParams() {
   const { upcoming, past } = await getCalendarEvents()
   return [...upcoming, ...past].map((event) => ({ id: event.id }))

@@ -4,7 +4,7 @@ import ViewCalendar from 'src/components/outils/kitRse/ViewCalendar'
 import { toolsJsonLd } from 'src/utils/jsonLd'
 import Suggestion from 'components/layout/Suggestion'
 
-export const dynamic = 'force-dynamic'
+export const revalidate = 3600
 
 export async function generateMetadata() {
   return {

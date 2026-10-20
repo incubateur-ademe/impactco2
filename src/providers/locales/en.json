@@ -35,6 +35,18 @@
       "exemple-3": "meal",
       "exemple-4": "health"
     },
+    "Numérique": {
+      "exemple-1": "manufacturing",
+      "exemple-2": "usage",
+      "exemple-3": "environmental",
+      "exemple-4": "reusing"
+    },
+    "Usage numérique": {
+      "exemple-1": "AI",
+      "exemple-2": "data centers",
+      "exemple-3": "uses",
+      "exemple-4": "environmental impacts"
+    },
     "or": "or",
     "noResult": "No results for",
     "clear": "Clear search",
