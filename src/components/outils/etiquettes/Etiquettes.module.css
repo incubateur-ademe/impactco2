@@ -1,6 +1,21 @@
 .etiquettes {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 2.5rem;
   width: 100%;
+}
+
+.label {
+  color: var(--neutral-60);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.separator {
+  height: 1px;
+  width: 100%;
+  border: none;
+  background-color: var(--neutral-20);
 }

@@ -18,15 +18,17 @@ const Category = ({
   category,
   onClose,
   setEquivalents,
+  setFinalEquivalents,
   equivalents,
 }: {
   category: CategoryType
   onClose: () => void
   setEquivalents: (value: string[]) => void
+  setFinalEquivalents: (value: string[]) => void
   equivalents: string[]
 }) => {
   const {
-    comparateur: { comparedEquivalent, setEquivalents: setFinalEquivalents, baseValue, weight },
+    comparateur: { comparedEquivalent, baseValue, weight },
   } = useParamContext()
 
   const [open, setOpen] = useState(false)

@@ -120,6 +120,7 @@
   },
   "overscreen": {
     "equivalent": "Ajouter de nouveaux équivalents",
+    "equivalent-choose": "Choisir les équivalents",
     "disclaimer": "Résultats basés sur les données des bases carbone françaises de ",
     "default-true": "Affiché par défaut",
     "default-false": "Afficher par défaut",
@@ -182,6 +183,11 @@
     "km": {
       "title": "Afficher une distance personnalisée",
       "unit": "km"
+    },
+    "weight": {
+      "title": "Quantité de kg CO2",
+      "hint": "Indiquer le poids en kg CO2e que vous souhaitez illustrer avec votre étiquette. Un poids inférieur à 1 kg sera affiché en grammes (idem pour les tonnes et millions de tonnes)",
+      "unit": "kg"
     },
     "roundTrip": {
       "title": "Aller / Retour"
@@ -272,6 +278,17 @@
         "cars": "Véhicules particuliers",
         "common": "Transports en commun"
       }
+    },
+    "etiquette": {
+      "title": "Format de l’étiquette",
+      "animated": "Étiquette animée",
+      "static": "Étiquette statique",
+      "equivalents": "Personnaliser les équivalents",
+      "hint": "Sélectionner les équivalents à afficher",
+      "choose": "Choisir les équivalents",
+      "empty": "Aucun équivalent sélectionné",
+      "count": "{count} {count, plural, =1 {équivalent sélectionné} other {équivalents sélectionnés}} (max. 8)",
+      "pasting": "sur la page où vous souhaitez qu’il apparaisse."
     },
     "month": {
       "title": "Personnaliser le mois à afficher",
@@ -415,6 +432,7 @@
     "overscreen": {
       "search": "Rechercher un objet, un geste...",
       "back": "Revenir au comparateur",
+      "validate": "Valider ma sélection",
       "back-title": "Valider la sélection et revenir au comparateur",
       "equivalents": "équivalents",
       "no-result-1": "Aucun résultat ne correspond à votre recherche.",

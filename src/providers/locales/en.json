@@ -121,6 +121,7 @@
   "overscreen": {
     "equivalent": "Add new equivalents",
     "disclaimer": "Results are based on French carbon data sets, by ",
+    "equivalent-choose": "Choose equivalents",
     "default-true": "displayed by default",
     "default-false": "show by default",
     "usage": "Use",
@@ -183,6 +184,11 @@
       "title": "Display a custom distance",
       "unit": "km"
     },
+    "weight": {
+      "title": "Quantity of kg CO2",
+      "hint": "Indicate the weight in kg CO2e you want to illustrate with your label. A weight less than 1 kg will be displayed in grams (same for tons and millions of tons)",
+      "unit": "kg"
+    },
     "roundTrip": {
       "title": "Roundtrip"
     },
@@ -192,21 +198,6 @@
       "title": "Integrate",
       "graphic": "The graph",
       "simulator": "The simulator"
-    },
-    "month": {
-      "title": "Display a custom month",
-      "janvier": "January",
-      "février": "February",
-      "mars": "March",
-      "avril": "April",
-      "mai": "May",
-      "juin": "June",
-      "juillet": "July",
-      "août": "August",
-      "septembre": "September",
-      "octobre": "October",
-      "novembre": "November",
-      "décembre": "December"
     },
     "theme": {
       "label": "Display mode",
@@ -287,6 +278,32 @@
         "cars": "Private vehicles",
         "common": "Public transport"
       }
+    },
+    "etiquette": {
+      "title": "Label format",
+      "animated": "Animated label",
+      "static": "Static label",
+      "equivalents": "Customize equivalents",
+      "hint": "Select the equivalents to display",
+      "choose": "Choose equivalents",
+      "empty": "No equivalent selected",
+      "count": "{count} {count, plural, =1 {equivalent selected} other {equivalents selected}} (max. 8)",
+      "pasting": "on the page where you want it to appear."
+    },
+    "month": {
+      "title": "Display a custom month",
+      "janvier": "January",
+      "février": "February",
+      "mars": "March",
+      "avril": "April",
+      "mai": "May",
+      "juin": "June",
+      "juillet": "July",
+      "août": "August",
+      "septembre": "September",
+      "octobre": "October",
+      "novembre": "November",
+      "décembre": "December"
     },
     "category": {
       "title": "Choose the theme of equivalents suggested by the Detector",
@@ -415,6 +432,7 @@
     "overscreen": {
       "search": "Search an object...",
       "back": "Go back",
+      "validate": "Validate my selection",
       "back-title": "Validate the selection and return to the comparator",
       "equivalents": "equivalents",
       "no-result-1": "No results match your search.",

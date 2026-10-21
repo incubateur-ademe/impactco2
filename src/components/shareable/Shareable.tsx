@@ -61,7 +61,13 @@ const Shareable = ({
     [overScreens, overscreen, slug]
   )
 
-  const onClose = useCallback(() => setOverscreen(slug, ''), [slug])
+  const onClose = useCallback(() => {
+    if (overScreenToDisplay?.onClose) {
+      overScreenToDisplay.onClose()
+    } else {
+      setOverscreen(slug, '')
+    }
+  }, [slug, setOverscreen, overScreenToDisplay])
 
   const [showButtons, setShowButtons] = useState(true)
 
@@ -147,7 +153,7 @@ const Shareable = ({
                 })}>
                 {overScreenToDisplay.children}
               </div>
-              {!overScreenToDisplay.hideTitle && (
+              {!overScreenToDisplay.hideTitle && !overScreenToDisplay.hideFooter && (
                 <div>
                   <div className={styles.separatorBothBorders} />
                   <div className={styles.footer}>

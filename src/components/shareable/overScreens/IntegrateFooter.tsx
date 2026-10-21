@@ -7,12 +7,22 @@ import IntegratePaste from './IntegratePaste'
 import styles from './IntegrateFooter.module.css'
 import shareStyles from './Share.module.css'
 
-const IntegrateFooter = ({ url, tracking, from }: { url: string; tracking: string; from: string }) => {
+const IntegrateFooter = ({
+  url,
+  tracking,
+  from,
+  where,
+}: {
+  url: string
+  tracking: string
+  from: string
+  where: string
+}) => {
   const t = useTranslations('overscreen.integrate-modal')
 
   return (
     <>
-      <IntegratePaste from={from} />
+      <IntegratePaste from={from} where={where} />
       <div className={shareStyles.separator} />
       <h2 className={styles.sectionTitle}>
         <span className={styles.sectionIdBis}>?</span>

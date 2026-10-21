@@ -4,7 +4,6 @@ import Advantages from '../components/outils/Advantages'
 import Exemples from '../components/outils/Exemples'
 import Reasons from '../components/outils/Reasons'
 import Etiquettes from 'src/components/outils/etiquettes/Etiquettes'
-import Link from 'src/components/base/buttons/Link'
 import Breadcrumbs from 'src/components/breadcrumbs/Breadcrumbs'
 import { ToolCardProps } from 'src/components/cards/ToolCard'
 import ToolCards from 'src/components/cards/ToolCards'
@@ -19,44 +18,44 @@ const quizTool = sensibilisationTools.find((tool) => tool.slug === 'quiz') as To
 
 const reasons = [
   {
-    slug: 'transport-orienter.png',
+    slug: 'etiquettes-orienter.png',
     title: 'Faites parler vos données carbone',
     description: (
       <>
-        <b>Impact Transport</b> permet à vos visiteurs de calculer l’impact carbone de leur déplacement, directement sur
-        votre site internet ou votre application.
+        Votre service fait faire des économies de CO2 à vos clients ?
+        <br />
+        Sur votre application ou sur votre site, l’étiquette rend concrets ces chiffres souvent abstraits.
         <br />
         <br />
-        Les résultats permettent de prendre conscience des ordres de grandeur pour favoriser le recours aux mobilités
-        douces, électriques et aux transports en commun.
+        En transformant des quantités de CO₂e en équivalents du quotidien, elle donne à votre public des repères
+        immédiats et accessibles.
       </>
     ),
   },
   {
-    slug: 'transport-enrichir.png',
-    title: 'Enrichir vos contenus avec un outil interactif',
+    slug: 'etiquettes-renforcer.png',
+    title: 'Renforcez l’engagement de votre audience',
     description: (
       <>
-        Plus qu’une simple infographie, Impact transport permet de saisir une distance ou un trajet pour découvrir
-        l’impact carbone de plus de 30 modes de déplacements.
+        Intégrer l’étiquette carbone à vos contenus, c’est offrir à vos utilisateurs une{' '}
+        <b>clé de compréhension simple et visuelle</b> pour décrypter l’impact carbone.
         <br />
         <br />
-        Ajouter Impact Transport à votre site est un excellent moyen de favoriser l’engagement de vos utilisateurs avec
-        votre contenu.
+        En répondant directement à leur besoin de concret, vous captez leur attention et favorisez une prise de
+        conscience active.
       </>
     ),
   },
   {
-    slug: 'transport-animer.svg',
-    title: 'Animer une campagne de sensibilisation',
+    slug: 'etiquettes-gagner.png',
+    title: 'Gagnez en transparence et en crédibilité',
     description: (
       <>
-        Proposer une activité rapide, simple et mémorable avec Impact Transport en proposant de calculer par exemple
-        l’impact d’un trajet domicile → travail.
+        Avec l’étiquette carbone, vulgarisation rime avec rigueur : choisissez parmi <b>plus de 300 équivalents</b>{' '}
+        illustrés, fiables et pédagogiques.
         <br />
         <br />
-        Si vous cherchez des idées de campagne sur le sujet de l’impact des transports, n’hésitez pas à consulter le{' '}
-        <Link href='/outils/kit-rse'>Kit RSE</Link>.
+        Nos équivalents sont issus de <b>données 100% ADEME</b>.
       </>
     ),
   },
@@ -87,10 +86,10 @@ const EtiquettePage = () => {
         <Exemples
           title="Ils ont ajouté l'Étiquette :"
           items={[
-            { src: '/images/stadefrance.png', alt: 'Logo du Stade de France' },
-            { src: '/images/carnac.png', alt: 'Logo de Carnac' },
-            { src: '/images/homeexchange.png', alt: 'Logo de HomeExchange' },
-            { src: '/images/franceinfo-grey.png', alt: 'Logo de France Info' },
+            { src: '/images/geovelo.png', alt: 'Logo de Geovelo' },
+            { src: '/images/nolt.png', alt: 'Logo de Nolt' },
+            { src: '/images/gobi.png', alt: 'Logo de Gobi' },
+            { src: '/images/javry.png', alt: 'Logo de Javry' },
           ]}
           tool='Étiquette'
         />
