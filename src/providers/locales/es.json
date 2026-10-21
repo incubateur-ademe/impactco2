@@ -121,6 +121,7 @@
   "overscreen": {
     "equivalent": "Añadir nuevos equivalentes",
     "disclaimer": "Los resultados se basan en datos de carbono de Francia, por ",
+    "equivalent-choose": "Elegir equivalentes",
     "default-true": "Mostrar por defecto",
     "default-false": "No mostrar por defecto",
     "usage": "Uso",
@@ -182,6 +183,11 @@
     "km": {
       "title": "Mostrar una distancia personalizada",
       "unit": "km"
+    },
+    "weight": {
+      "title": "Cantidad de kg CO2",
+      "hint": "Indica el peso en kg CO2e que deseas ilustrar con tu etiqueta. Un peso inferior a 1 kg se mostrará en gramos (lo mismo para toneladas y millones de toneladas)",
+      "unit": "kg"
     },
     "roundTrip": {
       "title": "Ida y vuelta"
@@ -272,6 +278,18 @@
         "cars": "Vehículos particulares",
         "common": "Transporte público"
       }
+    },
+    "etiquette": {
+      "title": "Formato de la etiqueta",
+      "animated": "Etiqueta animada",
+      "static": "Etiqueta estática",
+      "equivalents": "Personalizar equivalentes",
+      "hint": "Selecciona los equivalentes a mostrar",
+      "choose": "Elegir equivalentes",
+      "empty": "0 equivalentes seleccionados (máx. 8)",
+      "empty-hint": "Se elegirá un equivalente al azar",
+      "count": "{count} {count, plural, =1 {equivalente seleccionado} other {equivalentes seleccionados}} (máx. 8)",
+      "pasting": "en la página donde quieras que aparezca."
     },
     "month": {
       "title": "Personalizar el mes a mostrar",
@@ -416,6 +434,7 @@
       "search": "Buscar un objeto, un gesto...",
       "back": "Volver al comparador",
       "back-title": "Validar la selección y volver al comparador",
+      "validate": "Validar mi selección",
       "equivalents": "equivalentes",
       "no-result-1": "Ningún resultado coincide con tu búsqueda.",
       "no-result-2": "Puedes probar otros términos o",

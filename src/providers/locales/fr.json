@@ -120,6 +120,7 @@
   },
   "overscreen": {
     "equivalent": "Ajouter de nouveaux équivalents",
+    "equivalent-choose": "Choisir les équivalents",
     "disclaimer": "Résultats basés sur les données des bases carbone françaises de ",
     "default-true": "Affiché par défaut",
     "default-false": "Afficher par défaut",
@@ -183,6 +184,11 @@
       "title": "Afficher une distance personnalisée",
       "unit": "km"
     },
+    "weight": {
+      "title": "Quantité de kg CO2",
+      "hint": "Indiquer le poids en kg CO2e que vous souhaitez illustrer avec votre étiquette. Un poids inférieur à 1 kg sera affiché en grammes (idem pour les tonnes et millions de tonnes)",
+      "unit": "kg"
+    },
     "roundTrip": {
       "title": "Aller / Retour"
     },
@@ -241,7 +247,7 @@
       "pasting": {
         "details-1": "<b>Vous n’avez plus qu’à ajouter ce bout de code dans votre interface d’édition de site web</b>, ",
         "details-2": "Si vous n’avez pas accès à l’interface d’édition de votre site, ou si vous rencontrez des difficultés, nous vous conseillons d’envoyer le bout de code aux personnes en charge de l’administration de votre site web.",
-        "thanks-title": "Une fois l’outil intégré, écrivez-vous ! ",
+        "thanks-title": "Une fois l’outil intégré, écrivez-nous ! ",
         "thanks": "Nous pourrons ainsi ajouter votre logo et un lien vers votre site dans notre <link>galerie des exemples</link>.",
         "write": "nous écrire"
       }
@@ -272,6 +278,18 @@
         "cars": "Véhicules particuliers",
         "common": "Transports en commun"
       }
+    },
+    "etiquette": {
+      "title": "Format de l’étiquette",
+      "animated": "Étiquette animée",
+      "static": "Étiquette statique",
+      "equivalents": "Personnaliser les équivalents",
+      "hint": "Sélectionner les équivalents à afficher",
+      "choose": "Choisir les équivalents",
+      "empty": "0 équivalent sélectionné (max. 8)",
+      "empty-hint": "Un équivalent sera alors choisi au hasard",
+      "count": "{count} {count, plural, =1 {équivalent sélectionné} other {équivalents sélectionnés}} (max. 8)",
+      "pasting": "sur la page où vous souhaitez qu’il apparaisse."
     },
     "month": {
       "title": "Personnaliser le mois à afficher",
@@ -415,6 +433,7 @@
     "overscreen": {
       "search": "Rechercher un objet, un geste...",
       "back": "Revenir au comparateur",
+      "validate": "Valider ma sélection",
       "back-title": "Valider la sélection et revenir au comparateur",
       "equivalents": "équivalents",
       "no-result-1": "Aucun résultat ne correspond à votre recherche.",

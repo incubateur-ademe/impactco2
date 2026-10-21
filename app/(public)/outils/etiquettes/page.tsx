@@ -10,11 +10,11 @@ export async function generateMetadata(props: {
   const searchParams = await props.searchParams
   const language = (searchParams.language as string) || 'fr'
   return {
-    title: `${metaTitles.transport[language]} | Impact CO₂`,
-    description: metaDescriptions.transport[language],
+    title: `${metaTitles['comparateur-etiquettes'][language]} | Impact CO₂`,
+    description: metaDescriptions['comparateur-etiquettes'][language],
     openGraph: {
       creators: 'ADEME',
-      images: `meta/transport-${language}.png`,
+      images: `meta/comparateur-etiquettes-${language}.png`,
     },
   }
 }

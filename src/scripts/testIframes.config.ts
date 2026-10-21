@@ -209,7 +209,7 @@ export const checks = [
       await iframe.getByLabel("Empreinte carbone d'un citoyen français").uncheck()
       await iframe.getByRole('button', { name: 'Revenir au comparateur' }).click()
 
-      await comparateurTest(iframe, true, true)
+      await comparateurTest(iframe, true)
     },
   },
 ]
