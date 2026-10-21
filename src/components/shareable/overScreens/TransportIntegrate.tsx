@@ -4,15 +4,15 @@ import { useTranslations } from 'next-intl'
 import { useEffect, useMemo, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { deplacements } from 'data/categories/deplacement'
-import TransportClipboardBox from 'src/components/base/TransportClipboardBox'
+import NewClipboardBox from 'src/components/base/NewClipboardBox'
 import Radio from 'src/components/form/Radio'
 import RadioInput from 'src/components/form/RadioInput'
 import CustomParam, { CustomParamValue } from './CustomParam'
 import CustomParams from './CustomParams'
 import IntegrateFooter from './IntegrateFooter'
+import TransportIntegratePaste from './IntegratePaste'
 import TransportComparison from './TransportComparison'
 import TransportIntegrateAdvanced from './TransportIntegrateAdvanced'
-import TransportIntegratePaste from './TransportIntegratePaste'
 import TransportListParam from './TransportListParam'
 import { getTracking } from './TransportShare'
 import styles from './Integrate.module.css'
@@ -20,6 +20,7 @@ import shareStyles from './Share.module.css'
 
 const TransportIntegrate = () => {
   const t = useTranslations('overscreen.transport')
+  const tIntegrate = useTranslations('overscreen.integrate-modal')
   const tTransport = useTranslations('transport.mode-selector')
   const allParams = useParamContext()
 
@@ -89,7 +90,7 @@ const TransportIntegrate = () => {
     <>
       <h2 className={styles.sectionTitle}>
         <span className={styles.sectionId}>1</span>
-        {t('integrate-perso')}
+        {tIntegrate('perso')}
       </h2>
       <form
         id='transport-integrate'
@@ -177,18 +178,18 @@ const TransportIntegrate = () => {
       </form>
       <h2 className={styles.sectionTitle}>
         <span className={styles.sectionId}>2</span>
-        {t('integrate-copy')}
+        {tIntegrate('copy')}
       </h2>
-      <TransportClipboardBox form='transport-integrate' path={type} urlParams={search} tracking={tracking}>
+      <NewClipboardBox form='transport-integrate' path={type} urlParams={search} tracking={tracking}>
         {`<script data-name="impact-co2" src="${process.env.NEXT_PUBLIC_URL}/iframe.js" data-type="${type}" data-search="?${search}"></script>`}
-      </TransportClipboardBox>
+      </NewClipboardBox>
       <div className={shareStyles.separator} />
       <h2 className={styles.sectionTitle}>
         <span className={styles.sectionId}>3</span>
-        {t('integrate-paste')}
+        {tIntegrate('paste')}
       </h2>
-      <TransportIntegratePaste />
-      <IntegrateFooter search={search} tracking={tracking} />
+      <TransportIntegratePaste from='Transport intégration' where={tIntegrate('pasting')} />
+      <IntegrateFooter url={`transport?${search}`} tracking={tracking} from='Transport intégration' />
     </>
   )
 }

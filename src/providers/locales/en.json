@@ -247,6 +247,20 @@
       "title": "Remote work",
       "unit": "day[s]"
     },
+    "integrate-modal": {
+      "difficulty": "Having trouble?",
+      "difficulty-text": "Feel free to <link>contact us</link> to report the issue. In the meantime, you can add a simple link to your website, with the same customization options:",
+      "perso": "Customize your tool",
+      "copy": "Copy this code snippet",
+      "paste": "Paste this code snippet on your website",
+      "pasting": {
+        "details-1": "<b>All you have to do is add this code snippet to your website editor</b>, ",
+        "details-2": "If you do not have access to your website editor, or if you encounter difficulties, we recommend sending this code snippet to the people in charge of your website administration.",
+        "thanks-title": "Once the tool is integrated, write to us!",
+        "thanks": "We can then add your logo and a link to your website in our <link>examples gallery</link>.",
+        "write": "contact us"
+      }
+    },
     "transport": {
       "title": "Transport mode",
       "search": "Search a transport",
@@ -264,20 +278,9 @@
       "onglets-hint": "Select tabs you want to see in your iframe",
       "advanced": "Show advanced options",
       "advanced-open": "Hide advanced options",
-      "integrate-perso": "Customize your tool",
-      "integrate-copy": "Copy this code snippet",
-      "integrate-paste": "Paste this code snippet on your website",
-      "integrate-difficulty": "Having trouble?",
-      "integrate-difficulty-text": "Feel free to <link>contact us</link> to report the issue. In the meantime, you can add a simple link to your website, with the same customization options:",
       "comparison-title": "Default comparison displayed",
       "comparison-hint": "Change the transport modes displayed by default in comparison mode",
-      "paste": {
-        "details-1": "<b>All you have to do is add this code snippet to your website editor</b>, on the page where you want it to appear (e.g. Practical Info page, How to Get Here, Contact Us, Access, an article about transport carbon impact, etc.)",
-        "details-2": "If you do not have access to your website editor, or if you encounter difficulties, we recommend sending this code snippet to the people in charge of your website administration.",
-        "thanks-title": "Once the tool is integrated, write to us!",
-        "thanks": "We can then add your logo and a link to your website in our <link>examples gallery</link>.",
-        "write": "contact us"
-      },
+      "pasting": "on the page where you want it to appear (e.g. Practical Info page, How to Get Here, Contact Us, Access, an article about transport carbon impact, etc.)",
       "category": {
         "actives": "Active mobility",
         "twoWheels": "Two-wheelers",
