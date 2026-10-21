@@ -21,6 +21,7 @@ const values: Record<string, (params: Params) => Record<string, CustomParamValue
         start: { value: params.teletravail.start?.address || '', setter: params.teletravail.setStart },
         end: { value: params.teletravail.end?.address || '', setter: params.teletravail.setEnd },
       },
+
       transport: { value: params.teletravail.transport, setter: params.teletravail.setTransport },
       presentiel: { value: params.teletravail.presentiel, setter: params.teletravail.setPresentiel },
       homeOffice: { value: params.teletravail.homeOffice, setter: params.teletravail.setHomeOffice },

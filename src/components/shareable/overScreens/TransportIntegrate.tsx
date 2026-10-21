@@ -10,7 +10,6 @@ import RadioInput from 'src/components/form/RadioInput'
 import CustomParam, { CustomParamValue } from './CustomParam'
 import CustomParams from './CustomParams'
 import IntegrateFooter from './IntegrateFooter'
-import TransportIntegratePaste from './IntegratePaste'
 import TransportComparison from './TransportComparison'
 import TransportIntegrateAdvanced from './TransportIntegrateAdvanced'
 import TransportListParam from './TransportListParam'
@@ -188,8 +187,12 @@ const TransportIntegrate = () => {
         <span className={styles.sectionId}>3</span>
         {tIntegrate('paste')}
       </h2>
-      <TransportIntegratePaste from='Transport intégration' where={tIntegrate('pasting')} />
-      <IntegrateFooter url={`transport?${search}`} tracking={tracking} from='Transport intégration' />
+      <IntegrateFooter
+        url={`transport?${search}`}
+        tracking={tracking}
+        from='Transport intégration'
+        where={t('pasting')}
+      />
     </>
   )
 }
