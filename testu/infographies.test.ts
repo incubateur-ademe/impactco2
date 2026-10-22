@@ -250,7 +250,7 @@ describe('infographies', () => {
     const tgvTrajet = round((tgv?.ecv.reduce((acc, ecv) => acc + ecv.value, 0) as number) * distance * personne)
 
     expect(avionTrajet).toBe(449.14)
-    expect(voitureTrajet).toBe(142.25)
+    expect(voitureTrajet).toBe(227.61)
     expect(tgvTrajet).toBe(5.86)
 
     const hotelNuits = round((hotel?.ecv.reduce((acc, ecv) => acc + ecv.value, 0) as number) * nuits * personne)
@@ -263,7 +263,7 @@ describe('infographies', () => {
 
     const totalVoiture = round(voitureTrajet + hotelNuits)
 
-    expect(totalVoiture).toBe(168.05)
+    expect(totalVoiture).toBe(253.41)
 
     const totalTgv = round(tgvTrajet + hotelNuits)
 
@@ -328,7 +328,7 @@ describe('infographies', () => {
 
     const voitureDrive = round((voiture.ecv.reduce((acc, ecv) => acc + ecv.value, 0) as number) * 30)
 
-    expect(voitureDrive).toBe(4.27)
+    expect(voitureDrive).toBe(6.83)
 
     const coursesMagasin = round(livraisonData.courses.ecv.magasin.reduce((acc, item) => acc + item.value, 0))
     const coursesLivraison = round(
@@ -342,7 +342,7 @@ describe('infographies', () => {
 
     const driveTotal = round(voitureDrive + coursesDrive)
 
-    expect(driveTotal).toBe(12.08)
+    expect(driveTotal).toBe(14.64)
 
     const coursesAlt = imageInfographies.magasindouce[0].alt
 
@@ -363,7 +363,7 @@ describe('infographies', () => {
 
     const voiturePointRelais = round((voiture.ecv.reduce((acc, ecv) => acc + ecv.value, 0) as number) * 7)
 
-    expect(voiturePointRelais).toBe(1)
+    expect(voiturePointRelais).toBe(1.59)
 
     const smartphonePointRelaisDouce = round(
       livraisonData.smartphone.ecv.pointrelaisdouce.reduce((acc, item) => acc + item.value, 0)
@@ -381,7 +381,7 @@ describe('infographies', () => {
 
     const pointRelaisVoitureTotal = round(voiturePointRelais + smartphonePointRelais)
 
-    expect(pointRelaisVoitureTotal).toBe(1.22)
+    expect(pointRelaisVoitureTotal).toBe(1.81)
 
     const smartphoneAlt = imageInfographies.smartphone[1].alt
 
