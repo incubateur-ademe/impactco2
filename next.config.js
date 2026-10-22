@@ -81,6 +81,9 @@ const nextConfig = {
   images: {
     remotePatterns: [images, new URL(`https://${process.env.NEXT_PUBLIC_S3_BUCKET_NAME}.s3.fr-par.scw.cloud/**`)],
   },
+  experimental: {
+    cpus: process.env.CPUS ? parseInt(process.env.CPUS, 10) : undefined,
+  },
   async headers() {
     return [
       {
