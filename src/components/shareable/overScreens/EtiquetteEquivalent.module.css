@@ -1,0 +1,59 @@
+.label {
+  color: var(--neutral-80);
+  display: inline-block;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hint {
+  color: var(--neutral-60);
+  font-weight: 400;
+  display: block;
+}
+
+.button {
+  display: flex;
+  padding: 1rem 1.5rem;
+  gap: 1rem;
+  border-radius: 0.5rem;
+  align-items: center;
+  background: var(--primary-10);
+  color: var(--primary-60);
+  font-weight: 500;
+  @media screen and (max-width: 48rem) {
+    flex-direction: column;
+  }
+}
+
+.list {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.equivalent {
+  cursor: pointer;
+  display: flex;
+  padding: 0.25rem 0.5rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 0.25rem;
+  border: 2px solid var(--primary-30);
+  background: var(--neutral-00);
+  color: var(--neutral-60);
+  font-weight: 500;
+
+  svg {
+    color: var(--primary-50);
+  }
+
+  &:hover {
+    border-color: var(--primary-40);
+
+    svg {
+      color: var(--primary-60);
+    }
+  }
+}

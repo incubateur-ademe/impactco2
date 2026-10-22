@@ -116,28 +116,7 @@ export const smallTools = [
     description: 'Le petit format pour communiquer les bons ordres de grandeur',
     meta: "Découvrir l'étiquette CO2, le petit format pour communiquer les bons ordres de grandeur",
     linkLabel: 'Découvrir',
-    content: (
-      <>
-        <p>
-          Dans le prolongement du comparateur carbone, Impact CO₂ propose désormais une version compacte et facilement
-          configurable : l'étiquette carbone.
-        </p>
-        <p>
-          Elle permet de visualiser rapidement le poids carbone associé à des gestes et objets du quotidien et de les
-          comparer entre eux, dans un format mini, idéal pour une communication percutante et ludique des ordres de
-          grandeur.
-        </p>
-        <p>
-          <b>
-            Les étiquettes sont créées automatiquement lorsque vous utilisez le comparateur carbone, juste en dessous de
-            ce dernier.
-          </b>{' '}
-          En faisant défiler la page du comparateur, vous pouvez retrouver votre comparaison au format étiquette et
-          l’utiliser dans vos contenus et applications.
-        </p>
-      </>
-    ),
-    toolLink: '/outils/comparateur#etiquette',
+    toolLink: '/outils/etiquettes',
     toolLinkLabel: 'Créer mon étiquette avec le comparateur carbone',
   },
   {
