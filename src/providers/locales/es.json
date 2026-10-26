@@ -129,6 +129,8 @@
     "share": "Compartir",
     "integrate": "Integrar",
     "integrate-new": "Añadir a tu sitio web",
+    "integrate-etiquette": "Añadir la etiqueta a tu sitio web",
+    "integrate-simulateur": "Añadir el simulador a tu sitio web",
     "communicate": "COMUNICAR SOBRE NUESTRAS HERRAMIENTAS",
     "kitTitle": "Kit de comunicación",
     "kitDescription": "Todo lo necesario para comunicar sobre Impact CO₂",
@@ -161,12 +163,6 @@
     "withFabrication": {
       "title": "Incluir el impacto de la fabricación por defecto",
       "description": "Impacto de la fabricación"
-    },
-    "modeList": {
-      "description": "Personaliza la lista de métodos de compra propuestos"
-    },
-    "typeList": {
-      "description": "Personaliza la lista de objetos propuestos"
     },
     "customList": {
       "title": "Crea una lista de alimentos personalizada",
@@ -290,6 +286,15 @@
       "empty-hint": "Se elegirá un equivalente al azar",
       "count": "{count} {count, plural, =1 {equivalente seleccionado} other {equivalentes seleccionados}} (máx. 8)",
       "pasting": "en la página donde quieras que aparezca."
+    },
+    "livraison": {
+      "pasting": "en la página donde quieras que aparezca (por ejemplo: tu página de producto, en el paso de entrega para el consumidor en el proceso de compra, en un artículo sobre el impacto de carbono de la entrega...)",
+      "modeList": {
+        "description": "Personaliza la lista de métodos de compra propuestos"
+      },
+      "typeList": {
+        "description": "Personaliza la lista de objetos propuestos"
+      }
     },
     "month": {
       "title": "Personalizar el mes a mostrar",

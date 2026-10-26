@@ -140,6 +140,8 @@
     "extraKitLink": "Download",
     "integrate": "Integrate",
     "integrate-new": "Add to your website",
+    "integrate-etiquette": "Add the label to your website",
+    "integrate-simulateur": "Add the simulator to your website",
     "preview": "Preview the integration",
     "next-actions": "Explore further",
     "comparison": "Change the compared mode of transport",
@@ -161,12 +163,6 @@
     "withFabrication": {
       "title": "Include manufacturing impact by default",
       "description": "Impact of manufacturing"
-    },
-    "modeList": {
-      "description": "Customize the list of proposed purchasing methods"
-    },
-    "typeList": {
-      "description": "Customize the list of suggested items"
     },
     "customList": {
       "title": "Create a custom food list",
@@ -290,6 +286,15 @@
       "empty-hint": "An equivalent will then be chosen at random",
       "count": "{count} {count, plural, =1 {equivalent selected} other {equivalents selected}} (max. 8)",
       "pasting": "on the page where you want it to appear."
+    },
+    "livraison": {
+      "pasting": "on the page where you want it to appear (e.g. your product page, in the consumer's delivery step in the purchase process, in an article about the carbon impact of delivery...)",
+      "modeList": {
+        "description": "Customize the list of proposed purchasing methods"
+      },
+      "typeList": {
+        "description": "Customize the list of suggested items"
+      }
     },
     "month": {
       "title": "Display a custom month",
