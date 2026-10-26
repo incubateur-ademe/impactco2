@@ -6,6 +6,7 @@ allowBuilds:
   '@sentry/cli': true
   '@swc/core': true
   '@tree-sitter-grammars/tree-sitter-yaml': true
+  better-sqlite3: set this to true or false
   canvas: true
   core-js: true
   core-js-pure: true

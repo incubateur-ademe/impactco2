@@ -118,8 +118,7 @@ export const usageNumeriques = [
         id: 17,
       },
     ],
-
-    unit: 'avec les paramètres renseignés ci-dessous.',
+    unit: 'param',
   },
   {
     slug: 'visioconference',
@@ -147,7 +146,7 @@ export const usageNumeriques = [
       },
     ],
 
-    unit: 'avec les paramètres renseignés ci-dessous.',
+    unit: 'param',
   },
   {
     slug: 'telechargement',

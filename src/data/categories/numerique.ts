@@ -1,5 +1,3 @@
-import { Equivalent } from 'types/equivalent'
-
 export const numeriques = [
   {
     synonyms: [
@@ -51,7 +49,7 @@ export const numeriques = [
       },
     ],
     usage: {
-      peryear: 0.25573725,
+      peryear: 0.22715775000000002,
       defaultyears: 2.5,
     },
     end: 0.246,
@@ -71,7 +69,7 @@ export const numeriques = [
       },
     ],
     usage: {
-      peryear: 5.304180000000001,
+      peryear: 4.71142,
       defaultyears: 6,
     },
     end: 6.61,
@@ -91,7 +89,7 @@ export const numeriques = [
       },
     ],
     usage: {
-      peryear: 7.956270000000001,
+      peryear: 7.067130000000001,
       defaultyears: 6,
     },
     end: 6.61,
@@ -101,7 +99,7 @@ export const numeriques = [
     slug: 'ecran',
     category: 1,
     usage: {
-      peryear: 3.7886999999999995,
+      peryear: 3.3653000000000004,
       defaultyears: 6,
     },
     end: 3.95,
@@ -120,7 +118,7 @@ export const numeriques = [
     slug: 'tabletteclassique',
     category: 1,
     usage: {
-      peryear: 0.9471749999999999,
+      peryear: 0.8413250000000001,
       defaultyears: 3,
     },
     end: 0.364,
@@ -150,7 +148,7 @@ export const numeriques = [
       },
     ],
     usage: {
-      peryear: 3.6939825,
+      peryear: 3.2811675,
       defaultyears: 8,
     },
     end: 11.9,
@@ -170,7 +168,7 @@ export const numeriques = [
       },
     ],
     usage: {
-      peryear: 1.50600825,
+      peryear: 1.3377067500000002,
       defaultyears: 5,
     },
     end: 2.79,
@@ -190,7 +188,7 @@ export const numeriques = [
       },
     ],
     usage: {
-      peryear: 1.13661,
+      peryear: 1.00959,
       defaultyears: 5,
     },
     end: 0.7,
@@ -224,7 +222,7 @@ export const numeriques = [
       },
     ],
     usage: {
-      peryear: 0.037887,
+      peryear: 0.03365300000000001,
       defaultyears: 5,
     },
     end: 1.675,
@@ -274,7 +272,7 @@ export const numeriques = [
     ],
     end: 0.287,
     usage: {
-      peryear: 0.151548,
+      peryear: 0.13461200000000004,
       defaultyears: 5,
     },
   },
@@ -293,7 +291,7 @@ export const numeriques = [
     ],
     end: 0.07959999999999999,
     usage: {
-      peryear: 0.0189435,
+      peryear: 0.016826500000000005,
       defaultyears: 5,
     },
   },
@@ -311,7 +309,7 @@ export const numeriques = [
       },
     ],
     usage: {
-      peryear: 0.0075774,
+      peryear: 0.0067306,
       defaultyears: 5,
     },
     end: 0.015300000000000001,
@@ -330,7 +328,7 @@ export const numeriques = [
       },
     ],
     usage: {
-      peryear: 3.6371520000000004,
+      peryear: 3.2306880000000002,
       defaultyears: 5,
     },
     end: 1.63,
@@ -349,7 +347,7 @@ export const numeriques = [
       },
     ],
     usage: {
-      peryear: 1.89435,
+      peryear: 1.6826500000000002,
       defaultyears: 8,
     },
     end: 3.26,
@@ -361,4 +359,4 @@ export const numeriques = [
     ],
     default: true,
   },
-] satisfies Equivalent[]
+]

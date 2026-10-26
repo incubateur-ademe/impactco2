@@ -5,6 +5,7 @@ import { chauffage } from 'data/categories/chauffage'
 import { deplacements } from 'data/categories/deplacement'
 import { livraison } from 'data/categories/livraison'
 import { numeriques } from 'data/categories/numerique'
+import { usageNumeriques } from 'data/categories/usagenumerique'
 import { livraisonData } from 'components/outils/livraison/LivraisonData'
 import { extractChauffageValues } from 'utils/publicodes/extractChauffageValues'
 import { extractLivraisonValues } from 'utils/publicodes/extractLivraisonValues'
@@ -15,27 +16,33 @@ import { extractVoitureValues } from 'utils/publicodes/extractVoitureValues'
 function updateDataFile(category: string) {
   try {
     switch (category) {
-      case 'numerique':
+      case 'numerique': {
         extractNumeriqueValues()
-        const backupContent = `export const numeriques = ${JSON.stringify(numeriques, null, 2)}`
-        const backupPath = path.join(__dirname, '../data/categories/numerique.ts')
+        const backupNumeriqueContent = `export const numeriques = ${JSON.stringify(numeriques, null, 2)}`
+        const backupNumeriquePath = path.join(__dirname, '../data/categories/numerique.ts')
+        fs.writeFileSync(backupNumeriquePath, backupNumeriqueContent, 'utf8')
+        console.log(`\nValeurs sauvegardées dans: ${backupNumeriquePath}`)
+        const backupUsageNumeriqueContent = `export const usageNumeriques = ${JSON.stringify(usageNumeriques, null, 2)}`
+        const backupUsageNumeriquePath = path.join(__dirname, '../data/categories/usageNumeriques.ts')
+        fs.writeFileSync(backupUsageNumeriquePath, backupUsageNumeriqueContent, 'utf8')
+        console.log(`\nValeurs sauvegardées dans: ${backupUsageNumeriquePath}`)
+        break
+      }
+      case 'chauffage': {
+        extractChauffageValues()
+        const backupContent = `export const chauffage = ${JSON.stringify(chauffage, null, 2)}`
+        const backupPath = path.join(__dirname, '../data/categories/chauffage.ts')
         fs.writeFileSync(backupPath, backupContent, 'utf8')
         console.log(`\nValeurs sauvegardées dans: ${backupPath}`)
         break
-      case 'chauffage':
-        extractChauffageValues()
-        const backupContent2 = `export const chauffage = ${JSON.stringify(chauffage, null, 2)}`
-        const backupPath2 = path.join(__dirname, '../data/categories/chauffage.ts')
-        fs.writeFileSync(backupPath2, backupContent2, 'utf8')
-        console.log(`\nValeurs sauvegardées dans: ${backupPath2}`)
-        break
-      case 'livraison':
+      }
+      case 'livraison': {
         extractLivraisonValues()
 
-        const backupContent3 = `export const livraison = ${JSON.stringify(livraison, null, 2)}`
-        const backupPath3 = path.join(__dirname, '../data/categories/livraison.ts')
-        fs.writeFileSync(backupPath3, backupContent3, 'utf8')
-        console.log(`\nValeurs sauvegardées dans: ${backupPath3}`)
+        const backupContent = `export const livraison = ${JSON.stringify(livraison, null, 2)}`
+        const backupPath = path.join(__dirname, '../data/categories/livraison.ts')
+        fs.writeFileSync(backupPath, backupContent, 'utf8')
+        console.log(`\nValeurs sauvegardées dans: ${backupPath}`)
 
         const dataContent = `import { LivraisonType } from './Type'
       export const livraisonData: Record<
@@ -46,7 +53,8 @@ function updateDataFile(category: string) {
         fs.writeFileSync(dataPath, dataContent, 'utf8')
         console.log(`\nValeurs sauvegardées dans: ${dataPath}`)
         break
-      case 'voiture':
+      }
+      case 'voiture': {
         extractVoitureValues()
         const backupDeplacementContent = `export const deplacements = ${JSON.stringify(deplacements, null, 2)}`
         const backupDeplacementPath = path.join(__dirname, '../data/categories/deplacement.ts')
@@ -57,12 +65,13 @@ function updateDataFile(category: string) {
         fs.writeFileSync(backupCasPratiquesPath, backupCasPratiquesContent, 'utf8')
         console.log(`\nValeurs sauvegardées dans: ${backupCasPratiquesPath}`)
         break
+      }
       case 'transport':
         extractTransportValues()
-        const backupDeplacementContent2 = `export const deplacements = ${JSON.stringify(deplacements, null, 2)}`
-        const backupDeplacementPath2 = path.join(__dirname, '../data/categories/deplacement.ts')
-        fs.writeFileSync(backupDeplacementPath2, backupDeplacementContent2, 'utf8')
-        console.log(`\nValeurs sauvegardées dans: ${backupDeplacementPath2}`)
+        const backupContent = `export const deplacements = ${JSON.stringify(deplacements, null, 2)}`
+        const backupPath = path.join(__dirname, '../data/categories/deplacement.ts')
+        fs.writeFileSync(backupPath, backupContent, 'utf8')
+        console.log(`\nValeurs sauvegardées dans: ${backupPath}`)
         break
     }
   } catch (error) {
