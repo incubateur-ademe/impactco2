@@ -494,8 +494,8 @@
     "SD": "Low def",
     "HD": "High def",
     "ultra HD": "4K",
-    "fixe FR": "Wifi",
-    "mobile FR": "4G",
+    "fixe": "Wifi",
+    "mobile": "4G",
     "construction": {
       "smartphone": "Smartphone construction",
       "television": "Television construction",

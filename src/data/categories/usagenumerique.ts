@@ -1,169 +1,146 @@
-import { Equivalent } from 'types/equivalent'
-
 export const usageNumeriques = [
   {
-    slug: 'email',
-    unit: 'param',
-    category: 10,
-    ecv: [
+    "slug": "email",
+    "unit": "param",
+    "category": 10,
+    "ecv": [
       {
-        value: 0.001286218,
-        id: 13,
+        "id": 41,
+        "value": 0.0001956330333333349
       },
       {
-        value: 0.00008684837,
-        id: 14,
+        "id": 42,
+        "value": 0.0000208844121517814
       },
       {
-        value: 0.00003580927,
-        id: 15,
-      },
-      {
-        value: 0.00093525547,
-        id: 16,
-      },
-      {
-        value: 0.00011768151,
-        id: 17,
-      },
-    ],
+        "id": 43,
+        "value": 0.0006392477565
+      }
+    ]
   },
   {
-    slug: 'spam',
-    unit: 'email',
-    category: 10,
-    ecv: [
+    "slug": "spam",
+    "unit": "email",
+    "category": 10,
+    "ecv": [
       {
-        value: 0.0026857,
-        id: 15,
+        "value": 0.0026857,
+        "id": 15
       },
       {
-        value: 0.00093525547,
-        id: 16,
+        "value": 0.00093525547,
+        "id": 16
       },
       {
-        value: 0.00011768151,
-        id: 17,
-      },
-    ],
+        "value": 0.00011768151,
+        "id": 17
+      }
+    ]
   },
   {
-    slug: 'stockagedonnee',
-    unit: 'an',
-    category: 10,
-    ecv: [
+    "slug": "stockagedonnee",
+    "unit": "an",
+    "category": 10,
+    "ecv": [
       {
-        value: 0.00012454537,
-        id: 16,
+        "id": 41,
+        "value": 0.000026200166666665098
       },
       {
-        value: 0.0001107888,
-        id: 17,
+        "id": 42,
+        "value": 0.00971368007059596
       },
-    ],
+      {
+        "id": 43,
+        "value": 0.000931875
+      }
+    ]
   },
   {
-    slug: 'rechercheweb',
-    unit: 'recherche',
-    category: 10,
-    ecv: [
+    "slug": "rechercheweb",
+    "unit": "recherche",
+    "category": 10,
+    "ecv": [
       {
-        value: 0.000369,
-        id: 13,
+        "value": 0.000369,
+        "id": 13
       },
       {
-        value: 0.000246,
-        id: 14,
+        "value": 0.000246,
+        "id": 14
       },
       {
-        value: 0.0000197,
-        id: 15,
+        "value": 0.0000197,
+        "id": 15
       },
       {
-        value: 0.0003395,
-        id: 16,
+        "value": 0.0003395,
+        "id": 16
       },
       {
-        value: 0.0002263,
-        id: 17,
+        "value": 0.0002263,
+        "id": 17
       },
       {
-        value: 0.0000295,
-        id: 18,
-      },
-    ],
+        "value": 0.0000295,
+        "id": 18
+      }
+    ]
   },
   {
-    slug: 'streamingvideo',
-    category: 10,
-    ecv: [
+    "slug": "streamingvideo",
+    "category": 10,
+    "ecv": [
       {
-        value: 0.0327361035,
-        id: 13,
+        "id": 41,
+        "value": 0.0029965
       },
       {
-        value: 0.002903607,
-        id: 14,
+        "id": 42,
+        "value": 0.007986198861
       },
       {
-        value: 0.02780804,
-        id: 15,
-      },
-      {
-        value: 0.000236636,
-        id: 16,
-      },
-      {
-        value: 0.00033236641,
-        id: 17,
-      },
+        "id": 43,
+        "value": 0.002157695
+      }
     ],
-    unit: 'param',
+    "unit": "param"
   },
   {
-    slug: 'visioconference',
-    category: 10,
-    ecv: [
+    "slug": "visioconference",
+    "category": 10,
+    "ecv": [
       {
-        value: 0.04100456621,
-        id: 13,
+        "id": 41,
+        "value": 0.002305
       },
       {
-        value: 0.002845,
-        id: 14,
+        "id": 42,
+        "value": 0.071493263462
       },
       {
-        value: 0.0129770857,
-        id: 15,
-      },
-      {
-        value: 0.000236636,
-        id: 16,
-      },
-      {
-        value: 7.755216e-8,
-        id: 17,
-      },
+        "id": 43,
+        "value": 0.003996425
+      }
     ],
-
-    unit: 'param',
+    "unit": "param"
   },
   {
-    slug: 'telechargement',
-    category: 10,
-    ecv: [
+    "slug": "telechargement",
+    "category": 10,
+    "ecv": [
       {
-        value: 0.0092693467,
-        id: 15,
+        "value": 0.0092693467,
+        "id": 15
       },
       {
-        value: 0.00012454537,
-        id: 16,
+        "value": 0.00012454537,
+        "id": 16
       },
       {
-        value: 0.0001107888,
-        id: 17,
-      },
-    ],
-  },
-] satisfies Equivalent[]
+        "value": 0.0001107888,
+        "id": 17
+      }
+    ]
+  }
+]

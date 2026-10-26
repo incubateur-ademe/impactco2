@@ -11,6 +11,7 @@ import { extractChauffageValues } from 'utils/publicodes/extractChauffageValues'
 import { extractLivraisonValues } from 'utils/publicodes/extractLivraisonValues'
 import { extractNumeriqueValues } from 'utils/publicodes/extractNumeriqueValues'
 import { extractTransportValues } from 'utils/publicodes/extractTransportValues'
+import { extractUsageNumeriqueValues } from 'utils/publicodes/extractUsageNumeriqueValues'
 import { extractVoitureValues } from 'utils/publicodes/extractVoitureValues'
 
 function updateDataFile(category: string) {
@@ -22,10 +23,17 @@ function updateDataFile(category: string) {
         const backupNumeriquePath = path.join(__dirname, '../data/categories/numerique.ts')
         fs.writeFileSync(backupNumeriquePath, backupNumeriqueContent, 'utf8')
         console.log(`\nValeurs sauvegardées dans: ${backupNumeriquePath}`)
+
+        extractUsageNumeriqueValues()
         const backupUsageNumeriqueContent = `export const usageNumeriques = ${JSON.stringify(usageNumeriques, null, 2)}`
-        const backupUsageNumeriquePath = path.join(__dirname, '../data/categories/usageNumeriques.ts')
+        const backupUsageNumeriquePath = path.join(__dirname, '../data/categories/usagenumerique.ts')
         fs.writeFileSync(backupUsageNumeriquePath, backupUsageNumeriqueContent, 'utf8')
         console.log(`\nValeurs sauvegardées dans: ${backupUsageNumeriquePath}`)
+
+        const backupCasPratiquesContent = `export const casPratiques = ${JSON.stringify(casPratiques, null, 2)}`
+        const backupCasPratiquesPath = path.join(__dirname, '../data/categories/caspratiques.ts')
+        fs.writeFileSync(backupCasPratiquesPath, backupCasPratiquesContent, 'utf8')
+        console.log(`\nValeurs sauvegardées dans: ${backupCasPratiquesPath}`)
         break
       }
       case 'chauffage': {
