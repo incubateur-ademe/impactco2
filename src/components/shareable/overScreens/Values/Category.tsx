@@ -173,12 +173,19 @@ export const overScreenCategoryValues: (category: Category) => Record<string, Ov
   if (category.slug === 'livraison') {
     return {
       integrer: {
-        title: 'integrate',
+        title: 'integrate-new',
         children: <LivraisonIntegrate />,
       },
       partager: {
         title: 'share',
-        children: <Share category={category} tracking={category.name} extraKit='livraison' />,
+        children: (
+          <Share
+            path='outils/livraison?tab=simulateur'
+            category={category}
+            tracking={category.name}
+            extraKit='livraison'
+          />
+        ),
       },
       hypothesis: {
         image: '/images/icn-next-actions.svg',

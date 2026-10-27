@@ -3,7 +3,7 @@
 import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
 import { useSearchParams } from 'next/navigation'
-import { ReactNode, useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { ReactNode, useCallback, useEffect, useMemo, useRef } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { TrackingProvider } from 'src/providers/TrackingProvider'
 import TranslationProvider from 'src/providers/TranslationProvider'
@@ -28,13 +28,15 @@ type ShareableProps = {
   slug: string
   tracking: string
   withoutIntegration?: boolean
+  withoutButtons?: boolean
   overScreens?: Record<string, OverScreenInfo>
   secondary?: ReactNode
   noBottomBorders?: boolean
   small?: boolean
   smallPadding?: boolean
   withNPS?: boolean
-  withNewIntegration?: boolean
+  integrateLabel?: string
+  header?: ReactNode
 }
 
 const Shareable = ({
@@ -42,13 +44,15 @@ const Shareable = ({
   slug,
   tracking,
   withoutIntegration,
-  withNewIntegration,
+  withoutButtons,
+  integrateLabel,
   overScreens,
   secondary,
   noBottomBorders,
   small,
   smallPadding,
   withNPS,
+  header,
 }: ShareableProps) => {
   const overscreenRef = useRef<HTMLDialogElement>(null)
   const t = useTranslations('overscreen')
@@ -69,12 +73,11 @@ const Shareable = ({
     }
   }, [slug, setOverscreen, overScreenToDisplay])
 
-  const [showButtons, setShowButtons] = useState(true)
-
   const searchParams = useSearchParams()
-  useEffect(() => {
-    setShowButtons(searchParams.get('hideButtons') !== 'true')
-  }, [searchParams])
+  const showButtons = useMemo(
+    () => (withoutButtons ? false : searchParams.get('hideButtons') !== 'true'),
+    [searchParams, withoutButtons]
+  )
 
   useEffect(() => {
     if (overScreenToDisplay && overscreenRef.current) {
@@ -111,168 +114,172 @@ const Shareable = ({
   }, [overscreenRef, overScreenToDisplay, onClose, overscreen])
 
   return (
-    <div
-      lang={language}
-      className={classNames(styles.card, {
-        [styles.secondaryCard]: secondary !== undefined,
-        night: theme === 'night',
-        [styles.smallCard]: small,
-      })}>
-      {withNPS && <UserFeedback tracking={tracking} />}
-      <div ref={secondary !== undefined ? undefined : ref}>
-        {overScreenToDisplay && (
-          <>
-            <div className={classNames(styles.filler, { [styles.noBorder]: secondary !== undefined })} />
-            <dialog
-              role='dialog'
-              ref={overscreenRef}
-              tabIndex={-1}
-              aria-modal='true'
-              aria-label={t(overScreenToDisplay.title)}
-              className={classNames(styles.overScreen, { [styles.fullHeight]: overScreenToDisplay.fullHeight })}>
-              {!overScreenToDisplay.hideTitle ? (
-                <div>
-                  <div className={overScreenToDisplay.noHeaderSeparator ? styles.headerWithBorder : styles.header}>
-                    <h1 className='text-lg'>{t(overScreenToDisplay.title)}</h1>
-                    <GhostButton
-                      icon={<CloseIcon />}
-                      iconPosition='right'
-                      onClick={onClose}
-                      title={tModal('close-title')}>
-                      {tModal('close')}
-                    </GhostButton>
+    <>
+      <div
+        lang={language}
+        className={classNames(styles.card, {
+          [styles.secondaryCard]: secondary !== undefined,
+          night: theme === 'night',
+          [styles.smallCard]: small,
+        })}>
+        {withNPS && <UserFeedback tracking={tracking} />}
+        <div ref={secondary !== undefined ? undefined : ref}>
+          {overScreenToDisplay && (
+            <>
+              <div className={classNames(styles.filler, { [styles.noBorder]: secondary !== undefined })} />
+              <dialog
+                role='dialog'
+                ref={overscreenRef}
+                tabIndex={-1}
+                aria-modal='true'
+                aria-label={t(overScreenToDisplay.title)}
+                className={classNames(styles.overScreen, { [styles.fullHeight]: overScreenToDisplay.fullHeight })}>
+                {!overScreenToDisplay.hideTitle ? (
+                  <div>
+                    <div className={overScreenToDisplay.noHeaderSeparator ? styles.headerWithBorder : styles.header}>
+                      <h1 className='text-lg'>{t(overScreenToDisplay.title)}</h1>
+                      <GhostButton
+                        icon={<CloseIcon />}
+                        iconPosition='right'
+                        onClick={onClose}
+                        title={tModal('close-title')}>
+                        {tModal('close')}
+                      </GhostButton>
+                    </div>
+                    {!overScreenToDisplay.noHeaderSeparator && <div className={styles.separatorBothBorders} />}
                   </div>
-                  {!overScreenToDisplay.noHeaderSeparator && <div className={styles.separatorBothBorders} />}
+                ) : (
+                  <h1 className='ico2-hidden'>{t(overScreenToDisplay.title)}</h1>
+                )}
+                <div
+                  className={classNames(styles.overScreenChildren, {
+                    [styles.noScroll]: overScreenToDisplay.hideTitle,
+                  })}>
+                  {overScreenToDisplay.children}
+                </div>
+                {!overScreenToDisplay.hideTitle && !overScreenToDisplay.hideFooter && (
+                  <div>
+                    <div className={styles.separatorBothBorders} />
+                    <div className={styles.footer}>
+                      <GhostButton
+                        icon={<CloseIcon />}
+                        iconPosition='right'
+                        onClick={onClose}
+                        title={tModal('close-title')}
+                        data-testid='cancel-button'>
+                        {tModal(overScreenToDisplay.bottomButtonLabel || 'close')}
+                      </GhostButton>
+                    </div>
+                  </div>
+                )}
+              </dialog>
+            </>
+          )}
+          {header}
+          <div
+            className={classNames(secondary !== undefined ? styles.secondaryContainer : '', {
+              [styles.smallPadding]: smallPadding,
+              [styles.withHeader]: !!header,
+            })}>
+            {secondary &&
+              (typeof secondary === 'string' ? <h3 className={styles.secondaryText}>{secondary}</h3> : secondary)}
+            <div
+              ref={secondary !== undefined ? ref : undefined}
+              className={secondary !== undefined ? styles.secondaryContent : ''}>
+              {children}
+            </div>
+          </div>
+          {secondary === undefined && (
+            <>
+              {showButtons &&
+              hideActions !== slug &&
+              overScreens &&
+              ('hypothesis' in overScreens || 'data' in overScreens || 'faq' in overScreens) ? (
+                <div className={classNames('no-screenshot', styles.ressources)}>
+                  {'data' in overScreens && (
+                    <Feature
+                      slug={slug}
+                      type='data'
+                      tracking={tracking}
+                      name='Comprendre les données'
+                      info={overScreens.data}
+                    />
+                  )}
+                  {'hypothesis' in overScreens && (
+                    <Feature
+                      slug={slug}
+                      type='hypothesis'
+                      info={overScreens.hypothesis}
+                      name='Aller plus loin'
+                      tracking={tracking}
+                    />
+                  )}
+                  {'faq' in overScreens && (
+                    <Feature
+                      slug={slug}
+                      type='faq'
+                      info={overScreens.faq}
+                      name='Questions fréquentes'
+                      tracking={tracking}
+                    />
+                  )}
                 </div>
               ) : (
-                <h1 className='ico2-hidden'>{t(overScreenToDisplay.title)}</h1>
+                !noBottomBorders && <div className={classNames('no-screenshot', styles.separator)} />
               )}
-              <div
-                className={classNames(styles.overScreenChildren, {
-                  [styles.noScroll]: overScreenToDisplay.hideTitle,
-                })}>
-                {overScreenToDisplay.children}
-              </div>
-              {!overScreenToDisplay.hideTitle && !overScreenToDisplay.hideFooter && (
-                <div>
-                  <div className={styles.separatorBothBorders} />
-                  <div className={styles.footer}>
-                    <GhostButton
-                      icon={<CloseIcon />}
-                      iconPosition='right'
-                      onClick={onClose}
-                      title={tModal('close-title')}
-                      data-testid='cancel-button'>
-                      {tModal(overScreenToDisplay.bottomButtonLabel || 'close')}
-                    </GhostButton>
+              {language !== 'fr' && (
+                <p className={styles.disclaimer}>
+                  {t('disclaimer')} <Link href='https://base-empreinte.ademe.fr/donnees/jeu-donnees'>ADEME</Link>
+                </p>
+              )}
+              <div className={styles.logos}>
+                <Logos small />
+                {showButtons && (
+                  <div className={classNames('no-screenshot', small ? styles.bottomLanguage : styles.language)}>
+                    <HiddenLabel htmlFor={`text-select-${slug}-language`}>{t('language.label')}</HiddenLabel>
+                    <Select
+                      title={t('language.label')}
+                      id={`${slug}-language`}
+                      value={language}
+                      onChange={(event) => {
+                        track(tracking, 'Language', event.target.value)
+                        setLanguage(event.target.value as Language)
+                      }}>
+                      <option value='fr' lang='fr'>
+                        FR
+                      </option>
+                      <option value='en' lang='en'>
+                        EN
+                      </option>
+                      <option value='es' lang='es'>
+                        ES
+                      </option>
+                    </Select>
+                    <LanguageIcon />
                   </div>
-                </div>
-              )}
-            </dialog>
-          </>
-        )}
-        <div
-          className={classNames(secondary !== undefined ? styles.secondaryContainer : '', {
-            [styles.smallPadding]: smallPadding,
-          })}>
-          {secondary &&
-            (typeof secondary === 'string' ? <h3 className={styles.secondaryText}>{secondary}</h3> : secondary)}
-          <div
-            ref={secondary !== undefined ? ref : undefined}
-            className={secondary !== undefined ? styles.secondaryContent : ''}>
-            {children}
-          </div>
-        </div>
-        {secondary === undefined && (
-          <>
-            {showButtons &&
-            hideActions !== slug &&
-            overScreens &&
-            ('hypothesis' in overScreens || 'data' in overScreens || 'faq' in overScreens) ? (
-              <div className={classNames('no-screenshot', styles.ressources)}>
-                {'data' in overScreens && (
-                  <Feature
-                    slug={slug}
-                    type='data'
-                    tracking={tracking}
-                    name='Comprendre les données'
-                    info={overScreens.data}
-                  />
-                )}
-                {'hypothesis' in overScreens && (
-                  <Feature
-                    slug={slug}
-                    type='hypothesis'
-                    info={overScreens.hypothesis}
-                    name='Aller plus loin'
-                    tracking={tracking}
-                  />
-                )}
-                {'faq' in overScreens && (
-                  <Feature
-                    slug={slug}
-                    type='faq'
-                    info={overScreens.faq}
-                    name='Questions fréquentes'
-                    tracking={tracking}
-                  />
                 )}
               </div>
-            ) : (
-              !noBottomBorders && <div className={classNames('no-screenshot', styles.separator)} />
-            )}
-            {language !== 'fr' && (
-              <p className={styles.disclaimer}>
-                {t('disclaimer')} <Link href='https://base-empreinte.ademe.fr/donnees/jeu-donnees'>ADEME</Link>
-              </p>
-            )}
-            <div className={styles.logos}>
-              <Logos small />
-              {showButtons && (
-                <div className={classNames('no-screenshot', small ? styles.bottomLanguage : styles.language)}>
-                  <HiddenLabel htmlFor={`text-select-${slug}-language`}>{t('language.label')}</HiddenLabel>
-                  <Select
-                    title={t('language.label')}
-                    id={`${slug}-language`}
-                    value={language}
-                    onChange={(event) => {
-                      track(tracking, 'Language', event.target.value)
-                      setLanguage(event.target.value as Language)
-                    }}>
-                    <option value='fr' lang='fr'>
-                      FR
-                    </option>
-                    <option value='en' lang='en'>
-                      EN
-                    </option>
-                    <option value='es' lang='es'>
-                      ES
-                    </option>
-                  </Select>
-                  <LanguageIcon />
-                </div>
-              )}
-            </div>
-          </>
+            </>
+          )}
+        </div>
+        {showButtons && (
+          <div className={classNames(styles.actions, { [styles.secondaryActions]: secondary !== undefined })}>
+            <Actions
+              onClick={(action) => {
+                if (action === 'telecharger') {
+                  takeScreenshot()
+                } else {
+                  setOverscreen(slug, action)
+                }
+              }}
+              tracking={tracking}
+              withoutIntegration={withoutIntegration}
+              integrateLabel={integrateLabel}
+            />
+          </div>
         )}
       </div>
-      {showButtons && (
-        <div className={classNames(styles.actions, { [styles.secondaryActions]: secondary !== undefined })}>
-          <Actions
-            onClick={(action) => {
-              if (action === 'telecharger') {
-                takeScreenshot()
-              } else {
-                setOverscreen(slug, action)
-              }
-            }}
-            tracking={tracking}
-            withoutIntegration={withoutIntegration}
-            withNewIntegration={withNewIntegration}
-          />
-        </div>
-      )}
-    </div>
+    </>
   )
 }
 

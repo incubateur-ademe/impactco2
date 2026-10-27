@@ -95,7 +95,7 @@ const EtiquetteIntegrate = ({
         {tIntegrate('paste')}
       </h2>
       <IntegrateFooter
-        url={`comparateur/etiquette${format === 'animated' ? '-animee' : ''}?${search}`}
+        url={`etiquettes?${search}`}
         tracking={tracking}
         from='Étiquette intégration'
         where={t('pasting')}

@@ -95,7 +95,7 @@ const TransportSimulator = ({ onWebsite }: { onWebsite?: boolean }) => {
         setForceFocus(true)
       }
     },
-    [distanceRef, itineraireRef]
+    [distanceRef, itineraireRef, setSelected]
   )
 
   return (

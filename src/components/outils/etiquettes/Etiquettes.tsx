@@ -43,7 +43,7 @@ const Etiquettes = () => {
   )
 
   return (
-    <Shareable slug='etiquette' tracking='Étiquette' overScreens={overScreens} secondary withNewIntegration>
+    <Shareable slug='etiquette' tracking='Étiquette' overScreens={overScreens} secondary integrateLabel='integrate-new'>
       <div className={styles.etiquettes}>
         <div className={styles.etiquette}>
           <EtiquetteSimulator />

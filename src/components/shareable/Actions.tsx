@@ -12,12 +12,12 @@ const Actions = ({
   onClick,
   tracking,
   withoutIntegration,
-  withNewIntegration,
+  integrateLabel,
 }: {
   onClick: (value: 'partager' | 'integrer' | 'telecharger') => void
   tracking: string
   withoutIntegration?: boolean
-  withNewIntegration?: boolean
+  integrateLabel?: string
 }) => {
   const t = useTranslations('overscreen')
   return (
@@ -39,7 +39,7 @@ const Actions = ({
             onClick('integrer')
             track(tracking, 'Integrer', `${tracking.replace(/ /g, '_').toLowerCase()}_integrer`)
           }}>
-          {t(withNewIntegration ? 'integrate-new' : 'integrate')}
+          {t(integrateLabel || 'integrate')}
         </GhostButton>
       )}
       <GhostButton

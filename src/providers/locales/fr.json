@@ -140,6 +140,8 @@
     "extraKitLink": "Télécharger",
     "integrate": "Intégrer",
     "integrate-new": "Ajouter sur votre site",
+    "integrate-etiquette": "Ajouter l’étiquette sur votre site",
+    "integrate-simulateur": "Ajouter le simulateur sur votre site",
     "preview": "Aperçu de l'intégration",
     "next-actions": "Aller plus loin",
     "comparison": "Changer le mode de transport comparé",
@@ -161,12 +163,6 @@
     "withFabrication": {
       "title": "Inclure l’impact de la fabrication par défaut",
       "description": "Impact de la fabrication"
-    },
-    "modeList": {
-      "description": "Personnaliser la liste des modes d’achat proposés"
-    },
-    "typeList": {
-      "description": "Personnaliser la liste d'objets proposés"
     },
     "customList": {
       "title": "Créer une liste d’aliments personnalisée",
@@ -290,6 +286,15 @@
       "empty-hint": "Un équivalent sera alors choisi au hasard",
       "count": "{count} {count, plural, =1 {équivalent sélectionné} other {équivalents sélectionnés}} (max. 8)",
       "pasting": "sur la page où vous souhaitez qu’il apparaisse."
+    },
+    "livraison": {
+      "pasting": "sur la page où vous souhaitez qu’il apparaisse (ex: votre page produit, dans le parcours d’achat à l’étape de livraison du consommateur, dans un article sur le thème de l’impact carbone de la livraison...)",
+      "modeList": {
+        "description": "Personnaliser la liste des modes d’achat proposés"
+      },
+      "typeList": {
+        "description": "Personnaliser la liste d'objets proposés"
+      }
     },
     "month": {
       "title": "Personnaliser le mois à afficher",
