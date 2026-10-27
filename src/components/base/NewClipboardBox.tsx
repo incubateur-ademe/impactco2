@@ -8,9 +8,9 @@ import CopyIcon from 'components/base/icons/copy'
 import InformationIcon from 'components/base/icons/information'
 import IntegratePreview from '../shareable/overScreens/IntegratePreview'
 import Button from './buttons/Button'
-import styles from './TransportClipboardBox.module.css'
+import styles from './NewClipboardBox.module.css'
 
-const TransportClipboardBox = ({
+const NewClipboardBox = ({
   children,
   tracking,
   form,
@@ -63,4 +63,4 @@ const TransportClipboardBox = ({
   )
 }
 
-export default TransportClipboardBox
+export default NewClipboardBox

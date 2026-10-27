@@ -1,7 +1,7 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { useSearchEquivalent } from 'src/providers/useSearchEquivalent'
 import { categories } from 'data/categories'
@@ -15,19 +15,34 @@ import Category from './Category'
 import Equivalents from './Equivalents'
 import styles from './EquivalentsOverscreen.module.css'
 
-const EquivalentsOverscreen = () => {
+const EquivalentsOverscreen = ({
+  onClose,
+  bottomButtonLabel,
+  equivalents,
+  setEquivalents,
+}: {
+  onClose?: () => void
+  bottomButtonLabel?: string
+  equivalents?: string[]
+  setEquivalents?: (equivalents: string[]) => void
+}) => {
   const equivalentRef = useRef<HTMLInputElement>(null)
   const noResultRef = useRef<HTMLParagraphElement>(null)
-  const {
-    setOverscreen,
-    comparateur: { equivalents, setEquivalents },
-  } = useParamContext()
+  const { setOverscreen, comparateur } = useParamContext()
 
-  const [tempEquivalents, setTempEquivalents] = useState(equivalents)
+  const [tempEquivalents, setTempEquivalents] = useState(equivalents || comparateur.equivalents)
+
+  const close = useCallback(() => {
+    if (onClose) {
+      onClose()
+    } else {
+      setOverscreen('comparateur', '')
+    }
+  }, [onClose, setOverscreen])
 
   useEffect(() => {
-    setTempEquivalents(equivalents)
-  }, [equivalents])
+    setTempEquivalents(equivalents || comparateur.equivalents)
+  }, [equivalents, comparateur.equivalents])
 
   const [search, setSearch] = useState('')
 
@@ -60,8 +75,8 @@ const EquivalentsOverscreen = () => {
         <Button
           size='sm'
           onClick={() => {
-            setEquivalents(tempEquivalents)
-            setOverscreen('comparateur', '')
+            setEquivalents ? setEquivalents(tempEquivalents) : comparateur.setEquivalents(tempEquivalents)
+            close()
             tempEquivalents.forEach((equivalent) => track('Comparateur', equivalent, tempEquivalents.join(', ')))
           }}>
           {tModal('close')}
@@ -103,7 +118,8 @@ const EquivalentsOverscreen = () => {
               key={category.slug}
               equivalents={tempEquivalents}
               setEquivalents={setTempEquivalents}
-              onClose={() => setOverscreen('comparateur', '')}
+              setFinalEquivalents={setEquivalents || comparateur.setEquivalents}
+              onClose={() => close()}
             />
           ))}
         </div>
@@ -119,11 +135,11 @@ const EquivalentsOverscreen = () => {
           <Button
             title={t('back-title')}
             onClick={() => {
-              setEquivalents(tempEquivalents)
-              setOverscreen('comparateur', '')
+              setEquivalents ? setEquivalents(tempEquivalents) : comparateur.setEquivalents(tempEquivalents)
+              close()
               tempEquivalents.forEach((equivalent) => track('Comparateur', equivalent, tempEquivalents.join(', ')))
             }}>
-            {t('back')}
+            {t(bottomButtonLabel || 'back')}
           </Button>
         </div>
       </div>

@@ -39,6 +39,8 @@ const configs: Record<
     max?: number
     options?: { label: string; value: string | number }[]
     values?: string[]
+    hint?: boolean
+    label?: boolean
   }
 > = {
   alimentationCategoryIntegrate: {
@@ -75,6 +77,12 @@ const configs: Record<
     unit: 'km',
     min: 1,
     max: 10000,
+  },
+  weight: {
+    type: 'number',
+    unit: 'kg',
+    hint: true,
+    label: true,
   },
   roundTrip: {
     type: 'boolean',
@@ -119,6 +127,13 @@ const configs: Record<
       { value: 'transport', label: 'transport' },
       { value: 'voiture', label: 'voiture' },
       { value: 'numerique', label: 'numerique' },
+    ],
+  },
+  etiquette: {
+    type: 'radio',
+    options: [
+      { value: 'static', label: 'static' },
+      { value: 'animated', label: 'animated' },
     ],
   },
 }
@@ -250,7 +265,10 @@ const CustomParam = ({
           ) : (
             <Input
               id={slug}
+              containerClassName={styles.input}
               unit={formatName(t(`${slug}.unit`), param.value as number)}
+              label={config.label ? t(`${slug}.title`) : undefined}
+              hint={config.hint ? t(`${slug}.hint`) : undefined}
               secondaryUnitStyle
               disabled={!visible}
               type={config.type}

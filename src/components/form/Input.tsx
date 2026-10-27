@@ -23,6 +23,7 @@ const Input = (
     hint,
     errors,
     className,
+    containerClassName,
     icon,
     iconAria,
     onIconClick,
@@ -47,6 +48,7 @@ const Input = (
     padding?: 'sm' | 'lg'
     onUnitClick?: () => void
     extraWidth?: string
+    containerClassName?: string
   },
   ref: ForwardedRef<HTMLInputElement>
 ) => {
@@ -102,7 +104,7 @@ const Input = (
         </label>
       )}
       <div
-        className={styles.inputContainer}
+        className={classNames(styles.inputContainer, containerClassName)}
         style={{ width: unitDim && extraWidth ? `calc(${extraWidth} + ${unitDim.width}px)` : undefined }}>
         <input
           className={classNames(styles.input, {

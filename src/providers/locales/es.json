@@ -121,6 +121,7 @@
   "overscreen": {
     "equivalent": "Añadir nuevos equivalentes",
     "disclaimer": "Los resultados se basan en datos de carbono de Francia, por ",
+    "equivalent-choose": "Elegir equivalentes",
     "default-true": "Mostrar por defecto",
     "default-false": "No mostrar por defecto",
     "usage": "Uso",
@@ -183,6 +184,11 @@
       "title": "Mostrar una distancia personalizada",
       "unit": "km"
     },
+    "weight": {
+      "title": "Cantidad de kg CO2",
+      "hint": "Indica el peso en kg CO2e que deseas ilustrar con tu etiqueta. Un peso inferior a 1 kg se mostrará en gramos (lo mismo para toneladas y millones de toneladas)",
+      "unit": "kg"
+    },
     "roundTrip": {
       "title": "Ida y vuelta"
     },
@@ -232,6 +238,20 @@
       "title": "Teletrabajo",
       "unit": "día[s]"
     },
+    "integrate-modal": {
+      "difficulty": "¿Tienes dificultades?",
+      "difficulty-text": "No dudes en <link>escribirnos</link> para informar del problema. Mientras tanto, puedes añadir un enlace simple en tu sitio con las mismas opciones de personalización:",
+      "perso": "Personaliza tu herramienta",
+      "copy": "Copiar este fragmento de código",
+      "paste": "Pegar este fragmento de código en tu sitio web",
+      "pasting": {
+        "details-1": "<b>Solo tienes que añadir este fragmento de código en el editor de tu sitio web</b>, ",
+        "details-2": "Si no tienes acceso al editor de tu sitio web o si tienes dificultades, te recomendamos enviar este fragmento de código a las personas responsables de la administración de tu sitio.",
+        "thanks-title": "Una vez integrada la herramienta, ¡escríbenos!",
+        "thanks": "Así podremos añadir tu logo y un enlace a tu sitio en nuestra <link>galería de ejemplos</link>.",
+        "write": "escribirnos"
+      }
+    },
     "transport": {
       "title": "Medio de transporte",
       "search": "Buscar un medio de transporte",
@@ -249,26 +269,27 @@
       "onglets-hint": "Seleccione las pestañas que desea integrar en el iframe",
       "advanced": "Ver opciones avanzadas",
       "advanced-open": "Ocultar opciones avanzadas",
-      "integrate-perso": "Personaliza tu herramienta",
-      "integrate-copy": "Copiar este fragmento de código",
-      "integrate-paste": "Pegar este fragmento de código en tu sitio web",
-      "integrate-difficulty": "¿Tienes dificultades?",
-      "integrate-difficulty-text": "No dudes en <link>escribirnos</link> para informar del problema. Mientras tanto, puedes añadir un enlace simple en tu sitio con las mismas opciones de personalización:",
       "comparison-title": "Comparación mostrada por defecto",
       "comparison-hint": "Modifica los modos de transporte mostrados por defecto en modo comparación",
-      "paste": {
-        "details-1": "<b>Solo tienes que añadir este fragmento de código en el editor de tu sitio web</b>, en la página donde quieras que aparezca (por ejemplo: Información práctica, Cómo llegar, Contacto, Acceso, un artículo sobre el impacto de carbono del transporte, etc.)",
-        "details-2": "Si no tienes acceso al editor de tu sitio web o si tienes dificultades, te recomendamos enviar este fragmento de código a las personas responsables de la administración de tu sitio.",
-        "thanks-title": "Una vez integrada la herramienta, ¡escríbenos!",
-        "thanks": "Así podremos añadir tu logo y un enlace a tu sitio en nuestra <link>galería de ejemplos</link>.",
-        "write": "escribirnos"
-      },
+      "pasting": "en la página donde quieras que aparezca (por ejemplo: Información práctica, Cómo llegar, Contacto, Acceso, un artículo sobre el impacto de carbono del transporte, etc.)",
       "category": {
         "actives": "Movilidad activa",
         "twoWheels": "Dos ruedas",
         "cars": "Vehículos particulares",
         "common": "Transporte público"
       }
+    },
+    "etiquette": {
+      "title": "Formato de la etiqueta",
+      "animated": "Etiqueta animada",
+      "static": "Etiqueta estática",
+      "equivalents": "Personalizar equivalentes",
+      "hint": "Selecciona los equivalentes a mostrar",
+      "choose": "Elegir equivalentes",
+      "empty": "0 equivalentes seleccionados (máx. 8)",
+      "empty-hint": "Se elegirá un equivalente al azar",
+      "count": "{count} {count, plural, =1 {equivalente seleccionado} other {equivalentes seleccionados}} (máx. 8)",
+      "pasting": "en la página donde quieras que aparezca."
     },
     "month": {
       "title": "Personalizar el mes a mostrar",
@@ -413,6 +434,7 @@
       "search": "Buscar un objeto, un gesto...",
       "back": "Volver al comparador",
       "back-title": "Validar la selección y volver al comparador",
+      "validate": "Validar mi selección",
       "equivalents": "equivalentes",
       "no-result-1": "Ningún resultado coincide con tu búsqueda.",
       "no-result-2": "Puedes probar otros términos o",
