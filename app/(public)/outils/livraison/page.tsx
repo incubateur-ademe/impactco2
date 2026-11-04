@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import LivraisonPage from 'src/views/LivraisonPage'
-import { toolsJsonLd } from 'utils/jsonLd'
+import RedirectSimulateur from 'src/components/outils/livraison/RedirectSimulateur'
+import { toolsJsonLd } from 'src/utils/jsonLd'
 import { metaDescriptions, metaTitles } from 'utils/meta'
 import Suggestion from 'components/layout/Suggestion'
 
@@ -30,14 +31,15 @@ export async function generateMetadata(props: {
   }
 }
 
-const Livraison = async () => {
+const page = () => {
   return (
     <>
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(toolsJsonLd.livraison) }} />
+      <RedirectSimulateur />
       <LivraisonPage />
       <Suggestion fromLabel='Livraison' simulatorName='de la thématique Livraison' />
     </>
   )
 }
 
-export default Livraison
+export default page

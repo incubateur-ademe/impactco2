@@ -3,6 +3,8 @@ import { expect, test } from '@playwright/test'
 test('Livraison simulator', async ({ page }) => {
   await page.goto('http://localhost:3000/outils/livraison')
 
+  await page.getByTestId('livraison-tab-simulateur').click()
+
   await expect(page.getByTestId('category-magasindouce-value')).toHaveText('6.85')
   await page.getByTestId('text-select-type').click()
   await page.getByTestId('text-select-type').selectOption('lavelinge')
@@ -26,35 +28,41 @@ test('Livraison simulator', async ({ page }) => {
 
   await page.getByTestId('header-share-button').first().click()
   await expect(page.getByTestId('clipboard-box')).toHaveText(
-    'http://localhost:3000/outils/livraison?withFabrication=false&language=fr'
+    'http://localhost:3000/outils/livraison?tab=simulateur&withFabrication=false&language=fr'
   )
   await page.getByTestId('custom-param-withFabrication-checkbox').click()
   await expect(page.getByTestId('clipboard-box')).toHaveText(
-    'http://localhost:3000/outils/livraison?withFabrication=true&language=fr'
+    'http://localhost:3000/outils/livraison?tab=simulateur&withFabrication=true&language=fr'
   )
   await page.getByRole('button', { name: 'Fermer' }).first().click()
 
   await page.getByTestId('header-integrate-button').first().click()
-  await expect(page.getByTestId('clipboard-box')).toHaveText(
-    '<script data-name="impact-co2" src="http://localhost:3000/iframe.js" data-type="/livraison" data-search="?&withFabrication=true&theme=default&language=fr"></script>'
+  await expect(page.getByTestId('clipboard-box').first()).toHaveText(
+    '<script data-name="impact-co2" src="http://localhost:3000/iframe.js" data-type="/livraison" data-search="?withFabrication=true&theme=default&language=fr"></script>'
   )
   await page.getByTestId('custom-param-withFabrication-checkbox').click()
-  await expect(page.getByTestId('clipboard-box')).toHaveText(
-    '<script data-name="impact-co2" src="http://localhost:3000/iframe.js" data-type="/livraison" data-search="?&theme=default&language=fr"></script>'
+  await expect(page.getByTestId('clipboard-box').first()).toHaveText(
+    '<script data-name="impact-co2" src="http://localhost:3000/iframe.js" data-type="/livraison" data-search="?theme=default&language=fr"></script>'
   )
-  await page.getByLabel('Intégrer').getByText('Courses alimentaires').click()
-  await expect(page.getByTestId('clipboard-box')).toHaveText(
-    '<script data-name="impact-co2" src="http://localhost:3000/iframe.js" data-type="/livraison" data-search="?&theme=default&language=fr&types=chaussure,livre,microondes,vetements,lavelinge,lit,smartphone,vin,cafetiere"></script>'
+  await page.getByLabel('Ajouter le simulateur sur votre site').getByText('Courses alimentaires').click()
+  await expect(page.getByTestId('clipboard-box').first()).toHaveText(
+    '<script data-name="impact-co2" src="http://localhost:3000/iframe.js" data-type="/livraison" data-search="?theme=default&language=fr&types=chaussure,livre,microondes,vetements,lavelinge,lit,smartphone,vin,cafetiere"></script>'
   )
-  await page.getByLabel('Intégrer').getByText('Paire de chaussures').click()
-  await page.getByLabel('Intégrer').getByText('Micro-ondes').click()
-  await page.getByLabel('Intégrer').getByText('Livres').click()
-  await page.getByLabel('Intégrer').getByText('Vêtements').click()
-  await page.getByLabel('Intégrer').getByText('Lit complet').click()
-  await page.getByLabel('Intégrer').getByText('Caisse de vin').click()
-  await page.getByLabel('Intégrer').getByText('Smartphone', { exact: true }).click()
-  await page.getByLabel('Intégrer').getByText('Lave-linge').click()
-  await expect(page.getByLabel('Intégrer').getByText('Cafetière expresso')).not.toBeDisabled()
+  await page.getByLabel('Ajouter le simulateur sur votre site').getByText('Paire de chaussures').click()
+  await page.getByLabel('Ajouter le simulateur sur votre site').getByText('Micro-ondes').click()
+  await page.getByLabel('Ajouter le simulateur sur votre site').getByText('Livres').click()
+  await page.getByLabel('Ajouter le simulateur sur votre site').getByText('Vêtements').click()
+  await page.getByLabel('Ajouter le simulateur sur votre site').getByText('Lit complet').click()
+  await page.getByLabel('Ajouter le simulateur sur votre site').getByText('Caisse de vin').click()
+  await page.getByLabel('Ajouter le simulateur sur votre site').getByText('Smartphone', { exact: true }).click()
+  await page.getByLabel('Ajouter le simulateur sur votre site').getByText('Lave-linge').click()
+  await expect(
+    page.getByLabel('Ajouter le simulateur sur votre site').getByText('Cafetière expresso')
+  ).not.toBeDisabled()
+  await page.getByLabel('Ajouter le simulateur sur votre site').getByText('Cafetière expresso').click()
+  await expect(page.getByTestId('clipboard-box').first()).toHaveText(
+    '<script data-name="impact-co2" src="http://localhost:3000/iframe.js" data-type="/livraison" data-search="?theme=default&language=fr"></script>'
+  )
 })
 
 test('Livraison iframes', async ({ page }) => {

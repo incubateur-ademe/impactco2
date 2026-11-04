@@ -53,7 +53,7 @@ const Etiquettes = () => {
       tracking='Étiquette'
       overScreens={overScreens}
       secondary
-      withNewIntegration
+      integrateLabel='integrate-new'
       screenshotRef={screenshotRef}>
       <div className={styles.etiquettes}>
         <div className={styles.etiquette}>
