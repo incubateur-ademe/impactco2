@@ -29,6 +29,10 @@
   }
 }
 
+.input {
+  width: fit-content;
+}
+
 .fullWidth {
   width: 100%;
 }

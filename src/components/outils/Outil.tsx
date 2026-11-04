@@ -14,7 +14,7 @@ const Outil = ({
   tool,
 }: {
   tool: ToolCardProps & {
-    content: ReactNode
+    content?: ReactNode
     toolLink?: string
     toolLinkLabel?: string
     script?: ReactNode

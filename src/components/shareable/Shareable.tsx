@@ -3,7 +3,7 @@
 import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
 import { useSearchParams } from 'next/navigation'
-import { ReactNode, useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { ReactNode, RefObject, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { TrackingProvider } from 'src/providers/TrackingProvider'
 import TranslationProvider from 'src/providers/TranslationProvider'
@@ -35,6 +35,7 @@ type ShareableProps = {
   smallPadding?: boolean
   withNPS?: boolean
   withNewIntegration?: boolean
+  screenshotRef?: RefObject<HTMLDivElement | null>
 }
 
 const Shareable = ({
@@ -49,19 +50,33 @@ const Shareable = ({
   small,
   smallPadding,
   withNPS,
+  screenshotRef: customScreenshotRef,
 }: ShareableProps) => {
+  const ref = useRef<HTMLDivElement>(null)
   const overscreenRef = useRef<HTMLDialogElement>(null)
+  const shareableRef = useRef<HTMLDivElement>(null)
+  const hadOverscreenRef = useRef(false)
   const t = useTranslations('overscreen')
   const tModal = useTranslations('modal')
   const { theme, hideActions, overscreen, setOverscreen, language, setLanguage } = useParamContext()
-  const { ref, takeScreenshot } = useScreenshot(tracking.replace(/ /g, '-').toLowerCase(), tracking)
+  const { takeScreenshot } = useScreenshot(
+    tracking.replace(/ /g, '-').toLowerCase(),
+    tracking,
+    customScreenshotRef || ref
+  )
 
   const overScreenToDisplay = useMemo(
     () => (overScreens && overscreen ? overScreens[overscreen[slug]] : undefined),
     [overScreens, overscreen, slug]
   )
 
-  const onClose = useCallback(() => setOverscreen(slug, ''), [slug])
+  const onClose = useCallback(() => {
+    if (overScreenToDisplay?.onClose) {
+      overScreenToDisplay.onClose()
+    } else {
+      setOverscreen(slug, '')
+    }
+  }, [slug, setOverscreen, overScreenToDisplay])
 
   const [showButtons, setShowButtons] = useState(true)
 
@@ -72,6 +87,7 @@ const Shareable = ({
 
   useEffect(() => {
     if (overScreenToDisplay && overscreenRef.current) {
+      hadOverscreenRef.current = true
       const modalElement = overscreenRef.current
       modalElement.focus()
       const modalTop = modalElement.getBoundingClientRect().top + window.scrollY
@@ -99,13 +115,17 @@ const Shareable = ({
       }
       modalElement.addEventListener('keydown', handleTabKeyPress)
       return () => modalElement.removeEventListener('keydown', handleTabKeyPress)
-    } else if (overScreenToDisplay === undefined) {
-      window.scrollTo({ top: 0, behavior: 'smooth' })
+    } else if (overScreenToDisplay === undefined && hadOverscreenRef.current && shareableRef.current) {
+      hadOverscreenRef.current = false
+      const shareableElement = shareableRef.current
+      const shareableTop = shareableElement.getBoundingClientRect().top + window.scrollY
+      window.scrollTo({ top: Math.max(shareableTop - 24, 0), behavior: 'smooth' })
     }
   }, [overscreenRef, overScreenToDisplay, onClose, overscreen])
 
   return (
     <div
+      ref={shareableRef}
       lang={language}
       className={classNames(styles.card, {
         [styles.secondaryCard]: secondary !== undefined,
@@ -147,7 +167,7 @@ const Shareable = ({
                 })}>
                 {overScreenToDisplay.children}
               </div>
-              {!overScreenToDisplay.hideTitle && (
+              {!overScreenToDisplay.hideTitle && !overScreenToDisplay.hideFooter && (
                 <div>
                   <div className={styles.separatorBothBorders} />
                   <div className={styles.footer}>
