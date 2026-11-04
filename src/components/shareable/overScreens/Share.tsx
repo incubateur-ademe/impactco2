@@ -51,7 +51,7 @@ const Share = ({
   }, [params, setVisibility])
 
   const url = buildCurrentUrlFor(
-    `${path || `outils/${category?.slug === 'repas' ? 'alimentation' : category?.slug}`}?${buildCustomParamsUrl(params, visibility)}${noLanguage ? '' : `&language=${allParams.language}`}${category?.slug === 'repas' ? '#repas' : ''}${!category ? getComparateurURLParams(anchor?.includes('etiquette')) : ''}${category?.slug === 'osez-changer' ? '&osezchanger=true' : ''}${anchor ? `#${anchor}` : ''}`
+    `${path || `outils/${category?.slug === 'repas' ? 'alimentation' : category?.slug}`}${path?.includes('?') ? '&' : '?'}${buildCustomParamsUrl(params, visibility)}${noLanguage ? '' : `&language=${allParams.language}`}${category?.slug === 'repas' ? '#repas' : ''}${!category ? getComparateurURLParams(anchor?.includes('etiquette')) : ''}${category?.slug === 'osez-changer' ? '&osezchanger=true' : ''}${anchor ? `#${anchor}` : ''}`
   ).replace(/\?$/, '')
   const trackingValue = (category ? category.name : tracking) || 'UNKNOWN'
 

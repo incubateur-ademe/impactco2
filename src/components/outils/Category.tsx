@@ -11,10 +11,12 @@ const Category = ({
   category,
   simulator,
   noBottomBorders,
+  withoutButtons,
 }: {
   category: CategoryType
   simulator?: ReactNode
   noBottomBorders?: boolean
+  withoutButtons?: boolean
 }) => {
   const allParams = useParamContext()
 
@@ -32,7 +34,8 @@ const Category = ({
       overScreens={overScreens}
       noBottomBorders={noBottomBorders}
       withNPS={category.withNPS}
-      withNewIntegration={category.withNewIntegration}>
+      withoutButtons={withoutButtons}
+      integrateLabel='integrate-new'>
       {simulator ||
         (category.equivalents && (
           <CategorySimulator
