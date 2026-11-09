@@ -34,7 +34,7 @@ const Share = ({
     () =>
       category
         ? getCustomParams(category.slug, allParams)
-        : path?.startsWith('outils/comparateur')
+        : path?.startsWith('outils/comparateur') || path?.startsWith('outils/etiquettes')
           ? getComparateurParams(allParams, anchor?.includes('etiquette'))
           : {},
     [allParams, category, path]

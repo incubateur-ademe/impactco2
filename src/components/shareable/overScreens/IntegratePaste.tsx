@@ -2,14 +2,17 @@ import { useTranslations } from 'next-intl'
 import Link from 'src/components/base/buttons/Link'
 import CheckIcon from 'src/components/base/icons/check'
 import FullArrowRightIcon from 'src/components/base/icons/full-arrow-right'
-import styles from './TransportIntegratePaste.module.css'
+import styles from './IntegratePaste.module.css'
 
-const TransportIntegratePaste = () => {
-  const t = useTranslations('overscreen.transport.paste')
+const IntegratePaste = ({ from, where }: { from: string; where: string }) => {
+  const t = useTranslations('overscreen.integrate-modal.pasting')
   return (
     <>
       <div className={styles.intro}>
-        <p>{t.rich('details-1', { b: (children) => <b>{children}</b> })}</p>
+        <p>
+          {t.rich('details-1', { b: (children) => <b>{children}</b> })}
+          {where}
+        </p>
         <br />
         <p>{t.rich('details-2')}</p>
       </div>
@@ -21,7 +24,7 @@ const TransportIntegratePaste = () => {
           <p className={styles.title}>{t('thanks-title')}</p>
           <p>{t.rich('thanks', { link: (children) => <Link href='/doc/exemples'>{children}</Link> })}</p>
         </div>
-        <Link asButton size='sm' href='/rendez-vous?$fromLabel=Transport intégration'>
+        <Link asButton size='sm' href={`/rendez-vous?$fromLabel=${from}`}>
           {t('write')} <FullArrowRightIcon />
         </Link>
       </div>
@@ -29,4 +32,4 @@ const TransportIntegratePaste = () => {
   )
 }
 
-export default TransportIntegratePaste
+export default IntegratePaste

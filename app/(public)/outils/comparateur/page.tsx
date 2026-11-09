@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import ComparateurPage from 'components/outils/comparateur/ComparateurPage'
+import RedirectEtiquette from 'src/components/outils/comparateur/RedirectEtiquette'
 import { toolsJsonLd } from 'utils/jsonLd'
 import { metaDescriptions, metaTitles } from 'utils/meta'
 import Suggestion from 'components/layout/Suggestion'
@@ -44,6 +45,7 @@ const page = () => {
         type='application/ld+json'
         dangerouslySetInnerHTML={{ __html: JSON.stringify(toolsJsonLd.comparateur) }}
       />
+      <RedirectEtiquette />
       <ComparateurPage />
       <Suggestion fromLabel='Comparateur' simulatorName='du comparateur carbone' />
     </>
