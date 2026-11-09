@@ -43,18 +43,18 @@ export const numeriques = [
     ecv: [
       {
         id: 4,
-        value: 2.27,
+        value: 1.071,
       },
       {
         id: 5,
-        value: 77,
+        value: 54.33,
       },
     ],
     usage: {
-      peryear: 0.25573725,
+      peryear: 0.2526498975,
       defaultyears: 2.5,
     },
-    end: 0.246,
+    end: 0.865,
     default: true,
   },
   {
@@ -63,18 +63,18 @@ export const numeriques = [
     ecv: [
       {
         id: 4,
-        value: 2.94,
+        value: 2.517,
       },
       {
         id: 5,
-        value: 259,
+        value: 384.036,
       },
     ],
     usage: {
-      peryear: 5.304180000000001,
+      peryear: 2.9025712500000003,
       defaultyears: 6,
     },
-    end: 6.61,
+    end: 4.204,
     default: true,
   },
   {
@@ -83,36 +83,36 @@ export const numeriques = [
     ecv: [
       {
         id: 4,
-        value: 1.85,
+        value: 2.517,
       },
       {
         id: 5,
-        value: 203,
+        value: 384.036,
       },
     ],
     usage: {
-      peryear: 7.956270000000001,
+      peryear: 5.047949999999999,
       defaultyears: 6,
     },
-    end: 6.61,
+    end: 4.204,
     default: true,
   },
   {
     slug: 'ecran',
     category: 1,
     usage: {
-      peryear: 3.7886999999999995,
-      defaultyears: 6,
+      peryear: 1.7415427500000003,
+      defaultyears: 7,
     },
-    end: 3.95,
+    end: 4.898,
     ecv: [
       {
         id: 4,
-        value: 1.29,
+        value: 1.353,
       },
       {
         id: 5,
-        value: 64.6,
+        value: 65.065,
       },
     ],
   },
@@ -120,18 +120,18 @@ export const numeriques = [
     slug: 'tabletteclassique',
     category: 1,
     usage: {
-      peryear: 0.9471749999999999,
+      peryear: 0.18929812499999998,
       defaultyears: 3,
     },
-    end: 0.364,
+    end: 2.624,
     ecv: [
       {
         id: 4,
-        value: 3.43,
+        value: 3.006,
       },
       {
         id: 5,
-        value: 80.5,
+        value: 55.853,
       },
     ],
     default: true,
@@ -142,18 +142,18 @@ export const numeriques = [
     ecv: [
       {
         id: 4,
-        value: 3.26,
+        value: 2.909,
       },
       {
         id: 5,
-        value: 325,
+        value: 685.013,
       },
     ],
     usage: {
-      peryear: 3.6939825,
-      defaultyears: 8,
+      peryear: 4.374890000000001,
+      defaultyears: 7,
     },
-    end: 11.9,
+    end: 14.048,
     default: true,
   },
   {
@@ -162,18 +162,18 @@ export const numeriques = [
     ecv: [
       {
         id: 4,
-        value: 12.3,
+        value: 8.309,
       },
       {
         id: 5,
-        value: 170,
+        value: 142.892,
       },
     ],
     usage: {
-      peryear: 1.50600825,
+      peryear: 1.01800325,
       defaultyears: 5,
     },
-    end: 2.79,
+    end: 2.206,
     default: true,
   },
   {
@@ -182,18 +182,18 @@ export const numeriques = [
     ecv: [
       {
         id: 4,
-        value: 0.3,
+        value: 0.223,
       },
       {
         id: 5,
-        value: 19.5,
+        value: 75.552,
       },
     ],
     usage: {
-      peryear: 1.13661,
+      peryear: 1.00959,
       defaultyears: 5,
     },
-    end: 0.7,
+    end: 1.306,
   },
   {
     slug: 'telephonebasique',
@@ -224,7 +224,7 @@ export const numeriques = [
       },
     ],
     usage: {
-      peryear: 0.037887,
+      peryear: 0.03365300000000001,
       defaultyears: 5,
     },
     end: 1.675,
@@ -274,7 +274,7 @@ export const numeriques = [
     ],
     end: 0.287,
     usage: {
-      peryear: 0.151548,
+      peryear: 0.13461200000000004,
       defaultyears: 5,
     },
   },
@@ -293,7 +293,7 @@ export const numeriques = [
     ],
     end: 0.07959999999999999,
     usage: {
-      peryear: 0.0189435,
+      peryear: 0.016826500000000005,
       defaultyears: 5,
     },
   },
@@ -311,7 +311,7 @@ export const numeriques = [
       },
     ],
     usage: {
-      peryear: 0.0075774,
+      peryear: 0.0067306,
       defaultyears: 5,
     },
     end: 0.015300000000000001,
@@ -330,7 +330,7 @@ export const numeriques = [
       },
     ],
     usage: {
-      peryear: 3.6371520000000004,
+      peryear: 3.2306880000000002,
       defaultyears: 5,
     },
     end: 1.63,
@@ -349,8 +349,8 @@ export const numeriques = [
       },
     ],
     usage: {
-      peryear: 1.89435,
-      defaultyears: 8,
+      peryear: 1.68265,
+      defaultyears: 5,
     },
     end: 3.26,
     sources: [

@@ -39,14 +39,14 @@ export const casPratiques = [
     unit: 'épisode',
     slug: 'game-of-thrones',
     category: 13,
-    total: 0.0317,
+    total: 0.013140393860999994,
   },
   {
     synonyms: ['streaming', 'série', 'netflix'],
     unit: 'intégrale',
     slug: 'friends',
     category: 13,
-    total: 7.86,
+    total: 1.1097999424385332,
   },
   {
     synonyms: ['sport', 'montagne', 'neige', 'vacances'],
@@ -92,7 +92,7 @@ export const casPratiques = [
     synonyms: ['intégrale', 'séries'],
     slug: 'harry-potter',
     category: 13,
-    total: 0.63,
+    total: 0.2516189706756,
   },
   {
     synonyms: ['voyage'],
