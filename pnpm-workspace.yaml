@@ -6,6 +6,7 @@ allowBuilds:
   '@sentry/cli': true
   '@swc/core': true
   '@tree-sitter-grammars/tree-sitter-yaml': true
+  better-sqlite3: true
   canvas: true
   core-js: true
   core-js-pure: true
@@ -17,3 +18,7 @@ allowBuilds:
   tree-sitter: true
   tree-sitter-json: true
   unrs-resolver: true
+minimumReleaseAgeExclude:
+  - '@aws-sdk/client-s3@3.1172.0'
+  - '@aws-sdk/middleware-sdk-s3@3.972.90'
+  - '@testing-library/user-event@14.6.13'

@@ -48,6 +48,7 @@ const eslintConfig = [
       'public/**',
       'integrabook/**',
       'prisma/generated/**',
+      'detection/chrome-extension/scripts/**',
     ],
   },
 ]

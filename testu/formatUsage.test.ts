@@ -1,13 +1,8 @@
+import { Equivalent } from 'types/equivalent'
 import formatUsage from 'utils/formatUsage'
 
 describe('formatUsage', () => {
-  test("Calcule l'équivalent carbone d'un usage", () => {
-    const res = formatUsage(exampleOfEquivalent)
-    expect(res).toEqual(0.0604)
-  })
   const exampleOfEquivalent = {
-    name: 'Scooter thermique',
-    prefix: 'km en ',
     synonyms: ['transport', 'déplacement', 'déplacer'],
     slug: 'scooter',
     type: 'car',
@@ -26,12 +21,11 @@ describe('formatUsage', () => {
     display: {
       max: 50,
     },
-    source: 'https://base-empreinte.ademe.fr/documentation/base-carbone?docLink=Routier2',
-    meta: {
-      title: 'Scooter thermique',
-      description:
-        "Découvrez l'impact CO₂e d'un trajet en scooter et grâce à Impact CO₂ choisissez le moyen de transport le plus écologique pour vos déplacements. ",
-    },
-    id: 'scooter',
-  }
+    id: 20,
+  } satisfies Equivalent
+
+  test("Calcule l'équivalent carbone d'un usage", () => {
+    const res = formatUsage(exampleOfEquivalent)
+    expect(res).toEqual(0.0604)
+  })
 })

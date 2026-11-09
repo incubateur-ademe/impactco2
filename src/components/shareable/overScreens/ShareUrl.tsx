@@ -43,7 +43,6 @@ const ShareUrl = ({
           resetButtonStyle={false}
           className={buttonStyles.roundButton}
           url={url}
-          title='Partager sur facebook'
           aria-label='Partager sur facebook'
           onClick={() => track(trackingValue, 'Share Facebook', `${trackingSlug}_facebook`)}>
           <FacebookIcon />
@@ -52,7 +51,6 @@ const ShareUrl = ({
           resetButtonStyle={false}
           className={buttonStyles.roundButton}
           url={url}
-          title='Partager sur twitter'
           aria-label='Partager sur twitter'
           onClick={() => track(trackingValue, 'Share Twitter', `${trackingSlug}_twitter`)}>
           <TwitterIcon />
@@ -61,7 +59,6 @@ const ShareUrl = ({
           resetButtonStyle={false}
           className={buttonStyles.roundButton}
           url={url}
-          title='Partager sur whatsapp'
           aria-label='Partager sur whatsapp'
           onClick={() => track(trackingValue, 'Share Whatsapp', `${trackingSlug}_whatsapp`)}>
           <WhatsappIcon />
@@ -70,7 +67,6 @@ const ShareUrl = ({
           resetButtonStyle={false}
           className={buttonStyles.roundButton}
           url={url}
-          title='Partager sur linkedin'
           aria-label='Partager sur linkedin'
           onClick={() => track(trackingValue, 'Share Linkedin', `${trackingSlug}_linkedin`)}>
           <LinkedinIcon />
