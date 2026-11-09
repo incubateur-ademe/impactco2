@@ -39,6 +39,7 @@ module.exports = [
         data: path.resolve(__dirname, 'src/data/'),
         utils: path.resolve(__dirname, 'src/utils/'),
         hooks: path.resolve(__dirname, 'src/hooks/'),
+        types: path.resolve(__dirname, 'types/'),
         react: 'preact/compat',
         'react-dom': 'preact/compat',
       },
@@ -126,6 +127,7 @@ module.exports = [
         data: path.resolve(__dirname, 'src/data/'),
         utils: path.resolve(__dirname, 'src/utils/'),
         hooks: path.resolve(__dirname, 'src/hooks/'),
+        types: path.resolve(__dirname, 'types/'),
         react: path.resolve(__dirname, './node_modules/react'),
         'react-dom': path.resolve(__dirname, './node_modules/react-dom'),
       },
@@ -212,6 +214,7 @@ module.exports = [
         data: path.resolve(__dirname, 'src/data/'),
         utils: path.resolve(__dirname, 'src/utils/'),
         hooks: path.resolve(__dirname, 'src/hooks/'),
+        types: path.resolve(__dirname, 'types/'),
         react: 'preact/compat',
         'react-dom/test-utils': 'preact/test-utils',
         'react-dom': 'preact/compat', // Must be below test-utils

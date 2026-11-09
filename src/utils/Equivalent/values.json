@@ -45,14 +45,14 @@
   },
   "game-of-thrones": {
     "category": 13,
-    "value": 31.7,
+    "value": 13.140393860999994,
     "fr": "Épisode[s] de ;Game of Thrones en streaming",
     "en": "Game of Thrones streaming=episode[s] of ",
     "es": "Episodio[s] de ;Game of Thrones streaming"
   },
   "friends": {
     "category": 13,
-    "value": 7860,
+    "value": 1109.7999424385332,
     "fr": "Intégrale[s] de Friends en streaming",
     "en": "Complete Friends TV show streaming",
     "es": "Programa de TV completo de Friends streaming"
@@ -80,14 +80,14 @@
   },
   "harry-potter": {
     "category": 13,
-    "value": 630,
+    "value": 251.61897067560002,
     "fr": "Marathon[s] des films Harry Potter en streaming",
     "en": "Marathon[s] of Harry Potter films in streaming",
     "es": "Maratón[es] de películas de Harry Potter en streaming"
   },
   "email": {
     "category": 10,
-    "value": 2.46181262,
+    "value": 0.8370184807794205,
     "fr": "email[s]",
     "en": "email[s]",
     "es": "Correo[s] electrónico[s]"
@@ -101,7 +101,7 @@
   },
   "stockagedonnee": {
     "category": 10,
-    "value": 0.23533416999999998,
+    "value": 0.931875,
     "fr": "Go de données (1 an de stockage dans le cloud)",
     "en": "GB of data (1 year of cloud storage)",
     "es": "GB de datos (1 año de almacenamiento en la nube)"
@@ -115,14 +115,14 @@
   },
   "streamingvideo": {
     "category": 10,
-    "value": 64.01675291000002,
+    "value": 13.140393861,
     "fr": "Heure[s] de ;streaming vidéo",
     "en": "Hour[s] of ;video streaming",
     "es": "Horas de ;transmisión de vídeo"
   },
   "visioconference": {
     "category": 10,
-    "value": 57.06336546216,
+    "value": 22.273822722,
     "fr": "Heure[s] de ;visioconférence",
     "en": "Hour[s] of ;video conferencing",
     "es": "Horas de ;videoconferencia"
@@ -1060,56 +1060,56 @@
   },
   "smartphone": {
     "category": 1,
-    "value": 80155.343125,
+    "value": 56897.62474375,
     "fr": "smartphone[s]",
     "en": "smartphone[s]",
     "es": "smartphone[s]"
   },
   "ordinateurfixeparticulier": {
     "category": 1,
-    "value": 300375.08,
+    "value": 408172.42750000005,
     "fr": "ordinateur[s] fixe[s] sans écran (particulier)",
     "en": "desktop computer[s] without screen (personal)",
     "es": "Ordenadores de sobremesa"
   },
   "ordinateurfixeprofessionnel": {
     "category": 1,
-    "value": 259197.62,
+    "value": 421044.69999999995,
     "fr": "ordinateur[s] fixe[s] sans écran (professionnel)",
     "en": "desktop computer[s] without screen (office)",
     "es": "Ordenadores de sobremesa (ofimáticos)"
   },
   "ecran": {
     "category": 1,
-    "value": 92572.2,
+    "value": 83506.79924999998,
     "fr": "écran[s] d'ordinateur",
     "en": "computer screen[s]",
     "es": "pantalla[s] de computadora"
   },
   "tabletteclassique": {
     "category": 1,
-    "value": 87135.525,
+    "value": 62050.894375,
     "fr": "tablette[s]",
     "en": "tablet[s]",
     "es": "Tableta[s]"
   },
   "television": {
     "category": 1,
-    "value": 369711.86,
+    "value": 732594.23,
     "fr": "télévision[s] ",
     "en": "television[s]",
     "es": "Televisore[s]"
   },
   "ordinateurportable": {
     "category": 1,
-    "value": 192620.04125,
+    "value": 158497.01625,
     "fr": "ordinateur[s] portable[s]",
     "en": "laptop[s]",
     "es": "Ordenadores portátiles"
   },
   "enceintebluetooth": {
     "category": 1,
-    "value": 26183.05,
+    "value": 82128.95,
     "fr": "enceinte[s] connectée[s]",
     "en": "Bluetooth speaker[s]",
     "es": "Altavoce[s] Bluetooth"
@@ -1123,7 +1123,7 @@
   },
   "casquevr": {
     "category": 1,
-    "value": 72594.435,
+    "value": 72573.26499999998,
     "fr": "casque[s] de réalité virtuelle",
     "en": "virtual reality headset[s]",
     "es": "casco[s] de realidad virtual"
@@ -1144,35 +1144,35 @@
   },
   "disquedur": {
     "category": 1,
-    "value": 12657.74,
+    "value": 12573.06,
     "fr": "disque[s] dur[s] externe[s]",
     "en": "external hard drive[s]",
     "es": "disco[s] duro[s] externo[s]"
   },
   "ssd": {
     "category": 1,
-    "value": 135190.4175,
+    "value": 135179.8325,
     "fr": "SSD externe[s]",
     "en": "external SSD",
     "es": "SSD externo[s]"
   },
   "clefusb": {
     "category": 1,
-    "value": 5217.427,
+    "value": 5213.193,
     "fr": "clef[s] usb",
     "en": "usb key[s]",
     "es": "llave[s] USB"
   },
   "box": {
     "category": 1,
-    "value": 81225.76,
+    "value": 79193.44,
     "fr": "box[s]",
     "en": "box[s]",
     "es": "caja de internet"
   },
   "videoprojecteur": {
     "category": 1,
-    "value": 58935.95,
+    "value": 52194.4,
     "fr": "vidéoprojecteur[s]",
     "en": "projector[s]",
     "es": "proyector[s]"
