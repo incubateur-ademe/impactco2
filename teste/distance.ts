@@ -1,15 +1,15 @@
 import { FrameLocator, Page, expect } from '@playwright/test'
 
 export const distanceComparisonTest = async (page: Page | FrameLocator, prod?: boolean) => {
-  await expect(page.getByTestId('comparison-tile-0')).toHaveText('Voiture thermique1.42 kg CO₂e Modifier')
+  await expect(page.getByTestId('comparison-tile-0')).toHaveText('Voiture thermique2.28 kg CO₂e Modifier')
   await expect(page.getByTestId('comparison-tile-1')).toHaveText(
-    'TGV0.03 kg CO₂eMoyen le plus écologique1.39Kg CO₂eévités Modifier'
+    'TGV0.03 kg CO₂eMoyen le plus écologique2.25Kg CO₂eévités Modifier'
   )
 
   await page.getByRole('button', { name: 'Voir une autre comparaison' }).click()
-  await expect(page.getByTestId('comparison-tile-0')).toHaveText('Voiture électrique0.67 kg CO₂e Modifier')
+  await expect(page.getByTestId('comparison-tile-0')).toHaveText('Voiture électrique1.08 kg CO₂e Modifier')
   await expect(page.getByTestId('comparison-tile-1')).toHaveText(
-    'Métro0.04 kg CO₂eMoyen le plus écologique0.63Kg CO₂eévités Modifier'
+    'Métro0.04 kg CO₂eMoyen le plus écologique1.03Kg CO₂eévités Modifier'
   )
 
   await page.getByTestId('header-integrate-button').click()
@@ -19,9 +19,9 @@ export const distanceComparisonTest = async (page: Page | FrameLocator, prod?: b
 
   await page.getByTestId('cancel-button').click()
 
-  await expect(page.getByTestId('comparison-tile-0')).toHaveText('Voiture électrique0.67 kg CO₂e Modifier')
+  await expect(page.getByTestId('comparison-tile-0')).toHaveText('Voiture électrique1.08 kg CO₂e Modifier')
   await expect(page.getByTestId('comparison-tile-1')).toHaveText(
-    'Métro0.04 kg CO₂eMoyen le plus écologique0.63Kg CO₂eévités Modifier'
+    'Métro0.04 kg CO₂eMoyen le plus écologique1.03Kg CO₂eévités Modifier'
   )
 
   await page.getByTestId('comparison-tile-0').getByRole('button', { name: 'Modifier' }).click()
@@ -31,10 +31,10 @@ export const distanceComparisonTest = async (page: Page | FrameLocator, prod?: b
   await page.getByRole('button', { name: 'Covoiturage thermique (3 personnes)' }).click()
 
   await expect(page.getByTestId('comparison-tile-1')).toHaveText(
-    'Covoiturage thermique (3 personnes)0.47 kg CO₂e Modifier'
+    'Covoiturage thermique (3 personnes)0.76 kg CO₂e Modifier'
   )
   await expect(page.getByTestId('comparison-tile-0')).toHaveText(
-    'TGV0.03 kg CO₂eMoyen le plus écologique0.44Kg CO₂eévités Modifier'
+    'TGV0.03 kg CO₂eMoyen le plus écologique0.73Kg CO₂eévités Modifier'
   )
   await page.getByTestId('comparison-tile-1').getByRole('button', { name: 'Modifier' }).click()
   await page.getByRole('button', { name: 'Avion', exact: true }).click()
@@ -54,10 +54,12 @@ export const distanceComparisonTest = async (page: Page | FrameLocator, prod?: b
   await page.getByRole('button', { name: 'Covoiturage thermique (Berline - Diesel - 5 personnes)' }).click()
   await page.getByTestId('comparison-tile-1').getByRole('button', { name: 'Modifier' }).click()
   await page.getByRole('button', { name: 'Voiture électrique', exact: true }).click()
-  await page.getByRole('button', { name: 'Voiture électrique (Petite)' }).click()
-  await expect(page.getByTestId('comparison-tile-1')).toHaveText('Voiture électrique (Petite)576 kg CO₂e Modifier')
+  await page.getByRole('button', { name: 'Voiture électrique (Petite - 1 personne)' }).click()
+  await expect(page.getByTestId('comparison-tile-1')).toHaveText(
+    'Voiture électrique (Petite - 1 personne)922 kg CO₂e Modifier'
+  )
   await expect(page.getByTestId('comparison-tile-0')).toHaveText(
-    'Covoiturage thermique (Berline - Diesel - 5 personnes)367 kg CO₂eMoyen le plus écologique209Kg CO₂eévités Modifier'
+    'Covoiturage thermique (Berline - Diesel - 5 personnes)587 kg CO₂eMoyen le plus écologique335Kg CO₂eévités Modifier'
   )
 }
 
@@ -66,63 +68,57 @@ export const distanceTest = async (page: Page | FrameLocator, prod?: boolean) =>
   await expect(page.getByTestId('category-rer-value')).not.toBeVisible()
   await expect(page.getByTestId('category-tgv-value')).not.toBeVisible()
 
-  await expect(page.locator('#tabpanel-distance').getByLabel('Covoiturage électrique (2')).toContainText(
-    'Covoiturage électrique0.34 kg CO₂eusage : 18%, construction : 82%'
-  )
-  await expect(page.locator('#tabpanel-distance').getByLabel('Voiture électrique 0.67 kg CO')).toContainText(
-    'Voiture électrique0.67 kg CO₂eusage : 18%, construction : 82%'
-  )
+  await expect(
+    page.locator('#tabpanel-distance').getByRole('link', { name: 'Covoiturage électrique (à deux' })
+  ).toContainText('Covoiturage électrique (à deux)0.54 kg CO₂e / personneusage : 18%, construction : 82%')
+  await expect(
+    page.locator('#tabpanel-distance').getByRole('link', { name: 'Voiture électrique (seul·e)' })
+  ).toContainText('Voiture électrique (seul·e)1.08 kg CO₂e / personneusage : 18%, construction : 82%')
   await page
     .locator('#tabpanel-distance')
     .getByTestId('text-select-car-size-covoiturageelectrique')
     .selectOption('berline')
-  await expect(page.locator('#tabpanel-distance').getByLabel('Covoiturage électrique (2')).toContainText(
-    'Covoiturage électrique0.45 kg CO₂eusage : 16%, construction : 84%'
-  )
-  await expect(page.locator('#tabpanel-distance').getByLabel('Covoiturage électrique (2')).toHaveAttribute(
-    'href',
-    '/outils/transport/voiture-berline-electrique+1'
-  )
-  await expect(page.locator('#tabpanel-distance').getByLabel('Voiture électrique')).toContainText(
-    'Voiture électrique0.67 kg CO₂eusage : 18%, construction : 82%'
-  )
-  await expect(page.locator('#tabpanel-distance').getByLabel('Voiture électrique')).toHaveAttribute(
-    'href',
-    '/outils/transport/voiture-compact-electrique'
-  )
+  await expect(
+    page.locator('#tabpanel-distance').getByRole('link', { name: 'Covoiturage électrique (à deux' })
+  ).toContainText('Covoiturage électrique (à deux)0.73 kg CO₂e / personneusage : 16%, construction : 84%')
+  await expect(
+    page.locator('#tabpanel-distance').getByRole('link', { name: 'Covoiturage électrique (à deux' })
+  ).toHaveAttribute('href', '/outils/transport/voiture-berline-electrique+1')
+  await expect(
+    page.locator('#tabpanel-distance').getByRole('link', { name: 'Voiture électrique (seul·e)' })
+  ).toContainText('Voiture électrique (seul·e)1.08 kg CO₂e / personneusage : 18%, construction : 82%')
+  await expect(
+    page.locator('#tabpanel-distance').getByRole('link', { name: 'Voiture électrique (seul·e)' })
+  ).toHaveAttribute('href', '/outils/transport/voiture-compact-electrique')
   await page.getByRole('button', { name: 'Augmenter le nombre de' }).first().click()
-  await expect(page.locator('#tabpanel-distance').getByLabel('Covoiturage électrique (3')).toContainText(
-    'Covoiturage électrique0.3 kg CO₂eusage : 16%, construction : 84%'
-  )
-  await expect(page.locator('#tabpanel-distance').getByLabel('Covoiturage électrique (3')).toHaveAttribute(
-    'href',
-    '/outils/transport/voiture-berline-electrique+2'
-  )
-  await expect(page.locator('#tabpanel-distance').getByLabel('Voiture électrique')).toContainText(
-    'Voiture électrique0.67 kg CO₂eusage : 18%, construction : 82%'
-  )
-  await expect(page.locator('#tabpanel-distance').getByLabel('Voiture électrique')).toHaveAttribute(
-    'href',
-    '/outils/transport/voiture-compact-electrique'
-  )
+  await expect(
+    page.locator('#tabpanel-distance').getByRole('link', { name: 'Covoiturage électrique (à trois' })
+  ).toContainText('Covoiturage électrique (à trois)0.48 kg CO₂e / personneusage : 16%, construction : 84%')
+  await expect(
+    page.locator('#tabpanel-distance').getByRole('link', { name: 'Covoiturage électrique (à trois' })
+  ).toHaveAttribute('href', '/outils/transport/voiture-berline-electrique+2')
+  await expect(
+    page.locator('#tabpanel-distance').getByRole('link', { name: 'Voiture électrique (seul·e)' })
+  ).toContainText('Voiture électrique (seul·e)1.08 kg CO₂e / personneusage : 18%, construction : 82%')
+  await expect(
+    page.locator('#tabpanel-distance').getByRole('link', { name: 'Voiture électrique (seul·e)' })
+  ).toHaveAttribute('href', '/outils/transport/voiture-compact-electrique')
   await page
     .locator('#tabpanel-distance')
     .getByTestId('text-select-car-size-voitureelectrique')
     .selectOption('citadine')
-  await expect(page.locator('#tabpanel-distance').getByLabel('Covoiturage électrique (3')).toContainText(
-    'Covoiturage électrique0.3 kg CO₂eusage : 16%, construction : 84%'
-  )
-  await expect(page.locator('#tabpanel-distance').getByLabel('Covoiturage électrique (3')).toHaveAttribute(
-    'href',
-    '/outils/transport/voiture-berline-electrique+2'
-  )
-  await expect(page.locator('#tabpanel-distance').getByLabel('Voiture électrique')).toContainText(
-    'Voiture électrique0.58 kg CO₂eusage : 20%, construction : 80%'
-  )
-  await expect(page.locator('#tabpanel-distance').getByLabel('Voiture électrique')).toHaveAttribute(
-    'href',
-    '/outils/transport/voiture-citadine-electrique'
-  )
+  await expect(
+    page.locator('#tabpanel-distance').getByRole('link', { name: 'Covoiturage électrique (à trois' })
+  ).toContainText('Covoiturage électrique (à trois)0.48 kg CO₂e / personneusage : 16%, construction : 84%')
+  await expect(
+    page.locator('#tabpanel-distance').getByRole('link', { name: 'Covoiturage électrique (à trois' })
+  ).toHaveAttribute('href', '/outils/transport/voiture-berline-electrique+2')
+  await expect(
+    page.locator('#tabpanel-distance').getByRole('link', { name: 'Voiture électrique (seul·e)' })
+  ).toContainText('Voiture électrique (seul·e)0.92 kg CO₂e / personneusage : 20%, construction : 80%')
+  await expect(
+    page.locator('#tabpanel-distance').getByRole('link', { name: 'Voiture électrique (seul·e)' })
+  ).toHaveAttribute('href', '/outils/transport/voiture-citadine-electrique')
 
   await page.getByTestId('input-km-value').fill('100')
   await expect(page.locator('#tabpanel-distance').getByTestId('category-metro-value')).not.toBeVisible()

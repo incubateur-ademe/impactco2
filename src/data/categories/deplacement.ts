@@ -1093,4 +1093,4 @@ export const deplacements = [
     ],
     default: false,
   },
-] as Equivalent[]
+] satisfies Equivalent[]

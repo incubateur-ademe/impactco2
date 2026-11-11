@@ -3,7 +3,7 @@ import useParamContext from 'src/providers/ParamProvider'
 import { DeplacementType } from 'types/equivalent'
 import { TransportSimulateur } from 'types/transport'
 import { deplacements } from 'data/categories/deplacement'
-import { getComparisonSlug, getName } from 'utils/Equivalent/equivalent'
+import { getComparisonSlug, getName, personNumber } from 'utils/Equivalent/equivalent'
 import { computeECV } from 'utils/computeECV'
 import formatNumber from 'utils/formatNumber'
 import formatUsage from 'utils/formatUsage'
@@ -51,9 +51,7 @@ export default function useTransportations(
               return {
                 ...equivalent,
                 link: `/outils/transport/${equivalent.slug}`,
-                name:
-                  getName(params.language, { ...equivalent, carpool: 0 }) +
-                  (values ? ` - ${formatNumber(distance).toLocaleString()} km` : ''),
+                name: getName(params.language, { ...equivalent, carpool: 0 }),
                 value: computeECV(equivalent) * distance,
                 usage: formatUsage(equivalent) * distance,
                 onClick: () => track(tracking, 'Navigation equivalent', equivalent.slug),
@@ -87,6 +85,7 @@ export default function useTransportations(
               const carpoolSelected =
                 equivalent.withCarpool && carpool[equivalent.slug] !== undefined ? carpool[equivalent.slug] : 1
 
+              const distanceText = values ? ` - ${formatNumber(distance).toLocaleString()} km` : ''
               return carpoolEquivalent.withCarpool
                 ? [
                     ...Array.from({ length: 4 }, (_, i) => i + 1).map((carpoolValue) => ({
@@ -96,9 +95,7 @@ export default function useTransportations(
                       ignore: equivalent.ignore || carpoolValue !== carpoolSelected,
                       slug: `${equivalent.slug}+${carpoolValue}`,
                       carpool: carpoolValue,
-                      name:
-                        getName(params.language, { ...equivalent, carpool: carpoolValue }) +
-                        (values ? ` - ${formatNumber(distance).toLocaleString()} km` : ''),
+                      name: `${getName(params.language, { ...equivalent, carpool: carpoolValue })} (${personNumber[carpoolValue + 1][params.language]})${distanceText}`,
                       initialValue: initialValue / 2,
                       value: carpoolEquivalent.value / (carpoolValue + 1),
                       ecv: carpoolEquivalent.ecv?.map((ecv) => ({ ...ecv, value: ecv.value / (carpoolValue + 1) })),
@@ -111,7 +108,7 @@ export default function useTransportations(
                           default: equivalent.default,
                           ignore: equivalent.ignore || carpoolSelected !== 0,
                           carpool: 0,
-                          name: equivalent.name,
+                          name: `${equivalent.name} (${personNumber[1][params.language]})${distanceText}`,
                           slug: equivalent.slug,
                           initialValue: initialValue / 2,
                         }
@@ -119,7 +116,7 @@ export default function useTransportations(
                           ...realEquivalent,
                           default: equivalent.default,
                           ignore: equivalent.ignore,
-                          name: equivalent.name,
+                          name: `${equivalent.name} (${personNumber[1][params.language]})${distanceText}`,
                           slug: equivalent.slug,
                           initialValue: initialValue,
                         },
@@ -129,7 +126,7 @@ export default function useTransportations(
                       ...realEquivalent,
                       default: equivalent.default,
                       ignore: equivalent.ignore,
-                      name: equivalent.name,
+                      name: `${equivalent.name}${distanceText}`,
                       slug: equivalent.slug,
                       initialValue: initialValue,
                     },
