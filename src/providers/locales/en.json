@@ -374,6 +374,7 @@
     "title": "Discover the carbon impact of fruits and vegetables for this month"
   },
   "category-simulator": {
+    "perPerson": { "small": "p.", "medium": "pers.", "large": "person" },
     "person": "people[s]",
     "personShort": "peop.",
     "in": "in",

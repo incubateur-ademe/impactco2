@@ -305,10 +305,43 @@ const engines: Record<string, Record<string, string>> = {
   },
 }
 
+export const personNumber: Record<number, Record<string, string>> = {
+  1: {
+    fr: 'seul·e',
+    en: 'alone',
+    es: 'solo',
+  },
+  2: {
+    fr: 'à deux',
+    en: 'with two people',
+    es: 'con dos',
+  },
+  3: {
+    fr: 'à trois',
+    en: 'with three people',
+    es: 'con tres',
+  },
+  4: {
+    fr: 'à quatre',
+    en: 'with four people',
+    es: 'con cuatro',
+  },
+  5: {
+    fr: 'à cinq',
+    en: 'with five people',
+    es: 'con cinco',
+  },
+}
+
 const persons: Record<string, string> = {
-  fr: 'personnes',
+  fr: 'personne[s]',
   en: 'people',
-  es: 'personas',
+  es: 'persona[s]',
+}
+
+export const getNumberOfPersons = (carpool: string, language: Language) => {
+  const count = carpool ? Number.parseInt(carpool) + 1 : 1
+  return `${count} ${formatName(persons[language], count)}`
 }
 
 const getExtraInfo = (language: Language, slug: string) => {
@@ -319,21 +352,21 @@ const getExtraInfo = (language: Language, slug: string) => {
 
   if (slug.startsWith('voiture') || (slug.startsWith('voiture') && slug.includes('+'))) {
     const [info, carpool] = slug.split('+')
-    const [car, size, engine] = info.split('-')
+    const [, size, engine] = info.split('-')
     return size && sizes[size] && engine
-      ? ` (${sizes[size][language]}${engines[engine] ? ` - ${engines[engine][language]}` : ''}${carpool ? ` - ${Number.parseInt(carpool) + 1} ${persons[language]}` : ''})`
+      ? ` (${sizes[size][language]}${engines[engine] ? ` - ${engines[engine][language]}` : ''} - ${getNumberOfPersons(carpool, language)})`
       : carpool
-        ? ` (${Number.parseInt(carpool) + 1} ${persons[language]})`
+        ? ` (${getNumberOfPersons(carpool, language)})`
         : ''
   }
 
   if (slug.includes('van') || slug.includes('campingcar')) {
-    const [info, carpool] = slug.split('+')
-    return carpool ? ` (${Number.parseInt(carpool) + 1} ${persons[language]})` : ` (1 ${persons[language]})`
+    const [, carpool] = slug.split('+')
+    return ` (${getNumberOfPersons(carpool, language)})`
   }
 
   if (slug.startsWith('moto')) {
-    const [moto, size] = slug.split('-')
+    const [, size] = slug.split('-')
     return size ? ' (<= 250 cm³)' : ' (> 250 cm³)'
   }
 

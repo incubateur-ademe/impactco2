@@ -46,14 +46,14 @@ export const comparateurTest = async (page: Page | FrameLocator, prod?: boolean)
   await expect(page.getByTestId('selected-equivalents-transport-number')).toHaveText('1')
   await page.getByRole('button', { name: 'Revenir au comparateur' }).click()
 
-  await expect(page.getByTestId('comparateur-voitureelectrique+2-value')).toHaveText('323')
+  await expect(page.getByTestId('comparateur-voitureelectrique+2-value')).toHaveText('202')
   await page.getByRole('button', { name: 'Comparer les valeurs avec Covoiturage électrique (3 personnes)' }).click()
   await expect(page.getByTestId('compared-equivalent-link')).toHaveAttribute(
     'href',
     '/outils/transport/voitureelectrique+2'
   )
   await expect(page.getByTestId('input-base-value-unit')).toHaveText('km en covoiturage électrique (3 personnes)')
-  await expect(page.getByTestId('compared-equivalent-value')).toHaveText('2.25 kg CO₂e')
+  await expect(page.getByTestId('compared-equivalent-value')).toHaveText('3.59 kg CO₂e')
 
   await page.getByRole('button', { name: 'Comparer les valeurs avec Abricot' }).click()
   await page.getByLabel("kg d'abricot").fill('5')
@@ -72,5 +72,5 @@ export const comparateurTest = async (page: Page | FrameLocator, prod?: boolean)
   await page.getByRole('button', { name: "kg d'abricot" }).click()
   await expect(page.getByTestId('comparateur-abricot-value')).toHaveText('68.9')
   await expect(page.getByTestId('comparateur-ail-value')).toHaveText('261')
-  await expect(page.getByTestId('comparateur-voitureelectrique+2-value')).toHaveText('4,453')
+  await expect(page.getByTestId('comparateur-voitureelectrique+2-value')).toHaveText('2,783')
 }

@@ -374,6 +374,7 @@
     "title": "Découvrez l’impact carbone des fruits et légumes de saison pour ce mois"
   },
   "category-simulator": {
+    "perPerson": { "small": "p.", "medium": "pers.", "large": "personne" },
     "person": "personne[s]",
     "personShort": "pers.",
     "in": "dans le",

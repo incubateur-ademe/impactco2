@@ -374,6 +374,7 @@
     "title": "Descubre el impacto de carbono de las frutas y verduras de temporada para este mes"
   },
   "category-simulator": {
+    "perPerson": { "small": "p.", "medium": "pers.", "large": "persona" },
     "person": "persona[s]",
     "personShort": "pers.",
     "in": "en",

@@ -1,3 +1,5 @@
+import { Equivalent } from 'types/equivalent'
+
 export const casPratiques = [
   {
     slug: 'avion-pny',
@@ -391,4 +393,4 @@ export const casPratiques = [
       },
     ],
   },
-]
+] satisfies Equivalent[]

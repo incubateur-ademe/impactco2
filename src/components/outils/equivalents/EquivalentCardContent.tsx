@@ -22,6 +22,7 @@ const EquivalentCardContent = ({
   const t = useTranslations('unit')
   const unitLabel = equivalent.unit || category.unit
   const Result = output ? 'output' : 'div'
+
   return (
     <div className={styles.content}>
       <div>
