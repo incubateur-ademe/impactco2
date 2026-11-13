@@ -35,3 +35,10 @@
   color: var(--neutral-50);
   font-weight: 400;
 }
+
+.legend {
+  color: var(--neutral-80);
+  display: inline-block;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}

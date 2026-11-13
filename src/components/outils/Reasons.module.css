@@ -24,6 +24,10 @@
 .reasonCard {
   margin-bottom: 5.75rem;
   color: var(--neutral-50);
+  img {
+    width: 100%;
+    height: auto;
+  }
 }
 
 .reasonTitle {

@@ -3,7 +3,7 @@
 import classNames from 'classnames'
 import { useTranslations } from 'next-intl'
 import { useSearchParams } from 'next/navigation'
-import { ReactNode, RefObject, useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { ReactNode, RefObject, useCallback, useEffect, useMemo, useRef } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import { TrackingProvider } from 'src/providers/TrackingProvider'
 import TranslationProvider from 'src/providers/TranslationProvider'
@@ -28,13 +28,15 @@ type ShareableProps = {
   slug: string
   tracking: string
   withoutIntegration?: boolean
+  withoutButtons?: boolean
   overScreens?: Record<string, OverScreenInfo>
   secondary?: ReactNode
   noBottomBorders?: boolean
   small?: boolean
   smallPadding?: boolean
   withNPS?: boolean
-  withNewIntegration?: boolean
+  integrateLabel?: string
+  header?: ReactNode
   screenshotRef?: RefObject<HTMLDivElement | null>
 }
 
@@ -43,13 +45,15 @@ const Shareable = ({
   slug,
   tracking,
   withoutIntegration,
-  withNewIntegration,
+  withoutButtons,
+  integrateLabel,
   overScreens,
   secondary,
   noBottomBorders,
   small,
   smallPadding,
   withNPS,
+  header,
   screenshotRef: customScreenshotRef,
 }: ShareableProps) => {
   const ref = useRef<HTMLDivElement>(null)
@@ -78,12 +82,11 @@ const Shareable = ({
     }
   }, [slug, setOverscreen, overScreenToDisplay])
 
-  const [showButtons, setShowButtons] = useState(true)
-
   const searchParams = useSearchParams()
-  useEffect(() => {
-    setShowButtons(searchParams.get('hideButtons') !== 'true')
-  }, [searchParams])
+  const showButtons = useMemo(
+    () => (withoutButtons ? false : searchParams.get('hideButtons') !== 'true'),
+    [searchParams, withoutButtons]
+  )
 
   useEffect(() => {
     if (overScreenToDisplay && overscreenRef.current) {
@@ -185,9 +188,11 @@ const Shareable = ({
             </dialog>
           </>
         )}
+        {header}
         <div
           className={classNames(secondary !== undefined ? styles.secondaryContainer : '', {
             [styles.smallPadding]: smallPadding,
+            [styles.withHeader]: !!header,
           })}>
           {secondary &&
             (typeof secondary === 'string' ? <h3 className={styles.secondaryText}>{secondary}</h3> : secondary)}
@@ -282,7 +287,7 @@ const Shareable = ({
             }}
             tracking={tracking}
             withoutIntegration={withoutIntegration}
-            withNewIntegration={withNewIntegration}
+            integrateLabel={integrateLabel}
           />
         </div>
       )}
