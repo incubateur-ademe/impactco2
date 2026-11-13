@@ -129,6 +129,7 @@ const CategorySimulator = ({
   const { trackOnce } = useTrackingContext()
   const params = useParamContext()
   const t = useTranslations('category-simulator')
+  const tUnit = useTranslations('unit')
 
   const ref = useRef<HTMLUListElement>(null)
   const firstElementRef = useRef<HTMLAnchorElement>(null)
@@ -173,6 +174,8 @@ const CategorySimulator = ({
             .map((equivalent, index) => {
               const detail = getDetail(equivalent)
               const barExplanation = detail.map(({ label, value }) => `${label} : ${value.toFixed(0)}%`).join(', ')
+              const percent = max ? (basePercent * equivalent.value) / max : 0
+              const size = percent < 70 ? 'large' : percent < 80 ? 'medium' : 'small'
               return (
                 <li
                   key={equivalent.carpool ? `${equivalent.slug}-carpool` : equivalent.slug}
@@ -183,16 +186,14 @@ const CategorySimulator = ({
                     href={equivalent.link}
                     className={styles.link}
                     aria-live='polite'
-                    aria-label={`${getName(params.language, equivalent, false, 1, false, true)} ${formatNumber(equivalent.value)} kg CO₂e (${barExplanation})`}
+                    aria-label={`${equivalent.name || getName(params.language, equivalent)} ${formatNumber(equivalent.value)} kg CO₂e${type ? ` ${tUnit('par')} ${t('perPerson.large')}` : ''} (${barExplanation})`}
                     onClick={() => trackOnce('ClickEquivalent')}>
                     <EquivalentIcon equivalent={equivalent} height={3} />
                     <div className={styles.content} data-testid={`category-${equivalent.slug}`}>
                       <p className={styles.name}>{equivalent.name || getName(params.language, equivalent)}</p>
                       <div className={styles.data}>
                         {equivalent.value !== 0 && (
-                          <div
-                            className={styles.fullBar}
-                            style={{ width: max ? `${(basePercent * equivalent.value) / max}%` : '0px' }}>
+                          <div className={styles.fullBar} style={{ width: max ? `${percent}%` : '0px' }}>
                             {legends &&
                               legends.map((legend) => {
                                 const value = detail.find(({ label }) => legend.label === label)?.value
@@ -209,15 +210,17 @@ const CategorySimulator = ({
                           <span className={styles.value} data-testid={`category-${equivalent.slug}-value`}>
                             <LocalNumber number={formatNumber(equivalent.value)} />
                           </span>{' '}
-                          kg CO₂e
+                          kg CO₂e{type && <span className={styles.perPerson}> / {t(`perPerson.${size}`)}</span>}
                         </p>
                       </div>
                       {legends && <p className='ico2-hidden'>{barExplanation}</p>}
                     </div>
                   </Link>
-                  {(equivalent.slug.startsWith('voiture') || equivalent.slug.startsWith('moto')) && type && (
-                    <Carpool carpoolValue={equivalent.carpool} type={type} equivalent={equivalent} />
-                  )}
+                  {(equivalent.slug.startsWith('voiture') ||
+                    equivalent.slug.startsWith('moto') ||
+                    equivalent.slug.startsWith('van') ||
+                    equivalent.slug.startsWith('campingcar')) &&
+                    type && <Carpool carpoolValue={equivalent.carpool} type={type} equivalent={equivalent} />}
                   {!!equivalent.livraison && <LivraisonType equivalent={equivalent} />}
                 </li>
               )

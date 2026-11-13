@@ -2,38 +2,36 @@
 import { useTranslations } from 'next-intl'
 import useParamContext from 'src/providers/ParamProvider'
 import { Category } from 'types/category'
-import { ComputedEquivalent, Language } from 'types/equivalent'
+import { ComputedEquivalent } from 'types/equivalent'
+import { getNumberOfPersons } from 'src/utils/Equivalent/equivalent'
 import { getMonthsLabel } from 'utils/months'
 import EquivalentCardContent from '../EquivalentCardContent'
 import styles from './EquivalentSimulator.module.css'
 
-const getCarpool = (language: Language, carpool: number) => {
-  if (language === 'en') {
-    return `${carpool + 1} people`
-  }
-  if (language === 'es') {
-    return `${carpool + 1} personas`
-  }
-  return `${carpool + 1} personnes`
-}
-
 const EquivalentHeader = ({ category, equivalent }: { category: Category; equivalent: ComputedEquivalent }) => {
   const { language } = useParamContext()
   const t = useTranslations('equivalent')
-  const pre = t(`hypothesis.pre.${equivalent.slug}`)
-  const post = t(`hypothesis.post.${equivalent.slug}`)
+  const [slug] = equivalent.slug.split('+')
+  const pre = t(`hypothesis.pre.${slug}`)
+  const post = t(`hypothesis.post.${slug}`)
 
-  const hasPre = pre !== `equivalent.hypothesis.pre.${equivalent.slug}`
-  const hasPost = post !== `equivalent.hypothesis.post.${equivalent.slug}`
+  const hasPre = pre !== `equivalent.hypothesis.pre.${slug}`
+  const hasPost = post !== `equivalent.hypothesis.post.${slug}`
+
   return (
     <>
       <EquivalentCardContent equivalent={equivalent} category={category} />
-      {('months' in equivalent || hasPre || hasPost || equivalent.carpool) && (
+      {('months' in equivalent || hasPre || hasPost || equivalent.withCarpool) && (
         <p className={styles.hypothesis}>
           <span className={styles.hypothesisTitle}>{t('hypotheses')}</span>
           {'months' in equivalent && <span>{getMonthsLabel(equivalent.months, language)} </span>}
           {hasPre && <span>{pre}</span>}
-          {equivalent.carpool && <span> - {getCarpool(language, equivalent.carpool)}</span>}
+          {equivalent.withCarpool && (
+            <span>
+              {hasPre ? ' - ' : ''}
+              {getNumberOfPersons((equivalent.carpool === undefined ? 0 : equivalent.carpool).toString(), language)}
+            </span>
+          )}
           {hasPost && (
             <span>
               {hasPre ? ' ' : ''}
