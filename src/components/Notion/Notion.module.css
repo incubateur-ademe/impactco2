@@ -23,10 +23,10 @@
   :global(.notion-file-icon),
   :global(.notion-hash-link),
   :global(.notion-asset-caption),
-  :global(.notion-collection-page-properties),
-  :global(.notion-table-of-contents) {
+  :global(.notion-collection-page-properties) {
     display: none;
   }
+
   :global(.notion-hr) {
     border: none;
     margin-top: 1.5rem;
@@ -348,6 +348,48 @@
     width: 1.5em;
     height: 1.5em;
     vertical-align: bottom;
+  }
+
+  :global(.notion-table-of-contents) {
+    margin-bottom: 1.5rem;
+  }
+
+  :global(.notion-table-of-contents-title) {
+    color: var(--neutral-50);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  :global(.notion-table-of-contents-item) {
+    opacity: 1;
+    color: var(--neutral-50);
+    font-size: 0.8125rem;
+    font-weight: 400;
+    line-height: 1.125rem;
+    width: fit-content;
+    border-radius: 0.25rem;
+    white-space: normal;
+
+    &:hover {
+      color: var(--primary-60);
+      background: var(--primary-10, #e0f4f3);
+    }
+
+    &:focus {
+      color: var(--primary-80);
+      outline: 3px solid var(--primary-40);
+      outline-offset: 2px;
+    }
+
+    &:focus:not(:focus-visible) {
+      outline: none;
+    }
+  }
+
+  :global(.notion-table-of-contents-item-body) {
+    border-color: var(--primary-30);
   }
 }
 
