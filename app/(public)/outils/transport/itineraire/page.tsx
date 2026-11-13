@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
+import TransportPage from 'src/views/TransportPage'
 import { Category as CategoryType } from 'types/category'
 import { categories } from 'data/categories'
-import Transport from 'src/components/outils/transport/Transport'
 import { toolsJsonLd } from 'src/utils/jsonLd'
 import { metaDescriptions, metaTitles } from 'utils/meta'
 import Suggestion from 'components/layout/Suggestion'
@@ -30,7 +30,7 @@ const page = () => {
         type='application/ld+json'
         dangerouslySetInnerHTML={{ __html: JSON.stringify(toolsJsonLd.transportItineraire) }}
       />
-      <Transport category={category} />
+      <TransportPage category={category} />
       <Suggestion fromLabel={category.name} simulatorName={`de la thématique ${category.name}`} />
     </>
   )

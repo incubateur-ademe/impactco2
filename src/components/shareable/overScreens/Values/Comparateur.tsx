@@ -13,7 +13,8 @@ export const overScreenComparateurValues = {
   },
   equivalents: {
     title: 'equivalent',
-    hideTitle: true,
+    hideFooter: true,
+    noHeaderSeparator: true,
     children: <EquivalentsOverscreen />,
     fullHeight: true,
   },

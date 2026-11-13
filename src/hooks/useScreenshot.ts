@@ -1,12 +1,10 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { RefObject, useEffect, useState } from 'react'
 import { track } from 'utils/matomo'
 import useTheme from 'components/layout/UseTheme'
 
-export default function useScreenshot(slug: string, tracking: string) {
-  const ref = useRef<HTMLDivElement>(null)
-
+export default function useScreenshot(slug: string, tracking: string, ref: RefObject<HTMLDivElement | null>) {
   const { theme } = useTheme()
 
   const [isScreenshotting, setIsScreenshotting] = useState(false)
@@ -37,12 +35,12 @@ export default function useScreenshot(slug: string, tracking: string) {
         }
       })
     }
-  }, [ref, isScreenshotting, slug])
+  }, [ref, isScreenshotting, slug, theme])
 
   const takeScreenshot = () => {
     track(tracking, 'Screenshot', slug)
     setIsScreenshotting(true)
   }
 
-  return { ref, takeScreenshot, isScreenshotting }
+  return { takeScreenshot, isScreenshotting }
 }
