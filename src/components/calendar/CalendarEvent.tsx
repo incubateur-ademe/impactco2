@@ -51,6 +51,18 @@ const CalendarEvent = ({ event }: { event: CalendarEventType }) => {
               link.setAttribute('href', href)
             }
           })
+
+          const tablesOfContents = ref.getElementsByClassName('notion-table-of-contents')
+          Array.from(tablesOfContents).forEach((tableOfContents) => {
+            if (tableOfContents.hasAttribute('data-sommaire-rendered')) {
+              return
+            }
+            tableOfContents.setAttribute('data-sommaire-rendered', 'true')
+            const titleElement = document.createElement('h2')
+            titleElement.textContent = 'SOMMAIRE'
+            titleElement.className = 'notion-table-of-contents-title'
+            tableOfContents.insertBefore(titleElement, tableOfContents.firstChild)
+          })
         }}
         recordMap={recordMap}
         mapImageUrl={transformUrl}
