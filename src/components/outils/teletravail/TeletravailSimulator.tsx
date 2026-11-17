@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { useEffect, useMemo, useRef } from 'react'
 import useParamContext from 'src/providers/ParamProvider'
 import useTrackingContext from 'src/providers/TrackingProvider'
+import { computedEquivalents } from 'src/providers/equivalents'
 import { Category } from 'types/category'
 import { ComputedEquivalent, DeplacementType } from 'types/equivalent'
 import { categories } from 'data/categories'
@@ -22,6 +23,8 @@ import SelectEquivalent from 'components/form/SelectEquivalent'
 import AddressInput from 'components/form/addresses/AddressInput'
 import itineraireStyles from '../transport/ItineraireSimulator.module.css'
 import styles from './TeletravailSimulator.module.css'
+
+const empreinteMoyenne = computedEquivalents.find((x) => x.slug === 'francais') as ComputedEquivalent
 
 const transports = (categories.find((category) => category.slug === 'transport') as Category)
   .equivalents as (ComputedEquivalent & { type: DeplacementType })[]
@@ -167,7 +170,7 @@ const TeletravailSimulator = () => {
               <span className={styles.header}>{t('or')}</span>
               <span className={styles.greenValue}>
                 <span className={styles.number} data-testid='teletravail-saved-percent'>
-                  <LocalNumber number={formatNumber((0.75 * homeOffice * total) / 91)} />
+                  <LocalNumber number={formatNumber((100 * (0.75 * homeOffice * total)) / empreinteMoyenne.value)} />
                 </span>{' '}
                 %
               </span>
