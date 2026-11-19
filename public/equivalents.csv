@@ -89,9 +89,9 @@ Année d’émissions des voitures particulières en France,70700135000,Cas prat
 Année d’émissions du numérique en France,29500000000,Cas pratiques,numeriqueenfrance,https://impactco2.fr/outils/caspratiques/numeriqueenfrance
 Année d’émissions du parc bovin en France,38032000000,Cas pratiques,parcbovin,https://impactco2.fr/outils/caspratiques/parcbovin
 Empreinte carbone d'un citoyen français,9100,Cas pratiques,francais,https://impactco2.fr/outils/caspratiques/francais
-Game of Thrones en streaming,0.0317,Cas pratiques,game-of-thrones,https://impactco2.fr/outils/caspratiques/game-of-thrones
+Game of Thrones en streaming,0.013140393860999994,Cas pratiques,game-of-thrones,https://impactco2.fr/outils/caspratiques/game-of-thrones
 Heure de circulation des voitures particulières en France,8071000,Cas pratiques,voiturefrancaiseheure,https://impactco2.fr/outils/caspratiques/voiturefrancaiseheure
-Intégrale de Friends en streaming,7.86,Cas pratiques,friends,https://impactco2.fr/outils/caspratiques/friends
+Intégrale de Friends en streaming,1.1097999424385332,Cas pratiques,friends,https://impactco2.fr/outils/caspratiques/friends
 Jour d’absorption de CO2e par les forêts et les prairies en France,151636000,Cas pratiques,foretenfrancejour,https://impactco2.fr/outils/caspratiques/foretenfrancejour
 Jour d'activité agricole en France,216439000,Cas pratiques,agricoleenfrancejour,https://impactco2.fr/outils/caspratiques/agricoleenfrancejour
 Jour d'utilisation des climatisations domestiques en France,3277000,Cas pratiques,climatisationenfrancejour,https://impactco2.fr/outils/caspratiques/climatisationenfrancejour
@@ -103,7 +103,7 @@ Jour de fonctionnement du numérique en France,80822000,Cas pratiques,numeriquee
 Jour de traitement des déchets et eaux usées domestiques,5178000,Cas pratiques,traitementdechetsjour,https://impactco2.fr/outils/caspratiques/traitementdechetsjour
 Journée au ski,48.9,Cas pratiques,ski,https://impactco2.fr/outils/caspratiques/ski
 Maison neuve,50000,Cas pratiques,maisonneuve,https://impactco2.fr/outils/caspratiques/maisonneuve
-Marathon des films Harry Potter en streaming,0.63,Cas pratiques,harry-potter,https://impactco2.fr/outils/caspratiques/harry-potter
+Marathon des films Harry Potter en streaming,0.2516189706756,Cas pratiques,harry-potter,https://impactco2.fr/outils/caspratiques/harry-potter
 Nuit au camping,1.4,Cas pratiques,camping,https://impactco2.fr/outils/caspratiques/camping
 Nuit dans un hôtel,4.3,Cas pratiques,hotel,https://impactco2.fr/outils/caspratiques/hotel
 Nuit dans une location saisonnière,5.2,Cas pratiques,location,https://impactco2.fr/outils/caspratiques/location
@@ -262,21 +262,21 @@ Lit,443.81000000000006,Mobilier,lit,https://impactco2.fr/outils/mobilier/lit
 Table en bois,80.22,Mobilier,tableenbois,https://impactco2.fr/outils/mobilier/tableenbois
 Alimentation externe pour ordinateur portable,4.192,Numérique,alimentationordinateur,https://impactco2.fr/outils/numerique/alimentationordinateur
 Alimentation externe pour smartphone ou tablette,0.4153,Numérique,alimentationsmartphone,https://impactco2.fr/outils/numerique/alimentationsmartphone
-Box,81.22576,Numérique,box,https://impactco2.fr/outils/numerique/box
-Casque de réalité virtuelle,72.594435,Numérique,casquevr,https://impactco2.fr/outils/numerique/casquevr
-Clef usb,5.217427,Numérique,clefusb,https://impactco2.fr/outils/numerique/clefusb
-Disque dur externe,12.65774,Numérique,disquedur,https://impactco2.fr/outils/numerique/disquedur
-Écran d'ordinateur,92.5722,Numérique,ecran,https://impactco2.fr/outils/numerique/ecran
-Enceinte connectée,26.183049999999998,Numérique,enceintebluetooth,https://impactco2.fr/outils/numerique/enceintebluetooth
-Ordinateur fixe sans écran (particulier),300.37508,Numérique,ordinateurfixeparticulier,https://impactco2.fr/outils/numerique/ordinateurfixeparticulier
-Ordinateur fixe sans écran (professionnel),259.19762,Numérique,ordinateurfixeprofessionnel,https://impactco2.fr/outils/numerique/ordinateurfixeprofessionnel
-Ordinateur portable,192.62004125,Numérique,ordinateurportable,https://impactco2.fr/outils/numerique/ordinateurportable
-Smartphone,80.155343125,Numérique,smartphone,https://impactco2.fr/outils/numerique/smartphone
-SSD externe,135.19041750000002,Numérique,ssd,https://impactco2.fr/outils/numerique/ssd
-Tablette,87.135525,Numérique,tabletteclassique,https://impactco2.fr/outils/numerique/tabletteclassique
+Box,79.19344,Numérique,box,https://impactco2.fr/outils/numerique/box
+Casque de réalité virtuelle,72.57326499999998,Numérique,casquevr,https://impactco2.fr/outils/numerique/casquevr
+Clef usb,5.213193,Numérique,clefusb,https://impactco2.fr/outils/numerique/clefusb
+Disque dur externe,12.57306,Numérique,disquedur,https://impactco2.fr/outils/numerique/disquedur
+Écran d'ordinateur,83.50679924999999,Numérique,ecran,https://impactco2.fr/outils/numerique/ecran
+Enceinte connectée,82.12895,Numérique,enceintebluetooth,https://impactco2.fr/outils/numerique/enceintebluetooth
+Ordinateur fixe sans écran (particulier),408.1724275,Numérique,ordinateurfixeparticulier,https://impactco2.fr/outils/numerique/ordinateurfixeparticulier
+Ordinateur fixe sans écran (professionnel),421.0447,Numérique,ordinateurfixeprofessionnel,https://impactco2.fr/outils/numerique/ordinateurfixeprofessionnel
+Ordinateur portable,158.49701624999997,Numérique,ordinateurportable,https://impactco2.fr/outils/numerique/ordinateurportable
+Smartphone,56.89762474375,Numérique,smartphone,https://impactco2.fr/outils/numerique/smartphone
+SSD externe,135.1798325,Numérique,ssd,https://impactco2.fr/outils/numerique/ssd
+Tablette,62.050894375000006,Numérique,tabletteclassique,https://impactco2.fr/outils/numerique/tabletteclassique
 Téléphone basique,23.400000000000002,Numérique,telephonebasique,https://impactco2.fr/outils/numerique/telephonebasique
-Télévision ,369.71186,Numérique,television,https://impactco2.fr/outils/numerique/television
-Vidéoprojecteur,58.93595,Numérique,videoprojecteur,https://impactco2.fr/outils/numerique/videoprojecteur
+Télévision ,732.5942299999999,Numérique,television,https://impactco2.fr/outils/numerique/television
+Vidéoprojecteur,52.1944,Numérique,videoprojecteur,https://impactco2.fr/outils/numerique/videoprojecteur
 Autocar thermique,0.03756,Transport,autocar,https://impactco2.fr/outils/transport/autocar
 Avion trajet court,0.224572,Transport,avion-courtcourrier,https://impactco2.fr/outils/transport/avion-courtcourrier
 Avion trajet long,0.177894,Transport,avion-longcourrier,https://impactco2.fr/outils/transport/avion-longcourrier
@@ -416,10 +416,10 @@ Voiture thermique (Petite - Diesel),0.12190341195780426,Transport,voiture-citadi
 Voiture thermique (Petite - Essence),0.14471475570780423,Transport,voiture-citadine-essence,https://impactco2.fr/outils/transport/voiture-citadine-essence
 Voiture thermique (SUV - Diesel),0.16970828152302161,Transport,voiture-grandeberline-diesel,https://impactco2.fr/outils/transport/voiture-grandeberline-diesel
 Voiture thermique (SUV - Essence),0.24623893777302164,Transport,voiture-grandeberline-essence,https://impactco2.fr/outils/transport/voiture-grandeberline-essence
-Email,0.00246181262,Usage numérique,email,https://impactco2.fr/outils/usagenumerique/email
-Go de données (1 an de stockage dans le cloud),0.00023533417,Usage numérique,stockagedonnee,https://impactco2.fr/outils/usagenumerique/stockagedonnee
+Email,0.0008362347807794205,Usage numérique,email,https://impactco2.fr/outils/usagenumerique/email
+Go de données (1 an de stockage dans le cloud),0.000931875,Usage numérique,stockagedonnee,https://impactco2.fr/outils/usagenumerique/stockagedonnee
 Go de données (téléchargement),0.00950468087,Usage numérique,telechargement,https://impactco2.fr/outils/usagenumerique/telechargement
 Recherche sur le web,0.00123,Usage numérique,rechercheweb,https://impactco2.fr/outils/usagenumerique/rechercheweb
 Spam,0.00373863698,Usage numérique,spam,https://impactco2.fr/outils/usagenumerique/spam
-Streaming vidéo,0.06401675291000002,Usage numérique,streamingvideo,https://impactco2.fr/outils/usagenumerique/streamingvideo
-Visioconférence,0.05706336546216,Usage numérique,visioconference,https://impactco2.fr/outils/usagenumerique/visioconference
+Streaming vidéo,0.013140393860999999,Usage numérique,streamingvideo,https://impactco2.fr/outils/usagenumerique/streamingvideo
+Visioconférence,0.022273822722,Usage numérique,visioconference,https://impactco2.fr/outils/usagenumerique/visioconference

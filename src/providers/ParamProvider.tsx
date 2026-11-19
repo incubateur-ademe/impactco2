@@ -596,10 +596,10 @@ export function ParamProvider({ children, onWebsite }: { children: ReactNode; on
     if (searchParams.get('email . appareil')) {
       situation['email . appareil'] = searchParams.get('email . appareil') as string
     }
-    if (searchParams.get('email . transmission . émetteur . réseau')) {
-      situation['email . transmission . émetteur . réseau'] = searchParams.get(
-        'email . transmission . émetteur . réseau'
-      ) as string
+    if (searchParams.get('email . transmission . émetteur . réseau') || searchParams.get('email . réseau')) {
+      situation['email . réseau'] =
+        (searchParams.get('email . transmission . émetteur . réseau') as string) ||
+        (searchParams.get('email . réseau') as string)
     }
 
     if (searchParams.get('email . taille')) {
@@ -614,8 +614,10 @@ export function ParamProvider({ children, onWebsite }: { children: ReactNode; on
       situation['streaming . appareil'] = searchParams.get('streaming . appareil') as string
     }
 
-    if (searchParams.get('streaming . transmission . réseau')) {
-      situation['streaming . transmission . réseau'] = searchParams.get('streaming . transmission . réseau') as string
+    if (searchParams.get('streaming . transmission . réseau') || searchParams.get('streaming . réseau')) {
+      situation['streaming . réseau'] =
+        (searchParams.get('streaming . transmission . réseau') as string) ||
+        (searchParams.get('streaming . réseau') as string)
     }
 
     if (searchParams.get('streaming . qualité')) {
@@ -634,8 +636,9 @@ export function ParamProvider({ children, onWebsite }: { children: ReactNode; on
       situation['visio . emplacements'] = getInt(searchParams, 'visio . emplacements')
     }
 
-    if (searchParams.get('visio . transmission . réseau')) {
-      situation['visio . transmission . réseau'] = searchParams.get('visio . transmission . réseau') as string
+    if (searchParams.get('visio . transmission . réseau') || searchParams.get('visio . réseau')) {
+      situation['visio . réseau'] =
+        (searchParams.get('visio . transmission . réseau') as string) || (searchParams.get('visio . réseau') as string)
     }
 
     if (searchParams.get('visio . qualité')) {
