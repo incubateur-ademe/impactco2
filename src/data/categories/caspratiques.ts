@@ -26,7 +26,7 @@ export const casPratiques = [
     slug: 'francais',
     category: 13,
     percentage: true,
-    total: 9100,
+    total: 8200,
     sources: [
       {
         label: 'Nos Gestes Climat',
