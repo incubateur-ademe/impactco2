@@ -10,7 +10,7 @@ describe('formatUsage', () => {
     prefix: 'km en ',
     synonyms: ['transport', 'déplacement', 'déplacer'],
     slug: 'scooter',
-    type: 'car',
+    type: 'car' as const,
     category: 4,
     ecv: [
       {
@@ -32,6 +32,5 @@ describe('formatUsage', () => {
       description:
         "Découvrez l'impact CO₂e d'un trajet en scooter et grâce à Impact CO₂ choisissez le moyen de transport le plus écologique pour vos déplacements. ",
     },
-    id: 'scooter',
   }
 })
