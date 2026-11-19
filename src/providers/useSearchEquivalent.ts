@@ -71,7 +71,7 @@ export const useSearchEquivalent = (
               }
             }
 
-            return infos[1] ? modes.includes(`${slug}+1`) : modes.includes(slug)
+            return infos[1] && !equivalent.onlyCarpool ? modes.includes(`${slug}+1`) : modes.includes(slug)
           }
           return modes.includes(getComparisonSlug(equivalent.slug))
         }

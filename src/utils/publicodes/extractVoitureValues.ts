@@ -43,10 +43,11 @@ export const extractVoitureValues = () => {
       {
         'transport . voiture . utilisateur': "'propriétaire'",
         'transport . voiture . gabarit': gabarit,
+        'transport . voiture . voyageurs . nombre moyen': 1,
         ...carburantSituation,
       },
     ])
-  ) as [string, Record<string, string>][]
+  ) as [string, Record<string, string | number>][]
 
   situations.push(['voiturethermique', situations.find(([slug]) => slug === 'voiture-compact-diesel')![1]])
   situations.push(['voitureelectrique', situations.find(([slug]) => slug === 'voiture-compact-electrique')![1]])

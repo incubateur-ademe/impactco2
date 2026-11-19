@@ -25,7 +25,14 @@ const page = async (props: Props) => {
     <Equivalent
       category={category}
       equivalent={
-        carpool ? { ...equivalent, carpool: Number(carpool), link: `${equivalent.link}+${carpool}` } : equivalent
+        carpool
+          ? {
+              ...equivalent,
+              carpool: Number(carpool),
+              link: `${equivalent.link}+${carpool}`,
+              slug: `${slug}+${carpool}`,
+            }
+          : equivalent
       }
       simulator={equivalentsSimulators[equivalent.slug]}
     />

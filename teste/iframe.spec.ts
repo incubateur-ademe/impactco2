@@ -7,12 +7,12 @@ test('Display transport iframe by script', async ({ page }) => {
 
   await expect(page.frameLocator('#iFrameResizer0').getByTestId('comparison-tile-0')).toBeInViewport()
   await expect(page.frameLocator('#iFrameResizer0').getByTestId('comparison-tile-0')).toHaveText(
-    'Voiture thermique1.42 kg CO₂e Modifier'
+    'Voiture thermique2.28 kg CO₂e Modifier'
   )
 
   await expect(page.frameLocator('#iFrameResizer0').getByTestId('comparison-tile-1')).toBeInViewport()
   await expect(page.frameLocator('#iFrameResizer0').getByTestId('comparison-tile-1')).toHaveText(
-    'TGV0.03 kg CO₂eMoyen le plus écologique1.39Kg CO₂eévités Modifier'
+    'TGV0.03 kg CO₂eMoyen le plus écologique2.25Kg CO₂eévités Modifier'
   )
 })
 

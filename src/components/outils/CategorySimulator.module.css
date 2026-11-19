@@ -36,7 +36,8 @@
       color: var(--neutral-80);
     }
 
-    .data {
+    .data,
+    .perPerson {
       color: var(--primary-70);
     }
   }
@@ -289,4 +290,11 @@
   @media screen and (max-width: 38rem) {
     display: none;
   }
+}
+
+.perPerson {
+  color: var(--primary-50);
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1rem;
 }
